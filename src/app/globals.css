@@ -1,26 +1,55 @@
 @import "tailwindcss";
 
-:root {
-  --background: #ffffff;
-  --foreground: #171717;
+@theme {
+  /* Brand Colors basati sul Logo */
+  --color-gold: #f9b233; /* Oro acceso del logo */
+  --color-gold-light: #ffc857;
+  --color-gold-dark: #d48e1d;
+  --color-charcoal: #3d2b1f; /* Marrone scuro del logo/kanguro */
+  --color-brown: #5c3d2e;
+  --color-hero: #2a1b15; /* Marrone ancora più profondo per sfondi hero */
+  --color-sand: #fdf5e6; /* Sfondo sabbia caldo */
+
+  /* Font Families */
+  --font-sans: var(--font-inter), system-ui, -apple-system, sans-serif;
+  --font-serif: var(--font-playfair), Georgia, 'Times New Roman', serif;
+
+  /* Spacing */
+  --spacing-section: 6rem;
 }
 
-@theme inline {
-  --color-background: var(--background);
-  --color-foreground: var(--foreground);
-  --font-sans: var(--font-geist-sans);
-  --font-mono: var(--font-geist-mono);
-}
-
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
-  }
+html {
+  scroll-behavior: smooth;
 }
 
 body {
-  background: var(--background);
-  color: var(--foreground);
-  font-family: Arial, Helvetica, sans-serif;
+  background-color: #ffffff;
+  color: var(--color-charcoal);
+  font-family: var(--font-sans);
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+h1, h2, h3, h4, h5, h6 {
+  font-family: var(--font-serif);
+}
+
+/* Utility: gold gradient text */
+.text-gradient-gold {
+  background: linear-gradient(135deg, #b0a377, #d4c896, #b0a377);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+/* Smooth scrollbar */
+::-webkit-scrollbar {
+  width: 6px;
+}
+::-webkit-scrollbar-track {
+  background: #f1f1f1;
+}
+::-webkit-scrollbar-thumb {
+  background: #b0a377;
+  border-radius: 3px;
 }
