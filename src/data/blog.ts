@@ -194,5 +194,147 @@ LINGUA: Lingua ufficiale l’inglese. Nazione multiculturale con influenze Maori
         sections: [{ id: 'docs', title: 'DOCUMENTS', content: 'NzeTA required.' }]
       }
     }
-  }
+  },
+  {
+    id: 'squali-balena-australia',
+    slug: 'nuotare-con-gli-squali-balena-australia',
+    title: {
+      it: `Incontra i Giganti del Mare: Nuotare con gli Squali Balena in Australia`,
+      en: `Meet the Giants of the Sea: Swimming with Whale Sharks in Australia`,
+    },
+    excerpt: {
+      it: `Un'esperienza che ti toccherà l'anima: nuotare a fianco degli squali balena nelle acque cristalline del Western Australia.`,
+      en: `An experience that will touch your soul: swimming alongside whale sharks in the crystal-clear waters of Western Australia.`,
+    },
+    category: { it: `Esperienze`, en: `Experiences` },
+    image: '/images/blog-squali.jpg',
+    date: '2026-02-10',
+    content: {
+      it: {
+        intro: `Immagina di scivolare nelle acque cristalline dell'Ovest Australia dove il silenzio è rotto solo dal tuo respiro e dal movimento ritmico delle tue braccia. Mentre ti immergi più a fondo, la maestosa ombra di uno squalo balena emerge dalla distanza e si avvicina con una calma sovrannaturale.
+
+Nuotare con gli squali balena, questi gentili giganti, è un'esperienza che ti toccherà l'anima, un incontro ravvicinato che ti farà sentire parte di un mondo antico e misterioso. È un momento di connessione con la natura australiana e un ricordo del tuo viaggio in Australia che rimarrà impresso nel tuo cuore per sempre.`,
+        sections: [
+          {
+            id: 'dove-quando',
+            title: 'DOVE E QUANDO',
+            content: `Ningaloo Reef, Western Australia: La stagione degli squali balena va da marzo a luglio, con il picco ad aprile-maggio. Exmouth e Coral Bay sono i principali punti di partenza per le escursioni.
+
+Ningaloo Reef è uno dei pochi posti al mondo dove è possibile nuotare con questi giganti in modo prevedibile ogni anno. La barriera corallina è dichiarata Patrimonio dell'Umanità UNESCO.`,
+          },
+          {
+            id: 'cosa-aspettarsi',
+            title: "COS'ASPETTARSI",
+            content: `Gli squali balena (Rhincodon typus) sono i pesci più grandi del mondo, ma completamente innocui per l'uomo — si nutrono esclusivamente di plancton.
+
+Le escursioni durano in genere mezza giornata. Una guida specializzata si immerge con te e ti mostra come avvicinarti in sicurezza. È richiesta la capacità di snorkeling di base; non serve essere sub esperti.`,
+          },
+          {
+            id: 'come-prenotare',
+            title: 'COME PRENOTARE',
+            content: `I tour vanno prenotati con largo anticipo, specialmente per la alta stagione (aprile-maggio). Contatta il nostro team: organizziamo l'esperienza all'interno di un itinerario personalizzato nel Western Australia, abbinando l'incontro con gli squali balena ad altre meraviglie di questa regione unica.`,
+          },
+        ],
+      },
+      en: {
+        intro: `Imagine gliding through the crystal-clear waters of Western Australia where the silence is broken only by your breathing and the rhythmic movement of your arms. As you dive deeper, the majestic shadow of a whale shark emerges from the distance, approaching with supernatural calm.
+
+Swimming with whale sharks, these gentle giants, is an experience that will touch your soul — a close encounter that will make you feel part of an ancient and mysterious world. It is a moment of connection with Australian nature and a memory of your trip to Australia that will remain etched in your heart forever.`,
+        sections: [
+          {
+            id: 'dove-quando',
+            title: 'WHERE AND WHEN',
+            content: `Ningaloo Reef, Western Australia: Whale shark season runs from March to July, peaking in April-May. Exmouth and Coral Bay are the main departure points for excursions.
+
+Ningaloo Reef is one of the few places in the world where you can predictably swim with these giants every year. The coral reef is a UNESCO World Heritage Site.`,
+          },
+          {
+            id: 'cosa-aspettarsi',
+            title: 'WHAT TO EXPECT',
+            content: `Whale sharks (Rhincodon typus) are the largest fish in the world, but completely harmless to humans — they feed exclusively on plankton.
+
+Excursions generally last half a day. A specialist guide dives with you and shows you how to approach safely. Basic snorkelling ability is required; you don't need to be an experienced diver.`,
+          },
+          {
+            id: 'come-prenotare',
+            title: 'HOW TO BOOK',
+            content: `Tours should be booked well in advance, especially for peak season (April-May). Contact our team: we organise the experience within a personalised itinerary in Western Australia, combining the whale shark encounter with other wonders of this unique region.`,
+          },
+        ],
+      },
+    },
+  },
+  {
+    id: 'hobbiton-contea-esiste',
+    slug: 'hobbiton-la-contea-esiste',
+    title: {
+      it: `Hobbiton: la "Contea" Esiste!`,
+      en: `Hobbiton: The "Shire" Really Exists!`,
+    },
+    excerpt: {
+      it: `Il set cinematografico di Hobbiton in Nuova Zelanda è un'esperienza magica per tutti gli appassionati de Il Signore degli Anelli e Lo Hobbit.`,
+      en: `The Hobbiton movie set in New Zealand is a magical experience for all fans of The Lord of the Rings and The Hobbit.`,
+    },
+    category: { it: `Esperienze`, en: `Experiences` },
+    image: '/images/blog-hobbiton.jpg',
+    date: '2026-01-20',
+    content: {
+      it: {
+        intro: `Il tour Hobbiton Movie Set è un'esperienza interessante e divertente per tutti gli appassionati della Trilogia di The Lord of The Rings e The Hobbit. La tua guida ti accompagnerà sul famoso set cinematografico di 12 acri, mostrandoti i dettagli intricati, indicando i luoghi più famosi e spiegando come è stata creata la magia dei film.
+
+Innamorati della fattoria di ovini e di manzo della famiglia Alexander, proprio come ha fatto l'acclamato regista Sir Peter Jackson, delle buche Hobbit, del Mulino e della famosa Green Dragon Inn, dove è possibile concedersi delle esclusive bevande.`,
+        sections: [
+          {
+            id: 'dove-quando',
+            title: 'DOVE SI TROVA',
+            content: `Matamata, Isola del Nord, Nuova Zelanda: Il set si trova a circa 2 ore da Auckland e 1 ora da Rotorua. È raggiungibile in auto o con tour organizzati da entrambe le città.
+
+La fattoria Alexander, su cui è costruito il set, è ancora un'azienda agricola funzionante — il che rende il tutto ancora più autentico e affascinante.`,
+          },
+          {
+            id: 'cosa-aspettarsi',
+            title: "COS'ASPETTARSI",
+            content: `Il tour dura circa 2 ore e si svolge a piedi attraverso il set. Vedrai le 44 buche Hobbit originali, i giardini curati, il Mulino sul laghetto e naturalmente la Green Dragon Inn.
+
+Il tour si conclude con una bevanda inclusa alla Green Dragon Inn — birra artigianale, sidro o una bevanda analcolica. Le visite sono solo guidate, non è possibile esplorare da soli.`,
+          },
+          {
+            id: 'come-prenotare',
+            title: 'COME INSERIRLO NEL TUO VIAGGIO',
+            content: `Hobbiton si inserisce perfettamente in un itinerario sull'Isola del Nord neozelandese. Noi di Progetto Australia lo inseriamo spesso negli itinerari tra Auckland e Rotorua, abbinandolo alla visione del set al tramonto per un'atmosfera davvero magica.
+
+Contattaci per creare il tuo viaggio su misura in Nuova Zelanda.`,
+          },
+        ],
+      },
+      en: {
+        intro: `The Hobbiton Movie Set tour is an interesting and fun experience for all fans of The Lord of the Rings and The Hobbit trilogy. Your guide will take you around the famous 12-acre movie set, showing you the intricate details, pointing out the most famous locations and explaining how the magic of the films was created.
+
+Fall in love with the Alexander family's sheep and beef farm, just as acclaimed director Sir Peter Jackson did, the Hobbit holes, the Mill and the famous Green Dragon Inn, where you can enjoy exclusive beverages.`,
+        sections: [
+          {
+            id: 'dove-quando',
+            title: 'WHERE IS IT',
+            content: `Matamata, North Island, New Zealand: The set is located about 2 hours from Auckland and 1 hour from Rotorua. It can be reached by car or with organised tours from both cities.
+
+The Alexander farm, on which the set is built, is still a working farm — which makes everything even more authentic and fascinating.`,
+          },
+          {
+            id: 'cosa-aspettarsi',
+            title: 'WHAT TO EXPECT',
+            content: `The tour lasts about 2 hours and takes place on foot through the set. You will see the original 44 Hobbit holes, the manicured gardens, the Mill on the pond and of course the Green Dragon Inn.
+
+The tour concludes with a complimentary drink at the Green Dragon Inn — craft beer, cider or a non-alcoholic beverage. Visits are guided only; you cannot explore on your own.`,
+          },
+          {
+            id: 'come-prenotare',
+            title: 'HOW TO INCLUDE IT IN YOUR TRIP',
+            content: `Hobbiton fits perfectly into a North Island New Zealand itinerary. At Progetto Australia we often include it in itineraries between Auckland and Rotorua, combining the set visit at sunset for a truly magical atmosphere.
+
+Contact us to create your tailor-made trip to New Zealand.`,
+          },
+        ],
+      },
+    },
+  },
 ];

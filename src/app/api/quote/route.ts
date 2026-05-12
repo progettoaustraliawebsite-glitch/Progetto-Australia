@@ -9,121 +9,148 @@ export async function POST(req: Request) {
       return NextResponse.json({ error: 'HubSpot Token mancante' }, { status: 500 });
     }
 
-    // Calcolo valori numerici puliti
-    const totalTravelers = Number(data.adulti) + Number(data.teen) + Number(data.bambini);
-    const totalNights = data.destinazioni.reduce((sum: number, d: any) => sum + d.nights, 0);
+    // ── Normalizza destinazioni (supporta sia single che multi-dest) ──────────
+    const destArray: { id: string; nights: number }[] =
+      data.multiDest && Array.isArray(data.destinations)
+        ? data.destinations
+        : data.destination && data.destination !== 'undecided'
+          ? [{ id: data.destination, nights: 0 }]
+          : [{ id: 'non deciso', nights: 0 }];
+
+    const totalTravelers =
+      Number(data.adulti) + Number(data.teen) + Number(data.bambini) + Number(data.infants || 0);
+    const totalNights = destArray.reduce((sum, d) => sum + (d.nights || 0), 0);
     const budgetNumeric = data.budget ? parseInt(data.budget.replace(/[^0-9]/g, '')) : 0;
 
-    // Conversione Data per HubSpot (Timestamp ms a mezzanotte UTC)
-    const departureDate = new Date(data.dataInizio);
-    departureDate.setUTCHours(0, 0, 0, 0);
-    const departureTimestamp = departureDate.getTime();
+    const destList = destArray.map((d) => d.id).join(', ');
+    const destListWithNights = destArray
+      .map((d) => (d.nights ? `${d.id} (${d.nights}n)` : d.id))
+      .join(', ');
 
-    const destList = data.destinazioni.map((d: any) => d.id).join(', ');
-    const destListWithNights = data.destinazioni.map((d: any) => `${d.id} (${d.nights}n)`).join(', ');
+    // ── Data partenza ─────────────────────────────────────────────────────────
+    let departureTimestamp = 0;
+    if (data.dataInizio) {
+      const departureDate = new Date(data.dataInizio);
+      departureDate.setUTCHours(0, 0, 0, 0);
+      departureTimestamp = departureDate.getTime();
+    }
 
-    // 1. Creazione/Aggiornamento Contatto
-    const contactProperties: any = {
+    // ── 1. Crea / aggiorna contatto ───────────────────────────────────────────
+    const contactProperties: Record<string, unknown> = {
       email: data.email,
       firstname: data.nome,
       lastname: data.cognome,
       phone: data.telefono || '',
       destinazione: destList,
-      data_partenzaa: departureTimestamp,
+      data_partenza: departureTimestamp || '',
       budget: budgetNumeric,
       numero_viaggiatori: totalTravelers,
-      hs_lead_status: 'NEW'
+      hs_lead_status: 'NEW',
     };
 
     const contactResponse = await fetch('https://api.hubapi.com/crm/v3/objects/contacts', {
       method: 'POST',
       headers: {
-        'Authorization': `Bearer ${token}`,
-        'Content-Type': 'application/json'
+        Authorization: `Bearer ${token}`,
+        'Content-Type': 'application/json',
       },
-      body: JSON.stringify({ properties: contactProperties })
+      body: JSON.stringify({ properties: contactProperties }),
     });
 
-    let contactId;
+    let contactId: string | undefined;
     if (contactResponse.ok) {
       const contactData = await contactResponse.json();
       contactId = contactData.id;
     } else {
-      const searchResponse = await fetch(`https://api.hubapi.com/crm/v3/objects/contacts/${data.email}?idProperty=email`, {
-        headers: { 'Authorization': `Bearer ${token}` }
-      });
+      // Contatto già esistente — recupera e aggiorna
+      const searchResponse = await fetch(
+        `https://api.hubapi.com/crm/v3/objects/contacts/${data.email}?idProperty=email`,
+        { headers: { Authorization: `Bearer ${token}` } }
+      );
       if (searchResponse.ok) {
         const searchData = await searchResponse.json();
         contactId = searchData.id;
-        
-        // Aggiorniamo il contatto esistente
         await fetch(`https://api.hubapi.com/crm/v3/objects/contacts/${contactId}`, {
           method: 'PATCH',
           headers: {
-            'Authorization': `Bearer ${token}`,
-            'Content-Type': 'application/json'
+            Authorization: `Bearer ${token}`,
+            'Content-Type': 'application/json',
           },
-          body: JSON.stringify({ 
+          body: JSON.stringify({
             properties: {
               destinazione: destList,
-              data_partenzaa: departureTimestamp,
+              data_partenza: departureTimestamp || '',
               budget: budgetNumeric,
               numero_viaggiatori: totalTravelers,
-              hs_lead_status: 'NEW'
-            } 
-          })
+              hs_lead_status: 'NEW',
+            },
+          }),
         });
       }
     }
 
     if (!contactId) throw new Error('Impossibile identificare il contatto');
 
-    // 2. Creazione del Deal (Affare) con nuove proprietà personalizzate
-    const dealResponse = await fetch('https://api.hubapi.com/crm/v3/objects/deals', {
-      method: 'POST',
-      headers: {
-        'Authorization': `Bearer ${token}`,
-        'Content-Type': 'application/json'
-      },
-      body: JSON.stringify({
-        properties: {
-          dealname: `Viaggio: ${data.nome} ${data.cognome} - ${destList}`,
-          pipeline: 'default',
-          dealstage: 'appointmentscheduled',
-          amount: budgetNumeric.toString(),
-          
-          // Mappatura nuove Proprietà Personalizzate Deal
-          destinazione_deals: destList,
-          data_partenza_deals: departureTimestamp,
-          budget_deals: budgetNumeric,
-          
-          description: `
+    // ── 2. Crea il Deal ───────────────────────────────────────────────────────
+    const tripTypeLabel = [
+      data.tripType,
+      data.isHoneymoon ? 'Luna di miele' : '',
+    ]
+      .filter(Boolean)
+      .join(' + ');
+
+    const dealDescription = `
 DETTAGLI VIAGGIO:
 ---------------------------
 Destinazioni: ${destListWithNights}
-Totale Notti: ${totalNights}
-Data Partenza: ${data.dataInizio}
-Data Fine: ${data.dataFine}
-Flessibilità: ${data.flessibilita}
-Tipologia: ${data.tipologia}
-Budget Selezionato: ${data.budget}
+${totalNights > 0 ? `Totale Notti: ${totalNights}` : ''}
+Data Partenza: ${data.dataInizio || 'da definire'}
+Data Fine: ${data.dataFine || 'da definire'}
+Flessibilità: ${data.flessibilita || '—'}
+Tipo di Viaggio: ${tripTypeLabel || '—'}
+Sistemazione: ${data.accommodation || '—'}
+Voli: ${data.voli || '—'}${data.voli === 'includi' ? ` | Partenza da: ${data.cittaPartenza}` : ''}
+Budget Selezionato: ${data.budget || '—'}
 
 VIAGGIATORI:
 ---------------------------
-Totale: ${totalTravelers} (${data.adulti} Adulti, ${data.teen} Teen, ${data.bambini} Bambini)
+Totale: ${totalTravelers}
+  Adulti: ${data.adulti}
+  Teen (12-17): ${data.teen || 0}
+  Bambini (2-11): ${data.bambini || 0}
+  Neonati: ${data.infants || 0}
+
+CONTATTO PREFERITO: ${data.contactPref || '—'}
 
 NOTE:
 ---------------------------
 ${data.note || 'Nessuna nota'}
-          `.trim()
+    `.trim();
+
+    const dealResponse = await fetch('https://api.hubapi.com/crm/v3/objects/deals', {
+      method: 'POST',
+      headers: {
+        Authorization: `Bearer ${token}`,
+        'Content-Type': 'application/json',
+      },
+      body: JSON.stringify({
+        properties: {
+          dealname: `Viaggio: ${data.nome} ${data.cognome} – ${destList}`,
+          pipeline: 'default',
+          dealstage: 'appointmentscheduled',
+          amount: budgetNumeric.toString(),
+          destinazione_deals: destList,
+          data_partenza_deals: departureTimestamp || '',
+          budget_deals: budgetNumeric,
+          description: dealDescription,
         },
         associations: [
           {
             to: { id: contactId },
-            types: [{ associationCategory: 'HUBSPOT_DEFINED', associationTypeId: 3 }]
-          }
-        ]
-      })
+            types: [{ associationCategory: 'HUBSPOT_DEFINED', associationTypeId: 3 }],
+          },
+        ],
+      }),
     });
 
     if (!dealResponse.ok) {
@@ -132,9 +159,9 @@ ${data.note || 'Nessuna nota'}
     }
 
     return NextResponse.json({ success: true });
-
-  } catch (error: any) {
-    console.error('HubSpot Sync Error:', error.message);
-    return NextResponse.json({ error: error.message }, { status: 500 });
+  } catch (error: unknown) {
+    const message = error instanceof Error ? error.message : 'Errore sconosciuto';
+    console.error('HubSpot Sync Error:', message);
+    return NextResponse.json({ error: message }, { status: 500 });
   }
 }

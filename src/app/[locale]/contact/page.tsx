@@ -3,11 +3,11 @@
 import { useTranslations } from 'next-intl';
 import { MapPin, Phone, Mail, Clock, MessageSquare } from 'lucide-react';
 import SectionHeader from '@/components/ui/SectionHeader';
-import { useQuoteModal } from '@/context/QuoteModalContext';
+import { useRouter } from '@/i18n/navigation';
 
 export default function ContactPage() {
   const t = useTranslations('contact');
-  const { open: openModal } = useQuoteModal();
+  const router = useRouter();
 
   return (
     <div className="bg-sand/20 min-h-screen">
@@ -41,7 +41,7 @@ export default function ContactPage() {
                   <MapPin size={20} />
                 </div>
                 <div>
-                  <span className="text-[10px] uppercase tracking-widest text-white/40 block mb-1">Indirizzo</span>
+                  <span className="text-[10px] uppercase tracking-widest text-white/40 block mb-1">{t('info.addressLabel')}</span>
                   <p className="text-sm leading-relaxed">{t('info.address')}</p>
                 </div>
               </li>
@@ -50,7 +50,7 @@ export default function ContactPage() {
                   <Phone size={20} />
                 </div>
                 <div>
-                  <span className="text-[10px] uppercase tracking-widest text-white/40 block mb-1">Telefono</span>
+                  <span className="text-[10px] uppercase tracking-widest text-white/40 block mb-1">{t('info.phoneLabel')}</span>
                   <p className="text-sm">{t('info.phone')}</p>
                 </div>
               </li>
@@ -59,7 +59,7 @@ export default function ContactPage() {
                   <Mail size={20} />
                 </div>
                 <div>
-                  <span className="text-[10px] uppercase tracking-widest text-white/40 block mb-1">Email</span>
+                  <span className="text-[10px] uppercase tracking-widest text-white/40 block mb-1">{t('info.emailLabel')}</span>
                   <p className="text-sm">{t('info.email')}</p>
                 </div>
               </li>
@@ -71,15 +71,15 @@ export default function ContactPage() {
             <div className="w-20 h-20 rounded-full bg-sand flex items-center justify-center mb-8">
               <MessageSquare size={32} className="text-gold" />
             </div>
-            <h3 className="font-serif text-2xl font-bold text-charcoal mb-6 uppercase tracking-widest">Inizia a Progettare</h3>
+            <h3 className="font-serif text-2xl font-bold text-charcoal mb-6 uppercase tracking-widest">{t('cta.title')}</h3>
             <p className="text-charcoal/60 text-sm leading-relaxed mb-10">
-              Preferiamo ascoltare i tuoi sogni a voce o tramite il nostro modulo guidato per offrirti un servizio davvero su misura.
+              {t('cta.text')}
             </p>
-            <button 
-              onClick={openModal}
+            <button
+              onClick={() => router.push('/quote')}
               className="bg-gold text-white px-12 py-5 rounded-full text-xs font-bold uppercase tracking-[0.2em] hover:bg-charcoal transition-all shadow-xl shadow-gold/20"
             >
-              Apri Modulo di Contatto
+              {t('cta.button')}
             </button>
           </div>
 

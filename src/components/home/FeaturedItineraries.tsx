@@ -1,56 +1,82 @@
 'use client';
 
-import { motion } from 'framer-motion';
+import { useRef } from 'react';
 import { useTranslations, useLocale } from 'next-intl';
 import { Link } from '@/i18n/navigation';
-import { Clock, MapPin, ArrowRight } from 'lucide-react';
-import { itineraries } from '@/data/itineraries';
+import { Clock, MapPin, ArrowRight, ChevronLeft, ChevronRight } from 'lucide-react';
 import SectionHeader from '@/components/ui/SectionHeader';
 import { formatPrice } from '@/lib/utils';
+import type { Itinerary } from '@/data/itineraries';
 
-const itineraryPhotos = [
-  'https://images.unsplash.com/photo-1506973035872-a4ec16b8e8d9?w=800&q=85',
-  'https://images.unsplash.com/photo-1469521669194-babb45599def?w=800&q=85',
-  'https://images.unsplash.com/photo-1559128010-7c1ad6e1b6a5?w=800&q=85',
-  'https://images.unsplash.com/photo-1529108190281-9a4f620bc2d8?w=800&q=85',
-];
+interface Props {
+  itineraries: Itinerary[];
+}
 
-const accentColors = ['#813318', '#1a4a2a', '#0a3a5a', '#5a2a08'];
-
-export default function FeaturedItineraries() {
+export default function FeaturedItineraries({ itineraries }: Props) {
   const t = useTranslations('home.itineraries');
   const locale = useLocale() as 'it' | 'en';
+  const daysLabel = locale === 'it' ? 'giorni' : 'days';
+  const fromLabel = locale === 'it' ? 'Da' : 'From';
+  const scrollRef = useRef<HTMLDivElement>(null);
+
+  const scroll = (dir: 'left' | 'right') => {
+    if (!scrollRef.current) return;
+    const cardWidth = scrollRef.current.firstElementChild
+      ? (scrollRef.current.firstElementChild as HTMLElement).offsetWidth + 24
+      : 340;
+    scrollRef.current.scrollBy({ left: dir === 'left' ? -cardWidth * 2 : cardWidth * 2, behavior: 'smooth' });
+  };
 
   return (
     <section className="py-24 px-6 overflow-hidden" style={{ backgroundColor: '#1a1a1a' }}>
       <div className="max-w-7xl mx-auto">
-        <SectionHeader label={t('label')} title={t('title')} subtitle={t('subtitle')} light />
+        <div className="flex items-end justify-between mb-12">
+          <div className="flex-1">
+            <SectionHeader label={t('label')} title={t('title')} subtitle={t('subtitle')} light />
+          </div>
+          {/* Arrow Controls */}
+          <div className="flex gap-2 mb-2 shrink-0 ml-6">
+            <button
+              onClick={() => scroll('left')}
+              className="w-10 h-10 border border-white/20 flex items-center justify-center text-white/50 hover:text-gold hover:border-gold transition-all duration-200"
+              aria-label="Precedente"
+            >
+              <ChevronLeft size={18} />
+            </button>
+            <button
+              onClick={() => scroll('right')}
+              className="w-10 h-10 border border-white/20 flex items-center justify-center text-white/50 hover:text-gold hover:border-gold transition-all duration-200"
+              aria-label="Successivo"
+            >
+              <ChevronRight size={18} />
+            </button>
+          </div>
+        </div>
 
-        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
-          {itineraries.map((itinerary, i) => (
-            <motion.article
+        {/* Scrollable Row */}
+        <div
+          ref={scrollRef}
+          className="flex gap-6 overflow-x-auto pb-2 snap-x snap-mandatory scroll-smooth"
+          style={{ scrollbarWidth: 'none', msOverflowStyle: 'none', WebkitOverflowScrolling: 'touch' }}
+        >
+          {itineraries.map((itinerary) => (
+            <article
               key={itinerary.id}
-              initial={{ opacity: 1, y: 25 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true, margin: '-40px' }}
-              transition={{ duration: 0.6, delay: i * 0.08 }}
-              className="group flex flex-col overflow-hidden"
+              className="group flex-none w-[300px] md:w-[320px] flex flex-col overflow-hidden snap-start"
               style={{ backgroundColor: '#2a2a2a' }}
             >
               <div
-                className="relative h-52 bg-cover bg-center overflow-hidden transition-transform duration-700 group-hover:scale-105"
-                style={{
-                  backgroundImage: `url(${itinerary.image})`,
-                }}
+                className="relative h-52 bg-cover bg-center overflow-hidden"
+                style={{ backgroundImage: `url(${itinerary.image})` }}
               >
-                <div className="absolute inset-0 bg-black/25" />
+                <div className="absolute inset-0 bg-black/25 transition-opacity duration-500 group-hover:bg-black/10" />
                 <div
                   className="absolute top-4 right-4 px-3 py-1.5 flex items-center gap-1.5"
                   style={{ backgroundColor: 'rgba(0,0,0,0.7)' }}
                 >
                   <Clock size={11} style={{ color: '#b0a377' }} />
                   <span className="text-xs font-sans" style={{ color: '#b0a377' }}>
-                    {itinerary.duration} giorni
+                    {itinerary.duration} {daysLabel}
                   </span>
                 </div>
               </div>
@@ -62,22 +88,24 @@ export default function FeaturedItineraries() {
                     {itinerary.destination}
                   </span>
                 </div>
-                <h3 className="font-serif text-xl font-bold mb-3 transition-colors duration-300 text-white">
+                <h3 className="font-serif text-lg font-bold mb-3 text-white line-clamp-2">
                   {itinerary.title[locale]}
                 </h3>
-                <p className="text-sm leading-relaxed mb-6 flex-1 line-clamp-3" style={{ color: 'rgba(255,255,255,0.5)' }}>
+                <p className="text-sm leading-relaxed mb-5 flex-1 line-clamp-3" style={{ color: 'rgba(255,255,255,0.75)' }}>
                   {itinerary.description[locale]}
                 </p>
 
                 <div className="flex items-center justify-between pt-4" style={{ borderTop: '1px solid rgba(255,255,255,0.1)' }}>
                   <div>
-                    <span className="text-xs font-sans uppercase tracking-wider block" style={{ color: 'rgba(255,255,255,0.4)' }}>Da</span>
+                    <span className="text-xs font-sans uppercase tracking-wider block" style={{ color: 'rgba(255,255,255,0.6)' }}>
+                      {fromLabel}
+                    </span>
                     <p className="font-serif text-xl font-bold" style={{ color: '#b0a377' }}>
                       {formatPrice(itinerary.price.amount, itinerary.price.currency, locale === 'it' ? 'it-IT' : 'en-GB')}
                     </p>
                   </div>
                   <Link
-                    href="/travel-ideas"
+                    href={`/travel-ideas/${itinerary.slug}` as Parameters<typeof Link>[0]['href']}
                     className="inline-flex items-center gap-2 text-xs font-sans uppercase tracking-widest transition-all duration-300 hover:gap-4"
                     style={{ color: '#b0a377' }}
                   >
@@ -85,7 +113,7 @@ export default function FeaturedItineraries() {
                   </Link>
                 </div>
               </div>
-            </motion.article>
+            </article>
           ))}
         </div>
       </div>

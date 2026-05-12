@@ -1,17 +1,56 @@
+export const revalidate = 60;
+
+import type { Metadata } from 'next';
+import { getLocale } from 'next-intl/server';
+
+export async function generateMetadata(): Promise<Metadata> {
+  const locale = await getLocale();
+  const isIT = locale === 'it';
+  const title = isIT
+    ? 'Progetto Australia – Viaggi su misura in Australia e Oceania'
+    : 'Progetto Australia – Tailor-Made Travel to Australia & Oceania';
+  const description = isIT
+    ? 'Pianifica il tuo viaggio in Australia, Nuova Zelanda, Fiji e Isole del Pacifico con esperti italiani in loco. Itinerari personalizzati, luna di miele, viaggi di lusso.'
+    : 'Plan your trip to Australia, New Zealand, Fiji and the Pacific Islands with Italian experts on the ground. Bespoke itineraries, honeymoons, luxury travel.';
+  return {
+    title,
+    description,
+    openGraph: { title, description, url: `/${locale}` },
+    twitter: { title, description },
+  };
+}
+
 import HeroSlider from '@/components/home/HeroSlider';
 import AboutStrip from '@/components/home/AboutStrip';
-import DestinationsGrid from '@/components/home/DestinationsGrid';
-import TravelTypes from '@/components/home/TravelTypes';
 import FeaturedItineraries from '@/components/home/FeaturedItineraries';
+import DestinationsGrid from '@/components/home/DestinationsGrid';
+import TestimonialsSection from '@/components/home/TestimonialsSection';
+import NewsletterSection from '@/components/home/NewsletterSection';
+import { USE_SANITY, getAllItineraries, normalizeSanityItinerary, getAllDestinations, normalizeSanityDestination } from '@/lib/sanity';
+import { itineraries as staticItineraries } from '@/data/itineraries';
+import { destinations as staticDestinations } from '@/data/destinations';
 
-export default function HomePage() {
+export default async function HomePage() {
+  let itineraries = staticItineraries;
+  let destinations = staticDestinations;
+
+  if (USE_SANITY) {
+    const [sanityItineraries, sanityDestinations] = await Promise.all([
+      getAllItineraries(),
+      getAllDestinations(),
+    ]);
+    if (sanityItineraries.length > 0) itineraries = sanityItineraries.map((s, i) => normalizeSanityItinerary(s, i));
+    if (sanityDestinations.length > 0) destinations = sanityDestinations.map((s, i) => normalizeSanityDestination(s, i));
+  }
+
   return (
     <>
       <HeroSlider />
       <AboutStrip />
-      <DestinationsGrid />
-      <TravelTypes />
-      <FeaturedItineraries />
+      <FeaturedItineraries itineraries={itineraries} />
+      <DestinationsGrid destinations={destinations} />
+      <TestimonialsSection />
+      <NewsletterSection />
     </>
   );
 }

@@ -1,115 +1,188 @@
-import { useTranslations } from 'next-intl';
+import { useTranslations, useLocale } from 'next-intl';
 import { Link } from '@/i18n/navigation';
 import { Mail, Phone, MapPin, Instagram, Facebook } from 'lucide-react';
 import OpenModalButton from '@/components/ui/OpenModalButton';
-
-const navLinks = [
-  { href: '/', labelKey: 'home' },
-  { href: '/destinations', labelKey: 'destinations' },
-  { href: '/travel-ideas', labelKey: 'travelIdeas' },
-  { href: '/highlights', labelKey: 'highlights' },
-  { href: '/wedding-list', labelKey: 'weddingList' },
-  { href: '/contact', labelKey: 'contact' },
-] as const;
+import { destinations } from '@/data/destinations';
 
 export default function Footer() {
   const t = useTranslations();
+  const locale = useLocale() as 'it' | 'en';
 
   return (
     <footer className="bg-hero text-white">
       {/* Top CTA Banner */}
-      <div className="bg-brown py-10 px-6">
+      <div className="bg-white border-b border-stone-100 py-10 px-6">
         <div className="max-w-7xl mx-auto flex flex-col md:flex-row items-center justify-between gap-6">
           <div>
-            <h3 className="font-serif text-2xl md:text-3xl font-bold mb-1">
-              Pronto per la tua avventura?
+            <h3 className="font-serif text-xl md:text-3xl font-bold mb-1 text-hero">
+              {t('footer.ctaTitle')}
             </h3>
-            <p className="text-white/70 text-sm">
+            <p className="text-hero/55 text-sm">
               {t('footer.tagline')}
             </p>
           </div>
-          <OpenModalButton
-            className="inline-flex items-center px-10 py-3 border border-gold text-gold text-xs font-sans uppercase tracking-widest hover:bg-gold hover:text-white transition-all duration-300 shrink-0"
-          >
+          <OpenModalButton className="inline-flex items-center px-10 py-3 border border-hero text-hero text-xs font-sans uppercase tracking-widest hover:bg-hero hover:text-white transition-all duration-300 shrink-0">
             {t('common.contactUs')}
           </OpenModalButton>
         </div>
       </div>
 
-      {/* Main Footer */}
+      {/* Main Footer — 4 colonne come il sito originale */}
       <div className="max-w-7xl mx-auto px-6 lg:px-10 py-16 grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-12">
-        {/* Brand */}
-        <div className="lg:col-span-2">
-          <h4 className="font-serif text-2xl font-bold text-white mb-4">
-            Progetto Australia
-          </h4>
-          <p className="text-white/60 text-sm leading-relaxed max-w-sm mb-6">
-            {t('footer.tagline')}. Specialists in Australia, New Zealand, and the Pacific Islands since 2005.
+
+        {/* Col 1 — Brand + tagline + social */}
+        <div className="lg:col-span-1">
+          <h4 className="font-serif text-xl font-bold text-white mb-4">Progetto Australia</h4>
+          <p className="text-white/55 text-sm leading-relaxed mb-8">
+            {t('footer.tagline')}
           </p>
-          {/* Social */}
           <div className="flex gap-4">
             <a
-              href="#"
+              href="https://www.instagram.com/progettoaustralia"
+              target="_blank"
+              rel="noopener noreferrer"
               aria-label="Instagram"
               className="text-white/40 hover:text-gold transition-colors duration-300"
             >
-              <Instagram size={20} />
+              <Instagram size={18} />
             </a>
             <a
-              href="#"
+              href="https://www.facebook.com/ProgettoAustralia"
+              target="_blank"
+              rel="noopener noreferrer"
               aria-label="Facebook"
               className="text-white/40 hover:text-gold transition-colors duration-300"
             >
-              <Facebook size={20} />
+              <Facebook size={18} />
             </a>
           </div>
         </div>
 
-        {/* Nav Links */}
+        {/* Col 2 — Chi Siamo + Viaggi */}
         <div>
-          <h5 className="text-xs font-sans uppercase tracking-widest text-gold mb-6">
-            {t('footer.links')}
+          <h5 className="text-xs font-sans uppercase tracking-widest text-gold mb-5">
+            {t('footer.colAbout')}
           </h5>
-          <ul className="flex flex-col gap-3">
-            {navLinks.slice(1).map((link) => (
-              <li key={link.href}>
+          <ul className="flex flex-col gap-2.5 mb-8">
+            {['paola-secoli', 'lucia-bonizzato', 'daria-bove', 'graciela-salazar', 'sara-trezzi'].map((name) => (
+              <li key={name}>
                 <Link
-                  href={link.href}
-                  className="text-sm text-white/60 hover:text-gold transition-colors duration-300"
+                  href="/about"
+                  className="text-sm text-white/55 hover:text-gold transition-colors duration-300 capitalize"
                 >
-                  {t(`nav.${link.labelKey}`)}
+                  {name.split('-').map(w => w.charAt(0).toUpperCase() + w.slice(1)).join(' ')}
+                </Link>
+              </li>
+            ))}
+          </ul>
+
+          <h5 className="text-xs font-sans uppercase tracking-widest text-gold mb-5">
+            {t('footer.colTrips')}
+          </h5>
+          <ul className="flex flex-col gap-2.5">
+            {(
+              [
+                ['footer.tripHoneymoon', '/travel-ideas'],
+                ['footer.tripLuxury', '/travel-ideas'],
+                ['footer.tripFamily', '/travel-ideas'],
+                ['footer.tripFriends', '/travel-ideas'],
+                ['footer.tripAdventure', '/travel-ideas'],
+                ['footer.tripGroup', '/travel-ideas'],
+              ] as [string, string][]
+            ).map(([key, href]) => (
+              <li key={key}>
+                <Link href={href} className="text-sm text-white/55 hover:text-gold transition-colors duration-300">
+                  {t(key)}
                 </Link>
               </li>
             ))}
           </ul>
         </div>
 
-        {/* Contact Info */}
+        {/* Col 3 — Destinazioni + Sostenibilità */}
         <div>
-          <h5 className="text-xs font-sans uppercase tracking-widest text-gold mb-6">
-            {t('footer.contact')}
+          <h5 className="text-xs font-sans uppercase tracking-widest text-gold mb-5">
+            {t('footer.colDest')}
           </h5>
-          <ul className="flex flex-col gap-4">
+          <ul className="flex flex-col gap-2.5 mb-8">
+            {destinations.map((dest) => (
+              <li key={dest.id}>
+                <Link
+                  href="/destinations"
+                  className="text-sm text-white/55 hover:text-gold transition-colors duration-300"
+                >
+                  {dest.name[locale]}
+                </Link>
+              </li>
+            ))}
+          </ul>
+
+          <h5 className="text-xs font-sans uppercase tracking-widest text-gold mb-5">
+            {t('footer.colSustain')}
+          </h5>
+          <ul className="flex flex-col gap-2.5">
+            <li>
+              <Link href="/sustainability" className="text-sm text-white/55 hover:text-gold transition-colors duration-300">
+                {t('footer.sustainability')}
+              </Link>
+            </li>
+            <li>
+              <a
+                href="https://www.progettoaustralia.it/wp-content/uploads/2024/11/SUSTAINABILITY-POLICY-PROGETTO-AUSTRALIA-IT.pdf"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="text-sm text-white/55 hover:text-gold transition-colors duration-300"
+              >
+                {t('footer.sustainPolicy')}
+              </a>
+            </li>
+            <li>
+              <a
+                href="https://www.progettoaustralia.it/wp-content/uploads/2024/11/PRIVACY-POLICY-of-PROGETTO-AUSTRALIA.pdf"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="text-sm text-white/55 hover:text-gold transition-colors duration-300"
+              >
+                {t('footer.privacyPolicy')}
+              </a>
+            </li>
+          </ul>
+        </div>
+
+        {/* Col 4 — Contatti */}
+        <div>
+          <h5 className="text-xs font-sans uppercase tracking-widest text-gold mb-5">
+            {t('footer.colContact')}
+          </h5>
+          <ul className="flex flex-col gap-5">
             <li className="flex items-start gap-3">
-              <MapPin size={16} className="text-gold shrink-0 mt-0.5" />
-              <span className="text-sm text-white/60">
+              <MapPin size={15} className="text-gold shrink-0 mt-0.5" />
+              <span className="text-sm text-white/55 leading-relaxed">
                 {t('contact.info.address')}
               </span>
             </li>
-            <li className="flex items-center gap-3">
-              <Phone size={16} className="text-gold shrink-0" />
-              <a
-                href={`tel:${t('contact.info.phone')}`}
-                className="text-sm text-white/60 hover:text-gold transition-colors duration-300"
-              >
-                {t('contact.info.phone')}
-              </a>
+            <li className="flex items-start gap-3">
+              <Phone size={15} className="text-gold shrink-0 mt-0.5" />
+              <div className="flex flex-col gap-1">
+                <a
+                  href={`tel:${t('contact.info.phone').replace(/\s/g, '')}`}
+                  className="text-sm text-white/55 hover:text-gold transition-colors duration-300"
+                >
+                  🇦🇺 {t('contact.info.phone')}
+                </a>
+                <a
+                  href={`tel:${t('contact.info.phoneUS').replace(/\s/g, '')}`}
+                  className="text-sm text-white/55 hover:text-gold transition-colors duration-300"
+                >
+                  🇺🇸 {t('contact.info.phoneUS')}
+                </a>
+              </div>
             </li>
             <li className="flex items-center gap-3">
-              <Mail size={16} className="text-gold shrink-0" />
+              <Mail size={15} className="text-gold shrink-0" />
               <a
                 href={`mailto:${t('contact.info.email')}`}
-                className="text-sm text-white/60 hover:text-gold transition-colors duration-300"
+                className="text-sm text-white/55 hover:text-gold transition-colors duration-300"
               >
                 {t('contact.info.email')}
               </a>
@@ -121,13 +194,15 @@ export default function Footer() {
       {/* Bottom Bar */}
       <div className="border-t border-white/10">
         <div className="max-w-7xl mx-auto px-6 lg:px-10 py-6 flex flex-col md:flex-row items-center justify-between gap-4">
-          <p className="text-xs text-white/40">{t('footer.copyright')}</p>
+          <p className="text-xs text-white/35">{t('footer.copyright')}</p>
           <div className="flex gap-6">
-            <a href="#" className="text-xs text-white/40 hover:text-gold transition-colors duration-300">
+            <a
+              href="https://www.progettoaustralia.it/wp-content/uploads/2024/11/PRIVACY-POLICY-of-PROGETTO-AUSTRALIA.pdf"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="text-xs text-white/35 hover:text-gold transition-colors duration-300"
+            >
               {t('footer.privacy')}
-            </a>
-            <a href="#" className="text-xs text-white/40 hover:text-gold transition-colors duration-300">
-              {t('footer.terms')}
             </a>
           </div>
         </div>

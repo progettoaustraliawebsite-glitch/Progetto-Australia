@@ -1,61 +1,61 @@
 'use client';
 
 import { motion } from 'framer-motion';
-import { useTranslations } from 'next-intl';
-import { useQuoteModal } from '@/context/QuoteModalContext';
-
-const stats = [
-  { num: '20+', label: 'Anni di esperienza' },
-  { num: '5000+', label: 'Viaggiatori felici' },
-  { num: '50+', label: 'Itinerari curati' },
-  { num: '7', label: 'Destinazioni Oceania' },
-];
+import { useTranslations, useLocale } from 'next-intl';
+import { Link } from '@/i18n/navigation';
 
 export default function AboutStrip() {
   const t = useTranslations('home.about');
-  const { open } = useQuoteModal();
+  const locale = useLocale();
+
+  const stats = [
+    { num: '20+', label: t('stats.years') },
+    { num: '5000+', label: t('stats.travellers') },
+    { num: '50+', label: t('stats.itineraries') },
+    { num: '7', label: t('stats.destinations') },
+  ];
 
   return (
-    <section className="relative py-24 overflow-hidden" style={{ backgroundColor: '#474d4b' }}>
-      <div className="absolute top-0 left-0 w-1 h-full opacity-40" style={{ backgroundColor: '#b0a377' }} />
+    <section className="relative py-24 overflow-hidden bg-white">
+      {/* Accent bar */}
+      <div className="absolute top-0 left-0 w-1 h-full" style={{ backgroundColor: '#b0a377', opacity: 0.5 }} />
 
       <div className="max-w-7xl mx-auto px-6 lg:px-10">
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
 
-          {/* Text — opacity:1 explicitly overrides framer-motion's default hidden state */}
+          {/* Text */}
           <motion.div
             initial={{ opacity: 1, y: 30 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true, margin: '-80px' }}
-            transition={{ duration: 0.7, ease: 'easeOut' }}
+            transition={{ duration: 0.7, ease: 'easeOut' as const }}
           >
             <span className="text-xs font-sans uppercase tracking-[0.3em] mb-4 block" style={{ color: '#b0a377' }}>
               {t('label')}
             </span>
-            <h2 className="font-serif text-3xl md:text-4xl lg:text-5xl font-bold text-white leading-tight mb-6">
+            <h2 className="font-serif text-3xl md:text-4xl lg:text-5xl font-bold leading-tight mb-6 text-hero">
               {t('title')}
             </h2>
-            <p className="text-white/60 text-base md:text-lg leading-relaxed mb-10">
+            <p className="text-hero/60 text-base md:text-lg leading-relaxed mb-10">
               {t('text')}
             </p>
-            <button
-              type="button"
-              onClick={open}
-              className="inline-flex items-center gap-3 px-10 py-3 border text-xs font-sans uppercase tracking-widest transition-all duration-500 hover:opacity-70"
-              style={{ borderColor: '#b0a377', color: '#b0a377' }}
+            <Link
+              href="/about"
+              className="inline-flex items-center gap-3 px-10 py-3 border text-xs font-sans uppercase tracking-widest transition-all duration-500 hover:bg-hero hover:text-white hover:border-hero"
+              style={{ borderColor: '#1a1a1a', color: '#1a1a1a' }}
             >
-              {t('cta')}
-            </button>
+              {locale === 'it' ? 'Scopri di più su di noi' : 'Find out more about us'}
+            </Link>
           </motion.div>
 
-          {/* Stats */}
+          {/* Stats — sfondo scuro per contrasto con la sezione bianca */}
           <motion.div
             initial={{ opacity: 1, y: 30 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true, margin: '-80px' }}
-            transition={{ duration: 0.7, delay: 0.12, ease: 'easeOut' }}
+            transition={{ duration: 0.7, delay: 0.12, ease: 'easeOut' as const }}
             className="grid grid-cols-2 gap-px"
-            style={{ backgroundColor: 'rgba(255,255,255,0.1)' }}
+            style={{ backgroundColor: '#b0a377' }}
           >
             {stats.map((stat) => (
               <div
@@ -66,12 +66,13 @@ export default function AboutStrip() {
                 <span className="font-serif text-4xl font-bold mb-2" style={{ color: '#b0a377' }}>
                   {stat.num}
                 </span>
-                <span className="text-white/50 text-xs font-sans uppercase tracking-wider">
+                <span className="text-white/55 text-xs font-sans uppercase tracking-wider">
                   {stat.label}
                 </span>
               </div>
             ))}
           </motion.div>
+
         </div>
       </div>
     </section>

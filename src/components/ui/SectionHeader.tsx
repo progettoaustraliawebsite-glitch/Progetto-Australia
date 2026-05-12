@@ -37,7 +37,7 @@ export default function SectionHeader({
       )}
       <h2
         className={cn(
-          'font-serif text-3xl md:text-4xl lg:text-5xl font-bold leading-tight',
+          'font-serif text-2xl md:text-4xl lg:text-5xl font-bold leading-tight',
           light ? 'text-white' : 'text-charcoal'
         )}
       >

@@ -5,19 +5,16 @@ import { motion, AnimatePresence } from 'framer-motion';
 import { Menu, X } from 'lucide-react';
 import { useTranslations, useLocale } from 'next-intl';
 import { Link, usePathname, useRouter } from '@/i18n/navigation';
-import { useQuoteModal } from '@/context/QuoteModalContext';
 
 const navLinks = [
   { href: '/destinations', labelKey: 'destinations' },
   { href: '/travel-ideas', labelKey: 'travelIdeas' },
-  { href: '/highlights', labelKey: 'highlights' },
-  { href: '/wedding-list', labelKey: 'weddingList' },
+  { href: '/how-it-works', labelKey: 'howItWorks' },
   { href: '/blog', labelKey: 'blog' },
   { href: '/about', labelKey: 'about' },
 ] as const;
 
 export default function Navbar() {
-  const { open: openModal } = useQuoteModal();
   const [isOpen, setIsOpen] = useState(false);
   const [scrolled, setScrolled] = useState(false);
   const pathname = usePathname();
@@ -61,7 +58,7 @@ export default function Navbar() {
       <nav className="max-w-7xl mx-auto px-6 lg:px-10 flex items-center justify-between h-20">
         {/* Logo */}
         <Link href="/" className="hover:opacity-80 transition-opacity duration-300">
-          <img src="/logo.png" alt="Progetto Australia" className="h-14 w-auto object-contain" />
+          <img src="/logo.png" alt="Progetto Australia" className="h-7 w-auto object-contain" />
         </Link>
 
         {/* Desktop Nav */}
@@ -80,7 +77,7 @@ export default function Navbar() {
           </ul>
           
           <button
-            onClick={openModal}
+            onClick={() => router.push('/quote')}
             className="bg-gold hover:bg-charcoal text-white px-6 py-2.5 rounded-full text-[10px] font-sans uppercase tracking-[0.2em] font-bold transition-all duration-300 shadow-lg shadow-gold/20"
           >
             {t('getQuote')}
@@ -130,7 +127,7 @@ export default function Navbar() {
               ))}
               <li className="pt-4">
                 <button
-                  onClick={() => { setIsOpen(false); openModal(); }}
+                  onClick={() => { setIsOpen(false); router.push('/quote'); }}
                   className="block w-full bg-gold text-white text-center py-4 rounded-xl text-xs font-sans uppercase tracking-[0.2em] font-bold shadow-xl shadow-gold/20"
                 >
                   {t('getQuote')}
