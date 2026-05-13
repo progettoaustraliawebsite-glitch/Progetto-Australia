@@ -1,5 +1,7 @@
 'use client';
 
+import { useRef } from 'react';
+import { ChevronLeft, ChevronRight } from 'lucide-react';
 import { useTranslations, useLocale } from 'next-intl';
 
 interface Testimonial {
@@ -163,6 +165,12 @@ function Stars({ count }: { count: number }) {
 export default function TestimonialsSection() {
   const t = useTranslations('testimonials');
   const locale = useLocale() as 'it' | 'en';
+  const scrollRef = useRef<HTMLDivElement>(null);
+
+  const scroll = (dir: 'left' | 'right') => {
+    if (!scrollRef.current) return;
+    scrollRef.current.scrollBy({ left: dir === 'right' ? 370 : -370, behavior: 'smooth' });
+  };
 
   return (
     <section className="py-16 md:py-24 bg-stone-50">
@@ -182,11 +190,22 @@ export default function TestimonialsSection() {
           <div className="flex-1 h-px bg-stone-200" />
         </div>
 
-        {/* Cards — horizontal scroll on all screen sizes */}
-        <div
-          className="flex gap-5 overflow-x-auto overflow-y-hidden scrollbar-hide pb-2"
-          style={{ scrollSnapType: 'x mandatory' }}
-        >
+        {/* Cards — horizontal scroll with arrow controls on desktop */}
+        <div className="relative">
+          {/* Left arrow */}
+          <button
+            onClick={() => scroll('left')}
+            className="hidden lg:flex absolute -left-5 top-1/2 -translate-y-1/2 z-10 w-10 h-10 rounded-full bg-white border border-stone-200 shadow-md items-center justify-center text-stone-400 hover:text-hero hover:border-stone-400 transition-all"
+            aria-label="Precedente"
+          >
+            <ChevronLeft size={18} />
+          </button>
+
+          <div
+            ref={scrollRef}
+            className="flex gap-5 overflow-x-auto overflow-y-hidden pb-2 [scrollbar-width:none] [&::-webkit-scrollbar]:hidden"
+            style={{ scrollSnapType: 'x mandatory' }}
+          >
           {TESTIMONIALS.map((r, i) => (
             <div
               key={i}
@@ -237,6 +256,16 @@ export default function TestimonialsSection() {
               </div>
             </div>
           ))}
+          </div>
+
+          {/* Right arrow */}
+          <button
+            onClick={() => scroll('right')}
+            className="hidden lg:flex absolute -right-5 top-1/2 -translate-y-1/2 z-10 w-10 h-10 rounded-full bg-white border border-stone-200 shadow-md items-center justify-center text-stone-400 hover:text-hero hover:border-stone-400 transition-all"
+            aria-label="Successiva"
+          >
+            <ChevronRight size={18} />
+          </button>
         </div>
 
         {/* Stats strip — single row, no scroll */}
