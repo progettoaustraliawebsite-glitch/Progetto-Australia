@@ -26,23 +26,14 @@ export default function HeroSlider() {
 
   return (
     <section className="relative h-screen w-full overflow-hidden bg-hero">
-      {/* Static image background — mobile only */}
-      <div
-        className="absolute inset-0 md:hidden bg-cover bg-center"
-        style={{ backgroundImage: 'url(/images/hero-sydney.jpg)' }}
-      />
-
-      {/* YouTube video background — desktop only */}
+      {/* YouTube video background — all devices */}
       <iframe
-        className="hidden md:block"
         style={{
           position: 'absolute',
           top: '50%',
           left: '50%',
-          width: '100vw',
-          height: '56.25vw',
-          minHeight: '100vh',
-          minWidth: '177.78vh',
+          width: 'max(100vw, 177.78vh)',
+          height: 'max(100vh, 56.25vw)',
           transform: 'translate(-50%, -50%)',
           border: 'none',
           pointerEvents: 'none',
