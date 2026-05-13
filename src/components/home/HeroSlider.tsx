@@ -25,7 +25,7 @@ export default function HeroSlider() {
   }, [next]);
 
   return (
-    <section className="relative h-screen w-full overflow-hidden bg-hero">
+    <section className="relative h-screen h-[100dvh] w-full overflow-hidden bg-hero mb-[-2px]">
       {/* YouTube video background — all devices */}
       <iframe
         style={{
