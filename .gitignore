@@ -43,6 +43,5 @@ next-env.d.ts
 # local project files (not code)
 .claude/
 scraped/
-messages/
 immagini gpt/
 Proposta_ProgettoAustralia.pdf

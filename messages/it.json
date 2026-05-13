@@ -1,0 +1,373 @@
+{
+  "nav": {
+    "home": "Home",
+    "about": "Chi Siamo",
+    "destinations": "Destinazioni",
+    "travelIdeas": "Idee di Viaggio",
+    "highlights": "Highlights",
+    "howItWorks": "Come Funziona",
+    "weddingList": "Lista Nozze",
+    "blog": "Blog",
+    "contact": "Contatti",
+    "logo": "Progetto Australia",
+    "getQuote": "Richiedi Preventivo"
+  },
+  "home": {
+    "hero": {
+      "slides": {
+        "0": {
+          "title": "Scopri l'Australia",
+          "subtitle": "Esperienze straordinarie nella terra dei canguri e delle meraviglie naturali",
+          "location": "Great Ocean Road, Victoria"
+        },
+        "1": {
+          "title": "Nuova Zelanda",
+          "subtitle": "Avventura e natura selvaggia ai confini del mondo",
+          "location": "Fiordland, South Island"
+        },
+        "2": {
+          "title": "Isole del Pacifico",
+          "subtitle": "Il paradiso tropicale che hai sempre sognato",
+          "location": "Bora Bora, Polinesia Francese"
+        },
+        "3": {
+          "title": "Oceania",
+          "subtitle": "Un continente, infinite possibilità, ricordi per tutta la vita",
+          "location": "Sydney, New South Wales"
+        }
+      },
+      "cta": "Esplora Ora"
+    },
+    "about": {
+      "label": "Chi Siamo",
+      "title": "Esperti di Australia e Pacifico",
+      "text": "Siamo un team di appassionati viaggiatori con base a Brisbane, dedicati a creare itinerari su misura in Australia, Nuova Zelanda e nelle Isole del Pacifico. Ogni viaggio è progettato con cura, attenzione ai dettagli e conoscenza diretta del territorio.",
+      "cta": "Scopri di Più",
+      "stats": {
+        "years": "Anni di esperienza",
+        "travellers": "Viaggiatori felici",
+        "itineraries": "Itinerari curati",
+        "destinations": "Destinazioni Oceania"
+      }
+    },
+    "destinations": {
+      "label": "Destinazioni",
+      "title": "Dove Vuoi Andare?",
+      "subtitle": "Esplora le nostre destinazioni selezionate in tutta l'Oceania"
+    },
+    "travelTypes": {
+      "label": "Stili di Viaggio",
+      "title": "Viaggi Pensati per Te",
+      "items": {
+        "honeymoon": "Luna di Miele",
+        "luxury": "Lusso",
+        "family": "Famiglia",
+        "adventure": "Avventura",
+        "selfDrive": "Auto & Camper",
+        "group": "Gruppi",
+        "backpacking": "Zaino in Spalla"
+      }
+    },
+    "itineraries": {
+      "label": "Itinerari in Evidenza",
+      "title": "Viaggi Selezionati",
+      "subtitle": "Itinerari curati per un'esperienza indimenticabile",
+      "cta": "Scopri"
+    }
+  },
+  "destinations": {
+    "title": "Le Nostre Destinazioni",
+    "subtitle": "Dal cuore rosso dell'Australia al blu del Pacifico",
+    "explore": "Esplora"
+  },
+  "travelIdeas": {
+    "title": "Idee di Viaggio",
+    "subtitle": "Ispirazione per la tua prossima avventura"
+  },
+  "highlights": {
+    "title": "Highlights",
+    "subtitle": "Le migliori esperienze in Oceania"
+  },
+  "weddingList": {
+    "title": "Lista Nozze",
+    "subtitle": "Il regalo perfetto per il tuo viaggio di nozze da sogno",
+    "intro": "Trasforma il tuo viaggio di nozze in un'avventura straordinaria. Con la nostra lista nozze, i tuoi cari potranno contribuire a finanziare l'esperienza più bella della tua vita.",
+    "features": {
+      "0": {
+        "title": "Personalizzabile",
+        "desc": "Scegli le esperienze che ami di più"
+      },
+      "1": {
+        "title": "Sicuro",
+        "desc": "Gestione trasparente dei fondi"
+      },
+      "2": {
+        "title": "Flessibile",
+        "desc": "Usa i fondi come preferisci"
+      }
+    },
+    "cta": "Contattaci per Saperne di Più"
+  },
+  "contact": {
+    "title": "Contattaci",
+    "subtitle": "Lascia che creiamo il tuo perfetto viaggio in Australia",
+    "form": {
+      "name": "Nome e Cognome",
+      "email": "Email",
+      "phone": "Telefono",
+      "departure": "Data di Partenza Prevista",
+      "travelers": "Numero di Viaggiatori",
+      "message": "Raccontaci il tuo viaggio dei sogni",
+      "submit": "Invia Richiesta"
+    },
+    "info": {
+      "based": "Con base a Brisbane",
+      "address": "20, Lobelia Ave – 4127 Daisy Hill – Brisbane QLD",
+      "phone": "0061 (0)7 33886838",
+      "email": "info@progettoaustralia.it",
+      "hours": "Lun–Ven 9:00–18:00 AEST",
+      "phoneUS": "001 (541) 534 7926",
+      "addressLabel": "Indirizzo",
+      "phoneLabel": "Telefono",
+      "emailLabel": "Email"
+    },
+    "cta": {
+      "title": "Inizia a Progettare",
+      "text": "Preferiamo ascoltare i tuoi sogni a voce o tramite il nostro modulo guidato per offrirti un servizio davvero su misura.",
+      "button": "Apri Modulo di Contatto"
+    }
+  },
+  "footer": {
+    "ctaTitle": "Pronto per la tua avventura?",
+    "tagline": "Il tuo viaggio in Australia, su misura e senza pensieri: il nostro team italiano di esperti ti accompagnerà dalla pianificazione fino all'assistenza in loco.",
+    "colAbout": "Chi Siamo",
+    "colTrips": "Viaggi",
+    "colDest": "Destinazioni",
+    "colContact": "Contatti",
+    "colSustain": "Sostenibilità",
+    "sustainability": "Sostenibilità",
+    "sustainPolicy": "Politica sulla sostenibilità",
+    "privacyPolicy": "Politica sulla privacy",
+    "tripHoneymoon": "Viaggio di Nozze",
+    "tripLuxury": "Viaggio di Lusso",
+    "tripFamily": "Viaggio in Famiglia",
+    "tripFriends": "Viaggio con Amici",
+    "tripAdventure": "Viaggio Avventura",
+    "tripGroup": "Viaggio in Gruppo",
+    "copyright": "© 2008 Progetto Australia. Trade Mark n. 1575633",
+    "links": "Link Utili",
+    "contact": "Contatti",
+    "social": "Seguici",
+    "privacy": "Privacy Policy",
+    "terms": "Termini di Servizio"
+  },
+  "common": {
+    "learnMore": "Scopri di più",
+    "contactUs": "Contattaci",
+    "days": "giorni",
+    "nights": "notti",
+    "from": "Da"
+  },
+  "weddingQuote": {
+    "trigger": "Richiedi Preventivo",
+    "modalTitle": "Lista Nozze",
+    "modalSubtitle": "Richiedi un preventivo personalizzato",
+    "steps": {
+      "1": {
+        "label": "01",
+        "title": "Chi sei?"
+      },
+      "2": {
+        "label": "02",
+        "title": "Il tuo viaggio"
+      },
+      "3": {
+        "label": "03",
+        "title": "Raccontaci di più"
+      }
+    },
+    "stepOf": "Step {current} di {total}",
+    "fields": {
+      "name": "Nome e Cognome",
+      "email": "Email",
+      "phone": "Telefono",
+      "destination": "Destinazione preferita",
+      "guests": "Numero di ospiti",
+      "budget": "Budget indicativo",
+      "weddingDate": "Data del matrimonio (opzionale)",
+      "message": "Il tuo messaggio (opzionale)",
+      "messagePlaceholder": "Descrivi il viaggio di nozze dei tuoi sogni..."
+    },
+    "destinations": [
+      "Australia",
+      "Nuova Zelanda",
+      "Fiji",
+      "Polinesia Francese",
+      "Isole Cook",
+      "Vanuatu",
+      "Hawaii"
+    ],
+    "guestOptions": [
+      "Solo noi 2",
+      "3–10 persone",
+      "11–20 persone",
+      "Oltre 20"
+    ],
+    "budgetOptions": [
+      "Fino a 5.000€",
+      "5.000–10.000€",
+      "10.000–20.000€",
+      "Oltre 20.000€"
+    ],
+    "buttons": {
+      "next": "AVANTI",
+      "back": "INDIETRO",
+      "submit": "INVIA RICHIESTA",
+      "close": "Chiudi"
+    },
+    "errors": {
+      "required": "Campo obbligatorio",
+      "email": "Inserisci un'email valida"
+    },
+    "success": {
+      "title": "Grazie",
+      "message": "Ti contatteremo presto per creare la tua lista nozze perfetta.",
+      "close": "Chiudi"
+    }
+  },
+  "howItWorksPage": {
+    "heroLabel": "Come Funziona",
+    "heroTitle": "Prenotare con noi\nè semplice",
+    "heroSubtitle": "Un processo trasparente e guidato, pensato per farti partire senza pensieri. Nessun call center, nessun bot: solo esperti italiani con conoscenza diretta del territorio.",
+    "ctaForm": "Compila il Modulo",
+    "ctaContact": "Scrivici",
+    "ctaQuote": "Richiedi Preventivo",
+    "stepsTitle": "I 5 Passi del tuo Viaggio",
+    "stepsSubtitle": "Dalla prima richiesta al rientro a casa, ti accompagniamo in ogni fase.",
+    "stepLabel": "Passo",
+    "steps": {
+      "0": {
+        "title": "Compila il modulo guidato",
+        "description": "Inizia con il nostro questionario intelligente: ti chiediamo destinazione, date, numero di viaggiatori e tipo di viaggio. Richiede meno di 3 minuti.",
+        "detail": "Puoi scegliere tra una singola destinazione o combinare più mete (es. Australia + Nuova Zelanda + Fiji). Puoi indicare anche se si tratta di una luna di miele, un viaggio di famiglia o un'occasione speciale: questo ci aiuta a proporre le esperienze più adatte.",
+        "b1": "Scelta singola destinazione o combinazione multi-meta",
+        "b2": "Selezione dello stile di viaggio (lusso, avventura, famiglia, ecc.)",
+        "b3": "Indicazione di date preferite e flessibilità"
+      },
+      "1": {
+        "title": "Il nostro team analizza la tua richiesta",
+        "description": "Il tuo profilo arriva direttamente a uno dei nostri esperti di destinazione, assegnato in base alla meta scelta. Nessun call center, nessun bot: persone reali con esperienza diretta sul territorio.",
+        "detail": "In genere rispondiamo entro 24 ore lavorative con una prima analisi. Potremmo chiederti qualche dettaglio in più per perfezionare la proposta, via email o chiamata.",
+        "b1": "Risposta entro 24 ore lavorative",
+        "b2": "Esperto dedicato per ogni destinazione (Australia, NZ, Fiji, ecc.)",
+        "b3": "Team basato a Brisbane: stessa lingua, conoscenza locale diretta"
+      },
+      "2": {
+        "title": "Ricevi il preventivo su misura",
+        "description": "Prepariamo una proposta dettagliata con alloggi selezionati, trasporti, esperienze ed escursioni pensate specificamente per te — non pacchetti standard.",
+        "detail": "Il preventivo include una ripartizione chiara di tutti i costi, le opzioni di personalizzazione disponibili e i consigli pratici per ogni tappa. Puoi chiedere modifiche gratuitamente fino all'approvazione.",
+        "b1": "Itinerario giorno per giorno con alloggi e trasporti",
+        "b2": "Ripartizione trasparente dei costi",
+        "b3": "Modifiche gratuite fino all'approvazione finale"
+      },
+      "3": {
+        "title": "Confermi e gestiamo tutto noi",
+        "description": "Una volta approvato il preventivo, ci occupiamo di tutte le prenotazioni: voli (se richiesto), hotel, transfer, noleggi auto, assicurazioni e attività. Tu non devi fare nulla.",
+        "detail": "Riceverai un dossier di viaggio completo prima della partenza, con tutti i dettagli, i contatti utili, le istruzioni per ogni tappa e i consigli locali del nostro team.",
+        "b1": "Gestione completa di voli, hotel, transfer e attività",
+        "b2": "Dossier di viaggio completo pre-partenza",
+        "b3": "Contatti utili e numeri di emergenza per ogni destinazione"
+      },
+      "4": {
+        "title": "Assistenza italiana durante il viaggio",
+        "description": "Durante il viaggio hai un contatto diretto con il nostro team italiano in loco. In caso di imprevisti o modifiche dell'ultimo minuto, interveniamo subito.",
+        "detail": "Siamo basati a Brisbane: stessa lingua, fuso orario compatibile con l'Oceania, conoscenza diretta del territorio. Questa è la differenza fondamentale rispetto a un'agenzia italiana standard che opera dall'Europa.",
+        "b1": "Linea diretta con il team italiano in Australia",
+        "b2": "Assistenza in loco per qualsiasi imprevisto",
+        "b3": "Fuso orario compatibile: rispondiamo quando ne hai bisogno"
+      }
+    },
+    "why": {
+      "0": { "stat": "15+", "title": "Anni di esperienza", "desc": "Dal 2008 organizziamo viaggi su misura in Australia e Pacifico per clienti italiani." },
+      "1": { "stat": "2000+", "title": "Viaggiatori soddisfatti", "desc": "Famiglie, coppie in viaggio di nozze, gruppi di amici: ogni viaggio è unico." },
+      "2": { "stat": "6", "title": "Destinazioni coperte", "desc": "Australia, Nuova Zelanda, Fiji, Isole Cook, Samoa e Nuova Caledonia." }
+    },
+    "faqLabel": "Domande Frequenti",
+    "faqTitle": "Hai domande?",
+    "faq": {
+      "0": { "q": "Quanto tempo prima devo contattarvi?", "a": "Consigliamo di contattarci almeno 3-4 mesi prima della partenza per viaggi standard, e 6-12 mesi prima per periodi di alta stagione (Natale, Pasqua, estate europea). Tuttavia, riusciamo spesso a organizzare viaggi in tempi più brevi: contattaci e vediamo cosa è possibile." },
+      "1": { "q": "Il servizio di consulenza ha un costo?", "a": "La consulenza iniziale e la preparazione del preventivo sono completamente gratuite e senza impegno. I nostri costi sono inclusi nel pacchetto finale, senza sorprese." },
+      "2": { "q": "Cosa succede se devo modificare o cancellare il viaggio?", "a": "Gestiamo tutte le modifiche direttamente con i fornitori. Le politiche di cancellazione variano in base ai servizi prenotati, ma ti informiamo sempre in modo trasparente prima della conferma. Raccomandiamo sempre un'assicurazione di viaggio adeguata." },
+      "3": { "q": "Organizzate anche solo una parte del viaggio (es. solo hotel)?", "a": "Sì, possiamo occuparci di singoli elementi del viaggio o di tutto il pacchetto. Molti clienti ci chiedono di gestire solo gli alloggi o le esperienze locali, mentre pensano autonomamente ai voli." },
+      "4": { "q": "Posso combinare più destinazioni?", "a": "Assolutamente sì. Molti dei nostri itinerari combinano Australia, Nuova Zelanda, Fiji e altre isole del Pacifico in un unico viaggio. Ti aiutiamo a costruire il percorso più efficiente in base ai tuoi tempi e al tuo budget." },
+      "5": { "q": "Come funziona il pagamento?", "a": "In genere richiediamo una caparra alla conferma della prenotazione e il saldo a 60-90 giorni dalla partenza. I dettagli esatti dipendono dai servizi prenotati e vengono sempre comunicati in modo trasparente prima di qualsiasi impegno." }
+    },
+    "ctaLabel": "Pronti a partire?",
+    "ctaTitle": "Inizia a Progettare il tuo Viaggio",
+    "ctaSubtitle": "Compila il nostro modulo guidato oppure scrivici direttamente: un esperto italiano in loco ti risponderà entro 24 ore.",
+    "ctaNote": "Consulenza gratuita · Preventivo senza impegno · Risposta entro 24 ore"
+  },
+  "testimonials": {
+    "label": "Recensioni",
+    "title": "Cosa Dicono i Nostri Viaggiatori",
+    "subtitle": "Oltre 15 anni di viaggi su misura, raccontati da chi li ha vissuti.",
+    "overallQuote": "Ogni viaggio inizia con un sogno, noi ci occupiamo del resto.",
+    "recommended": "Consigliato",
+    "yearsExp": "Anni di esperienza"
+  },
+  "howItWorks": {
+    "label": "Come Funziona",
+    "title": "Prenotare con Noi è Semplice",
+    "subtitle": "Un processo trasparente e guidato, pensato per farti partire senza pensieri.",
+    "stepLabel": "Passo",
+    "bottomLabel": "Pronto a iniziare?",
+    "bottomCta": "Richiedi il tuo preventivo",
+    "steps": {
+      "0": {
+        "short": "Raccontaci il tuo sogno",
+        "title": "Compila il modulo guidato",
+        "description": "Inizia con il nostro questionario intelligente: destinazione, date, numero di viaggiatori e tipo di viaggio. Richiede meno di 3 minuti.",
+        "detail": "Puoi scegliere tra una singola destinazione o combinare più mete (es. Australia + Nuova Zelanda + Fiji). Indica anche se si tratta di una luna di miele o un'occasione speciale.",
+        "cta": "Compila il Modulo"
+      },
+      "1": {
+        "short": "Riceviamo la tua richiesta",
+        "title": "Il nostro team analizza tutto",
+        "description": "Il tuo profilo arriva direttamente a uno dei nostri esperti di destinazione. Nessun call center, nessun bot: persone reali con esperienza diretta sul territorio.",
+        "detail": "In genere rispondiamo entro 24 ore lavorative. Potremmo chiederti qualche dettaglio in più per perfezionare la proposta.",
+        "cta": ""
+      },
+      "2": {
+        "short": "Preventivo su misura",
+        "title": "Costruiamo il tuo itinerario",
+        "description": "Prepariamo una proposta dettagliata con alloggi selezionati, trasporti, esperienze ed escursioni pensate per te — non pacchetti standard.",
+        "detail": "Il preventivo include una ripartizione chiara dei costi, le opzioni di personalizzazione e i consigli pratici per ogni destinazione.",
+        "cta": ""
+      },
+      "3": {
+        "short": "Conferma e partenza",
+        "title": "Confermi e partiamo a pianificare",
+        "description": "Una volta approvato il preventivo, gestiamo tutte le prenotazioni: voli, hotel, transfer, assicurazioni e attività. Tu non devi fare nulla.",
+        "detail": "Riceverai un dossier di viaggio completo prima della partenza, con tutti i dettagli, i contatti utili e i consigli locali del nostro team.",
+        "cta": "Richiedi Preventivo"
+      },
+      "4": {
+        "short": "Assistenza durante il viaggio",
+        "title": "Siamo con te, dall'inizio alla fine",
+        "description": "Durante il viaggio hai un contatto diretto con il nostro team italiano in loco. In caso di imprevisti o modifiche dell'ultimo minuto, interveniamo subito.",
+        "detail": "Siamo basati a Brisbane: stessa lingua, fuso orario compatibile, conoscenza diretta del territorio. Questa è la differenza con un'agenzia italiana standard.",
+        "cta": "Contattaci"
+      }
+    }
+  },
+  "blog": {
+    "label": "Guide & Diari",
+    "title": "Il Nostro Blog",
+    "subtitle": "Ispirazioni, consigli e itinerari dettagliati per il tuo prossimo viaggio in Oceania.",
+    "readArticle": "Leggi l'Articolo",
+    "backToBlog": "Torna al Blog",
+    "tableOfContents": "Indice Articolo",
+    "contactPrompt": "Organizziamo viaggi su misura in tutta l'Oceania. Contattaci per il tuo preventivo.",
+    "getQuote": "Richiedi Preventivo"
+  }
+}

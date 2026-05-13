@@ -1,0 +1,373 @@
+{
+  "nav": {
+    "home": "Home",
+    "about": "About Us",
+    "destinations": "Destinations",
+    "travelIdeas": "Travel Ideas",
+    "highlights": "Highlights",
+    "howItWorks": "How It Works",
+    "weddingList": "Wedding List",
+    "blog": "Blog",
+    "contact": "Contact Us",
+    "logo": "Progetto Australia",
+    "getQuote": "Get a Quote"
+  },
+  "home": {
+    "hero": {
+      "slides": {
+        "0": {
+          "title": "Discover Australia",
+          "subtitle": "Extraordinary experiences in the land of kangaroos and natural wonders",
+          "location": "Great Ocean Road, Victoria"
+        },
+        "1": {
+          "title": "New Zealand",
+          "subtitle": "Adventure and wild nature at the edge of the world",
+          "location": "Fiordland, South Island"
+        },
+        "2": {
+          "title": "Pacific Islands",
+          "subtitle": "The tropical paradise you have always dreamed of",
+          "location": "Bora Bora, French Polynesia"
+        },
+        "3": {
+          "title": "Oceania",
+          "subtitle": "One continent, endless possibilities, memories for a lifetime",
+          "location": "Sydney, New South Wales"
+        }
+      },
+      "cta": "Explore Now"
+    },
+    "about": {
+      "label": "About Us",
+      "title": "Experts in Australia & the Pacific",
+      "text": "We are a team of passionate travellers based in Brisbane, dedicated to creating bespoke itineraries across Australia, New Zealand, and the Pacific Islands. Every journey is crafted with care, attention to detail, and direct knowledge of the destination.",
+      "cta": "Learn More",
+      "stats": {
+        "years": "Years of experience",
+        "travellers": "Happy travellers",
+        "itineraries": "Curated itineraries",
+        "destinations": "Oceania destinations"
+      }
+    },
+    "destinations": {
+      "label": "Destinations",
+      "title": "Where Would You Like to Go?",
+      "subtitle": "Explore our curated destinations across Oceania"
+    },
+    "travelTypes": {
+      "label": "Travel Styles",
+      "title": "Journeys Tailored to You",
+      "items": {
+        "honeymoon": "Honeymoon",
+        "luxury": "Luxury",
+        "family": "Family",
+        "adventure": "Adventure",
+        "selfDrive": "Self-Drive",
+        "group": "Group Tours",
+        "backpacking": "Backpacking"
+      }
+    },
+    "itineraries": {
+      "label": "Featured Itineraries",
+      "title": "Curated Journeys",
+      "subtitle": "Handpicked itineraries for the discerning traveller",
+      "cta": "Discover"
+    }
+  },
+  "destinations": {
+    "title": "Our Destinations",
+    "subtitle": "From the red heart of Australia to the blue Pacific",
+    "explore": "Explore"
+  },
+  "travelIdeas": {
+    "title": "Travel Ideas",
+    "subtitle": "Inspiration for your next adventure"
+  },
+  "highlights": {
+    "title": "Highlights",
+    "subtitle": "The very best experiences in Oceania"
+  },
+  "weddingList": {
+    "title": "Wedding List",
+    "subtitle": "The perfect gift for your dream honeymoon",
+    "intro": "Turn your honeymoon into an extraordinary adventure. With our wedding list, your loved ones can contribute to financing the most beautiful experience of your life.",
+    "features": {
+      "0": {
+        "title": "Personalised",
+        "desc": "Choose the experiences you love most"
+      },
+      "1": {
+        "title": "Secure",
+        "desc": "Transparent fund management"
+      },
+      "2": {
+        "title": "Flexible",
+        "desc": "Use the funds as you wish"
+      }
+    },
+    "cta": "Contact Us to Learn More"
+  },
+  "contact": {
+    "title": "Contact Us",
+    "subtitle": "Let us craft your perfect Australian adventure",
+    "form": {
+      "name": "Full Name",
+      "email": "Email",
+      "phone": "Phone",
+      "departure": "Expected Departure Date",
+      "travelers": "Number of Travellers",
+      "message": "Tell us about your dream trip",
+      "submit": "Send Request"
+    },
+    "info": {
+      "based": "Based in Brisbane",
+      "address": "20, Lobelia Ave – 4127 Daisy Hill – Brisbane QLD",
+      "phone": "0061 (0)7 33886838",
+      "email": "info@progettoaustralia.it",
+      "hours": "Mon–Fri 9:00am–6:00pm AEST",
+      "phoneUS": "001 (541) 534 7926",
+      "addressLabel": "Address",
+      "phoneLabel": "Phone",
+      "emailLabel": "Email"
+    },
+    "cta": {
+      "title": "Start Planning",
+      "text": "We prefer to listen to your dreams in person or through our guided form to offer you a truly tailor-made service.",
+      "button": "Open Contact Form"
+    }
+  },
+  "footer": {
+    "ctaTitle": "Ready for your adventure?",
+    "tagline": "Your tailor-made trip to Australia, worry-free: our Italian team of experts will guide you from planning through on-site assistance.",
+    "colAbout": "About Us",
+    "colTrips": "Trips",
+    "colDest": "Destinations",
+    "colContact": "Contact",
+    "colSustain": "Sustainability",
+    "sustainability": "Sustainability",
+    "sustainPolicy": "Sustainability Policy",
+    "privacyPolicy": "Privacy Policy",
+    "tripHoneymoon": "Honeymoon",
+    "tripLuxury": "Luxury Travel",
+    "tripFamily": "Family Trip",
+    "tripFriends": "Trip with Friends",
+    "tripAdventure": "Adventure Trip",
+    "tripGroup": "Group Travel",
+    "copyright": "© 2008 Progetto Australia. Trade Mark n. 1575633",
+    "links": "Useful Links",
+    "contact": "Contact",
+    "social": "Follow Us",
+    "privacy": "Privacy Policy",
+    "terms": "Terms of Service"
+  },
+  "common": {
+    "learnMore": "Learn more",
+    "contactUs": "Contact Us",
+    "days": "days",
+    "nights": "nights",
+    "from": "From"
+  },
+  "weddingQuote": {
+    "trigger": "Request a Quote",
+    "modalTitle": "Wedding List",
+    "modalSubtitle": "Request a personalised quote",
+    "steps": {
+      "1": {
+        "label": "01",
+        "title": "Who are you?"
+      },
+      "2": {
+        "label": "02",
+        "title": "Your journey"
+      },
+      "3": {
+        "label": "03",
+        "title": "Tell us more"
+      }
+    },
+    "stepOf": "Step {current} of {total}",
+    "fields": {
+      "name": "Full Name",
+      "email": "Email",
+      "phone": "Phone",
+      "destination": "Preferred destination",
+      "guests": "Number of guests",
+      "budget": "Indicative budget",
+      "weddingDate": "Wedding date (optional)",
+      "message": "Your message (optional)",
+      "messagePlaceholder": "Describe the honeymoon of your dreams..."
+    },
+    "destinations": [
+      "Australia",
+      "New Zealand",
+      "Fiji",
+      "French Polynesia",
+      "Cook Islands",
+      "Vanuatu",
+      "Hawaii"
+    ],
+    "guestOptions": [
+      "Just the 2 of us",
+      "3–10 people",
+      "11–20 people",
+      "Over 20"
+    ],
+    "budgetOptions": [
+      "Up to €5,000",
+      "€5,000–10,000",
+      "€10,000–20,000",
+      "Over €20,000"
+    ],
+    "buttons": {
+      "next": "NEXT",
+      "back": "BACK",
+      "submit": "SEND REQUEST",
+      "close": "Close"
+    },
+    "errors": {
+      "required": "Required field",
+      "email": "Please enter a valid email"
+    },
+    "success": {
+      "title": "Thank you",
+      "message": "We will contact you soon to create your perfect wedding list.",
+      "close": "Close"
+    }
+  },
+  "howItWorksPage": {
+    "heroLabel": "How It Works",
+    "heroTitle": "Booking with us\nis simple",
+    "heroSubtitle": "A transparent, guided process designed to get you travelling without worries. No call centres, no bots — just Italian experts with first-hand knowledge of the destination.",
+    "ctaForm": "Fill in the Form",
+    "ctaContact": "Write to Us",
+    "ctaQuote": "Request a Quote",
+    "stepsTitle": "The 5 Steps of Your Journey",
+    "stepsSubtitle": "From your first enquiry to your return home, we are with you every step of the way.",
+    "stepLabel": "Step",
+    "steps": {
+      "0": {
+        "title": "Fill in the guided form",
+        "description": "Start with our smart questionnaire: we ask about your destination, dates, number of travellers and travel style. It takes less than 3 minutes.",
+        "detail": "You can choose a single destination or combine multiple stops (e.g. Australia + New Zealand + Fiji). You can also tell us if it's a honeymoon, a family trip or a special occasion — this helps us suggest the most fitting experiences.",
+        "b1": "Single destination or multi-stop combination",
+        "b2": "Choose your travel style (luxury, adventure, family, etc.)",
+        "b3": "Indicate preferred dates and flexibility"
+      },
+      "1": {
+        "title": "Our team reviews your request",
+        "description": "Your profile goes directly to one of our destination specialists, assigned based on your chosen destination. No call centre, no bots — real people with first-hand knowledge of the territory.",
+        "detail": "We typically reply within 24 business hours with an initial assessment. We may ask for a few more details to refine the proposal, via email or a call.",
+        "b1": "Reply within 24 business hours",
+        "b2": "Dedicated expert for each destination (Australia, NZ, Fiji, etc.)",
+        "b3": "Team based in Brisbane: same language, direct local knowledge"
+      },
+      "2": {
+        "title": "Receive your tailor-made quote",
+        "description": "We put together a detailed proposal with hand-picked accommodation, transport, experiences and excursions chosen specifically for you — not off-the-shelf packages.",
+        "detail": "The quote includes a clear breakdown of all costs, available personalisation options and practical tips for each stop. You can request changes free of charge until approval.",
+        "b1": "Day-by-day itinerary with accommodation and transport",
+        "b2": "Transparent cost breakdown",
+        "b3": "Free modifications until final approval"
+      },
+      "3": {
+        "title": "You confirm, we handle everything",
+        "description": "Once you approve the quote, we manage all bookings: flights (if required), hotels, transfers, car hire, insurance and activities. You don't have to lift a finger.",
+        "detail": "You'll receive a complete travel dossier before departure, with all the details, useful contacts, instructions for each stop and local tips from our team.",
+        "b1": "Full management of flights, hotels, transfers and activities",
+        "b2": "Complete pre-departure travel dossier",
+        "b3": "Useful contacts and emergency numbers for each destination"
+      },
+      "4": {
+        "title": "Italian support throughout your trip",
+        "description": "During your trip you have a direct line to our Italian team on the ground. If anything unexpected comes up, we step in straight away.",
+        "detail": "We're based in Brisbane: same language, time zone compatible with Oceania, direct knowledge of the territory. This is the fundamental difference from a standard Italian agency operating from Europe.",
+        "b1": "Direct line to the Italian team in Australia",
+        "b2": "On-the-ground support for any unexpected events",
+        "b3": "Compatible time zone: we respond when you need us"
+      }
+    },
+    "why": {
+      "0": { "stat": "15+", "title": "Years of experience", "desc": "Since 2008 we have been organising tailor-made trips to Australia and the Pacific for Italian travellers." },
+      "1": { "stat": "2000+", "title": "Happy travellers", "desc": "Families, honeymooning couples, groups of friends: every journey is unique." },
+      "2": { "stat": "6", "title": "Destinations covered", "desc": "Australia, New Zealand, Fiji, Cook Islands, Samoa and New Caledonia." }
+    },
+    "faqLabel": "FAQ",
+    "faqTitle": "Got questions?",
+    "faq": {
+      "0": { "q": "How far in advance should I get in touch?", "a": "We recommend contacting us at least 3-4 months before departure for standard trips, and 6-12 months ahead for peak seasons (Christmas, Easter, European summer). That said, we can often organise trips at shorter notice — get in touch and we'll see what's possible." },
+      "1": { "q": "Is the consultation service free?", "a": "The initial consultation and preparation of your quote are completely free and with no obligation. Our fees are included in the final package, with no hidden surprises." },
+      "2": { "q": "What happens if I need to change or cancel my trip?", "a": "We manage all changes directly with suppliers. Cancellation policies vary depending on the services booked, but we always inform you transparently before you confirm. We always recommend taking out appropriate travel insurance." },
+      "3": { "q": "Can you organise just part of the trip (e.g. hotels only)?", "a": "Yes, we can handle individual elements of a trip or the complete package. Many clients ask us to manage only their accommodation or local experiences, while they sort out flights independently." },
+      "4": { "q": "Can I combine multiple destinations?", "a": "Absolutely. Many of our itineraries combine Australia, New Zealand, Fiji and other Pacific islands in a single trip. We help you build the most efficient route based on your time and budget." },
+      "5": { "q": "How does payment work?", "a": "We typically require a deposit upon booking confirmation and the balance 60-90 days before departure. Exact details depend on the services booked and are always communicated transparently before any commitment." }
+    },
+    "ctaLabel": "Ready to go?",
+    "ctaTitle": "Start Planning Your Journey",
+    "ctaSubtitle": "Fill in our guided form or write to us directly: an Italian expert on the ground will reply within 24 hours.",
+    "ctaNote": "Free consultation · No-obligation quote · Reply within 24 hours"
+  },
+  "testimonials": {
+    "label": "Reviews",
+    "title": "What Our Travellers Say",
+    "subtitle": "Over 15 years of bespoke travel, told by those who lived it.",
+    "overallQuote": "Every journey begins with a dream — we take care of the rest.",
+    "recommended": "Recommended",
+    "yearsExp": "Years of experience"
+  },
+  "howItWorks": {
+    "label": "How It Works",
+    "title": "Booking with Us Is Simple",
+    "subtitle": "A transparent, guided process designed to get you travelling without worries.",
+    "stepLabel": "Step",
+    "bottomLabel": "Ready to start?",
+    "bottomCta": "Request your quote",
+    "steps": {
+      "0": {
+        "short": "Tell us your dream",
+        "title": "Fill in the guided form",
+        "description": "Start with our smart questionnaire: destination, dates, number of travellers and travel style. It takes less than 3 minutes.",
+        "detail": "You can choose a single destination or combine multiple stops (e.g. Australia + New Zealand + Fiji). Let us know if it's a honeymoon or a special occasion.",
+        "cta": "Fill in the Form"
+      },
+      "1": {
+        "short": "We receive your request",
+        "title": "Our team reviews everything",
+        "description": "Your profile goes directly to one of our destination experts. No call centre, no bots — real people with first-hand knowledge of the territory.",
+        "detail": "We typically respond within 24 business hours. We may ask for a few more details to perfect the proposal.",
+        "cta": ""
+      },
+      "2": {
+        "short": "Tailor-made quote",
+        "title": "We build your itinerary",
+        "description": "We put together a detailed proposal with hand-picked accommodation, transport, experiences and excursions chosen for you — not off-the-shelf packages.",
+        "detail": "The quote includes a clear cost breakdown, personalisation options and practical tips for each destination.",
+        "cta": ""
+      },
+      "3": {
+        "short": "Confirm and go",
+        "title": "You confirm, we handle everything",
+        "description": "Once you approve the quote, we manage all bookings: flights, hotels, transfers, insurance and activities. You don't have to lift a finger.",
+        "detail": "You'll receive a complete travel dossier before departure, with all the details, useful contacts and local tips from our team.",
+        "cta": "Request a Quote"
+      },
+      "4": {
+        "short": "Support during your trip",
+        "title": "We're with you, from start to finish",
+        "description": "During your trip you have a direct line to our Italian team on the ground. If anything unexpected comes up, we step in straight away.",
+        "detail": "We're based in Brisbane: same language, compatible time zone, direct knowledge of the territory. That's the difference from a standard travel agency.",
+        "cta": "Contact Us"
+      }
+    }
+  },
+  "blog": {
+    "label": "Guides & Journals",
+    "title": "Our Blog",
+    "subtitle": "Inspiration, advice and detailed itineraries for your next journey to Oceania.",
+    "readArticle": "Read Article",
+    "backToBlog": "Back to Blog",
+    "tableOfContents": "Article Contents",
+    "contactPrompt": "We organise tailor-made trips throughout Oceania. Contact us for your quote.",
+    "getQuote": "Request a Quote"
+  }
+}
