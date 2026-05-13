@@ -44,6 +44,15 @@ export const destination = defineType({
       ],
     }),
     defineField({
+      name: 'highlights',
+      title: 'Highlights',
+      type: 'object',
+      fields: [
+        { name: 'it', title: 'Italiano', type: 'array', of: [{ type: 'string' }] },
+        { name: 'en', title: 'English', type: 'array', of: [{ type: 'string' }] },
+      ],
+    }),
+    defineField({
       name: 'heroImage',
       title: 'Immagine Hero',
       type: 'image',

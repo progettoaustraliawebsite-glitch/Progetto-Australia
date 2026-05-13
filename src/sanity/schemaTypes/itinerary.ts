@@ -79,6 +79,62 @@ export const itinerary = defineType({
       options: { hotspot: true },
     }),
     defineField({
+      name: 'program',
+      title: 'Programma',
+      type: 'array',
+      of: [
+        {
+          type: 'object',
+          fields: [
+            { name: 'day', title: 'Giorno', type: 'number' },
+            {
+              name: 'title',
+              title: 'Titolo',
+              type: 'object',
+              fields: [
+                { name: 'it', title: 'Italiano', type: 'string' },
+                { name: 'en', title: 'English', type: 'string' },
+              ],
+            },
+            {
+              name: 'description',
+              title: 'Descrizione',
+              type: 'object',
+              fields: [
+                { name: 'it', title: 'Italiano', type: 'text' },
+                { name: 'en', title: 'English', type: 'text' },
+              ],
+            },
+          ],
+          preview: {
+            select: { title: 'title.it', subtitle: 'day' },
+            // eslint-disable-next-line @typescript-eslint/no-explicit-any
+            prepare(value: any) {
+              return { title: `Giorno ${value.subtitle}: ${value.title}` };
+            },
+          },
+        },
+      ],
+    }),
+    defineField({
+      name: 'included',
+      title: 'Cosa è incluso',
+      type: 'object',
+      fields: [
+        { name: 'it', title: 'Italiano', type: 'array', of: [{ type: 'string' }] },
+        { name: 'en', title: 'English', type: 'array', of: [{ type: 'string' }] },
+      ],
+    }),
+    defineField({
+      name: 'notIncluded',
+      title: 'Non incluso',
+      type: 'object',
+      fields: [
+        { name: 'it', title: 'Italiano', type: 'array', of: [{ type: 'string' }] },
+        { name: 'en', title: 'English', type: 'array', of: [{ type: 'string' }] },
+      ],
+    }),
+    defineField({
       name: 'featured',
       title: 'In evidenza',
       type: 'boolean',

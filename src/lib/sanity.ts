@@ -33,6 +33,12 @@ export interface LocaleString {
   en: string;
 }
 
+export interface SanityItineraryDay {
+  day: number;
+  title: LocaleString;
+  description: LocaleString;
+}
+
 export interface SanityItinerary {
   _id: string;
   title: LocaleString;
@@ -43,6 +49,9 @@ export interface SanityItinerary {
   category: string;
   description: LocaleString;
   highlights: { it: string[]; en: string[] };
+  program?: SanityItineraryDay[];
+  included?: { it: string[]; en: string[] };
+  notIncluded?: { it: string[]; en: string[] };
   heroImage?: SanityImageSource;
   featured?: boolean;
 }
@@ -54,6 +63,7 @@ export interface SanityDestination {
   country: string;
   tagline: LocaleString;
   description: LocaleString;
+  highlights?: { it: string[]; en: string[] };
   heroImage?: SanityImageSource;
   featured?: boolean;
 }
@@ -123,9 +133,13 @@ export function normalizeSanityItinerary(s: SanityItinerary, idx = 0): Itinerary
     image: s.heroImage ? urlFor(s.heroImage).width(800).height(520).url() : '',
     price: s.price ?? { amount: 0, currency: 'EUR' },
     highlights: s.highlights ?? { it: [], en: [] },
-    program: [],
-    included: { it: [], en: [] },
-    notIncluded: { it: [], en: [] },
+    program: (s.program ?? []).map((d) => ({
+      day: d.day,
+      title: d.title,
+      description: d.description,
+    })),
+    included: s.included ?? { it: [], en: [] },
+    notIncluded: s.notIncluded ?? { it: [], en: [] },
   };
 }
 
@@ -139,7 +153,7 @@ export function normalizeSanityDestination(s: SanityDestination, idx = 0): Desti
     gradient: GRADIENT_DEFAULTS[idx % GRADIENT_DEFAULTS.length],
     accentColor: ACCENT_DEFAULTS[idx % ACCENT_DEFAULTS.length],
     photo: s.heroImage ? urlFor(s.heroImage).width(900).height(600).url() : '',
-    highlights: { it: [], en: [] },
+    highlights: s.highlights ?? { it: [], en: [] },
   };
 }
 
@@ -161,7 +175,8 @@ export function normalizeSanityBlogPostForList(s: SanityBlogPost): BlogPost {
 export async function getAllItineraries(): Promise<SanityItinerary[]> {
   return sanityClient.fetch(
     `*[_type == "itinerary"] | order(_createdAt asc) {
-      _id, title, slug, duration, price, category, description, highlights, heroImage, featured,
+      _id, title, slug, duration, price, category, description, highlights,
+      program, included, notIncluded, heroImage, featured,
       destination->{ _id, title }
     }`
   );
@@ -170,7 +185,8 @@ export async function getAllItineraries(): Promise<SanityItinerary[]> {
 export async function getItineraryBySlug(slug: string): Promise<SanityItinerary | null> {
   return sanityClient.fetch(
     `*[_type == "itinerary" && slug.current == $slug][0] {
-      _id, title, slug, duration, price, category, description, highlights, heroImage, featured,
+      _id, title, slug, duration, price, category, description, highlights,
+      program, included, notIncluded, heroImage, featured,
       destination->{ _id, title }
     }`,
     { slug }
@@ -180,7 +196,8 @@ export async function getItineraryBySlug(slug: string): Promise<SanityItinerary 
 export async function getFeaturedItineraries(): Promise<SanityItinerary[]> {
   return sanityClient.fetch(
     `*[_type == "itinerary" && featured == true] | order(_createdAt asc) [0...6] {
-      _id, title, slug, duration, price, category, description, highlights, heroImage,
+      _id, title, slug, duration, price, category, description, highlights,
+      program, included, notIncluded, heroImage,
       destination->{ _id, title }
     }`
   );
@@ -189,7 +206,7 @@ export async function getFeaturedItineraries(): Promise<SanityItinerary[]> {
 export async function getAllDestinations(): Promise<SanityDestination[]> {
   return sanityClient.fetch(
     `*[_type == "destination"] | order(_createdAt asc) {
-      _id, title, slug, country, tagline, description, heroImage, featured
+      _id, title, slug, country, tagline, description, highlights, heroImage, featured
     }`
   );
 }
@@ -197,7 +214,7 @@ export async function getAllDestinations(): Promise<SanityDestination[]> {
 export async function getDestinationBySlug(slug: string): Promise<SanityDestination | null> {
   return sanityClient.fetch(
     `*[_type == "destination" && slug.current == $slug][0] {
-      _id, title, slug, country, tagline, description, heroImage, featured
+      _id, title, slug, country, tagline, description, highlights, heroImage, featured
     }`,
     { slug }
   );
