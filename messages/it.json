@@ -10,7 +10,7 @@
     "blog": "Blog",
     "contact": "Contatti",
     "logo": "Progetto Australia",
-    "getQuote": "Richiedi Preventivo"
+    "getQuote": "Crea il tuo Viaggio"
   },
   "home": {
     "hero": {
@@ -368,6 +368,6 @@
     "backToBlog": "Torna al Blog",
     "tableOfContents": "Indice Articolo",
     "contactPrompt": "Organizziamo viaggi su misura in tutta l'Oceania. Contattaci per il tuo preventivo.",
-    "getQuote": "Richiedi Preventivo"
+    "getQuote": "Crea il tuo Viaggio"
   }
 }
