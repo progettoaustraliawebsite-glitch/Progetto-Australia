@@ -21,11 +21,8 @@ export default function DestinationsGrid({ destinations }: Props) {
         <SectionHeader label={t('label')} title={t('title')} subtitle={t('subtitle')} />
       </div>
 
-      {/* Cards strip — horizontal scroll on mobile, equal-width flex on desktop */}
-      <div
-        className="flex gap-3 overflow-x-auto overflow-y-hidden scrollbar-hide px-6 lg:px-10 lg:overflow-visible"
-        style={{ scrollSnapType: 'x mandatory' }}
-      >
+      {/* Cards strip — horizontal scroll on mobile, full-width flex on desktop */}
+      <div className="flex gap-3 overflow-x-auto overflow-y-hidden scrollbar-hide px-6 lg:px-10 lg:overflow-visible [scroll-snap-type:x_mandatory] lg:[scroll-snap-type:none]">
         {destinations.map((dest, i) => (
           <motion.div
             key={dest.id}
@@ -33,8 +30,7 @@ export default function DestinationsGrid({ destinations }: Props) {
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true, margin: '-40px' }}
             transition={{ duration: 0.5, delay: i * 0.06 }}
-            className="group relative overflow-hidden rounded-2xl cursor-pointer shrink-0 h-[360px] lg:h-[520px] lg:shrink lg:flex-1"
-            style={{ flex: '0 0 72vw', scrollSnapAlign: 'start' }}
+            className="group relative overflow-hidden rounded-2xl cursor-pointer h-[360px] lg:h-[520px] w-[72vw] shrink-0 [scroll-snap-align:start] lg:w-0 lg:flex-1 lg:shrink"
           >
             {/* Photo */}
             <div
