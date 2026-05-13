@@ -182,15 +182,15 @@ export default function TestimonialsSection() {
           <div className="flex-1 h-px bg-stone-200" />
         </div>
 
-        {/* Cards — horizontal scroll on mobile, 3-col grid on desktop */}
+        {/* Cards — horizontal scroll on all screen sizes */}
         <div
-          className="flex gap-5 overflow-x-auto overflow-y-hidden scrollbar-hide pb-2 lg:grid lg:grid-cols-3 lg:overflow-visible"
+          className="flex gap-5 overflow-x-auto overflow-y-hidden scrollbar-hide pb-2"
           style={{ scrollSnapType: 'x mandatory' }}
         >
           {TESTIMONIALS.map((r, i) => (
             <div
               key={i}
-              className="bg-white rounded-2xl shadow-md border border-stone-100 p-8 flex flex-col gap-6 shrink-0 w-[80vw] sm:w-[60vw] lg:w-auto"
+              className="bg-white rounded-2xl shadow-md border border-stone-100 p-8 flex flex-col gap-6 shrink-0 w-[80vw] sm:w-[60vw] lg:w-[340px]"
               style={{ scrollSnapAlign: 'start' }}
             >
               {/* Photo/logo + rating */}
