@@ -1,9 +1,6 @@
 'use client';
 
-import { useState, useRef, useEffect } from 'react';
-import { motion, AnimatePresence } from 'framer-motion';
 import { useTranslations, useLocale } from 'next-intl';
-import { ChevronLeft, ChevronRight } from 'lucide-react';
 
 interface Testimonial {
   name: string;
@@ -127,7 +124,6 @@ function SmallPlatformBadge({ platform }: { platform: Testimonial['platform'] })
   );
 }
 
-// Platform logos as inline SVG / styled components
 function PlatformLogo({ platform }: { platform: Testimonial['platform'] }) {
   if (platform === 'matrimonio') {
     return (
@@ -145,7 +141,6 @@ function PlatformLogo({ platform }: { platform: Testimonial['platform'] }) {
       </div>
     );
   }
-  // website
   return (
     <div className="w-16 h-16 rounded-full bg-amber-700 flex items-center justify-center shadow-md">
       <span className="text-white font-bold text-base font-sans tracking-wide">PA</span>
@@ -165,28 +160,9 @@ function Stars({ count }: { count: number }) {
   );
 }
 
-const CARDS_PER_PAGE_DESKTOP = 3;
-const CARDS_PER_PAGE_MOBILE = 1;
-
 export default function TestimonialsSection() {
   const t = useTranslations('testimonials');
   const locale = useLocale() as 'it' | 'en';
-  const [page, setPage] = useState(0);
-  const [isMobile, setIsMobile] = useState(false);
-
-  useEffect(() => {
-    const check = () => setIsMobile(window.innerWidth < 768);
-    check();
-    window.addEventListener('resize', check);
-    return () => window.removeEventListener('resize', check);
-  }, []);
-
-  const perPage = isMobile ? CARDS_PER_PAGE_MOBILE : CARDS_PER_PAGE_DESKTOP;
-  const totalPages = Math.ceil(TESTIMONIALS.length / perPage);
-  const visible = TESTIMONIALS.slice(page * perPage, page * perPage + perPage);
-
-  const prev = () => setPage((p) => Math.max(0, p - 1));
-  const next = () => setPage((p) => Math.min(totalPages - 1, p + 1));
 
   return (
     <section className="py-24 bg-stone-50">
@@ -206,118 +182,82 @@ export default function TestimonialsSection() {
           <div className="flex-1 h-px bg-stone-200" />
         </div>
 
-        {/* Cards grid */}
-        <AnimatePresence mode="wait">
-          <motion.div
-            key={page}
-            initial={{ opacity: 0, y: 10 }}
-            animate={{ opacity: 1, y: 0 }}
-            exit={{ opacity: 0, y: -10 }}
-            transition={{ duration: 0.3 }}
-            className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6"
-          >
-            {visible.map((r, i) => (
-              <div
-                key={i}
-                className="bg-white rounded-2xl shadow-md border border-stone-100 p-10 flex flex-col gap-6"
-              >
-                {/* Photo/logo + rating */}
-                <div className="flex flex-col items-center gap-4 pb-6 border-b border-stone-100">
-                  {r.photo ? (
-                    <div className="relative">
-                      <div className="w-20 h-20 rounded-full overflow-hidden shadow-md ring-2 ring-stone-100">
-                        <img
-                          src={r.photo}
-                          alt={r.name}
-                          className="w-full h-full object-cover object-top"
-                          loading="lazy"
-                        />
-                      </div>
-                      <div className="absolute -bottom-1 -right-1">
-                        <SmallPlatformBadge platform={r.platform} />
-                      </div>
+        {/* Cards — horizontal scroll on mobile, 3-col grid on desktop */}
+        <div
+          className="flex gap-5 overflow-x-auto overflow-y-hidden scrollbar-hide pb-2 lg:grid lg:grid-cols-3 lg:overflow-visible"
+          style={{ scrollSnapType: 'x mandatory' }}
+        >
+          {TESTIMONIALS.map((r, i) => (
+            <div
+              key={i}
+              className="bg-white rounded-2xl shadow-md border border-stone-100 p-8 flex flex-col gap-6 shrink-0 w-[80vw] sm:w-[60vw] lg:w-auto"
+              style={{ scrollSnapAlign: 'start' }}
+            >
+              {/* Photo/logo + rating */}
+              <div className="flex flex-col items-center gap-4 pb-6 border-b border-stone-100">
+                {r.photo ? (
+                  <div className="relative">
+                    <div className="w-20 h-20 rounded-full overflow-hidden shadow-md ring-2 ring-stone-100">
+                      <img
+                        src={r.photo}
+                        alt={r.name}
+                        className="w-full h-full object-cover object-top"
+                        loading="lazy"
+                      />
                     </div>
-                  ) : (
-                    <PlatformLogo platform={r.platform} />
-                  )}
-                  <div className="flex flex-col items-center gap-2">
-                    <Stars count={r.rating} />
-                    <span className="text-xs font-sans text-stone-400 uppercase tracking-wide">
-                      {r.reviewCount}
-                    </span>
+                    <div className="absolute -bottom-1 -right-1">
+                      <SmallPlatformBadge platform={r.platform} />
+                    </div>
                   </div>
-                </div>
-
-                {/* Review content */}
-                <div className="flex-1 flex flex-col gap-4">
-                  <h3 className="font-sans font-bold text-lg text-hero leading-snug">
-                    {r.title[locale]}
-                  </h3>
-                  <p className="text-stone-500 text-base leading-relaxed line-clamp-5 font-sans">
-                    &ldquo;{r.text[locale]}&rdquo;
-                  </p>
-                </div>
-
-                {/* Author */}
-                <div className="pt-5 border-t border-stone-100">
-                  <p className="font-sans font-bold text-base text-hero">{r.name}</p>
-                  <p className="text-sm font-sans text-stone-400 mt-1 truncate">{r.trip[locale]} · {r.date[locale]}</p>
+                ) : (
+                  <PlatformLogo platform={r.platform} />
+                )}
+                <div className="flex flex-col items-center gap-2">
+                  <Stars count={r.rating} />
+                  <span className="text-xs font-sans text-stone-400 uppercase tracking-wide">
+                    {r.reviewCount}
+                  </span>
                 </div>
               </div>
-            ))}
-          </motion.div>
-        </AnimatePresence>
 
-        {/* Navigation arrows */}
-        <div className="flex items-center justify-end gap-3 mt-8">
-          <button
-            onClick={prev}
-            disabled={page === 0}
-            className="w-9 h-9 rounded-full border border-stone-200 flex items-center justify-center text-stone-400 hover:text-hero hover:border-stone-400 disabled:opacity-30 transition-all"
-            aria-label="Precedente"
-          >
-            <ChevronLeft size={15} />
-          </button>
-          <div className="flex gap-1.5">
-            {Array.from({ length: totalPages }).map((_, i) => (
-              <button
-                key={i}
-                onClick={() => setPage(i)}
-                className={`transition-all rounded-full ${
-                  i === page ? 'w-5 h-2 bg-gold' : 'w-2 h-2 bg-stone-300 hover:bg-stone-400'
-                }`}
-              />
-            ))}
-          </div>
-          <button
-            onClick={next}
-            disabled={page === totalPages - 1}
-            className="w-9 h-9 rounded-full border border-stone-200 flex items-center justify-center text-stone-400 hover:text-hero hover:border-stone-400 disabled:opacity-30 transition-all"
-            aria-label="Successiva"
-          >
-            <ChevronRight size={15} />
-          </button>
+              {/* Review content */}
+              <div className="flex-1 flex flex-col gap-4">
+                <h3 className="font-sans font-bold text-lg text-hero leading-snug">
+                  {r.title[locale]}
+                </h3>
+                <p className="text-stone-500 text-base leading-relaxed line-clamp-5 font-sans">
+                  &ldquo;{r.text[locale]}&rdquo;
+                </p>
+              </div>
+
+              {/* Author */}
+              <div className="pt-5 border-t border-stone-100">
+                <p className="font-sans font-bold text-base text-hero">{r.name}</p>
+                <p className="text-sm font-sans text-stone-400 mt-1 truncate">{r.trip[locale]} · {r.date[locale]}</p>
+              </div>
+            </div>
+          ))}
         </div>
 
-        {/* Stats strip */}
-        <div className="mt-12 pt-8 border-t border-stone-200 flex flex-wrap items-center justify-center gap-10 text-center">
-          <div>
+        {/* Stats strip — single row, no wrap */}
+        <div className="mt-12 pt-8 border-t border-stone-200 flex items-center justify-center gap-6 sm:gap-10 text-center overflow-x-auto scrollbar-hide">
+          <div className="shrink-0">
             <p className="font-serif text-2xl font-bold text-hero">4.8<span className="text-base text-stone-400">/5</span></p>
             <Stars count={5} />
             <p className="text-[10px] font-sans text-stone-400 mt-1 uppercase tracking-wider">Matrimonio.com</p>
           </div>
-          <div className="w-px h-10 bg-stone-200 hidden sm:block" />
-          <div>
+          <div className="w-px h-10 bg-stone-200 shrink-0" />
+          <div className="shrink-0">
             <p className="font-serif text-2xl font-bold text-hero">98%</p>
             <p className="text-[10px] font-sans text-stone-400 mt-1 uppercase tracking-wider">{t('recommended')} · Facebook</p>
           </div>
-          <div className="w-px h-10 bg-stone-200 hidden sm:block" />
-          <div>
+          <div className="w-px h-10 bg-stone-200 shrink-0" />
+          <div className="shrink-0">
             <p className="font-serif text-2xl font-bold text-hero">15+</p>
             <p className="text-[10px] font-sans text-stone-400 mt-1 uppercase tracking-wider">{t('yearsExp')}</p>
           </div>
-          <div className="w-px h-10 bg-stone-200 hidden sm:block" />
-          <div>
+          <div className="w-px h-10 bg-stone-200 shrink-0 hidden sm:block" />
+          <div className="hidden sm:block shrink-0">
             <p className="font-sans text-xs text-stone-500 max-w-[200px] leading-relaxed italic">
               &ldquo;{t('overallQuote')}&rdquo;
             </p>

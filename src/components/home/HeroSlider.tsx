@@ -12,7 +12,6 @@ export default function HeroSlider() {
   const [current, setCurrent] = useState(0);
   const [mounted, setMounted] = useState(false);
   const t = useTranslations('home.hero');
-  const tNav = useTranslations('nav');
 
   const next = useCallback(() => {
     setCurrent((prev) => (prev === SLIDE_COUNT - 1 ? 0 : prev + 1));
@@ -72,7 +71,7 @@ export default function HeroSlider() {
                 onClick={() => router.push('/quote')}
                 className="inline-flex items-center gap-3 px-10 py-4 border-2 border-gold bg-gold/10 backdrop-blur-sm text-white text-xs font-sans uppercase tracking-[0.3em] font-bold hover:bg-gold hover:text-hero transition-all duration-500 shadow-2xl shadow-gold/20"
               >
-                {tNav('getQuote')}
+                {t('cta')}
               </button>
             </motion.div>
           </AnimatePresence>
