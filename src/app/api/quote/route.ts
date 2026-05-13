@@ -99,6 +99,17 @@ export async function POST(req: Request) {
       .filter(Boolean)
       .join(' + ');
 
+    const flightLabel: Record<string, string> = {
+      includi: 'Includi nel preventivo',
+      'ho-gia': 'Ho già i voli',
+      autonomo: 'Li organizzo autonomamente',
+    };
+    const accomLabel: Record<string, string> = {
+      standard: 'Standard',
+      superior: 'Superior',
+      lusso: 'Lusso',
+    };
+
     const dealDescription = `
 DETTAGLI VIAGGIO:
 ---------------------------
@@ -108,8 +119,9 @@ Data Partenza: ${data.dataInizio || 'da definire'}
 Data Fine: ${data.dataFine || 'da definire'}
 Flessibilità: ${data.flessibilita || '—'}
 Tipo di Viaggio: ${tripTypeLabel || '—'}
-Sistemazione: ${data.accommodation || '—'}
-Voli: ${data.voli || '—'}${data.voli === 'includi' ? ` | Partenza da: ${data.cittaPartenza}` : ''}
+Luna di Miele: ${data.isHoneymoon ? 'Sì' : 'No'}
+Sistemazione: ${accomLabel[data.accom] || data.accom || '—'}
+Voli: ${flightLabel[data.flightOpt] || data.flightOpt || '—'}${data.flightOpt === 'includi' ? ` | Partenza da: ${data.departureCity || '—'}` : ''}
 Budget Selezionato: ${data.budget || '—'}
 
 VIAGGIATORI:

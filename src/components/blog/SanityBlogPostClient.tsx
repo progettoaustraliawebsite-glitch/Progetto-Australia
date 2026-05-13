@@ -1,5 +1,6 @@
 'use client';
 
+import Image from 'next/image';
 import { PortableText } from '@portabletext/react';
 import { Link } from '@/i18n/navigation';
 import { ChevronLeft, Globe } from 'lucide-react';
@@ -26,7 +27,7 @@ export default function SanityBlogPostClient({ post, locale, backLabel, quoteLab
       <section className="relative h-[65vh] flex items-end">
         <div className="absolute inset-0">
           {imageUrl && (
-            <img src={imageUrl} alt={post.title[locale]} className="w-full h-full object-cover" />
+            <Image src={imageUrl} alt={post.title[locale]} fill className="object-cover" sizes="100vw" priority unoptimized />
           )}
           <div className="absolute inset-0 bg-gradient-to-t from-hero/95 via-hero/20 to-transparent" />
         </div>

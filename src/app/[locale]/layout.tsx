@@ -3,8 +3,7 @@ import { NextIntlClientProvider } from 'next-intl';
 import { getMessages, getTranslations } from 'next-intl/server';
 import { notFound } from 'next/navigation';
 import { routing } from '@/i18n/routing';
-import Navbar from '@/components/layout/Navbar';
-import Footer from '@/components/layout/Footer';
+import ConditionalShell from '@/components/layout/ConditionalShell';
 import { QuoteModalProvider } from '@/context/QuoteModalContext';
 import WeddingQuoteModal from '@/components/modals/WeddingQuoteModal';
 import NewsletterPopup from '@/components/modals/NewsletterPopup';
@@ -114,9 +113,7 @@ export default async function LocaleLayout({ children, params }: Props) {
     <NextIntlClientProvider messages={messages}>
       <JsonLd data={travelAgencySchema} />
       <QuoteModalProvider>
-        <Navbar />
-        <main>{children}</main>
-        <Footer />
+        <ConditionalShell>{children}</ConditionalShell>
         <WeddingQuoteModal />
         <NewsletterPopup />
       </QuoteModalProvider>

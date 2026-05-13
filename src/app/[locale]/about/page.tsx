@@ -1,6 +1,7 @@
 'use client';
 
 import { useState, useRef } from 'react';
+import Image from 'next/image';
 import { motion, AnimatePresence } from 'framer-motion';
 import { useLocale } from 'next-intl';
 import { team } from '@/data/team';
@@ -297,7 +298,7 @@ export default function AboutPage() {
           </div>
 
           <div className="flex flex-col sm:flex-row items-center justify-center gap-6">
-            <img src="/images/logos/travellife-partner.png" alt="Travelife Partner" className="h-14 w-auto object-contain opacity-80" />
+            <Image src="/images/logos/travellife-partner.png" alt="Travelife Partner" width={120} height={56} className="h-14 w-auto object-contain opacity-80" />
             <Link
               href="/sustainability"
               className="inline-flex items-center gap-3 px-8 py-3 border border-hero text-hero text-xs font-sans uppercase tracking-widest hover:bg-hero hover:text-white transition-all duration-300"
@@ -362,7 +363,7 @@ export default function AboutPage() {
                 {selectedMember.logos.length > 0 && (
                   <div className="mt-5 pt-5 border-t border-sand flex flex-wrap items-center gap-3">
                     {selectedMember.logos.map((logo) => (
-                      <img key={logo.src} src={logo.src} alt={logo.alt} title={logo.alt} className="h-7 w-auto object-contain opacity-70" />
+                      <Image key={logo.src} src={logo.src} alt={logo.alt} title={logo.alt} width={80} height={28} className="h-7 w-auto object-contain opacity-70" />
                     ))}
                   </div>
                 )}

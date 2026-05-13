@@ -1,6 +1,7 @@
 'use client';
 
 import { useState } from 'react';
+import { useSearchParams } from 'next/navigation';
 import { motion, AnimatePresence } from 'framer-motion';
 import { useLocale } from 'next-intl';
 import { useRouter, Link } from '@/i18n/navigation';
@@ -257,6 +258,7 @@ const selectCls =
 export default function QuoteForm() {
   const locale = useLocale() as 'it' | 'en';
   const router = useRouter();
+  const searchParams = useSearchParams();
   const c = copy[locale];
 
   const [step, setStep] = useState(0);
@@ -272,7 +274,7 @@ export default function QuoteForm() {
     destinations: [{ id: '', nights: 7 }],
     dataInizio: '', dataFine: '', flessibilita: 'esatta',
     flightOpt: '', departureCity: '',
-    tripType: '', isHoneymoon: false,
+    tripType: '', isHoneymoon: searchParams.get('honeymoon') === '1',
     accom: '',
     budget: '', note: '',
     nome: '', cognome: '', email: '', telefono: '', contactPref: '',

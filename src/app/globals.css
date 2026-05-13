@@ -20,6 +20,20 @@
 
 html {
   scroll-behavior: smooth;
+  overflow-x: hidden;
+}
+
+body {
+  overflow-x: hidden;
+}
+
+button,
+[role="button"],
+a,
+label[for],
+select,
+[onClick] {
+  cursor: pointer;
 }
 
 body {

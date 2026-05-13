@@ -1,6 +1,7 @@
 'use client';
 
 import { useState, useEffect } from 'react';
+import Image from 'next/image';
 import { motion, AnimatePresence } from 'framer-motion';
 import { Menu, X } from 'lucide-react';
 import { useTranslations, useLocale } from 'next-intl';
@@ -58,7 +59,7 @@ export default function Navbar() {
       <nav className="max-w-7xl mx-auto px-6 lg:px-10 flex items-center justify-between h-20">
         {/* Logo */}
         <Link href="/" className="hover:opacity-80 transition-opacity duration-300">
-          <img src="/logo.png" alt="Progetto Australia" className="h-7 w-auto object-contain" />
+          <Image src="/logo.png" alt="Progetto Australia" width={140} height={28} className="h-7 w-auto object-contain" />
         </Link>
 
         {/* Desktop Nav */}

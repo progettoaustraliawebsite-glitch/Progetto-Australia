@@ -1,5 +1,6 @@
 'use client';
 
+import Image from 'next/image';
 import { Link } from '@/i18n/navigation';
 import { ChevronLeft, Info, FileText, CloudSun, Bus, Globe, Shirt, Zap, Coins, MapPin, Calendar, Bookmark } from 'lucide-react';
 import type { BlogPost } from '@/data/blog';
@@ -38,7 +39,7 @@ export default function BlogPostClient({ post, locale, backLabel, quoteLabel, to
       {/* Hero Section */}
       <section className="relative h-[65vh] flex items-end">
         <div className="absolute inset-0">
-          <img src={post.image} alt={post.title[locale]} className="w-full h-full object-cover" />
+          <Image src={post.image} alt={post.title[locale]} fill className="object-cover" sizes="100vw" priority />
           <div className="absolute inset-0 bg-gradient-to-t from-hero/95 via-hero/20 to-transparent" />
         </div>
         <div className="container mx-auto px-6 pb-16 relative z-10">

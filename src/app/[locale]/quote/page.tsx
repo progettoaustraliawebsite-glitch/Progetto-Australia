@@ -7,9 +7,16 @@ export default function QuotePage() {
     /* Fixed overlay — covers everything including Navbar/Footer */
     <div className="fixed inset-0 z-[200] overflow-y-auto bg-black">
 
-      {/* YouTube video background */}
+      {/* Video/image background */}
       <div className="absolute inset-0 overflow-hidden pointer-events-none">
+        {/* Static image — mobile */}
+        <div
+          className="absolute inset-0 md:hidden bg-cover bg-center"
+          style={{ backgroundImage: 'url(/images/hero-sydney.jpg)' }}
+        />
+        {/* YouTube — desktop only */}
         <iframe
+          className="hidden md:block"
           style={{
             position: 'absolute',
             top: '50%',
@@ -22,7 +29,7 @@ export default function QuotePage() {
             border: 'none',
             pointerEvents: 'none',
           }}
-          src="https://www.youtube.com/embed/IcZhtJZP7eY?controls=0&autoplay=1&mute=1&loop=1&playlist=IcZhtJZP7eY&rel=0&showinfo=0&iv_load_policy=3&disablekb=1&modestbranding=1&playsinline=1"
+          src="https://www.youtube.com/embed/IcZhtJZP7eY?controls=0&autoplay=1&mute=1&loop=1&playlist=IcZhtJZP7eY&rel=0&showinfo=0&iv_load_policy=3&disablekb=1&modestbranding=1&playsinline=1&start=5"
           title="Progetto Australia"
           allow="autoplay; encrypted-media"
         />
@@ -30,7 +37,7 @@ export default function QuotePage() {
       </div>
 
       {/* Form — centered in the overlay */}
-      <div className="relative z-10 flex items-center justify-center min-h-screen py-6 md:py-12 px-4">
+      <div className="relative z-10 flex items-center justify-center min-h-screen py-6 md:py-12 px-3 sm:px-6">
         <QuoteForm />
       </div>
     </div>

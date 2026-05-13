@@ -26,8 +26,15 @@ export default function HeroSlider() {
 
   return (
     <section className="relative h-screen w-full overflow-hidden bg-hero">
-      {/* YouTube video background */}
+      {/* Static image background — mobile only */}
+      <div
+        className="absolute inset-0 md:hidden bg-cover bg-center"
+        style={{ backgroundImage: 'url(/images/hero-sydney.jpg)' }}
+      />
+
+      {/* YouTube video background — desktop only */}
       <iframe
+        className="hidden md:block"
         style={{
           position: 'absolute',
           top: '50%',
@@ -40,13 +47,13 @@ export default function HeroSlider() {
           border: 'none',
           pointerEvents: 'none',
         }}
-        src="https://www.youtube.com/embed/IcZhtJZP7eY?controls=0&autoplay=1&mute=1&loop=1&playlist=IcZhtJZP7eY&rel=0&showinfo=0&iv_load_policy=3&disablekb=1&modestbranding=1&playsinline=1"
+        src="https://www.youtube.com/embed/IcZhtJZP7eY?controls=0&autoplay=1&mute=1&loop=1&playlist=IcZhtJZP7eY&rel=0&showinfo=0&iv_load_policy=3&disablekb=1&modestbranding=1&playsinline=1&start=5"
         title="Progetto Australia"
         allow="autoplay; encrypted-media"
         allowFullScreen
       />
 
-      {/* Dark overlay — leggermente più leggero per far emergere il video */}
+      {/* Dark overlay */}
       <div className="absolute inset-0 bg-black/38" />
 
       {/* Content */}

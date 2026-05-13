@@ -3,73 +3,73 @@
 import Image from 'next/image';
 import Link from 'next/link';
 import { useRouter } from '@/i18n/navigation';
-import { Check, Star, ArrowRight, Clock, Users, HeadphonesIcon } from 'lucide-react';
+import { Star, ArrowRight, Clock, Heart, Sparkles, Users } from 'lucide-react';
 
 // ─── Data ─────────────────────────────────────────────────────────────────────
 
 const FEATURED_ITINERARIES = [
   {
-    slug: 'australia-self-drive',
-    title: 'Australia Self-Drive',
+    slug: 'magica-australia',
+    title: 'Magica Australia Luxury',
     description:
-      "L'Australia è un paese perfetto per viaggiare in libertà con auto a noleggio. Strade sicure, fauna unica e paesaggi mozzafiato da Perth a Cairns.",
-    duration: 18,
-    price: 1790,
-    image: '/images/itin-self-drive.jpg',
-    tag: 'Più richiesto',
-    highlights: ['Rottnest Island', 'Kangaroo Island', 'Uluru', 'Great Barrier Reef'],
+      'Strutture deluxe immerse nella natura: Great Ocean Road, Kangaroo Island in lodge 5 stelle, Kakadu e cena romantica nel deserto sotto le stelle.',
+    duration: 23,
+    price: 5980,
+    image: '/images/itin-magica-au.jpg',
+    tag: 'Più scelto per le nozze',
+    highlights: ['Great Ocean Road', 'Kangaroo Island 5★', 'Uluru', 'Cena nel deserto'],
+  },
+  {
+    slug: 'australia-deluxe-isole-cook',
+    title: 'Australia Deluxe + Isole Cook',
+    description:
+      "Australia in strutture superior e il paradiso delle Isole Cook: lagune turchesi, overwater bungalow e tramonti indimenticabili.",
+    duration: 23,
+    price: 4130,
+    image: '/images/itin-au-deluxe.jpg',
+    tag: 'Mare + Avventura',
+    highlights: ['Sydney', 'Uluru', 'Rarotonga', 'Overwater Bungalow'],
   },
   {
     slug: 'australia-on-the-road-isole-cook',
     title: 'Australia + Isole Cook',
     description:
-      'Un viaggio indimenticabile che unisce le meraviglie australiane alle acque turchesi del Pacifico Sud, con soste nelle isole più belle del mondo.',
+      'Il mix perfetto per una luna di miele: la magia dell\'entroterra australiano e le acque cristalline del Pacifico Sud.',
     duration: 24,
     price: 2850,
     image: '/images/itin-au-cook.jpg',
-    tag: 'Consigliato',
-    highlights: ['Sydney', 'Uluru', 'Cairns', 'Rarotonga'],
+    tag: 'Romantico',
+    highlights: ['Cairns', 'Great Barrier Reef', 'Aitutaki', 'Cook Islands'],
   },
   {
-    slug: 'australia-rossa-selvaggia',
-    title: 'Australia Rossa e Selvaggia',
+    slug: 'australia-self-drive',
+    title: 'Australia in Libertà',
     description:
-      'Il viaggio più completo per scoprire l\'Australia da ovest a est: Perth, Broome, Darwin, Kakadu, Uluru e la Costa Est fino a Cairns.',
-    duration: 31,
-    price: 3470,
-    image: '/images/itin-western-au.jpg',
-    tag: 'Avventura',
-    highlights: ['Perth', 'Broome', 'Kakadu', 'Uluru'],
-  },
-  {
-    slug: 'magica-australia',
-    title: 'Magica Australia Luxury',
-    description:
-      'Strutture deluxe immerse nella natura: Great Ocean Road, Kangaroo Island in lodge 5 stelle, Kakadu e cena nel deserto sotto le stelle.',
-    duration: 23,
-    price: 5980,
-    image: '/images/itin-magica-au.jpg',
-    tag: 'Luxury',
-    highlights: ['Great Ocean Road', 'Kangaroo Island', 'Kakadu', 'Uluru'],
+      'Self-drive romantico da Perth a Cairns: paesaggi mozzafiato, fauna unica e hotel selezionati per una luna di miele autentica.',
+    duration: 18,
+    price: 1790,
+    image: '/images/itin-self-drive.jpg',
+    tag: 'Avventura di coppia',
+    highlights: ['Rottnest Island', 'Kangaroo Island', 'Uluru', 'Cairns'],
   },
 ];
 
 const TESTIMONIALS = [
   {
-    name: 'Claudia e Alberto',
-    photo: '/images/testimonials/claudia-alberto.jpg',
-    trip: 'Australia – 20 giorni in self-drive',
-    title: 'Non avremmo potuto fare scelta migliore',
-    text: 'Siamo abituati a viaggiare in autonomia ma questa volta abbiamo demandato ad un\'agenzia. Non avremmo potuto fare una scelta migliore! Professionisti che conoscono perfettamente il territorio e riescono in poco tempo a cucirti un itinerario perfetto per le tue esigenze. Consigliamo al 100%!',
+    name: 'Chiara e Giuseppe',
+    photo: '/images/testimonials/chiara-giuseppe.jpg',
+    trip: 'Viaggio di nozze in Australia',
+    title: 'Il viaggio più bello della nostra vita',
+    text: 'Siamo partiti con Progetto Australia per il nostro viaggio di nozze. Daria ci ha seguito in tutto e per tutto definendo un itinerario che rispecchiasse le nostre esigenze. È stato il viaggio più bello della nostra vita tra paesaggi mozzafiato, animaletti simpatici e mare cristallino!',
     rating: 5,
-    platform: 'Facebook',
+    platform: 'Matrimonio.com',
   },
   {
-    name: 'Alessio, Lara e Mirco',
-    photo: undefined,
-    trip: 'Australia in famiglia',
-    title: 'Organizzato alla perfezione, anche col bimbo',
-    text: 'Viaggio molto impegnativo perché avevamo un bimbo di 3 anni, ma siamo stati accontentati per tutte le tappe che avevamo chiesto, organizzato davvero bene sia come tempistiche, spostamenti, location e veicoli. L\'agente locale Daria sempre disponibile. Grazie veramente.',
+    name: 'Francesca e Emanuele',
+    photo: '/images/testimonials/francesca-emanuele.jpg',
+    trip: 'Viaggio di nozze in Australia',
+    title: 'Lavoro impeccabile, nessun imprevisto',
+    text: 'È stato tutto perfetto! L\'itinerario rispecchiava esattamente il nostro stile, le attività ci sono piaciute tantissimo e gli hotel erano perfetti, sempre comodissimi ai centri o immersi nella natura. Un viaggio davvero indimenticabile!',
     rating: 5,
     platform: 'Sito ufficiale',
   },
@@ -90,35 +90,18 @@ function Stars({ count }: { count: number }) {
   return (
     <div className="flex gap-0.5">
       {[1, 2, 3, 4, 5].map((s) => (
-        <Star
-          key={s}
-          size={14}
-          fill={s <= count ? '#F59E0B' : 'none'}
-          stroke={s <= count ? '#F59E0B' : '#D1D5DB'}
-        />
+        <Star key={s} size={14} fill={s <= count ? '#F59E0B' : 'none'} stroke={s <= count ? '#F59E0B' : '#D1D5DB'} />
       ))}
     </div>
   );
 }
 
-function CtaButton({ className = '' }: { className?: string }) {
-  const router = useRouter();
-  return (
-    <button
-      type="button"
-      onClick={() => router.push('/quote')}
-      className={`inline-flex items-center gap-2 bg-gold hover:bg-gold-dark text-white font-sans font-bold rounded-full transition-colors ${className}`}
-    >
-      Richiedi il Tuo Preventivo Gratuito
-      <ArrowRight size={18} />
-    </button>
-  );
-}
-
 // ─── Page ─────────────────────────────────────────────────────────────────────
 
-export default function LandingAustralia() {
+export default function LandingLunaDiMiele() {
   const router = useRouter();
+
+  const goToForm = () => router.push('/quote?honeymoon=1');
 
   return (
     <div className="bg-white font-sans pb-24 lg:pb-0">
@@ -126,7 +109,7 @@ export default function LandingAustralia() {
       {/* ── TOPBAR ── */}
       <header className="sticky top-0 z-50 bg-white shadow-sm h-16 flex items-center px-6">
         <div className="w-full max-w-6xl mx-auto flex items-center justify-center">
-          <Link href="/it" className="flex items-center gap-2">
+          <Link href="/it">
             <Image src="/images/logo.png" alt="Progetto Australia" width={140} height={40} className="h-9 w-auto" />
           </Link>
         </div>
@@ -135,45 +118,40 @@ export default function LandingAustralia() {
       {/* ── HERO ── */}
       <section className="relative min-h-[92vh] flex items-center">
         <Image
-          src="/images/hero-sydney.jpg"
-          alt="Sydney, Australia"
+          src="/images/hero-whitehaven.jpg"
+          alt="Luna di miele in Australia"
           fill
           priority
           className="object-cover object-center"
           sizes="100vw"
         />
-        <div className="absolute inset-0 bg-black/55" />
+        <div className="absolute inset-0 bg-black/50" />
 
         <div className="relative z-10 w-full max-w-6xl mx-auto px-6 py-20">
           <div className="max-w-2xl">
             {/* Trust badge */}
             <div className="inline-flex items-center gap-3 bg-white/10 backdrop-blur-sm border border-white/20 rounded-full px-4 py-2 mb-8">
-              <div className="flex gap-0.5">
-                {[1,2,3,4,5].map(s => <Star key={s} size={13} fill="#F59E0B" stroke="#F59E0B" />)}
-              </div>
-              <span className="text-white/90 text-xs font-sans">4.8/5 · 15 anni di esperienza · 2.000+ viaggiatori</span>
+              <Heart size={13} fill="#F59E0B" stroke="#F59E0B" />
+              <span className="text-white/90 text-xs font-sans">500+ coppie · 4.8/5 su Matrimonio.com · 15 anni di esperienza</span>
             </div>
 
             <h1 className="font-serif text-4xl md:text-5xl lg:text-6xl font-bold text-white leading-tight mb-6">
-              Viaggi Su Misura in Australia<br />
-              <span className="text-gold">con Esperti Italiani</span>
+              Luna di Miele in Australia –<br />
+              <span className="text-gold">Il Viaggio dei Tuoi Sogni</span>
             </h1>
 
             <p className="text-white/85 text-lg md:text-xl font-sans mb-10 leading-relaxed">
-              Pianifica il tuo itinerario personalizzato con il nostro team a Brisbane.
-              Consulenza gratuita, risposta entro 24 ore.
+              500+ coppie ci hanno scelto per il loro viaggio di nozze. Ogni dettaglio curato da esperti italiani a Brisbane.
             </p>
 
-            <div className="flex flex-col sm:flex-row gap-4 items-start">
-              <button
-                type="button"
-                onClick={() => router.push('/quote')}
-                className="inline-flex items-center gap-2 bg-gold hover:bg-gold-dark text-white font-bold font-sans text-lg px-8 py-4 rounded-full transition-colors shadow-lg"
-              >
-                Richiedi il Tuo Preventivo Gratuito
-                <ArrowRight size={20} />
-              </button>
-            </div>
+            <button
+              type="button"
+              onClick={goToForm}
+              className="inline-flex items-center gap-2 bg-gold hover:bg-gold-dark text-white font-bold font-sans text-lg px-8 py-4 rounded-full transition-colors shadow-lg"
+            >
+              Richiedi il Tuo Preventivo Gratuito
+              <ArrowRight size={20} />
+            </button>
 
             <p className="mt-5 text-white/60 text-sm font-sans">
               Consulenza gratuita · Risposta entro 24h · Nessun impegno
@@ -188,19 +166,19 @@ export default function LandingAustralia() {
           <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
             {[
               {
+                icon: <Heart size={28} className="text-gold" />,
+                title: 'Ogni dettaglio è romantico',
+                desc: "Cene sotto le stelle nel deserto, lodge immersi nella natura, spiagge private. Curiamo ogni momento perché sia indimenticabile.",
+              },
+              {
+                icon: <Sparkles size={28} className="text-gold" />,
+                title: 'Su misura per voi due',
+                desc: 'Nessun pacchetto preconfezionato. Il vostro itinerario nasce dalle vostre passioni, dal vostro stile, dal vostro budget.',
+              },
+              {
                 icon: <Users size={28} className="text-gold" />,
-                title: 'Itinerari 100% personalizzati',
-                desc: 'Ogni viaggio è costruito attorno a te: tappe, ritmi, budget e desideri. Nessun tour di gruppo, nessun pacchetto fisso.',
-              },
-              {
-                icon: <HeadphonesIcon size={28} className="text-gold" />,
-                title: 'Esperti italiani a Brisbane',
-                desc: 'Il nostro team vive in Australia. Conoscenza sul campo, aggiornata in tempo reale — non da catalogo.',
-              },
-              {
-                icon: <Check size={28} className="text-gold" />,
-                title: 'Assistenza durante il viaggio',
-                desc: 'Sei in Australia e hai un problema? Il tuo consulente risponde. Sempre. Per tutta la durata del tuo viaggio.',
+                title: '500+ coppie soddisfatte',
+                desc: 'Da 15 anni organizziamo viaggi di nozze in Australia e Oceania. Conosciamo ogni angolo romantico di questo continente.',
               },
             ].map((p, i) => (
               <div key={i} className="flex flex-col items-center text-center gap-4 p-6">
@@ -215,7 +193,7 @@ export default function LandingAustralia() {
         </div>
       </section>
 
-      {/* ── ITINERARI IN EVIDENZA ── */}
+      {/* ── ITINERARI ── */}
       <section className="py-20 bg-stone-50">
         <div className="max-w-6xl mx-auto px-6">
           <div className="text-center mb-12">
@@ -223,20 +201,16 @@ export default function LandingAustralia() {
               Idee di Viaggio
             </p>
             <h2 className="font-serif text-3xl md:text-4xl font-bold text-hero mb-4">
-              I nostri itinerari più amati
+              I viaggi di nozze più amati
             </h2>
             <p className="text-stone-500 text-lg max-w-xl mx-auto">
-              Ogni itinerario è un punto di partenza — lo adattiamo esattamente alle tue esigenze.
+              Ogni itinerario è un punto di partenza — lo costruiamo attorno a voi.
             </p>
           </div>
 
           <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
             {FEATURED_ITINERARIES.map((itin) => (
-              <div
-                key={itin.slug}
-                className="bg-white rounded-2xl overflow-hidden shadow-md border border-stone-100 flex flex-col"
-              >
-                {/* Image */}
+              <div key={itin.slug} className="bg-white rounded-2xl overflow-hidden shadow-md border border-stone-100 flex flex-col">
                 <div className="relative h-52 overflow-hidden">
                   <Image
                     src={itin.image}
@@ -259,11 +233,9 @@ export default function LandingAustralia() {
                   </div>
                 </div>
 
-                {/* Content */}
                 <div className="p-6 flex flex-col gap-4 flex-1">
                   <p className="text-stone-500 text-sm leading-relaxed line-clamp-2">{itin.description}</p>
 
-                  {/* Highlights */}
                   <div className="flex flex-wrap gap-2">
                     {itin.highlights.map((h) => (
                       <span key={h} className="text-xs font-sans bg-stone-100 text-stone-600 px-2.5 py-1 rounded-full">
@@ -282,7 +254,7 @@ export default function LandingAustralia() {
                     </div>
                     <button
                       type="button"
-                      onClick={() => router.push('/quote')}
+                      onClick={goToForm}
                       className="inline-flex items-center gap-2 bg-hero hover:bg-charcoal text-white text-sm font-bold font-sans px-5 py-2.5 rounded-full transition-colors"
                     >
                       Richiedi preventivo
@@ -295,13 +267,9 @@ export default function LandingAustralia() {
           </div>
 
           <p className="text-center text-stone-400 text-sm mt-8">
-            Non vedi quello che cerchi?{' '}
-            <button
-              type="button"
-              onClick={() => router.push('/quote')}
-              className="text-gold hover:underline font-semibold"
-            >
-              Raccontaci il tuo viaggio ideale →
+            Hai un'idea diversa?{' '}
+            <button type="button" onClick={goToForm} className="text-gold hover:underline font-semibold">
+              Raccontaci il vostro viaggio ideale →
             </button>
           </p>
         </div>
@@ -319,35 +287,30 @@ export default function LandingAustralia() {
             </h2>
           </div>
 
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-8 relative">
-            {/* Connector line (desktop) */}
-            <div className="hidden md:block absolute top-10 left-1/3 right-1/3 h-px bg-stone-200" />
-
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
             {[
               {
                 n: '01',
-                title: 'Compila il form',
-                desc: 'Rispondi a poche domande sul tuo viaggio ideale. Ci vogliono meno di 3 minuti.',
+                title: 'Raccontateci il vostro sogno',
+                desc: 'Compilate il form in 3 minuti — destinazioni, date, stile di viaggio. Più ci dite, più il preventivo sarà preciso.',
                 time: '3 minuti',
               },
               {
                 n: '02',
-                title: 'Ricevi il preventivo',
-                desc: 'Un nostro esperto costruisce il tuo itinerario personalizzato e te lo invia entro 24 ore.',
+                title: 'Ricevete il preventivo',
+                desc: 'Un nostro esperto costruisce il vostro itinerario romantico e ve lo invia entro 24 ore, senza impegno.',
                 time: 'Entro 24 ore',
               },
               {
                 n: '03',
-                title: 'Parti — noi pensiamo a tutto',
-                desc: 'Voli, hotel, trasferimenti, attività: ogni dettaglio curato. Tu pensa solo a goderti il viaggio.',
+                title: 'Partite — noi pensiamo a tutto',
+                desc: 'Voli, hotel romantici, trasferimenti, cene speciali: ogni dettaglio curato. Voi pensate solo a godervi ogni momento.',
                 time: 'Tutto incluso',
               },
             ].map((step, i) => (
               <div key={i} className="flex flex-col items-center text-center gap-4">
-                <div className="relative">
-                  <div className="w-20 h-20 rounded-full border-2 border-gold bg-white flex items-center justify-center shadow-sm z-10 relative">
-                    <span className="font-serif text-2xl font-bold text-gold">{step.n}</span>
-                  </div>
+                <div className="w-20 h-20 rounded-full border-2 border-gold bg-white flex items-center justify-center shadow-sm">
+                  <span className="font-serif text-2xl font-bold text-gold">{step.n}</span>
                 </div>
                 <div>
                   <div className="inline-flex items-center gap-1 bg-stone-100 text-stone-500 text-xs font-sans px-3 py-1 rounded-full mb-3">
@@ -368,10 +331,10 @@ export default function LandingAustralia() {
         <div className="max-w-6xl mx-auto px-6">
           <div className="text-center mb-12">
             <p className="text-xs font-sans uppercase tracking-[0.3em] text-gold font-bold mb-3">
-              Cosa dicono i nostri viaggiatori
+              Coppie che ci hanno scelto
             </p>
             <h2 className="font-serif text-3xl md:text-4xl font-bold text-hero">
-              2.000+ italiani ci hanno scelto
+              Il loro viaggio di nozze, raccontato da loro
             </h2>
           </div>
 
@@ -385,7 +348,7 @@ export default function LandingAustralia() {
                     </div>
                   ) : (
                     <div className="w-14 h-14 rounded-full bg-amber-100 flex items-center justify-center shrink-0">
-                      <span className="text-amber-700 font-bold font-sans text-lg">{r.name[0]}</span>
+                      <Heart size={20} className="text-amber-600" />
                     </div>
                   )}
                   <div>
@@ -412,8 +375,8 @@ export default function LandingAustralia() {
             </div>
             <div className="w-px h-10 bg-stone-200 hidden sm:block" />
             <div>
-              <p className="font-serif text-2xl font-bold text-hero">98%</p>
-              <p className="text-[10px] font-sans text-stone-400 mt-1 uppercase tracking-wider">Consigliato · Facebook</p>
+              <p className="font-serif text-2xl font-bold text-hero">500+</p>
+              <p className="text-[10px] font-sans text-stone-400 mt-1 uppercase tracking-wider">Coppie soddisfatte</p>
             </div>
             <div className="w-px h-10 bg-stone-200 hidden sm:block" />
             <div>
@@ -428,19 +391,20 @@ export default function LandingAustralia() {
       <section className="py-20 bg-hero relative overflow-hidden">
         <div
           className="absolute inset-0 opacity-20"
-          style={{ backgroundImage: 'url(/images/hero-whitehaven.jpg)', backgroundSize: 'cover', backgroundPosition: 'center' }}
+          style={{ backgroundImage: 'url(/images/dest-whitehaven.jpg)', backgroundSize: 'cover', backgroundPosition: 'center' }}
         />
         <div className="absolute inset-0 bg-hero/70" />
         <div className="relative z-10 max-w-3xl mx-auto px-6 text-center">
+          <Heart size={32} fill="#f9b233" stroke="#f9b233" className="mx-auto mb-6" />
           <h2 className="font-serif text-3xl md:text-4xl font-bold text-white mb-4">
             Richiedi il Tuo Preventivo Gratuito
           </h2>
           <p className="text-white/75 text-lg mb-10 font-sans">
-            Raccontaci il tuo viaggio ideale — un esperto italiano a Brisbane lo costruisce per te entro 24 ore.
+            Raccontateci il vostro sogno — costruiamo la luna di miele perfetta per voi entro 24 ore.
           </p>
           <button
             type="button"
-            onClick={() => router.push('/quote')}
+            onClick={goToForm}
             className="inline-flex items-center gap-2 bg-gold hover:bg-gold-dark text-white font-bold font-sans text-lg px-10 py-4 rounded-full transition-colors shadow-lg"
           >
             Inizia ora — è gratis
@@ -456,7 +420,7 @@ export default function LandingAustralia() {
       <div className="fixed bottom-0 inset-x-0 z-50 p-4 bg-white border-t border-stone-200 shadow-lg lg:hidden">
         <button
           type="button"
-          onClick={() => router.push('/quote')}
+          onClick={goToForm}
           className="w-full inline-flex items-center justify-center gap-2 bg-gold hover:bg-gold-dark text-white font-bold font-sans text-base py-4 rounded-full transition-colors"
         >
           Richiedi Preventivo Gratuito
