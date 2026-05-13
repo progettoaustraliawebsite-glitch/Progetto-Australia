@@ -239,25 +239,25 @@ export default function TestimonialsSection() {
           ))}
         </div>
 
-        {/* Stats strip — single row, no wrap */}
-        <div className="mt-12 pt-8 border-t border-stone-200 flex items-center justify-center gap-6 sm:gap-10 text-center overflow-x-auto scrollbar-hide">
-          <div className="shrink-0">
-            <p className="font-serif text-2xl font-bold text-hero">4.8<span className="text-base text-stone-400">/5</span></p>
+        {/* Stats strip — single row, no scroll */}
+        <div className="mt-12 pt-8 border-t border-stone-200 flex items-center justify-center gap-4 sm:gap-10 text-center">
+          <div className="flex-1 sm:flex-none">
+            <p className="font-serif text-lg sm:text-2xl font-bold text-hero">4.8<span className="text-sm sm:text-base text-stone-400">/5</span></p>
             <Stars count={5} />
-            <p className="text-[10px] font-sans text-stone-400 mt-1 uppercase tracking-wider">Matrimonio.com</p>
+            <p className="text-[8px] sm:text-[10px] font-sans text-stone-400 mt-1 uppercase tracking-wider">Matrimonio.com</p>
           </div>
-          <div className="w-px h-10 bg-stone-200 shrink-0" />
-          <div className="shrink-0">
-            <p className="font-serif text-2xl font-bold text-hero">98%</p>
-            <p className="text-[10px] font-sans text-stone-400 mt-1 uppercase tracking-wider">{t('recommended')} · Facebook</p>
+          <div className="w-px h-8 sm:h-10 bg-stone-200" />
+          <div className="flex-1 sm:flex-none">
+            <p className="font-serif text-lg sm:text-2xl font-bold text-hero">98%</p>
+            <p className="text-[8px] sm:text-[10px] font-sans text-stone-400 mt-1 uppercase tracking-wider">{t('recommended')} · Facebook</p>
           </div>
-          <div className="w-px h-10 bg-stone-200 shrink-0" />
-          <div className="shrink-0">
-            <p className="font-serif text-2xl font-bold text-hero">15+</p>
-            <p className="text-[10px] font-sans text-stone-400 mt-1 uppercase tracking-wider">{t('yearsExp')}</p>
+          <div className="w-px h-8 sm:h-10 bg-stone-200" />
+          <div className="flex-1 sm:flex-none">
+            <p className="font-serif text-lg sm:text-2xl font-bold text-hero">15+</p>
+            <p className="text-[8px] sm:text-[10px] font-sans text-stone-400 mt-1 uppercase tracking-wider">{t('yearsExp')}</p>
           </div>
-          <div className="w-px h-10 bg-stone-200 shrink-0 hidden sm:block" />
-          <div className="hidden sm:block shrink-0">
+          <div className="w-px h-8 sm:h-10 bg-stone-200 hidden sm:block" />
+          <div className="hidden sm:block">
             <p className="font-sans text-xs text-stone-500 max-w-[200px] leading-relaxed italic">
               &ldquo;{t('overallQuote')}&rdquo;
             </p>
