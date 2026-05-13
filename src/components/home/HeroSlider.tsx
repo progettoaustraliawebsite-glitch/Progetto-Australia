@@ -39,7 +39,7 @@ export default function HeroSlider() {
         }}
         src="https://www.youtube.com/embed/IcZhtJZP7eY?controls=0&autoplay=1&mute=1&loop=1&playlist=IcZhtJZP7eY&rel=0&showinfo=0&iv_load_policy=3&disablekb=1&modestbranding=1&playsinline=1&start=5"
         title="Progetto Australia"
-        allow="autoplay; encrypted-media"
+        allow="autoplay; fullscreen; encrypted-media; picture-in-picture"
         allowFullScreen
       />
 
