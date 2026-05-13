@@ -16,12 +16,12 @@ export default function AboutStrip() {
   ];
 
   return (
-    <section className="relative py-24 overflow-hidden bg-white">
+    <section className="relative py-16 md:py-24 overflow-hidden bg-white">
       {/* Accent bar */}
       <div className="absolute top-0 left-0 w-1 h-full" style={{ backgroundColor: '#b0a377', opacity: 0.5 }} />
 
-      <div className="max-w-7xl mx-auto px-6 lg:px-10">
-        <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
+      <div className="max-w-7xl mx-auto px-4 md:px-6 lg:px-10">
+        <div className="grid grid-cols-1 lg:grid-cols-2 gap-10 md:gap-16 items-center">
 
           {/* Text */}
           <motion.div
@@ -54,16 +54,16 @@ export default function AboutStrip() {
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true, margin: '-80px' }}
             transition={{ duration: 0.7, delay: 0.12, ease: 'easeOut' as const }}
-            className="grid grid-cols-2 gap-px"
+            className="grid grid-cols-2 gap-px mt-8 lg:mt-0"
             style={{ backgroundColor: '#b0a377' }}
           >
             {stats.map((stat) => (
               <div
                 key={stat.num}
-                className="p-8 flex flex-col items-center justify-center text-center"
+                className="p-5 md:p-8 flex flex-col items-center justify-center text-center"
                 style={{ backgroundColor: '#1a1a1a' }}
               >
-                <span className="font-serif text-4xl font-bold mb-2" style={{ color: '#b0a377' }}>
+                <span className="font-serif text-3xl md:text-4xl font-bold mb-2" style={{ color: '#b0a377' }}>
                   {stat.num}
                 </span>
                 <span className="text-white/55 text-xs font-sans uppercase tracking-wider">

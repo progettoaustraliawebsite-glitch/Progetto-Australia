@@ -34,7 +34,7 @@ export default async function DestinationsPage() {
 
   return (
     <>
-      <section className="relative pt-40 pb-24 px-6 overflow-hidden" style={{ backgroundColor: '#1a1a1a' }}>
+      <section className="relative pt-24 md:pt-40 pb-14 md:pb-24 px-4 md:px-6 overflow-hidden" style={{ backgroundColor: '#1a1a1a' }}>
         <div
           className="absolute inset-0 opacity-30"
           style={{
@@ -48,7 +48,7 @@ export default async function DestinationsPage() {
           <span className="text-xs font-sans uppercase tracking-[0.3em] mb-4 block" style={{ color: '#b0a377' }}>
             Oceania
           </span>
-          <h1 className="font-serif text-5xl md:text-6xl lg:text-7xl font-bold text-white mb-6">
+          <h1 className="font-serif text-3xl md:text-5xl lg:text-7xl font-bold text-white mb-6">
             {t('title')}
           </h1>
           <p className="text-white/60 text-lg md:text-xl max-w-2xl mx-auto">
@@ -76,7 +76,7 @@ export default async function DestinationsPage() {
                 </div>
 
                 <div
-                  className={`p-10 lg:p-16 flex flex-col justify-center order-2 ${i % 2 === 1 ? 'lg:order-1' : 'lg:order-2'}`}
+                  className={`p-6 md:p-10 lg:p-16 flex flex-col justify-center order-2 ${i % 2 === 1 ? 'lg:order-1' : 'lg:order-2'}`}
                   style={{ backgroundColor: i % 2 === 0 ? '#fafaf9' : '#ffffff' }}
                 >
                   <span className="text-xs font-sans uppercase tracking-[0.3em] mb-4 block" style={{ color: '#b0a377' }}>
@@ -90,7 +90,7 @@ export default async function DestinationsPage() {
                   </p>
 
                   {dest.highlights[locale].length > 0 && (
-                    <ul className="grid grid-cols-2 gap-3 mb-8">
+                    <ul className="grid grid-cols-1 sm:grid-cols-2 gap-3 mb-8">
                       {dest.highlights[locale].map((h) => (
                         <li key={h} className="flex items-center gap-2">
                           <Check size={14} style={{ color: '#b0a377', flexShrink: 0 }} />
