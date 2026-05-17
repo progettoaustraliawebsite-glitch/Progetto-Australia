@@ -115,7 +115,7 @@ export default async function LocaleLayout({ children, params }: Props) {
       <QuoteModalProvider>
         <ConditionalShell>{children}</ConditionalShell>
         <WeddingQuoteModal />
-        <NewsletterPopup />
+        {/* <NewsletterPopup /> */}
       </QuoteModalProvider>
     </NextIntlClientProvider>
   );
