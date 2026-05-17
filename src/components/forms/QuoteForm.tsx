@@ -340,6 +340,14 @@ export default function QuoteForm() {
       });
       if (res.ok) {
         setIsSuccess(true);
+        // GTM / GA4 conversion event
+        if (typeof window !== 'undefined') {
+          // eslint-disable-next-line @typescript-eslint/no-explicit-any
+          ((window as any).dataLayer = (window as any).dataLayer || []).push({
+            event: 'generate_lead',
+            form_name: 'quote_request',
+          });
+        }
       } else {
         setSubmitError(c.err);
       }
