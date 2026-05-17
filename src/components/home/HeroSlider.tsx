@@ -68,7 +68,13 @@ export default function HeroSlider() {
                 {t(`slides.${current}.subtitle`)}
               </p>
               <button
-                onClick={() => router.push('/quote')}
+                onClick={() => {
+                  if (typeof window !== 'undefined') {
+                    // eslint-disable-next-line @typescript-eslint/no-explicit-any
+                    ((window as any).dataLayer = (window as any).dataLayer || []).push({ event: 'cta_click', cta_location: 'hero' });
+                  }
+                  router.push('/quote');
+                }}
                 className="inline-flex items-center gap-3 px-10 py-4 border-2 border-gold bg-gold/10 backdrop-blur-sm text-white text-xs font-sans uppercase tracking-[0.3em] font-bold hover:bg-gold hover:text-hero transition-all duration-500 shadow-2xl shadow-gold/20"
               >
                 {t('cta')}

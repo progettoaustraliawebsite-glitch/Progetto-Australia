@@ -48,6 +48,16 @@ export default function Navbar() {
     router.replace(pathname, { locale: newLocale });
   };
 
+  const trackCta = (location: string) => {
+    if (typeof window !== 'undefined') {
+      // eslint-disable-next-line @typescript-eslint/no-explicit-any
+      ((window as any).dataLayer = (window as any).dataLayer || []).push({
+        event: 'cta_click',
+        cta_location: location,
+      });
+    }
+  };
+
   return (
     <motion.header
       animate={{ y: hidden ? -100 : 0 }}
@@ -78,7 +88,7 @@ export default function Navbar() {
           </ul>
           
           <button
-            onClick={() => router.push('/quote')}
+            onClick={() => { trackCta('navbar_desktop'); router.push('/quote'); }}
             className="bg-gold hover:bg-charcoal text-white px-6 py-2.5 rounded-full text-[10px] font-sans uppercase tracking-[0.2em] font-bold transition-all duration-300 shadow-lg shadow-gold/20"
           >
             {t('getQuote')}
@@ -128,7 +138,7 @@ export default function Navbar() {
               ))}
               <li className="pt-4">
                 <button
-                  onClick={() => { setIsOpen(false); router.push('/quote'); }}
+                  onClick={() => { setIsOpen(false); trackCta('navbar_mobile'); router.push('/quote'); }}
                   className="block w-full bg-gold text-white text-center py-4 rounded-xl text-xs font-sans uppercase tracking-[0.2em] font-bold shadow-xl shadow-gold/20"
                 >
                   {t('getQuote')}
