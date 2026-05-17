@@ -4,6 +4,7 @@ import { getTranslations, getLocale } from 'next-intl/server';
 import { ArrowRight, Check } from 'lucide-react';
 import { destinations as staticDestinations } from '@/data/destinations';
 import { USE_SANITY, getAllDestinations, normalizeSanityDestination } from '@/lib/sanity';
+import { Link } from '@/i18n/navigation';
 import OpenModalButton from '@/components/ui/OpenModalButton';
 import type { Metadata } from 'next';
 
@@ -100,12 +101,13 @@ export default async function DestinationsPage() {
                     </ul>
                   )}
 
-                  <OpenModalButton
+                  <Link
+                    href={`/destinations/${dest.slug}`}
                     className="inline-flex items-center gap-3 text-xs font-sans uppercase tracking-widest hover:opacity-70 transition-opacity duration-300 self-start"
                     style={{ color: '#b0a377' }}
                   >
                     {t('explore')} <ArrowRight size={14} />
-                  </OpenModalButton>
+                  </Link>
                 </div>
               </article>
             ))}
