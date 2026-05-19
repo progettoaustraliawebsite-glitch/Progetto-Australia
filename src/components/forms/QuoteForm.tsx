@@ -305,10 +305,10 @@ export default function QuoteForm() {
       return form.destinations.length > 0 && form.destinations.every(d => d.id !== '');
     }
     if (step === 3) return form.flessibilita === 'indefinite' || form.dataInizio !== '';
-    if (step === 4) return form.flightOpt !== '' && (form.flightOpt !== 'includi' || form.departureCity !== '');
-    if (step === 5) return form.tripType !== '' || form.isHoneymoon;
-    if (step === 6) return form.accom !== '';
-    if (step === 7) return true;
+    if (step === 4) return form.tripType !== '' || form.isHoneymoon;
+    if (step === 5) return form.accom !== '';
+    if (step === 6) return true;
+    if (step === 7) return form.flightOpt !== '' && (form.flightOpt !== 'includi' || form.departureCity !== '');
     if (step === 8) return form.nome.trim() !== '' && form.cognome.trim() !== '' && form.email.includes('@');
     return false;
   };
@@ -621,9 +621,9 @@ export default function QuoteForm() {
             </motion.div>
           )}
 
-          {/* ── STEP 4: Flights ── */}
-          {step === 4 && (
-            <motion.div key="s4" custom={dir} variants={variants} initial="initial" animate="animate" exit="exit" transition={{ duration: 0.3 }}>
+          {/* ── STEP 7: Flights ── */}
+          {step === 7 && (
+            <motion.div key="s7" custom={dir} variants={variants} initial="initial" animate="animate" exit="exit" transition={{ duration: 0.3 }}>
               <h2 className="font-serif text-xl md:text-2xl font-bold text-hero text-center mb-6">{c.s4.q}</h2>
               <div className="flex flex-col gap-3">
                 {c.s4.opts.map((label, i) => (
@@ -665,9 +665,9 @@ export default function QuoteForm() {
             </motion.div>
           )}
 
-          {/* ── STEP 5: Trip type + honeymoon ── */}
-          {step === 5 && (
-            <motion.div key="s5" custom={dir} variants={variants} initial="initial" animate="animate" exit="exit" transition={{ duration: 0.3 }}>
+          {/* ── STEP 4: Trip type + honeymoon ── */}
+          {step === 4 && (
+            <motion.div key="s4" custom={dir} variants={variants} initial="initial" animate="animate" exit="exit" transition={{ duration: 0.3 }}>
               <h2 className="font-serif text-xl md:text-2xl font-bold text-hero text-center mb-6">{c.s5.q}</h2>
               <div className="flex flex-col gap-3">
                 {c.s5.opts.map((label, i) => (
@@ -700,9 +700,9 @@ export default function QuoteForm() {
             </motion.div>
           )}
 
-          {/* ── STEP 6: Accommodation ── */}
-          {step === 6 && (
-            <motion.div key="s6" custom={dir} variants={variants} initial="initial" animate="animate" exit="exit" transition={{ duration: 0.3 }}>
+          {/* ── STEP 5: Accommodation ── */}
+          {step === 5 && (
+            <motion.div key="s5" custom={dir} variants={variants} initial="initial" animate="animate" exit="exit" transition={{ duration: 0.3 }}>
               <h2 className="font-serif text-xl md:text-2xl font-bold text-hero text-center mb-6">{c.s6.q}</h2>
               <div className="flex flex-col gap-3">
                 {c.s6.opts.map((label, i) => (
@@ -718,9 +718,9 @@ export default function QuoteForm() {
             </motion.div>
           )}
 
-          {/* ── STEP 7: Notes & Budget ── */}
-          {step === 7 && (
-            <motion.div key="s7" custom={dir} variants={variants} initial="initial" animate="animate" exit="exit" transition={{ duration: 0.3 }}>
+          {/* ── STEP 6: Notes & Budget ── */}
+          {step === 6 && (
+            <motion.div key="s6" custom={dir} variants={variants} initial="initial" animate="animate" exit="exit" transition={{ duration: 0.3 }}>
               <h2 className="font-serif text-xl md:text-2xl font-bold text-hero text-center mb-6">{c.s7.q}</h2>
               <div className="space-y-5">
                 <div>
