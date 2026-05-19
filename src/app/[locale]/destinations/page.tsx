@@ -68,7 +68,7 @@ export default async function DestinationsPage() {
                 <div className={`relative overflow-hidden h-72 lg:h-auto order-1 ${i % 2 === 1 ? 'lg:order-2' : 'lg:order-1'}`}>
                   <div
                     className="absolute inset-0 bg-cover bg-center transition-transform duration-700 group-hover:scale-105"
-                    style={{ backgroundImage: `url(${dest.photo}), linear-gradient(135deg, ${dest.accentColor}, #1a1a1a)` }}
+                    style={{ backgroundImage: `url(${dest.heroPhoto ?? dest.photo}), linear-gradient(135deg, ${dest.accentColor}, #1a1a1a)` }}
                   />
                   <div className="absolute inset-0 bg-black/10" />
                   <div className="absolute inset-0 flex items-center justify-center">
