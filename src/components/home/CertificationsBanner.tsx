@@ -17,7 +17,7 @@ export default function CertificationsBanner() {
               key={logo.alt}
               src={logo.src}
               alt={logo.alt}
-              className="h-10 md:h-12 w-auto object-contain opacity-75 hover:opacity-100 transition-opacity grayscale hover:grayscale-0"
+              className="h-14 md:h-16 w-auto object-contain opacity-60 hover:opacity-90 transition-opacity grayscale hover:grayscale-0"
             />
           ))}
         </div>
