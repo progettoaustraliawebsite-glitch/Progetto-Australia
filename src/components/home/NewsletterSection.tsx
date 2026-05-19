@@ -45,8 +45,19 @@ export default function NewsletterSection() {
   };
 
   return (
-    <section className="py-20 px-6" style={{ backgroundColor: '#1a1a1a' }}>
-      <div className="max-w-2xl mx-auto text-center">
+    <section className="py-20 px-6 relative overflow-hidden" style={{ backgroundColor: '#1a1a1a' }}>
+      {/* Video background */}
+      <div className="absolute inset-0 z-0 pointer-events-none">
+        <iframe
+          src="https://www.youtube.com/embed/IcZhtJZP7eY?controls=0&autoplay=1&mute=1&loop=1&playlist=IcZhtJZP7eY&rel=0&showinfo=0&iv_load_policy=3&disablekb=1&modestbranding=1&playsinline=1&start=5"
+          className="absolute w-[300%] h-[300%] top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2"
+          allow="autoplay; encrypted-media"
+          style={{ border: 0 }}
+        />
+        <div className="absolute inset-0" style={{ backgroundColor: 'rgba(10,10,10,0.72)' }} />
+      </div>
+
+      <div className="relative z-10 max-w-2xl mx-auto text-center">
         <span className="text-xs font-sans uppercase tracking-[0.3em] mb-4 block" style={{ color: '#b0a377' }}>
           {c.label}
         </span>
@@ -93,3 +104,4 @@ export default function NewsletterSection() {
     </section>
   );
 }
+
