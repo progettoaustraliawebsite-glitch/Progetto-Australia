@@ -392,7 +392,16 @@ export default function QuoteForm() {
 
   // ── Wizard card ──────────────────────────────────────────────────────────────
   return (
-    <div className="bg-white rounded-2xl shadow-2xl w-full max-w-lg overflow-hidden">
+    <div className="bg-white rounded-2xl shadow-2xl w-full max-w-lg overflow-hidden relative">
+
+      {/* Close button */}
+      <Link
+        href="/"
+        aria-label="Chiudi"
+        className="absolute top-3 right-3 z-10 text-stone-400 hover:text-stone-600 transition-colors"
+      >
+        <X size={18} />
+      </Link>
 
       {/* Logo */}
       <div className="flex justify-center pt-6 px-5">
