@@ -179,24 +179,26 @@ export default async function ItineraryDetailPage({ params }: Props) {
 
             {/* Programme */}
             <div>
-              <h2 className="font-serif text-lg md:text-2xl font-bold text-hero mb-8 uppercase tracking-wide md:tracking-widest flex items-center gap-3">
+              <h2 className="font-serif text-lg md:text-2xl font-bold text-hero mb-6 uppercase tracking-wide md:tracking-widest flex items-center gap-3">
                 <Calendar size={24} className="text-gold" /> {programLabel}
               </h2>
-              <div className="space-y-0 border-l-2 border-gold/30 ml-4">
+              <div className="divide-y divide-stone-100 border border-stone-100">
                 {itinerary.program.map((day, idx) => (
-                  <div key={idx} className="relative pl-8 pb-8">
-                    {/* Dot */}
-                    <div className="absolute -left-[9px] top-0 w-4 h-4 rounded-full bg-gold border-2 border-white shadow-sm" />
-                    <div className="bg-stone-50 border border-stone-100 p-6 hover:shadow-md transition-shadow">
-                      <div className="flex items-center gap-3 mb-2">
-                        <span className="text-[10px] font-sans font-bold uppercase tracking-[0.2em] text-gold">
-                          {locale === 'it' ? `Giorno ${day.day}` : `Day ${day.day}`}
-                        </span>
-                      </div>
-                      <h3 className="font-serif text-lg font-bold text-hero mb-1">{day.title[locale]}</h3>
-                      <p className="text-hero/60 text-sm leading-relaxed">{day.description[locale]}</p>
+                  <details key={idx} className="group">
+                    <summary className="flex items-center gap-4 px-5 py-3.5 cursor-pointer list-none hover:bg-stone-50 transition-colors">
+                      <span className="shrink-0 w-7 h-7 rounded-full bg-gold flex items-center justify-center text-[10px] font-sans font-bold text-white">
+                        {day.day}
+                      </span>
+                      <span className="font-sans text-[10px] font-bold uppercase tracking-[0.2em] text-gold shrink-0">
+                        {locale === 'it' ? `Giorno ${day.day}` : `Day ${day.day}`}
+                      </span>
+                      <span className="font-serif text-sm font-bold text-hero flex-1">{day.title[locale]}</span>
+                      <ChevronLeft size={14} className="text-gold shrink-0 -rotate-90 group-open:rotate-90 transition-transform" />
+                    </summary>
+                    <div className="px-5 pb-4 pt-1 pl-16 text-hero/60 text-sm leading-relaxed bg-stone-50/50">
+                      {day.description[locale]}
                     </div>
-                  </div>
+                  </details>
                 ))}
               </div>
             </div>
