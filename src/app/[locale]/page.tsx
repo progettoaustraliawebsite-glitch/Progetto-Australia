@@ -26,6 +26,7 @@ import FeaturedItineraries from '@/components/home/FeaturedItineraries';
 import DestinationsGrid from '@/components/home/DestinationsGrid';
 import TestimonialsSection from '@/components/home/TestimonialsSection';
 import NewsletterSection from '@/components/home/NewsletterSection';
+import CertificationsBanner from '@/components/home/CertificationsBanner';
 import { USE_SANITY, getAllItineraries, normalizeSanityItinerary, getAllDestinations, normalizeSanityDestination } from '@/lib/sanity';
 import { itineraries as staticItineraries } from '@/data/itineraries';
 import { destinations as staticDestinations } from '@/data/destinations';
@@ -54,6 +55,7 @@ export default async function HomePage() {
       <FeaturedItineraries itineraries={itineraries} />
       <DestinationsGrid destinations={destinations} />
       <TestimonialsSection />
+      <CertificationsBanner />
       <NewsletterSection />
     </>
   );
