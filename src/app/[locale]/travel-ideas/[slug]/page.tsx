@@ -6,9 +6,13 @@ import { Link } from '@/i18n/navigation';
 import { ChevronLeft, Clock, MapPin, CheckCircle, XCircle, Calendar, ArrowRight } from 'lucide-react';
 import OpenModalButton from '@/components/ui/OpenModalButton';
 import { itineraries } from '@/data/itineraries';
+import { ITINERARY_MAP_CONFIGS } from '@/data/itineraryMapStops';
 import { formatPrice } from '@/lib/utils';
 import type { Metadata } from 'next';
 import JsonLd from '@/components/seo/JsonLd';
+import dynamic from 'next/dynamic';
+
+const ItineraryMap = dynamic(() => import('@/components/itinerary/ItineraryMap'), { ssr: false });
 
 interface Props {
   params: Promise<{ slug: string }>;
@@ -152,6 +156,17 @@ export default async function ItineraryDetailPage({ params }: Props) {
                 {itinerary.description[locale]}
               </p>
             </div>
+
+            {/* Map */}
+            {ITINERARY_MAP_CONFIGS[itinerary.slug] && (
+              <div>
+                <h2 className="font-serif text-lg md:text-2xl font-bold text-hero mb-4 uppercase tracking-wide flex items-center gap-3">
+                  <MapPin size={22} className="text-gold" />
+                  {locale === 'it' ? 'Il Percorso' : 'The Route'}
+                </h2>
+                <ItineraryMap config={ITINERARY_MAP_CONFIGS[itinerary.slug]} />
+              </div>
+            )}
 
             {/* Highlights */}
             <div className="grid grid-cols-2 gap-3">
