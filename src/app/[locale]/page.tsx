@@ -27,11 +27,14 @@ import DestinationsGrid from '@/components/home/DestinationsGrid';
 import TestimonialsSection from '@/components/home/TestimonialsSection';
 import NewsletterSection from '@/components/home/NewsletterSection';
 import CertificationsBanner from '@/components/home/CertificationsBanner';
+import HomeBlogSection from '@/components/home/HomeBlogSection';
 import { USE_SANITY, getAllItineraries, normalizeSanityItinerary, getAllDestinations, normalizeSanityDestination } from '@/lib/sanity';
 import { itineraries as staticItineraries } from '@/data/itineraries';
 import { destinations as staticDestinations } from '@/data/destinations';
+import { blogPosts as staticBlogPosts } from '@/data/blog';
 
 export default async function HomePage() {
+  const locale = (await getLocale()) as 'it' | 'en';
   let itineraries = staticItineraries;
   let destinations = staticDestinations;
 
@@ -56,6 +59,7 @@ export default async function HomePage() {
       <DestinationsGrid destinations={destinations} />
       <TestimonialsSection />
       <CertificationsBanner />
+      <HomeBlogSection posts={staticBlogPosts} locale={locale} />
       <NewsletterSection />
     </>
   );
