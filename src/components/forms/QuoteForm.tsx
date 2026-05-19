@@ -94,8 +94,8 @@ const copy = {
       vals: ['standard', 'superior', 'lusso'] as const,
     },
     s7: {
-      q: 'Qualcosa da dirci?',
-      budgetQ: 'Per creare il viaggio adatto a voi abbiamo bisogno di un budget indicativo per i servizi a terra, per persona',
+      q: 'Qual è il tuo budget?',
+      budgetQ: 'Budget indicativo per persona, esclusi i voli',
       budgetOpts: ['€2.500 – €3.500', '€3.500 – €5.000', '€5.000 – €7.500', 'Oltre €7.500'],
       budgetVals: ['2500-3500', '3500-5000', '5000-7500', '7500+'] as const,
       placeholder: 'Esperienze particolari, sogni nel cassetto, richieste speciali...',
@@ -171,8 +171,8 @@ const copy = {
       vals: ['standard', 'superior', 'lusso'] as const,
     },
     s7: {
-      q: 'Anything else to share?',
-      budgetQ: 'To build the right trip for you, we need an indicative budget for land services, per person',
+      q: 'What is your budget?',
+      budgetQ: 'Indicative budget per person, excluding flights',
       budgetOpts: ['€2,500 – €3,500', '€3,500 – €5,000', '€5,000 – €7,500', 'Above €7,500'],
       budgetVals: ['2500-3500', '3500-5000', '5000-7500', '7500+'] as const,
       placeholder: 'Special experiences, bucket-list activities, particular requests...',
