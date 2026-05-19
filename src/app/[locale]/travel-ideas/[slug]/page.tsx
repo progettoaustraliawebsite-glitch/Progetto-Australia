@@ -164,7 +164,7 @@ export default async function ItineraryDetailPage({ params }: Props) {
               <img
                 src={`/images/maps/${itinerary.slug}.png`}
                 alt={`Mappa ${itinerary.title[locale]}`}
-                className="w-full rounded-xl shadow-md border border-stone-200"
+                className="w-full lg:w-3/4 rounded-xl shadow-md border border-stone-200"
               />
             </div>
 
