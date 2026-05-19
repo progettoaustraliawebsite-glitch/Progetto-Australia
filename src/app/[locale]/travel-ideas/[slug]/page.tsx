@@ -10,9 +10,7 @@ import { ITINERARY_MAP_CONFIGS } from '@/data/itineraryMapStops';
 import { formatPrice } from '@/lib/utils';
 import type { Metadata } from 'next';
 import JsonLd from '@/components/seo/JsonLd';
-import dynamic from 'next/dynamic';
-
-const ItineraryMap = dynamic(() => import('@/components/itinerary/ItineraryMap'), { ssr: false });
+import ItineraryMapWrapper from '@/components/itinerary/ItineraryMapWrapper';
 
 interface Props {
   params: Promise<{ slug: string }>;
@@ -164,7 +162,7 @@ export default async function ItineraryDetailPage({ params }: Props) {
                   <MapPin size={22} className="text-gold" />
                   {locale === 'it' ? 'Il Percorso' : 'The Route'}
                 </h2>
-                <ItineraryMap config={ITINERARY_MAP_CONFIGS[itinerary.slug]} />
+                <ItineraryMapWrapper config={ITINERARY_MAP_CONFIGS[itinerary.slug]} />
               </div>
             )}
 
