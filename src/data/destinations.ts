@@ -112,6 +112,26 @@ export const destinations: Destination[] = [
     },
   },
   {
+    id: 'french-polynesia',
+    slug: 'french-polynesia',
+    name: { it: 'Polinesia Francese', en: 'French Polynesia' },
+    tagline: {
+      it: 'Il paradiso del Pacifico',
+      en: 'The paradise of the Pacific',
+    },
+    description: {
+      it: 'Bora Bora, Moorea, Tahiti e gli atolli delle Tuamotu: la Polinesia Francese è il sogno per eccellenza. Acque color turchese, bungalow sull\'acqua, lagune cristalline e un\'atmosfera romantica senza pari nel mondo.',
+      en: 'Bora Bora, Moorea, Tahiti and the Tuamotu atolls: French Polynesia is the ultimate dream. Turquoise waters, overwater bungalows, crystal lagoons and an unrivalled romantic atmosphere.',
+    },
+    gradient: 'from-sky-900 via-blue-800 to-cyan-700',
+    accentColor: '#0369a1',
+    photo: '/images/dest-card-polynesia.png',
+    highlights: {
+      it: ['Bora Bora', 'Moorea', 'Atolli delle Tuamotu', 'Bungalow sull\'Acqua'],
+      en: ['Bora Bora', 'Moorea', 'Tuamotu Atolls', 'Overwater Bungalows'],
+    },
+  },
+  {
     id: 'new-caledonia',
     slug: 'new-caledonia',
     name: { it: 'Nuova Caledonia', en: 'New Caledonia' },
