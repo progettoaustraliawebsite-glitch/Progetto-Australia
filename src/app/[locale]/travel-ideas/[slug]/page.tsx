@@ -6,11 +6,11 @@ import { Link } from '@/i18n/navigation';
 import { ChevronLeft, Clock, MapPin, CheckCircle, XCircle, Calendar, ArrowRight } from 'lucide-react';
 import OpenModalButton from '@/components/ui/OpenModalButton';
 import { itineraries } from '@/data/itineraries';
-import { ITINERARY_MAP_CONFIGS } from '@/data/itineraryMapStops';
+
 import { formatPrice } from '@/lib/utils';
 import type { Metadata } from 'next';
 import JsonLd from '@/components/seo/JsonLd';
-import ItineraryMapWrapper from '@/components/itinerary/ItineraryMapWrapper';
+
 
 interface Props {
   params: Promise<{ slug: string }>;
@@ -155,24 +155,17 @@ export default async function ItineraryDetailPage({ params }: Props) {
               </p>
             </div>
 
-            {/* Map */}
+            {/* Map — images go in public/images/maps/[slug].png */}
             <div>
               <h2 className="font-serif text-lg md:text-2xl font-bold text-hero mb-4 uppercase tracking-wide flex items-center gap-3">
                 <MapPin size={22} className="text-gold" />
                 {locale === 'it' ? 'Il Percorso' : 'The Route'}
               </h2>
-              {/* Illustrated map image */}
               <img
                 src={`/images/maps/${itinerary.slug}.png`}
-                alt={`Mappa itinerario ${itinerary.title[locale]}`}
+                alt={`Mappa ${itinerary.title[locale]}`}
                 className="w-full rounded-xl shadow-md border border-stone-200"
               />
-              {/* Interactive SVG fallback */}
-              {ITINERARY_MAP_CONFIGS[itinerary.slug] && (
-                <div className="mt-3">
-                  <ItineraryMapWrapper config={ITINERARY_MAP_CONFIGS[itinerary.slug]} />
-                </div>
-              )}
             </div>
 
             {/* Highlights */}
