@@ -232,7 +232,7 @@ export default async function HowItWorksPage() {
               {tNav('getQuote')} <ArrowRight size={14} />
             </OpenModalButton>
             <a
-              href="mailto:info@progettoaustralia.it"
+              href="mailto:info@progettoaustralia.com"
               className="w-full sm:w-auto inline-flex items-center justify-center gap-2 border border-white/30 text-white px-8 py-4 font-sans text-xs font-bold uppercase tracking-[0.2em] hover:border-white/60 transition-colors"
             >
               <Mail size={13} /> Email

@@ -18,7 +18,7 @@ export const team: TeamMember[] = [
       en: `A Political Science graduate originally from Milan, she has always had a passion for travel. She is the founder and owner of Progetto Australia. Since 2006 she has lived in Brisbane and organises tailor-made trips to Australia, New Zealand and the Pacific Islands. Her goal is to select the best local tour operators to create trips that give unforgettable emotions.`,
     },
     photo: '/images/team/paola-secoli.jpg',
-    email: 'info@progettoaustralia.it',
+    email: 'info@progettoaustralia.com',
     logos: [
       { src: '/images/logos/aussie-specialist.png', alt: 'Australia Specialist' },
       { src: '/images/logos/nz-specialist.png', alt: 'New Zealand Specialist' },
@@ -35,7 +35,7 @@ export const team: TeamMember[] = [
       en: `Originally from Milan, her greatest passion has always been travel. She has visited Asia, the US, parts of Africa, most of Europe and Latin America. A Languages graduate, she lived and travelled all over Australia for 2 years, then dedicated herself to New Zealand. Her love for these lands turned into a career: she started working with Progetto Australia, expanding her knowledge to include the Pacific Islands.`,
     },
     photo: '/images/team/sara-trezzi.jpg',
-    email: 'info@progettoaustralia.it',
+    email: 'info@progettoaustralia.com',
     logos: [
       { src: '/images/logos/aussie-specialist.png', alt: 'Australia Specialist' },
       { src: '/images/logos/nz-specialist.png', alt: 'New Zealand Specialist' },
@@ -81,7 +81,7 @@ export const team: TeamMember[] = [
       en: `Born in Uruguay, mother of three and a tour guide. She has travelled through South America, explored Europe and moved to Italy where she obtained citizenship. Her passion for travel has taken her to over 35 countries. She holds specialist certifications for Australia, New Zealand, Cook Islands, Fiji, Samoa and Polynesia. She now works as a group guide, tour leader and travel consultant.`,
     },
     photo: '/images/team/graciela-salazar.jpg',
-    email: 'info@progettoaustralia.it',
+    email: 'info@progettoaustralia.com',
     logos: [
       { src: '/images/logos/aussie-specialist.png', alt: 'Australia Specialist' },
       { src: '/images/logos/nz-specialist.png', alt: 'New Zealand Specialist' },

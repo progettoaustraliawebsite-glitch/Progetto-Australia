@@ -73,7 +73,7 @@ const travelAgencySchema = {
     addressCountry: 'AU',
   },
   telephone: '+61733886838',
-  email: 'info@progettoaustralia.it',
+  email: 'info@progettoaustralia.com',
   areaServed: [
     { '@type': 'Country', name: 'Australia' },
     { '@type': 'Country', name: 'New Zealand' },
