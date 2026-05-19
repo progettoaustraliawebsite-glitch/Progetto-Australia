@@ -156,7 +156,7 @@ export function normalizeSanityDestination(s: SanityDestination, idx = 0): Desti
     description: s.description,
     gradient: GRADIENT_DEFAULTS[idx % GRADIENT_DEFAULTS.length],
     accentColor: ACCENT_DEFAULTS[idx % ACCENT_DEFAULTS.length],
-    photo: s.heroImage ? urlFor(s.heroImage).width(900).height(600).url() : '',
+    photo: s.heroImage ? urlFor(s.heroImage).width(900).height(600).url() : `/images/dest-card-${s.slug.current}.png`,
     highlights: s.highlights ?? { it: [], en: [] },
   };
 }
