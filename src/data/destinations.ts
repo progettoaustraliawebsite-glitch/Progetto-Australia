@@ -6,8 +6,7 @@ export interface Destination {
   description: { it: string; en: string };
   gradient: string;
   accentColor: string;
-  photo: string;       // used for homepage cards
-  heroPhoto?: string;  // used for /destinations page hero
+  photo: string;
   highlights: { it: string[]; en: string[] };
 }
 
@@ -27,7 +26,6 @@ export const destinations: Destination[] = [
     gradient: 'from-amber-900 via-orange-800 to-stone-700',
     accentColor: '#813318',
     photo: '/images/dest-card-australia.png',
-    heroPhoto: '/images/dest-hero-australia.png',
     highlights: {
       it: ['Great Barrier Reef', 'Uluru & Red Centre', 'Sydney & Melbourne', 'Daintree Rainforest'],
       en: ['Great Barrier Reef', 'Uluru & Red Centre', 'Sydney & Melbourne', 'Daintree Rainforest'],
@@ -48,7 +46,6 @@ export const destinations: Destination[] = [
     gradient: 'from-emerald-900 via-teal-800 to-slate-700',
     accentColor: '#2d6a4f',
     photo: '/images/dest-card-nz.png',
-    heroPhoto: '/images/dest-hero-nz.png',
     highlights: {
       it: ['Fiordland & Milford Sound', 'Rotorua & Geotermalismo', 'Franz Josef Glacier', 'Bay of Islands'],
       en: ['Fiordland & Milford Sound', 'Rotorua & Geothermal', 'Franz Josef Glacier', 'Bay of Islands'],
@@ -69,7 +66,6 @@ export const destinations: Destination[] = [
     gradient: 'from-cyan-900 via-blue-800 to-teal-700',
     accentColor: '#0a7fa3',
     photo: '/images/dest-card-fiji.png',
-    heroPhoto: '/images/dest-hero-fiji.png',
     highlights: {
       it: ['Mamanuca Islands', 'Yasawa Islands', 'Taveuni – Giardino di Fiji', 'Snorkeling & Diving'],
       en: ['Mamanuca Islands', 'Yasawa Islands', 'Taveuni – Garden of Fiji', 'Snorkeling & Diving'],
@@ -90,7 +86,6 @@ export const destinations: Destination[] = [
     gradient: 'from-teal-900 via-emerald-800 to-cyan-700',
     accentColor: '#0d6e6e',
     photo: '/images/dest-card-cook.png',
-    heroPhoto: '/images/dest-hero-cook.png',
     highlights: {
       it: ['Rarotonga', 'Aitutaki Lagoon', 'Snorkeling & Kayak', 'Cultura Maori Polinesiana'],
       en: ['Rarotonga', 'Aitutaki Lagoon', 'Snorkeling & Kayak', 'Polynesian Maori Culture'],
@@ -111,7 +106,6 @@ export const destinations: Destination[] = [
     gradient: 'from-green-900 via-teal-800 to-emerald-700',
     accentColor: '#065f46',
     photo: '/images/dest-card-samoa.png',
-    heroPhoto: '/images/dest-hero-samoa.png',
     highlights: {
       it: ['To Sua Ocean Trench', 'Papase\'ea Sliding Rocks', 'Savai\'i – Isola Vulcanica', 'Cerimonia del Kava'],
       en: ['To Sua Ocean Trench', 'Papase\'ea Sliding Rocks', 'Savai\'i – Volcanic Island', 'Kava Ceremony'],
@@ -132,7 +126,6 @@ export const destinations: Destination[] = [
     gradient: 'from-sky-900 via-blue-800 to-cyan-700',
     accentColor: '#0369a1',
     photo: '/images/dest-card-polynesia.png',
-    heroPhoto: '/images/dest-hero-polynesia.png',
     highlights: {
       it: ['Bora Bora', 'Moorea', 'Atolli delle Tuamotu', 'Bungalow sull\'Acqua'],
       en: ['Bora Bora', 'Moorea', 'Tuamotu Atolls', 'Overwater Bungalows'],
@@ -153,7 +146,6 @@ export const destinations: Destination[] = [
     gradient: 'from-blue-900 via-cyan-800 to-teal-700',
     accentColor: '#0e7490',
     photo: '/images/dest-card-caledonia.png',
-    heroPhoto: '/images/dest-hero-caledonia.png',
     highlights: {
       it: ['Laguna UNESCO', 'Île des Pins', 'Noumea', 'Côte Oubliée'],
       en: ['UNESCO Lagoon', 'Île des Pins', 'Noumea', 'Forgotten Coast'],

@@ -87,8 +87,8 @@ export default async function DestinationDetailPage({ params }: Props) {
       {/* Hero */}
       <section className="relative h-[70vh] flex items-end">
         <div className="absolute inset-0">
-          {(dest.heroPhoto ?? dest.photo) ? (
-            <img src={dest.heroPhoto ?? dest.photo} alt={dest.name[locale]} className="w-full h-full object-cover" />
+          {dest.photo ? (
+            <img src={dest.photo} alt={dest.name[locale]} className="w-full h-full object-cover" />
           ) : (
             <div className={`w-full h-full bg-gradient-to-br ${dest.gradient}`} />
           )}
