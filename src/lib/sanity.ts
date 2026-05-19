@@ -37,6 +37,7 @@ export interface SanityItineraryDay {
   day: number;
   title: LocaleString;
   description: LocaleString;
+  images?: SanityImageSource[];
 }
 
 export interface SanityItinerary {
@@ -53,6 +54,7 @@ export interface SanityItinerary {
   included?: { it: string[]; en: string[] };
   notIncluded?: { it: string[]; en: string[] };
   heroImage?: SanityImageSource;
+  mapImage?: SanityImageSource;
   featured?: boolean;
 }
 
@@ -131,12 +133,14 @@ export function normalizeSanityItinerary(s: SanityItinerary, idx = 0): Itinerary
     type: s.category ?? 'adventure',
     gradient: GRADIENT_DEFAULTS[idx % GRADIENT_DEFAULTS.length],
     image: s.heroImage ? urlFor(s.heroImage).width(800).height(520).url() : '',
+    mapImage: s.mapImage ? urlFor(s.mapImage).width(1200).url() : undefined,
     price: s.price ?? { amount: 0, currency: 'EUR' },
     highlights: s.highlights ?? { it: [], en: [] },
     program: (s.program ?? []).map((d) => ({
       day: d.day,
       title: d.title,
       description: d.description,
+      images: (d.images ?? []).map((img) => urlFor(img).width(800).url()),
     })),
     included: s.included ?? { it: [], en: [] },
     notIncluded: s.notIncluded ?? { it: [], en: [] },
@@ -176,7 +180,8 @@ export async function getAllItineraries(): Promise<SanityItinerary[]> {
   return sanityClient.fetch(
     `*[_type == "itinerary"] | order(_createdAt asc) {
       _id, title, slug, duration, price, category, description, highlights,
-      program, included, notIncluded, heroImage, featured,
+      "program": program[]{ day, title, description, images },
+      included, notIncluded, heroImage, mapImage, featured,
       destination->{ _id, title }
     }`
   );
@@ -186,7 +191,8 @@ export async function getItineraryBySlug(slug: string): Promise<SanityItinerary 
   return sanityClient.fetch(
     `*[_type == "itinerary" && slug.current == $slug][0] {
       _id, title, slug, duration, price, category, description, highlights,
-      program, included, notIncluded, heroImage, featured,
+      "program": program[]{ day, title, description, images },
+      included, notIncluded, heroImage, mapImage, featured,
       destination->{ _id, title }
     }`,
     { slug }
@@ -197,7 +203,8 @@ export async function getFeaturedItineraries(): Promise<SanityItinerary[]> {
   return sanityClient.fetch(
     `*[_type == "itinerary" && featured == true] | order(_createdAt asc) [0...6] {
       _id, title, slug, duration, price, category, description, highlights,
-      program, included, notIncluded, heroImage,
+      "program": program[]{ day, title, description, images },
+      included, notIncluded, heroImage, mapImage,
       destination->{ _id, title }
     }`
   );

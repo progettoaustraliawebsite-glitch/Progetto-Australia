@@ -2,6 +2,7 @@ export interface ItineraryDay {
   day: number;
   title: { it: string; en: string };
   description: { it: string; en: string };
+  images?: string[];
 }
 
 export interface Itinerary {
@@ -14,6 +15,7 @@ export interface Itinerary {
   type: string;
   gradient: string;
   image: string;
+  mapImage?: string;
   price: { currency: string; amount: number };
   highlights: { it: string[]; en: string[] };
   program: ItineraryDay[];

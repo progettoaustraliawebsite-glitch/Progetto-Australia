@@ -155,14 +155,14 @@ export default async function ItineraryDetailPage({ params }: Props) {
               </p>
             </div>
 
-            {/* Map — images go in public/images/maps/[slug].png */}
+            {/* Map */}
             <div>
               <h2 className="font-serif text-lg md:text-2xl font-bold text-hero mb-4 uppercase tracking-wide flex items-center gap-3">
                 <MapPin size={22} className="text-gold" />
                 {locale === 'it' ? 'Il Percorso' : 'The Route'}
               </h2>
               <img
-                src={`/images/maps/${itinerary.slug}.png`}
+                src={itinerary.mapImage ?? `/images/maps/${itinerary.slug}.png`}
                 alt={`Mappa ${itinerary.title[locale]}`}
                 className="w-full lg:w-3/4 rounded-xl shadow-md border border-stone-200"
               />
@@ -185,6 +185,18 @@ export default async function ItineraryDetailPage({ params }: Props) {
                       </div>
                       <h3 className="font-serif text-lg font-bold text-hero mb-1">{day.title[locale]}</h3>
                       <p className="text-hero/60 text-sm leading-relaxed">{day.description[locale]}</p>
+                      {day.images && day.images.length > 0 && (
+                        <div className={`mt-4 grid gap-2 ${day.images.length === 1 ? 'grid-cols-1' : 'grid-cols-2'}`}>
+                          {day.images.map((src, i) => (
+                            <img
+                              key={i}
+                              src={src}
+                              alt={`${day.title[locale]} ${i + 1}`}
+                              className="w-full h-40 object-cover rounded"
+                            />
+                          ))}
+                        </div>
+                      )}
                     </div>
                   </div>
                 ))}

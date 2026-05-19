@@ -79,6 +79,13 @@ export const itinerary = defineType({
       options: { hotspot: true },
     }),
     defineField({
+      name: 'mapImage',
+      title: 'Mappa del Percorso',
+      type: 'image',
+      description: 'Immagine della mappa con il percorso dell\'itinerario',
+      options: { hotspot: true },
+    }),
+    defineField({
       name: 'program',
       title: 'Programma',
       type: 'array',
@@ -105,12 +112,19 @@ export const itinerary = defineType({
                 { name: 'en', title: 'English', type: 'text' },
               ],
             },
+            {
+              name: 'images',
+              title: 'Foto del Giorno',
+              type: 'array',
+              description: 'Aggiungi una o più foto per questo giorno',
+              of: [{ type: 'image', options: { hotspot: true } }],
+            },
           ],
           preview: {
-            select: { title: 'title.it', subtitle: 'day' },
+            select: { title: 'title.it', subtitle: 'day', media: 'images.0' },
             // eslint-disable-next-line @typescript-eslint/no-explicit-any
             prepare(value: any) {
-              return { title: `Giorno ${value.subtitle}: ${value.title}` };
+              return { title: `Giorno ${value.subtitle}: ${value.title}`, media: value.media };
             },
           },
         },
