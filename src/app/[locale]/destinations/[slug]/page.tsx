@@ -54,9 +54,11 @@ export default async function DestinationDetailPage({ params }: Props) {
   let itineraries = staticItineraries;
 
   if (USE_SANITY) {
-    const [sanityDests, sanityIts] = await Promise.all([getAllDestinations(), getAllItineraries()]);
-    if (sanityDests.length > 0) destinations = sanityDests.map((s, i) => normalizeSanityDestination(s, i));
-    if (sanityIts.length > 0) itineraries = sanityIts.map((s, i) => normalizeSanityItinerary(s, i));
+    try {
+      const [sanityDests, sanityIts] = await Promise.all([getAllDestinations(), getAllItineraries()]);
+      if (sanityDests.length > 0) destinations = sanityDests.map((s, i) => normalizeSanityDestination(s, i));
+      if (sanityIts.length > 0) itineraries = sanityIts.map((s, i) => normalizeSanityItinerary(s, i));
+    } catch (e) { console.error('[Sanity] destination slug fetch failed:', e); }
   }
 
   const dest = destinations.find((d) => d.slug === slug);

@@ -35,12 +35,16 @@ export default async function HomePage() {
   let destinations = staticDestinations;
 
   if (USE_SANITY) {
-    const [sanityItineraries, sanityDestinations] = await Promise.all([
-      getAllItineraries(),
-      getAllDestinations(),
-    ]);
-    if (sanityItineraries.length > 0) itineraries = sanityItineraries.map((s, i) => normalizeSanityItinerary(s, i));
-    if (sanityDestinations.length > 0) destinations = sanityDestinations.map((s, i) => normalizeSanityDestination(s, i));
+    try {
+      const [sanityItineraries, sanityDestinations] = await Promise.all([
+        getAllItineraries(),
+        getAllDestinations(),
+      ]);
+      if (sanityItineraries.length > 0) itineraries = sanityItineraries.map((s, i) => normalizeSanityItinerary(s, i));
+      if (sanityDestinations.length > 0) destinations = sanityDestinations.map((s, i) => normalizeSanityDestination(s, i));
+    } catch (e) {
+      console.error('[Sanity] homepage fetch failed, falling back to static data:', e);
+    }
   }
 
   return (

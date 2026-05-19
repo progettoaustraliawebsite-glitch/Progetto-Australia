@@ -26,8 +26,10 @@ export default async function BlogListPage() {
 
   let posts = staticBlogPosts;
   if (USE_SANITY) {
-    const sanityData = await getAllBlogPosts();
-    if (sanityData.length > 0) posts = sanityData.map((s) => normalizeSanityBlogPostForList(s));
+    try {
+      const sanityData = await getAllBlogPosts();
+      if (sanityData.length > 0) posts = sanityData.map((s) => normalizeSanityBlogPostForList(s));
+    } catch (e) { console.error('[Sanity] blog fetch failed:', e); }
   }
 
   return <BlogListClient posts={posts} locale={locale} />;

@@ -29,8 +29,10 @@ export default async function DestinationsPage() {
 
   let destinations = staticDestinations;
   if (USE_SANITY) {
-    const sanityData = await getAllDestinations();
-    if (sanityData.length > 0) destinations = sanityData.map((s, i) => normalizeSanityDestination(s, i));
+    try {
+      const sanityData = await getAllDestinations();
+      if (sanityData.length > 0) destinations = sanityData.map((s, i) => normalizeSanityDestination(s, i));
+    } catch (e) { console.error('[Sanity] destinations fetch failed:', e); }
   }
 
   return (

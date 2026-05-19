@@ -27,8 +27,10 @@ export default async function TravelIdeasPage() {
 
   let itineraries = staticItineraries;
   if (USE_SANITY) {
-    const sanityData = await getAllItineraries();
-    if (sanityData.length > 0) itineraries = sanityData.map((s, i) => normalizeSanityItinerary(s, i));
+    try {
+      const sanityData = await getAllItineraries();
+      if (sanityData.length > 0) itineraries = sanityData.map((s, i) => normalizeSanityItinerary(s, i));
+    } catch (e) { console.error('[Sanity] travel-ideas fetch failed:', e); }
   }
 
   return (

@@ -78,10 +78,12 @@ export default async function BlogPostPage({ params }: Props) {
 
   // Sanity fallback (only when USE_SANITY=true and slug not in static data)
   if (USE_SANITY) {
-    const sanityPost = await getBlogPostBySlug(slug);
-    if (sanityPost) {
-      return <SanityBlogPostClient post={sanityPost} locale={locale} {...labels} />;
-    }
+    try {
+      const sanityPost = await getBlogPostBySlug(slug);
+      if (sanityPost) {
+        return <SanityBlogPostClient post={sanityPost} locale={locale} {...labels} />;
+      }
+    } catch (e) { console.error('[Sanity] blog slug fetch failed:', e); }
   }
 
   notFound();

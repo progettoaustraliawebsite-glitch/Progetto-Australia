@@ -89,16 +89,18 @@ export default async function HighlightsPage() {
 
   let highlights = staticHighlights;
   if (USE_SANITY) {
-    const sanityData = await getHighlights();
-    if (sanityData.length > 0) {
-      highlights = sanityData.map((h) => ({
-        id: h._id,
-        image: h.image ? urlFor(h.image).width(800).height(520).url() : '',
-        category: h.category,
-        title: h.title,
-        description: h.description,
-      }));
-    }
+    try {
+      const sanityData = await getHighlights();
+      if (sanityData.length > 0) {
+        highlights = sanityData.map((h) => ({
+          id: h._id,
+          image: h.image ? urlFor(h.image).width(800).height(520).url() : '',
+          category: h.category,
+          title: h.title,
+          description: h.description,
+        }));
+      }
+    } catch (e) { console.error('[Sanity] highlights fetch failed:', e); }
   }
 
   return (
