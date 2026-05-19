@@ -260,3 +260,28 @@ export async function getAllWeddingPackages(): Promise<SanityWeddingPackage[]> {
     }`
   );
 }
+
+export async function getTestimonials() {
+  return sanityClient.fetch(
+    `*[_type == "testimonial"] | order(order asc) {
+      _id, name, photo, trip, title, text, rating, date, platform, reviewCount
+    }`
+  );
+}
+
+export async function getTeamMembers() {
+  return sanityClient.fetch(
+    `*[_type == "teamMember"] | order(order asc) {
+      _id, name, photo, role, bio, email,
+      "logos": logos[]{ alt, "src": image.asset->url }
+    }`
+  );
+}
+
+export async function getSiteSettings() {
+  return sanityClient.fetch(
+    `*[_type == "siteSettings"][0] {
+      email, phone, phoneUS, address, hours, hoursEn
+    }`
+  );
+}
