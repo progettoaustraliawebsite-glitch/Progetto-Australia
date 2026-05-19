@@ -168,29 +168,23 @@ export default async function ItineraryDetailPage({ params }: Props) {
               />
             </div>
 
-            {/* Highlights */}
-            <div className="grid grid-cols-2 gap-3">
-              {itinerary.highlights[locale].map((h) => (
-                <div key={h} className="bg-sand/10 border border-sand/30 p-4 text-center">
-                  <span className="text-[10px] md:text-xs font-sans uppercase tracking-wide text-hero/70">{h}</span>
-                </div>
-              ))}
-            </div>
-
             {/* Programme */}
             <div>
-              <h2 className="font-serif text-lg md:text-2xl font-bold text-hero mb-6 uppercase tracking-wide md:tracking-widest flex items-center gap-3">
+              <h2 className="font-serif text-lg md:text-2xl font-bold text-hero mb-8 uppercase tracking-wide md:tracking-widest flex items-center gap-3">
                 <Calendar size={24} className="text-gold" /> {programLabel}
               </h2>
-              <div className="grid grid-cols-1 md:grid-cols-2 gap-3">
+              <div className="space-y-0 border-l-2 border-gold/30 ml-4">
                 {itinerary.program.map((day, idx) => (
-                  <div key={idx} className="flex gap-4 p-4 border border-stone-100 bg-stone-50/50 hover:bg-stone-50 transition-colors">
-                    <span className="shrink-0 w-8 h-8 rounded-full bg-gold flex items-center justify-center text-[11px] font-sans font-bold text-white mt-0.5">
-                      {day.day}
-                    </span>
-                    <div>
-                      <p className="font-serif text-sm font-bold text-hero leading-snug mb-1">{day.title[locale]}</p>
-                      <p className="text-hero/55 text-xs leading-relaxed">{day.description[locale]}</p>
+                  <div key={idx} className="relative pl-8 pb-8">
+                    <div className="absolute -left-[9px] top-0 w-4 h-4 rounded-full bg-gold border-2 border-white shadow-sm" />
+                    <div className="bg-stone-50 border border-stone-100 p-6 hover:shadow-md transition-shadow">
+                      <div className="flex items-center gap-3 mb-2">
+                        <span className="text-[10px] font-sans font-bold uppercase tracking-[0.2em] text-gold">
+                          {locale === 'it' ? `Giorno ${day.day}` : `Day ${day.day}`}
+                        </span>
+                      </div>
+                      <h3 className="font-serif text-lg font-bold text-hero mb-1">{day.title[locale]}</h3>
+                      <p className="text-hero/60 text-sm leading-relaxed">{day.description[locale]}</p>
                     </div>
                   </div>
                 ))}
