@@ -156,15 +156,24 @@ export default async function ItineraryDetailPage({ params }: Props) {
             </div>
 
             {/* Map */}
-            {ITINERARY_MAP_CONFIGS[itinerary.slug] && (
-              <div>
-                <h2 className="font-serif text-lg md:text-2xl font-bold text-hero mb-4 uppercase tracking-wide flex items-center gap-3">
-                  <MapPin size={22} className="text-gold" />
-                  {locale === 'it' ? 'Il Percorso' : 'The Route'}
-                </h2>
-                <ItineraryMapWrapper config={ITINERARY_MAP_CONFIGS[itinerary.slug]} />
-              </div>
-            )}
+            <div>
+              <h2 className="font-serif text-lg md:text-2xl font-bold text-hero mb-4 uppercase tracking-wide flex items-center gap-3">
+                <MapPin size={22} className="text-gold" />
+                {locale === 'it' ? 'Il Percorso' : 'The Route'}
+              </h2>
+              {/* Illustrated map image */}
+              <img
+                src={`/images/maps/${itinerary.slug}.png`}
+                alt={`Mappa itinerario ${itinerary.title[locale]}`}
+                className="w-full rounded-xl shadow-md border border-stone-200"
+              />
+              {/* Interactive SVG fallback */}
+              {ITINERARY_MAP_CONFIGS[itinerary.slug] && (
+                <div className="mt-3">
+                  <ItineraryMapWrapper config={ITINERARY_MAP_CONFIGS[itinerary.slug]} />
+                </div>
+              )}
+            </div>
 
             {/* Highlights */}
             <div className="grid grid-cols-2 gap-3">
