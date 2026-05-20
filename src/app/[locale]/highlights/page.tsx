@@ -3,7 +3,6 @@ export const revalidate = 60;
 import { getTranslations, getLocale } from 'next-intl/server';
 import { Star } from 'lucide-react';
 import { USE_SANITY, getHighlights, urlFor } from '@/lib/sanity';
-import { DarkHeroNavbar } from '@/context/NavbarContext';
 import type { Metadata } from 'next';
 
 export async function generateMetadata(): Promise<Metadata> {
@@ -106,7 +105,6 @@ export default async function HighlightsPage() {
 
   return (
     <>
-      <DarkHeroNavbar />
       <section className="relative pt-40 pb-24 px-6 bg-hero overflow-hidden">
         <div className="absolute inset-0 bg-gradient-to-br from-gold/20 via-transparent to-transparent" />
         <div className="max-w-7xl mx-auto relative z-10 text-center">

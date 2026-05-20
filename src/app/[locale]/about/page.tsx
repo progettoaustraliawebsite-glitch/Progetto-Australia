@@ -8,7 +8,6 @@ import { team } from '@/data/team';
 import type { TeamMember } from '@/data/team';
 import { ShieldCheck, Globe, Clock, X, ChevronLeft, ChevronRight, Leaf, Heart, TreePine, ExternalLink } from 'lucide-react';
 import { Link } from '@/i18n/navigation';
-import { DarkHeroNavbar } from '@/context/NavbarContext';
 import SectionHeader from '@/components/ui/SectionHeader';
 import OpenModalButton from '@/components/ui/OpenModalButton';
 
@@ -126,7 +125,6 @@ export default function AboutPage() {
 
   return (
     <div className="bg-sand/30 overflow-hidden">
-      <DarkHeroNavbar />
 
       {/* Hero */}
       <section className="relative h-[60vh] min-h-[500px] flex items-center justify-center bg-hero overflow-hidden">

@@ -5,6 +5,7 @@ import { notFound } from 'next/navigation';
 import { routing } from '@/i18n/routing';
 import ConditionalShell from '@/components/layout/ConditionalShell';
 import { QuoteModalProvider } from '@/context/QuoteModalContext';
+import { NavbarProvider } from '@/context/NavbarContext';
 import WeddingQuoteModal from '@/components/modals/WeddingQuoteModal';
 import NewsletterPopup from '@/components/modals/NewsletterPopup';
 import JsonLd from '@/components/seo/JsonLd';
@@ -112,11 +113,13 @@ export default async function LocaleLayout({ children, params }: Props) {
   return (
     <NextIntlClientProvider messages={messages}>
       <JsonLd data={travelAgencySchema} />
-      <QuoteModalProvider>
-        <ConditionalShell>{children}</ConditionalShell>
-        <WeddingQuoteModal />
-        {/* <NewsletterPopup /> */}
-      </QuoteModalProvider>
+      <NavbarProvider>
+        <QuoteModalProvider>
+          <ConditionalShell>{children}</ConditionalShell>
+          <WeddingQuoteModal />
+          {/* <NewsletterPopup /> */}
+        </QuoteModalProvider>
+      </NavbarProvider>
     </NextIntlClientProvider>
   );
 }

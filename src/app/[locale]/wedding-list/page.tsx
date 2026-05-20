@@ -1,7 +1,6 @@
 import { getTranslations, getLocale } from 'next-intl/server';
 import { Heart, Shield, Zap, ArrowRight } from 'lucide-react';
 import OpenModalButton from '@/components/ui/OpenModalButton';
-import { DarkHeroNavbar } from '@/context/NavbarContext';
 import type { Metadata } from 'next';
 
 export async function generateMetadata(): Promise<Metadata> {
@@ -52,7 +51,6 @@ export default async function WeddingListPage() {
 
   return (
     <>
-      <DarkHeroNavbar />
       {/* Hero */}
       <section className="relative pt-40 pb-24 px-6 bg-hero overflow-hidden">
         <div className="absolute inset-0 bg-gradient-to-br from-[#813318]/40 via-transparent to-transparent" />

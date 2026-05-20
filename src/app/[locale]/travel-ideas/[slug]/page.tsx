@@ -10,7 +10,6 @@ import { itineraries } from '@/data/itineraries';
 import { formatPrice } from '@/lib/utils';
 import type { Metadata } from 'next';
 import JsonLd from '@/components/seo/JsonLd';
-import { DarkHeroNavbar } from '@/context/NavbarContext';
 
 
 interface Props {
@@ -104,7 +103,6 @@ export default async function ItineraryDetailPage({ params }: Props) {
 
   return (
     <>
-    <DarkHeroNavbar />
     <JsonLd data={tripSchema} />
     <div className="bg-white min-h-screen">
       {/* Hero */}
