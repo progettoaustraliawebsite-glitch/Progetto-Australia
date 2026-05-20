@@ -68,14 +68,9 @@ export default async function DestinationsPage() {
                 <div className={`relative overflow-hidden h-72 lg:h-auto order-1 ${i % 2 === 1 ? 'lg:order-2' : 'lg:order-1'}`}>
                   <div
                     className="absolute inset-0 bg-cover bg-center transition-transform duration-700 group-hover:scale-105"
-                    style={{ backgroundImage: `url(${dest.photo}), linear-gradient(135deg, ${dest.accentColor}, #1a1a1a)` }}
+                    style={{ backgroundImage: `url(${dest.heroPhoto ?? dest.photo}), linear-gradient(135deg, ${dest.accentColor}, #1a1a1a)` }}
                   />
                   <div className="absolute inset-0 bg-black/10" />
-                  <div className="absolute inset-0 flex items-center justify-center">
-                    <span className="font-serif text-8xl font-bold text-white/10 select-none">
-                      {String(i + 1).padStart(2, '0')}
-                    </span>
-                  </div>
                 </div>
 
                 <div
@@ -105,8 +100,8 @@ export default async function DestinationsPage() {
 
                   <Link
                     href={`/destinations/${dest.slug}`}
-                    className="inline-flex items-center gap-3 text-xs font-sans uppercase tracking-widest hover:opacity-70 transition-opacity duration-300 self-start"
-                    style={{ color: '#b0a377' }}
+                    className="inline-flex items-center gap-3 text-xs font-sans font-bold uppercase tracking-widest px-6 py-3 rounded-full transition-all duration-300 self-start hover:opacity-80"
+                    style={{ backgroundColor: '#b0a377', color: '#fff' }}
                   >
                     {t('explore')} <ArrowRight size={14} />
                   </Link>

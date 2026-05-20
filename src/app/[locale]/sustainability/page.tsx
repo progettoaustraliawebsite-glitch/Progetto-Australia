@@ -147,7 +147,7 @@ export default async function SustainabilityPage() {
                 <h3 className="font-serif text-xl font-bold text-hero mb-3">{c.travelifeTitle}</h3>
                 <p className="text-hero/70 text-sm leading-relaxed font-sans mb-4">{c.travelifeText}</p>
                 <a
-                  href="https://www.progettoaustralia.it/wp-content/uploads/2025/01/PROGETTO-AUSTRALIA_12-12-2024_company_certificate.pdf"
+                  href="/docs/travelife-certificate.pdf"
                   target="_blank"
                   rel="noopener noreferrer"
                   className="inline-flex items-center gap-2 text-xs text-gold font-sans uppercase tracking-widest hover:underline"

@@ -44,7 +44,7 @@ export default function DestinationsGrid({ destinations }: Props) {
             <div className="absolute inset-0 bg-black/0 group-hover:bg-black/20 transition-colors duration-500 rounded-2xl" />
 
             {/* Content */}
-            <Link href="/destinations" className="absolute inset-0 z-10 flex flex-col justify-end p-6">
+            <Link href={`/destinations/${dest.slug}`} className="absolute inset-0 z-10 flex flex-col justify-end p-6">
               <h3 className="font-serif text-xl font-bold text-white leading-tight mb-2 drop-shadow-lg">
                 {dest.name[locale]}
               </h3>
