@@ -58,18 +58,26 @@ export default function Navbar() {
     }
   };
 
+  const transparent = !scrolled;
+
   return (
     <motion.header
       animate={{ y: hidden ? -100 : 0 }}
       transition={{ duration: 0.3, ease: 'easeInOut' }}
-      className={`fixed top-0 left-0 right-0 z-50 transition-colors duration-500 ${
-        scrolled ? 'bg-white shadow-lg' : 'bg-white/90 backdrop-blur-sm border-b border-sand'
+      className={`fixed top-0 left-0 right-0 z-50 transition-all duration-500 ${
+        scrolled ? 'bg-white shadow-lg' : 'bg-transparent'
       }`}
     >
       <nav className="max-w-7xl mx-auto px-6 lg:px-10 flex items-center justify-between h-20">
         {/* Logo */}
         <Link href="/" className="hover:opacity-80 transition-opacity duration-300">
-          <Image src="/logo.png" alt="Progetto Australia" width={140} height={28} className="h-7 w-auto object-contain" />
+          <Image
+            src="/logo.png"
+            alt="Progetto Australia"
+            width={140}
+            height={28}
+            className={`h-7 w-auto object-contain transition-all duration-500 ${transparent ? 'brightness-0 invert' : ''}`}
+          />
         </Link>
 
         {/* Desktop Nav */}
@@ -82,7 +90,7 @@ export default function Navbar() {
               onMouseEnter={() => setDestsOpen(true)}
               onMouseLeave={() => setDestsOpen(false)}
             >
-              <button className="flex items-center gap-1 text-xs font-sans uppercase tracking-widest text-charcoal/80 hover:text-gold transition-colors duration-300">
+              <button className={`flex items-center gap-1 text-xs font-sans uppercase tracking-widest hover:text-gold transition-colors duration-300 ${transparent ? 'text-white/90' : 'text-charcoal/80'}`}>
                 {t('destinations')}
                 <ChevronDown size={11} className={`transition-transform duration-200 ${destsOpen ? 'rotate-180' : ''}`} />
               </button>
@@ -118,7 +126,7 @@ export default function Navbar() {
               <li key={link.href}>
                 <Link
                   href={link.href}
-                  className="text-xs font-sans uppercase tracking-widest text-charcoal/80 hover:text-gold transition-colors duration-300"
+                  className={`text-xs font-sans uppercase tracking-widest hover:text-gold transition-colors duration-300 ${transparent ? 'text-white/90' : 'text-charcoal/80'}`}
                 >
                   {t(link.labelKey)}
                 </Link>
@@ -138,13 +146,13 @@ export default function Navbar() {
         <div className="flex items-center gap-4">
           <button
             onClick={() => switchLocale(otherLocale)}
-            className="text-xs font-sans uppercase tracking-widest text-charcoal/60 hover:text-gold transition-colors duration-300 border border-charcoal/20 hover:border-gold px-3 py-1.5"
+            className={`text-xs font-sans uppercase tracking-widest hover:text-gold transition-colors duration-300 hover:border-gold px-3 py-1.5 border ${transparent ? 'text-white/80 border-white/30' : 'text-charcoal/60 border-charcoal/20'}`}
           >
             {otherLocale}
           </button>
 
           <button
-            className="lg:hidden text-charcoal hover:text-gold transition-colors duration-300"
+            className={`lg:hidden hover:text-gold transition-colors duration-300 ${transparent ? 'text-white' : 'text-charcoal'}`}
             onClick={() => setIsOpen(!isOpen)}
             aria-label="Toggle menu"
           >
