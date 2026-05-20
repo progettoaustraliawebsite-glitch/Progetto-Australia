@@ -1,6 +1,7 @@
 'use client';
 
 import { useState, useEffect, useCallback } from 'react';
+import Image from 'next/image';
 import { motion, AnimatePresence } from 'framer-motion';
 import { useTranslations } from 'next-intl';
 import { useRouter } from '@/i18n/navigation';
@@ -41,12 +42,14 @@ export default function HeroSlider() {
           className="absolute inset-0 transition-opacity duration-1000"
           style={{ opacity: i === current ? 1 : 0 }}
         >
-          <img
+          <Image
             src={slide.image}
             alt=""
-            className="w-full h-full object-cover"
-            // Preload next slide
-            loading={i === 0 ? 'eager' : 'lazy'}
+            fill
+            className="object-cover"
+            priority={i === 0}
+            sizes="100vw"
+            quality={85}
           />
         </div>
       ))}

@@ -6,6 +6,9 @@ import { feature } from 'topojson-client';
 import type { Topology, GeometryCollection } from 'topojson-specification';
 import type { MapConfig, Transport } from '@/data/itineraryMapStops';
 
+// Module-level cache — topology is static, fetch only once per session
+let _cachedTopology: unknown = null;
+
 const GOLD = '#b0a377';
 const DARK = '#1a1a1a';
 const LAND = '#e8dcc8';
@@ -39,21 +42,20 @@ export default function ItineraryMap({ config, className = '' }: Props) {
     return p ? [p[0], p[1]] : [0, 0];
   };
 
-  // Load world topology
+  // Load world topology (cached in module scope — fetched once per session)
   useEffect(() => {
+    const render = (topology: Topology) => {
+      const geo = geoPath(projection);
+      const countries = feature(topology, topology.objects.countries as GeometryCollection);
+      setPaths((countries as GeoJSON.FeatureCollection).features.map((f) => geo(f) ?? ''));
+    };
+    if (_cachedTopology) {
+      render(_cachedTopology as Topology);
+      return;
+    }
     fetch('https://cdn.jsdelivr.net/npm/world-atlas@2/countries-110m.json')
       .then((r) => r.json())
-      .then((topology: Topology) => {
-        const geo = geoPath(projection);
-        const countries = feature(
-          topology,
-          topology.objects.countries as GeometryCollection
-        );
-        const rendered = (countries as GeoJSON.FeatureCollection).features.map(
-          (f) => geo(f) ?? ''
-        );
-        setPaths(rendered);
-      })
+      .then((topology: Topology) => { _cachedTopology = topology; render(topology); })
       .catch(() => {});
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [center[0], center[1], scale]);

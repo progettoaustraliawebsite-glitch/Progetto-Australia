@@ -1,5 +1,6 @@
 'use client';
 
+import Image from 'next/image';
 import { motion } from 'framer-motion';
 import { useTranslations, useLocale } from 'next-intl';
 import { Link } from '@/i18n/navigation';
@@ -33,10 +34,16 @@ export default function DestinationsGrid({ destinations }: Props) {
             className="group relative overflow-hidden rounded-2xl cursor-pointer h-[360px] lg:h-[520px] w-[72vw] shrink-0 [scroll-snap-align:start] lg:w-0 lg:flex-1 lg:shrink"
           >
             {/* Photo */}
-            <div
-              className="absolute inset-0 bg-cover bg-center transition-transform duration-700 group-hover:scale-110"
-              style={{ backgroundImage: `url(${dest.photo})` }}
-            />
+            <div className="absolute inset-0 transition-transform duration-700 group-hover:scale-110">
+              <Image
+                src={dest.photo}
+                alt={dest.name[locale]}
+                fill
+                className="object-cover"
+                sizes="(max-width: 1024px) 72vw, 14vw"
+                quality={80}
+              />
+            </div>
 
             {/* Bottom gradient for text legibility */}
             <div className="absolute inset-0 bg-gradient-to-t from-black/65 via-transparent to-transparent rounded-2xl" />

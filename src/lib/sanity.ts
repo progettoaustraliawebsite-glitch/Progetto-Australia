@@ -175,6 +175,26 @@ export function normalizeSanityItinerary(s: SanityItinerary, idx = 0): Itinerary
   };
 }
 
+// Maps Sanity slug → local image filename (slugs differ from file short-names)
+const DEST_HERO_FILES: Record<string, string> = {
+  'australia':        '/images/dest-hero-australia.png',
+  'new-zealand':      '/images/dest-hero-nz.png',
+  'fiji':             '/images/dest-hero-fiji.png',
+  'cook-islands':     '/images/dest-hero-cook.png',
+  'samoa':            '/images/dest-hero-samoa.png',
+  'french-polynesia': '/images/dest-hero-polynesia.png',
+  'new-caledonia':    '/images/dest-hero-caledonia.png',
+};
+const DEST_CARD_FILES: Record<string, string> = {
+  'australia':        '/images/dest-card-australia.png',
+  'new-zealand':      '/images/dest-card-nz.png',
+  'fiji':             '/images/dest-card-fiji.png',
+  'cook-islands':     '/images/dest-card-cook.png',
+  'samoa':            '/images/dest-card-samoa.png',
+  'french-polynesia': '/images/dest-card-polynesia.png',
+  'new-caledonia':    '/images/dest-card-caledonia.png',
+};
+
 export function normalizeSanityDestination(s: SanityDestination, idx = 0): Destination {
   return {
     id: s._id,
@@ -184,8 +204,8 @@ export function normalizeSanityDestination(s: SanityDestination, idx = 0): Desti
     description: s.description,
     gradient: GRADIENT_DEFAULTS[idx % GRADIENT_DEFAULTS.length],
     accentColor: ACCENT_DEFAULTS[idx % ACCENT_DEFAULTS.length],
-    photo: s.heroImage ? urlFor(s.heroImage).width(900).height(600).url() : `/images/dest-card-${s.slug.current}.png`,
-    heroPhoto: `/images/dest-hero-${s.slug.current}.png`,
+    photo: s.heroImage ? urlFor(s.heroImage).width(900).height(600).url() : (DEST_CARD_FILES[s.slug.current] ?? `/images/dest-card-${s.slug.current}.png`),
+    heroPhoto: DEST_HERO_FILES[s.slug.current] ?? `/images/dest-hero-${s.slug.current}.png`,
     highlights: s.highlights ?? { it: [], en: [] },
   };
 }

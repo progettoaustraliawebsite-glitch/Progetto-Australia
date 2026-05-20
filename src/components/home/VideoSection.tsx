@@ -27,6 +27,7 @@ export default function VideoSection() {
         title="Progetto Australia"
         allow="autoplay; encrypted-media"
         allowFullScreen
+        loading="lazy"
       />
     </section>
   );

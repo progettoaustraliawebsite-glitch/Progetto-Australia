@@ -1,6 +1,7 @@
 export const revalidate = 60;
 
 import { notFound } from 'next/navigation';
+import Image from 'next/image';
 import { getLocale } from 'next-intl/server';
 import { Link } from '@/i18n/navigation';
 import { ChevronLeft, ArrowRight, Plane, CreditCard, Globe, Clock3, FileText, BookOpen } from 'lucide-react';
@@ -115,7 +116,15 @@ export default async function DestinationDetailPage({ params }: Props) {
       <section className="relative h-screen h-[100dvh] w-full overflow-hidden">
         <div className="absolute inset-0">
           {(dest.heroPhoto ?? dest.photo) ? (
-            <img src={dest.heroPhoto ?? dest.photo} alt={dest.name[locale]} className="w-full h-full object-cover" />
+            <Image
+              src={dest.heroPhoto ?? dest.photo}
+              alt={dest.name[locale]}
+              fill
+              className="object-cover"
+              priority
+              sizes="100vw"
+              quality={85}
+            />
           ) : (
             <div className={`w-full h-full bg-gradient-to-br ${dest.gradient}`} />
           )}
