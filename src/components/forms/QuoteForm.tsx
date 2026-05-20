@@ -392,7 +392,7 @@ export default function QuoteForm() {
 
   // ── Wizard card ──────────────────────────────────────────────────────────────
   return (
-    <div className="bg-white rounded-2xl shadow-2xl w-full max-w-lg overflow-hidden relative">
+    <div className="bg-white rounded-2xl shadow-2xl w-full max-w-lg relative">
 
       {/* Close button */}
       <Link
@@ -410,7 +410,7 @@ export default function QuoteForm() {
 
       {/* Step indicator */}
       {step > 0 && step <= TOTAL && (
-        <div className="mt-5 px-4 flex flex-col items-center gap-2">
+        <div className="mt-3 md:mt-5 px-4 flex flex-col items-center gap-2">
           <div className="flex items-center gap-1">
             {Array.from({ length: TOTAL }, (_, i) => i + 1).map((s) => (
               <div
@@ -432,7 +432,7 @@ export default function QuoteForm() {
       )}
 
       {/* Step content */}
-      <div className="px-5 md:px-10 pt-6 pb-8">
+      <div className="px-5 md:px-10 pt-4 md:pt-6 pb-6 md:pb-8">
         <AnimatePresence mode="wait" custom={dir}>
 
           {/* ── STEP 0: Welcome ── */}

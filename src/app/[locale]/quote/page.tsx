@@ -29,7 +29,7 @@ export default function QuotePage() {
       </div>
 
       {/* Form — centered in the overlay */}
-      <div className="relative z-10 flex items-center justify-center min-h-screen py-6 md:py-12 px-3 sm:px-6">
+      <div className="relative z-10 flex items-start md:items-center justify-center min-h-screen py-6 md:py-12 px-3 sm:px-6">
         <QuoteForm />
       </div>
     </div>
