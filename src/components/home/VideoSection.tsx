@@ -23,7 +23,7 @@ export default function VideoSection() {
           border: 'none',
           pointerEvents: 'none',
         }}
-        src="https://www.youtube.com/embed/IcZhtJZP7eY?controls=0&autoplay=1&mute=1&loop=1&playlist=IcZhtJZP7eY&rel=0&showinfo=0&iv_load_policy=3&disablekb=1&modestbranding=1"
+        src="https://www.youtube.com/embed/IcZhtJZP7eY?controls=0&autoplay=1&mute=1&loop=1&playlist=IcZhtJZP7eY&rel=0&showinfo=0&iv_load_policy=3&disablekb=1&modestbranding=1&end=82"
         title="Progetto Australia"
         allow="autoplay; encrypted-media"
         allowFullScreen
