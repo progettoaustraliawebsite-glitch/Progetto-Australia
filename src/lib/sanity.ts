@@ -58,6 +58,17 @@ export interface SanityItinerary {
   featured?: boolean;
 }
 
+export interface SanityDestinationMustSeeItem {
+  title: LocaleString;
+  description: LocaleString;
+}
+
+export interface SanityDestinationMonth {
+  it: string;
+  en: string;
+  rating: 'best' | 'good' | 'avoid';
+}
+
 export interface SanityDestination {
   _id: string;
   title: LocaleString;
@@ -68,6 +79,22 @@ export interface SanityDestination {
   highlights?: { it: string[]; en: string[] };
   heroImage?: SanityImageSource;
   featured?: boolean;
+  // Rich content fields
+  intro?: LocaleString;
+  mustSeeImage?: string;
+  mustSee?: SanityDestinationMustSeeItem[];
+  whenToGo?: {
+    months: SanityDestinationMonth[];
+    description: LocaleString;
+  };
+  practical?: {
+    visa: LocaleString;
+    flights: LocaleString;
+    currency: LocaleString;
+    language: LocaleString;
+    timezone: LocaleString;
+  };
+  experiences?: LocaleString[];
 }
 
 export interface SanityBlogPost {
@@ -110,6 +137,7 @@ export interface SanityWeddingPackage {
 import type { Itinerary } from '@/data/itineraries';
 import type { Destination } from '@/data/destinations';
 import type { BlogPost } from '@/data/blog';
+import type { DestinationContent } from '@/data/destination-content';
 
 const GRADIENT_DEFAULTS = [
   'from-amber-800 to-orange-900',
@@ -158,6 +186,31 @@ export function normalizeSanityDestination(s: SanityDestination, idx = 0): Desti
     accentColor: ACCENT_DEFAULTS[idx % ACCENT_DEFAULTS.length],
     photo: s.heroImage ? urlFor(s.heroImage).width(900).height(600).url() : `/images/dest-card-${s.slug.current}.png`,
     highlights: s.highlights ?? { it: [], en: [] },
+  };
+}
+
+export function normalizeSanityDestinationContent(s: SanityDestination): DestinationContent | null {
+  if (!s.intro || !s.mustSee || !s.whenToGo || !s.practical) return null;
+  return {
+    slug: s.slug.current,
+    mustSeeImage: s.mustSeeImage,
+    intro: s.intro,
+    whenToGo: {
+      months: s.whenToGo.months,
+      description: s.whenToGo.description,
+    },
+    mustSee: s.mustSee.map((item) => ({
+      title: item.title,
+      description: item.description,
+    })),
+    practical: {
+      visa: s.practical.visa,
+      flights: s.practical.flights,
+      currency: s.practical.currency,
+      language: s.practical.language,
+      timezone: s.practical.timezone,
+    },
+    experiences: s.experiences ?? [],
   };
 }
 
@@ -221,7 +274,8 @@ export async function getAllDestinations(): Promise<SanityDestination[]> {
 export async function getDestinationBySlug(slug: string): Promise<SanityDestination | null> {
   return sanityClient.fetch(
     `*[_type == "destination" && slug.current == $slug][0] {
-      _id, title, slug, country, tagline, description, highlights, heroImage, featured
+      _id, title, slug, country, tagline, description, highlights, heroImage, featured,
+      intro, mustSeeImage, mustSee, whenToGo, practical, experiences
     }`,
     { slug }
   );

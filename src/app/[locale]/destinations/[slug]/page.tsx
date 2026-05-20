@@ -8,7 +8,7 @@ import { destinations as staticDestinations } from '@/data/destinations';
 import { itineraries as staticItineraries } from '@/data/itineraries';
 import { blogPosts as staticBlogPosts } from '@/data/blog';
 import { destinationContent } from '@/data/destination-content';
-import { USE_SANITY, getAllDestinations, getAllItineraries, normalizeSanityDestination, normalizeSanityItinerary, getAllBlogPosts, normalizeSanityBlogPostForList } from '@/lib/sanity';
+import { USE_SANITY, getAllDestinations, getAllItineraries, normalizeSanityDestination, normalizeSanityItinerary, getAllBlogPosts, normalizeSanityBlogPostForList, getDestinationBySlug, normalizeSanityDestinationContent } from '@/lib/sanity';
 import OpenModalButton from '@/components/ui/OpenModalButton';
 import { formatPrice } from '@/lib/utils';
 import type { Metadata } from 'next';
@@ -73,20 +73,28 @@ export default async function DestinationDetailPage({ params }: Props) {
   let destinations = staticDestinations;
   let itineraries = staticItineraries;
   let blogPosts = staticBlogPosts;
+  let content = destinationContent.find((c) => c.slug === slug) ?? null;
 
   if (USE_SANITY) {
     try {
-      const [sanityDests, sanityIts, sanityPosts] = await Promise.all([getAllDestinations(), getAllItineraries(), getAllBlogPosts()]);
+      const [sanityDests, sanityIts, sanityPosts, sanityDest] = await Promise.all([
+        getAllDestinations(),
+        getAllItineraries(),
+        getAllBlogPosts(),
+        getDestinationBySlug(slug),
+      ]);
       if (sanityDests.length > 0) destinations = sanityDests.map((s, i) => normalizeSanityDestination(s, i));
       if (sanityIts.length > 0) itineraries = sanityIts.map((s, i) => normalizeSanityItinerary(s, i));
       if (sanityPosts.length > 0) blogPosts = sanityPosts.map(normalizeSanityBlogPostForList);
+      if (sanityDest) {
+        const sanityContent = normalizeSanityDestinationContent(sanityDest);
+        if (sanityContent) content = sanityContent;
+      }
     } catch (e) { console.error('[Sanity] destination slug fetch failed:', e); }
   }
 
   const dest = destinations.find((d) => d.slug === slug);
   if (!dest) notFound();
-
-  const content = destinationContent.find((c) => c.slug === slug);
 
   // Related itineraries
   const relatedItineraries = itineraries.filter((it) => {
