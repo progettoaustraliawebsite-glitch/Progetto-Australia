@@ -240,7 +240,7 @@ export default function AboutPage() {
                   <img
                     src={member.photo}
                     alt={member.name}
-                    className="w-full h-full object-cover object-top transition-transform duration-700 group-hover:scale-105 grayscale group-hover:grayscale-0"
+                    className="w-full h-full object-cover object-top transition-transform duration-700 group-hover:scale-105"
                   />
                   <div className="absolute inset-0 bg-gradient-to-t from-black/70 via-transparent to-transparent" />
                 </div>
