@@ -5,7 +5,15 @@ import { motion, AnimatePresence } from 'framer-motion';
 import { useTranslations } from 'next-intl';
 import { useRouter } from '@/i18n/navigation';
 
-const SLIDE_COUNT = 4;
+const SLIDES = [
+  { image: '/images/hero-australia.png' },
+  { image: '/images/hero-new-zealand.png' },
+  { image: '/images/hero-fiji.png' },
+  { image: '/images/hero-samoa.png' },
+  { image: '/images/hero-french-polynesia.png' },
+];
+
+const SLIDE_COUNT = SLIDES.length;
 
 export default function HeroSlider() {
   const router = useRouter();
@@ -19,32 +27,32 @@ export default function HeroSlider() {
 
   useEffect(() => {
     setMounted(true);
-    const timer = setInterval(next, 6000);
+    const timer = setInterval(next, 5000);
     return () => clearInterval(timer);
   }, [next]);
 
   return (
     <section className="relative h-screen h-[100dvh] w-full overflow-hidden bg-hero mb-[-2px]">
-      {/* YouTube video background — all devices */}
-      <iframe
-        style={{
-          position: 'absolute',
-          top: '50%',
-          left: '50%',
-          width: 'max(100vw, 177.78vh)',
-          height: 'max(100vh, 56.25vw)',
-          transform: 'translate(-50%, -50%)',
-          border: 'none',
-          pointerEvents: 'none',
-        }}
-        src="https://www.youtube.com/embed/IcZhtJZP7eY?controls=0&autoplay=1&mute=1&loop=1&playlist=IcZhtJZP7eY&rel=0&showinfo=0&iv_load_policy=3&disablekb=1&modestbranding=1&playsinline=1&start=5"
-        title="Progetto Australia"
-        allow="autoplay; fullscreen; encrypted-media; picture-in-picture"
-        allowFullScreen
-      />
+
+      {/* Background images — crossfade */}
+      {SLIDES.map((slide, i) => (
+        <div
+          key={slide.image}
+          className="absolute inset-0 transition-opacity duration-1000"
+          style={{ opacity: i === current ? 1 : 0 }}
+        >
+          <img
+            src={slide.image}
+            alt=""
+            className="w-full h-full object-cover"
+            // Preload next slide
+            loading={i === 0 ? 'eager' : 'lazy'}
+          />
+        </div>
+      ))}
 
       {/* Dark overlay */}
-      <div className="absolute inset-0 bg-black/38" />
+      <div className="absolute inset-0 bg-black/42" />
 
       {/* Content */}
       <div className="relative z-10 h-full flex flex-col items-center justify-center text-center px-6 lg:px-10">
@@ -91,6 +99,23 @@ export default function HeroSlider() {
           </div>
         )}
       </div>
+
+      {/* Slide dots */}
+      <div className="absolute bottom-8 left-1/2 -translate-x-1/2 z-10 flex gap-2">
+        {SLIDES.map((_, i) => (
+          <button
+            key={i}
+            onClick={() => setCurrent(i)}
+            aria-label={`Slide ${i + 1}`}
+            className={`transition-all duration-300 rounded-full ${
+              i === current
+                ? 'w-6 h-2 bg-gold'
+                : 'w-2 h-2 bg-white/40 hover:bg-white/70'
+            }`}
+          />
+        ))}
+      </div>
+
     </section>
   );
 }

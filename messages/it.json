@@ -26,14 +26,19 @@
           "location": "Fiordland, South Island"
         },
         "2": {
-          "title": "Isole del Pacifico",
-          "subtitle": "Il paradiso tropicale che hai sempre sognato",
-          "location": "Bora Bora, Polinesia Francese"
+          "title": "Le Isole Fiji",
+          "subtitle": "Acque turchesi, barriere coralline e la leggendaria ospitalità Fijiana",
+          "location": "Yasawa Islands, Fiji"
         },
         "3": {
-          "title": "Oceania",
-          "subtitle": "Un continente, infinite possibilità, ricordi per tutta la vita",
-          "location": "Sydney, New South Wales"
+          "title": "Isole Samoa",
+          "subtitle": "Il cuore pulsante della cultura Polinesiana, tra natura incontaminata e villaggi autentici",
+          "location": "Upolu, Samoa"
+        },
+        "4": {
+          "title": "Polinesia Francese",
+          "subtitle": "Bungalow sull'acqua, lagune da sogno e il romanticismo del Pacifico",
+          "location": "Bora Bora, Polinesia Francese"
         }
       },
       "cta": "Crea il tuo Viaggio"
