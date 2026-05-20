@@ -18,7 +18,6 @@ const navLinks = [
 export default function Navbar() {
   const [isOpen, setIsOpen] = useState(false);
   const [scrolled, setScrolled] = useState(false);
-  const [hidden, setHidden] = useState(false);
   const [lastScrollY, setLastScrollY] = useState(0);
   const [destsOpen, setDestsOpen] = useState(false);
   const [mobileDestsOpen, setMobileDestsOpen] = useState(false);
@@ -33,11 +32,6 @@ export default function Navbar() {
     const handleScroll = () => {
       const currentScrollY = window.scrollY;
       setScrolled(currentScrollY > 50);
-      if (currentScrollY > lastScrollY && currentScrollY > 100) {
-        setHidden(true);
-      } else {
-        setHidden(false);
-      }
       setLastScrollY(currentScrollY);
     };
     window.addEventListener('scroll', handleScroll, { passive: true });
@@ -62,8 +56,6 @@ export default function Navbar() {
 
   return (
     <motion.header
-      animate={{ y: hidden ? -100 : 0 }}
-      transition={{ duration: 0.3, ease: 'easeInOut' }}
       className={`fixed top-0 left-0 right-0 z-50 transition-all duration-500 ${
         scrolled ? 'bg-white shadow-lg' : 'bg-transparent'
       }`}
