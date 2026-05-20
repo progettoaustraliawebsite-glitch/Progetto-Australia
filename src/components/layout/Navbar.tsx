@@ -52,7 +52,9 @@ export default function Navbar() {
     }
   };
 
-  const transparent = !scrolled;
+  // Transparent only on homepage (dark hero background)
+  const isHome = pathname === '/';
+  const transparent = isHome && !scrolled;
 
   return (
     <motion.header
