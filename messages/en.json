@@ -123,7 +123,9 @@
       "departure": "Expected Departure Date",
       "travelers": "Number of Travellers",
       "message": "Tell us about your dream trip",
-      "submit": "Send Request"
+      "submit": "Send Request",
+      "successTitle": "Message Sent!",
+      "successText": "We'll get back to you within 24 business hours."
     },
     "info": {
       "based": "Based in Brisbane",

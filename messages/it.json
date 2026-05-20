@@ -123,7 +123,9 @@
       "departure": "Data di Partenza Prevista",
       "travelers": "Numero di Viaggiatori",
       "message": "Raccontaci il tuo viaggio dei sogni",
-      "submit": "Invia Richiesta"
+      "submit": "Invia Richiesta",
+      "successTitle": "Messaggio Inviato!",
+      "successText": "Ti risponderemo entro 24 ore lavorative."
     },
     "info": {
       "based": "Con base a Brisbane",

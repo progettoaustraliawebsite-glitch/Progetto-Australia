@@ -142,7 +142,7 @@ export default function TravelIdeasClient({ itineraries, locale, heroLabel, hero
                 <ChevronDown size={12} className={`transition-transform duration-200 ${open === 'type' ? 'rotate-180' : ''}`} />
               </button>
               {open === 'type' && (
-                <div className="absolute top-full left-0 mt-2 bg-white shadow-xl min-w-[160px] z-50 py-1">
+                <div className="absolute top-full left-0 mt-2 bg-white shadow-xl min-w-[160px] max-w-[90vw] z-50 py-1">
                   {activeType && (
                     <button
                       onClick={() => { setActiveType(null); setOpen(null); }}
@@ -180,7 +180,7 @@ export default function TravelIdeasClient({ itineraries, locale, heroLabel, hero
                 <ChevronDown size={12} className={`transition-transform duration-200 ${open === 'dest' ? 'rotate-180' : ''}`} />
               </button>
               {open === 'dest' && (
-                <div className="absolute top-full left-0 mt-2 bg-white shadow-xl min-w-[220px] z-50 py-1">
+                <div className="absolute top-full left-0 mt-2 bg-white shadow-xl min-w-[220px] max-w-[90vw] z-50 py-1">
                   {activeDest && (
                     <button
                       onClick={() => { setActiveDest(null); setOpen(null); }}
@@ -218,7 +218,7 @@ export default function TravelIdeasClient({ itineraries, locale, heroLabel, hero
                 <ChevronDown size={12} className={`transition-transform duration-200 ${open === 'price' ? 'rotate-180' : ''}`} />
               </button>
               {open === 'price' && (
-                <div className="absolute top-full left-0 mt-2 bg-white shadow-xl min-w-[180px] z-50 py-1">
+                <div className="absolute top-full left-0 mt-2 bg-white shadow-xl min-w-[180px] max-w-[90vw] z-50 py-1">
                   {activePrice && (
                     <button
                       onClick={() => { setActivePrice(null); setOpen(null); }}

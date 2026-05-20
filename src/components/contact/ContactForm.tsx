@@ -26,10 +26,10 @@ export default function ContactForm() {
           <CheckCircle2 size={28} style={{ color: '#f9b233' }} />
         </motion.div>
         <h3 className="font-serif text-2xl text-white mb-3 uppercase tracking-widest">
-          Messaggio Inviato!
+          {t('form.successTitle')}
         </h3>
         <p style={{ color: '#999' }}>
-          Ti risponderemo entro 24 ore lavorative.
+          {t('form.successText')}
         </p>
       </div>
     );
