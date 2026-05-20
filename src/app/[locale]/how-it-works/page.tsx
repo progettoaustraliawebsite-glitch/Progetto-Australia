@@ -13,6 +13,7 @@ import {
   Mail,
 } from 'lucide-react';
 import OpenModalButton from '@/components/ui/OpenModalButton';
+import { DarkHeroNavbar } from '@/context/NavbarContext';
 import HowItWorksFaq from '@/components/how-it-works/HowItWorksFaq';
 import JsonLd from '@/components/seo/JsonLd';
 
@@ -84,6 +85,7 @@ export default async function HowItWorksPage() {
 
   return (
     <>
+      <DarkHeroNavbar />
       <JsonLd data={howToSchema} />
 
       {/* ── HERO ── */}

@@ -7,6 +7,7 @@ import { Menu, X, ChevronDown } from 'lucide-react';
 import { useTranslations, useLocale } from 'next-intl';
 import { Link, usePathname, useRouter } from '@/i18n/navigation';
 import { destinations } from '@/data/destinations';
+import { useNavbarContext } from '@/context/NavbarContext';
 
 const navLinks = [
   { href: '/travel-ideas', labelKey: 'travelIdeas' },
@@ -27,6 +28,7 @@ export default function Navbar() {
   const otherLocale = locale === 'it' ? 'en' : 'it';
   const router = useRouter();
   const t = useTranslations('nav');
+  const { darkHero } = useNavbarContext();
 
   useEffect(() => {
     const handleScroll = () => {
@@ -52,17 +54,7 @@ export default function Navbar() {
     }
   };
 
-  // Pages that have a dark hero at the top — navbar starts transparent
-  const hasDarkHero =
-    pathname === '/' ||
-    pathname === '/how-it-works' ||
-    pathname === '/about' ||
-    pathname === '/sustainability' ||
-    pathname === '/highlights' ||
-    pathname === '/wedding-list' ||
-    pathname.startsWith('/destinations/') ||
-    pathname.startsWith('/travel-ideas/');
-  const transparent = hasDarkHero && !scrolled;
+  const transparent = darkHero && !scrolled;
 
   return (
     <motion.header

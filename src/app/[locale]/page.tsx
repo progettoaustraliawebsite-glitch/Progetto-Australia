@@ -21,6 +21,7 @@ export async function generateMetadata(): Promise<Metadata> {
 }
 
 import HeroSlider from '@/components/home/HeroSlider';
+import { DarkHeroNavbar } from '@/context/NavbarContext';
 import AboutStrip from '@/components/home/AboutStrip';
 import FeaturedItineraries from '@/components/home/FeaturedItineraries';
 import DestinationsGrid from '@/components/home/DestinationsGrid';
@@ -53,6 +54,7 @@ export default async function HomePage() {
 
   return (
     <>
+      <DarkHeroNavbar />
       <HeroSlider />
       <AboutStrip />
       <FeaturedItineraries itineraries={itineraries} />

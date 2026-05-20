@@ -1,4 +1,5 @@
 import { getLocale } from 'next-intl/server';
+import { DarkHeroNavbar } from '@/context/NavbarContext';
 import { ExternalLink, Leaf, Heart, Globe } from 'lucide-react';
 import type { Metadata } from 'next';
 
@@ -84,6 +85,7 @@ export default async function SustainabilityPage() {
 
   return (
     <div className="bg-white">
+      <DarkHeroNavbar />
       {/* Hero */}
       <section className="relative h-[50vh] min-h-[400px] flex items-center justify-center bg-hero overflow-hidden">
         <div

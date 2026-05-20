@@ -10,6 +10,7 @@ import { blogPosts as staticBlogPosts } from '@/data/blog';
 import { destinationContent } from '@/data/destination-content';
 import { USE_SANITY, getAllDestinations, getAllItineraries, normalizeSanityDestination, normalizeSanityItinerary, getAllBlogPosts, normalizeSanityBlogPostForList, getDestinationBySlug, normalizeSanityDestinationContent } from '@/lib/sanity';
 import OpenModalButton from '@/components/ui/OpenModalButton';
+import { DarkHeroNavbar } from '@/context/NavbarContext';
 import { formatPrice } from '@/lib/utils';
 import type { Metadata } from 'next';
 
@@ -110,6 +111,7 @@ export default async function DestinationDetailPage({ params }: Props) {
 
   return (
     <div className="bg-white min-h-screen">
+      <DarkHeroNavbar />
 
       {/* ── HERO ────────────────────────────────────────────────────────────── */}
       <section className="relative h-screen h-[100dvh] w-full overflow-hidden">
