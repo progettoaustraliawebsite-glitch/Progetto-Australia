@@ -52,9 +52,17 @@ export default function Navbar() {
     }
   };
 
-  // Transparent only on homepage (dark hero background)
-  const isHome = pathname === '/';
-  const transparent = isHome && !scrolled;
+  // Pages that have a dark hero at the top — navbar starts transparent
+  const hasDarkHero =
+    pathname === '/' ||
+    pathname === '/how-it-works' ||
+    pathname === '/about' ||
+    pathname === '/sustainability' ||
+    pathname === '/highlights' ||
+    pathname === '/wedding-list' ||
+    pathname.startsWith('/destinations/') ||
+    pathname.startsWith('/travel-ideas/');
+  const transparent = hasDarkHero && !scrolled;
 
   return (
     <motion.header
