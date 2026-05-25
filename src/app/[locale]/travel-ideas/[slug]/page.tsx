@@ -211,7 +211,7 @@ export default async function ItineraryDetailPage({ params }: Props) {
                               key={i}
                               src={src}
                               alt={`${day.title[locale]} ${i + 1}`}
-                              className="max-h-48 w-auto mx-auto object-contain rounded"
+                              className="max-h-48 w-auto object-contain rounded"
                             />
                           ))}
                         </div>
