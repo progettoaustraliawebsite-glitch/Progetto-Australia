@@ -5,7 +5,8 @@ import { getLocale, getTranslations } from 'next-intl/server';
 import { Link } from '@/i18n/navigation';
 import { ChevronLeft, Clock, MapPin, CheckCircle, XCircle, Calendar, ArrowRight } from 'lucide-react';
 import OpenModalButton from '@/components/ui/OpenModalButton';
-import { itineraries } from '@/data/itineraries';
+import { itineraries as staticItineraries } from '@/data/itineraries';
+import { USE_SANITY, getAllItineraries, getItineraryBySlug, normalizeSanityItinerary } from '@/lib/sanity';
 
 import { formatPrice } from '@/lib/utils';
 import type { Metadata } from 'next';
@@ -17,14 +18,25 @@ interface Props {
 }
 
 export async function generateStaticParams() {
-  return itineraries.map((it) => ({ slug: it.slug }));
+  if (USE_SANITY) {
+    const docs = await getAllItineraries();
+    return docs.map((d) => ({ slug: d.slug.current }));
+  }
+  return staticItineraries.map((it) => ({ slug: it.slug }));
 }
 
 export async function generateMetadata({ params }: Props): Promise<Metadata> {
   const { slug } = await params;
   const locale = (await getLocale()) as 'it' | 'en';
-  const it = itineraries.find((i) => i.slug === slug);
-  if (!it) return {};
+  let it;
+  if (USE_SANITY) {
+    const doc = await getItineraryBySlug(slug);
+    if (!doc) return {};
+    it = normalizeSanityItinerary(doc);
+  } else {
+    it = staticItineraries.find((i) => i.slug === slug);
+    if (!it) return {};
+  }
   const title = it.title[locale];
   const description = it.description[locale];
   const image = it.image ? [{ url: it.image, width: 1200, height: 630, alt: title }] : undefined;
@@ -41,8 +53,15 @@ export default async function ItineraryDetailPage({ params }: Props) {
   const locale = (await getLocale()) as 'it' | 'en';
   const t = await getTranslations('travelIdeas');
 
-  const itinerary = itineraries.find((it) => it.slug === slug);
-  if (!itinerary) notFound();
+  let itinerary;
+  if (USE_SANITY) {
+    const doc = await getItineraryBySlug(slug);
+    if (!doc) notFound();
+    itinerary = normalizeSanityItinerary(doc);
+  } else {
+    itinerary = staticItineraries.find((it) => it.slug === slug);
+    if (!itinerary) notFound();
+  }
 
   const tripSchema = {
     '@context': 'https://schema.org',
