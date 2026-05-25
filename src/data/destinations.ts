@@ -21,8 +21,8 @@ export const destinations: Destination[] = [
       en: 'Boundless and beautiful',
     },
     description: {
-      it: 'Dal Great Barrier Reef alle ultime frontiere del Territorio del Nord, l\'Australia è un continente di contrasti straordinari. Spiagge dorate, entroterra rosso fuoco, foreste pluviali tropicali e metropoli cosmopolite.',
-      en: 'From the Great Barrier Reef to the remote Northern Territory, Australia is a continent of extraordinary contrasts. Golden beaches, fiery red outback, tropical rainforests and cosmopolitan cities.',
+      it: 'Dalle spiagge tropicali del Queensland agli spazi immensi dell\'Outback, l\'Australia è un viaggio che cambia continuamente paesaggi, ritmi ed emozioni. Un paese da vivere con il tempo giusto, attraverso itinerari costruiti su misura e pensati nei minimi dettagli.',
+      en: 'From Queensland\'s tropical beaches to the vast spaces of the Outback, Australia is a journey of ever-changing landscapes, rhythms and emotions. A country to experience at the right pace, through tailor-made itineraries planned to the finest detail.',
     },
     gradient: 'from-amber-900 via-orange-800 to-stone-700',
     accentColor: '#813318',

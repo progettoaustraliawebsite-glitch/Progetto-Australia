@@ -156,7 +156,7 @@ export default async function DestinationDetailPage({ params }: Props) {
             </p>
             <div className="flex flex-wrap gap-3 justify-center">
               <OpenModalButton className="inline-flex items-center gap-3 px-10 py-4 border-2 border-gold bg-gold/10 backdrop-blur-sm text-white text-xs font-sans uppercase tracking-[0.3em] font-bold hover:bg-gold hover:text-hero transition-all duration-500 shadow-2xl shadow-gold/20">
-                {isIT ? 'Crea il tuo viaggio' : 'Create your trip'}
+                {isIT ? 'Inizia a progettare il tuo viaggio' : 'Start planning your trip'}
               </OpenModalButton>
             </div>
           </div>
@@ -297,13 +297,13 @@ export default async function DestinationDetailPage({ params }: Props) {
               </h2>
               <p className="text-hero/55 text-base font-sans leading-relaxed mb-2">
                 {isIT
-                  ? `Itinerari organizzati in ${dest.name[locale]}, in base ai giorni di vacanza che hai.`
-                  : `Organised itineraries to ${dest.name[locale]}, based on the days you have available.`}
+                  ? `Queste sono proposte di viaggio in ${dest.name[locale]} — pensate come punto di partenza, da adattare alle tue esigenze, ai tuoi ritmi e al numero di giorni disponibili.`
+                  : `These are travel proposals for ${dest.name[locale]} — designed as a starting point, to be adapted to your needs, pace and available days.`}
               </p>
               <p className="text-hero/45 text-base font-sans leading-relaxed mb-6">
                 {isIT
-                  ? 'Puoi anche pianificare il tuo viaggio privato su misura o un itinerario personalizzato senza andare in gruppo.'
-                  : 'You can also plan your own private tailor-made trip or a personalised itinerary without joining a group.'}
+                  ? 'Organizziamo anche tour privati completamente su misura, senza partenze di gruppo.'
+                  : 'We also organise fully private tours, tailored to you — no group departures.'}
               </p>
             </div>
 
@@ -448,7 +448,7 @@ export default async function DestinationDetailPage({ params }: Props) {
                   : `Do you have more questions about organising your trip to ${dest.name[locale]}?`}
               </p>
               <OpenModalButton className="inline-flex items-center gap-2 px-5 py-2.5 bg-gold text-white font-sans font-bold text-xs uppercase tracking-[0.2em] hover:opacity-80 transition-opacity shrink-0">
-                {isIT ? 'Crea il tuo viaggio' : 'Create your trip'}
+                {isIT ? 'Inizia a progettare il tuo viaggio' : 'Start planning your trip'}
               </OpenModalButton>
             </div>
           </div>
