@@ -5,6 +5,7 @@ import { getLocale, getTranslations } from 'next-intl/server';
 import { Link } from '@/i18n/navigation';
 import { ChevronLeft, Clock, MapPin, CheckCircle, XCircle, Calendar, ArrowRight } from 'lucide-react';
 import OpenModalButton from '@/components/ui/OpenModalButton';
+import DayImages from '@/components/ui/DayImages';
 import { itineraries as staticItineraries } from '@/data/itineraries';
 import { USE_SANITY, getAllItineraries, getItineraryBySlug, normalizeSanityItinerary } from '@/lib/sanity';
 
@@ -204,18 +205,7 @@ export default async function ItineraryDetailPage({ params }: Props) {
                       </div>
                       <h3 className="font-serif text-lg font-bold text-hero mb-1">{day.title[locale]}</h3>
                       <p className="text-hero/60 text-sm leading-relaxed">{day.description[locale]}</p>
-                      {day.images && day.images.length > 0 && (
-                        <div className={`mt-4 grid gap-2 ${day.images.length === 1 ? 'grid-cols-1' : 'grid-cols-2'}`}>
-                          {day.images.map((src, i) => (
-                            <img
-                              key={i}
-                              src={src}
-                              alt={`${day.title[locale]} ${i + 1}`}
-                              className="max-h-48 w-auto object-contain rounded"
-                            />
-                          ))}
-                        </div>
-                      )}
+                      <DayImages images={day.images ?? []} altPrefix={day.title[locale]} />
                     </div>
                   </div>
                 ))}

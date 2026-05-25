@@ -99,7 +99,6 @@ export const itineraries: Itinerary[] = [
           it: 'Partenza in auto verso ovest lungo la Great Ocean Road, una delle strade costiere più spettacolari del pianeta. La strada si snoda tra foreste di euclipti, spiagge deserte e scogliere che precipitano sull\'oceano. Prima tappa obbligatoria: Bells Beach, la leggendaria spiaggia del surf. Poi Apollo Bay, il Parco Nazionale di Great Otway con le sue foreste di felci arboree e — al tramonto — i Twelve Apostles: imponenti pinnacoli calcarei alti fino a 45 metri che emergono dal Southern Ocean in uno scenario drammatico e indimenticabile.',
           en: 'Drive west along the Great Ocean Road, one of the most spectacular coastal roads on the planet. The road winds through eucalyptus forests, deserted beaches and cliffs plunging into the ocean. First stop: Bells Beach, the legendary surf beach. Then Apollo Bay, the Great Otway National Park with its tree-fern forests, and — at sunset — the Twelve Apostles: imposing limestone pinnacles up to 45 metres tall rising from the Southern Ocean in a dramatic and unforgettable setting.',
         },
-        images: ['/images/dest-remarkable.jpg'],
       },
       {
         day: 4,
@@ -124,7 +123,6 @@ export const itineraries: Itinerary[] = [
           it: 'Traghetto da Cape Jervis per Kangaroo Island, la terza isola più grande dell\'Australia e uno degli ecosistemi più incontaminati del continente. L\'isola non è mai stata connessa alla terraferma da un ponte, il che ha preservato la sua fauna in modo straordinario. Prima tappa: Seal Bay Conservation Park, dove centinaia di leoni marini australiani (Neophoca cinerea) riposano, giocano e allevano i cuccioli direttamente sulla spiaggia. Una passeggiata guidata al tramonto avvicina il gruppo a pochi metri dagli animali.',
           en: 'Ferry from Cape Jervis to Kangaroo Island, Australia\'s third-largest island and one of the continent\'s most pristine ecosystems. The island has never been connected to the mainland by a bridge, preserving its wildlife in extraordinary ways. First stop: Seal Bay Conservation Park, where hundreds of Australian sea lions (Neophoca cinerea) rest, play and raise their pups directly on the beach. A guided sunset walk brings the group within metres of the animals.',
         },
-        images: ['/images/dest-kangaroo.jpg'],
       },
       {
         day: 7,
@@ -133,7 +131,6 @@ export const itineraries: Itinerary[] = [
           it: 'Giornata intera nel Flinders Chase National Park, nell\'estremo ovest dell\'isola. I Remarkable Rocks sono formazioni granitiche di 500 milioni di anni scolpite da vento e mare in forme surreali, affacciate sull\'oceano su un promontorio di 75 metri. L\'Admirals Arch è un arco naturale sotto il quale vive una colonia di otarie dal naso corto. Lungo il tragitto: avvistamento pressoché garantito di canguri canguro di Kangaroo Island (una sottospecie endemica), echidne e wallaby. Rientro in lodge con cena a base di prodotti locali.',
           en: 'Full day in Flinders Chase National Park in the island\'s far west. The Remarkable Rocks are 500-million-year-old granite formations sculpted by wind and sea into surreal shapes, perched on a 75-metre ocean headland. Admirals Arch is a natural rock arch beneath which a colony of New Zealand fur seals lives. Along the way: near-guaranteed sightings of Kangaroo Island kangaroos (an endemic subspecies), echidnas and wallabies. Return to lodge with a dinner of local produce.',
         },
-        images: ['/images/dest-kangaroo.jpg'],
       },
       {
         day: 8,
@@ -150,7 +147,6 @@ export const itineraries: Itinerary[] = [
           it: 'Volo per Alice Springs, nel cuore geografico dell\'Australia — il Red Centre. La città sorge nel letto del Todd River, un fiume che scorre solo poche volte all\'anno. Visita al Desert Park, dove oltre 320 specie animali del deserto vivono in habitat ricostruiti: dingo, bilby, echidne, aquile australiane. Nel tardo pomeriggio, visita al museo aborigeno Araluen Cultural Precinct per una prima immersione nella cultura dei Arrernte, il popolo che abita questa terra da oltre 40.000 anni.',
           en: 'Flight to Alice Springs, in the geographical heart of Australia — the Red Centre. The town sits in the bed of the Todd River, a waterway that flows only a few times a year. Visit the Desert Park, where over 320 desert animal species live in reconstructed habitats: dingo, bilby, echidna, wedge-tailed eagles. Late afternoon visit to the Araluen Cultural Precinct Aboriginal museum for a first immersion into the culture of the Arrernte, the people who have inhabited this land for over 40,000 years.',
         },
-        images: ['/images/dest-kakadu.jpg'],
       },
       {
         day: 10,
@@ -159,7 +155,6 @@ export const itineraries: Itinerary[] = [
           it: 'Transfer verso Kings Canyon nel Watarrka National Park. Il canyon, scavato in arenaria rossa nel corso di 300 milioni di anni, è profondo oltre 300 metri. Il trekking del Rim Walk (6 km, 3–4 ore) porta lungo il bordo del canyon attraverso formazioni rocciose che sembrano città perdute, fino al Garden of Eden: una pozza d\'acqua nascosta tra le pareti dove crescono cicadi di 300 milioni di anni e palme native. Pausa pranzo al picnic area con vista sull\'Outback infinito.',
           en: 'Transfer to Kings Canyon in Watarrka National Park. The canyon, carved in red sandstone over 300 million years, is over 300 metres deep. The Rim Walk (6km, 3–4 hours) follows the canyon\'s edge through rock formations resembling lost cities, ending at the Garden of Eden: a hidden rock pool where 300-million-year-old cycads and native palms grow. Picnic lunch with views over the endless Outback.',
         },
-        images: ['/images/highlight-kakadu.jpg'],
       },
       {
         day: 11,
@@ -168,7 +163,6 @@ export const itineraries: Itinerary[] = [
           it: 'Trasferimento all\'area di Uluru-Kata Tjuta National Park, patrimonio UNESCO e cuore spirituale dell\'Australia. Mattinata al Mutitjulu Waterhole, una pozza d\'acqua permanente ai piedi dell\'Uluru dove vivono echidne e varani, con pitture rupestri Anangu risalenti a migliaia di anni fa. Passeggiata parziale della base (9,4 km totali) con guida aborigena Anangu che spiega il Tjukurpa — il diritto consuetudinario — e il significato spirituale della roccia. Al tramonto: aperitivo panoramico al Talinguru Nyakunytjaku viewing area mentre l\'Uluru si tinge di arancione, rosso intenso e viola.',
           en: 'Transfer to the Uluru-Kata Tjuta National Park, a UNESCO World Heritage site and Australia\'s spiritual heart. Morning at Mutitjulu Waterhole, a permanent water hole at the base of Uluru where echidnas and goannas live, with Anangu rock paintings thousands of years old. Partial base walk (9.4km total) with an Anangu Aboriginal guide explaining Tjukurpa — customary law — and the rock\'s spiritual significance. At sunset: panoramic aperitif at the Talinguru Nyakunytjaku viewing area as Uluru turns orange, deep red and violet.',
         },
-        images: ['/images/dest-kakadu.jpg'],
       },
       {
         day: 12,
@@ -177,7 +171,6 @@ export const itineraries: Itinerary[] = [
           it: 'Sveglia prima dell\'alba per raggiungere il Talinguru viewing area: lo spettacolo dell\'Uluru che si illumina lentamente al sorgere del sole è uno dei momenti più emozionanti dell\'intero viaggio. Poi trasferimento a Kata Tjuta (le Olgas), il complesso di 36 formazioni rocciose dolomitiche che circondano l\'Uluru. Escursione nella Valle dei Venti: un percorso tra monoliti alti fino a 546 metri, con viste straordinarie. Kata Tjuta è considerata ancora più sacra dell\'Uluru dagli Anangu, tanto che alcune aree rimangono chiuse ai visitatori.',
           en: 'Early wake-up to reach the Talinguru viewing area: the spectacle of Uluru slowly lighting up at sunrise is one of the most moving moments of the entire journey. Then transfer to Kata Tjuta (the Olgas), the complex of 36 dolomite rock formations surrounding Uluru. Hike through the Valley of the Winds: a path between monoliths up to 546 metres tall, with extraordinary views. Kata Tjuta is considered even more sacred than Uluru by the Anangu, so much so that some areas remain closed to visitors.',
         },
-        images: ['/images/highlight-kakadu.jpg'],
       },
       {
         day: 13,
@@ -186,7 +179,6 @@ export const itineraries: Itinerary[] = [
           it: 'Volo per Sydney, la città più grande e iconica dell\'Australia. Nel pomeriggio, prima immersione nella città con una passeggiata a Circular Quay: di fronte, l\'Opera House progettata da Jorn Utzon e il Ponte dell\'Harbour, due delle strutture architettoniche più fotografate al mondo. Cena con vista sull\'harbour.',
           en: 'Flight to Sydney, Australia\'s largest and most iconic city. Afternoon first immersion in the city with a walk around Circular Quay: facing you, the Opera House designed by Jorn Utzon and the Harbour Bridge, two of the world\'s most photographed architectural structures. Dinner overlooking the harbour.',
         },
-        images: ['/images/hero-sydney.jpg'],
       },
       {
         day: 14,
@@ -195,7 +187,6 @@ export const itineraries: Itinerary[] = [
           it: 'Mattinata con tour guidato interno all\'Opera House (inaugurata nel 1973, patrimonio UNESCO dal 2007): sale da concerto, foyer, backstage e la storia straordinaria della sua costruzione. Poi passeggiata nel quartiere storico di The Rocks, il primo insediamento europeo d\'Australia (1788). Nel pomeriggio: BridgeClimb sul Harbour Bridge, la salita sui 134 archi metallici del ponte per una vista a 360° sull\'harbour. In serata, bus per Bondi Beach: il tramonto sulla spiaggia più famosa d\'Australia.',
           en: 'Morning guided tour inside the Opera House (inaugurated 1973, UNESCO World Heritage since 2007): concert halls, foyers, backstage areas and the extraordinary story of its construction. Then walk through The Rocks historic quarter, Australia\'s first European settlement (1788). Afternoon BridgeClimb on the Harbour Bridge, climbing the 134 steel arches for 360° harbour views. Evening bus to Bondi Beach: sunset on Australia\'s most famous beach.',
         },
-        images: ['/images/hero-sydney.jpg'],
       },
       {
         day: 15,
@@ -212,7 +203,6 @@ export const itineraries: Itinerary[] = [
           it: 'Volo da Sydney verso Papeete (Tahiti), capitale della Polinesia Francese. L\'arrivo in aereo su Tahiti, con la sagoma vulcanica dell\'isola e la laguna verde smeraldo dall\'alto, è già uno spettacolo. Sistemazione in hotel e prima sera nella capitale polinesiana: profumo di monoi, musica ukulele e il mare che si illumina al tramonto.',
           en: 'Flight from Sydney to Papeete (Tahiti), capital of French Polynesia. The aerial arrival over Tahiti, with the island\'s volcanic silhouette and emerald lagoon below, is already spectacular. Hotel check-in and first evening in the Polynesian capital: scent of monoi oil, ukulele music and the sea glowing at sunset.',
         },
-        images: ['/images/hero-french-polynesia.png'],
       },
       {
         day: 17,
@@ -221,7 +211,6 @@ export const itineraries: Itinerary[] = [
           it: 'Mattinata al Marché de Papeete: un labirinto di colori tra fiori di tiare, perle nere di Tahiti, vaniglia di Moorea e artigianato locale. Il mercato è l\'anima pulsante della città e il posto migliore per capire la vita quotidiana polinesiana. Nel pomeriggio, giro dell\'isola in auto: la costa ovest con le sue spiagge, il museo Paul Gauguin e i giardini botanici di Harrison Smith. In serata, aperitivo sul waterfront con vista sull\'isola di Moorea all\'orizzonte — il profilo triangolare è ipnotico.',
           en: 'Morning at the Marché de Papeete: a labyrinth of colours among tiare flowers, Tahitian black pearls, Moorea vanilla and local crafts. The market is the city\'s beating heart and the best place to understand everyday Polynesian life. Afternoon island circuit by car: the west coast beaches, the Paul Gauguin Museum and Harrison Smith Botanical Gardens. Evening aperitif on the waterfront with views of Moorea\'s triangular silhouette on the horizon — hypnotic.',
         },
-        images: ['/images/hero-french-polynesia.png'],
       },
       {
         day: 18,
@@ -230,7 +219,6 @@ export const itineraries: Itinerary[] = [
           it: 'Volo per Bora Bora. L\'atterraggio sull\'atollo è già un\'emozione: la pista è su un motu (isoletta corallina) e si atterra con la laguna da entrambi i lati. Transfer in barca motore verso il resort: il Monte Otemanu (727 m) si staglia sopra una laguna così blu da sembrare irreale. Check-in nell\'overwater bungalow: il pavimento in vetro mostra i pesci che nuotano sotto, la terrazza privata si affaccia direttamente sulla laguna.',
           en: 'Flight to Bora Bora. Landing on the atoll is already an emotion: the runway sits on a motu (coral islet) and you land with the lagoon on both sides. Speedboat transfer to the resort: Mount Otemanu (727m) rises above a lagoon so blue it seems unreal. Check-in at the overwater bungalow: the glass floor reveals fish swimming below, the private terrace opens directly onto the lagoon.',
         },
-        images: ['/images/dest-whitehaven.jpg'],
       },
       {
         day: 19,
@@ -239,7 +227,6 @@ export const itineraries: Itinerary[] = [
           it: 'Giornata in laguna con escursione in barca: prima tappa ai coral gardens per lo snorkeling tra pesci pappagallo, napoleone e una miriade di specie tropicali. Poi incontro con le mante giganti (Manta birostris) in uno dei siti di avvistamento più affidabili della Polinesia: questi animali di 4–6 metri di apertura alare filtrano il plancton a pochi metri dai nuotatori. Nel pomeriggio, sosta su un motu privato con spiaggia di sabbia bianca per aperitivo al tramonto. La laguna di Bora Bora è considerata la più bella del mondo.',
           en: 'Day on the lagoon with boat excursion: first stop at the coral gardens for snorkelling among parrotfish, Napoleon wrasse and a myriad of tropical species. Then encounter with giant manta rays (Manta birostris) at one of Polynesia\'s most reliable sighting sites: these animals with a 4–6 metre wingspan filter plankton just metres from swimmers. Afternoon stop on a private motu with white sand beach for sunset aperitifs. Bora Bora\'s lagoon is considered the most beautiful in the world.',
         },
-        images: ['/images/highlight-reef.jpg', '/images/dest-whitehaven.jpg'],
       },
       {
         day: 20,
@@ -248,7 +235,6 @@ export const itineraries: Itinerary[] = [
           it: 'Giornata completamente libera per vivere Bora Bora al proprio ritmo. Chi cerca adrenalina può optare per il jet ski attorno all\'atollo, il kitesurfing o il windsurf. Chi cerca pace: kayak nella laguna, paddle in piedi tra i coralli, nuoto dal pontile del bungalow. I resort offrono anche massaggi tradizionali polinesiani con olio di monoi profumato al tiare — il modo migliore per concludere un pomeriggio in paradiso.',
           en: 'Completely free day to experience Bora Bora at your own pace. For those seeking adventure: jet ski around the atoll, kitesurfing or windsurfing. For those seeking peace: kayaking on the lagoon, stand-up paddle among the corals, swimming from the bungalow pier. Resorts also offer traditional Polynesian massages with tiare-scented monoi oil — the perfect way to end a paradise afternoon.',
         },
-        images: ['/images/dest-whitehaven.jpg'],
       },
       {
         day: 21,
@@ -257,7 +243,6 @@ export const itineraries: Itinerary[] = [
           it: 'Tour dell\'isola principale in 4x4: il giro completo è di soli 32 km ma rivela angoli inaspettati. Salita ai belvedere sul Monte Pahia con vista sulla laguna dall\'alto — la prospettiva aerea rivela i diversi colori dell\'acqua, dal turchese al blu cobalto al verde smeraldo secondo la profondità. Visita ai cannoni americani della Seconda Guerra Mondiale, installati nel 1942 per difendere l\'atollo. Sosta nei villaggi locali di Vaitape e Faanui, dove la vita scorre lenta tra pescherie e piccoli mercati.',
           en: 'Tour of the main island by 4WD: the complete circuit is only 32km but reveals unexpected corners. Climb to viewpoints on Mount Pahia with aerial views of the lagoon — the aerial perspective reveals the different water colours, from turquoise to cobalt blue to emerald green depending on depth. Visit to the American WWII cannons installed in 1942 to defend the atoll. Stop in the local villages of Vaitape and Faanui, where life moves slowly among fish stalls and small markets.',
         },
-        images: ['/images/hero-french-polynesia.png'],
       },
       {
         day: 22,
@@ -266,7 +251,6 @@ export const itineraries: Itinerary[] = [
           it: 'Ultima mattina libera nella laguna. Shopping finale di perle nere di Tahiti — la Polinesia Francese produce le perle nere più belle al mondo, coltivate nell\'ostrica Pinctada margaritifera — e di artigianato locale. Pranzo finale al resort con vista sull\'Otemanu. Nel pomeriggio, transfer in barca all\'aeroporto e volo per Papeete in vista del rientro.',
           en: 'Last free morning on the lagoon. Final shopping for Tahitian black pearls — French Polynesia produces the world\'s finest black pearls, cultivated in the Pinctada margaritifera oyster — and local crafts. Final lunch at the resort with Otemanu views. Afternoon speedboat transfer to the airport and flight to Papeete for the return journey.',
         },
-        images: ['/images/dest-whitehaven.jpg'],
       },
       {
         day: 23,
@@ -355,7 +339,6 @@ export const itineraries: Itinerary[] = [
           it: "Arrivo all'aeroporto internazionale di Fa'a'ā a Papeete. Il primo impatto con la Polinesia Francese è già un'emozione: l'aria calda e umida, il profumo del tiare mahoi (il fiore nazionale), le ghirlande di fiori offerte all'arrivo. Trasferimento in hotel e prima serata nella capitale polinesiana. Cena sul waterfront del Quai de Moorea, con la sagoma dell'isola cuore illuminata all'orizzonte.",
           en: "Arrival at Fa'a'ā International Airport in Papeete. The first contact with French Polynesia is already an emotion: the warm humid air, the scent of tiare mahoi (the national flower), the garlands of flowers offered on arrival. Hotel transfer and first evening in the Polynesian capital. Dinner on the Quai de Moorea waterfront, with the heart-shaped island silhouette lit on the horizon.",
         },
-        images: ['/images/hero-french-polynesia.png'],
       },
       {
         day: 2,
@@ -364,7 +347,6 @@ export const itineraries: Itinerary[] = [
           it: "Mattinata al Marché de Papeete, un labirinto di banconi traboccanti di fiori di tiare, vaniglia di Moorea, monoi profumato, perle nere coltivate e artigianato in madreperla. Il mercato è il luogo più autentico per capire la Polinesia quotidiana. Nel pomeriggio, visita al Musée de Tahiti et des Îles per comprendere la storia delle migrazioni polinesiane attraverso il Pacifico e la cultura locale. Serata libera: aperitivo nei roulotte truck (i furgoni bar dello street food polinesiano) lungo il waterfront.",
           en: "Morning at the Marché de Papeete, a labyrinth of stalls overflowing with tiare flowers, Moorea vanilla, scented monoi oil, cultured black pearls and mother-of-pearl crafts. The market is the most authentic place to understand everyday Polynesia. Afternoon visit to the Musée de Tahiti et des Îles to understand the history of Polynesian Pacific migrations and local culture. Free evening: aperitif at the roulotte trucks (Polynesian street food vans) along the waterfront.",
         },
-        images: ['/images/hero-french-polynesia.png'],
       },
       {
         day: 3,
@@ -373,7 +355,6 @@ export const itineraries: Itinerary[] = [
           it: "Volo di 45 minuti per Raiatea, la seconda isola più grande della Polinesia Francese dopo Tahiti. Raiatea è l'isola sacra per eccellenza: secondo la tradizione orale polinesiana, è qui che nacquero gli dèi e da qui partirono i grandi navigatori che colonizzarono il Pacifico in canoa fino alle Hawaii e alla Nuova Zelanda. Imbarco sul catamarano che sarà la nostra casa per i prossimi giorni. Cena a bordo nel porto di Uturoa mentre il sole tramonta sulle montagne.",
           en: "45-minute flight to Raiatea, French Polynesia's second-largest island after Tahiti. Raiatea is the sacred island par excellence: according to Polynesian oral tradition, the gods were born here and the great navigators who colonised the Pacific by canoe to Hawaii and New Zealand set off from here. Board the catamaran that will be our home for the next few days. Dinner on board in Uturoa harbour as the sun sets over the mountains.",
         },
-        images: ['/images/hero-french-polynesia.png'],
       },
       {
         day: 4,
@@ -382,7 +363,6 @@ export const itineraries: Itinerary[] = [
           it: "Navigazione verso il Marae Taputapuātea, patrimonio UNESCO e luogo spirituale più importante di tutta la Polinesia — e probabilmente di tutto il Pacifico. Il marae è una piattaforma di corallo costruita dai polinesiani come luogo di riunione, culto e sacrificio. Qui si decidevano alleanze tra isole, si celebravano le cerimonie più importanti e i navigatori chiedevano protezione prima di salpare. Il sito conserva ancora la sua aura misteriosa. Nel pomeriggio, navigazione intorno all\'isola con snorkeling nei coral gardens.",
           en: "Sail to Marae Taputapuātea, a UNESCO World Heritage site and the most important spiritual place in all of Polynesia — and arguably in the entire Pacific. The marae is a coral platform built by Polynesians as a gathering place for worship and ceremony. This is where inter-island alliances were decided, the most important ceremonies celebrated, and where navigators sought protection before setting sail. The site still preserves its mysterious aura. Afternoon sailing around the island with snorkelling in the coral gardens.",
         },
-        images: ['/images/highlight-reef.jpg'],
       },
       {
         day: 5,
@@ -391,7 +371,6 @@ export const itineraries: Itinerary[] = [
           it: "Navigazione verso Taha'a, l'isola che profuma letteralmente di vaniglia. Taha'a e Raiatea condividono la stessa laguna, ma hanno caratteri completamente diversi: Taha'a è dolce, silenziosa, agricola. Produce circa l'80% della vaniglia di Tahiti, la più pregiata al mondo per il suo aroma floreale unico. Visita a una piantagione dove la vaniglia cresce come liana sulle radici degli alberi — la fioritura avviene una volta l'anno e ogni fiore viene impollinato a mano. Nel pomeriggio, snorkeling nella barriera corallina esterna con pesci dalle mille forme.",
           en: "Sail to Taha'a, the island that literally smells of vanilla. Taha'a and Raiatea share the same lagoon but have completely different characters: Taha'a is sweet, quiet, agricultural. It produces about 80% of Tahitian vanilla, the world's most prized for its unique floral aroma. Visit a plantation where vanilla grows as a vine on tree roots — it flowers once a year and each flower is hand-pollinated. Afternoon snorkelling on the outer coral reef among endlessly varied fish.",
         },
-        images: ['/images/dest-whitehaven.jpg'],
       },
       {
         day: 6,
@@ -400,7 +379,6 @@ export const itineraries: Itinerary[] = [
           it: "Giornata su un motu privato nel lagoon di Taha'a. I motu sono piccole isole di sabbia e corallo che emergono dalla laguna attorno all'isola principale: spiagge di sabbia bianca fine, palme, acque bassissime e trasparenti. Pranzo a bordo del catamarano con pesce fresco. Snorkeling tra le stelle marine giganti (Culcita novaeguineae) che riposano sul fondo sabbioso. Nel tardo pomeriggio, aperitivo al tramonto sul ponte del catamarano: uno dei momenti più romantici del viaggio.",
           en: "Day on a private motu in Taha'a's lagoon. The motu are small sand and coral islands rising from the lagoon around the main island: fine white sand beaches, palm trees, shallow and crystal-clear waters. Lunch on board the catamaran with fresh fish. Snorkelling among giant starfish (Culcita novaeguineae) resting on the sandy bottom. Late afternoon sunset aperitif on the catamaran deck: one of the journey's most romantic moments.",
         },
-        images: ['/images/dest-whitehaven.jpg', '/images/highlight-reef.jpg'],
       },
       {
         day: 7,
@@ -409,7 +387,6 @@ export const itineraries: Itinerary[] = [
           it: "Navigazione in catamarano verso Bora Bora. Il viaggio richiede qualche ora e si naviga in mare aperto tra le due isole. L'avvistamento del Monte Otemanu che emerge dall'oceano mentre ci si avvicina è uno dei momenti più emozionanti del viaggio: la montagna vulcanica si riflette nella laguna creando un quadro che sembra dipinto. Ingresso nella laguna di Bora Bora attraverso il canale principale. Ancoraggio nel lagoon con vista sul resort.",
           en: "Catamaran sail to Bora Bora. The crossing takes a few hours in open sea between the two islands. The first sighting of Mount Otemanu rising from the ocean as you approach is one of the journey's most moving moments: the volcanic mountain reflects in the lagoon creating a scene that looks painted. Entry into Bora Bora's lagoon through the main channel. Anchoring in the lagoon with resort views.",
         },
-        images: ['/images/hero-french-polynesia.png'],
       },
       {
         day: 8,
@@ -418,7 +395,6 @@ export const itineraries: Itinerary[] = [
           it: "Escursione in laguna: la barca porta in tre siti distinti. Prima tappa: le mante — in questo tratto di laguna vivono stabilmente sia le mante giganti (Manta birostris) che le mante di barriera (Mobula alfredi). Seconda tappa: gli squali del reef — punta nera e punta bianca, innocui ma impressionanti da vicino, nuotano tra i bagnanti in acqua bassa. Terza tappa: i coral gardens con pesci tropicali di ogni specie. Pranzo su un motu privato. Pomeriggio libero sulla spiaggia o a bordo.",
           en: "Lagoon excursion: the boat visits three distinct sites. First stop: the manta rays — both giant manta rays (Manta birostris) and reef manta rays (Mobula alfredi) live permanently in this section of the lagoon. Second stop: the reef sharks — blacktip and whitetip, harmless but impressive up close, swimming among bathers in shallow water. Third stop: the coral gardens with tropical fish of every species. Lunch on a private motu. Free afternoon on the beach or aboard.",
         },
-        images: ['/images/highlight-reef.jpg'],
       },
       {
         day: 9,
@@ -427,7 +403,6 @@ export const itineraries: Itinerary[] = [
           it: "Tour dell'isola principale in 4x4. L'isola di Bora Bora ha un perimetro di soli 32 km ma nasconde storia e paesaggi straordinari. Salita ai belvedere sul Monte Pahia (661 m): dall'alto, la laguna mostra tutti i suoi colori — turchese chiaro sulle zone di barriera, blu cobalto in profondità, verde smeraldo nelle baie riparate. Visita ai cannoni della Seconda Guerra Mondiale: nel 1942 gli Stati Uniti installarono sull'isola batterie di artiglieria che non spararono mai un colpo. Villaggi di Vaitape e Faanui, mercato delle perle.",
           en: "4WD tour of the main island. Bora Bora's main island has a perimeter of just 32km but conceals extraordinary history and landscapes. Climb to viewpoints on Mount Pahia (661m): from above, the lagoon reveals all its colours — pale turquoise over the reef zones, cobalt blue in the depths, emerald green in the sheltered bays. Visit to the WWII cannons: in 1942 the United States installed artillery batteries on the island that never fired a single shot. Villages of Vaitape and Faanui, pearl market.",
         },
-        images: ['/images/dest-whitehaven.jpg'],
       },
       {
         day: 10,
@@ -436,7 +411,6 @@ export const itineraries: Itinerary[] = [
           it: "Giornata completamente libera a Bora Bora. Le opzioni sono infinite: kayak nella laguna cristallina, paddleboard al tramonto, lezione di surf, giro in jet ski attorno all'atollo, o semplicemente relax sulla spiaggia bianca del motu davanti al resort. I resort offrono massaggi tradizionali polinesiani con monoi all'olio di cocco e tiare — il modo perfetto per ricaricarsi dopo giorni di navigazione.",
           en: "Completely free day in Bora Bora. Options are endless: kayaking on the crystal lagoon, sunset paddleboarding, surf lesson, jet ski around the atoll, or simply relaxing on the white sand beach of the motu in front of the resort. Resorts offer traditional Polynesian massages with coconut and tiare monoi oil — the perfect way to recharge after days of sailing.",
         },
-        images: ['/images/dest-whitehaven.jpg'],
       },
       {
         day: 11,
@@ -445,7 +419,6 @@ export const itineraries: Itinerary[] = [
           it: "Ultima colazione a bordo del catamarano. Sbarco e trasferimento all'aeroporto di Bora Bora per il volo per Moorea. Moorea è a 20 minuti di volo da Papeete e si chiama l'\"isola cuore\" sia per la sua forma vista dall'alto, sia per il posto speciale che occupa nel cuore dei polinesiani. La laguna di Moorea è una delle più belle della Polinesia, con le sue due baie iconiche — Cook Bay e Opunohu Bay — incorniciate da montagne vulcaniche.",
           en: "Last breakfast on board the catamaran. Disembark and transfer to Bora Bora airport for the flight to Moorea. Moorea is 20 minutes by air from Papeete and is called the \"heart island\" both for its shape seen from above and for the special place it holds in Polynesian hearts. Moorea's lagoon is one of Polynesia's most beautiful, with its two iconic bays — Cook Bay and Opunohu Bay — framed by volcanic mountains.",
         },
-        images: ['/images/hero-french-polynesia.png'],
       },
       {
         day: 12,
@@ -454,7 +427,6 @@ export const itineraries: Itinerary[] = [
           it: "Prima giornata su Moorea dedicata alla scoperta dell'isola. Le due baie di Moorea sono le più fotografate della Polinesia: Cook Bay è profonda e raccolta, con le montagne che si specchiano nell'acqua verde scuro; Opunohu Bay è più larga e luminosa, circondata da colline ricoperte di noni, mango e ibiscus. Salita al Belvedere (396 m) per il panorama sull'isola intera. Nel pomeriggio, kayak nella Cook Bay al tramonto: luce dorata, silenzio e il riflesso dei picchi vulcanici sull'acqua.",
           en: "First day on Moorea dedicated to discovering the island. Moorea's two bays are the most photographed in Polynesia: Cook Bay is deep and intimate, with mountains mirrored in dark green water; Opunohu Bay is wider and brighter, surrounded by hills covered in noni, mango and hibiscus. Climb to the Belvedere (396m) for panoramic views of the whole island. Afternoon kayaking in Cook Bay at sunset: golden light, silence and the reflection of volcanic peaks on the water.",
         },
-        images: ['/images/hero-french-polynesia.png'],
       },
       {
         day: 13,
@@ -463,7 +435,6 @@ export const itineraries: Itinerary[] = [
           it: "Escursione in barca nel canale tra Moorea e Tahiti, uno dei punti più ricchi di fauna marina della Polinesia Francese. Prima tappa: nuoto con le mante giganti in acque profonde — le mante di Moorea sono abituate alla presenza umana e si avvicinano incuriosite. Seconda tappa: i delfini. Il canale è percorso da branchi di delfini spinner (Stenella longirostris) e delfini comuni che spesso si avvicinano alle barche per giocare nelle onde della prua. Un'esperienza naturalistica di rara bellezza.",
           en: "Boat excursion in the channel between Moorea and Tahiti, one of the richest areas for marine wildlife in French Polynesia. First stop: swimming with giant manta rays in deep water — Moorea's manta rays are accustomed to human presence and approach out of curiosity. Second stop: dolphins. The channel is traversed by pods of spinner dolphins (Stenella longirostris) and common dolphins that often approach boats to play in the bow waves. A wildlife experience of rare beauty.",
         },
-        images: ['/images/highlight-reef.jpg'],
       },
       {
         day: 14,
@@ -472,7 +443,6 @@ export const itineraries: Itinerary[] = [
           it: "Ultima giornata intera in Polinesia: tempo libero per assaporare ogni momento. Possibilità di fare snorkeling nel lagoon di fronte al resort (razze, tartarughe e pesci tropicali si avvicinano facilmente alle spiagge di Moorea), di fare un giro in quad sull'isola o di dedicarsi agli acquisti di perle nere e vaniglia prima del rientro. Cena d'addio con tramonto polinesiano.",
           en: "Last full day in Polynesia: free time to savour every moment. Options include snorkelling in the resort lagoon (stingrays, turtles and tropical fish easily approach Moorea's beaches), a quad bike tour of the island, or shopping for black pearls and vanilla before heading home. Farewell dinner at sunset.",
         },
-        images: ['/images/dest-whitehaven.jpg'],
       },
       {
         day: 15,
@@ -567,7 +537,6 @@ export const itineraries: Itinerary[] = [
           it: "Arrivo ad Auckland, la City of Sails, la città più grande della Nuova Zelanda con oltre 1,7 milioni di abitanti. Auckland sorge su un istmo vulcanico tra due porti: l'harbour di Waitemata a est (Pacifico) e il porto di Manukau a ovest (Tasman). Trasferimento in hotel nel quartiere di Viaduct Harbour e prima passeggiata serale sul lungomare tra yacht da regata e ristoranti di pesce.",
           en: "Arrival in Auckland, the City of Sails, New Zealand's largest city with over 1.7 million inhabitants. Auckland sits on a volcanic isthmus between two harbours: Waitemata to the east (Pacific) and Manukau to the west (Tasman). Hotel transfer in the Viaduct Harbour quarter and first evening stroll along the marina among racing yachts and seafood restaurants.",
         },
-        images: ['/images/hero-nz.jpg'],
       },
       {
         day: 2,
@@ -576,7 +545,6 @@ export const itineraries: Itinerary[] = [
           it: "Volo per Queenstown, sull'Isola del Sud. L'atterraggio su Queenstown è già uno spettacolo: la pista si trova a bordo lago Wakatipu e l'aereo sembra atterrare sull'acqua con le montagne Remarkables sullo sfondo. Queenstown è la capitale mondiale dell'avventura — bungee jumping, skydiving, jet boat, sci — ma è anche una città elegante con ottimi ristoranti e cantine. Check-in in hotel con vista sul lago e sulle montagne.",
           en: "Flight to Queenstown on the South Island. Landing at Queenstown is already spectacular: the runway sits at the edge of Lake Wakatipu and the plane seems to land on the water with the Remarkables mountains in the background. Queenstown is the world's adventure capital — bungee jumping, skydiving, jet boating, skiing — but also an elegant town with excellent restaurants and wineries. Hotel check-in with lake and mountain views.",
         },
-        images: ['/images/hero-queenstown.jpg'],
       },
       {
         day: 3,
@@ -585,7 +553,6 @@ export const itineraries: Itinerary[] = [
           it: "Giornata a Queenstown: salita in gondola sul Bob's Peak (450 m) con vista a 360° sul lago Wakatipu e sulle Remarkables Range. Crociera in battello a vapore TSS Earnslaw (costruito nel 1912) fino a Walter Peak Station, un'autentica fattoria di pecore sulle sponde del lago. Nel pomeriggio: jet boat sull'Shotover River (optional) o wine tasting a Gibbston Valley, la valley dei pinot noir più premiati della Nuova Zelanda.",
           en: "Day in Queenstown: gondola to Bob's Peak (450m) with 360° views of Lake Wakatipu and the Remarkables Range. Cruise on the TSS Earnslaw steamship (built 1912) to Walter Peak Station, an authentic sheep farm on the lake's shores. Afternoon: jet boating on the Shotover River (optional) or wine tasting in Gibbston Valley, the valley of New Zealand's most award-winning pinot noirs.",
         },
-        images: ['/images/hero-queenstown.jpg', '/images/highlight-queenstown.jpg'],
       },
       {
         day: 4,
@@ -594,7 +561,6 @@ export const itineraries: Itinerary[] = [
           it: "Escursione verso Glenorchy, a 45 minuti da Queenstown lungo il lago Wakatipu. La strada che porta a Glenorchy è già un'opera d'arte: montagne innevate, boschi di faggi rossi e il lago che cambia colore a ogni curva. Glenorchy e la Paradise Valley ospitano molte delle location del Signore degli Anelli: Isengard, Lothlórien, Amon Hen. Escursione a piedi nella Dart River Valley con guida specializzata nelle location cinematografiche. Picnic in uno dei paesaggi più belli al mondo.",
           en: "Excursion to Glenorchy, 45 minutes from Queenstown along Lake Wakatipu. The road to Glenorchy is already a work of art: snow-capped mountains, red beech forests and the lake changing colour at every bend. Glenorchy and the Paradise Valley host many Lord of the Rings locations: Isengard, Lothlórien, Amon Hen. Walk in the Dart River Valley with a specialist film location guide. Picnic in one of the world's most beautiful landscapes.",
         },
-        images: ['/images/dest-nz.jpg'],
       },
       {
         day: 5,
@@ -603,7 +569,6 @@ export const itineraries: Itinerary[] = [
           it: "Il giorno più atteso: trasferimento verso Milford Sound attraverso il Fiordland National Park, patrimonio UNESCO. La Milford Road è una delle strade più scenografiche del mondo: passa attraverso la Homer Tunnel (1.270 m sotto la montagna), la Valle di Eglinton con i suoi faggi argentati, Mirror Lakes dove le montagne si riflettono perfettamente nell'acqua. La crociera nel fiordo dura 2 ore: cascate che precipitano da centinaia di metri, leoni marini di Nuova Zelanda che riposano sulle rocce, talvolta delfini e pinguini.",
           en: "The most awaited day: transfer to Milford Sound through the UNESCO World Heritage Fiordland National Park. The Milford Road is one of the world's most scenic drives: it passes through the Homer Tunnel (1,270m through the mountain), the Eglinton Valley with its silver beech trees, Mirror Lakes where mountains perfectly reflect in the water. The fjord cruise lasts 2 hours: waterfalls plunging from hundreds of metres, New Zealand fur seals resting on rocks, sometimes dolphins and penguins.",
         },
-        images: ['/images/dest-nz.jpg'],
       },
       {
         day: 6,
@@ -612,7 +577,6 @@ export const itineraries: Itinerary[] = [
           it: "Mattinata libera a Milford Sound — se la fortuna aiuta, la nebbia mattutina crea un'atmosfera ancora più mistica nel fiordo. Inizio del trasferimento verso est in direzione Tekapo attraverso le pianure dell'Isola del Sud. Pausa al Lindis Pass (971 m) — crinale che separa Otago da Canterbury — dove in estate le colline sono coperte di tussock dorato. Nel tardo pomeriggio, arrivo a Cromwell nella Otago centrale, famosa per le ciliegie, le pesche e il pinot noir.",
           en: "Free morning at Milford Sound — if luck is on your side, the morning mist creates an even more mystical atmosphere in the fjord. Begin the drive east towards Tekapo through the South Island plains. Stop at the Lindis Pass (971m) — the ridge separating Otago from Canterbury — where in summer the hills are covered in golden tussock. Late afternoon arrival in Cromwell in Central Otago, famous for cherries, peaches and pinot noir.",
         },
-        images: ['/images/dest-nz.jpg'],
       },
       {
         day: 7,
@@ -621,7 +585,6 @@ export const itineraries: Itinerary[] = [
           it: "Arrivo al lago Tekapo: l'acqua color turchese-latte è causata dalla \"farina glaciale\" — particelle finissime di roccia sospese nell'acqua che riflettono la luce del sole in modo unico. La piccola Church of the Good Shepherd, costruita nel 1935 in pietra locale con una finestra che inquadra il lago e le montagne, è una delle scene più fotografate della Nuova Zelanda. Nel pomeriggio: trasferimento fino ad Aoraki/Monte Cook Village per vedere da vicino il Monte Cook (3.724 m), la montagna più alta della Nuova Zelanda. Serata: stargazing nel Mackenzie Basin, una delle aree più buie del pianeta certificata International Dark Sky Reserve.",
           en: "Arrival at Lake Tekapo: the milky turquoise water is caused by 'glacial flour' — extremely fine rock particles suspended in the water that reflect sunlight in a unique way. The small Church of the Good Shepherd, built in 1935 in local stone with a window framing the lake and mountains, is one of New Zealand's most photographed scenes. Afternoon: transfer to Aoraki/Mount Cook Village to see up close Mount Cook (3,724m), New Zealand's highest mountain. Evening: stargazing in the Mackenzie Basin, one of the planet's darkest areas certified as an International Dark Sky Reserve.",
         },
-        images: ['/images/dest-nz.jpg'],
       },
       {
         day: 8,
@@ -638,7 +601,6 @@ export const itineraries: Itinerary[] = [
           it: "Trasferimento a Kaikoura lungo la coastal highway, una delle strade costiere più spettacolari della Nuova Zelanda: mare di Tasman a ovest, montagne innevate a est. Kaikoura è uno dei pochi luoghi al mondo dove i capodogli (Physeter macrocephalus) sono avvistabili tutto l'anno: la profonda fossa marina al largo della costa crea correnti ascendenti ricche di calamari giganti — la preda preferita dei capodogli. Le balene si immergono a 2–3 km di profondità e risalgono per respirare ogni 60–90 minuti. Tour in barca (2 ore) con garanzia di avvistamento.",
           en: "Transfer to Kaikoura along the coastal highway, one of New Zealand's most spectacular coastal roads: Tasman Sea to the west, snow-capped mountains to the east. Kaikoura is one of the few places on Earth where sperm whales (Physeter macrocephalus) can be seen year-round: the deep marine canyon offshore creates upwellings rich in giant squid — the sperm whale's favourite prey. Whales dive to depths of 2–3km and surface to breathe every 60–90 minutes. Boat tour (2 hours) with sighting guarantee.",
         },
-        images: ['/images/hero-nz.jpg'],
       },
       {
         day: 10,
@@ -647,7 +609,6 @@ export const itineraries: Itinerary[] = [
           it: "Volo o traghetto Interislander da Picton per Wellington, la capitale della Nuova Zelanda. Il traghetto attraversa il Cook Strait e poi si insinua tra le fiorded sounds del Marlborough Sounds — uno dei tratti marini più belli al mondo. Wellington è piccola ma vivacissima: il Te Papa Tongarewa Museum (museo nazionale della Nuova Zelanda, ingresso gratuito), la funicolare per Mount Victoria, il quartiere di Cuba Street con le sue librerie, caffetterie specialty e gallerie. Peter Jackson ha il suo studio (Weta Workshop) proprio qui.",
           en: "Flight or Interislander ferry from Picton to Wellington, New Zealand's capital. The ferry crosses Cook Strait and then winds through the Marlborough Sounds — one of the world's most beautiful maritime landscapes. Wellington is small but vibrant: the Te Papa Tongarewa Museum (New Zealand's national museum, free entry), the cable car to Mount Victoria, the Cuba Street quarter with its bookshops, specialty coffee shops and galleries. Peter Jackson has his studio (Weta Workshop) right here.",
         },
-        images: ['/images/hero-new-zealand.png'],
       },
       {
         day: 11,
@@ -656,7 +617,6 @@ export const itineraries: Itinerary[] = [
           it: "Trasferimento verso il Tongariro National Park, il parco nazionale più antico della Nuova Zelanda (1887) e doppio patrimonio UNESCO — sia per il valore naturale che per quello culturale Maori. Il parco ospita tre vulcani attivi: Ruapehu (2.797 m), Ngauruhoe (2.291 m, il Monte Fato del Signore degli Anelli) e Tongariro (1.978 m). Il Tongariro Alpine Crossing (19,4 km, 7–8 ore) è considerato il miglior trekking giornaliero della Nuova Zelanda: percorre la cresta dei vulcani attraverso crateri fumanti, laghi verde smeraldo e paesaggi lunari.",
           en: "Transfer to Tongariro National Park, New Zealand's oldest national park (1887) and a dual UNESCO World Heritage site — both for natural and Maori cultural values. The park hosts three active volcanoes: Ruapehu (2,797m), Ngauruhoe (2,291m, the Mount Doom of Lord of the Rings) and Tongariro (1,978m). The Tongariro Alpine Crossing (19.4km, 7–8 hours) is considered New Zealand's best single-day hike: it follows the volcanic ridge through steaming craters, emerald lakes and lunar landscapes.",
         },
-        images: ['/images/dest-nz.jpg'],
       },
       {
         day: 12,
@@ -665,7 +625,6 @@ export const itineraries: Itinerary[] = [
           it: "Rotorua è unica al mondo: una città costruita sopra un campo geotermale attivo dove il terreno respira — il vapore solforoso esce dai tombini, dai giardini, dalle rive del lago. Visita a Te Puia, il sito geotermale più importante della città, con i geyser Pohutu (il più grandi dell'emisfero australe — 30 metri di altezza) e la Scuola Nazionale di Arte Maori, dove si imparano l'intaglio del legno e la tessitura tradizionale. Poi Wai-O-Tapu, il sito geotermale più colorato: la Champagne Pool (bolle di CO2 in acqua a 74°C), il Devil's Bath (giallo lime per lo zolfo) e le piscine di fango bollente. Serata: cultural show Maori con haka e hangi tradizionale.",
           en: "Rotorua is unique in the world: a city built above an active geothermal field where the ground breathes — sulphurous steam rises from manholes, gardens and the lake shores. Visit Te Puia, the city's most important geothermal site, with the Pohutu geysers (the largest in the southern hemisphere at 30 metres) and the National Maori Arts School, where traditional wood carving and weaving are taught. Then Wai-O-Tapu, the most colourful geothermal site: the Champagne Pool (CO2 bubbles in 74°C water), the Devil's Bath (lime yellow from sulphur) and the boiling mud pools. Evening: Maori cultural show with haka and traditional hangi.",
         },
-        images: ['/images/dest-rotorua.jpg', '/images/highlight-rotorua.jpg'],
       },
       {
         day: 13,
@@ -674,7 +633,6 @@ export const itineraries: Itinerary[] = [
           it: "Il momento più atteso dai fan di Tolkien: visita alla Alexander Family Farm di Matamata, dove Peter Jackson costruì i 44 Hobbit Holes originali per Il Signore degli Anelli (2001–2003) e mantenne la location intatta per Lo Hobbit (2012–2014). La fattoria fu scelta dopo un sorvolo in elicottero da parte di Jackson nel 1998: i dolci pendii verdi, il laghetto e la quercia secolare sembravano usciti dalle illustrazioni di Tolkien. Tour guidato di 2 ore con guida in costume tra le porte tonde colorate, i giardini fioriti, il Mulino e il Green Dragon Inn (aperitivo incluso).",
           en: "The moment Tolkien fans have been waiting for: visit to the Alexander Family Farm in Matamata, where Peter Jackson built the original 44 Hobbit Holes for The Lord of the Rings (2001–2003) and kept the location intact for The Hobbit (2012–2014). The farm was chosen after Jackson's helicopter flyover in 1998: the gentle green hills, the pond and the ancient oak seemed straight out of Tolkien's illustrations. 2-hour guided tour in costume among the coloured round doors, flower gardens, the Mill and the Green Dragon Inn (aperitif included).",
         },
-        images: ['/images/itin-hobbiton.jpg'],
       },
       {
         day: 14,
@@ -683,7 +641,6 @@ export const itineraries: Itinerary[] = [
           it: "Le grotte di Waitomo sono una delle esperienze naturalistiche più straordinarie della Nuova Zelanda. Il percorso in barca nel buio totale porta sotto una volta di pietra calcarea dove vivono milioni di Arachnocampa luminosa — un insetto endemico neozelandese la cui larva emette una luce blu-verde per attirare le prede. Il risultato è un cielo stellato sotterraneo di dimensioni irreali, in totale silenzio. Dopo le grotte, trasferimento verso Auckland attraverso la regione dell'Waikato.",
           en: "Waitomo Caves are one of New Zealand's most extraordinary natural experiences. The boat ride in total darkness passes under a limestone ceiling where millions of Arachnocampa luminosa live — a New Zealand endemic insect whose larva emits blue-green light to attract prey. The result is an underground starry sky of unreal scale, in total silence. After the caves, transfer towards Auckland through the Waikato region.",
         },
-        images: ['/images/hero-nz.jpg'],
       },
       {
         day: 15,
@@ -692,7 +649,6 @@ export const itineraries: Itinerary[] = [
           it: "Arrivo ad Auckland e mezza giornata per visitare la città: Sky Tower (328 m, la più alta dell'emisfero australe), passeggiata a Ponsonby Road con i suoi caffè e ristoranti, o visita all'Auckland Museum nel Domain. Nel pomeriggio, check-in in hotel vicino all'aeroporto. Volo notturno per Papeete (Tahiti) con arrivo di prima mattina: la traversata del Pacifico di notte, mentre sotto il finestrino non c'è che oceano e stelle.",
           en: "Arrival in Auckland and half a day to see the city: Sky Tower (328m, the tallest in the southern hemisphere), walk along Ponsonby Road with its cafés and restaurants, or a visit to Auckland Museum in the Domain. Afternoon hotel check-in near the airport. Night flight to Papeete (Tahiti) arriving early morning: crossing the Pacific at night, nothing but ocean and stars outside the window.",
         },
-        images: ['/images/hero-new-zealand.png'],
       },
       {
         day: 16,
@@ -701,7 +657,6 @@ export const itineraries: Itinerary[] = [
           it: "Arrivo di prima mattina a Papeete. Trasferimento in hotel e giornata di riposo per recuperare il cambio di fuso orario (la Polinesia Francese è 2 ore indietro rispetto alla Nuova Zelanda). Nel pomeriggio, prima passeggiata sul waterfront di Papeete e visita al mercato. Serata libera nella capitale polinesiana — il cambio di scenario rispetto alla Nuova Zelanda è totale: da montagne innevate a lagune tropicali.",
           en: "Early morning arrival in Papeete. Hotel transfer and rest day to adjust to the time zone change (French Polynesia is 2 hours behind New Zealand). Afternoon first walk along the Papeete waterfront and market visit. Free evening in the Polynesian capital — the contrast with New Zealand is total: from snow-capped mountains to tropical lagoons.",
         },
-        images: ['/images/hero-french-polynesia.png'],
       },
       {
         day: 17,
@@ -710,7 +665,6 @@ export const itineraries: Itinerary[] = [
           it: "Traghetto per Moorea (20 minuti da Papeete). Sistemazione in resort e primo contatto con la laguna polinesiana — dopo i paesaggi verdi e montagnosi della Nuova Zelanda, l'acqua color turchese di Moorea è uno shock visivo nel senso migliore del termine. Nel pomeriggio, esplorazione dell'isola: Cook Bay con le sue montagne vulcaniche riflesse nell'acqua verde scuro, Opunohu Bay con le colline di mango e noni, salita al Belvedere per il panorama sull'isola. Cena nel resort al tramonto.",
           en: "Ferry to Moorea (20 minutes from Papeete). Resort check-in and first contact with the Polynesian lagoon — after New Zealand's green and mountainous landscapes, Moorea's turquoise water is a visual shock in the best sense. Afternoon island exploration: Cook Bay with its volcanic mountains reflected in dark green water, Opunohu Bay with its mango and noni hills, climb to the Belvedere for the island panorama. Resort dinner at sunset.",
         },
-        images: ['/images/hero-french-polynesia.png'],
       },
       {
         day: 18,
@@ -719,7 +673,6 @@ export const itineraries: Itinerary[] = [
           it: "Escursione in barca nelle acque di Moorea per nuotare con le mante giganti: questi animali con un'apertura alare fino a 5 metri filtrano il plancton a pochi metri dalla superficie, abituati alla presenza umana. Poi nel canale tra Moorea e Tahiti alla ricerca di delfini spinner e delfini comuni — spesso si avvicinano ai natanti per giocare nelle onde della prua. Nel pomeriggio, snorkeling nel lagoon di fronte al resort: razze nere di barriera (Himantura fai) e tartarughe si avvicinano facilmente.",
           en: "Boat excursion in Moorea's waters to swim with giant manta rays: these animals with a wingspan up to 5 metres filter plankton just below the surface, accustomed to human presence. Then into the channel between Moorea and Tahiti in search of spinner dolphins and common dolphins — they often approach vessels to play in the bow waves. Afternoon snorkelling in the resort lagoon: black-spotted stingrays (Himantura fai) and turtles approach easily.",
         },
-        images: ['/images/highlight-reef.jpg'],
       },
       {
         day: 19,
@@ -728,7 +681,6 @@ export const itineraries: Itinerary[] = [
           it: "Giornata libera a Moorea. Chi vuole esplorare può noleggiare un quad o una bici per girare l'isola, con sosta alla distilleria di rum agricolo Saint-James. Chi preferisce rilassarsi: l'acqua davanti al resort è bassa, cristallina e piena di vita — i bambini razze (stingray) vengono spesso a frugare nella sabbia lungo la riva. Shopping di perle nere di Tahiti nei negozi del porto di Vaiare.",
           en: "Free day on Moorea. Those who want to explore can rent a quad or bicycle to tour the island, stopping at the Saint-James rum distillery. Those who prefer to relax: the water in front of the resort is shallow, crystal-clear and full of life — baby stingrays often forage in the sand along the shore. Black pearl shopping at the boutiques of Vaiare harbour.",
         },
-        images: ['/images/dest-whitehaven.jpg'],
       },
       {
         day: 20,
@@ -737,7 +689,6 @@ export const itineraries: Itinerary[] = [
           it: "Volo da Moorea (via Papeete) per Bora Bora. L'atterraggio sull'atollo è tra le esperienze aeree più belle al mondo: la pista è su un motu piatto circondato dalla laguna, il Monte Otemanu emerge sullo sfondo e l'acqua intorno all'aereo cambia colore mentre si atterra. Transfer in barca motore al resort. La prima sera a Bora Bora, sulla terrazza del bungalow sull'acqua, il tramonto tinge il Monte Otemanu di arancio e rosa.",
           en: "Flight from Moorea (via Papeete) to Bora Bora. Landing on the atoll is one of the world's most beautiful flight experiences: the runway is on a flat motu surrounded by the lagoon, Mount Otemanu rises in the background and the water around the plane changes colour as you land. Speedboat transfer to the resort. The first Bora Bora evening, on the overwater bungalow terrace, the sunset turns Mount Otemanu orange and pink.",
         },
-        images: ['/images/hero-french-polynesia.png'],
       },
       {
         day: 21,
@@ -746,7 +697,6 @@ export const itineraries: Itinerary[] = [
           it: "Escursione in laguna: coral gardens con pesci tropicali, snorkeling con mante e squali di barriera (punta nera e punta bianca, assolutamente innocui), sosta su un motu privato con spiaggia di sabbia bianca finissima per il pranzo. La laguna di Bora Bora è protetta da una barriera corallina esterna che crea un bacino interno calmo e trasparente — si vede il fondo anche a 10–12 metri di profondità.",
           en: "Lagoon excursion: coral gardens with tropical fish, snorkelling with manta rays and reef sharks (blacktip and whitetip, entirely harmless), stop on a private motu with the finest white sand beach for lunch. Bora Bora's lagoon is protected by an outer coral reef creating a calm and transparent inner basin — you can see the bottom even at 10–12 metres depth.",
         },
-        images: ['/images/highlight-reef.jpg', '/images/dest-whitehaven.jpg'],
       },
       {
         day: 22,
@@ -755,7 +705,6 @@ export const itineraries: Itinerary[] = [
           it: "Giornata completamente libera: Bora Bora offre tutto ciò che si può desiderare da un paradiso tropicale. Nuoto dal pontile del bungalow (spesso ci sono pesci anche qui), kayak nella laguna, lezione di paddle, jet ski, tour in elicottero sull'atollo o semplicemente relax assoluto sulla chaise-longue sopra l'acqua. Massaggio tradizionale polinesiano all'aperto con vista sull'Otemanu.",
           en: "Completely free day: Bora Bora offers everything you could want from a tropical paradise. Swimming from the bungalow pier (often fish here too), kayaking on the lagoon, paddleboard lesson, jet skiing, helicopter tour over the atoll or simply total relaxation on the chaise-longue above the water. Traditional Polynesian outdoor massage with Otemanu views.",
         },
-        images: ['/images/dest-whitehaven.jpg'],
       },
       {
         day: 23,
@@ -764,7 +713,6 @@ export const itineraries: Itinerary[] = [
           it: "Ultima mattina nella laguna di Bora Bora. Shopping finale di perle nere e souvenir a Vaitape. Pranzo finale al resort con vista sull'Otemanu. Nel pomeriggio, transfer in barca all'aeroporto e volo per Papeete per il collegamento intercontinentale di rientro.",
           en: "Last morning on the Bora Bora lagoon. Final shopping for black pearls and souvenirs in Vaitape. Last resort lunch with Otemanu views. Afternoon speedboat transfer to the airport and flight to Papeete for the intercontinental return connection.",
         },
-        images: ['/images/dest-whitehaven.jpg'],
       },
       {
         day: 24,
@@ -859,7 +807,6 @@ export const itineraries: Itinerary[] = [
           it: "Arrivo ad Auckland e trasferimento in hotel nel quartiere di Viaduct Harbour. Incontro con la guida accompagnatrice italiana e il gruppo. Cena di benvenuto in un ristorante del waterfront. Auckland è una città di ponti: ponti sul porto, ponti tra culture (è la città con la più grande popolazione Polinesiana del mondo), ponti tra oceani (si trova sull'istmo tra il Pacifico e il Tasman). Prima serata nella città che non dorme mai.",
           en: "Arrival in Auckland and hotel transfer in the Viaduct Harbour quarter. Meeting with the Italian-speaking guide and the group. Welcome dinner at a waterfront restaurant. Auckland is a city of bridges: bridges over the harbour, bridges between cultures (it has the world's largest Polynesian population), bridges between oceans (it sits on the isthmus between the Pacific and Tasman). First evening in the city that never sleeps.",
         },
-        images: ['/images/hero-nz.jpg'],
       },
       {
         day: 2,
@@ -868,7 +815,6 @@ export const itineraries: Itinerary[] = [
           it: "Giornata ad Auckland: salita alla Sky Tower (328 m, la più alta struttura dell'emisfero australe) con vista a 360° sui due porti e sull'isola vulcanica di Rangitoto. Visita al quartiere di Parnell, il più antico di Auckland, con le sue gallerie e boutique. Nel pomeriggio, crociera sull'harbour di Waitemata con vista sul Ponte dell'Harbour e le isole dell'Auckland Gulf. Serata libera a Ponsonby Road, l'animata arteria dei ristoranti.",
           en: "Day in Auckland: ascent to the Sky Tower (328m, the tallest structure in the southern hemisphere) with 360° views of both harbours and the volcanic island of Rangitoto. Visit to the Parnell quarter, Auckland's oldest, with its galleries and boutiques. Afternoon cruise on Waitemata Harbour with views of the Harbour Bridge and the Auckland Gulf islands. Free evening on Ponsonby Road, the lively restaurant strip.",
         },
-        images: ['/images/hero-nz.jpg'],
       },
       {
         day: 3,
@@ -877,7 +823,6 @@ export const itineraries: Itinerary[] = [
           it: "Trasferimento verso sud in direzione Waitomo, attraverso i dolci pascoli dell'Isola del Nord. Le grotte di Waitomo sono state scoperte nel 1887 da un capo Maori locale che guidò il primo europeo all'interno. Oggi ospitano milioni di Arachnocampa luminosa — larve di un insetto endemico neozelandese che emettono bioluminescenza blu-verde per attirare insetti in trappole di fili di seta. Il tour in barca nel buio totale, guardando in su quella volta luminosa, è un'esperienza senza paragoni nel mondo.",
           en: "Transfer south towards Waitomo through the gentle pastures of the North Island. The Waitomo Caves were discovered in 1887 by a local Maori chief who led the first European inside. Today they host millions of Arachnocampa luminosa — larvae of a New Zealand endemic insect that emit blue-green bioluminescence to lure insects into silk thread traps. The boat ride in total darkness, looking up at that glowing ceiling, is an experience without equal in the world.",
         },
-        images: ['/images/hero-new-zealand.png'],
       },
       {
         day: 4,
@@ -886,7 +831,6 @@ export const itineraries: Itinerary[] = [
           it: "Trasferimento alla Alexander Family Farm di Matamata per la visita a Hobbiton, uno dei set cinematografici più famosi del mondo. Peter Jackson scelse questa fattoria dopo un sorvolo in elicottero: i dolci pendii verdi di Waikato, il laghetto e la quercia secolare gli sembrarono la Contea perfetta. Il set fu costruito nel 1999 e poi ricostruito in modo permanente per Lo Hobbit (2012). Tour guidato di 2 ore tra i 44 Hobbit Holes, i giardini curati di fiori e ortaggi, il Mulino e il Green Dragon Inn dove si brinda con birra artigianale fresca.",
           en: "Transfer to the Alexander Family Farm in Matamata for the Hobbiton visit, one of the world's most famous film sets. Peter Jackson chose this farm after a helicopter flyover: the gentle green hills of Waikato, the pond and the ancient oak seemed the perfect Shire to him. The set was built in 1999 and then permanently rebuilt for The Hobbit (2012). 2-hour guided tour among the 44 Hobbit Holes, the gardens tended with flowers and vegetables, the Mill and the Green Dragon Inn where you toast with fresh craft ale.",
         },
-        images: ['/images/itin-hobbiton.jpg'],
       },
       {
         day: 5,
@@ -895,7 +839,6 @@ export const itineraries: Itinerary[] = [
           it: "Arrivo a Rotorua, la città che odora di zolfo — una peculiarità che i residenti non notano più ma che colpisce sempre i nuovi arrivi. Visita a Wai-O-Tapu Thermal Wonderland, il sito geotermale più colorato della Nuova Zelanda: la Champagne Pool (57 m di diametro, acqua a 74°C, bolle di CO2 che risalgono continuamente), il Devil's Bath con la sua acqua giallo-verde fosforescente per lo zolfo, le Primrose Terrace e il geyser Lady Knox che entra in eruzione ogni mattina alle 10:15 per effetto di un'aggiunta di sapone. Sistemazione in hotel con piscine geotermali.",
           en: "Arrival in Rotorua, the city that smells of sulphur — a peculiarity that residents no longer notice but always strikes new arrivals. Visit to Wai-O-Tapu Thermal Wonderland, New Zealand's most colourful geothermal site: the Champagne Pool (57m diameter, water at 74°C, CO2 bubbles rising continuously), the Devil's Bath with its phosphorescent yellow-green water from sulphur, the Primrose Terrace and the Lady Knox geyser that erupts every morning at 10:15am with the addition of soap. Hotel accommodation with geothermal pools.",
         },
-        images: ['/images/dest-rotorua.jpg'],
       },
       {
         day: 6,
@@ -904,7 +847,6 @@ export const itineraries: Itinerary[] = [
           it: "Giornata dedicata alla cultura Maori a Rotorua, il cuore della Maoritanga (cultura Maori) in Nuova Zelanda. Visita a Te Puia: il sito comprende il complesso dei geyser Pohutu (i più grandi dell'emisfero australe — fanno eruzione in media 20 volte al giorno fino a 30 m di altezza) e la Scuola Nazionale d'Arte Maori (Te Wānanga Whakairo Rākau), dove gli studenti apprendono l'intaglio tradizionale del legno (whakairo) e la tessitura delle stuoie (raranga). Serata: hangi (pranzo cotto nella terra con pietre calde) e spettacolo cultural con haka, poi e waiata.",
           en: "Day devoted to Maori culture in Rotorua, the heart of Maoritanga (Maori culture) in New Zealand. Visit Te Puia: the site includes the Pohutu geyser complex (the largest in the southern hemisphere — erupting on average 20 times a day up to 30m high) and the National Maori Arts School (Te Wānanga Whakairo Rākau), where students learn traditional wood carving (whakairo) and mat weaving (raranga). Evening: hangi (meal cooked underground with hot stones) and cultural show with haka, poi and waiata.",
         },
-        images: ['/images/highlight-rotorua.jpg'],
       },
       {
         day: 7,
@@ -913,7 +855,6 @@ export const itineraries: Itinerary[] = [
           it: "Volo per Christchurch, la città più grande dell'Isola del Sud. Christchurch è in perenne trasformazione dopo il terremoto del 22 febbraio 2011 (185 morti, 70% del centro storico distrutto): oggi è una città creativa, audace, che ha trasformato il trauma in opportunità artistica. Il Re:START Mall fatto di container colorati è diventato un simbolo mondiale di resilienza. I Botanic Gardens con 50 ettari di giardini storici e la passeggiata in punt sull'Avon River sono i momenti più romantici della città.",
           en: "Flight to Christchurch, the South Island's largest city. Christchurch is in perpetual transformation after the 22 February 2011 earthquake (185 deaths, 70% of the city centre destroyed): today it is a creative, bold city that has turned trauma into artistic opportunity. The Re:START Mall of colourful containers has become a global symbol of resilience. The Botanic Gardens with 50 hectares of historic gardens and the Avon River punt ride are the city's most romantic moments.",
         },
-        images: ['/images/hero-new-zealand.png'],
       },
       {
         day: 8,
@@ -922,7 +863,6 @@ export const itineraries: Itinerary[] = [
           it: "Trasferimento verso le Alpi del Sud attraverso le pianure di Canterbury. Arrivo al lago Tekapo: l'acqua turchese-lattiginosa è causata dai sedimenti glaciali in sospensione che riflettono la luce — il colore è unico al mondo. La Church of the Good Shepherd (1935), costruita in pietra locale con una finestra che inquadra perfettamente il lago e le montagne, è una delle scene più emozionanti della Nuova Zelanda. Nel pomeriggio, trasferimento fino al Mount Cook Village per vedere da vicino l'Aoraki/Monte Cook (3.724 m) e i ghiacciai Hooker e Tasman. Serata: osservazione delle stelle nell'International Dark Sky Reserve del Mackenzie Basin.",
           en: "Transfer towards the Southern Alps through the Canterbury Plains. Arrival at Lake Tekapo: the milky turquoise water is caused by suspended glacial sediments reflecting light — the colour is unique in the world. The Church of the Good Shepherd (1935), built in local stone with a window perfectly framing the lake and mountains, is one of New Zealand's most moving scenes. Afternoon transfer to Mount Cook Village to see up close Aoraki/Mount Cook (3,724m) and the Hooker and Tasman glaciers. Evening: stargazing in the Mackenzie Basin International Dark Sky Reserve.",
         },
-        images: ['/images/dest-nz.jpg'],
       },
       {
         day: 9,
@@ -931,7 +871,6 @@ export const itineraries: Itinerary[] = [
           it: "Trasferimento verso Wanaka attraverso il Lindis Pass, il valico montano che separa la regione di Canterbury da quella di Otago. Wanaka è il lago più tranquillo e meno turistico rispetto al vicino Queenstown, con le stesse montagne ma un'atmosfera più rilassata. Il famoso albero solitario di Wanaka — un salice che cresce parzialmente immerso nel lago a pochi metri dalla riva — è uno dei soggetti fotografici più condivisi della Nuova Zelanda. Escursione al Roy's Peak (1.578 m) per il panorama sul lago.",
           en: "Transfer to Wanaka through the Lindis Pass, the mountain crossing dividing Canterbury from Otago. Wanaka is a quieter, less touristy lake compared to nearby Queenstown, with the same mountains but a more relaxed atmosphere. The famous lone Wanaka tree — a willow growing partially submerged in the lake just metres from shore — is one of New Zealand's most shared photographic subjects. Hike to Roy's Peak (1,578m) for the lake panorama.",
         },
-        images: ['/images/dest-nz.jpg'],
       },
       {
         day: 10,
@@ -940,7 +879,6 @@ export const itineraries: Itinerary[] = [
           it: "Trasferimento a Te Anau, piccola città sul lago Te Anau (il più grande dell'Isola del Sud) che funge da porta d'accesso al Fiordland National Park. Il Fiordland è il parco nazionale più grande della Nuova Zelanda e uno degli ecosistemi selvaggi più incontaminati del pianeta: 1,2 milioni di ettari di fiordi, laghi glaciali, cascate e foreste pluviali temperata. Nel pomeriggio: visita alle grotte di Te Anau, accessibili solo in barca, con i loro glowworm e un sotterraneo lago.",
           en: "Transfer to Te Anau, a small town on Lake Te Anau (the South Island's largest lake) that serves as the gateway to Fiordland National Park. Fiordland is New Zealand's largest national park and one of the planet's most pristine wild ecosystems: 1.2 million hectares of fjords, glacial lakes, waterfalls and temperate rainforest. Afternoon: visit to the Te Anau Caves, accessible only by boat, with their glowworms and underground lake.",
         },
-        images: ['/images/hero-new-zealand.png'],
       },
       {
         day: 11,
@@ -949,7 +887,6 @@ export const itineraries: Itinerary[] = [
           it: "Il giorno più atteso: trasferimento verso Milford Sound lungo la Milford Road, 120 km di una delle strade più scenografiche al mondo. Si percorrono la Eglinton Valley con i suoi faggi argentati, Mirror Lakes (la riflessione delle Alpi del Sud nell'acqua è perfetta), la Homer Tunnel (1.270 m scavati nella roccia viva). Arrivo a Milford Sound e crociera di 2 ore nel fiordo: pareti di granito che precipitano verticalmente in acqua per centinaia di metri, la cascata Stirling Falls (155 m, la barca ci passa sotto), colonie di foche, gabbiani, talvolta pinguini e delfini.",
           en: "The most awaited day: transfer to Milford Sound along the Milford Road, 120km of one of the world's most scenic roads. Drive the Eglinton Valley with its silver beech trees, Mirror Lakes (the Southern Alps' reflection in the water is perfect), the Homer Tunnel (1,270m cut through solid rock). Arrival at Milford Sound and 2-hour fjord cruise: granite walls plunging vertically into the water for hundreds of metres, Stirling Falls (155m, the boat passes underneath), fur seal colonies, gulls, sometimes penguins and dolphins.",
         },
-        images: ['/images/dest-nz.jpg'],
       },
       {
         day: 12,
@@ -958,7 +895,6 @@ export const itineraries: Itinerary[] = [
           it: "Trasferimento a Queenstown attraverso i paesaggi dell'Isola del Sud: la strada da Te Anau a Queenstown passa per Lumsden e Kingston, con viste sul lago Wakatipu che si aprono all'improvviso dopo una curva. Arrivo a Queenstown nel pomeriggio. Salita in gondola sul Bob's Peak al tramonto: la vista sul lago Wakatipu (a forma di Z, lungo 80 km) con le Remarkables sullo sfondo è una delle più belle della Nuova Zelanda. Cena a downtown Queenstown.",
           en: "Transfer to Queenstown through South Island landscapes: the road from Te Anau to Queenstown passes through Lumsden and Kingston, with views of Lake Wakatipu suddenly opening after a bend. Arrival in Queenstown in the afternoon. Gondola to Bob's Peak at sunset: the view over Lake Wakatipu (Z-shaped, 80km long) with the Remarkables behind is one of New Zealand's finest. Dinner in downtown Queenstown.",
         },
-        images: ['/images/hero-queenstown.jpg'],
       },
       {
         day: 13,
@@ -967,7 +903,6 @@ export const itineraries: Itinerary[] = [
           it: "Giornata libera a Queenstown, la capitale mondiale dell'avventura. Le possibilità sono infinite: bungee jumping dal Kawarau Bridge (il primo bungee commerciale del mondo, dal 1988), jet boat sull'Shotover River, skydiving con paracadute sul lago Wakatipu, giro in quad nei dintorni, wine tasting nella Gibbston Valley (pinot noir d'eccellenza), o semplicemente passeggiata sul lungolago tra i negozi e i caffè del centro.",
           en: "Free day in Queenstown, the world's adventure capital. Options are endless: bungee jumping from Kawarau Bridge (the world's first commercial bungee, since 1988), jet boating on the Shotover River, skydiving over Lake Wakatipu, quad biking in the surroundings, wine tasting in Gibbston Valley (outstanding pinot noir), or simply a lakeside stroll among the town centre shops and cafés.",
         },
-        images: ['/images/highlight-queenstown.jpg'],
       },
       {
         day: 14,
@@ -976,7 +911,6 @@ export const itineraries: Itinerary[] = [
           it: "Volo da Queenstown ad Auckland. Pomeriggio libero nella City of Sails per gli ultimi acquisti (lana di merino, olio di manuka, vini e biscotti di hokey pokey) o per visitare l'Auckland War Memorial Museum nel Domain, uno dei musei di storia naturale e Maori più belli della Nuova Zelanda. Cena di arrivederci con tutto il gruppo: l'occasione per ricordare le tappe migliori del viaggio.",
           en: "Flight from Queenstown to Auckland. Free afternoon in the City of Sails for last-minute shopping (merino wool, manuka honey, wines and hokey pokey biscuits) or to visit the Auckland War Memorial Museum in the Domain, one of New Zealand's finest natural history and Maori museums. Farewell dinner with the whole group: the occasion to recall the journey's best moments.",
         },
-        images: ['/images/hero-nz.jpg'],
       },
       {
         day: 15,
