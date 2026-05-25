@@ -243,10 +243,14 @@ export default async function ItineraryDetailPage({ params }: Props) {
               <div className="p-8 border border-stone-100" style={{ backgroundColor: '#1a1a1a' }}>
                 <p className="text-white/65 text-[10px] font-sans uppercase tracking-[0.2em] mb-1">{fromLabel}</p>
                 <p className="font-serif text-4xl font-bold mb-1" style={{ color: '#b0a377' }}>
-                  {formatPrice(itinerary.price.amount, itinerary.price.currency, locale === 'it' ? 'it-IT' : 'en-GB')}
+                  {locale === 'en' && itinerary.priceEn
+                    ? formatPrice(itinerary.priceEn.amount, itinerary.priceEn.currency, 'en-GB')
+                    : formatPrice(itinerary.price.amount, itinerary.price.currency, 'it-IT')}
                 </p>
                 <p className="text-white/55 text-xs font-sans mb-8">
-                  {locale === 'it' ? 'a persona · prezzi indicativi' : 'per person · indicative price'}
+                  {locale === 'it'
+                    ? 'a persona · servizi a terra · prezzo indicativo, soggetto a variazioni'
+                    : 'per person · land services · indicative price, subject to change'}
                 </p>
                 <p className="text-sm text-white/65 font-sans mb-6 leading-relaxed">{contactLabel}</p>
                 <OpenModalButton className="block w-full text-center py-4 font-sans font-bold uppercase tracking-[0.2em] text-[10px] transition-all bg-gold text-white hover:opacity-80">

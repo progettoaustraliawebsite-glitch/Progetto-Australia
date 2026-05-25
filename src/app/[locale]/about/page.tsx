@@ -231,7 +231,7 @@ export default function AboutPage() {
             {team.map((member) => (
               <article
                 key={member.id}
-                className="group flex-none w-[240px] flex flex-col overflow-hidden snap-start cursor-pointer"
+                className="group flex-none w-[290px] flex flex-col overflow-hidden snap-start cursor-pointer"
                 style={{ backgroundColor: '#2a2a2a' }}
                 onClick={() => setSelectedMember(member)}
               >
@@ -240,9 +240,10 @@ export default function AboutPage() {
                   <img
                     src={member.photo}
                     alt={member.name}
-                    className="w-full h-full object-cover object-top transition-transform duration-700 group-hover:scale-105"
+                    className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105"
+                    style={{ objectPosition: member.photoPosition ?? 'top' }}
                   />
-                  <div className="absolute inset-0 bg-gradient-to-t from-black/70 via-transparent to-transparent" />
+                  <div className="absolute inset-0 bg-gradient-to-t from-black/40 via-transparent to-transparent" />
                 </div>
 
                 {/* Info */}

@@ -101,8 +101,13 @@ export default function FeaturedItineraries({ itineraries }: Props) {
                       {fromLabel}
                     </span>
                     <p className="font-serif text-xl font-bold" style={{ color: '#b0a377' }}>
-                      {formatPrice(itinerary.price.amount, itinerary.price.currency, locale === 'it' ? 'it-IT' : 'en-GB')}
+                      {locale === 'en' && itinerary.priceEn
+                        ? formatPrice(itinerary.priceEn.amount, itinerary.priceEn.currency, 'en-GB')
+                        : formatPrice(itinerary.price.amount, itinerary.price.currency, 'it-IT')}
                     </p>
+                    <span style={{ color: 'rgba(255,255,255,0.4)', fontSize: '9px', fontFamily: 'sans-serif', display: 'block', letterSpacing: '0.05em' }}>
+                      {locale === 'it' ? 'a persona · indicativo' : 'per person · indicative'}
+                    </span>
                   </div>
                   <Link
                     href={`/travel-ideas/${itinerary.slug}` as Parameters<typeof Link>[0]['href']}

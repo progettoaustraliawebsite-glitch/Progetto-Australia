@@ -24,9 +24,9 @@ const typeLabels: Record<string, { it: string; en: string }> = {
 };
 
 const priceRanges = [
-  { key: 'low',  it: 'Fino a €2.500',   en: 'Up to €2,500',    min: 0,    max: 2500 },
-  { key: 'mid',  it: '€2.500 – €4.000', en: '€2,500 – €4,000', min: 2500, max: 4000 },
-  { key: 'high', it: 'Oltre €4.000',    en: 'Above €4,000',    min: 4000, max: Infinity },
+  { key: 'low',  it: 'Fino a €6.500',   en: 'Up to $7,000',    min: 0,    max: 6500 },
+  { key: 'mid',  it: '€6.500 – €9.500', en: '$7,000 – $10,000', min: 6500, max: 9500 },
+  { key: 'high', it: 'Oltre €9.500',    en: 'Above $10,000',    min: 9500, max: Infinity },
 ];
 
 type DropdownKey = 'type' | 'dest' | 'price' | null;
@@ -320,7 +320,12 @@ export default function TravelIdeasClient({ itineraries, locale, heroLabel, hero
                             {c.from}
                           </span>
                           <span className="font-serif text-xl text-hero font-bold">
-                            {formatPrice(itinerary.price.amount, itinerary.price.currency, locale === 'it' ? 'it-IT' : 'en-GB')}
+                            {locale === 'en' && itinerary.priceEn
+                              ? formatPrice(itinerary.priceEn.amount, itinerary.priceEn.currency, 'en-GB')
+                              : formatPrice(itinerary.price.amount, itinerary.price.currency, 'it-IT')}
+                          </span>
+                          <span className="text-hero/40 text-[9px] font-sans block">
+                            {locale === 'it' ? 'a persona · indicativo' : 'per person · indicative'}
                           </span>
                         </div>
                         <Link

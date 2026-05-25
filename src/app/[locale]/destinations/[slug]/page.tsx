@@ -44,15 +44,15 @@ const DEST_BLOG_MAP: Record<string, string[]> = {
   'new-zealand': ['guida-viaggio-nuova-zelanda', 'hobbiton-la-contea-esiste'],
 };
 
-// Destination name → slug mapping for itinerary filtering
-const DEST_NAME_TO_SLUG: Record<string, string> = {
-  'Australia': 'australia',
-  'New Zealand': 'new-zealand',
-  'Pacific': 'fiji',
-  'Fiji': 'fiji',
-  'French Polynesia': 'french-polynesia',
-  'Cook Islands': 'cook-islands',
-  'Vanuatu': 'vanuatu',
+// Keywords to match itinerary destination strings to destination page slugs
+const DEST_KEYWORDS: Record<string, string[]> = {
+  'australia':        ['australia'],
+  'new-zealand':      ['zealand', 'nuova zelanda', 'aotearoa', 'new zealand'],
+  'french-polynesia': ['polynesia', 'polinesia', 'bora bora', 'moorea', 'tahiti', 'raiatea'],
+  'fiji':             ['fiji'],
+  'cook-islands':     ['cook'],
+  'samoa':            ['samoa'],
+  'new-caledonia':    ['caledonia', 'caledonie', 'caledonie'],
 };
 
 const RATING_COLORS: Record<string, string> = {
@@ -97,10 +97,11 @@ export default async function DestinationDetailPage({ params }: Props) {
   const dest = destinations.find((d) => d.slug === slug);
   if (!dest) notFound();
 
-  // Related itineraries
+  // Related itineraries — keyword match supports multi-destination itineraries
   const relatedItineraries = itineraries.filter((it) => {
-    const itDestSlug = DEST_NAME_TO_SLUG[it.destination] ?? it.destination.toLowerCase().replace(/\s+/g, '-');
-    return itDestSlug === slug;
+    const destStr = it.destination.toLowerCase();
+    const keywords = DEST_KEYWORDS[slug] ?? [slug.replace(/-/g, ' ')];
+    return keywords.some((k) => destStr.includes(k));
   }).slice(0, 8);
 
   // Related blog posts
@@ -178,92 +179,6 @@ export default async function DestinationDetailPage({ params }: Props) {
                 dangerouslySetInnerHTML={{ __html: content.intro[locale] }}
               />
             </div>
-          </div>
-        </section>
-      )}
-
-      {/* ── ITINERARIES ─────────────────────────────────────────────────────── */}
-      {relatedItineraries.length > 0 && (
-        <section className="py-16 bg-white border-t border-stone-100 overflow-hidden">
-          <div className="flex flex-col lg:flex-row gap-0">
-
-            {/* Left fixed column */}
-            <div className="lg:w-80 xl:w-96 shrink-0 px-6 lg:px-10 xl:px-16 pb-8 lg:pb-0 flex flex-col justify-center">
-              <span className="text-xs font-sans font-bold uppercase tracking-[0.3em] text-gold mb-3 block">
-                {isIT ? `Viaggi in ${dest.name[locale]}` : `Travel to ${dest.name[locale]}`}
-              </span>
-              <h2 className="font-serif text-3xl md:text-4xl font-bold text-hero leading-snug mb-4">
-                {isIT
-                  ? `Le Nostre Migliori Proposte per Viaggiare in ${dest.name[locale]}`
-                  : `Our Best Proposals for Travelling to ${dest.name[locale]}`}
-              </h2>
-              <p className="text-hero/55 text-base font-sans leading-relaxed mb-2">
-                {isIT
-                  ? `Itinerari organizzati in ${dest.name[locale]}, in base ai giorni di vacanza che hai.`
-                  : `Organised itineraries to ${dest.name[locale]}, based on the days you have available.`}
-              </p>
-              <p className="text-hero/45 text-base font-sans leading-relaxed mb-6">
-                {isIT
-                  ? 'Puoi anche pianificare il tuo viaggio privato su misura o un itinerario personalizzato senza andare in gruppo.'
-                  : 'You can also plan your own private tailor-made trip or a personalised itinerary without joining a group.'}
-              </p>
-            </div>
-
-            {/* Horizontal scroll cards */}
-            <div className="flex-1 min-w-0">
-              <div className="flex gap-1 overflow-x-auto snap-x snap-mandatory hide-scrollbar">
-                {relatedItineraries.map((it) => (
-                  <Link
-                    key={it.id}
-                    href={`/travel-ideas/${it.slug}`}
-                    className="group relative flex-shrink-0 w-[280px] md:w-[320px] h-[420px] md:h-[480px] snap-start overflow-hidden"
-                  >
-                    <div
-                      className="absolute inset-0 bg-cover bg-center transition-transform duration-700 group-hover:scale-105"
-                      style={{ backgroundImage: it.image ? `url(${it.image})` : undefined }}
-                    />
-                    {!it.image && <div className={`absolute inset-0 bg-gradient-to-br ${dest.gradient}`} />}
-                    <div className="absolute inset-0 bg-gradient-to-t from-black/85 via-black/20 to-black/10" />
-                    <div className="absolute inset-0 flex flex-col justify-between p-6">
-                      <span className="text-white/80 text-xs font-sans">
-                        {it.duration - 1} {isIT ? 'notti' : 'nights'} · {it.duration} {isIT ? 'giorni' : 'days'}
-                      </span>
-                      <div>
-                        <h3 className="font-serif text-2xl font-bold text-white leading-tight mb-2">
-                          {it.title[locale]}
-                        </h3>
-                        <p className="text-white/70 text-sm font-sans leading-relaxed mb-1 line-clamp-2">
-                          {it.description[locale]}
-                        </p>
-                        {it.price.amount > 0 && (
-                          <p className="text-gold text-sm font-sans font-bold mb-4">
-                            {isIT ? 'A partire da' : 'From'} {formatPrice(it.price.amount, it.price.currency, isIT ? 'it-IT' : 'en-GB')}
-                          </p>
-                        )}
-                        <button className="inline-flex items-center gap-2 px-5 py-2.5 border border-white/60 text-white text-xs font-sans font-bold uppercase tracking-[0.2em] rounded-full hover:bg-white hover:text-hero transition-all duration-300">
-                          {isIT ? 'Vedi di più' : 'See more'}
-                        </button>
-                      </div>
-                    </div>
-                  </Link>
-                ))}
-
-                {/* Tailor Made card */}
-                <div className="relative flex-shrink-0 w-[280px] md:w-[320px] h-[420px] md:h-[480px] snap-start overflow-hidden bg-stone-900 flex flex-col items-center justify-center text-center p-8">
-                  <span className="text-4xl mb-4">✨</span>
-                  <h3 className="font-serif text-2xl font-bold text-white mb-3">Tailor Made</h3>
-                  <p className="text-white/50 text-sm font-sans mb-6 leading-relaxed">
-                    {isIT
-                      ? 'Non trovi quello che cerchi? Creiamo l\'itinerario perfetto su misura per te.'
-                      : 'Can\'t find what you\'re looking for? We create the perfect custom itinerary for you.'}
-                  </p>
-                  <OpenModalButton className="inline-flex items-center gap-2 px-5 py-2.5 border border-gold/60 text-gold text-xs font-sans font-bold uppercase tracking-[0.2em] rounded-full hover:bg-gold hover:text-white transition-all duration-300">
-                    {isIT ? 'Personalizza' : 'Customise'}
-                  </OpenModalButton>
-                </div>
-              </div>
-            </div>
-
           </div>
         </section>
       )}
@@ -364,6 +279,92 @@ export default async function DestinationDetailPage({ params }: Props) {
         </section>
       )}
 
+
+      {/* ── ITINERARIES ─────────────────────────────────────────────────────── */}
+      {relatedItineraries.length > 0 && (
+        <section className="py-16 bg-white border-t border-stone-100 overflow-hidden">
+          <div className="flex flex-col lg:flex-row gap-0">
+
+            {/* Left fixed column */}
+            <div className="lg:w-80 xl:w-96 shrink-0 px-6 lg:px-10 xl:px-16 pb-8 lg:pb-0 flex flex-col justify-center">
+              <span className="text-xs font-sans font-bold uppercase tracking-[0.3em] text-gold mb-3 block">
+                {isIT ? `Viaggi in ${dest.name[locale]}` : `Travel to ${dest.name[locale]}`}
+              </span>
+              <h2 className="font-serif text-3xl md:text-4xl font-bold text-hero leading-snug mb-4">
+                {isIT
+                  ? `Le Nostre Migliori Proposte per Viaggiare in ${dest.name[locale]}`
+                  : `Our Best Proposals for Travelling to ${dest.name[locale]}`}
+              </h2>
+              <p className="text-hero/55 text-base font-sans leading-relaxed mb-2">
+                {isIT
+                  ? `Itinerari organizzati in ${dest.name[locale]}, in base ai giorni di vacanza che hai.`
+                  : `Organised itineraries to ${dest.name[locale]}, based on the days you have available.`}
+              </p>
+              <p className="text-hero/45 text-base font-sans leading-relaxed mb-6">
+                {isIT
+                  ? 'Puoi anche pianificare il tuo viaggio privato su misura o un itinerario personalizzato senza andare in gruppo.'
+                  : 'You can also plan your own private tailor-made trip or a personalised itinerary without joining a group.'}
+              </p>
+            </div>
+
+            {/* Horizontal scroll cards */}
+            <div className="flex-1 min-w-0">
+              <div className="flex gap-1 overflow-x-auto snap-x snap-mandatory hide-scrollbar">
+                {relatedItineraries.map((it) => (
+                  <Link
+                    key={it.id}
+                    href={`/travel-ideas/${it.slug}`}
+                    className="group relative flex-shrink-0 w-[280px] md:w-[320px] h-[420px] md:h-[480px] snap-start overflow-hidden"
+                  >
+                    <div
+                      className="absolute inset-0 bg-cover bg-center transition-transform duration-700 group-hover:scale-105"
+                      style={{ backgroundImage: it.image ? `url(${it.image})` : undefined }}
+                    />
+                    {!it.image && <div className={`absolute inset-0 bg-gradient-to-br ${dest.gradient}`} />}
+                    <div className="absolute inset-0 bg-gradient-to-t from-black/85 via-black/20 to-black/10" />
+                    <div className="absolute inset-0 flex flex-col justify-between p-6">
+                      <span className="text-white/80 text-xs font-sans">
+                        {it.duration - 1} {isIT ? 'notti' : 'nights'} · {it.duration} {isIT ? 'giorni' : 'days'}
+                      </span>
+                      <div>
+                        <h3 className="font-serif text-2xl font-bold text-white leading-tight mb-2">
+                          {it.title[locale]}
+                        </h3>
+                        <p className="text-white/70 text-sm font-sans leading-relaxed mb-1 line-clamp-2">
+                          {it.description[locale]}
+                        </p>
+                        {it.price.amount > 0 && (
+                          <p className="text-gold text-sm font-sans font-bold mb-4">
+                            {isIT ? 'A partire da' : 'From'} {formatPrice(it.price.amount, it.price.currency, isIT ? 'it-IT' : 'en-GB')}
+                          </p>
+                        )}
+                        <button className="inline-flex items-center gap-2 px-5 py-2.5 border border-white/60 text-white text-xs font-sans font-bold uppercase tracking-[0.2em] rounded-full hover:bg-white hover:text-hero transition-all duration-300">
+                          {isIT ? 'Vedi di più' : 'See more'}
+                        </button>
+                      </div>
+                    </div>
+                  </Link>
+                ))}
+
+                {/* Tailor Made card */}
+                <div className="relative flex-shrink-0 w-[280px] md:w-[320px] h-[420px] md:h-[480px] snap-start overflow-hidden bg-stone-900 flex flex-col items-center justify-center text-center p-8">
+                  <span className="text-4xl mb-4">✨</span>
+                  <h3 className="font-serif text-2xl font-bold text-white mb-3">Tailor Made</h3>
+                  <p className="text-white/50 text-sm font-sans mb-6 leading-relaxed">
+                    {isIT
+                      ? 'Non trovi quello che cerchi? Creiamo l\'itinerario perfetto su misura per te.'
+                      : 'Can\'t find what you\'re looking for? We create the perfect custom itinerary for you.'}
+                  </p>
+                  <OpenModalButton className="inline-flex items-center gap-2 px-5 py-2.5 border border-gold/60 text-gold text-xs font-sans font-bold uppercase tracking-[0.2em] rounded-full hover:bg-gold hover:text-white transition-all duration-300">
+                    {isIT ? 'Personalizza' : 'Customise'}
+                  </OpenModalButton>
+                </div>
+              </div>
+            </div>
+
+          </div>
+        </section>
+      )}
 
       {/* ── BLOG ────────────────────────────────────────────────────────────── */}
       {relatedBlogPosts.length > 0 && (

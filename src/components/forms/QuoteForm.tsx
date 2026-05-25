@@ -11,7 +11,7 @@ import { destinations as destData } from '@/data/destinations';
 // ─── Types ────────────────────────────────────────────────────────────────────
 type FlightOpt   = 'includi' | 'ho-gia' | 'autonomo' | '';
 type AccomOpt    = 'standard' | 'superior' | 'lusso' | '';
-type ContactPref = 'email' | 'telefono' | 'whatsapp' | '';
+type ContactPref = 'email' | 'whatsapp' | '';
 
 interface DestEntry { id: string; nights: number }
 
@@ -107,8 +107,8 @@ const copy = {
       email: 'Email',
       tel: 'Telefono',
       cq: 'Come preferisci essere contattato?',
-      copts: ['Email', 'Telefono', 'WhatsApp'],
-      cvals: ['email', 'telefono', 'whatsapp'] as const,
+      copts: ['Email', 'WhatsApp'],
+      cvals: ['email', 'whatsapp'] as const,
     },
     back: 'Torna indietro',
     next: 'Avanti',
@@ -184,8 +184,8 @@ const copy = {
       email: 'Email',
       tel: 'Phone',
       cq: 'How do you prefer to be contacted?',
-      copts: ['Email', 'Phone', 'WhatsApp'],
-      cvals: ['email', 'telefono', 'whatsapp'] as const,
+      copts: ['Email', 'WhatsApp'],
+      cvals: ['email', 'whatsapp'] as const,
     },
     back: 'Go back',
     next: 'Continue',
