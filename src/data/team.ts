@@ -47,18 +47,6 @@ export const team: TeamMember[] = [
     ],
   },
   {
-    id: 'lucia-bonizzato',
-    name: 'Lucia Bonizzato',
-    role: { it: 'Consulente di Viaggio', en: 'Travel Consultant' },
-    bio: {
-      it: `G'day! Sono originaria di Verona, ma fin da piccola i miei genitori mi hanno trasmesso la passione per i viaggi. A 18 anni mi sono trasferita in Australia… per "soli" 9 mesi. Oltre 10 anni, tanti visti, avventure e risate dopo, continuo a chiamare l'Australia casa. Lavoro nel turismo dal 2013 e ho avuto la fortuna di viaggiare in oltre 80 Paesi. La mia zona preferita del mondo? Le isole del Pacifico: natura selvaggia, spiagge incontaminate, mare cristallino e vulcani attivi. Per me ogni viaggio è una storia da vivere e raccontare.`,
-      en: `G'day! I'm originally from Verona, but from a young age my parents passed on a passion for travel. At 18 I moved to Australia… for "just" 9 months. Over 10 years later, I still call Australia home. I've worked in tourism since 2013 and have been lucky enough to travel to over 80 countries. My favourite part of the world? The Pacific Islands: wild nature, pristine beaches, crystal-clear sea and active volcanoes.`,
-    },
-    photo: '/images/team/lucia-bonizzato.jpg',
-    email: 'info@progettoaustralia.com',
-    logos: [],
-  },
-  {
     id: 'daria-bove',
     name: 'Daria Bove',
     role: { it: 'Consulente di Viaggio', en: 'Travel Consultant' },
@@ -73,31 +61,6 @@ export const team: TeamMember[] = [
       { src: '/images/logos/fiji-specialist.png', alt: 'Fiji Specialist' },
       { src: '/images/logos/nz-advanced-specialist.jpg', alt: 'New Zealand Advanced Specialist' },
     ],
-  },
-  {
-    id: 'norma',
-    name: 'Norma',
-    role: { it: 'Assistenza in loco · East Coast', en: 'On-site Assistance · East Coast' },
-    bio: {
-      it: `Sarda di nascita, cittadina del mondo per scelta. Fin da piccola appassionata di lingue e culture straniere, poco più che ventenne lascia la Sardegna per un percorso internazionale che la porta a vivere in Germania e Spagna, prima di fare il grande salto verso le Americhe. Dopo una breve esperienza negli Stati Uniti, si innamora del Messico, dove avvia diversi business nel turismo e si laurea in Psicologia. Quando diventa mamma, sceglie l'Australia per crescere i suoi bambini in libertà e sicurezza. Da oltre 12 anni vive sulla East Coast australiana. Attraverso Progetto Australia mette a disposizione la sua esperienza internazionale e la profonda conoscenza del territorio per assistere i clienti direttamente in Australia, aiutandoli a vivere una vacanza serena, autentica e senza pensieri.`,
-      en: `Born in Sardinia, a citizen of the world by choice. From a young age passionate about languages and foreign cultures, she left Sardinia in her early twenties for an international journey that took her through Germany and Spain before the big leap to the Americas. After a brief experience in the United States, she fell in love with Mexico, where she launched several tourism businesses and completed a degree in Psychology. When she became a mother, she chose Australia for its freedom and safety. She has lived on the Australian East Coast for over 12 years. Through Progetto Australia she brings her international experience and deep knowledge of the territory to assist clients directly in Australia.`,
-    },
-    photo: '/images/team/norma.jpg',
-    photoPosition: '50% 15%',
-    email: 'info@progettoaustralia.com',
-    logos: [],
-  },
-  {
-    id: 'antonio-tucci',
-    name: 'Antonio Elia Tucci',
-    role: { it: 'Assistenza in loco · Pacchetti completi', en: 'On-site Assistance · Complete Packages' },
-    bio: {
-      it: `Napoletano di nascita, originario di Castellammare di Stabia. Da sempre appassionato di viaggi, nuove culture ed esperienze all'estero, ha avuto la possibilità di visitare diversi Paesi e vivere realtà molto diverse tra loro. Dopo 4 anni trascorsi a Londra, vive in Australia da oltre 6 anni, dove ha costruito la sua vita personale e professionale. Ha maturato esperienza in diversi settori: dalla gestione alberghiera come General Manager, alla ristorazione, avendo avuto un suo ristorante, fino al mondo dell'import-export. Ama cucinare, viaggiare e conoscere persone da ogni parte del mondo. È anche papà di un bambino australiano di 5 anni. All'interno del team si occupa di supportare i viaggiatori nella scelta di pacchetti completi e assistenze personalizzate in loco.`,
-      en: `Born in Naples, from Castellammare di Stabia. Always passionate about travel, new cultures and international experiences, he has visited many countries and lived in very different environments. After 4 years in London, he has been living in Australia for over 6 years, where he has built both his personal and professional life. He has gained experience across several sectors: hotel management as General Manager, the restaurant industry (with his own restaurant), and import-export. He loves cooking, travelling and meeting people from all over the world. He is also the proud father of a 5-year-old Australian boy. Within the team he supports travellers in choosing complete packages and personalised on-site assistance.`,
-    },
-    photo: '/images/team/antonio.jpg',
-    email: 'info@progettoaustralia.com',
-    logos: [],
   },
   {
     id: 'graciela-salazar',
@@ -116,5 +79,42 @@ export const team: TeamMember[] = [
       { src: '/images/logos/fiji-specialist.png', alt: 'Fiji Specialist' },
       { src: '/images/logos/cook-specialist.png', alt: 'Cook Islands Specialist' },
     ],
+  },
+  {
+    id: 'lucia-bonizzato',
+    name: 'Lucia Bonizzato',
+    role: { it: 'Consulente di Viaggio', en: 'Travel Consultant' },
+    bio: {
+      it: `G'day! Sono originaria di Verona, ma fin da piccola i miei genitori mi hanno trasmesso la passione per i viaggi. A 18 anni mi sono trasferita in Australia… per "soli" 9 mesi. Oltre 10 anni, tanti visti, avventure e risate dopo, continuo a chiamare l'Australia casa. Lavoro nel turismo dal 2013 e ho avuto la fortuna di viaggiare in oltre 80 Paesi. La mia zona preferita del mondo? Le isole del Pacifico: natura selvaggia, spiagge incontaminate, mare cristallino e vulcani attivi. Per me ogni viaggio è una storia da vivere e raccontare.`,
+      en: `G'day! I'm originally from Verona, but from a young age my parents passed on a passion for travel. At 18 I moved to Australia… for "just" 9 months. Over 10 years later, I still call Australia home. I've worked in tourism since 2013 and have been lucky enough to travel to over 80 countries. My favourite part of the world? The Pacific Islands: wild nature, pristine beaches, crystal-clear sea and active volcanoes.`,
+    },
+    photo: '/images/team/lucia-bonizzato.jpg',
+    email: 'info@progettoaustralia.com',
+    logos: [],
+  },
+  {
+    id: 'antonio-tucci',
+    name: 'Antonio Elia Tucci',
+    role: { it: 'Assistenza in loco', en: 'On-site Assistance' },
+    bio: {
+      it: `Napoletano di nascita, originario di Castellammare di Stabia. Da sempre appassionato di viaggi, nuove culture ed esperienze all'estero, ha avuto la possibilità di visitare diversi Paesi e vivere realtà molto diverse tra loro. Dopo 4 anni trascorsi a Londra, vive in Australia da oltre 6 anni, dove ha costruito la sua vita personale e professionale. Ha maturato esperienza in diversi settori: dalla gestione alberghiera come General Manager, alla ristorazione, avendo avuto un suo ristorante, fino al mondo dell'import-export. Ama cucinare, viaggiare e conoscere persone da ogni parte del mondo. È anche papà di un bambino australiano di 5 anni. All'interno del team si occupa di supportare i viaggiatori nella scelta di pacchetti completi e assistenze personalizzate in loco.`,
+      en: `Born in Naples, from Castellammare di Stabia. Always passionate about travel, new cultures and international experiences, he has visited many countries and lived in very different environments. After 4 years in London, he has been living in Australia for over 6 years, where he has built both his personal and professional life. He has gained experience across several sectors: hotel management as General Manager, the restaurant industry (with his own restaurant), and import-export. He loves cooking, travelling and meeting people from all over the world. He is also the proud father of a 5-year-old Australian boy. Within the team he supports travellers in choosing complete packages and personalised on-site assistance.`,
+    },
+    photo: '/images/team/antonio.jpg',
+    email: 'info@progettoaustralia.com',
+    logos: [],
+  },
+  {
+    id: 'norma',
+    name: 'Norma',
+    role: { it: 'Assistenza in loco', en: 'On-site Assistance' },
+    bio: {
+      it: `Sarda di nascita, cittadina del mondo per scelta. Fin da piccola appassionata di lingue e culture straniere, poco più che ventenne lascia la Sardegna per un percorso internazionale che la porta a vivere in Germania e Spagna, prima di fare il grande salto verso le Americhe. Dopo una breve esperienza negli Stati Uniti, si innamora del Messico, dove avvia diversi business nel turismo e si laurea in Psicologia. Quando diventa mamma, sceglie l'Australia per crescere i suoi bambini in libertà e sicurezza. Da oltre 12 anni vive sulla East Coast australiana. Attraverso Progetto Australia mette a disposizione la sua esperienza internazionale e la profonda conoscenza del territorio per assistere i clienti direttamente in Australia, aiutandoli a vivere una vacanza serena, autentica e senza pensieri.`,
+      en: `Born in Sardinia, a citizen of the world by choice. From a young age passionate about languages and foreign cultures, she left Sardinia in her early twenties for an international journey that took her through Germany and Spain before the big leap to the Americas. After a brief experience in the United States, she fell in love with Mexico, where she launched several tourism businesses and completed a degree in Psychology. When she became a mother, she chose Australia for its freedom and safety. She has lived on the Australian East Coast for over 12 years. Through Progetto Australia she brings her international experience and deep knowledge of the territory to assist clients directly in Australia.`,
+    },
+    photo: '/images/team/norma.jpg',
+    photoPosition: '50% 15%',
+    email: 'info@progettoaustralia.com',
+    logos: [],
   },
 ];

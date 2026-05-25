@@ -6,25 +6,97 @@ import { motion, AnimatePresence } from 'framer-motion';
 import { useLocale } from 'next-intl';
 import { team } from '@/data/team';
 import type { TeamMember } from '@/data/team';
-import { ShieldCheck, Globe, Clock, X, ChevronLeft, ChevronRight, Leaf, Heart, TreePine, ExternalLink } from 'lucide-react';
+import { ShieldCheck, Globe, Clock, X, ChevronLeft, ChevronRight, Leaf, Heart, TreePine, ExternalLink, CheckCircle } from 'lucide-react';
 import { Link } from '@/i18n/navigation';
 import SectionHeader from '@/components/ui/SectionHeader';
 import OpenModalButton from '@/components/ui/OpenModalButton';
+
+const steps = {
+  it: [
+    {
+      n: '1',
+      title: 'Raccontaci il viaggio che immagini',
+      body: 'Compila il modulo di richiesta indicando destinazione, periodo, numero di viaggiatori e stile di viaggio. Puoi scegliere una singola meta oppure combinare più destinazioni come Australia, Nuova Zelanda e Pacifico. Che si tratti di una luna di miele, un viaggio on the road o un itinerario più rilassato, queste informazioni ci aiutano a costruire una proposta davvero adatta a te.',
+      bullets: ['Destinazione singola o itinerari multi-country', 'Stile di viaggio e budget indicativo', 'Date preferite e flessibilità'],
+    },
+    {
+      n: '2',
+      title: 'Analizziamo la tua richiesta',
+      body: 'La tua richiesta viene presa in carico da uno specialista della destinazione scelta, con esperienza diretta sul territorio. Entro circa 24 ore lavorative riceverai un primo riscontro e, se necessario, ti contatteremo per approfondire alcuni dettagli e capire meglio come immagini il viaggio.',
+      bullets: ['Esperto dedicato in base alla destinazione', 'Contatto diretto e comunicazione chiara', 'Consulenza personalizzata fin dall\'inizio'],
+    },
+    {
+      n: '3',
+      title: 'Ricevi il tuo itinerario su misura',
+      body: 'Prepariamo una proposta costruita attorno al tuo modo di viaggiare: itinerario, alloggi, trasporti, esperienze ed eventuali estensioni. Ogni preventivo è personalizzabile e pensato per trovare il giusto equilibrio tra tempi, spostamenti ed esperienze, evitando itinerari troppo intensi o poco fluidi.',
+      bullets: ['Itinerario dettagliato giorno per giorno', 'Costi chiari e trasparenti', 'Modifiche possibili prima della conferma'],
+    },
+    {
+      n: '4',
+      title: 'Pensiamo noi all\'organizzazione',
+      body: 'Una volta confermato il viaggio, gestiamo tutte le prenotazioni necessarie: alloggi, trasporti, escursioni, noleggi auto, assicurazioni e servizi collegati. Prima della partenza riceverai tutta la documentazione di viaggio con informazioni pratiche, dettagli delle prenotazioni e consigli utili per ogni tappa.',
+      bullets: ['Gestione completa delle prenotazioni', 'Documentazione di viaggio dettagliata', 'Informazioni pratiche e consigli locali'],
+    },
+    {
+      n: '5',
+      title: 'Assistenza italiana durante il viaggio',
+      body: 'Durante il viaggio rimani sempre in contatto con il nostro team italiano in Australia. In caso di necessità o imprevisti, avrai un supporto reale e diretto, senza intermediari. La nostra presenza in Oceania ci permette di offrirti assistenza concreta, con conoscenza diretta del territorio e fusi orari compatibili con la destinazione.',
+      bullets: ['Supporto italiano durante il viaggio', 'Assistenza rapida in caso di necessità', 'Team con esperienza diretta in Oceania'],
+    },
+  ],
+  en: [
+    {
+      n: '1',
+      title: 'Tell us about the trip you have in mind',
+      body: 'Fill in the request form with your destination, travel dates, number of travellers and travel style. You can choose a single destination or combine several, such as Australia, New Zealand and the Pacific. Whether it\'s a honeymoon, a road trip or a relaxed itinerary, this information helps us build a proposal that truly suits you.',
+      bullets: ['Single destination or multi-country itineraries', 'Travel style and indicative budget', 'Preferred dates and flexibility'],
+    },
+    {
+      n: '2',
+      title: 'We analyse your request',
+      body: 'Your request is handled by a specialist for the chosen destination, with first-hand experience on the ground. Within approximately 24 working hours you will receive an initial response and, if needed, we will contact you to clarify details and better understand how you picture the trip.',
+      bullets: ['Dedicated expert per destination', 'Direct contact and clear communication', 'Personalised advice from the very start'],
+    },
+    {
+      n: '3',
+      title: 'Receive your tailor-made itinerary',
+      body: 'We prepare a proposal built around your way of travelling: itinerary, accommodation, transport, experiences and any extensions. Every quote is customisable and designed to find the right balance between timing, transfers and experiences, avoiding itineraries that are too intense or poorly paced.',
+      bullets: ['Detailed day-by-day itinerary', 'Clear and transparent costs', 'Revisions possible before confirmation'],
+    },
+    {
+      n: '4',
+      title: 'We take care of everything',
+      body: 'Once the trip is confirmed, we manage all the necessary bookings: accommodation, transport, excursions, car hire, insurance and related services. Before departure you will receive all travel documentation with practical information, booking details and useful tips for each stage.',
+      bullets: ['Complete booking management', 'Detailed travel documentation', 'Practical info and local tips'],
+    },
+    {
+      n: '5',
+      title: 'Italian support during your trip',
+      body: 'During your trip you stay in constant contact with our Italian team in Australia. Should anything come up, you have real, direct support — no intermediaries. Our presence in Oceania means we can offer hands-on assistance, with direct knowledge of the territory and time zones aligned with your destination.',
+      bullets: ['Italian support throughout the trip', 'Rapid assistance when needed', 'Team with direct experience in Oceania'],
+    },
+  ],
+};
 
 const copy = {
   it: {
     heroLabel: 'La Nostra Storia',
     heroTitle: 'Chi Siamo',
+    howLabel: 'Come funziona',
+    howTitle: 'Prenotare con noi è semplice',
+    howIntro: 'Ti accompagniamo in ogni fase del viaggio, dalla prima richiesta fino al rientro. Nessun call center impersonale: parlerai sempre con persone reali, con esperienza diretta delle destinazioni che proponiamo.',
+    howStepsTitle: 'Il tuo viaggio in 5 passi',
     storyLabel: 'Il Nostro Progetto',
-    storyTitle: 'Oltre i Confini del Viaggio',
-    storyP1: "Progetto Australia non è una semplice agenzia, è un sogno condiviso. Tutto è nato dalla passione per l'esplorazione e dal desiderio di mostrare a chiunque la bellezza selvaggia dell'Oceania.",
-    storyP2: 'Il nostro approccio è sartoriale: non vendiamo pacchetti pronti, ma cuciamo su misura ogni itinerario, ascoltando le tue passioni e i tuoi ritmi. Ogni destinazione che proponiamo è un luogo che abbiamo vissuto, amato e testato personalmente.',
-    val1Title: 'Esperti Locali',
-    val1Text: "Viviamo l'Australia ogni giorno dal 2007. La nostra non è solo una professione, è la nostra vita nel Pacifico.",
-    val2Title: 'Senza Intermediari',
-    val2Text: 'Siamo operatori locali diretti. Questo significa prezzi trasparenti e un controllo totale sulla qualità del tuo viaggio.',
-    val3Title: 'Sempre al Tuo Fianco',
-    val3Text: 'In caso di necessità, siamo qui. Assistenza in tempo reale nella tua lingua, 24 ore su 24, 7 giorni su 7.',
+    storyTitle: 'Oltre il semplice viaggio',
+    storyP1: 'Progetto Australia nasce da una passione reale per l\'Oceania e dal desiderio di far vivere queste destinazioni nel modo giusto, con itinerari costruiti attorno alla persona e non attorno a pacchetti standard.',
+    storyP2: 'Negli anni abbiamo trasformato questa esperienza in un progetto specializzato dedicato ad Australia, Nuova Zelanda e alle isole del Pacifico, selezionando luoghi, strutture ed esperienze vissute direttamente sul territorio.',
+    storyP3: 'Crediamo in viaggi pensati con equilibrio, attenzione ai dettagli e ritmi sostenibili, perché conoscere davvero una destinazione significa anche sapere come viverla.',
+    val1Title: 'Esperienza diretta sul territorio',
+    val1Text: 'Viviamo e lavoriamo in Australia dal 2007. La nostra conoscenza delle destinazioni nasce dall\'esperienza quotidiana, dai viaggi fatti personalmente e da un contatto diretto con il territorio e i partner locali.',
+    val2Title: 'Viaggi costruiti su misura',
+    val2Text: 'Ogni itinerario viene progettato in base al modo di viaggiare della persona: dai ritmi agli spostamenti, dalla scelta delle esperienze fino all\'equilibrio tra scoperta, relax e autenticità. Non proponiamo pacchetti standardizzati, ma viaggi costruiti davvero attorno a chi parte.',
+    val3Title: 'Assistenza reale durante il viaggio',
+    val3Text: 'Durante il viaggio rimani sempre in contatto con il nostro team italiano in Oceania. In caso di necessità, hai un supporto diretto, rapido e nella tua lingua, con persone che conoscono realmente le destinazioni.',
     teamLabel: 'Il Team',
     teamTitle: 'Incontra i tuoi Consulenti',
     teamSubtitle: 'Persone reali, esperti certificati, pronti a disegnare il tuo viaggio perfetto.',
@@ -46,16 +118,21 @@ const copy = {
   en: {
     heroLabel: 'Our Story',
     heroTitle: 'About Us',
+    howLabel: 'How it works',
+    howTitle: 'Booking with us is simple',
+    howIntro: 'We accompany you at every stage of the journey, from the first enquiry to your return. No impersonal call centre: you will always speak with real people who have first-hand experience of the destinations we offer.',
+    howStepsTitle: 'Your trip in 5 steps',
     storyLabel: 'Our Project',
-    storyTitle: 'Beyond the Boundaries of Travel',
-    storyP1: 'Progetto Australia is more than a travel agency — it is a shared dream. Everything started from a passion for exploration and a desire to show everyone the wild beauty of Oceania.',
-    storyP2: 'Our approach is tailor-made: we do not sell off-the-shelf packages, we craft every itinerary around your passions and your pace. Every destination we propose is a place we have lived, loved and personally tested.',
-    val1Title: 'Local Experts',
-    val1Text: 'We have lived and breathed Australia since 2007. This is not just a job for us — it is our life in the Pacific.',
-    val2Title: 'No Middlemen',
-    val2Text: 'We are direct local operators. That means transparent pricing and full control over the quality of your journey.',
-    val3Title: 'Always by Your Side',
-    val3Text: 'Whenever you need us, we are here. Real-time assistance in your language, 24 hours a day, 7 days a week.',
+    storyTitle: 'Beyond Simple Travel',
+    storyP1: 'Progetto Australia was born from a genuine passion for Oceania and the desire to bring these destinations to life the right way — with itineraries built around the person, not around standard packages.',
+    storyP2: 'Over the years we have turned this experience into a specialist project dedicated to Australia, New Zealand and the Pacific Islands, selecting places, properties and experiences we have lived firsthand on the ground.',
+    storyP3: 'We believe in travel planned with balance, attention to detail and sustainable pacing, because truly knowing a destination also means knowing how to experience it.',
+    val1Title: 'Expertise on the Ground',
+    val1Text: 'We have lived and worked in Australia since 2007. Our knowledge of these destinations comes from daily experience, personal travel and direct contact with the territory and local partners.',
+    val2Title: 'Tailor-Made Journeys',
+    val2Text: 'Every itinerary is designed around how you like to travel: from pace and transfers to choice of experiences and the balance between discovery, relaxation and authenticity. We do not offer standard packages — we build trips truly around the person.',
+    val3Title: 'Real Assistance During Your Trip',
+    val3Text: 'Throughout your journey you stay in constant contact with our Italian team in Oceania. Should you need anything, you have direct, fast support in your own language from people who genuinely know these destinations.',
     teamLabel: 'The Team',
     teamTitle: 'Meet your Consultants',
     teamSubtitle: 'Real people, certified experts, ready to design your perfect journey.',
@@ -86,6 +163,7 @@ const fadeIn = {
 export default function AboutPage() {
   const locale = useLocale() as 'it' | 'en';
   const c = copy[locale];
+  const stepsData = steps[locale];
   const [selectedMember, setSelectedMember] = useState<TeamMember | null>(null);
   const scrollRef = useRef<HTMLDivElement>(null);
 
@@ -149,8 +227,48 @@ export default function AboutPage() {
         </motion.div>
       </section>
 
+      {/* Come funziona */}
+      <section className="py-20 bg-white">
+        <div className="max-w-4xl mx-auto px-6 lg:px-12">
+          <motion.div {...fadeIn} className="text-center mb-14">
+            <span className="text-gold text-xs font-sans uppercase tracking-[0.3em] mb-3 block">{c.howLabel}</span>
+            <h2 className="font-serif text-2xl md:text-4xl font-bold text-hero mb-5">{c.howTitle}</h2>
+            <p className="text-hero/65 font-sans text-sm max-w-2xl mx-auto leading-relaxed">{c.howIntro}</p>
+          </motion.div>
+
+          <p className="text-xs font-sans uppercase tracking-[0.3em] text-gold mb-10 text-center">{c.howStepsTitle}</p>
+
+          <div className="space-y-0 border-l-2 border-gold/30 ml-4 md:ml-8">
+            {stepsData.map((step, i) => (
+              <motion.div
+                key={i}
+                initial={{ opacity: 0, y: 20 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                viewport={{ once: true }}
+                transition={{ duration: 0.5, delay: i * 0.08 }}
+                className="relative pl-8 pb-10"
+              >
+                <div className="absolute -left-[13px] top-0 w-6 h-6 rounded-full bg-gold flex items-center justify-center">
+                  <span className="text-white text-[10px] font-sans font-bold">{step.n}</span>
+                </div>
+                <h3 className="font-serif text-lg font-bold text-hero mb-3">{step.title}</h3>
+                <p className="text-hero/60 text-sm font-sans leading-relaxed mb-4">{step.body}</p>
+                <ul className="space-y-1.5">
+                  {step.bullets.map((b, j) => (
+                    <li key={j} className="flex items-center gap-2 text-xs font-sans text-hero/50">
+                      <CheckCircle size={13} className="text-gold shrink-0" />
+                      {b}
+                    </li>
+                  ))}
+                </ul>
+              </motion.div>
+            ))}
+          </div>
+        </div>
+      </section>
+
       {/* Story text */}
-      <section className="py-12 bg-white">
+      <section className="py-12 bg-sand/40">
         <div className="container mx-auto px-6 lg:px-12 max-w-3xl text-center">
           <motion.div {...fadeIn}>
             <span className="text-gold text-xs font-sans uppercase tracking-[0.3em] mb-3 block">
@@ -162,13 +280,14 @@ export default function AboutPage() {
             <div className="space-y-4 text-hero/65 leading-relaxed font-sans text-sm">
               <p>{c.storyP1}</p>
               <p>{c.storyP2}</p>
+              <p>{c.storyP3}</p>
             </div>
           </motion.div>
         </div>
       </section>
 
       {/* Value Proposition */}
-      <section className="py-12 bg-sand/40">
+      <section className="py-12 bg-white">
         <div className="container mx-auto px-6 lg:px-12">
           <div className="grid grid-cols-1 md:grid-cols-3 gap-10">
             <motion.div {...fadeIn} className="group text-center flex flex-col items-center">
@@ -235,7 +354,6 @@ export default function AboutPage() {
                 style={{ backgroundColor: '#2a2a2a' }}
                 onClick={() => setSelectedMember(member)}
               >
-                {/* Photo */}
                 <div className="relative h-64 overflow-hidden">
                   <img
                     src={member.photo}
@@ -245,8 +363,6 @@ export default function AboutPage() {
                   />
                   <div className="absolute inset-0 bg-gradient-to-t from-black/40 via-transparent to-transparent" />
                 </div>
-
-                {/* Info */}
                 <div className="p-5 flex flex-col flex-1">
                   <h4 className="font-serif text-base font-bold text-white mb-0.5">{member.name}</h4>
                   <p className="text-[10px] font-sans uppercase tracking-[0.2em] mb-4" style={{ color: '#b0a377' }}>
@@ -345,7 +461,6 @@ export default function AboutPage() {
               className="bg-white max-w-sm w-full relative overflow-hidden shadow-2xl"
               onClick={(e) => e.stopPropagation()}
             >
-              {/* Photo — full, uncropped */}
               <div className="bg-stone-100 flex items-center justify-center">
                 <img
                   src={selectedMember.photo}
@@ -357,8 +472,6 @@ export default function AboutPage() {
                 <h4 className="font-serif text-xl font-bold text-hero">{selectedMember.name}</h4>
                 <p className="text-gold text-[10px] font-sans font-bold uppercase tracking-[0.2em] mt-1">{selectedMember.role[locale]}</p>
               </div>
-
-              {/* Bio */}
               <div className="px-6 pb-6 pt-3">
                 <p className="text-hero/70 text-sm font-sans leading-relaxed">{selectedMember.bio[locale]}</p>
                 {selectedMember.logos.length > 0 && (
@@ -369,8 +482,6 @@ export default function AboutPage() {
                   </div>
                 )}
               </div>
-
-              {/* Close */}
               <button
                 onClick={() => setSelectedMember(null)}
                 className="absolute top-3 right-3 w-8 h-8 bg-white/90 flex items-center justify-center shadow hover:bg-white transition-colors"
