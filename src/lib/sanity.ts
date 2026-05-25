@@ -150,18 +150,35 @@ const GRADIENT_DEFAULTS = [
 
 const ACCENT_DEFAULTS = ['#813318', '#0f766e', '#1e40af', '#881337', '#6d28d9', '#57534e'];
 
+// Fallback images for itineraries without a heroImage in Sanity
+const ITIN_HERO_FILES: Record<string, string> = {
+  'australia-bora-bora':       '/images/dest-whitehaven.jpg',
+  'meravigliosa-polinesia':    '/images/hero-french-polynesia.png',
+  'nuova-zelanda-polinesia':   '/images/hero-new-zealand.png',
+  'gruppo-nuova-zelanda':      '/images/itin-nz-gruppo.jpg',
+};
+
+// Fallback map images for itineraries without a mapImage in Sanity
+const ITIN_MAP_FILES: Record<string, string> = {
+  'australia-bora-bora':       '/images/maps/australia-bora-bora.png',
+  'meravigliosa-polinesia':    '/images/maps/meravigliosa-polinesia.png',
+  'nuova-zelanda-polinesia':   '/images/maps/nuova-zelanda-polinesia.png',
+  'gruppo-nuova-zelanda':      '/images/maps/gruppo-nuova-zelanda.png',
+};
+
 export function normalizeSanityItinerary(s: SanityItinerary, idx = 0): Itinerary {
+  const slug = s.slug.current;
   return {
     id: s._id,
-    slug: s.slug.current,
+    slug,
     title: s.title,
     description: s.description,
     duration: s.duration,
     destination: s.destination?.title?.it ?? '',
     type: s.category ?? 'adventure',
     gradient: GRADIENT_DEFAULTS[idx % GRADIENT_DEFAULTS.length],
-    image: s.heroImage ? urlFor(s.heroImage).width(800).height(520).url() : '',
-    mapImage: s.mapImage ? urlFor(s.mapImage).width(1200).url() : undefined,
+    image: s.heroImage ? urlFor(s.heroImage).width(800).height(520).url() : (ITIN_HERO_FILES[slug] ?? ''),
+    mapImage: s.mapImage ? urlFor(s.mapImage).width(1200).url() : ITIN_MAP_FILES[slug],
     price: s.price ?? { amount: 0, currency: 'EUR' },
     priceEn: s.price ? { currency: 'USD', amount: Math.round(s.price.amount * 1.09) } : { amount: 0, currency: 'USD' },
     highlights: s.highlights ?? { it: [], en: [] },
