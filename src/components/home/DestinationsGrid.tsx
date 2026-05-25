@@ -1,5 +1,6 @@
 'use client';
 
+import Image from 'next/image';
 import { motion } from 'framer-motion';
 import { useTranslations, useLocale } from 'next-intl';
 import { Link } from '@/i18n/navigation';
@@ -21,6 +22,7 @@ export default function DestinationsGrid({ destinations }: Props) {
         <SectionHeader label={t('label')} title={t('title')} subtitle={t('subtitle')} />
       </div>
 
+      {/* Cards strip — horizontal scroll on mobile, full-width flex on desktop */}
       <div className="flex gap-3 overflow-x-auto overflow-y-hidden scrollbar-hide px-6 lg:px-10 lg:overflow-visible [scroll-snap-type:x_mandatory] lg:[scroll-snap-type:none]">
         {destinations.map((dest, i) => (
           <motion.div
@@ -29,13 +31,19 @@ export default function DestinationsGrid({ destinations }: Props) {
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true, margin: '-40px' }}
             transition={{ duration: 0.5, delay: i * 0.06 }}
-            className="group relative overflow-hidden rounded-2xl cursor-pointer h-[360px] lg:h-[480px] w-[72vw] shrink-0 [scroll-snap-align:start] lg:w-0 lg:flex-1 lg:shrink"
+            className="group relative overflow-hidden rounded-2xl cursor-pointer h-[360px] lg:h-[520px] w-[72vw] shrink-0 [scroll-snap-align:start] lg:w-0 lg:flex-1 lg:shrink"
           >
-            {/* Photo — usa heroPhoto (paesaggistica) per uniformità */}
-            <div
-              className="absolute inset-0 bg-cover bg-center"
-              style={{ backgroundImage: `url(${dest.heroPhoto ?? dest.photo})` }}
-            />
+            {/* Photo */}
+            <div className="absolute inset-0 transition-transform duration-700 group-hover:scale-110">
+              <Image
+                src={dest.photo}
+                alt={dest.name[locale]}
+                fill
+                className="object-cover"
+                sizes="(max-width: 1024px) 72vw, 14vw"
+                quality={80}
+              />
+            </div>
 
             {/* Bottom gradient for text legibility */}
             <div className="absolute inset-0 bg-gradient-to-t from-black/65 via-transparent to-transparent rounded-2xl" />
