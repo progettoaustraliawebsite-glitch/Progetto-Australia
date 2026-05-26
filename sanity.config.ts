@@ -26,12 +26,6 @@ export default defineConfig({
             S.listItem()
               .title('Blog')
               .child(S.documentTypeList('blogPost').title('Blog Post')),
-            S.listItem()
-              .title('Highlights')
-              .child(S.documentTypeList('highlight').title('Highlights')),
-            S.listItem()
-              .title('Pacchetti Nozze')
-              .child(S.documentTypeList('weddingPackage').title('Pacchetti Nozze')),
           ]),
     }),
     visionTool(),
