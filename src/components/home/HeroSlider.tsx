@@ -7,11 +7,12 @@ import { useTranslations } from 'next-intl';
 import { useRouter } from '@/i18n/navigation';
 
 const SLIDES = [
-  { image: '/images/hero-australia.png' },
+  { image: '/images/hero-australia-v2.png' },
   { image: '/images/hero-new-zealand.png' },
   { image: '/images/hero-fiji.png' },
-  { image: '/images/hero-samoa.png' },
   { image: '/images/hero-french-polynesia.png' },
+  { image: '/images/hero-cook-islands.png' },
+  { image: '/images/hero-new-caledonia.png' },
 ];
 
 const SLIDE_COUNT = SLIDES.length;

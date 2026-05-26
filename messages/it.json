@@ -31,14 +31,19 @@
           "location": "Yasawa Islands, Fiji"
         },
         "3": {
-          "title": "Isole Samoa",
-          "subtitle": "Il cuore pulsante della cultura Polinesiana, tra natura incontaminata e villaggi autentici",
-          "location": "Upolu, Samoa"
-        },
-        "4": {
           "title": "Polinesia Francese",
           "subtitle": "Bungalow sull'acqua, lagune da sogno e il romanticismo del Pacifico",
           "location": "Bora Bora, Polinesia Francese"
+        },
+        "4": {
+          "title": "Isole Cook",
+          "subtitle": "Lagune spettacolari, autenticità polinesiana e un ritmo di vita che invita a rallentare",
+          "location": "Aitutaki, Isole Cook"
+        },
+        "5": {
+          "title": "Nuova Caledonia",
+          "subtitle": "Lagune patrimonio UNESCO, cultura francese e natura tropicale in un mix unico nel Pacifico",
+          "location": "Parc Provincial de la Rivière Bleue, Nuova Caledonia"
         }
       },
       "cta": "Crea il tuo Viaggio"

@@ -31,14 +31,19 @@
           "location": "Yasawa Islands, Fiji"
         },
         "3": {
-          "title": "Samoa Islands",
-          "subtitle": "The beating heart of Polynesian culture, between pristine nature and authentic villages",
-          "location": "Upolu, Samoa"
-        },
-        "4": {
           "title": "French Polynesia",
           "subtitle": "Overwater bungalows, dreamlike lagoons and the romance of the Pacific",
           "location": "Bora Bora, French Polynesia"
+        },
+        "4": {
+          "title": "Cook Islands",
+          "subtitle": "Spectacular lagoons, Polynesian authenticity and a pace of life that invites you to slow down",
+          "location": "Aitutaki, Cook Islands"
+        },
+        "5": {
+          "title": "New Caledonia",
+          "subtitle": "UNESCO lagoons, French culture and tropical nature in a unique Pacific blend",
+          "location": "Parc Provincial de la Rivière Bleue, New Caledonia"
         }
       },
       "cta": "Plan Your Trip"
