@@ -1,12 +1,13 @@
 /**
  * Migrate rich destination content to Sanity.
  * Patches existing destination documents with:
- * intro, mustSeeImage, mustSee, whenToGo, practical, experiences
+ * introLabel, intro, mustSeeImage, mustSee, whenToGo, practical, experiences
  *
  * Usage:
  *   node scripts/migrate-destination-content.mjs
  *
  * Idempotent: safe to re-run.
+ * Last updated: 2026-05-26 — full content refresh (bold intros, new mustSee, new whenToGo)
  */
 
 import { createClient } from '@sanity/client';
@@ -42,7 +43,7 @@ const client = createClient({
   useCdn: false,
 });
 
-// ─── Static content (copied from src/data/destination-content.ts) ────────────
+// ─── Helpers ─────────────────────────────────────────────────────────────────
 
 const MONTHS_IT = ['Gen', 'Feb', 'Mar', 'Apr', 'Mag', 'Giu', 'Lug', 'Ago', 'Set', 'Ott', 'Nov', 'Dic'];
 const MONTHS_EN = ['Jan', 'Feb', 'Mar', 'Apr', 'May', 'Jun', 'Jul', 'Aug', 'Sep', 'Oct', 'Nov', 'Dec'];
@@ -51,105 +52,116 @@ function months(ratings) {
   return ratings.map((rating, i) => ({ it: MONTHS_IT[i], en: MONTHS_EN[i], rating }));
 }
 
+// ─── Content (mirrors src/data/destination-content.ts) ───────────────────────
+
 const destinationContent = [
+  // ── AUSTRALIA ──────────────────────────────────────────────────────────────
   {
     slug: 'australia',
     mustSeeImage: '/images/must-australia-reef.png',
+    introLabel: { it: 'Australia su misura', en: 'Tailor-Made Australia' },
     intro: {
-      it: 'L\'Australia è un <strong>continente intero tutto per te</strong>. Che tu voglia esplorare la <strong>Grande Barriera Corallina</strong>, guidare nell\'<strong>Outback rosso fuoco</strong>, immergerti nella vita cosmopolita di <strong>Sydney</strong> o scoprire la foresta pluviale di <strong>Daintree</strong>, ogni angolo di questo paese nasconde un\'<strong>esperienza indimenticabile</strong>. I nostri <strong>esperti italiani in loco</strong> ti accompagnano in un <strong>viaggio su misura</strong>, pensato nei minimi dettagli.',
-      en: 'Australia is an <strong>entire continent all for you</strong>. Whether you want to explore the <strong>Great Barrier Reef</strong>, drive through the <strong>fiery red Outback</strong>, dive into <strong>Sydney\'s cosmopolitan life</strong>, or discover the <strong>Daintree rainforest</strong>, every corner of this country hides an <strong>unforgettable experience</strong>. Our <strong>Italian experts on the ground</strong> guide you through a <strong>tailor-made journey</strong>, planned down to the finest details.',
+      it: 'Ogni viaggio in Australia viene <strong>progettato attorno alla persona</strong>, al suo stile di viaggio e al modo in cui desidera vivere questa esperienza. Dagli spostamenti ai tempi di percorrenza, dall\'equilibrio tra natura, città e relax fino alla scelta delle strutture, <strong>ogni dettaglio viene studiato</strong> per creare un <strong>itinerario fluido, autentico e realmente sostenibile</strong> nei ritmi.<br><br>L\'Australia <strong>non è una destinazione da visitare velocemente</strong>. È un paese da vivere con il ritmo giusto. Dalle città affacciate sull\'oceano agli spazi immensi dell\'Outback, dalle foreste tropicali del Queensland alle spiagge più remote, è un viaggio che cambia continuamente paesaggi, atmosfere ed emozioni. Ci sono luoghi che si ricordano per ciò che si vede. L\'Australia, invece, rimane soprattutto per la <strong>sensazione di libertà</strong> che lascia addosso. Per questo ogni itinerario viene <strong>costruito su misura</strong>, con attenzione agli spostamenti, ai tempi di viaggio e al modo in cui desideri vivere davvero questa esperienza. Perché conoscere l\'Australia significa anche sapere come viverla nel modo giusto.',
+      en: 'Every trip to Australia is <strong>designed around the person</strong>, their travel style, and the way they wish to experience it. From transfers to travel times, from the balance between nature, cities and relaxation to the choice of accommodation, <strong>every detail is carefully planned</strong> to create an <strong>itinerary that flows naturally, authentically and at a truly sustainable pace</strong>.<br><br>Australia is <strong>not a destination to be rushed</strong>. It is a country to experience at the right rhythm. From cities facing the ocean to the vast spaces of the Outback, from Queensland\'s tropical forests to its most remote beaches, it is a journey of ever-changing landscapes, atmospheres and emotions. There are places you remember for what you see. Australia stays with you above all for the <strong>feeling of freedom</strong> it leaves behind. This is why every itinerary is <strong>tailor-made</strong>, with careful attention to transfers, travel times and the way you truly wish to live this experience. Because truly knowing Australia also means knowing how to experience it the right way.',
     },
     whenToGo: {
       months: months(['good', 'good', 'best', 'best', 'best', 'good', 'avoid', 'avoid', 'good', 'best', 'best', 'good']),
       description: {
-        it: 'Il periodo migliore per visitare l\'Australia è tra marzo e maggio (autunno australe) e settembre-novembre (primavera). L\'estate australiana (dic–feb) è caldissima nell\'entroterra. Il Nord Tropicale è meglio visitarlo in stagione secca (mag–ott).',
-        en: 'The best time to visit Australia is March–May (southern autumn) and September–November (spring). The Australian summer (Dec–Feb) is extremely hot inland. The Tropical North is best visited in the dry season (May–Oct).',
+        it: 'L\'Australia è una destinazione che si può vivere durante tutto l\'anno. Essendo un continente enorme, le stagioni e il clima cambiano molto da una regione all\'altra. Per questo non esiste un unico periodo "migliore" per visitarla, ma itinerari costruiti in base alle condizioni ideali delle diverse aree e al tipo di esperienza che desideri vivere.',
+        en: 'Australia can be experienced throughout the year. Being a vast continent, seasons and climate vary greatly from one region to another. This is why there is no single "best" time to visit, but itineraries built around the ideal conditions of each area and the type of experience you wish to have.',
       },
     },
     mustSee: [
-      { title: { it: 'Grande Barriera Corallina', en: 'Great Barrier Reef' }, description: { it: 'La più grande struttura vivente del pianeta, con oltre 2.900 reef e 900 isole. Snorkeling e diving da sogno accessibili da Cairns e Port Douglas.', en: 'The largest living structure on the planet, with over 2,900 reefs and 900 islands. Dream snorkeling and diving accessible from Cairns and Port Douglas.' } },
-      { title: { it: 'Uluru & Red Centre', en: 'Uluru & Red Centre' }, description: { it: 'Il monolite sacro degli Anangu al tramonto è un\'esperienza spirituale senza pari. Il cuore rosso dell\'Australia, con i field di roccia di Kata Tjuta e il deserto infinito.', en: 'The sacred monolith of the Anangu at sunset is an unparalleled spiritual experience. The red heart of Australia, with the rock domes of Kata Tjuta and the endless desert.' } },
-      { title: { it: 'Sydney & Opera House', en: 'Sydney & Opera House' }, description: { it: 'La Harbour Bridge, l\'Opera House, Bondi Beach e i mercati di Newtown: Sydney è una delle città più iconiche e vivibili al mondo.', en: 'The Harbour Bridge, Opera House, Bondi Beach and Newtown\'s markets: Sydney is one of the most iconic and liveable cities in the world.' } },
-      { title: { it: 'Daintree Rainforest', en: 'Daintree Rainforest' }, description: { it: 'La foresta pluviale più antica del mondo incontra il Coral Sea nel Queensland tropicale. Crociere sul fiume, coccodrilli, uccelli del paradiso e spiagge deserte.', en: 'The world\'s oldest rainforest meets the Coral Sea in tropical Queensland. River cruises, crocodiles, birds of paradise and deserted beaches.' } },
-      { title: { it: 'Great Ocean Road & Dodici Apostoli', en: 'Great Ocean Road & Twelve Apostles' }, description: { it: 'Uno dei road trip più spettacolari al mondo: scogliere calcaree a picco sull\'oceano, foreste di eucalipti e i leggendari Dodici Apostoli tra le onde.', en: 'One of the world\'s most spectacular road trips: limestone cliffs plunging into the ocean, eucalyptus forests and the legendary Twelve Apostles amid the waves.' } },
+      { title: { it: 'Grande Barriera Corallina', en: 'Great Barrier Reef' }, description: { it: 'Nuotare nella Grande Barriera Corallina significa entrare in uno degli ecosistemi più straordinari del pianeta. Reef corallini, isole tropicali e fondali incredibili regalano esperienze uniche, perfette sia per lo snorkeling che per le immersioni.', en: 'Swimming in the Great Barrier Reef means entering one of the most extraordinary ecosystems on the planet. Coral reefs, tropical islands and incredible seabeds offer unique experiences, perfect for both snorkelling and diving.' } },
+      { title: { it: 'Uluru & Red Centre', en: 'Uluru & Red Centre' }, description: { it: 'Nel cuore rosso dell\'Australia, Uluru regala una delle esperienze più intense del viaggio. I colori che cambiano al tramonto, il silenzio del deserto e i paesaggi sconfinati del Red Centre creano un\'atmosfera difficile da dimenticare.', en: 'In the red heart of Australia, Uluru offers one of the journey\'s most intense experiences. The colours that shift at sunset, the silence of the desert and the boundless landscapes of the Red Centre create an atmosphere that is hard to forget.' } },
+      { title: { it: 'Sydney & Opera House', en: 'Sydney & Opera House' }, description: { it: 'Sydney unisce energia urbana e stile di vita australiano come poche altre città al mondo. Dall\'Opera House alla Bondi Beach, passando per quartieri creativi, rooftop e passeggiate sull\'oceano, ogni giornata ha un ritmo diverso.', en: 'Sydney combines urban energy and the Australian way of life like few other cities in the world. From the Opera House to Bondi Beach, through creative neighbourhoods, rooftops and ocean walks, every day has its own rhythm.' } },
+      { title: { it: 'Daintree Rainforest', en: 'Daintree Rainforest' }, description: { it: 'Qui la foresta pluviale incontra il mare tropicale. Il Daintree è uno dei luoghi più selvaggi e affascinanti del Queensland: crociere tra i coccodrilli, spiagge deserte, natura incontaminata e una biodiversità unica al mondo.', en: 'Here the rainforest meets the tropical sea. The Daintree is one of Queensland\'s wildest and most fascinating places: cruises among crocodiles, deserted beaches, unspoiled nature and a biodiversity unique in the world.' } },
+      { title: { it: 'Great Ocean Road & Dodici Apostoli', en: 'Great Ocean Road & Twelve Apostles' }, description: { it: 'Uno dei road trip più spettacolari dell\'Australia. Oceano infinito, scogliere scolpite dal vento, foreste di eucalipti e i celebri Dodici Apostoli rendono questo itinerario una delle esperienze on the road più iconiche del paese.', en: 'One of Australia\'s most spectacular road trips. Endless ocean, wind-sculpted cliffs, eucalyptus forests and the famous Twelve Apostles make this one of the country\'s most iconic on-the-road experiences.' } },
+      { title: { it: 'Kangaroo Island', en: 'Kangaroo Island' }, description: { it: 'Un\'Australia più autentica, lenta e selvaggia. Kangaroo Island è il luogo ideale per chi cerca natura incontaminata, spiagge immense, animali in libertà e paesaggi ancora poco toccati dal turismo di massa.', en: 'A more authentic, slow and wild Australia. Kangaroo Island is the ideal place for those seeking unspoiled nature, vast beaches, free-roaming wildlife and landscapes still largely untouched by mass tourism.' } },
     ],
     practical: {
-      visa: { it: 'ETA (Electronic Travel Authority) obbligatoria, richiedibile online in pochi minuti. Costo ca. 20 AUD.', en: 'ETA (Electronic Travel Authority) required, applicable online in minutes. Cost approx. 20 AUD.' },
-      flights: { it: 'Voli diretti da Roma e Milano con scali (Singapore, Dubai, Hong Kong). Durata media 22–26 ore. Compagnie: Emirates, Singapore Airlines, Cathay Pacific, Qantas.', en: 'Flights from Italy with stopovers (Singapore, Dubai, Hong Kong). Average duration 22–26 hours. Airlines: Emirates, Singapore Airlines, Cathay Pacific, Qantas.' },
+      visa: { it: 'EVisitor 651 — gratuito, richiedibile online in pochi minuti.', en: 'EVisitor (subclass 651) — free of charge, applicable online in minutes.' },
+      flights: { it: 'Voli da Roma, Milano, Venezia, Bologna con Qatar Airways, Cathay Pacific, Singapore Airlines, Emirates, Etihad, Qantas. Durata media 22–26 ore.', en: 'Flights from major US cities with Qantas and American Airlines. Average duration 20–24 hours.' },
       currency: { it: 'Dollaro Australiano (AUD). Carte di credito accettate ovunque. ATM disponibili in ogni città.', en: 'Australian Dollar (AUD). Credit cards accepted everywhere. ATMs available in every city.' },
-      language: { it: 'Inglese australiano. Nessuna barriera con l\'inglese standard.', en: 'Australian English. No barrier with standard English.' },
-      timezone: { it: 'Australia ha 3 fusi orari: AEST (UTC+10), ACST (UTC+9:30), AWST (UTC+8). Jet lag significativo dall\'Italia (8–10 ore avanti).', en: 'Australia has 3 time zones: AEST (UTC+10), ACST (UTC+9:30), AWST (UTC+8). Significant jet lag from Europe (8–10 hours ahead).' },
+      language: { it: 'Inglese.', en: 'English.' },
+      timezone: { it: 'Australia ha 3 fusi orari: AEST (UTC+10), ACST (UTC+9:30), AWST (UTC+8). Jet lag significativo dall\'Italia (8–10 ore avanti).', en: 'Australia has 3 time zones: AEST (UTC+10), ACST (UTC+9:30), AWST (UTC+8). Significant jet lag from the US (14–19 hours ahead).' },
     },
     experiences: [
-      { it: 'Snorkeling alla Grande Barriera Corallina', en: 'Snorkeling at the Great Barrier Reef' },
+      { it: 'Snorkeling alla Grande Barriera Corallina', en: 'Snorkelling at the Great Barrier Reef' },
       { it: 'Safari nel Kakadu National Park', en: 'Safari in Kakadu National Park' },
       { it: 'Road trip sulla Great Ocean Road', en: 'Road trip along the Great Ocean Road' },
       { it: 'Tramonto a Uluru', en: 'Sunset at Uluru' },
       { it: 'Surf a Bondi Beach', en: 'Surfing at Bondi Beach' },
-      { it: 'Whale watching a Hervey Bay', en: 'Whale watching at Hervey Bay' },
+      { it: 'Wildlife a Kangaroo Island', en: 'Wildlife on Kangaroo Island' },
     ],
   },
+
+  // ── NUOVA ZELANDA ──────────────────────────────────────────────────────────
   {
     slug: 'new-zealand',
     mustSeeImage: '/images/must-nz-hobbiton.png',
+    introLabel: { it: 'Nuova Zelanda su misura', en: 'Tailor-Made New Zealand' },
     intro: {
-      it: 'La Nuova Zelanda è il paese dove la <strong>natura regna sovrana</strong>. <strong>Fiordi</strong> che tagliano le montagne, <strong>vulcani ancora attivi</strong>, ghiacciai millenari e spiagge incontaminate: tutto in uno spazio sorprendentemente accessibile. È la destinazione perfetta per chi vuole <strong>avventura autentica</strong>, paesaggi mozzafiato e la gentilezza dei Kiwi. I nostri <strong>esperti italiani</strong> ti guidano in un <strong>itinerario su misura</strong> tra le due isole.',
-      en: 'New Zealand is a country where <strong>nature reigns supreme</strong>. <strong>Fjords</strong> cutting through mountains, <strong>still-active volcanoes</strong>, ancient glaciers and pristine beaches: all in a surprisingly accessible space. The perfect destination for those seeking <strong>authentic adventure</strong>, breathtaking scenery and the genuine warmth of the Kiwi people. Our <strong>Italian experts</strong> guide you through a <strong>tailor-made itinerary</strong> across both islands.',
+      it: 'Ogni itinerario viene <strong>costruito in base al tuo modo di viaggiare</strong>, ai ritmi desiderati e alle esperienze che vuoi vivere davvero. Dai grandi road trip tra le due isole ai lodge immersi nella natura, fino alle escursioni più iconiche, <strong>ogni dettaglio viene studiato</strong> per creare un <strong>viaggio fluido, equilibrato e autentico</strong>.<br><br>La Nuova Zelanda è uno dei pochi luoghi al mondo dove <strong>paesaggi completamente diversi convivono a poche ore di distanza</strong>. Fiordi profondi, vulcani attivi, foreste pluviali, ghiacciai e spiagge selvagge trasformano continuamente il viaggio, creando la sensazione di <strong>attraversare più mondi in un solo itinerario</strong>. È una destinazione perfetta per chi ama la natura, i viaggi on the road e gli spazi aperti, ma anche per chi cerca un modo di viaggiare <strong>più lento, immersivo e lontano dal turismo di massa</strong>.',
+      en: 'Every itinerary is <strong>built around your way of travelling</strong>, your desired pace and the experiences you truly want to live. From epic road trips across both islands to lodges immersed in nature, to the most iconic hikes, <strong>every detail is planned</strong> to create a journey that <strong>flows naturally, balanced and authentic</strong>.<br><br>New Zealand is one of the few places in the world where <strong>completely different landscapes coexist just hours apart</strong>. Deep fjords, active volcanoes, rainforests, glaciers and wild beaches continuously transform the journey, creating the feeling of <strong>crossing multiple worlds in a single itinerary</strong>. It is the perfect destination for those who love nature, road trips and open spaces, as well as those seeking a <strong>slower, more immersive way of travelling, far from mass tourism</strong>.',
     },
     whenToGo: {
       months: months(['avoid', 'avoid', 'best', 'best', 'good', 'avoid', 'avoid', 'avoid', 'good', 'best', 'best', 'good']),
       description: {
-        it: 'Il periodo migliore è l\'estate australe (dic–feb) per il caldo e le giornate lunghe, e la primavera (set–nov) per i paesaggi fioriti. L\'inverno (giu–ago) è freddo al sud ma ideale per lo sci a Queenstown.',
-        en: 'The best period is the southern summer (Dec–Feb) for warmth and long days, and spring (Sep–Nov) for blooming landscapes. Winter (Jun–Aug) is cold in the south but ideal for skiing in Queenstown.',
+        it: 'La Nuova Zelanda è una destinazione visitabile durante tutto l\'anno, con stagioni opposte rispetto all\'Europa. Ogni periodo offre esperienze diverse: l\'estate australe regala giornate lunghe e temperature più miti, mentre primavera e autunno sono ideali per chi cerca paesaggi spettacolari e meno affollamento. Anche l\'inverno può essere un ottimo momento per visitare alcune aree del paese, soprattutto per gli amanti dello sci e dei paesaggi alpini.',
+        en: 'New Zealand can be visited all year round, with seasons opposite to those in Europe. Each period offers different experiences: the southern summer brings long days and milder temperatures, while spring and autumn are ideal for those seeking spectacular scenery and fewer crowds. Winter can also be an excellent time to visit certain areas, especially for skiing and alpine landscapes lovers.',
       },
     },
     mustSee: [
-      { title: { it: 'Fiordland & Milford Sound', en: 'Fiordland & Milford Sound' }, description: { it: 'Uno dei paesaggi più drammatici del pianeta: fiordi profondi, cascate e delfini.', en: 'One of the most dramatic landscapes on the planet: deep fjords, waterfalls and dolphins.' } },
-      { title: { it: 'Rotorua & Geotermalismo', en: 'Rotorua & Geothermal' }, description: { it: 'Geyser, fango bollente e cultura Maori autentica nel cuore dell\'Isola del Nord.', en: 'Geysers, boiling mud and authentic Maori culture in the heart of the North Island.' } },
-      { title: { it: 'Franz Josef Glacier', en: 'Franz Josef Glacier' }, description: { it: 'Uno dei pochi ghiacciai al mondo che scende fino alla foresta pluviale temperata.', en: 'One of the few glaciers in the world that descends to temperate rainforest level.' } },
-      { title: { it: 'Hobbiton & Waikato', en: 'Hobbiton & Waikato' }, description: { it: 'Il set originale di Il Signore degli Anelli, immerso nelle colline verdi del Waikato.', en: 'The original Lord of the Rings film set, nestled in the green hills of Waikato.' } },
-      { title: { it: 'Bay of Islands', en: 'Bay of Islands' }, description: { it: '144 isole, delfini, spiagge bianche e la storia del Trattato di Waitangi.', en: '144 islands, dolphins, white beaches and the history of the Treaty of Waitangi.' } },
+      { title: { it: 'Viaggiare on the road tra le due isole', en: 'Road-tripping across both islands' }, description: { it: 'La Nuova Zelanda è uno dei paesi più belli al mondo da esplorare in self-drive. In poche ore si passa da coste oceaniche a montagne alpine, da foreste pluviali a laghi glaciali, con una sensazione continua di scoperta lungo la strada.', en: 'New Zealand is one of the most beautiful countries in the world to explore by self-drive. Within hours you move from ocean coasts to alpine mountains, from rainforests to glacial lakes, with a constant sense of discovery along the way.' } },
+      { title: { it: 'Fiordi e natura estrema nel Fiordland', en: 'Fjords and extreme nature in Fiordland' }, description: { it: 'Milford Sound e il Fiordland regalano alcuni dei paesaggi più spettacolari del paese: montagne che precipitano nei fiordi, cascate immense, nebbia, foreste incontaminate e una natura ancora profondamente selvaggia.', en: 'Milford Sound and Fiordland offer some of the country\'s most spectacular scenery: mountains plunging into fjords, immense waterfalls, mist, pristine forests and a nature that remains deeply wild.' } },
+      { title: { it: 'Rotorua e la cultura Māori', en: 'Rotorua and Māori culture' }, description: { it: 'Nel cuore dell\'Isola del Nord, Rotorua unisce attività geotermica, geyser e sorgenti termali a una forte identità culturale Māori, ancora molto presente nella vita quotidiana e nelle tradizioni locali.', en: 'In the heart of the North Island, Rotorua combines geothermal activity, geysers and hot springs with a strong Māori cultural identity, still very present in everyday life and local traditions.' } },
+      { title: { it: 'Ghiacciai, laghi e montagne della South Island', en: 'Glaciers, lakes and mountains of the South Island' }, description: { it: 'La parte sud della Nuova Zelanda concentra alcuni dei paesaggi più scenografici del viaggio: ghiacciai che scendono verso la foresta pluviale, laghi color turchese, passi alpini e strade panoramiche tra le più belle dell\'emisfero australe.', en: 'The southern part of New Zealand concentrates some of the journey\'s most scenic landscapes: glaciers descending toward the rainforest, turquoise lakes, alpine passes and some of the most beautiful scenic roads in the southern hemisphere.' } },
+      { title: { it: 'Baie, oceano e fauna marina', en: 'Bays, ocean and marine wildlife' }, description: { it: 'Dalle Bay of Islands alla penisola di Kaikōura, la Nuova Zelanda offre coste spettacolari dove è possibile avvistare delfini, balene, foche e vivere un rapporto molto diretto con l\'oceano e la natura.', en: 'From the Bay of Islands to the Kaikōura Peninsula, New Zealand offers spectacular coastlines where you can spot dolphins, whales and seals, and experience a very direct relationship with the ocean and nature.' } },
     ],
     practical: {
-      visa: { it: 'NZeTA (New Zealand Electronic Travel Authority) obbligatoria. Costo ca. 17 NZD + IVT 35 NZD.', en: 'NZeTA (New Zealand Electronic Travel Authority) required. Cost approx. 17 NZD + IVT 35 NZD.' },
-      flights: { it: 'Voli con scalo (Singapore, Dubai, Hong Kong, Sydney). Durata 24–28 ore. Compagnie: Air New Zealand, Emirates, Singapore Airlines.', en: 'Flights with stopover (Singapore, Dubai, Hong Kong, Sydney). Duration 24–28 hours. Airlines: Air New Zealand, Emirates, Singapore Airlines.' },
-      currency: { it: 'Dollaro Neozelandese (NZD). Carte di credito accettate ovunque.', en: 'New Zealand Dollar (NZD). Credit cards accepted everywhere.' },
-      language: { it: 'Inglese e Maori (lingua ufficiale co-ufficiale).', en: 'English and Māori (official co-language).' },
-      timezone: { it: 'UTC+12 (NZST), UTC+13 in estate. 11–13 ore avanti rispetto all\'Italia.', en: 'UTC+12 (NZST), UTC+13 in summer. 11–13 hours ahead of Italy.' },
+      visa: { it: 'Per i cittadini italiani è richiesta la NZeTA e la tassa sul turismo, acquistabili direttamente sul sito ufficiale del Governo della Nuova Zelanda.', en: 'Italian citizens require the NZeTA and the International Visitor Conservation and Tourism Levy (IVL), available on the official New Zealand Government website.' },
+      flights: { it: 'Voli con scalo da Roma, Milano, Bologna con Qatar Airways, Emirates, Singapore Airlines. Durata media 24–28 ore.', en: 'Flights from major US cities with American Airlines, Air New Zealand, United Airlines.' },
+      currency: { it: 'Dollaro Neozelandese (NZD). Le carte di credito sono accettate praticamente ovunque.', en: 'New Zealand Dollar (NZD). Credit cards accepted virtually everywhere.' },
+      language: { it: 'Inglese e Māori (lingue ufficiali).', en: 'English and Māori (official languages).' },
+      timezone: { it: 'La Nuova Zelanda si trova tra 10 e 12 ore avanti rispetto all\'Italia, a seconda del periodo dell\'anno.', en: 'New Zealand is approximately 17–19 hours ahead of the US East Coast, depending on the time of year.' },
     },
     experiences: [
-      { it: 'Bungee jumping a Queenstown', en: 'Bungee jumping in Queenstown' },
-      { it: 'Trekking Tongariro Alpine Crossing', en: 'Tongariro Alpine Crossing trek' },
-      { it: 'Visita ai set de Il Signore degli Anelli', en: 'Lord of the Rings film set visits' },
-      { it: 'Kayak nei fiordi di Milford Sound', en: 'Kayaking in Milford Sound fjords' },
-      { it: 'Hangi – cena tradizionale Maori', en: 'Hangi – traditional Maori feast' },
-      { it: 'Sci sulle Alpi del Sud', en: 'Skiing in the Southern Alps' },
+      { it: 'Road trip tra le due isole in self-drive', en: 'Self-drive road trip across both islands' },
+      { it: 'Trekking nel Fiordland e Milford Sound', en: 'Trekking in Fiordland and Milford Sound' },
+      { it: 'Rotorua e cultura Māori', en: 'Rotorua and Māori culture' },
+      { it: 'Ghiacciai e laghi della South Island', en: 'Glaciers and lakes of the South Island' },
+      { it: 'Whale watching a Kaikōura', en: 'Whale watching at Kaikōura' },
+      { it: 'Sci a Queenstown', en: 'Skiing in Queenstown' },
     ],
   },
+
+  // ── FIJI ───────────────────────────────────────────────────────────────────
   {
     slug: 'fiji',
     mustSeeImage: '/images/must-fiji.png',
+    introLabel: { it: 'Fiji su misura', en: 'Tailor-Made Fiji' },
     intro: {
-      it: 'Le Fiji sono il <strong>paradiso tropicale per eccellenza</strong> del Pacifico. <strong>333 isole</strong> sparse su un oceano color smeraldo, <strong>barriere coralline</strong> tra le più ricche al mondo, spiagge di sabbia bianca e la celebre <strong>ospitalità Fijiana</strong> — il "Bula!" con cui ogni abitante ti accoglie è sincero e contagioso. Perfette per la <strong>luna di miele</strong>, il relax assoluto o l\'<strong>avventura subacquea</strong>.',
-      en: 'Fiji is the <strong>ultimate tropical paradise</strong> of the Pacific. <strong>333 islands</strong> scattered across an emerald ocean, <strong>coral reefs</strong> among the world\'s richest, white sandy beaches and the celebrated <strong>Fijian hospitality</strong> — the "Bula!" with which every local greets you is genuine and infectious. Perfect for <strong>honeymoons</strong>, total relaxation or <strong>underwater adventure</strong>.',
+      it: 'Ogni itinerario viene costruito in base al tipo di esperienza che desideri vivere: relax totale su isole remote, resort immersi nella natura, snorkeling e immersioni tra i reef del Pacifico oppure combinazioni con Australia e Nuova Zelanda. Dalla scelta delle isole ai collegamenti tra gli arcipelaghi, <strong>ogni dettaglio viene studiato</strong> per creare un <strong>viaggio fluido, equilibrato e realmente adatto ai tuoi tempi</strong>.<br><br>Le Fiji rappresentano <strong>una delle destinazioni più autentiche e rilassanti del Pacifico</strong>. Oltre 300 isole immerse nell\'oceano, spiagge bianche, mare cristallino e una delle culture più accoglienti dell\'Oceania creano un\'atmosfera difficile da trovare altrove. Qui <strong>il tempo sembra fermarsi</strong>. Le giornate scorrono tra reef corallini, tramonti sull\'oceano, villaggi locali e piccole isole raggiungibili solo via mare. Il celebre <strong>"Bula"</strong>, il saluto fijiano, non è soltanto una parola: è il modo in cui le Fiji fanno sentire chi arriva.',
+      en: 'Every itinerary is built around the type of experience you wish to have: total relaxation on remote islands, resorts immersed in nature, snorkeling and diving among the Pacific reefs, or combinations with Australia and New Zealand. From the choice of islands to inter-island connections, <strong>every detail is carefully planned</strong> to create a journey that <strong>flows naturally, balanced and truly suited to your pace</strong>.<br><br>Fiji is <strong>one of the most authentic and relaxing destinations in the Pacific</strong>. Over 300 islands set in the ocean, white beaches, crystal-clear sea and one of Oceania\'s most welcoming cultures create an atmosphere that is hard to find elsewhere. Here, <strong>time seems to stand still</strong>. Days unfold between coral reefs, ocean sunsets, local villages and small islands reachable only by sea. The famous <strong>"Bula"</strong>, the Fijian greeting, is not just a word — it is the way Fiji makes you feel.',
     },
     whenToGo: {
-      months: months(['good', 'good', 'good', 'best', 'best', 'best', 'best', 'best', 'good', 'good', 'avoid', 'avoid']),
+      months: months(['avoid', 'avoid', 'avoid', 'avoid', 'best', 'best', 'best', 'best', 'best', 'best', 'good', 'good']),
       description: {
-        it: 'Il periodo migliore è la stagione secca (apr–ott): sole, temperature intorno ai 26°C e mare piatto. La stagione delle piogge (nov–mar) porta umidità e cicloni occasionali, ma i prezzi scendono e le isole si svuotano.',
-        en: 'The best time is the dry season (Apr–Oct): sunshine, temperatures around 26°C and calm seas. The wet season (Nov–Mar) brings humidity and occasional cyclones, but prices drop and the islands are quieter.',
+        it: 'Il periodo ideale per visitare le Fiji è la stagione secca, da maggio a ottobre: cielo sereno, temperature intorno ai 26–28°C, mare piatto e condizioni perfette per snorkeling e immersioni. Novembre e dicembre sono ancora godibili, con qualche pioggia in più. Da gennaio ad aprile è la stagione delle piogge, con possibilità di cicloni — da considerare con attenzione in fase di pianificazione.',
+        en: 'The ideal time to visit Fiji is the dry season, from May to October: clear skies, temperatures around 26–28°C, calm seas and perfect conditions for snorkeling and diving. November and December are still enjoyable, with a little more rain. January to April is the wet season, with possible cyclones — worth considering carefully when planning.',
       },
     },
     mustSee: [
-      { title: { it: 'Mamanuca Islands', en: 'Mamanuca Islands' }, description: { it: 'L\'arcipelago più iconico delle Fiji, con le spiagge più bianche e resort di lusso sull\'acqua.', en: 'Fiji\'s most iconic archipelago, with the whitest beaches and luxury overwater resorts.' } },
-      { title: { it: 'Yasawa Islands', en: 'Yasawa Islands' }, description: { it: 'Isole remote e selvagge, raggiungibili in catamarano. Snorkeling con squali e razze manta.', en: 'Remote and wild islands, reachable by catamaran. Snorkeling with sharks and manta rays.' } },
-      { title: { it: 'Taveuni – Giardino di Fiji', en: 'Taveuni – Garden of Fiji' }, description: { it: 'La terza isola più grande, coperta di giungla verde e cascate spettacolari. Il Rainbow Reef è tra i migliori siti di diving al mondo.', en: 'The third largest island, covered in green jungle and spectacular waterfalls. Rainbow Reef is among the world\'s best dive sites.' } },
-      { title: { it: 'Viti Levu – Isola Principale', en: 'Viti Levu – Main Island' }, description: { it: 'La capitale Suva, la Coral Coast e il pittoresco villaggio di Navala, uno degli ultimi villaggi tradizionali Fijiani.', en: 'The capital Suva, the Coral Coast and the picturesque Navala village, one of the last traditional Fijian villages.' } },
-      { title: { it: 'Snorkeling & Diving', en: 'Snorkeling & Diving' }, description: { it: 'Le acque delle Fiji ospitano oltre 1.500 specie di pesci e 400 specie di coralli. Un paradiso per i subacquei di tutti i livelli.', en: 'Fiji\'s waters host over 1,500 fish species and 400 coral species. A paradise for divers of all levels.' } },
+      { title: { it: 'Mamanuca Islands', en: 'Mamanuca Islands' }, description: { it: 'Piccole isole circondate da lagune turchesi e spiagge bianchissime: le Mamanuca sono tra le immagini più iconiche delle Fiji, perfette per relax, snorkeling e soggiorni vista oceano.', en: 'Small islands surrounded by turquoise lagoons and pristine white beaches: the Mamanucas are among Fiji\'s most iconic images, perfect for relaxation, snorkeling and ocean-view stays.' } },
+      { title: { it: 'Yasawa Islands', en: 'Yasawa Islands' }, description: { it: 'Più remote e selvagge, le Yasawa regalano un\'atmosfera autentica e ritmi lenti. Qui il mare domina completamente il paesaggio, tra villaggi locali, snorkeling e tramonti spettacolari.', en: 'More remote and wild, the Yasawas offer an authentic atmosphere and slow rhythms. Here the sea completely dominates the landscape, between local villages, snorkeling and spectacular sunsets.' } },
+      { title: { it: 'Snorkeling & Diving nel Pacifico', en: 'Snorkeling & Diving in the Pacific' }, description: { it: 'Le Fiji ospitano alcuni dei reef più ricchi e colorati dell\'Oceania. Acque calde, visibilità eccellente e una straordinaria biodiversità marina rendono ogni uscita in mare un\'esperienza speciale.', en: 'Fiji is home to some of Oceania\'s richest and most colourful reefs. Warm waters, excellent visibility and extraordinary marine biodiversity make every outing at sea a special experience.' } },
+      { title: { it: 'Isole private e resort immersi nella natura', en: 'Private islands and nature-immersed resorts' }, description: { it: 'Dalle piccole boutique island ai resort più esclusivi, le Fiji offrono alcune delle esperienze più rilassanti del Pacifico, perfette per lune di miele, anniversari o semplicemente per staccare completamente dalla routine.', en: 'From small boutique islands to the most exclusive resorts, Fiji offers some of the most relaxing experiences in the Pacific, perfect for honeymoons, anniversaries or simply disconnecting from everyday life.' } },
+      { title: { it: 'Cultura fijiana e vita nei villaggi', en: 'Fijian culture and village life' }, description: { it: 'Oltre al mare, le Fiji colpiscono per l\'accoglienza delle persone. Visitare un villaggio locale, assistere a una cerimonia della kava o semplicemente vivere il celebre spirito "Bula" permette di entrare in contatto con il lato più autentico del paese.', en: 'Beyond the sea, Fiji impresses with the warmth of its people. Visiting a local village, attending a kava ceremony or simply experiencing the famous "Bula" spirit allows you to connect with the most authentic side of the country.' } },
     ],
     practical: {
       visa: { it: 'Nessun visto richiesto per soggiorni fino a 4 mesi. Basta passaporto valido.', en: 'No visa required for stays up to 4 months. Valid passport only.' },
-      flights: { it: 'Voli con scalo (Sydney, Auckland, Singapore, Hong Kong). Durata 20–26 ore. Compagnie: Fiji Airways, Air Pacific, Qantas.', en: 'Flights with stopover (Sydney, Auckland, Singapore, Hong Kong). Duration 20–26 hours. Airlines: Fiji Airways, Air Pacific, Qantas.' },
+      flights: { it: 'Voli con scalo (Sydney, Auckland, Singapore, Hong Kong). Durata 20–26 ore. Compagnie: Fiji Airways, Qantas, Cathay Pacific e Singapore Airlines.', en: 'Flights with stopover (Sydney, Auckland, Singapore, Hong Kong). Duration 20–26 hours. Airlines: Fiji Airways, Qantas, Cathay Pacific and Singapore Airlines.' },
       currency: { it: 'Dollaro Fijiano (FJD). Carte accettate nei resort; portare contanti per i villaggi.', en: 'Fijian Dollar (FJD). Cards accepted at resorts; bring cash for villages.' },
       language: { it: 'Inglese, Fijiano e Hindi Fijiano. Inglese parlato ovunque.', en: 'English, Fijian and Fijian Hindi. English spoken everywhere.' },
       timezone: { it: 'UTC+12. 11 ore avanti rispetto all\'Italia.', en: 'UTC+12. 11 hours ahead of Italy.' },
@@ -163,26 +175,28 @@ const destinationContent = [
       { it: 'Tramonto sulla laguna dal bungalow sull\'acqua', en: 'Sunset over the lagoon from overwater bungalow' },
     ],
   },
+
+  // ── ISOLE COOK ─────────────────────────────────────────────────────────────
   {
     slug: 'cook-islands',
     mustSeeImage: '/images/must-cook-islands.png',
+    introLabel: { it: 'Isole Cook su misura', en: 'Tailor-Made Cook Islands' },
     intro: {
-      it: 'Le Isole Cook sono il <strong>segreto meglio custodito del Pacifico</strong>: autentiche, accessibili ma ancora incontaminate. La <strong>laguna di Aitutaki</strong> è considerata da molti la più bella al mondo. <strong>Rarotonga</strong>, l\'isola principale, unisce natura lussureggiante, <strong>cultura Maori Polinesiana</strong> e un ritmo di vita che invita a fermarsi. Ideali per chi cerca qualcosa di <strong>genuino e autentico</strong>, lontano dalle folle.',
-      en: 'The Cook Islands are the <strong>Pacific\'s best-kept secret</strong>: authentic, accessible yet still unspoiled. <strong>Aitutaki\'s lagoon</strong> is considered by many to be the most beautiful in the world. <strong>Rarotonga</strong>, the main island, combines lush nature, <strong>Polynesian Maori culture</strong> and a pace of life that invites you to pause. Ideal for those seeking something <strong>genuinely authentic</strong>, away from crowds.',
+      it: 'Ogni itinerario viene costruito in base al tipo di esperienza che desideri vivere: soggiorni vista laguna, escursioni tra le isole, snorkeling nelle acque cristalline oppure semplicemente il piacere di rallentare e vivere il Pacifico con tempi più lenti. Dalla scelta delle isole ai ritmi del viaggio, <strong>ogni dettaglio viene studiato</strong> per creare un\'esperienza <strong>autentica, equilibrata e realmente su misura</strong>.<br><br>Le Isole Cook rappresentano <strong>uno dei volti più genuini del Pacifico</strong>. Raggiungibili ma ancora poco toccate dal turismo di massa, conservano <strong>un equilibrio raro</strong> tra natura, cultura locale e semplicità. Aitutaki regala <strong>una delle lagune più belle dell\'Oceania</strong>, mentre Rarotonga unisce montagne tropicali, mare cristallino e vita locale in un\'atmosfera rilassata e accogliente. È la destinazione ideale per chi cerca <strong>un Pacifico autentico</strong>, lontano dai grandi resort e dai ritmi più turistici.',
+      en: 'Every itinerary is built around the type of experience you wish to have: lagoon-view stays, island excursions, snorkeling in crystal-clear waters or simply the pleasure of slowing down and experiencing the Pacific at a gentler pace. From the choice of islands to the rhythm of the journey, <strong>every detail is carefully planned</strong> to create an <strong>authentic, balanced and truly tailor-made experience</strong>.<br><br>The Cook Islands represent <strong>one of the most genuine faces of the Pacific</strong>. Accessible yet still largely untouched by mass tourism, they preserve <strong>a rare balance</strong> between nature, local culture and simplicity. Aitutaki offers <strong>one of Oceania\'s most beautiful lagoons</strong>, while Rarotonga combines tropical mountains, crystal-clear sea and local life in a relaxed, welcoming atmosphere. It is the ideal destination for those seeking <strong>an authentic Pacific</strong>, far from large resorts and more touristy rhythms.',
     },
     whenToGo: {
-      months: months(['avoid', 'avoid', 'good', 'best', 'best', 'best', 'best', 'best', 'best', 'good', 'avoid', 'avoid']),
+      months: months(['good', 'avoid', 'avoid', 'good', 'best', 'best', 'best', 'best', 'best', 'best', 'good', 'good']),
       description: {
-        it: 'La stagione secca (apr–ott) è il momento ideale con temperature di 22–26°C e pochissima pioggia. La stagione umida (nov–mar) è più calda e piovosa, con possibilità di cicloni.',
-        en: 'The dry season (Apr–Oct) is the ideal time with temperatures of 22–26°C and very little rain. The wet season (Nov–Mar) is warmer and rainier, with possible cyclones.',
+        it: 'Il periodo ideale per le Isole Cook è la stagione secca, da maggio a ottobre: clima mite, cielo sereno e mare ottimo per snorkeling e navigazione. Gennaio, aprile, novembre e dicembre sono ancora godibili ma con più variabilità. Febbraio e marzo coincidono con la stagione delle piogge e con la possibilità di cicloni.',
+        en: 'The ideal time for the Cook Islands is the dry season, from May to October: mild climate, clear skies and excellent conditions for snorkeling and sailing. January, April, November and December are still enjoyable but with more variability. February and March coincide with the wet season and the possibility of cyclones.',
       },
     },
     mustSee: [
-      { title: { it: 'Laguna di Aitutaki', en: 'Aitutaki Lagoon' }, description: { it: 'Una laguna triangolare di acque turchesi talmente belle da sembrare artificiali. Gita in barca d\'obbligo verso i motu desertici.', en: 'A triangular lagoon of turquoise waters so beautiful they seem artificial. A boat trip to the deserted motu is a must.' } },
-      { title: { it: 'Rarotonga', en: 'Rarotonga' }, description: { it: 'L\'isola principale: montagne verdi, laguna cristallina, mercato artigianale e la Cross-Island Track.', en: 'The main island: green mountains, crystal lagoon, craft market and the Cross-Island Track.' } },
-      { title: { it: 'Snorkeling & Kayak', en: 'Snorkeling & Kayak' }, description: { it: 'Acque calde e cristalline, abbondanti di tartarughe, pesci tropicali e coralli. Perfette per principianti e famiglie.', en: 'Warm, crystal-clear waters, abundant with turtles, tropical fish and corals. Perfect for beginners and families.' } },
-      { title: { it: 'Cultura Maori Polinesiana', en: 'Polynesian Maori Culture' }, description: { it: 'Danze tradizionali, artigianato locale, cerimonie e i colori esplosivi dei mercati del sabato mattina.', en: 'Traditional dances, local crafts, ceremonies and the explosive colours of Saturday morning markets.' } },
-      { title: { it: 'Mangaia – Isola di Corallo', en: 'Mangaia – Coral Island' }, description: { it: 'La seconda isola più antica del mondo: grotte di corallo, taro farms e paesaggi lunari.', en: 'The second oldest island in the world: coral caves, taro farms and lunar landscapes.' } },
+      { title: { it: 'Laguna di Aitutaki', en: 'Aitutaki Lagoon' }, description: { it: 'Una delle lagune più spettacolari del Pacifico, con motu di sabbia bianca, mare turchese e piccole isole raggiungibili solo in barca.', en: 'One of the most spectacular lagoons in the Pacific, with white sand motu, turquoise sea and small islands reachable only by boat.' } },
+      { title: { it: 'Rarotonga', en: 'Rarotonga' }, description: { it: 'L\'isola principale delle Cook unisce vegetazione tropicale, laguna cristallina e vita locale. Tra mercati, strade panoramiche e sentieri interni, qui il viaggio scorre con un ritmo completamente diverso.', en: 'The Cook Islands\' main island combines tropical vegetation, crystal lagoon and local life. Between markets, scenic roads and inland trails, the journey here flows at a completely different pace.' } },
+      { title: { it: 'Snorkeling & Kayak', en: 'Snorkeling & Kayak' }, description: { it: 'Le lagune protette delle Cook offrono condizioni perfette per snorkeling e kayak, grazie alle acque calme e alla straordinaria trasparenza del mare.', en: 'The protected lagoons of the Cook Islands offer perfect conditions for snorkeling and kayaking, thanks to calm waters and extraordinary sea clarity.' } },
+      { title: { it: 'Cultura polinesiana e ritmo lento del Pacifico', en: 'Polynesian culture and the slow Pacific rhythm' }, description: { it: 'Musica, danza, cucina locale e accoglienza fanno parte della quotidianità delle isole. Le Cook sono il luogo ideale per chi desidera rallentare davvero e vivere un Pacifico ancora autentico.', en: 'Music, dance, local cuisine and hospitality are part of everyday island life. The Cooks are the ideal place for those who want to truly slow down and experience an authentic Pacific.' } },
     ],
     practical: {
       visa: { it: 'Nessun visto richiesto per soggiorni fino a 31 giorni (prorogabili). Passaporto valido.', en: 'No visa required for stays up to 31 days (extendable). Valid passport required.' },
@@ -200,26 +214,29 @@ const destinationContent = [
       { it: 'Visita alle grotte di corallo di Mangaia', en: 'Visit to Mangaia\'s coral caves' },
     ],
   },
+
+  // ── SAMOA ──────────────────────────────────────────────────────────────────
   {
     slug: 'samoa',
     mustSeeImage: '/images/must-samoa.png',
+    introLabel: { it: 'Samoa su misura', en: 'Tailor-Made Samoa' },
     intro: {
-      it: 'Le Isole Samoa sono il <strong>cuore pulsante della cultura Polinesiana</strong>. Il <strong>Fa\'a Samoa</strong> — la via Samoana — è uno stile di vita fondato su famiglia, rispetto e spirito comunitario che si percepisce in ogni villaggio. La <strong>To Sua Ocean Trench</strong>, le cascate di Papase\'ea, l\'<strong>isola vulcanica di Savai\'i</strong> e le lagune di Upolu regalano paesaggi da sogno. Per chi vuole il <strong>Pacifico più autentico</strong>.',
-      en: 'The Samoa Islands are the <strong>beating heart of Polynesian culture</strong>. The <strong>Fa\'a Samoa</strong> — the Samoan way — is a lifestyle founded on family, respect and community spirit felt in every village. The <strong>To Sua Ocean Trench</strong>, Papase\'ea waterfalls, the <strong>volcanic island of Savai\'i</strong> and Upolu\'s lagoons offer dreamlike scenery. For those who want the <strong>most authentic Pacific</strong>.',
+      it: 'Ogni itinerario viene costruito in base al tipo di esperienza che desideri vivere: spiagge tropicali, villaggi locali, escursioni nella natura, cascate, lagune vulcaniche e soggiorni immersi nella cultura samoana. Dalla scelta delle isole ai ritmi del viaggio, <strong>ogni dettaglio viene studiato</strong> per creare un\'esperienza <strong>autentica, equilibrata e lontana dal turismo più costruito</strong>.<br><br>Le Samoa rappresentano uno dei luoghi in cui <strong>la cultura polinesiana è ancora più viva e autentica</strong>. Il <strong>Fa\'a Samoa</strong> — "la via samoana" — non è un\'attrazione turistica, ma <strong>uno stile di vita basato su famiglia, rispetto e spirito comunitario</strong> che si percepisce in ogni villaggio. Tra lagune tropicali, coste vulcaniche, foreste lussureggianti e spiagge quasi deserte, le Samoa regalano <strong>un Pacifico più genuino, intenso e profondamente umano</strong>.',
+      en: 'Every itinerary is built around the type of experience you wish to have: tropical beaches, local villages, nature excursions, waterfalls, volcanic lagoons and stays immersed in Samoan culture. From the choice of islands to the rhythm of the journey, <strong>every detail is carefully planned</strong> to create an <strong>authentic, balanced experience far from more commercial tourism</strong>.<br><br>Samoa is one of those places where <strong>Polynesian culture is most alive and authentic</strong>. The <strong>Fa\'a Samoa</strong> — "the Samoan way" — is not a tourist attraction, but <strong>a way of life based on family, respect and community spirit</strong> felt in every village. Between tropical lagoons, volcanic coastlines, lush forests and near-deserted beaches, Samoa offers <strong>a Pacific that is more genuine, intense and deeply human</strong>.',
     },
     whenToGo: {
-      months: months(['avoid', 'avoid', 'good', 'best', 'best', 'best', 'best', 'best', 'best', 'good', 'avoid', 'avoid']),
+      months: months(['avoid', 'avoid', 'avoid', 'avoid', 'best', 'best', 'best', 'best', 'best', 'best', 'good', 'good']),
       description: {
-        it: 'La stagione secca (mag–ott) è ideale: temperature di 25–28°C e poca pioggia. La stagione delle piogge (nov–apr) porta acquazzoni tropicali e rischio cicloni, ma la vegetazione è lussureggiante.',
-        en: 'The dry season (May–Oct) is ideal: temperatures of 25–28°C and little rain. The wet season (Nov–Apr) brings tropical showers and cyclone risk, but the vegetation is lush.',
+        it: 'Il periodo ideale per visitare le Samoa è la stagione secca, da maggio a ottobre: clima mite, temperature intorno ai 26–28°C e poca pioggia. Novembre e dicembre restano godibili, con qualche acquazzone in più. Da gennaio ad aprile è la stagione delle piogge, con umidità elevata e rischio cicloni.',
+        en: 'The ideal time to visit Samoa is the dry season, from May to October: mild climate, temperatures around 26–28°C and little rain. November and December remain enjoyable, with slightly more showers. January to April is the wet season, with high humidity and cyclone risk.',
       },
     },
     mustSee: [
-      { title: { it: 'To Sua Ocean Trench', en: 'To Sua Ocean Trench' }, description: { it: 'Una delle piscine naturali più belle al mondo: una voragine di 30 metri riempita dall\'oceano, collegata al mare da grotte sottomarine.', en: 'One of the world\'s most beautiful natural pools: a 30-metre sinkhole filled by the ocean, connected to the sea through underwater caves.' } },
-      { title: { it: 'Papase\'ea Sliding Rocks', en: 'Papase\'ea Sliding Rocks' }, description: { it: 'Le famose rocce scivolose di Samoa: cascate naturali su cui scivolare per tuffarsi nelle piscine sottostanti.', en: 'Samoa\'s famous sliding rocks: natural waterfalls you slide down to plunge into the pools below.' } },
-      { title: { it: 'Savai\'i – Isola Vulcanica', en: 'Savai\'i – Volcanic Island' }, description: { it: 'La più grande isola Polinesiana: campi di lava, foreste primordiali, spiagge deserte e villaggi tradizionali immutati.', en: 'The largest Polynesian island: lava fields, primordial forests, deserted beaches and unchanged traditional villages.' } },
-      { title: { it: 'Cerimonia del Kava', en: 'Kava Ceremony' }, description: { it: 'Essere accolti in un villaggio Samoano con la cerimonia del Kava è un\'esperienza autentica da non perdere.', en: 'Being welcomed into a Samoan village with the Kava ceremony is an authentic experience not to be missed.' } },
-      { title: { it: 'Lalomanu Beach', en: 'Lalomanu Beach' }, description: { it: 'Considerata una delle spiagge più belle del Pacifico, con i tradizionali fale direttamente sulla sabbia bianca.', en: 'Considered one of the most beautiful beaches in the Pacific, with traditional fale huts directly on the white sand.' } },
+      { title: { it: 'To Sua Ocean Trench', en: 'To Sua Ocean Trench' }, description: { it: 'Una delle meraviglie naturali più iconiche del Pacifico: una spettacolare piscina naturale collegata all\'oceano attraverso grotte vulcaniche sotterranee.', en: 'One of the Pacific\'s most iconic natural wonders: a spectacular natural pool connected to the ocean through underground volcanic caves.' } },
+      { title: { it: 'Savai\'i', en: 'Savai\'i' }, description: { it: 'L\'isola più selvaggia dell\'arcipelago, tra campi di lava, foreste tropicali, villaggi tradizionali e spiagge ancora poco toccate dal turismo internazionale.', en: 'The wildest island of the archipelago, between lava fields, tropical forests, traditional villages and beaches still largely untouched by international tourism.' } },
+      { title: { it: 'Lalomanu Beach', en: 'Lalomanu Beach' }, description: { it: 'Una delle spiagge più belle delle Samoa, famosa per il mare trasparente, la barriera corallina e i tradizionali fale affacciati direttamente sull\'oceano.', en: 'One of Samoa\'s most beautiful beaches, known for its crystal-clear sea, coral reef and traditional fale huts looking directly out over the ocean.' } },
+      { title: { it: 'Cultura e villaggi samoani', en: 'Samoan culture and villages' }, description: { it: 'Parte dell\'esperienza alle Samoa è entrare in contatto con la vita locale: mercati, villaggi, cucina tradizionale e la celebre cerimonia del kava raccontano un Pacifico ancora autentico.', en: 'Part of the Samoa experience is connecting with local life: markets, villages, traditional cuisine and the famous kava ceremony tell the story of a still-authentic Pacific.' } },
+      { title: { it: 'Cascate e natura tropicale', en: 'Waterfalls and tropical nature' }, description: { it: 'Tra foreste lussureggianti, piscine naturali e cascate immerse nella vegetazione, le Samoa offrono una natura potente e ancora incredibilmente incontaminata.', en: 'Between lush forests, natural pools and waterfalls immersed in vegetation, Samoa offers powerful and still remarkably unspoiled nature.' } },
     ],
     practical: {
       visa: { it: 'Nessun visto richiesto per i cittadini italiani fino a 60 giorni.', en: 'No visa required for Italian citizens for up to 60 days.' },
@@ -237,30 +254,33 @@ const destinationContent = [
       { it: 'Notte in un fale tradizionale sulla spiaggia', en: 'Night in a traditional fale on the beach' },
     ],
   },
+
+  // ── POLINESIA FRANCESE ─────────────────────────────────────────────────────
   {
     slug: 'french-polynesia',
     mustSeeImage: '/images/must-polynesia.png',
+    introLabel: { it: 'Polinesia Francese su misura', en: 'Tailor-Made French Polynesia' },
     intro: {
-      it: 'La Polinesia Francese è il <strong>sogno romantico per eccellenza</strong>. <strong>Bora Bora</strong> con i suoi bungalow sull\'acqua è l\'immagine stessa del paradiso, ma l\'arcipelago nasconde molto di più: <strong>Moorea</strong> con le sue montagne a denti di sega, <strong>Tahiti</strong> capitale vibrante, e gli atolli remoti delle <strong>Tuamotu</strong> dove il tempo sembra essersi fermato. La destinazione ideale per <strong>coppie e luna di miele</strong> che cercano il lusso nel mezzo del Pacifico.',
-      en: 'French Polynesia is the <strong>ultimate romantic dream</strong>. <strong>Bora Bora</strong> with its overwater bungalows is the very image of paradise, but the archipelago hides much more: <strong>Moorea</strong> with its jagged mountains, vibrant <strong>Tahiti</strong>, and the remote <strong>Tuamotu</strong> atolls where time seems to have stood still. The ideal destination for <strong>couples and honeymoons</strong> seeking luxury in the middle of the Pacific.',
+      it: 'Ogni itinerario viene costruito in base al tipo di esperienza che desideri vivere: soggiorni in bungalow sull\'acqua, island hopping tra gli arcipelaghi, snorkeling nelle lagune tropicali oppure viaggi più autentici alla scoperta delle isole meno conosciute. Dalla scelta delle isole ai collegamenti interni, <strong>ogni dettaglio viene studiato</strong> per creare un <strong>viaggio equilibrato, fluido e realmente su misura</strong>.<br><br>La Polinesia Francese rappresenta <strong>uno dei luoghi più iconici e spettacolari del Pacifico</strong>. Bora Bora, Moorea, Tahiti e gli atolli delle Tuamotu offrono paesaggi completamente diversi tra loro, accomunati da <strong>lagune cristalline, natura tropicale e una cultura polinesiana ancora profondamente presente</strong>. È una destinazione perfetta per chi cerca <strong>relax, mare straordinario e un\'atmosfera romantica</strong>, ma anche per chi desidera vivere il Pacifico in modo più autentico, tra piccole guesthouse, isole remote e <strong>ritmi lenti lontani dal turismo più frenetico</strong>.',
+      en: 'Every itinerary is built around the type of experience you wish to have: stays in overwater bungalows, island hopping across the archipelagos, snorkeling in tropical lagoons or more authentic journeys discovering the lesser-known islands. From the choice of islands to internal connections, <strong>every detail is carefully planned</strong> to create a <strong>balanced, flowing and truly tailor-made trip</strong>.<br><br>French Polynesia is <strong>one of the most iconic and spectacular places in the Pacific</strong>. Bora Bora, Moorea, Tahiti and the Tuamotu atolls offer completely different landscapes, united by <strong>crystal lagoons, tropical nature and a Polynesian culture still deeply present</strong>. It is the perfect destination for those seeking <strong>relaxation, extraordinary sea and a romantic atmosphere</strong>, as well as those wishing to experience the Pacific more authentically, between small guesthouses, remote islands and <strong>slow rhythms far from the busiest tourist trails</strong>.',
     },
     whenToGo: {
       months: months(['good', 'good', 'good', 'best', 'best', 'best', 'best', 'best', 'best', 'good', 'good', 'good']),
       description: {
-        it: 'La Polinesia Francese è visitabile tutto l\'anno grazie al clima tropicale stabile. La stagione secca (mag–ott) è la più piacevole: meno umidità, cielo sereno e mare calmo. La stagione delle piogge (nov–apr) è più calda e umida.',
-        en: 'French Polynesia can be visited year-round thanks to its stable tropical climate. The dry season (May–Oct) is most pleasant: less humidity, clear skies and calm seas. The wet season (Nov–Apr) is warmer and more humid.',
+        it: 'La Polinesia Francese si può visitare durante tutto l\'anno grazie al clima tropicale del Pacifico. I mesi tra maggio e ottobre offrono generalmente temperature più miti, minore umidità e condizioni ideali per vivere il mare e le attività outdoor. Anche la stagione più calda regala giornate splendide, vegetazione rigogliosa e un\'atmosfera ancora più tropicale.',
+        en: 'French Polynesia can be visited all year round thanks to the Pacific\'s tropical climate. The months between May and October generally offer milder temperatures, lower humidity and ideal conditions for enjoying the sea and outdoor activities. The warmer season also brings splendid days, lush vegetation and an even more tropical atmosphere.',
       },
     },
     mustSee: [
-      { title: { it: 'Bora Bora', en: 'Bora Bora' }, description: { it: 'La "Perla del Pacifico": laguna turchese, mount Otemanu e i leggendari bungalow sull\'acqua dei migliori resort al mondo.', en: 'The "Pearl of the Pacific": turquoise lagoon, Mount Otemanu and the legendary overwater bungalows of the world\'s finest resorts.' } },
-      { title: { it: 'Moorea', en: 'Moorea' }, description: { it: 'A 30 minuti da Tahiti in traghetto: montagne vulcaniche a picco sul mare, lagune interne e nuoto con razze manta e delfini.', en: '30 minutes from Tahiti by ferry: volcanic mountains plunging into the sea, inner lagoons and swimming with manta rays and dolphins.' } },
-      { title: { it: 'Atolli delle Tuamotu', en: 'Tuamotu Atolls' }, description: { it: 'Rangiroa e Fakarava: atolli corallini remoti con il diving più spettacolare della Polinesia, tra squali e banchi di pesci.', en: 'Rangiroa and Fakarava: remote coral atolls with the most spectacular diving in Polynesia, among sharks and schools of fish.' } },
-      { title: { it: 'Tahiti', en: 'Tahiti' }, description: { it: 'L\'isola principale, spesso trascurata: cascate, mercati colorati, surf leggendario a Teahupoo e la cultura Polinesiana nel suo centro.', en: 'The main island, often overlooked: waterfalls, colourful markets, legendary surfing at Teahupoo and Polynesian culture at its core.' } },
-      { title: { it: 'Bungalow sull\'Acqua', en: 'Overwater Bungalows' }, description: { it: 'Dormire sull\'acqua, svegliarsi con la laguna sotto ai piedi e fare snorkeling dal pontile privato è un\'esperienza unica al mondo.', en: 'Sleeping over water, waking up with the lagoon at your feet and snorkeling from your private dock is an experience unique in the world.' } },
+      { title: { it: 'Bora Bora', en: 'Bora Bora' }, description: { it: 'La laguna di Bora Bora è una delle immagini più iconiche del Pacifico: acqua turchese, motu tropicali e il profilo del Monte Otemanu che domina l\'isola.', en: 'Bora Bora\'s lagoon is one of the Pacific\'s most iconic images: turquoise water, tropical motu and the profile of Mount Otemanu dominating the island.' } },
+      { title: { it: 'Moorea', en: 'Moorea' }, description: { it: 'Montagne vulcaniche, baie profonde e lagune trasparenti rendono Moorea una delle isole più scenografiche della Polinesia Francese, perfetta per combinare natura e mare.', en: 'Volcanic mountains, deep bays and transparent lagoons make Moorea one of the most scenic islands in French Polynesia, perfect for combining nature and sea.' } },
+      { title: { it: 'Atolli delle Tuamotu', en: 'Tuamotu Atolls' }, description: { it: 'Rangiroa e Fakarava regalano un volto più remoto e selvaggio della Polinesia, famoso per snorkeling, immersioni e immense lagune coralline.', en: 'Rangiroa and Fakarava reveal a more remote and wild face of Polynesia, famous for snorkeling, diving and immense coral lagoons.' } },
+      { title: { it: 'Tahiti', en: 'Tahiti' }, description: { it: 'Spesso considerata solo un punto di passaggio, Tahiti custodisce invece mercati locali, cascate tropicali, spiagge vulcaniche e uno dei centri culturali più importanti della Polinesia.', en: 'Often seen as just a stopover, Tahiti actually holds local markets, tropical waterfalls, volcanic beaches and one of Polynesia\'s most important cultural centres.' } },
+      { title: { it: 'Bungalow sull\'acqua e vita in laguna', en: 'Overwater bungalows and lagoon life' }, description: { it: 'Dormire sospesi sull\'oceano, fare snorkeling direttamente dal pontile e vivere il ritmo lento della laguna è una delle esperienze più iconiche del viaggio.', en: 'Sleeping suspended over the ocean, snorkeling directly from the jetty and living the slow rhythm of the lagoon is one of the journey\'s most iconic experiences.' } },
     ],
     practical: {
       visa: { it: 'Nessun visto per cittadini UE (la Polinesia è territorio francese). Passaporto valido.', en: 'No visa for EU citizens (French overseas territory). Valid passport required.' },
-      flights: { it: 'Voli via Parigi CDG con Air Tahiti Nui o Air France. Durata 22–24 ore. Anche via Los Angeles o Tokyo.', en: 'Flights via Paris CDG with Air Tahiti Nui or Air France. Duration 22–24 hours. Also via Los Angeles or Tokyo.' },
+      flights: { it: 'Voli via Parigi CDG con Air Tahiti Nui o Air France. Durata 22–24 ore. Anche via Los Angeles, Auckland o Tokyo.', en: 'Flights via Paris CDG with Air Tahiti Nui or Air France. Duration 22–24 hours. Also via Los Angeles, Auckland or Tokyo.' },
       currency: { it: 'Franco CFP (XPF). Carte accettate nei resort, contanti utili per i mercati.', en: 'CFP Franc (XPF). Cards accepted at resorts, cash useful for markets.' },
       language: { it: 'Francese e Tahitiano. Nei resort si parla anche inglese.', en: 'French and Tahitian. English spoken at resorts.' },
       timezone: { it: 'UTC-10. 11 ore indietro rispetto all\'Italia.', en: 'UTC-10. 11 hours behind Italy.' },
@@ -274,26 +294,29 @@ const destinationContent = [
       { it: 'Cena romantica sulla spiaggia', en: 'Romantic dinner on the beach' },
     ],
   },
+
+  // ── NUOVA CALEDONIA ────────────────────────────────────────────────────────
   {
     slug: 'new-caledonia',
     mustSeeImage: '/images/must-caledonia.png',
+    introLabel: { it: 'Nuova Caledonia su misura', en: 'Tailor-Made New Caledonia' },
     intro: {
-      it: 'La Nuova Caledonia è un <strong>paradiso tropicale con un\'anima francese</strong>: un mix unico che non esiste da nessun altra parte al mondo. La sua <strong>laguna Patrimonio UNESCO</strong>, considerata la più bella del pianeta, si affianca alla cosmopolita <strong>Noumea</strong>, alle isole selvagge come <strong>Île des Pins</strong> e all\'autentico interno Kanak. Per chi vuole <strong>lusso, natura e cultura</strong> in un unico viaggio irripetibile.',
-      en: 'New Caledonia is a <strong>tropical paradise with a French soul</strong>: a unique mix that exists nowhere else in the world. Its <strong>UNESCO World Heritage lagoon</strong>, considered the most beautiful on the planet, sits alongside cosmopolitan <strong>Noumea</strong>, wild islands like <strong>Île des Pins</strong> and the authentic Kanak interior. For those wanting <strong>luxury, nature and culture</strong> in a single unforgettable journey.',
+      it: 'Ogni itinerario viene costruito in base al tipo di esperienza che desideri vivere: soggiorni vista laguna, escursioni tra le isole, snorkeling e immersioni, oppure percorsi più autentici alla scoperta della cultura Kanak e delle regioni meno turistiche dell\'arcipelago. Dalla scelta delle isole ai ritmi del viaggio, <strong>ogni dettaglio viene studiato</strong> per creare un\'esperienza <strong>equilibrata, fluida e realmente su misura</strong>.<br><br>La Nuova Caledonia offre <strong>un mix unico nel Pacifico</strong>: <strong>lagune tropicali patrimonio UNESCO</strong>, influenze francesi, natura incontaminata e <strong>una forte identità culturale locale</strong> convivono in un equilibrio raro. Nouméa regala un\'atmosfera cosmopolita e rilassata, mentre località come Île des Pins mostrano il lato più tropicale e spettacolare dell\'arcipelago. È una destinazione ideale per chi cerca <strong>mare, natura e autenticità</strong> in un contesto ancora lontano dal turismo di massa.',
+      en: 'Every itinerary is built around the type of experience you wish to have: lagoon-view stays, island excursions, snorkeling and diving, or more authentic routes discovering Kanak culture and the less touristy regions of the archipelago. From the choice of islands to the rhythm of the journey, <strong>every detail is carefully planned</strong> to create a <strong>balanced, flowing and truly tailor-made experience</strong>.<br><br>New Caledonia offers <strong>a unique mix in the Pacific</strong>: <strong>UNESCO World Heritage tropical lagoons</strong>, French influences, unspoiled nature and <strong>a strong local cultural identity</strong> coexist in a rare balance. Nouméa offers a cosmopolitan and relaxed atmosphere, while places like Île des Pins reveal the most tropical and spectacular side of the archipelago. It is the ideal destination for those seeking <strong>sea, nature and authenticity</strong> in a setting still far from mass tourism.',
     },
     whenToGo: {
-      months: months(['avoid', 'avoid', 'good', 'best', 'best', 'best', 'best', 'best', 'best', 'good', 'avoid', 'avoid']),
+      months: months(['avoid', 'avoid', 'avoid', 'avoid', 'best', 'best', 'best', 'best', 'best', 'best', 'good', 'good']),
       description: {
-        it: 'La stagione secca (apr–ott) è ideale con temperature di 22–26°C e bassa umidità. La stagione delle piogge (nov–mar) è calda e umida, con rischio di cicloni tra gennaio e marzo.',
-        en: 'The dry season (Apr–Oct) is ideal with temperatures of 22–26°C and low humidity. The wet season (Nov–Mar) is hot and humid, with cyclone risk between January and March.',
+        it: 'Il periodo ideale per visitare la Nuova Caledonia è la stagione secca, da maggio a ottobre: temperature tra 22 e 26°C, bassa umidità e condizioni perfette per il mare e le attività outdoor. Novembre e dicembre sono ancora gradevoli ma con più variabilità. Da gennaio ad aprile è la stagione delle piogge, con umidità elevata e rischio cicloni.',
+        en: 'The ideal time to visit New Caledonia is the dry season, from May to October: temperatures between 22 and 26°C, low humidity and perfect conditions for the sea and outdoor activities. November and December are still pleasant but with more variability. January to April is the wet season, with high humidity and cyclone risk.',
       },
     },
     mustSee: [
-      { title: { it: 'Laguna UNESCO', en: 'UNESCO Lagoon' }, description: { it: 'La laguna più grande del mondo dopo la Grande Barriera Corallina: 24.000 km² di acque turchesi con una biodiversità marina straordinaria.', en: 'The world\'s largest lagoon after the Great Barrier Reef: 24,000 km² of turquoise waters with extraordinary marine biodiversity.' } },
-      { title: { it: 'Île des Pins', en: 'Île des Pins' }, description: { it: '"L\'Isola più vicina al paradiso" secondo Kipling. Piscine naturali di sabbia bianca, pini colonnari e acque cristalline.', en: '"The island closest to paradise" according to Kipling. Natural pools of white sand, columnar pines and crystal waters.' } },
-      { title: { it: 'Noumea', en: 'Noumea' }, description: { it: 'La "Parigi del Pacifico": ristoranti francesi, musei, spiagge urbane e un\'atmosfera unica tra lusso europeo e vita tropicale.', en: 'The "Paris of the Pacific": French restaurants, museums, urban beaches and a unique atmosphere blending European luxury with tropical life.' } },
-      { title: { it: 'Côte Oubliée', en: 'Forgotten Coast' }, description: { it: 'La costa est selvaggia e autentica, abitata dai Kanak: villaggi tradizionali, cascate e foreste dense.', en: 'The wild and authentic east coast, home to the Kanak people: traditional villages, waterfalls and dense forests.' } },
-      { title: { it: 'Diving & Snorkeling', en: 'Diving & Snorkeling' }, description: { it: 'Il Pass de Boulari e i numerosi siti della laguna offrono incontri con dugonghi, tartarughe e mante. Tra i migliori del Pacifico.', en: 'The Boulari Pass and the lagoon\'s many sites offer encounters with dugongs, turtles and mantas. Among the Pacific\'s finest.' } },
+      { title: { it: 'Laguna della Nuova Caledonia', en: 'New Caledonia Lagoon' }, description: { it: 'Una delle lagune più grandi e spettacolari del mondo, con acque trasparenti, reef corallini e una biodiversità marina straordinaria.', en: 'One of the largest and most spectacular lagoons in the world, with transparent waters, coral reefs and extraordinary marine biodiversity.' } },
+      { title: { it: 'Île des Pins', en: 'Île des Pins' }, description: { it: 'Spiagge bianche, piscine naturali e pini colonnari rendono quest\'isola uno dei luoghi più iconici e scenografici della Nuova Caledonia.', en: 'White beaches, natural pools and columnar pines make this island one of the most iconic and scenic places in New Caledonia.' } },
+      { title: { it: 'Nouméa', en: 'Nouméa' }, description: { it: 'La capitale unisce cultura francese, cucina raffinata, mercati locali e spiagge affacciate sulla laguna in un\'atmosfera elegante ma rilassata.', en: 'The capital blends French culture, refined cuisine, local markets and beaches overlooking the lagoon in an elegant yet relaxed atmosphere.' } },
+      { title: { it: 'Costa Est e cultura Kanak', en: 'East Coast and Kanak culture' }, description: { it: 'La parte orientale dell\'isola principale custodisce villaggi tradizionali, foreste tropicali e un contatto più autentico con la cultura melanesiana locale.', en: 'The eastern part of the main island holds traditional villages, tropical forests and a more authentic connection with local Melanesian culture.' } },
+      { title: { it: 'Snorkeling & Diving nella laguna', en: 'Snorkeling & Diving in the lagoon' }, description: { it: 'Le acque della Nuova Caledonia offrono alcune delle migliori esperienze marine del Pacifico, tra coralli, tartarughe, mante e reef ancora poco affollati.', en: 'New Caledonia\'s waters offer some of the Pacific\'s finest marine experiences, among corals, turtles, mantas and still uncrowded reefs.' } },
     ],
     practical: {
       visa: { it: 'Nessun visto per cittadini UE (territorio francese d\'oltremare). Passaporto valido.', en: 'No visa for EU citizens (French overseas territory). Valid passport required.' },
@@ -319,7 +342,6 @@ async function main() {
   console.log('🌏 Migrating rich destination content to Sanity...\n');
 
   for (const content of destinationContent) {
-    // Find existing Sanity document
     const existing = await client.fetch(
       `*[_type == "destination" && slug.current == $slug][0]{ _id, title }`,
       { slug: content.slug }
@@ -335,6 +357,7 @@ async function main() {
     await client
       .patch(existing._id)
       .set({
+        introLabel: content.introLabel,
         intro: content.intro,
         mustSeeImage: content.mustSeeImage,
         mustSee: content.mustSee,
