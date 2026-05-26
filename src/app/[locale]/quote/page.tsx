@@ -5,7 +5,7 @@ import QuoteForm from '@/components/forms/QuoteForm';
 export default function QuotePage() {
   return (
     /* Fixed overlay — covers everything including Navbar/Footer */
-    <div className="fixed inset-0 z-[200] overflow-y-auto bg-black">
+    <div className="fixed inset-0 z-[200] overflow-y-auto overflow-x-hidden bg-black">
 
       {/* Video/image background */}
       <div className="absolute inset-0 overflow-hidden pointer-events-none">
@@ -29,7 +29,7 @@ export default function QuotePage() {
       </div>
 
       {/* Form — centered in the overlay */}
-      <div className="relative z-10 flex items-start md:items-center justify-center min-h-screen py-6 md:py-12 px-3 sm:px-6">
+      <div className="relative z-10 flex items-start md:items-center justify-center min-h-screen py-6 md:py-12 px-4 sm:px-6">
         <QuoteForm />
       </div>
     </div>

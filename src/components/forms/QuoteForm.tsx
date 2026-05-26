@@ -250,6 +250,8 @@ function Counter({
 
 const inputCls =
   'w-full px-4 py-3 rounded-full border-2 border-stone-300 text-hero text-sm font-sans focus:border-gold outline-none transition-colors placeholder-stone-400 bg-white';
+const dateInputCls =
+  'w-full px-4 py-3 rounded-2xl border-2 border-stone-300 text-hero text-sm font-sans focus:border-gold outline-none transition-colors bg-white appearance-none';
 const selectCls =
   'w-full px-4 py-3 rounded-full border-2 border-stone-300 text-hero text-sm font-sans focus:border-gold outline-none transition-colors appearance-none bg-white';
 
@@ -392,7 +394,7 @@ export default function QuoteForm() {
 
   // ── Wizard card ──────────────────────────────────────────────────────────────
   return (
-    <div className="bg-white rounded-2xl shadow-2xl w-full max-w-lg relative">
+    <div className="bg-white rounded-2xl shadow-2xl w-full max-w-lg relative overflow-hidden">
 
       {/* Close button */}
       <Link
@@ -581,7 +583,7 @@ export default function QuoteForm() {
                     <label className="text-xs font-sans uppercase tracking-wider text-stone-600 font-medium block mb-1.5">{c.s3.start}</label>
                     <input
                       type="date"
-                      className={inputCls}
+                      className={dateInputCls}
                       value={form.dataInizio}
                       onChange={(e) => {
                         set('dataInizio', e.target.value);
@@ -595,7 +597,7 @@ export default function QuoteForm() {
                     <label className="text-xs font-sans uppercase tracking-wider text-stone-600 font-medium block mb-1.5">{c.s3.end}</label>
                     <input
                       type="date"
-                      className={inputCls}
+                      className={dateInputCls}
                       value={form.dataFine}
                       min={form.dataInizio || undefined}
                       onChange={(e) => set('dataFine', e.target.value)}
