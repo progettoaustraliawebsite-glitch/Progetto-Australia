@@ -21,6 +21,7 @@ const typeLabels: Record<string, { it: string; en: string }> = {
   family: { it: 'Famiglia', en: 'Family' },
   group: { it: 'Gruppo', en: 'Group Tour' },
   selfDrive: { it: 'Self-Drive', en: 'Self-Drive' },
+  'road-trip': { it: 'Road Trip', en: 'Road Trip' },
 };
 
 const priceRanges = [

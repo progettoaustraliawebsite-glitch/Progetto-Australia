@@ -107,6 +107,7 @@ export default async function ItineraryDetailPage({ params }: Props) {
     family: { it: 'Famiglia', en: 'Family' },
     group: { it: 'Gruppo', en: 'Group Tour' },
     selfDrive: { it: 'Self-Drive', en: 'Self-Drive' },
+    'road-trip': { it: 'Road Trip', en: 'Road Trip' },
   };
   const typeLabel = typeLabels[itinerary.type]?.[locale] ?? itinerary.type;
 
