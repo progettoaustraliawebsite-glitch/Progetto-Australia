@@ -5,6 +5,7 @@ import { Link } from '@/i18n/navigation';
 import { ChevronLeft, Info, FileText, CloudSun, Bus, Globe, Shirt, Zap, Coins, MapPin, Calendar, Bookmark } from 'lucide-react';
 import type { BlogPost } from '@/data/blog';
 import OpenModalButton from '@/components/ui/OpenModalButton';
+import BlogRelatedPosts, { type RelatedPost } from '@/components/blog/BlogRelatedPosts';
 
 interface Props {
   post: BlogPost;
@@ -13,6 +14,7 @@ interface Props {
   quoteLabel: string;
   tocLabel: string;
   contactPrompt: string;
+  relatedPosts?: RelatedPost[];
 }
 
 function getIcon(id: string) {
@@ -31,7 +33,7 @@ function getIcon(id: string) {
   }
 }
 
-export default function BlogPostClient({ post, locale, backLabel, quoteLabel, tocLabel, contactPrompt }: Props) {
+export default function BlogPostClient({ post, locale, backLabel, quoteLabel, tocLabel, contactPrompt, relatedPosts = [] }: Props) {
   const content = post.content[locale];
 
   return (
@@ -145,6 +147,12 @@ export default function BlogPostClient({ post, locale, backLabel, quoteLabel, to
 
         </div>
       </section>
+
+      {relatedPosts.length > 0 && (
+        <section className="py-16 container mx-auto px-6">
+          <BlogRelatedPosts posts={relatedPosts} locale={locale} />
+        </section>
+      )}
     </div>
   );
 }

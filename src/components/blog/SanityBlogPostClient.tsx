@@ -7,6 +7,7 @@ import { ChevronLeft, Globe, Info, FileText, CloudSun, Bus, Coins, Shirt, Zap, M
 import type { SanityBlogPost } from '@/lib/sanity';
 import { urlFor } from '@/lib/sanity';
 import OpenModalButton from '@/components/ui/OpenModalButton';
+import BlogRelatedPosts, { type RelatedPost } from '@/components/blog/BlogRelatedPosts';
 
 interface Props {
   post: SanityBlogPost;
@@ -15,6 +16,7 @@ interface Props {
   quoteLabel: string;
   tocLabel: string;
   contactPrompt: string;
+  relatedPosts?: RelatedPost[];
 }
 
 function getIcon(id: string) {
@@ -33,7 +35,7 @@ function getIcon(id: string) {
   }
 }
 
-export default function SanityBlogPostClient({ post, locale, backLabel, quoteLabel, tocLabel, contactPrompt }: Props) {
+export default function SanityBlogPostClient({ post, locale, backLabel, quoteLabel, tocLabel, contactPrompt, relatedPosts = [] }: Props) {
   const imageUrl = post.heroImage ? urlFor(post.heroImage).width(1920).height(800).url() : '';
   const intro = post.intro?.[locale] ?? '';
   const sections = post.sections ?? [];
@@ -171,6 +173,12 @@ export default function SanityBlogPostClient({ post, locale, backLabel, quoteLab
 
         </div>
       </section>
+
+      {relatedPosts.length > 0 && (
+        <section className="py-16 container mx-auto px-6">
+          <BlogRelatedPosts posts={relatedPosts} locale={locale} />
+        </section>
+      )}
     </div>
   );
 }

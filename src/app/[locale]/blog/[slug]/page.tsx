@@ -2,12 +2,13 @@ export const revalidate = 60;
 
 import { getLocale, getTranslations } from 'next-intl/server';
 import { blogPosts } from '@/data/blog';
-import { USE_SANITY, getBlogPostBySlug } from '@/lib/sanity';
+import { USE_SANITY, getBlogPostBySlug, getAllBlogPosts, normalizeSanityBlogPostForList } from '@/lib/sanity';
 import BlogPostClient from '@/components/blog/BlogPostClient';
 import SanityBlogPostClient from '@/components/blog/SanityBlogPostClient';
 import { notFound } from 'next/navigation';
 import type { Metadata } from 'next';
 import JsonLd from '@/components/seo/JsonLd';
+import type { RelatedPost } from '@/components/blog/BlogRelatedPosts';
 
 interface Props {
   params: Promise<{ slug: string }>;
@@ -42,12 +43,33 @@ export default async function BlogPostPage({ params }: Props) {
     contactPrompt: t('contactPrompt'),
   };
 
+  // Fetch all posts for "related" section
+  let allPosts: RelatedPost[] = blogPosts.map((p) => ({
+    slug: p.slug,
+    title: p.title,
+    excerpt: p.excerpt,
+    category: p.category,
+    image: p.image,
+  }));
+  if (USE_SANITY) {
+    try {
+      const sanityAll = await getAllBlogPosts();
+      if (sanityAll.length > 0) {
+        allPosts = sanityAll.map((s) => {
+          const n = normalizeSanityBlogPostForList(s);
+          return { slug: n.slug, title: n.title, excerpt: n.excerpt, category: n.category, image: n.image };
+        });
+      }
+    } catch { /* keep static fallback */ }
+  }
+  const relatedPosts = allPosts.filter((p) => p.slug !== slug).slice(0, 3);
+
   // Try Sanity first when enabled (so heroImage set in Studio is always used)
   if (USE_SANITY) {
     try {
       const sanityPost = await getBlogPostBySlug(slug);
       if (sanityPost) {
-        return <SanityBlogPostClient post={sanityPost} locale={locale} {...labels} />;
+        return <SanityBlogPostClient post={sanityPost} locale={locale} relatedPosts={relatedPosts} {...labels} />;
       }
     } catch (e) { console.error('[Sanity] blog slug fetch failed:', e); }
   }
@@ -81,7 +103,7 @@ export default async function BlogPostPage({ params }: Props) {
     return (
       <>
         <JsonLd data={blogSchema} />
-        <BlogPostClient post={staticPost} locale={locale} {...labels} />
+        <BlogPostClient post={staticPost} locale={locale} relatedPosts={relatedPosts} {...labels} />
       </>
     );
   }
