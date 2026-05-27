@@ -3081,4 +3081,484 @@ export const itineraries: Itinerary[] = [
     },
     notIncluded: standardNotIncluded,
   },
+
+  // ─────────────────────────────────────────────
+  // NUOVA CALEDONIA — ALLA SCOPERTA DELLA GRANDE TERRE — 10 giorni
+  // ─────────────────────────────────────────────
+  {
+    id: 'nuova-caledonia-grande-terre',
+    slug: 'nuova-caledonia-grande-terre',
+    title: {
+      it: 'Nuova Caledonia — Alla scoperta della Grande Terre',
+      en: 'New Caledonia — Discovering the Grande Terre',
+    },
+    description: {
+      it: "Dieci giorni in self-drive lungo la costa est e ovest della Grande Terre, il grande territorio di Nuova Caledonia. Da Noumea alle scogliere nere di Hienghène, dalle spiagge bianche di Poe alla foresta delle grandi felci, passando per villaggi Melanesiani, le rocce di Linderalique e le cascate Tao. Un'isola francese nel Pacifico dove laguna, montagna e cultura Kanak si incontrano.",
+      en: "Ten days of self-driving along the east and west coasts of Grande Terre, New Caledonia's main island. From Noumea to the black cliffs of Hienghène, from Poe's white beaches to the Great Ferns forest, through Melanesian villages, the Linderalique rocks and Tao Waterfalls. A French island in the Pacific where lagoon, mountain and Kanak culture meet.",
+    },
+    duration: 10,
+    destination: 'New Caledonia',
+    type: 'road-trip',
+    gradient: 'from-sky-600 to-teal-800',
+    image: '/images/itin-grande-terre.jpg',
+    price: { currency: 'EUR', amount: 2500 },
+    priceEn: { currency: 'USD', amount: 2750 },
+    highlights: {
+      it: [
+        'Escursione all\'Isola Amedee — pranzo buffet con danze tradizionali',
+        'Spiaggia di Poe — una delle più belle del Pacifico',
+        'Hienghène — scogliere nere e rocce di Linderalique in crociera',
+        'Cascate Tao e traversata in ferry sul fiume Ouaième',
+        'Visita guidata a una casa tradizionale Melanesiana',
+        'Parco delle Grandi Felci — kagu e specie endemiche',
+        'Self-drive in libertà su tutta l\'isola',
+      ],
+      en: [
+        'Amedee Island excursion — buffet lunch with traditional dances',
+        'Poe Beach — one of the Pacific\'s most beautiful',
+        'Hienghène — black cliffs and Linderalique rocks cruise',
+        'Tao Waterfalls and Ouaième River ferry crossing',
+        'Guided visit to a traditional Melanesian house',
+        'Great Ferns Park — kagu bird and endemic species',
+        'Self-drive freedom across the whole island',
+      ],
+    },
+    program: [
+      {
+        day: 1,
+        title: { it: 'Arrivo a Noumea', en: 'Arrival in Noumea' },
+        description: {
+          it: "Arrivo all'aeroporto internazionale di La Tontouta e trasferimento privato in hotel 4 stelle nel centro di Noumea. La capitale della Nuova Caledonia è una città francese nel Pacifico: negozi, caffè, mercati colorati e il lungomare della Baie des Citrons. Due notti in hotel.",
+          en: "Arrival at La Tontouta International Airport and private transfer to a 4-star hotel in the centre of Noumea. New Caledonia's capital is a French city in the Pacific: shops, cafés, colourful markets and the Baie des Citrons waterfront. Two nights in hotel.",
+        },
+      },
+      {
+        day: 2,
+        title: { it: 'Escursione all\'Isola Amedee', en: 'Amedee Island Excursion' },
+        description: {
+          it: "Trasferimento al Porto Moselle di Noumea e partenza in barca per l'Isola Amedee, nel cuore della laguna UNESCO. Pranzo a buffet con spettacolo di danze e musica tradizionale Kanak. Pomeriggio libero sull'isola: snorkeling nella laguna turchese, stand-up paddle e relax sulla spiaggia. Rientro in hotel nel tardo pomeriggio.",
+          en: "Transfer to Port Moselle in Noumea and boat departure to Amedee Island, in the heart of the UNESCO lagoon. Buffet lunch with traditional Kanak dance and music performance. Free afternoon on the island: snorkelling in the turquoise lagoon, stand-up paddling and beach relaxation. Return to hotel in the late afternoon.",
+        },
+      },
+      {
+        day: 3,
+        title: { it: 'Noumea → Poe (self-drive, 180 km)', en: 'Noumea → Poe (Self-Drive, 180 km)' },
+        description: {
+          it: "Ritiro dell'auto a noleggio e inizio del road trip lungo la costa ovest. Tappe consigliate: la Distilleria di Niaouli, La Foa, Fort Terremba, la spiaggia di Roche Percée, la Baia delle Tartarughe e la Baia degli Innamorati presso Bourail. Arrivo alla magnifica spiaggia di Poe, considerata una delle più belle dell'intero Pacifico. Pernottamento in bungalow 3 stelle.",
+          en: "Car rental pick-up and start of the road trip along the west coast. Recommended stops: Niaouli Distillery, La Foa, Fort Terremba, Roche Percée beach, Turtle Bay and Lovers' Bay near Bourail. Arrival at the magnificent Poe Beach, considered one of the most beautiful in the entire Pacific. Overnight in a 3-star bungalow.",
+        },
+      },
+      {
+        day: 4,
+        title: { it: 'Poe → Kone', en: 'Poe → Kone' },
+        description: {
+          it: "Mattinata sulla spiaggia di Poe: acque turchesi, sabbia bianca e nessuna folla. Nel pomeriggio partenza verso Kone (130 km), cittadina nella valle del Kone-Tiwaka. L'entroterra diventa più verde e montuoso man mano che ci si allontana dalla costa ovest. Pernottamento in bungalow 3 stelle.",
+          en: "Morning at Poe Beach: turquoise waters, white sand and no crowds. In the afternoon, drive to Kone (130 km), a town in the Kone-Tiwaka valley. The interior becomes greener and more mountainous as you move away from the west coast. Overnight in a 3-star bungalow.",
+        },
+      },
+      {
+        day: 5,
+        title: { it: 'Kone → Hienghène', en: 'Kone → Hienghène' },
+        description: {
+          it: "Guida verso Hienghène (120 km) lungo uno dei tratti più scenici dell'isola: foreste dense, valli verdeggianti e colline che scendono verso il mare. Hienghène è famosa per le sue imponenti scogliere di calcare nero e per essere uno dei luoghi più affascinanti della Nuova Caledonia. Due notti in bungalow 3 stelle.",
+          en: "Drive to Hienghène (120 km) along one of the island's most scenic stretches: dense forests, green valleys and hills descending to the sea. Hienghène is famous for its imposing black limestone cliffs and for being one of New Caledonia's most fascinating places. Two nights in a 3-star bungalow.",
+        },
+      },
+      {
+        day: 6,
+        title: { it: 'Hienghène — cascate Tao e crociera Linderalique', en: 'Hienghène — Tao Waterfalls and Linderalique Cruise' },
+        description: {
+          it: "Mattino: traversata in ferry sul fiume Ouaième e visita alle cascate Tao nel cuore della foresta. Pomeriggio: crociera di 2 ore nella baia di Hienghène per ammirare le rocce di Linderalique — formazioni di calcare nero dalle forme curiose, tra cui la celebre 'gallina' — e i villaggi Kanak sulle rive.",
+          en: "Morning: ferry crossing on the Ouaième River and visit to the Tao Waterfalls in the heart of the forest. Afternoon: 2-hour boat cruise in Hienghène Bay to admire the Linderalique rocks — curious black limestone formations including the famous 'chicken' — and the Kanak villages on the banks.",
+        },
+      },
+      {
+        day: 7,
+        title: { it: 'Hienghène → Poindimié', en: 'Hienghène → Poindimié' },
+        description: {
+          it: "Guida verso Poindimié (90 km) sulla costa est, con sosta per una visita guidata a una casa tradizionale Melanesiana: architettura, storia e cultura Kanak spiegata da una guida locale. Poindimié è un punto di riferimento sulla costa est, con spiagge tranquille e un'atmosfera autentica. Pernottamento in bungalow 3 stelle.",
+          en: "Drive to Poindimié (90 km) on the east coast, with a stop for a guided visit to a traditional Melanesian house: architecture, history and Kanak culture explained by a local guide. Poindimié is a reference point on the east coast, with quiet beaches and an authentic atmosphere. Overnight in a 3-star bungalow.",
+        },
+      },
+      {
+        day: 8,
+        title: { it: 'Poindimié → Sarramea/Farino', en: 'Poindimié → Sarramea/Farino' },
+        description: {
+          it: "Lunga guida verso l'interno dell'isola (190 km) fino alle colline di Sarramea e Farino, la zona più fresca e boscosa della Grande Terre. Possibile sosta all'Hotel Evasion per una passeggiata fino alla pozza naturale fluviale 'Buco di Feuillet'. Pernottamento in bungalow 3 stelle.",
+          en: "Long drive into the island's interior (190 km) to the hills of Sarramea and Farino, the coolest and most forested area of Grande Terre. Optional stop at Hotel Evasion for a walk to the natural river pool 'Feuillet's Hole'. Overnight in a 3-star bungalow.",
+        },
+      },
+      {
+        day: 9,
+        title: { it: 'Parco delle Grandi Felci → Noumea', en: 'Great Ferns Park → Noumea' },
+        description: {
+          it: "Mattino: visita al Parco delle Grandi Felci (Parc des Grandes Fougères), con foresta secca densa di specie endemiche: il kagu (uccello simbolo della Nuova Caledonia, incapace di volare), il noutou, il piccione verde caledoniano e il passero caledoniano. Poi guida di ritorno verso Noumea (120 km), consegna dell'auto e check-in in hotel 4 stelle. Una notte.",
+          en: "Morning: visit to the Great Ferns Park (Parc des Grandes Fougères), with dry forest dense with endemic species: the kagu (New Caledonia's flightless symbol bird), the noutou, the Caledonian green pigeon and the Caledonian warbler. Then drive back to Noumea (120 km), car drop-off and check-in at a 4-star hotel. One night.",
+        },
+      },
+      {
+        day: 10,
+        title: { it: 'Partenza da Noumea', en: 'Departure from Noumea' },
+        description: {
+          it: "Colazione in hotel e trasferimento all'aeroporto internazionale di La Tontouta per il volo di rientro. Fine dei servizi inclusi nel pacchetto.",
+          en: "Hotel breakfast and transfer to La Tontouta International Airport for the return flight. End of included package services.",
+        },
+      },
+    ],
+    included: {
+      it: [
+        'Tutti i pernottamenti come da itinerario (colazione inclusa)',
+        'Trasferimenti privati aeroporto–hotel (andata e ritorno)',
+        'Tour organizzato Isola Amedee (pranzo a buffet + spettacolo incluso)',
+        'Auto a noleggio self-drive Noumea–Noumea (All Inclusive, km illimitati)',
+        'Visita guidata casa tradizionale Melanesiana',
+        'Crociera nella baia di Hienghène — rocce di Linderalique',
+        'Tasse locali',
+        'Assistenza in loco in lingua italiana',
+      ],
+      en: [
+        'All accommodation as per itinerary (breakfast included)',
+        'Private airport–hotel transfers (return)',
+        'Amedee Island organised tour (buffet lunch + show included)',
+        'Self-drive car rental Noumea–Noumea (All Inclusive, unlimited km)',
+        'Guided visit to traditional Melanesian house',
+        'Hienghène Bay cruise — Linderalique rocks',
+        'Local taxes',
+        'Italian-language on-site assistance',
+      ],
+    },
+    notIncluded: standardNotIncluded,
+  },
+
+  // ─────────────────────────────────────────────
+  // L'ALTRA FACCIA DELL'AUSTRALIA — WESTERN AUSTRALIA E KIMBERLEY — 31 giorni
+  // ─────────────────────────────────────────────
+  {
+    id: 'australia-rossa-selvaggia',
+    slug: 'australia-rossa-selvaggia',
+    title: {
+      it: "L'Altra Faccia dell'Australia — Western Australia e Kimberley",
+      en: "The Other Face of Australia — Western Australia & the Kimberley",
+    },
+    description: {
+      it: "Trentuno giorni attraverso l'Australia che pochi conoscono: da Perth alle infinite spiagge del Western Australia, dai delfini di Monkey Mia alla barriera di Ningaloo, dalle gole rosse di Karijini alle saline di Broome, dalle Gorge di Purnululu (Bungle Bungles) al Katherine Gorge nel Territorio del Nord, fino a Kakadu e Darwin. Poi il Red Centre con Kings Canyon e Uluru, e il gran finale a Sydney. Il road trip più lungo e più vero d'Australia.",
+      en: "Thirty-one days through the Australia that few know: from Perth along the endless beaches of Western Australia, from the dolphins of Monkey Mia to the Ningaloo Reef, from the red gorges of Karijini to the pindan cliffs of Broome, from Purnululu's Bungle Bungles to Katherine Gorge in the Northern Territory, through Kakadu and Darwin. Then the Red Centre with Kings Canyon and Uluru, and the grand finale in Sydney. The longest and most authentic Australian road trip.",
+    },
+    duration: 31,
+    destination: 'Australia',
+    type: 'avventura',
+    gradient: 'from-red-700 to-orange-900',
+    image: '/images/itin-western-au.jpg',
+    price: { currency: 'EUR', amount: 5550 },
+    priceEn: { currency: 'USD', amount: 6050 },
+    highlights: {
+      it: [
+        'Pinnacles Desert — le colonne di calcare al tramonto',
+        'Monkey Mia — delfini selvatici che si avvicinano alla riva ogni mattina',
+        'Ningaloo Reef — barriera corallina incontaminata a Coral Bay ed Exmouth',
+        'Karijini National Park — gole rosse e piscine naturali',
+        'Cape Leveque — scogliere ocra sul mare turchese di Broome',
+        'Purnululu (Bungle Bungles) — a cupole a strisce in volo panoramico',
+        'Katherine Gorge — crociera tra le pareti di arenaria',
+        'Kakadu — il parco nazionale più grande d\'Australia',
+        'Kings Canyon e Uluru — il cuore rosso del continente',
+      ],
+      en: [
+        'Pinnacles Desert — limestone columns at sunset',
+        'Monkey Mia — wild dolphins that approach the shore every morning',
+        'Ningaloo Reef — pristine coral reef at Coral Bay and Exmouth',
+        'Karijini National Park — red gorges and natural pools',
+        'Cape Leveque — ochre cliffs above Broome\'s turquoise sea',
+        'Purnululu (Bungle Bungles) — striped domes from a scenic flight',
+        'Katherine Gorge — cruise between sandstone walls',
+        'Kakadu — Australia\'s largest national park',
+        'Kings Canyon and Uluru — the red heart of the continent',
+      ],
+    },
+    program: [
+      {
+        day: 1,
+        title: { it: 'Arrivo a Perth', en: 'Arrival in Perth' },
+        description: {
+          it: "Arrivo all'aeroporto internazionale di Perth e trasferimento in hotel 3,5 stelle. Perth è la capitale del Western Australia: città soleggiata, moderna e rilassata, con il Kings Park che domina la città, le spiagge bianchissime di Cottesloe e Scarborough e la vivace Fremantle a 30 minuti. Due notti in hotel.",
+          en: "Arrival at Perth International Airport and transfer to a 3.5-star hotel. Perth is the Western Australia capital: a sunny, modern and relaxed city, with Kings Park dominating the skyline, the pristine beaches of Cottesloe and Scarborough and vibrant Fremantle just 30 minutes away. Two nights in hotel.",
+        },
+      },
+      {
+        day: 2,
+        title: { it: 'Perth — giornata libera', en: 'Perth — Free Day' },
+        description: {
+          it: "Giornata libera per esplorare Perth: Kings Park e Botanic Garden con vista panoramica sulla città, Fremantle con il suo mercato e i pub storici, Cottesloe Beach, Swan Valley per una degustazione di vini locali o Rottnest Island in traghetto per incontrare i quokka.",
+          en: "Free day to explore Perth: Kings Park and Botanic Garden with panoramic city views, Fremantle with its market and historic pubs, Cottesloe Beach, Swan Valley for local wine tasting, or Rottnest Island by ferry to meet the quokkas.",
+        },
+      },
+      {
+        day: 3,
+        title: { it: 'Perth → Pinnacles Desert (Cervantes)', en: 'Perth → Pinnacles Desert (Cervantes)' },
+        description: {
+          it: "Ritiro dell'auto a noleggio e partenza verso nord (200 km). Tappa al Parco Nazionale di Nambung: i Pinnacles Desert, colonne di calcare che emergono dal deserto giallo in migliaia di forme bizzarre. Il tramonto sulle colonne è uno degli spettacoli più fotografati d'Australia. Pernottamento a Cervantes.",
+          en: "Car rental pick-up and drive north (200 km). Stop at Nambung National Park: the Pinnacles Desert, limestone columns rising from the yellow sand in thousands of bizarre shapes. Sunset over the pinnacles is one of Australia's most photographed spectacles. Overnight in Cervantes.",
+        },
+      },
+      {
+        day: 4,
+        title: { it: 'Cervantes → Kalbarri National Park', en: 'Cervantes → Kalbarri National Park' },
+        description: {
+          it: "Guida verso Kalbarri National Park (310 km), famoso per le sue gole rosse lungo il fiume Murchison e i colori delle Skywalk — le passerelle panoramiche sospese sulle gole. Avvistamento di fauna locale: canguri, emù e kokaburra. Pernottamento a Kalbarri.",
+          en: "Drive to Kalbarri National Park (310 km), famous for its red gorges along the Murchison River and the colours of the Skywalk — panoramic walkways suspended over the gorges. Wildlife spotting: kangaroos, emus and kookaburras. Overnight in Kalbarri.",
+        },
+      },
+      {
+        day: 5,
+        title: { it: 'Kalbarri → Monkey Mia', en: 'Kalbarri → Monkey Mia' },
+        description: {
+          it: "Guida verso Monkey Mia (350 km), nella Shark Bay UNESCO World Heritage Area. Pernottamento al resort di Monkey Mia, uno dei luoghi più iconici del Western Australia. Due notti.",
+          en: "Drive to Monkey Mia (350 km), in the Shark Bay UNESCO World Heritage Area. Overnight at the Monkey Mia resort, one of Western Australia's most iconic locations. Two nights.",
+        },
+      },
+      {
+        day: 6,
+        title: { it: 'Monkey Mia — delfini e François Peron 4x4', en: 'Monkey Mia — Dolphins and François Peron 4WD Tour' },
+        description: {
+          it: "Mattino: i delfini selvatici di Monkey Mia — ogni mattina si avvicinano spontaneamente alla riva dove i ranger li nutrono, in uno degli eventi più emozionanti di tutta l'Australia. Pomeriggio: tour organizzato in 4x4 nel Parco Nazionale di François Peron, con fauna endemica, remote beaches e stromatoliti nel Hamelin Pool.",
+          en: "Morning: the wild dolphins of Monkey Mia — every morning they spontaneously approach the shore where rangers feed them, in one of the most moving events in all of Australia. Afternoon: organised 4WD tour in François Peron National Park, with endemic wildlife, remote beaches and stromatolites at Hamelin Pool.",
+        },
+      },
+      {
+        day: 7,
+        title: { it: 'Monkey Mia → Coral Bay', en: 'Monkey Mia → Coral Bay' },
+        description: {
+          it: "Guida verso Coral Bay (450 km), una delle porte d'accesso al Ningaloo Reef — la barriera corallina più incontaminata dell'Australia, accessibile direttamente dalla spiaggia. Pernottamento in hotel 4 stelle. Due notti.",
+          en: "Drive to Coral Bay (450 km), one of the gateways to the Ningaloo Reef — Australia's most pristine coral reef, accessible directly from the beach. Overnight in a 4-star hotel. Two nights.",
+        },
+      },
+      {
+        day: 8,
+        title: { it: 'Coral Bay — snorkeling al Ningaloo Reef', en: 'Coral Bay — Snorkelling at Ningaloo Reef' },
+        description: {
+          it: "Giornata libera a Coral Bay: snorkeling direttamente dalla spiaggia tra coralli coloratissimi, razze, tartarughe e pesci tropicali. Il Ningaloo Reef è il posto al mondo dove con più probabilità si può nuotare con lo squalo balena (da marzo a luglio). Pomeriggio libero sulla spiaggia.",
+          en: "Free day at Coral Bay: snorkelling directly from the beach among colourful corals, manta rays, sea turtles and tropical fish. Ningaloo Reef is the most accessible place in the world to swim with whale sharks (March–July). Free afternoon on the beach.",
+        },
+      },
+      {
+        day: 9,
+        title: { it: 'Coral Bay → Exmouth — Cape Range', en: 'Coral Bay → Exmouth — Cape Range' },
+        description: {
+          it: "Guida verso Exmouth (130 km) e visita al Parco Nazionale di Cape Range: canyon, gorge e spiagge isolate sull'oceano. Yardie Creek Gorge offre una delle poche crociere in barca all'interno di una gorge del Western Australia. Pernottamento a Exmouth in hotel 4 stelle.",
+          en: "Drive to Exmouth (130 km) and visit Cape Range National Park: canyons, gorges and isolated beaches on the ocean. Yardie Creek Gorge offers one of Western Australia's few gorge boat cruises. Overnight in Exmouth at a 4-star hotel.",
+        },
+      },
+      {
+        day: 10,
+        title: { it: 'Exmouth → Karijini National Park', en: 'Exmouth → Karijini National Park' },
+        description: {
+          it: "Lunga guida verso Karijini National Park (650 km), nel cuore del Pilbara. Le gole rosse di Karijini sono tra le più antiche formazioni geologiche del mondo — rocce di 2,5 miliardi di anni. Tre notti in tenda permanente nel parco.",
+          en: "Long drive to Karijini National Park (650 km), in the heart of the Pilbara. Karijini's red gorges are among the world's oldest geological formations — 2.5-billion-year-old rock. Three nights in a permanent tent in the park.",
+        },
+      },
+      {
+        day: 11,
+        title: { it: 'Karijini — tour organizzato delle gole', en: 'Karijini — Organised Gorge Tour' },
+        description: {
+          it: "Tour organizzato nel Parco Nazionale di Karijini con pranzo incluso: Dales Gorge, Fortescue Falls (la cascata più grande del Western Australia), Fern Pool, Hancock Gorge e Weano Gorge con Handrail Pool. Nuoto nelle piscine naturali tra le pareti di ferro rosso. Una delle giornate più spettacolari del viaggio.",
+          en: "Organised tour of Karijini National Park with lunch included: Dales Gorge, Fortescue Falls (Western Australia's largest waterfall), Fern Pool, Hancock Gorge and Weano Gorge with Handrail Pool. Swimming in natural pools between iron-red walls. One of the most spectacular days of the journey.",
+        },
+      },
+      {
+        day: 12,
+        title: { it: 'Karijini — giornata libera nelle gole', en: 'Karijini — Free Day in the Gorges' },
+        description: {
+          it: "Seconda giornata nel parco per esplorare le gole meno frequentate: Knox Gorge, Joffre Falls, Oxer Lookout (punto panoramico dove quattro gole si incontrano). Karijini ha oltre 100 km di percorsi escursionistici con diversi livelli di difficoltà.",
+          en: "Second day in the park to explore the less-visited gorges: Knox Gorge, Joffre Falls, Oxer Lookout (the viewpoint where four gorges meet). Karijini has over 100 km of walking trails at various difficulty levels.",
+        },
+      },
+      {
+        day: 13,
+        title: { it: 'Karijini → Pardoo (510 km)', en: 'Karijini → Pardoo (510 km)' },
+        description: {
+          it: "Lunga guida (510 km) verso la Pardoo Station, nella zona costiera tra Port Hedland e Broome. Il Pilbara lascia spazio al paesaggio della Kimberley, terra rossa e spinifex. Pernottamento in motel 3 stelle.",
+          en: "Long drive (510 km) to Pardoo Station, in the coastal zone between Port Hedland and Broome. The Pilbara gives way to the Kimberley landscape, red earth and spinifex. Overnight in a 3-star motel.",
+        },
+      },
+      {
+        day: 14,
+        title: { it: 'Pardoo → Broome', en: 'Pardoo → Broome' },
+        description: {
+          it: "Guida verso Broome (280 km), la capitale della perla dell'Australia, con le sue scogliere ocra a picco sul mare turchese di Cable Beach. Tre notti in hotel 4 stelle.",
+          en: "Drive to Broome (280 km), the pearl capital of Australia, with its ochre cliffs towering above the turquoise sea at Cable Beach. Three nights in a 4-star hotel.",
+        },
+      },
+      {
+        day: 15,
+        title: { it: 'Broome — Cape Leveque tour', en: 'Broome — Cape Leveque Tour' },
+        description: {
+          it: "Tour organizzato con pranzo incluso a Cape Leveque, la punta più a nord della Penisola di Dampier: scogliere di argilla rossa che cadono verticalmente nel mare azzurro, una delle immagini più iconiche del Western Australia. Lungo la strada, sosta alla Middle Lagoon e visita alla comunità aborigena di Ardyaloon.",
+          en: "Organised tour with lunch to Cape Leveque, the northernmost tip of the Dampier Peninsula: red clay cliffs dropping vertically into the blue sea, one of Western Australia's most iconic images. Along the way, stop at Middle Lagoon and visit the Aboriginal community of Ardyaloon.",
+        },
+      },
+      {
+        day: 16,
+        title: { it: 'Broome — Cable Beach e centro storico', en: 'Broome — Cable Beach and Historic Centre' },
+        description: {
+          it: "Giornata libera a Broome: Cable Beach (22 km di sabbia bianca, le carovane di cammelli al tramonto), Chinatown storica, il Pearl Luggers Museum sulla storia della perlicultura, il Sun Pictures (il cinema all'aperto più antico del mondo, 1916). Cena a base di barramundi e pesce locale.",
+          en: "Free day in Broome: Cable Beach (22 km of white sand, sunset camel caravans), historic Chinatown, the Pearl Luggers Museum on pearling history, Sun Pictures (the world's oldest operating outdoor cinema, 1916). Dinner featuring barramundi and local fish.",
+        },
+      },
+      {
+        day: 17,
+        title: { it: 'Broome → Halls Creek (690 km)', en: 'Broome → Halls Creek (690 km)' },
+        description: {
+          it: "Lunga guida nel cuore della Kimberley (690 km): la Great Northern Highway attraversa paesaggi immutati da millenni, terra rossa e boab (baobab australiani). Arrivo a Halls Creek, cittadina di confine nel cuore remoto dell'Australia. Pernottamento in hotel 3,5 stelle.",
+          en: "Long drive into the heart of the Kimberley (690 km): the Great Northern Highway crosses landscapes unchanged for millennia, red earth and boab trees (Australian baobabs). Arrival in Halls Creek, a frontier town in the remote heart of Australia. Overnight in a 3.5-star hotel.",
+        },
+      },
+      {
+        day: 18,
+        title: { it: 'Halls Creek → Kununurra', en: 'Halls Creek → Kununurra' },
+        description: {
+          it: "Guida verso Kununurra (360 km) nel nord-est della Kimberley. Sosta alle Wolfe Creek Meteor Crater — il secondo cratere meteorico più grande al mondo — e a Lake Argyle, il più grande lago artificiale dell'Australia Occidentale. Due notti a Kununurra in hotel 3,5 stelle.",
+          en: "Drive to Kununurra (360 km) in the north-east of the Kimberley. Stop at Wolfe Creek Meteor Crater — the world's second largest meteorite crater — and Lake Argyle, Western Australia's largest artificial lake. Two nights in Kununurra at a 3.5-star hotel.",
+        },
+      },
+      {
+        day: 19,
+        title: { it: 'Kununurra — Purnululu (Bungle Bungles) in volo panoramico', en: 'Kununurra — Purnululu (Bungle Bungles) Scenic Flight' },
+        description: {
+          it: "Volo panoramico e tour in 4x4 a Purnululu National Park — le Bungle Bungles: cupole di arenaria a strisce arancioni e nere, formate su 350 milioni di anni, che emergono dalla pianura della Kimberley come una città aliena. Sito Patrimonio dell'Umanità UNESCO. Pranzo incluso.",
+          en: "Scenic flight and 4WD tour to Purnululu National Park — the Bungle Bungles: orange and black striped sandstone domes, formed over 350 million years, rising from the Kimberley plain like an alien city. UNESCO World Heritage Site. Lunch included.",
+        },
+      },
+      {
+        day: 20,
+        title: { it: 'Kununurra → Katherine', en: 'Kununurra → Katherine' },
+        description: {
+          it: "Attraversamento del confine tra Western Australia e Territorio del Nord. Guida verso Katherine (530 km), la quarta città più grande del Territorio del Nord, porta d'ingresso al Katherine Gorge. Due notti in hotel 3,5 stelle.",
+          en: "Crossing the border between Western Australia and the Northern Territory. Drive to Katherine (530 km), the Northern Territory's fourth largest town and gateway to Katherine Gorge. Two nights in a 3.5-star hotel.",
+        },
+      },
+      {
+        day: 21,
+        title: { it: 'Katherine Gorge — crociera tra le pareti di arenaria', en: 'Katherine Gorge — Cruise Between Sandstone Walls' },
+        description: {
+          it: "Crociera nel Katherine Gorge (Nitmiluk National Park): 13 gole successive scavate dall'acqua nella pietra arenaria, con pareti verticali di 60 metri, arte rupestre aborigena e coccodrilli d'acqua dolce sulle rive. La crociera naviga nelle prime due o tre gole con cambio in canoa tra una gola e l'altra.",
+          en: "Cruise along Katherine Gorge (Nitmiluk National Park): 13 successive gorges carved by water through sandstone, with 60-metre vertical walls, Aboriginal rock art and freshwater crocodiles on the banks. The cruise navigates the first two or three gorges with canoe transfer between gorges.",
+        },
+      },
+      {
+        day: 22,
+        title: { it: 'Katherine → Kakadu — crociera Yellow Water', en: 'Katherine → Kakadu — Yellow Water Cruise' },
+        description: {
+          it: "Guida verso il Parco Nazionale di Kakadu (320 km), il più grande parco nazionale d'Australia e doppio Patrimonio UNESCO (naturale e culturale). Tappa alla crociera al tramonto sul Yellow Water Billabong: coccodrilli marini, migliaia di uccelli e i colori infuocati del tramonto tropicale sul territorio Bininj/Mungguy.",
+          en: "Drive to Kakadu National Park (320 km), Australia's largest national park and double UNESCO World Heritage site (natural and cultural). Stop for the Yellow Water Billabong sunset cruise: saltwater crocodiles, thousands of birds and the fiery colours of the tropical sunset over the Bininj/Mungguy country.",
+        },
+      },
+      {
+        day: 23,
+        title: { it: 'Kakadu → Darwin', en: 'Kakadu → Darwin' },
+        description: {
+          it: "Mattinata a Kakadu: visita ai siti di arte rupestre di Ubirr (pitture aborigene di oltre 20.000 anni) o Nourlangie. Poi guida verso Darwin (250 km), la capitale tropicale del Territorio del Nord. Una notte in hotel 3,5 stelle.",
+          en: "Morning in Kakadu: visit to the rock art sites of Ubirr (Aboriginal paintings over 20,000 years old) or Nourlangie. Then drive to Darwin (250 km), the Northern Territory's tropical capital. One night in a 3.5-star hotel.",
+        },
+      },
+      {
+        day: 24,
+        title: { it: 'Darwin → Kings Canyon (4x4, Mereenie Loop)', en: 'Darwin → Kings Canyon (4WD, Mereenie Loop)' },
+        description: {
+          it: "Volo Darwin–Alice Springs e ritiro del fuoristrada 4x4. Partenza lungo la Larapinta Drive e poi la Mereenie Loop Road — 150 km di pista non asfaltata attraverso territorio aborigeno (permesso incluso) con cammelli selvatici, dingo e paesaggi del Red Centre. Pernottamento al Kings Canyon Resort in hotel 4 stelle.",
+          en: "Flight Darwin–Alice Springs and 4WD pick-up. Drive along Larapinta Drive and then the Mereenie Loop Road — 150 km of unsealed track through Aboriginal territory (permit included) with wild camels, dingoes and Red Centre landscapes. Overnight at Kings Canyon Resort in a 4-star hotel.",
+        },
+      },
+      {
+        day: 25,
+        title: { it: 'Kings Canyon → Uluru', en: 'Kings Canyon → Uluru' },
+        description: {
+          it: "All'alba: Kings Canyon Rim Walk (3–4 ore), percorso panoramico sulle pareti rosse del canyon e la pianura del Red Centre. Nel pomeriggio: guida verso Yulara con sosta al Mount Conner Lookout. Arrivo in tempo per il tramonto su Uluru. Due notti in hotel 4 stelle.",
+          en: "At dawn: Kings Canyon Rim Walk (3–4 hours), panoramic trail along the canyon's red walls and the Red Centre plain. In the afternoon: drive to Yulara with a stop at Mount Conner Lookout. Arrival in time for sunset over Uluru. Two nights in a 4-star hotel.",
+        },
+      },
+      {
+        day: 26,
+        title: { it: 'Uluru e Kata Tjuta', en: 'Uluru and Kata Tjuta' },
+        description: {
+          it: "Alba su Uluru e la Base Walk o il Mala Walk con storie del Tjukurpa (la Legge ancestrale aborigena). Pomeriggio: Kata Tjuta (The Olgas) con il Walpa Gorge Walk tra le 36 cupole rocciose. Sera: Field of Lights di Bruce Munro — installazione luminosa nel deserto.",
+          en: "Dawn at Uluru and the Base Walk or Mala Walk with stories of the Tjukurpa (the ancestral Aboriginal Law). Afternoon: Kata Tjuta (The Olgas) with the Walpa Gorge Walk among the 36 rock domes. Evening: Bruce Munro's Field of Lights — luminous art installation in the desert.",
+        },
+      },
+      {
+        day: 27,
+        title: { it: 'Uluru — ultima alba e volo per Sydney', en: 'Uluru — Final Dawn and Flight to Sydney' },
+        description: {
+          it: "Ultima alba su Uluru, poi visita al Uluru-Kata Tjuta Cultural Centre per approfondire la cultura Anangu. Consegna del 4x4 e volo Ayers Rock–Sydney. Trasferimento in hotel 3,5 stelle. Tre notti a Sydney.",
+          en: "Final dawn at Uluru, then visit to the Uluru-Kata Tjuta Cultural Centre to deepen understanding of Anangu culture. 4WD drop-off and flight Ayers Rock–Sydney. Transfer to a 3.5-star hotel. Three nights in Sydney.",
+        },
+      },
+      {
+        day: 28,
+        title: { it: 'Sydney — crociera nel porto con pranzo', en: 'Sydney — Harbour Cruise with Lunch' },
+        description: {
+          it: "Crociera panoramica nel porto di Sydney con pranzo a buffet incluso: Opera House, Harbour Bridge, la baia di Mosman, le spiagge di Manly e i promontori di Georges Head da prospettiva acquatica. Pomeriggio libero per Circular Quay, The Rocks e Darling Harbour.",
+          en: "Panoramic Sydney Harbour cruise with buffet lunch included: Opera House, Harbour Bridge, Mosman Bay, Manly beaches and Georges Head promontories from the water. Free afternoon at Circular Quay, The Rocks and Darling Harbour.",
+        },
+      },
+      {
+        day: 29,
+        title: { it: 'Sydney — giornata libera', en: 'Sydney — Free Day' },
+        description: {
+          it: "Giornata libera a Sydney: Bondi Beach e la Bondi to Coogee Walk, Taronga Zoo, Blue Mountains (1 ora dalla città con canyon e cascate), visita all'Opera House o semplicemente una passeggiata nei Royal Botanic Gardens con vista sulla baia.",
+          en: "Free day in Sydney: Bondi Beach and the Bondi to Coogee Walk, Taronga Zoo, Blue Mountains (1 hour from the city with canyons and waterfalls), an Opera House visit, or simply a stroll through the Royal Botanic Gardens with bay views.",
+        },
+      },
+      {
+        day: 30,
+        title: { it: 'Sydney — seconda giornata libera', en: 'Sydney — Second Free Day' },
+        description: {
+          it: "Seconda giornata libera a Sydney per esplorare i quartieri più interessanti: Paddington con le sue case vittoriane e le gallerie d'arte, Surry Hills con i migliori ristoranti della città, o Manly e le Northern Beaches per gli amanti del mare.",
+          en: "Second free day in Sydney to explore the most interesting neighbourhoods: Paddington with its Victorian terraces and art galleries, Surry Hills with the city's best restaurants, or Manly and the Northern Beaches for sea lovers.",
+        },
+      },
+      {
+        day: 31,
+        title: { it: 'Partenza da Sydney', en: 'Departure from Sydney' },
+        description: {
+          it: "Transfer libero all'aeroporto internazionale di Sydney e volo di rientro verso l'Italia. Fine dei servizi inclusi nel pacchetto. Il road trip più lungo d'Australia si conclude qui, dopo 31 giorni di natura remota, cultura aborigena e paesaggi indimenticabili.",
+          en: "Free transfer to Sydney International Airport and return flight to Italy. End of included package services. Australia's longest road trip ends here, after 31 days of remote nature, Aboriginal culture and unforgettable landscapes.",
+        },
+      },
+    ],
+    included: {
+      it: [
+        'Tutti i pernottamenti come da itinerario',
+        'Auto a noleggio Perth–Darwin (All Inclusive, km illimitati)',
+        'Fuoristrada 4x4 Alice Springs–Ayers Rock (All Inclusive, km illimitati)',
+        'Tour organizzato François Peron National Park in 4x4',
+        'Tour organizzato Karijini National Park (pranzo incluso)',
+        'Tour organizzato Cape Leveque (pranzo incluso)',
+        'Tour panoramico e 4x4 Purnululu/Bungle Bungles (pranzo incluso)',
+        'Crociera Katherine Gorge',
+        'Crociera al tramonto Yellow Water Billabong (Kakadu)',
+        'Field of Lights — Uluru',
+        'Crociera panoramica Sydney Harbour (pranzo a buffet incluso)',
+        'SIM australiana con credito',
+        'Assistenza in loco in lingua italiana (telefono e chat)',
+        'Permesso Mereenie Loop Road',
+      ],
+      en: [
+        'All accommodation as per itinerary',
+        'Perth–Darwin car rental (All Inclusive, unlimited km)',
+        'Alice Springs–Ayers Rock 4WD rental (All Inclusive, unlimited km)',
+        'François Peron National Park organised 4WD tour',
+        'Karijini National Park organised tour (lunch included)',
+        'Cape Leveque organised tour (lunch included)',
+        'Purnululu/Bungle Bungles scenic flight and 4WD tour (lunch included)',
+        'Katherine Gorge cruise',
+        'Yellow Water Billabong sunset cruise (Kakadu)',
+        'Field of Lights — Uluru',
+        'Sydney Harbour panoramic cruise (buffet lunch included)',
+        'Australian SIM card with credit',
+        'Italian-language on-site assistance (phone and chat)',
+        'Mereenie Loop Road permit',
+      ],
+    },
+    notIncluded: standardNotIncluded,
+  },
 ];

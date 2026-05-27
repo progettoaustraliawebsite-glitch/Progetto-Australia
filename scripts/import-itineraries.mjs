@@ -502,6 +502,60 @@ const itineraries = [
   },
 
   // ─────────────────────────────────────────────
+  // NUOVA CALEDONIA — GRANDE TERRE — 10 giorni
+  // ─────────────────────────────────────────────
+  {
+    _id: 'itinerary-nuova-caledonia-grande-terre',
+    _type: 'itinerary',
+    slug: { current: 'nuova-caledonia-grande-terre' },
+    title: { it: 'Nuova Caledonia — Alla scoperta della Grande Terre', en: 'New Caledonia — Discovering the Grande Terre' },
+    description: { it: "Dieci giorni in self-drive lungo la costa est e ovest della Grande Terre: da Noumea alle scogliere nere di Hienghène, dalle spiagge bianche di Poe alla foresta delle grandi felci, passando per villaggi Melanesiani e le cascate Tao.", en: "Ten days of self-driving along the east and west coasts of Grande Terre: from Noumea to the black cliffs of Hienghène, from Poe's white beaches to the Great Ferns forest, through Melanesian villages and the Tao Waterfalls." },
+    duration: 10,
+    destination: 'New Caledonia',
+    type: 'road-trip',
+    gradient: 'from-sky-600 to-teal-800',
+    price: { currency: 'EUR', amount: 2500 },
+    priceEn: { currency: 'USD', amount: 2750 },
+    highlights: {
+      it: ["Escursione all'Isola Amedee — pranzo buffet con danze tradizionali", 'Spiaggia di Poe — una delle più belle del Pacifico', 'Hienghène — scogliere nere e rocce di Linderalique in crociera', 'Cascate Tao e traversata in ferry sul fiume Ouaième', 'Visita guidata a una casa tradizionale Melanesiana', 'Parco delle Grandi Felci — kagu e specie endemiche'],
+      en: ["Amedee Island excursion — buffet lunch with traditional dances", "Poe Beach — one of the Pacific's most beautiful", 'Hienghène — black cliffs and Linderalique rocks cruise', 'Tao Waterfalls and Ouaième River ferry crossing', 'Guided visit to a traditional Melanesian house', 'Great Ferns Park — kagu bird and endemic species'],
+    },
+    included: {
+      it: ['Tutti i pernottamenti come da itinerario (colazione inclusa)', 'Trasferimenti privati aeroporto–hotel (andata e ritorno)', 'Tour organizzato Isola Amedee (pranzo a buffet + spettacolo incluso)', 'Auto a noleggio self-drive Noumea–Noumea (All Inclusive, km illimitati)', 'Visita guidata casa tradizionale Melanesiana', 'Crociera nella baia di Hienghène — rocce di Linderalique', 'Tasse locali', 'Assistenza in loco in lingua italiana'],
+      en: ['All accommodation as per itinerary (breakfast included)', 'Private airport–hotel transfers (return)', 'Amedee Island organised tour (buffet lunch + show included)', 'Self-drive car rental Noumea–Noumea (All Inclusive, unlimited km)', 'Guided visit to traditional Melanesian house', 'Hienghène Bay cruise — Linderalique rocks', 'Local taxes', 'Italian-language on-site assistance'],
+    },
+    notIncluded: standardNotIncluded,
+    featured: false,
+  },
+
+  // ─────────────────────────────────────────────
+  // WESTERN AUSTRALIA E KIMBERLEY — 31 giorni
+  // ─────────────────────────────────────────────
+  {
+    _id: 'itinerary-australia-rossa-selvaggia',
+    _type: 'itinerary',
+    slug: { current: 'australia-rossa-selvaggia' },
+    title: { it: "L'Altra Faccia dell'Australia — Western Australia e Kimberley", en: 'The Other Face of Australia — Western Australia & the Kimberley' },
+    description: { it: "Trentuno giorni attraverso l'Australia che pochi conoscono: da Perth alle spiagge del Western Australia, dai delfini di Monkey Mia alla barriera di Ningaloo, dalle gole rosse di Karijini alle scogliere di Broome, dalle Bungle Bungles al Katherine Gorge, Kakadu e Darwin. Poi Kings Canyon, Uluru e Sydney.", en: "Thirty-one days through the Australia that few know: from Perth along the WA beaches, from Monkey Mia dolphins to the Ningaloo Reef, from Karijini's red gorges to Broome's cliffs, from the Bungle Bungles to Katherine Gorge, Kakadu and Darwin. Then Kings Canyon, Uluru and Sydney." },
+    duration: 31,
+    destination: 'Australia',
+    type: 'avventura',
+    gradient: 'from-red-700 to-orange-900',
+    price: { currency: 'EUR', amount: 5550 },
+    priceEn: { currency: 'USD', amount: 6050 },
+    highlights: {
+      it: ['Pinnacles Desert — le colonne di calcare al tramonto', 'Monkey Mia — delfini selvatici ogni mattina', 'Ningaloo Reef — barriera corallina incontaminata a Coral Bay', 'Karijini National Park — gole rosse e piscine naturali', 'Cape Leveque — scogliere ocra sul mare turchese', 'Purnululu (Bungle Bungles) — cupole a strisce in volo panoramico', 'Katherine Gorge — crociera tra le pareti di arenaria', 'Kakadu — il parco più grande d\'Australia', 'Uluru e Kings Canyon — il cuore rosso'],
+      en: ['Pinnacles Desert — limestone columns at sunset', 'Monkey Mia — wild dolphins every morning', 'Ningaloo Reef — pristine coral reef at Coral Bay', 'Karijini National Park — red gorges and natural pools', 'Cape Leveque — ochre cliffs above turquoise sea', 'Purnululu (Bungle Bungles) — striped domes from scenic flight', 'Katherine Gorge — cruise between sandstone walls', "Kakadu — Australia's largest national park", 'Uluru and Kings Canyon — the red heart'],
+    },
+    included: {
+      it: ['Tutti i pernottamenti come da itinerario', 'Auto a noleggio Perth–Darwin (All Inclusive, km illimitati)', 'Fuoristrada 4x4 Alice Springs–Ayers Rock (All Inclusive, km illimitati)', 'Tour organizzato François Peron National Park in 4x4', 'Tour organizzato Karijini National Park (pranzo incluso)', 'Tour organizzato Cape Leveque (pranzo incluso)', 'Tour panoramico e 4x4 Purnululu/Bungle Bungles (pranzo incluso)', 'Crociera Katherine Gorge', 'Crociera al tramonto Yellow Water Billabong (Kakadu)', 'Field of Lights — Uluru', 'Crociera panoramica Sydney Harbour (pranzo a buffet incluso)', 'SIM australiana con credito', 'Assistenza in loco in lingua italiana', 'Permesso Mereenie Loop Road'],
+      en: ['All accommodation as per itinerary', 'Perth–Darwin car rental (All Inclusive, unlimited km)', 'Alice Springs–Ayers Rock 4WD rental (All Inclusive, unlimited km)', 'François Peron National Park organised 4WD tour', 'Karijini National Park organised tour (lunch included)', 'Cape Leveque organised tour (lunch included)', 'Purnululu/Bungle Bungles scenic flight and 4WD tour (lunch included)', 'Katherine Gorge cruise', 'Yellow Water Billabong sunset cruise (Kakadu)', 'Field of Lights — Uluru', 'Sydney Harbour panoramic cruise (buffet lunch included)', 'Australian SIM card with credit', 'Italian-language on-site assistance', 'Mereenie Loop Road permit'],
+    },
+    notIncluded: standardNotIncluded,
+    featured: false,
+  },
+
+  // ─────────────────────────────────────────────
   // NUOVA ZELANDA — ROAD TRIP LEGGENDARIO — 19 giorni
   // ─────────────────────────────────────────────
   {
