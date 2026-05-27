@@ -1819,4 +1819,454 @@ export const itineraries: Itinerary[] = [
     },
     notIncluded: standardNotIncluded,
   },
+
+  // ─────────────────────────────────────────────
+  // NUOVA ZELANDA: NEL CUORE DELLA TERRA DI MEZZO — 15 giorni
+  // ─────────────────────────────────────────────
+  {
+    id: 'nuova-zelanda-terra-di-mezzo',
+    slug: 'nuova-zelanda-terra-di-mezzo',
+    title: {
+      it: 'Nuova Zelanda: Nel cuore della Terra di Mezzo',
+      en: 'New Zealand: In the Heart of Middle-earth',
+    },
+    description: {
+      it: "Un viaggio di 15 giorni attraverso la Nuova Zelanda sulle orme del Signore degli Anelli: Hobbiton nel cuore del Waikato, le grotte luminose di Waitomo, il vulcano di Tongariro (il vero Mordor), Wellington con Weta Workshop, i fiordi di Milford Sound e i paesaggi leggendari di Queenstown e Glenorchy. Un itinerario per chi ama l'avventura, la natura e la magia del cinema.",
+      en: "A 15-day journey through New Zealand following in the footsteps of The Lord of the Rings: Hobbiton in the heart of the Waikato, the glowworm caves of Waitomo, the volcanic Tongariro (the real Mordor), Wellington with Weta Workshop, the fjords of Milford Sound, and the legendary landscapes of Queenstown and Glenorchy.",
+    },
+    duration: 15,
+    destination: 'New Zealand',
+    type: 'adventure',
+    gradient: 'from-emerald-700 to-green-900',
+    image: '/images/dest-nz.jpg',
+    price: { currency: 'EUR', amount: 3850 },
+    priceEn: { currency: 'USD', amount: 4200 },
+    highlights: {
+      it: [
+        'Hobbiton Movie Set — la vera Contea™ con cena inclusa',
+        'Grotte di Waitomo — barca tra i glowworm',
+        'Tongariro — il vero Mordor e l\'altopiano vulcanico',
+        'Weta Workshop + tour LOTR a Wellington',
+        'Milford Sound in crociera + LOTR full day a Queenstown',
+      ],
+      en: [
+        'Hobbiton Movie Set — the real Shire™ with dinner included',
+        'Waitomo Caves — boat ride among glowworms',
+        'Tongariro — the real Mordor and volcanic plateau',
+        'Weta Workshop + LOTR tour in Wellington',
+        'Milford Sound cruise + LOTR full day in Queenstown',
+      ],
+    },
+    program: [
+      {
+        day: 1,
+        title: { it: 'Arrivo ad Auckland', en: 'Arrival in Auckland' },
+        description: {
+          it: 'Arrivo all\'aeroporto internazionale di Auckland e trasferimento privato in hotel. Resto della giornata dedicato al riposo e all\'adattamento del fuso orario.',
+          en: 'Arrival at Auckland International Airport and private transfer to the hotel. Rest of the day for relaxation and adjusting to the time zone.',
+        },
+      },
+      {
+        day: 2,
+        title: { it: 'Auckland — giornata libera', en: 'Auckland — Free Day' },
+        description: {
+          it: 'Giornata libera per scoprire Auckland: Auckland War Memorial Museum, Viaduct Harbour, Piha Beach o un\'escursione in traghetto alla splendida Waiheke Island con le sue cantine vinicole. Ritiro dell\'auto a noleggio in centro.',
+          en: 'Free day to discover Auckland: War Memorial Museum, Viaduct Harbour, Piha Beach, or a ferry trip to beautiful Waiheke Island with its wineries. Car rental pick-up in the city centre.',
+        },
+      },
+      {
+        day: 3,
+        title: { it: 'Auckland → Rotorua via Hobbiton e Waitomo', en: 'Auckland → Rotorua via Hobbiton and Waitomo' },
+        description: {
+          it: 'Partenza per Rotorua con due tappe iconiche: Hobbiton Movie Set con tour guidato della Contea™, visita a Bag End, il Hobbit Hole™ e il Green Dragon™ Inn con cena inclusa. Poi le Grotte di Waitomo: 250 metri di scenari sotterranei culminanti in un\'impareggiabile gita in barca sotto migliaia di glowworm.',
+          en: 'Drive to Rotorua with two iconic stops: Hobbiton Movie Set with guided tour of the Shire™, visiting Bag End, a Hobbit Hole™, and the Green Dragon™ Inn with dinner included. Then Waitomo Glowworm Caves: 250 metres of underground scenery culminating in an unmatchable boat ride under thousands of glowworms.',
+        },
+      },
+      {
+        day: 4,
+        title: { it: 'Rotorua — Valle Geotermale e cultura Maori', en: 'Rotorua — Geothermal Valley & Maori Culture' },
+        description: {
+          it: 'Visita alla spettacolare Valle Geotermale di Waimangu: geyser, laghi multicolori e formazioni vulcaniche uniche al mondo. Sera: visita al Maori Arts & Crafts Institute con spettacolo tradizionale e cena Maori inclusa.',
+          en: 'Visit to the spectacular Waimangu Geothermal Valley: geysers, multi-coloured lakes, and unique volcanic formations. Evening: visit to the Maori Arts & Crafts Institute with traditional performance and Maori dinner included.',
+        },
+      },
+      {
+        day: 5,
+        title: { it: 'Rotorua → National Park — Tongariro (Mordor)', en: 'Rotorua → National Park — Tongariro (Mordor)' },
+        description: {
+          it: 'Partenza per il National Park, cuore dell\'altopiano vulcanico centrale. Sosta al Lago Taupo e alle spettacolari Huka Falls. Il parco è dominato dai tre vulcani attivi Ruapehu, Ngauruhoe (il vero Monte Fato) e Tongariro — paesaggi indimenticabili del Signore degli Anelli.',
+          en: 'Drive to the National Park in the heart of the volcanic central plateau. Stop at Lake Taupo and the spectacular Huka Falls. The park is dominated by three active volcanoes: Ruapehu, Ngauruhoe (the real Mount Doom), and Tongariro — unforgettable Lord of the Rings landscapes.',
+        },
+      },
+      {
+        day: 6,
+        title: { it: 'National Park → Wellington', en: 'National Park → Wellington' },
+        description: {
+          it: 'Mattina con possibilità di trekking tra i vulcani del Tongariro. Nel pomeriggio partenza verso Wellington, la capitale culturale e "città del vento" della Nuova Zelanda, nota per la sua scena gastronomica e il suo ruolo nella produzione dei film di Peter Jackson.',
+          en: 'Morning with optional trekking among the Tongariro volcanoes. Afternoon drive to Wellington, New Zealand\'s cultural capital and "Windy City", famous for its food scene and role in Peter Jackson\'s films.',
+        },
+      },
+      {
+        day: 7,
+        title: { it: 'Wellington — Tour Signore degli Anelli + Weta Workshop', en: 'Wellington — Lord of the Rings Tour + Weta Workshop' },
+        description: {
+          it: 'Intera giornata (6–6,5 ore) sui set del Signore degli Anelli nei dintorni di Wellington. Visita a Weta Workshop con tour guidato per vedere come vengono realizzati costumi, oggetti di scena e armi. Una delle esperienze più complete per i fan della saga di Tolkien.',
+          en: 'Full day (6–6.5 hours) visiting Lord of the Rings filming locations around Wellington. Guided visit to Weta Workshop to see how costumes, props, and weapons are crafted. One of the most complete experiences for fans of Tolkien\'s saga.',
+        },
+      },
+      {
+        day: 8,
+        title: { it: 'Wellington → Kaikoura (traghetto + Marlborough Sounds)', en: 'Wellington → Kaikoura (Ferry + Marlborough Sounds)' },
+        description: {
+          it: 'Traversata del meraviglioso Stretto di Cook in traghetto (circa 3 ore) verso l\'Isola Sud. Il tragitto attraversa la regione dei Marlborough Sounds, celebre per il Sauvignon Blanc, con possibilità di sosta per il pranzo in un vigneto. Arrivo a Kaikoura, terra delle aragoste e delle balene.',
+          en: 'Crossing the wonderful Cook Strait by ferry (approx. 3 hours) to the South Island. The route passes through the Marlborough Sounds region, famous for Sauvignon Blanc, with optional lunch stop at a vineyard. Arrival in Kaikoura, land of crayfish and whales.',
+        },
+      },
+      {
+        day: 9,
+        title: { it: 'Kaikoura → Christchurch — avvistamento balene', en: 'Kaikoura → Christchurch — Whale Watching' },
+        description: {
+          it: 'Escursione in barca per l\'avvistamento delle balene (2h30): capodogli, megattere, balene blu, delfini Hector (i più piccoli al mondo), foche e albatros. Un\'esperienza in mare aperto unica. Nel pomeriggio, proseguimento per Christchurch.',
+          en: 'Whale watching boat trip (2h30): sperm whales, humpbacks, blue whales, Hector\'s dolphins (the world\'s smallest), fur seals, and albatrosses. A unique open-sea experience. Afternoon drive to Christchurch.',
+        },
+      },
+      {
+        day: 10,
+        title: { it: 'Christchurch → Lake Tekapo', en: 'Christchurch → Lake Tekapo' },
+        description: {
+          it: 'Guida verso il lago Tekapo nel cuore della regione Mackenzie. L\'iconico colore turchese del lago — creato dalla polvere di ghiacciaio sospesa nelle acque — e la storica Chiesa del Buon Pastore sulle rive del lago sono tra le immagini più belle della Nuova Zelanda.',
+          en: 'Drive to Lake Tekapo in the heart of the Mackenzie region. The iconic turquoise colour of the lake — created by glacial flour suspended in the water — and the historic Church of the Good Shepherd on the lake shore are among New Zealand\'s most beautiful images.',
+        },
+      },
+      {
+        day: 11,
+        title: { it: 'Lake Tekapo → Wanaka (Mt Cook e Lago Pukaki)', en: 'Lake Tekapo → Wanaka (Mt Cook & Lake Pukaki)' },
+        description: {
+          it: 'Percorso panoramico con soste ai lookout: vista spettacolare del Mount Cook e del Lago Pukaki. Arrivo a Wanaka, porta d\'accesso al Parco Nazionale del Mount Aspiring, e foto all\'iconico albero che cresce in mezzo al lago.',
+          en: 'Scenic drive with lookout stops: spectacular views of Mount Cook and Lake Pukaki. Arrival in Wanaka, gateway to Mount Aspiring National Park, and photos at the iconic lone tree growing in the lake.',
+        },
+      },
+      {
+        day: 12,
+        title: { it: 'Wanaka → Queenstown (Arrowtown e Central Otago)', en: 'Wanaka → Queenstown (Arrowtown & Central Otago)' },
+        description: {
+          it: 'Percorso verso Queenstown con sosta al Kawarau Gorge (il primo ponte del bungee jumping al mondo) e alla pittoresca cittadina mineraria di Arrowtown. Opportunità di pranzo in un vigneto del Central Otago, celebre per il Pinot Noir. Consegna auto in centro a Queenstown.',
+          en: 'Drive to Queenstown with a stop at Kawarau Gorge (the world\'s first bungee jumping bridge) and the picturesque gold-rush town of Arrowtown. Optional lunch at a Central Otago vineyard, famous for its Pinot Noir. Car drop-off in central Queenstown.',
+        },
+      },
+      {
+        day: 13,
+        title: { it: 'Milford Sound — crociera + pranzo', en: 'Milford Sound — Cruise + Lunch' },
+        description: {
+          it: 'Gita in giornata a Milford Sound in pullman da Queenstown via Te Anau con soste panoramiche lungo il percorso. Crociera rilassante nel fiordo con guida naturalistica: cascate, delfini, foche e — in stagione — pinguini crestati di Fiordland. Pranzo pic nic incluso. Ritorno a Queenstown in pullman.',
+          en: 'Full-day trip to Milford Sound by coach from Queenstown via Te Anau with scenic stops en route. Relaxing fjord cruise with nature guide: waterfalls, dolphins, fur seals, and in season, Fiordland crested penguins. Picnic lunch included. Return to Queenstown by coach.',
+        },
+      },
+      {
+        day: 14,
+        title: { it: 'Queenstown — LOTR Full Day in 4x4 + pranzo', en: 'Queenstown — LOTR Full Day by 4x4 + Lunch' },
+        description: {
+          it: 'Tour full day (9 ore) sui set del Signore degli Anelli in 4x4: Minas Tirith, Monti Nebbiosi, i Pilastri dei Re, il Guado di Bruinen, Isengard, Lothlorien, Glenorchy e la Paradise Valley. Pranzo, tè mattutino e pomeridiano inclusi. Un\'avventura cinematografica indimenticabile tra i paesaggi leggendari di Queenstown e Arrowtown.',
+          en: 'Full day (9 hours) Lord of the Rings filming locations by 4x4: Minas Tirith, Misty Mountains, the Pillars of the Kings, the Ford of Bruinen, Isengard, Lothlorien, Glenorchy and Paradise Valley. Lunch, morning and afternoon tea included. An unforgettable cinematic adventure through the legendary Queenstown and Arrowtown landscapes.',
+        },
+      },
+      {
+        day: 15,
+        title: { it: 'Partenza da Queenstown', en: 'Departure from Queenstown' },
+        description: {
+          it: 'Partenza autonoma per l\'aeroporto internazionale di Queenstown. Fine dei servizi a terra. Volo di rientro in Italia.',
+          en: 'Independent departure to Queenstown International Airport. End of ground services. Return flight to Italy.',
+        },
+      },
+    ],
+    included: {
+      it: [
+        'Tutti i pernottamenti come da itinerario (colazione inclusa)',
+        'Auto a noleggio con assicurazione All Inclusive (Auckland–Queenstown)',
+        'Traghetto dall\'Isola Nord all\'Isola Sud (Cook Strait)',
+        'Hobbiton Movie Set Tour con cena inclusa',
+        'Waitomo Glowworm Caves — tour guidato e gita in barca',
+        'Waimangu Geothermal Valley',
+        'Spettacolo Maori e cena tradizionale a Rotorua',
+        'Tour full day Signore degli Anelli a Wellington + Weta Workshop',
+        'Tour avvistamento balene a Kaikoura',
+        'Gita Milford Sound in pullman con crociera e pranzo incluso',
+        'LOTR Full Day tour in 4x4 a Queenstown con pranzo incluso',
+        'Tasse locali GST (15%)',
+      ],
+      en: [
+        'All accommodation as per itinerary (breakfast included)',
+        'Car rental with All Inclusive insurance (Auckland–Queenstown)',
+        'Cook Strait ferry from North to South Island',
+        'Hobbiton Movie Set Tour with dinner included',
+        'Waitomo Glowworm Caves — guided tour and boat ride',
+        'Waimangu Geothermal Valley',
+        'Maori performance and traditional dinner in Rotorua',
+        'Lord of the Rings full day tour in Wellington + Weta Workshop',
+        'Whale watching tour in Kaikoura',
+        'Milford Sound full-day coach trip with cruise and picnic lunch',
+        'LOTR Full Day 4x4 tour in Queenstown with lunch included',
+        'Local GST taxes (15%)',
+      ],
+    },
+    notIncluded: standardNotIncluded,
+  },
+
+  // ─────────────────────────────────────────────
+  // AUSTRALIA SUMMER ESCAPE — 22 giorni
+  // ─────────────────────────────────────────────
+  {
+    id: 'australia-summer-escape',
+    slug: 'australia-summer-escape',
+    title: {
+      it: 'Australia Summer Escape — Adelaide, Kangaroo Island, Melbourne, Uluru e Lord Howe Island',
+      en: 'Australia Summer Escape — Adelaide, Kangaroo Island, Melbourne, Uluru & Lord Howe Island',
+    },
+    description: {
+      it: "Un grand tour australiano di 22 giorni che tocca le destinazioni più esclusive del continente: la fauna selvaggia di Kangaroo Island, la Melbourne dei vigneti e della Great Ocean Road, il deserto rosso di Uluru con il Sound of Silence dinner, Sydney con la crociera nel porto e l\'Opera House, e infine Lord Howe Island — UNESCO, 400 visitatori al massimo — nel lusso dell\'Arajilla Retreat.",
+      en: "A 22-day Australian grand tour touching the continent's most exclusive destinations: Kangaroo Island wildlife, Melbourne's vineyards and Great Ocean Road, the red desert of Uluru with the Sound of Silence dinner, Sydney harbour cruise and Opera House, and finally Lord Howe Island — UNESCO, 400 visitors maximum — in the luxury of Arajilla Retreat.",
+    },
+    duration: 22,
+    destination: 'Australia',
+    type: 'luxury',
+    gradient: 'from-amber-600 to-orange-800',
+    image: '/images/dest-sydney.jpg',
+    price: { currency: 'EUR', amount: 8210 },
+    priceEn: { currency: 'USD', amount: 8900 },
+    highlights: {
+      it: [
+        'Kangaroo Island — fauna australiana e WanderPod Ocean View',
+        'Melbourne: Yarra Valley, Great Ocean Road e Phillip Island',
+        'Uluru: Sound of Silence dinner e Sunrise Journeys',
+        'Sydney: crociera in porto + visita guidata Opera House',
+        'Lord Howe Island — paradiso UNESCO, Arajilla Retreat',
+      ],
+      en: [
+        'Kangaroo Island — Australian wildlife and Ocean View WanderPod',
+        'Melbourne: Yarra Valley, Great Ocean Road, and Phillip Island',
+        'Uluru: Sound of Silence dinner and Sunrise Journeys',
+        'Sydney: harbour cruise + Opera House guided tour',
+        'Lord Howe Island — UNESCO paradise, Arajilla Retreat',
+      ],
+    },
+    program: [
+      {
+        day: 1,
+        title: { it: 'Partenza — scala a Dubai', en: 'Departure — Dubai Stopover' },
+        description: {
+          it: 'Volo da Venezia verso Dubai. Pernottamento all\'Hotel Boulevard Autograph Collection con colazione inclusa: una notte nel lusso di Dubai come primo assaggio del viaggio.',
+          en: 'Flight from Venice to Dubai. Overnight at Hotel Boulevard Autograph Collection with breakfast included: a night of Dubai luxury as the first taste of the journey.',
+        },
+      },
+      {
+        day: 2,
+        title: { it: 'Volo Dubai → Adelaide', en: 'Flight Dubai → Adelaide' },
+        description: {
+          it: 'Volo mattutino verso Adelaide, la capitale del South Australia. Arrivo nel pomeriggio e prima serata in città.',
+          en: 'Morning flight to Adelaide, the capital of South Australia. Afternoon arrival and first evening in the city.',
+        },
+      },
+      {
+        day: 3,
+        title: { it: 'Adelaide → Kangaroo Island (ferry con auto)', en: 'Adelaide → Kangaroo Island (Ferry with Car)' },
+        description: {
+          it: 'Ritiro auto a noleggio (Toyota Corolla, Avis All Inclusive km illimitati). Guida fino a Cape Jervis (110 km) e traghetto Sealink per Kangaroo Island (45 minuti). Check-in all\'esclusivo Wander WanderPod con vista sull\'oceano. Benvenuto kit pasti incluso per 2 colazioni e 2 cene.',
+          en: 'Car rental pick-up (Toyota Corolla, Avis All Inclusive unlimited km). Drive to Cape Jervis (110 km) and Sealink ferry to Kangaroo Island (45 minutes). Check-in at the exclusive Wander WanderPod with ocean view. Welcome meal box included for 2 breakfasts and 2 dinners.',
+        },
+      },
+      {
+        day: 4,
+        title: { it: 'Kangaroo Island — fauna selvatica', en: 'Kangaroo Island — Wildlife' },
+        description: {
+          it: 'Giornata libera per esplorare Kangaroo Island: canguri, wallaby, koala, echidne, pinguini, foche e leoni marini nel loro habitat naturale. Flinders Chase National Park e spiagge da sogno.',
+          en: 'Free day to explore Kangaroo Island: kangaroos, wallabies, koalas, echidnas, penguins, fur seals, and sea lions in their natural habitat. Flinders Chase National Park and dream beaches.',
+        },
+      },
+      {
+        day: 5,
+        title: { it: 'Kangaroo Island — giornata libera', en: 'Kangaroo Island — Free Day' },
+        description: {
+          it: 'Seconda giornata sull\'isola: avvistamento fauna marina, trekking nel bush australiano, spiagge selvagge o semplicemente relax nel WanderPod con vista sull\'oceano.',
+          en: 'Second day on the island: marine wildlife spotting, Australian bush trekking, wild beaches, or simply relaxing in the WanderPod with ocean views.',
+        },
+      },
+      {
+        day: 6,
+        title: { it: 'Kangaroo Island → Melbourne (ferry + volo)', en: 'Kangaroo Island → Melbourne (Ferry + Flight)' },
+        description: {
+          it: 'Ferry di ritorno a Cape Jervis, guida fino ad Adelaide e consegna auto. Volo pomeridiano Adelaide–Melbourne. Check-in allo Zagames House.',
+          en: 'Return ferry to Cape Jervis, drive to Adelaide, and car drop-off. Afternoon flight Adelaide–Melbourne. Check-in at Zagames House.',
+        },
+      },
+      {
+        day: 7,
+        title: { it: 'Melbourne — visita libera', en: 'Melbourne — Free Exploration' },
+        description: {
+          it: 'Giornata libera per esplorare Melbourne: i vicoli con street art, i rooftop bar, Queen Victoria Market, i tram storici e la scena gastronomica internazionale.',
+          en: 'Free day to explore Melbourne: street art laneways, rooftop bars, Queen Victoria Market, historic trams, and the international food scene.',
+        },
+      },
+      {
+        day: 8,
+        title: { it: 'Tour Yarra Valley — vigneti con pranzo', en: 'Yarra Valley Winery Tour with Lunch' },
+        description: {
+          it: 'Tour organizzato nella Yarra Valley con pranzo incluso: degustazione di Chardonnay e Pinot Nero nelle cantine d\'eccellenza a pochi passi da Melbourne, tra colline verdissime e produttori appassionati.',
+          en: 'Organised Yarra Valley winery tour with lunch included: Chardonnay and Pinot Noir tastings at excellent wineries just outside Melbourne, among rolling green hills and passionate producers.',
+        },
+      },
+      {
+        day: 9,
+        title: { it: 'Great Ocean Road', en: 'Great Ocean Road' },
+        description: {
+          it: 'Tour in giornata sulla Great Ocean Road: tè mattutino sulle spiagge della Surf Coast, i Dodici Apostoli nel Port Campbell National Park, la Gola del Loch Ard, koala a Kennett River e la cittadina costiera di Apollo Bay.',
+          en: 'Full-day Great Ocean Road tour: morning tea on the Surf Coast beaches, the Twelve Apostles in Port Campbell National Park, Loch Ard Gorge, koalas at Kennett River, and the coastal town of Apollo Bay.',
+        },
+      },
+      {
+        day: 10,
+        title: { it: 'Phillip Island — Penguin Parade', en: 'Phillip Island — Penguin Parade' },
+        description: {
+          it: 'Tour a Phillip Island: Brighton Beach boxes, Moonlit Sanctuary Wildlife Park, Nobbies e Seal Rock. Al tramonto, la Penguin Parade: i pinguini fatati che tornano a terra dai loro piccoli.',
+          en: 'Phillip Island tour: Brighton Beach boxes, Moonlit Sanctuary Wildlife Park, Nobbies and Seal Rock. At sunset, the Penguin Parade: fairy penguins returning ashore to their chicks.',
+        },
+      },
+      {
+        day: 11,
+        title: { it: 'Volo Melbourne → Ayers Rock + Sound of Silence dinner', en: 'Flight Melbourne → Ayers Rock + Sound of Silence Dinner' },
+        description: {
+          it: 'Volo mattutino verso Ayers Rock. Ritiro auto (Toyota Corolla, Avis All Inclusive). Sera: il Sound of Silence Dinner — tramonto davanti a Uluru, cena gourmet con abbinamenti di vini, osservazione delle stelle e narrazione della cultura aborigena sotto il cielo del Red Centre.',
+          en: 'Early morning flight to Ayers Rock. Car rental pick-up (Toyota Corolla, Avis All Inclusive). Evening: the Sound of Silence Dinner — sunset facing Uluru, gourmet dinner with wine pairings, stargazing, and Aboriginal cultural storytelling under the Red Centre sky.',
+        },
+      },
+      {
+        day: 12,
+        title: { it: 'Uluru e Kata Tjuta — visita libera', en: 'Uluru & Kata Tjuta — Free Exploration' },
+        description: {
+          it: 'Giornata libera: alba su Kata Tjuta con trekking nella Valle dei Venti, poi trekking alla base di Uluru e tramonto sul monolite sacro. Due delle esperienze più emozionanti dell\'Australia.',
+          en: 'Free day: dawn at Kata Tjuta with Valle dei Venti hike, then Uluru base walk and sunset on the sacred monolith. Two of Australia\'s most moving experiences.',
+        },
+      },
+      {
+        day: 13,
+        title: { it: 'Sunrise Journeys + volo verso Sydney', en: 'Sunrise Journeys + Flight to Sydney' },
+        description: {
+          it: 'Mattina: Sunrise Journeys con audioguida italiana — le prime luci dell\'alba su Uluru, un racconto aborigeno con proiezioni laser e musica. Poi consegna auto e volo pomeridiano verso Sydney.',
+          en: 'Morning: Sunrise Journeys with Italian audio — first dawn light on Uluru, an Aboriginal story with laser projections and music. Then car drop-off and afternoon flight to Sydney.',
+        },
+      },
+      {
+        day: 14,
+        title: { it: 'Sydney — Bondi Beach', en: 'Sydney — Bondi Beach' },
+        description: {
+          it: 'Giornata a Sydney: Bondi Beach, la passeggiata panoramica verso Coogee, i ristoranti e i bar del lungomare. Serata nel quartiere di Darling Harbour.',
+          en: 'Day in Sydney: Bondi Beach, the panoramic coastal walk to Coogee, waterfront restaurants and bars. Evening in the Darling Harbour neighbourhood.',
+        },
+      },
+      {
+        day: 15,
+        title: { it: 'Sydney — crociera in porto + Opera House', en: 'Sydney — Harbour Cruise + Opera House' },
+        description: {
+          it: 'Minicrociera all-inclusive di 2 ore nel porto di Sydney con pranzo a buffet: Opera House, Harbour Bridge e Luna Park dall\'acqua. Nel pomeriggio: visita guidata di 1 ora all\'interno dell\'Opera House.',
+          en: '2-hour all-inclusive Sydney Harbour cruise with buffet lunch: Opera House, Harbour Bridge, and Luna Park from the water. Afternoon: 1-hour guided tour inside the Sydney Opera House.',
+        },
+      },
+      {
+        day: 16,
+        title: { it: 'Volo Sydney → Lord Howe Island', en: 'Flight Sydney → Lord Howe Island' },
+        description: {
+          it: 'Volo mattutino verso Lord Howe Island (2h, bagaglio 14 kg). Check-in all\'Arajilla Retreat nella lussuosa Banyan Suite con colazione inclusa. Primo contatto con questo paradiso UNESCO che accoglie massimo 400 visitatori alla volta.',
+          en: 'Morning flight to Lord Howe Island (2h, 14 kg luggage allowance). Check-in at Arajilla Retreat in the luxurious Banyan Suite with breakfast included. First contact with this UNESCO paradise that welcomes a maximum of 400 visitors at a time.',
+        },
+      },
+      {
+        day: 17,
+        title: { it: 'Lord Howe Island — relax', en: 'Lord Howe Island — Relaxation' },
+        description: {
+          it: 'Giornata di relax totale su Lord Howe Island: spiagge bianche con acque turchesi limpide, snorkeling sulla barriera corallina, foreste pluviali subtropicali e sentieri panoramici.',
+          en: 'Total relaxation day on Lord Howe Island: white beaches with clear turquoise waters, coral reef snorkeling, subtropical rainforests, and panoramic walking trails.',
+        },
+      },
+      {
+        day: 18,
+        title: { it: 'Lord Howe Island — natura e snorkeling', en: 'Lord Howe Island — Nature & Snorkeling' },
+        description: {
+          it: 'Esplorazione dell\'isola: snorkeling o immersioni nella barriera corallina, birdwatching (Lord Howe ospita specie endemiche) e trekking fino ai punti panoramici con vista sull\'oceano.',
+          en: 'Island exploration: coral reef snorkeling or diving, birdwatching (Lord Howe hosts endemic species), and trekking to panoramic viewpoints overlooking the ocean.',
+        },
+      },
+      {
+        day: 19,
+        title: { it: 'Lord Howe Island — relax finale', en: 'Lord Howe Island — Final Relaxation' },
+        description: {
+          it: 'Ultima giornata intera sull\'isola. Attività a scelta: kayak, pesca, escursioni o semplicemente relax nell\'atmosfera unica di Lord Howe, una delle isole più belle e isolate del Pacifico.',
+          en: 'Last full day on the island. Activities of choice: kayaking, fishing, hiking, or simply relaxing in the unique atmosphere of Lord Howe, one of the most beautiful and isolated islands in the Pacific.',
+        },
+      },
+      {
+        day: 20,
+        title: { it: 'Volo Lord Howe → Sydney', en: 'Flight Lord Howe → Sydney' },
+        description: {
+          it: 'Volo pomeridiano di ritorno a Sydney (2h). Check-in al ParkRoyal Darling Harbour. Ultima serata nella città più iconica d\'Australia.',
+          en: 'Afternoon return flight to Sydney (2h). Check-in at ParkRoyal Darling Harbour. Last evening in Australia\'s most iconic city.',
+        },
+      },
+      {
+        day: 21,
+        title: { it: 'Sydney — giornata libera, volo verso Roma', en: 'Sydney — Free Day, Flight to Rome' },
+        description: {
+          it: 'Ultima giornata libera a Sydney. Sera: volo notturno verso Dubai.',
+          en: 'Last free day in Sydney. Evening: overnight flight towards Dubai.',
+        },
+      },
+      {
+        day: 22,
+        title: { it: 'Volo Dubai → Venezia, arrivo', en: 'Flight Dubai → Venice, Arrival' },
+        description: {
+          it: 'Volo mattutino Dubai–Venezia. Fine di un grand tour attraverso l\'Australia più esclusiva.',
+          en: 'Morning flight Dubai–Venice. End of a grand tour through Australia\'s most exclusive destinations.',
+        },
+      },
+    ],
+    included: {
+      it: [
+        'Assistenza in loco in lingua italiana (telefonica e chat) per tutta la durata',
+        'Sistemazioni come da itinerario (colazioni solo dove specificate)',
+        'Documentazione di viaggio completa in PDF e digitale',
+        'Pernottamento Dubai con colazione (scala andata)',
+        'Auto a noleggio Adelaide All Inclusive km illimitati (Avis)',
+        'Traghetto Sealink Kangaroo Island andata e ritorno con auto',
+        'Kit pasti Wander on Kangaroo Island (2 colazioni + 2 cene)',
+        'Tour Yarra Valley con pranzo incluso',
+        'Tour Great Ocean Road',
+        'Tour Phillip Island Penguin Parade',
+        'Auto a noleggio Ayers Rock All Inclusive km illimitati (Avis)',
+        'Ingresso al Parco Nazionale di Ayers Rock (valido tutto il soggiorno)',
+        'Sound of Silence Dinner ad Ayers Rock',
+        'Sunrise Journeys con audioguida italiana ad Uluru',
+        'Minicrociera Sydney Harbour all-inclusive con pranzo a buffet',
+        'Visita guidata Opera House di Sydney (1 ora)',
+        'Arajilla Retreat Lord Howe Island — 4 notti Banyan Suite (colazione inclusa)',
+      ],
+      en: [
+        'Italian-language on-site assistance (phone and chat) throughout',
+        'Accommodation as per itinerary (breakfast where specified)',
+        'Complete travel documentation in PDF and digital format',
+        'Dubai stopover with breakfast (outbound)',
+        'Adelaide car rental All Inclusive unlimited km (Avis)',
+        'Sealink Kangaroo Island ferry return with car',
+        'Wander on Kangaroo Island meal box (2 breakfasts + 2 dinners)',
+        'Yarra Valley winery tour with lunch included',
+        'Great Ocean Road tour',
+        'Phillip Island Penguin Parade tour',
+        'Ayers Rock car rental All Inclusive unlimited km (Avis)',
+        'Ayers Rock National Park entry pass (valid entire stay)',
+        'Sound of Silence Dinner at Ayers Rock',
+        'Sunrise Journeys with Italian audio guide at Uluru',
+        'Sydney Harbour all-inclusive minicruise with buffet lunch',
+        'Sydney Opera House guided tour (1 hour)',
+        'Arajilla Retreat Lord Howe Island — 4 nights Banyan Suite (breakfast included)',
+      ],
+    },
+    notIncluded: standardNotIncluded,
+  },
 ];

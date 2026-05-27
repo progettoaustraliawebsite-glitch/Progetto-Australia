@@ -473,6 +473,60 @@ const itineraries = [
     notIncluded: standardNotIncluded,
     featured: false,
   },
+
+  // ─────────────────────────────────────────────
+  // NUOVA ZELANDA: NEL CUORE DELLA TERRA DI MEZZO — 15 giorni
+  // ─────────────────────────────────────────────
+  {
+    _id: 'itinerary-nuova-zelanda-terra-di-mezzo',
+    _type: 'itinerary',
+    slug: { current: 'nuova-zelanda-terra-di-mezzo' },
+    title: { it: 'Nuova Zelanda: Nel cuore della Terra di Mezzo', en: 'New Zealand: In the Heart of Middle-earth' },
+    description: { it: "Un viaggio di 15 giorni attraverso la Nuova Zelanda sulle orme del Signore degli Anelli: Hobbiton nel cuore del Waikato, le grotte luminose di Waitomo, il vulcano di Tongariro (il vero Mordor), Wellington con Weta Workshop, i fiordi di Milford Sound e i paesaggi leggendari di Queenstown e Glenorchy.", en: "A 15-day journey through New Zealand following in the footsteps of The Lord of the Rings: Hobbiton in the heart of the Waikato, the glowworm caves of Waitomo, the volcanic Tongariro (the real Mordor), Wellington with Weta Workshop, the fjords of Milford Sound, and the legendary landscapes of Queenstown and Glenorchy." },
+    duration: 15,
+    destination: 'New Zealand',
+    type: 'adventure',
+    gradient: 'from-emerald-700 to-green-900',
+    price: { currency: 'EUR', amount: 3850 },
+    priceEn: { currency: 'USD', amount: 4200 },
+    highlights: {
+      it: ['Hobbiton Movie Set — la vera Contea™ con cena inclusa', 'Grotte di Waitomo — barca tra i glowworm', 'Tongariro — il vero Mordor e l\'altopiano vulcanico', 'Weta Workshop + tour LOTR a Wellington', 'Milford Sound in crociera + LOTR full day a Queenstown'],
+      en: ['Hobbiton Movie Set — the real Shire™ with dinner included', 'Waitomo Caves — boat ride among glowworms', 'Tongariro — the real Mordor and volcanic plateau', 'Weta Workshop + LOTR tour in Wellington', 'Milford Sound cruise + LOTR full day in Queenstown'],
+    },
+    included: {
+      it: ['Tutti i pernottamenti come da itinerario (colazione inclusa)', 'Auto a noleggio con assicurazione All Inclusive (Auckland–Queenstown)', 'Traghetto dall\'Isola Nord all\'Isola Sud (Cook Strait)', 'Hobbiton Movie Set Tour con cena inclusa', 'Waitomo Glowworm Caves — tour guidato e gita in barca', 'Waimangu Geothermal Valley', 'Spettacolo Maori e cena tradizionale a Rotorua', 'Tour full day Signore degli Anelli a Wellington + Weta Workshop', 'Tour avvistamento balene a Kaikoura', 'Gita Milford Sound in pullman con crociera e pranzo incluso', 'LOTR Full Day tour in 4x4 a Queenstown con pranzo incluso', 'Tasse locali GST (15%)'],
+      en: ['All accommodation as per itinerary (breakfast included)', 'Car rental with All Inclusive insurance (Auckland–Queenstown)', 'Cook Strait ferry from North to South Island', 'Hobbiton Movie Set Tour with dinner included', 'Waitomo Glowworm Caves — guided tour and boat ride', 'Waimangu Geothermal Valley', 'Maori performance and traditional dinner in Rotorua', 'Lord of the Rings full day tour in Wellington + Weta Workshop', 'Whale watching tour in Kaikoura', 'Milford Sound full-day coach trip with cruise and picnic lunch', 'LOTR Full Day 4x4 tour in Queenstown with lunch included', 'Local GST taxes (15%)'],
+    },
+    notIncluded: standardNotIncluded,
+    featured: false,
+  },
+
+  // ─────────────────────────────────────────────
+  // AUSTRALIA SUMMER ESCAPE — 22 giorni
+  // ─────────────────────────────────────────────
+  {
+    _id: 'itinerary-australia-summer-escape',
+    _type: 'itinerary',
+    slug: { current: 'australia-summer-escape' },
+    title: { it: 'Australia Summer Escape — Adelaide, Kangaroo Island, Melbourne, Uluru e Lord Howe Island', en: 'Australia Summer Escape — Adelaide, Kangaroo Island, Melbourne, Uluru & Lord Howe Island' },
+    description: { it: "Un grand tour australiano di 22 giorni che tocca le destinazioni più esclusive del continente: la fauna selvaggia di Kangaroo Island, la Melbourne dei vigneti e della Great Ocean Road, il deserto rosso di Uluru con il Sound of Silence dinner, Sydney con la crociera nel porto e l'Opera House, e infine Lord Howe Island — UNESCO, 400 visitatori al massimo — nel lusso dell'Arajilla Retreat.", en: "A 22-day Australian grand tour touching the continent's most exclusive destinations: Kangaroo Island wildlife, Melbourne's vineyards and Great Ocean Road, the red desert of Uluru with the Sound of Silence dinner, Sydney harbour cruise and Opera House, and finally Lord Howe Island — UNESCO, 400 visitors maximum — in the luxury of Arajilla Retreat." },
+    duration: 22,
+    destination: 'Australia',
+    type: 'luxury',
+    gradient: 'from-amber-600 to-orange-800',
+    price: { currency: 'EUR', amount: 8210 },
+    priceEn: { currency: 'USD', amount: 8900 },
+    highlights: {
+      it: ['Kangaroo Island — fauna australiana e WanderPod Ocean View', 'Melbourne: Yarra Valley, Great Ocean Road e Phillip Island', 'Uluru: Sound of Silence dinner e Sunrise Journeys', 'Sydney: crociera in porto + visita guidata Opera House', 'Lord Howe Island — paradiso UNESCO, Arajilla Retreat'],
+      en: ['Kangaroo Island — Australian wildlife and Ocean View WanderPod', 'Melbourne: Yarra Valley, Great Ocean Road, and Phillip Island', 'Uluru: Sound of Silence dinner and Sunrise Journeys', 'Sydney: harbour cruise + Opera House guided tour', 'Lord Howe Island — UNESCO paradise, Arajilla Retreat'],
+    },
+    included: {
+      it: ['Assistenza in loco in lingua italiana (telefonica e chat) per tutta la durata', 'Sistemazioni come da itinerario (colazioni solo dove specificate)', 'Documentazione di viaggio completa in PDF e digitale', 'Pernottamento Dubai con colazione (scala andata)', 'Auto a noleggio Adelaide All Inclusive km illimitati (Avis)', 'Traghetto Sealink Kangaroo Island andata e ritorno con auto', 'Kit pasti Wander on Kangaroo Island (2 colazioni + 2 cene)', 'Tour Yarra Valley con pranzo incluso', 'Tour Great Ocean Road', 'Tour Phillip Island Penguin Parade', 'Auto a noleggio Ayers Rock All Inclusive km illimitati (Avis)', 'Ingresso al Parco Nazionale di Ayers Rock (valido tutto il soggiorno)', 'Sound of Silence Dinner ad Ayers Rock', 'Sunrise Journeys con audioguida italiana ad Uluru', 'Minicrociera Sydney Harbour all-inclusive con pranzo a buffet', 'Visita guidata Opera House di Sydney (1 ora)', 'Arajilla Retreat Lord Howe Island — 4 notti Banyan Suite (colazione inclusa)'],
+      en: ['Italian-language on-site assistance (phone and chat) throughout', 'Accommodation as per itinerary (breakfast where specified)', 'Complete travel documentation in PDF and digital format', 'Dubai stopover with breakfast (outbound)', 'Adelaide car rental All Inclusive unlimited km (Avis)', 'Sealink Kangaroo Island ferry return with car', 'Wander on Kangaroo Island meal box (2 breakfasts + 2 dinners)', 'Yarra Valley winery tour with lunch included', 'Great Ocean Road tour', 'Phillip Island Penguin Parade tour', 'Ayers Rock car rental All Inclusive unlimited km (Avis)', 'Ayers Rock National Park entry pass (valid entire stay)', 'Sound of Silence Dinner at Ayers Rock', 'Sunrise Journeys with Italian audio guide at Uluru', 'Sydney Harbour all-inclusive minicruise with buffet lunch', 'Sydney Opera House guided tour (1 hour)', 'Arajilla Retreat Lord Howe Island — 4 nights Banyan Suite (breakfast included)'],
+    },
+    notIncluded: standardNotIncluded,
+    featured: false,
+  },
 ];
 
 // ── Run import ────────────────────────────────────────────────────────────────
