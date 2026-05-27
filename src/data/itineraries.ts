@@ -254,10 +254,10 @@ export const itineraries: Itinerary[] = [
       },
       {
         day: 23,
-        title: { it: 'Rientro in Europa', en: 'Return to Europe' },
+        title: { it: 'Partenza — Fine del Viaggio', en: 'Departure — End of Journey' },
         description: {
-          it: 'Volo da Papeete verso l\'Europa, solitamente con scalo a Los Angeles (LAX) e poi verso l\'Italia. Il viaggio di rientro è lungo, ma ripercorrendo mentalmente le tappe — Melbourne, la Great Ocean Road, Kangaroo Island, l\'Uluru, Sydney, Bora Bora — si capisce perché questo sia uno degli itinerari più amati dai viaggiatori di Progetto Australia. Fine di un\'avventura indimenticabile.',
-          en: 'Flight from Papeete to Europe, usually via Los Angeles (LAX) and then to Italy. The return journey is long, but mentally retracing the stages — Melbourne, the Great Ocean Road, Kangaroo Island, Uluru, Sydney, Bora Bora — makes clear why this is one of Progetto Australia\'s most-loved itineraries. End of an unforgettable adventure.',
+          it: 'Volo da Papeete verso la destinazione finale, solitamente con scalo a Los Angeles (LAX). Il viaggio di rientro è lungo, ma ripercorrendo mentalmente le tappe — Melbourne, la Great Ocean Road, Kangaroo Island, l\'Uluru, Sydney, Bora Bora — si capisce perché questo sia uno degli itinerari più amati dai viaggiatori di Progetto Australia. Fine di un\'avventura indimenticabile.',
+          en: 'Flight from Papeete to your destination, usually via Los Angeles (LAX). The return journey is long, but mentally retracing the stages — Melbourne, the Great Ocean Road, Kangaroo Island, Uluru, Sydney, Bora Bora — makes clear why this is one of Progetto Australia\'s most-loved itineraries. End of an unforgettable adventure.',
         },
       },
     ],
@@ -454,10 +454,10 @@ export const itineraries: Itinerary[] = [
       },
       {
         day: 16,
-        title: { it: 'Rientro in Europa', en: 'Return to Europe' },
+        title: { it: 'Partenza — Fine del Viaggio', en: 'Departure — End of Journey' },
         description: {
-          it: "Volo di rientro verso l'Europa, solitamente con scalo a Los Angeles (LAX) e poi verso l'Italia. Il viaggio aereo da Papeete all'Italia è di circa 20 ore totali — il prezzo da pagare per il paradiso più lontano d'Europa. Fine di uno dei viaggi più sognati al mondo.",
-          en: "Return flight to Europe, usually via Los Angeles (LAX) and then to Italy. The total flight time from Papeete to Italy is around 20 hours — the price to pay for Europe's most distant paradise. End of one of the world's most dreamed-of journeys.",
+          it: "Volo di rientro da Papeete, solitamente con scalo a Los Angeles (LAX). Il viaggio aereo dalla Polinesia Francese è di circa 20 ore totali — il prezzo da pagare per il paradiso più lontano al mondo. Fine di uno dei viaggi più sognati al mondo.",
+          en: "Return flight from Papeete, usually via Los Angeles (LAX). The total flight time from French Polynesia is around 20 hours — the price to pay for the world's most distant paradise. End of one of the world's most dreamed-of journeys.",
         },
       },
     ],
@@ -716,10 +716,10 @@ export const itineraries: Itinerary[] = [
       },
       {
         day: 24,
-        title: { it: 'Rientro in Europa', en: 'Return to Europe' },
+        title: { it: 'Partenza — Fine del Viaggio', en: 'Departure — End of Journey' },
         description: {
-          it: "Volo da Papeete verso l'Europa con scalo a Los Angeles. Un viaggio che ha toccato due delle realtà naturali più spettacolari del pianeta: i fiordi, i vulcani e i boschi di Aotearoa da una parte, le lagune azzurre e le mante giganti della Polinesia Francese dall'altra. Fine di un'avventura che lascia il segno.",
-          en: "Flight from Papeete to Europe via Los Angeles. A journey that has touched two of the planet's most spectacular natural worlds: the fjords, volcanoes and forests of Aotearoa on one side, the blue lagoons and giant manta rays of French Polynesia on the other. End of an adventure that leaves a mark.",
+          it: "Volo da Papeete con scalo a Los Angeles verso la destinazione finale. Un viaggio che ha toccato due delle realtà naturali più spettacolari del pianeta: i fiordi, i vulcani e i boschi di Aotearoa da una parte, le lagune azzurre e le mante giganti della Polinesia Francese dall'altra. Fine di un'avventura che lascia il segno.",
+          en: "Flight from Papeete via Los Angeles to your destination. A journey that has touched two of the planet's most spectacular natural worlds: the fjords, volcanoes and forests of Aotearoa on one side, the blue lagoons and giant manta rays of French Polynesia on the other. End of an adventure that leaves a mark.",
         },
       },
     ],
@@ -914,10 +914,10 @@ export const itineraries: Itinerary[] = [
       },
       {
         day: 15,
-        title: { it: 'Rientro in Italia', en: 'Return to Italy' },
+        title: { it: 'Partenza — Fine del Viaggio', en: 'Departure — End of Journey' },
         description: {
-          it: "Volo di rientro verso l'Italia, solitamente via Singapore o Dubai con uno scalo intermedio. La Nuova Zelanda è lontana — 19–23 ore di volo dall'Italia — ma ogni ora di volo vale ogni minuto trascorso in Aotearoa. Il paese delle grotte luminose, dei vulcani, dei fiordi, degli hobbit e dei guerrieri Maori rimane impresso per sempre nella memoria di chi ci va.",
-          en: "Return flight to Italy, usually via Singapore or Dubai with an intermediate stopover. New Zealand is far away — 19–23 hours of flying from Italy — but every flight hour is worth every minute spent in Aotearoa. The country of glowworm caves, volcanoes, fjords, hobbits and Maori warriors stays forever in the memory of those who visit.",
+          it: "Volo di rientro dalla Nuova Zelanda, solitamente via Singapore o Dubai con uno scalo intermedio. La Nuova Zelanda è lontana — 19–23 ore di volo — ma ogni ora vale ogni minuto trascorso in Aotearoa. Il paese delle grotte luminose, dei vulcani, dei fiordi, degli hobbit e dei guerrieri Maori rimane impresso per sempre nella memoria di chi ci va.",
+          en: "Return flight from New Zealand, usually via Singapore or Dubai with an intermediate stopover. New Zealand is far away — 19–23 hours of flying — but every flight hour is worth every minute spent in Aotearoa. The country of glowworm caves, volcanoes, fjords, hobbits and Maori warriors stays forever in the memory of those who visit.",
         },
       },
     ],
@@ -1320,10 +1320,10 @@ export const itineraries: Itinerary[] = [
     program: [
       {
         day: 1,
-        title: { it: 'Partenza da Roma', en: 'Departure from Rome' },
+        title: { it: 'Partenza — Volo per Sydney', en: 'Departure — Flight to Sydney' },
         description: {
-          it: 'Volo da Roma verso Sydney via Istanbul. Inizio di un\'avventura che attraversa due continenti.',
-          en: 'Flight from Rome to Sydney via Istanbul. The beginning of an adventure spanning two continents.',
+          it: 'Volo verso Sydney con scalo intermedio (solitamente Istanbul o Dubai). Inizio di un\'avventura che attraversa due continenti.',
+          en: 'Flight to Sydney with an intermediate stopover (typically Istanbul or Dubai). The beginning of an adventure spanning two continents.',
         },
       },
       {
@@ -1456,10 +1456,10 @@ export const itineraries: Itinerary[] = [
       },
       {
         day: 18,
-        title: { it: 'Rientro a Nadi, volo verso Roma', en: 'Return to Nadi, Flight to Rome' },
+        title: { it: 'Rientro a Nadi — Volo di Rientro', en: 'Return to Nadi — Departure Flight' },
         description: {
-          it: 'Volo panoramico di ritorno a Nadi. Pernottamento al Fiji Gateway Hotel e volo notturno verso Sydney poi Istanbul.',
-          en: 'Scenic flight back to Nadi. Overnight at Fiji Gateway Hotel and night flight towards Sydney then Istanbul.',
+          it: 'Volo panoramico di ritorno a Nadi. Pernottamento al Fiji Gateway Hotel e volo notturno di rientro.',
+          en: 'Scenic flight back to Nadi. Overnight at Fiji Gateway Hotel and night departure flight home.',
         },
       },
       {
@@ -1472,10 +1472,10 @@ export const itineraries: Itinerary[] = [
       },
       {
         day: 20,
-        title: { it: 'Arrivo a Roma', en: 'Arrival in Rome' },
+        title: { it: 'Arrivo a destinazione — Fine del Viaggio', en: 'Arrival — End of Journey' },
         description: {
-          it: 'Volo Istanbul–Roma. Fine di un viaggio indimenticabile attraverso l\'Australia e le isole Fiji.',
-          en: 'Istanbul–Rome flight. End of an unforgettable journey through Australia and the Fiji Islands.',
+          it: 'Scalo e volo finale verso la destinazione. Fine di un viaggio indimenticabile attraverso l\'Australia e le isole Fiji.',
+          en: 'Stopover and final flight home. End of an unforgettable journey through Australia and the Fiji Islands.',
         },
       },
     ],
@@ -1562,10 +1562,10 @@ export const itineraries: Itinerary[] = [
     program: [
       {
         day: 1,
-        title: { it: 'Partenza da Roma', en: 'Departure from Rome' },
+        title: { it: 'Partenza — Volo per Perth', en: 'Departure — Flight to Perth' },
         description: {
-          it: 'Volo da Roma verso Perth. Inizio di un\'avventura attraverso l\'Australia più selvaggia.',
-          en: 'Flight from Rome to Perth. The start of an adventure through Australia\'s wildest landscapes.',
+          it: 'Volo verso Perth con scalo intermedio. Inizio di un\'avventura attraverso l\'Australia più selvaggia.',
+          en: 'Flight to Perth with an intermediate stopover. The start of an adventure through Australia\'s wildest landscapes.',
         },
       },
       {
@@ -1746,18 +1746,18 @@ export const itineraries: Itinerary[] = [
       },
       {
         day: 24,
-        title: { it: 'Volo di ritorno verso Roma', en: 'Return Flight to Rome' },
+        title: { it: 'Volo di Rientro', en: 'Return Flight' },
         description: {
-          it: 'Transfer in shuttle all\'aeroporto di Hamilton Island. Volo verso Sydney, poi Sydney–Dubai e Dubai–Roma.',
-          en: 'Shuttle transfer to Hamilton Island airport. Flight to Sydney, then Sydney–Dubai and Dubai–Rome.',
+          it: 'Transfer in shuttle all\'aeroporto di Hamilton Island. Volo verso Sydney, poi proseguimento verso la destinazione finale.',
+          en: 'Shuttle transfer to Hamilton Island airport. Flight to Sydney, then onward to your final destination.',
         },
       },
       {
         day: 25,
-        title: { it: 'Arrivo a Roma', en: 'Arrival in Rome' },
+        title: { it: 'Arrivo a destinazione — Fine del Viaggio', en: 'Arrival — End of Journey' },
         description: {
-          it: 'Atterraggio a Roma Fiumicino. Fine di un viaggio attraverso l\'Australia più autentica: dal Kimberley alle Whitsundays.',
-          en: 'Landing at Rome Fiumicino. End of a journey through Australia\'s most authentic landscapes: from the Kimberley to the Whitsundays.',
+          it: 'Atterraggio a destinazione. Fine di un viaggio attraverso l\'Australia più autentica: dal Kimberley alle Whitsundays.',
+          en: 'Arrival at your destination. End of a journey through Australia\'s most authentic landscapes: from the Kimberley to the Whitsundays.',
         },
       },
     ],
@@ -1974,8 +1974,8 @@ export const itineraries: Itinerary[] = [
         day: 15,
         title: { it: 'Partenza da Queenstown', en: 'Departure from Queenstown' },
         description: {
-          it: 'Partenza autonoma per l\'aeroporto internazionale di Queenstown. Fine dei servizi a terra. Volo di rientro in Italia.',
-          en: 'Independent departure to Queenstown International Airport. End of ground services. Return flight to Italy.',
+          it: 'Partenza autonoma per l\'aeroporto internazionale di Queenstown. Fine dei servizi a terra. Volo di rientro.',
+          en: 'Independent departure to Queenstown International Airport. End of ground services. Return flight home.',
         },
       },
     ],
@@ -2054,8 +2054,8 @@ export const itineraries: Itinerary[] = [
         day: 1,
         title: { it: 'Partenza — scala a Dubai', en: 'Departure — Dubai Stopover' },
         description: {
-          it: 'Volo da Venezia verso Dubai. Pernottamento all\'Hotel Boulevard Autograph Collection con colazione inclusa: una notte nel lusso di Dubai come primo assaggio del viaggio.',
-          en: 'Flight from Venice to Dubai. Overnight at Hotel Boulevard Autograph Collection with breakfast included: a night of Dubai luxury as the first taste of the journey.',
+          it: 'Partenza verso Dubai con scalo. Pernottamento all\'Hotel Boulevard Autograph Collection con colazione inclusa: una notte nel lusso di Dubai come primo assaggio del viaggio.',
+          en: 'Departure to Dubai. Overnight at Hotel Boulevard Autograph Collection with breakfast included: a night of Dubai luxury as the first taste of the journey.',
         },
       },
       {
@@ -2212,18 +2212,18 @@ export const itineraries: Itinerary[] = [
       },
       {
         day: 21,
-        title: { it: 'Sydney — giornata libera, volo verso Roma', en: 'Sydney — Free Day, Flight to Rome' },
+        title: { it: 'Sydney — Giornata libera, Volo di Rientro', en: 'Sydney — Free Day, Departure Flight' },
         description: {
-          it: 'Ultima giornata libera a Sydney. Sera: volo notturno verso Dubai.',
-          en: 'Last free day in Sydney. Evening: overnight flight towards Dubai.',
+          it: 'Ultima giornata libera a Sydney. Sera: volo notturno di rientro.',
+          en: 'Last free day in Sydney. Evening: overnight departure flight home.',
         },
       },
       {
         day: 22,
-        title: { it: 'Volo Dubai → Venezia, arrivo', en: 'Flight Dubai → Venice, Arrival' },
+        title: { it: 'Arrivo a destinazione — Fine del Viaggio', en: 'Arrival — End of Journey' },
         description: {
-          it: 'Volo mattutino Dubai–Venezia. Fine di un grand tour attraverso l\'Australia più esclusiva.',
-          en: 'Morning flight Dubai–Venice. End of a grand tour through Australia\'s most exclusive destinations.',
+          it: 'Scalo e volo finale verso la destinazione. Fine di un grand tour attraverso l\'Australia più esclusiva.',
+          en: 'Stopover and final flight to destination. End of a grand tour through Australia\'s most exclusive destinations.',
         },
       },
     ],
@@ -2462,8 +2462,8 @@ export const itineraries: Itinerary[] = [
         day: 19,
         title: { it: 'Lake Tekapo → Christchurch — partenza', en: 'Lake Tekapo → Christchurch — Departure' },
         description: {
-          it: "Ultima mattinata con colazione e vista sulle montagne, poi guida verso Christchurch (225 km). Consegna dell'auto all'aeroporto internazionale di Christchurch e partenza per l'Italia. Fine dei servizi inclusi nel pacchetto.",
-          en: "Final morning with breakfast and mountain views, then drive to Christchurch (225 km). Car drop-off at Christchurch International Airport and departure for Italy. End of included services.",
+          it: "Ultima mattinata con colazione e vista sulle montagne, poi guida verso Christchurch (225 km). Consegna dell'auto all'aeroporto internazionale di Christchurch e partenza. Fine dei servizi inclusi nel pacchetto.",
+          en: "Final morning with breakfast and mountain views, then drive to Christchurch (225 km). Car drop-off at Christchurch International Airport and departure. End of included services.",
         },
       },
     ],
@@ -2554,8 +2554,8 @@ export const itineraries: Itinerary[] = [
         day: 1,
         title: { it: 'Partenza per la Nuova Zelanda', en: 'Departure for New Zealand' },
         description: {
-          it: "Partenza dall'Italia con scalo intermedio. Il viaggio verso la Nuova Zelanda richiede circa 24–28 ore inclusi i transiti. Primo giorno dedicato ai voli.",
-          en: "Departure from Italy with an intermediate stopover. The journey to New Zealand takes approximately 24–28 hours including transits. First day dedicated to flights.",
+          it: "Partenza con scalo intermedio verso la Nuova Zelanda. Il viaggio richiede circa 24–28 ore inclusi i transiti. Primo giorno dedicato ai voli.",
+          en: "Departure with an intermediate stopover to New Zealand. The journey takes approximately 24–28 hours including transits. First day dedicated to flights.",
         },
       },
       {
@@ -2770,16 +2770,16 @@ export const itineraries: Itinerary[] = [
         day: 28,
         title: { it: 'Auckland — transito', en: 'Auckland — Transit' },
         description: {
-          it: "Arrivo ad Auckland. Volo di rientro verso l'Italia con scalo intermedio.",
-          en: "Arrival in Auckland. Return flight to Italy with an intermediate stopover.",
+          it: "Arrivo ad Auckland. Volo di rientro con scalo intermedio.",
+          en: "Arrival in Auckland. Return flight home with an intermediate stopover.",
         },
       },
       {
         day: 29,
-        title: { it: 'Rientro in Italia', en: 'Return to Italy' },
+        title: { it: 'Arrivo a destinazione — Fine del Viaggio', en: 'Arrival — End of Journey' },
         description: {
-          it: "Ultimo scalo e atterraggio in Italia. Fine del viaggio.",
-          en: "Final stopover and landing in Italy. End of the journey.",
+          it: "Ultimo scalo e atterraggio a destinazione. Fine del viaggio.",
+          en: "Final stopover and arrival at destination. End of the journey.",
         },
       },
     ],
@@ -3040,10 +3040,10 @@ export const itineraries: Itinerary[] = [
       },
       {
         day: 22,
-        title: { it: 'Rientro in Italia', en: 'Return to Italy' },
+        title: { it: 'Partenza — Fine del Viaggio', en: 'Departure — End of Journey' },
         description: {
-          it: "Volo di rientro da Auckland verso l'Italia via Hong Kong. Fine del viaggio.",
-          en: "Return flight from Auckland to Italy via Hong Kong. End of the journey.",
+          it: "Volo di rientro da Auckland via Hong Kong verso la destinazione finale. Fine del viaggio.",
+          en: "Return flight from Auckland via Hong Kong to your destination. End of the journey.",
         },
       },
     ],
@@ -3520,8 +3520,8 @@ export const itineraries: Itinerary[] = [
         day: 31,
         title: { it: 'Partenza da Sydney', en: 'Departure from Sydney' },
         description: {
-          it: "Transfer libero all'aeroporto internazionale di Sydney e volo di rientro verso l'Italia. Fine dei servizi inclusi nel pacchetto. Il road trip più lungo d'Australia si conclude qui, dopo 31 giorni di natura remota, cultura aborigena e paesaggi indimenticabili.",
-          en: "Free transfer to Sydney International Airport and return flight to Italy. End of included package services. Australia's longest road trip ends here, after 31 days of remote nature, Aboriginal culture and unforgettable landscapes.",
+          it: "Transfer libero all'aeroporto internazionale di Sydney e volo di rientro. Fine dei servizi inclusi nel pacchetto. Il road trip più lungo d'Australia si conclude qui, dopo 31 giorni di natura remota, cultura aborigena e paesaggi indimenticabili.",
+          en: "Free transfer to Sydney International Airport and return flight home. End of included package services. Australia's longest road trip ends here, after 31 days of remote nature, Aboriginal culture and unforgettable landscapes.",
         },
       },
     ],
