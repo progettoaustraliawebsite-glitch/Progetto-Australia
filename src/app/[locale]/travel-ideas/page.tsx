@@ -29,7 +29,16 @@ export default async function TravelIdeasPage() {
   if (USE_SANITY) {
     try {
       const sanityData = await getAllItineraries();
-      if (sanityData.length > 0) itineraries = sanityData.map((s, i) => normalizeSanityItinerary(s, i));
+      if (sanityData.length > 0) {
+        const normalized = sanityData.map((s, i) => normalizeSanityItinerary(s, i));
+        // Deduplicate by slug — keep the first occurrence
+        const seen = new Set<string>();
+        itineraries = normalized.filter((it) => {
+          if (seen.has(it.slug)) return false;
+          seen.add(it.slug);
+          return true;
+        });
+      }
     } catch (e) { console.error('[Sanity] travel-ideas fetch failed:', e); }
   }
 
