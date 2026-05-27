@@ -12,7 +12,7 @@ import { destinationContent } from '@/data/destination-content';
 import { USE_SANITY, getAllDestinations, getAllItineraries, normalizeSanityDestination, normalizeSanityItinerary, getAllBlogPosts, normalizeSanityBlogPostForList, getDestinationBySlug, normalizeSanityDestinationContent } from '@/lib/sanity';
 import OpenModalButton from '@/components/ui/OpenModalButton';
 import DestinationsGrid from '@/components/home/DestinationsGrid';
-import { formatPrice } from '@/lib/utils';
+import { formatPrice, renderTitle } from '@/lib/utils';
 import type { Metadata } from 'next';
 
 interface Props {
@@ -345,7 +345,7 @@ export default async function DestinationDetailPage({ params }: Props) {
                   </span>
                   <div>
                     <h3 className="font-serif text-2xl font-bold text-white leading-tight mb-2">
-                      {it.title[locale]}
+                      {renderTitle(it.title[locale])}
                     </h3>
                     <p className="text-white/70 text-sm font-sans leading-relaxed mb-1 line-clamp-2">
                       {it.description[locale]}

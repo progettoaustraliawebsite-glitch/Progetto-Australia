@@ -5,7 +5,7 @@ import { useTranslations, useLocale } from 'next-intl';
 import { Link } from '@/i18n/navigation';
 import { Clock, MapPin, ArrowRight, ChevronLeft, ChevronRight } from 'lucide-react';
 import SectionHeader from '@/components/ui/SectionHeader';
-import { formatPrice } from '@/lib/utils';
+import { formatPrice, renderTitle } from '@/lib/utils';
 import type { Itinerary } from '@/data/itineraries';
 
 interface Props {
@@ -89,7 +89,7 @@ export default function FeaturedItineraries({ itineraries }: Props) {
                   </span>
                 </div>
                 <h3 className="font-serif text-lg font-bold mb-3 text-white line-clamp-2">
-                  {itinerary.title[locale]}
+                  {renderTitle(itinerary.title[locale])}
                 </h3>
                 <p className="text-sm leading-relaxed mb-5 flex-1 line-clamp-3" style={{ color: 'rgba(255,255,255,0.75)' }}>
                   {itinerary.description[locale]}

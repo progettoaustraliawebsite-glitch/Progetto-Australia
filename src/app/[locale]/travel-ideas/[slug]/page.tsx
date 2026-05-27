@@ -9,7 +9,7 @@ import DayImages from '@/components/ui/DayImages';
 import { itineraries as staticItineraries } from '@/data/itineraries';
 import { USE_SANITY, getAllItineraries, getItineraryBySlug, normalizeSanityItinerary } from '@/lib/sanity';
 
-import { formatPrice } from '@/lib/utils';
+import { formatPrice, renderTitle } from '@/lib/utils';
 import type { Metadata } from 'next';
 import JsonLd from '@/components/seo/JsonLd';
 
@@ -155,7 +155,7 @@ export default async function ItineraryDetailPage({ params }: Props) {
               </span>
             </div>
             <h1 className="text-2xl md:text-5xl lg:text-6xl font-serif font-bold text-white leading-tight">
-              {itinerary.title[locale]}
+              {renderTitle(itinerary.title[locale])}
             </h1>
           </div>
         </div>

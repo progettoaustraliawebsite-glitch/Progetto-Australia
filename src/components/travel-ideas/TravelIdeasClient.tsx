@@ -3,7 +3,7 @@
 import { useState, useMemo, useRef, useEffect } from 'react';
 import { Clock, MapPin, ArrowRight, ChevronDown, X } from 'lucide-react';
 import { Link } from '@/i18n/navigation';
-import { formatPrice } from '@/lib/utils';
+import { formatPrice, renderTitle } from '@/lib/utils';
 import type { Itinerary } from '@/data/itineraries';
 
 interface Props {
@@ -302,7 +302,7 @@ export default function TravelIdeasClient({ itineraries, locale, heroLabel, hero
                         </span>
                       </div>
                       <h2 className="font-serif text-xl font-bold text-hero mb-3 group-hover:text-gold transition-colors duration-300 line-clamp-2">
-                        {itinerary.title[locale]}
+                        {renderTitle(itinerary.title[locale])}
                       </h2>
                       <p className="text-hero/55 text-sm leading-relaxed mb-5 line-clamp-3 flex-1">
                         {itinerary.description[locale]}
