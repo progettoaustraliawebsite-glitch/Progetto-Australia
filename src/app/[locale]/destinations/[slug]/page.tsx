@@ -260,7 +260,7 @@ export default async function DestinationDetailPage({ params }: Props) {
       )}
 
       {/* ── QUANDO ANDARE ───────────────────────────────────────────────────── */}
-      {content && (
+      {content && slug !== 'australia' && slug !== 'new-zealand' && (
         <section className="py-16 bg-white border-t border-stone-100">
           <div className="container mx-auto px-6">
             <div className="text-center mb-8">

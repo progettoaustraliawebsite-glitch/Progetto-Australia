@@ -2,6 +2,7 @@ import { useTranslations, useLocale } from 'next-intl';
 import { Link } from '@/i18n/navigation';
 import { Mail, Phone, MapPin, Instagram, Facebook } from 'lucide-react';
 import { destinations } from '@/data/destinations';
+import { team } from '@/data/team';
 
 export default function Footer() {
   const t = useTranslations();
@@ -46,13 +47,13 @@ export default function Footer() {
             {t('footer.colAbout')}
           </h5>
           <ul className="flex flex-col gap-2.5 mb-8">
-            {['paola-secoli', 'lucia-bonizzato', 'daria-bove', 'graciela-salazar', 'sara-trezzi'].map((name) => (
-              <li key={name}>
+            {team.map((member) => (
+              <li key={member.id}>
                 <Link
                   href="/about"
-                  className="text-sm text-white/55 hover:text-gold transition-colors duration-300 capitalize"
+                  className="text-sm text-white/55 hover:text-gold transition-colors duration-300"
                 >
-                  {name.split('-').map(w => w.charAt(0).toUpperCase() + w.slice(1)).join(' ')}
+                  {member.name}
                 </Link>
               </li>
             ))}
