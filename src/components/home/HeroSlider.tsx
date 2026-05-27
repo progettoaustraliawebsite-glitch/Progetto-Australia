@@ -21,10 +21,16 @@ export default function HeroSlider() {
   const router = useRouter();
   const [current, setCurrent] = useState(0);
   const [mounted, setMounted] = useState(false);
+  // Track which slides have been revealed at least once — only load those images
+  const [revealed, setRevealed] = useState<Set<number>>(new Set([0]));
   const t = useTranslations('home.hero');
 
   const next = useCallback(() => {
-    setCurrent((prev) => (prev === SLIDE_COUNT - 1 ? 0 : prev + 1));
+    setCurrent((prev) => {
+      const nextIdx = prev === SLIDE_COUNT - 1 ? 0 : prev + 1;
+      setRevealed((r) => new Set([...r, nextIdx]));
+      return nextIdx;
+    });
   }, []);
 
   useEffect(() => {
@@ -36,24 +42,27 @@ export default function HeroSlider() {
   return (
     <section className="relative h-screen h-[100dvh] w-full overflow-hidden bg-hero mb-[-2px]">
 
-      {/* Background images — crossfade */}
-      {SLIDES.map((slide, i) => (
-        <div
-          key={slide.image}
-          className="absolute inset-0 transition-opacity duration-1000"
-          style={{ opacity: i === current ? 1 : 0 }}
-        >
-          <Image
-            src={slide.image}
-            alt=""
-            fill
-            className="object-cover"
-            priority={i === 0}
-            sizes="100vw"
-            quality={85}
-          />
-        </div>
-      ))}
+      {/* Background images — crossfade. Only mount slides that have been shown at least once. */}
+      {SLIDES.map((slide, i) => {
+        if (!revealed.has(i)) return null;
+        return (
+          <div
+            key={slide.image}
+            className="absolute inset-0 transition-opacity duration-1000"
+            style={{ opacity: i === current ? 1 : 0 }}
+          >
+            <Image
+              src={slide.image}
+              alt=""
+              fill
+              className="object-cover"
+              priority={i === 0}
+              sizes="100vw"
+              quality={80}
+            />
+          </div>
+        );
+      })}
 
       {/* Dark overlay */}
       <div className="absolute inset-0 bg-black/42" />

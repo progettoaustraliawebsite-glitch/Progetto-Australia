@@ -1,6 +1,7 @@
 import type { Metadata } from 'next';
 import { Playfair_Display, Inter } from 'next/font/google';
 import Script from 'next/script';
+import { getLocale } from 'next-intl/server';
 import './globals.css';
 
 const inter = Inter({
@@ -30,13 +31,16 @@ export const metadata: Metadata = {
   manifest: '/site.webmanifest',
 };
 
-export default function RootLayout({
+export default async function RootLayout({
   children,
 }: {
   children: React.ReactNode;
 }) {
+  let locale = 'it';
+  try { locale = await getLocale(); } catch { /* studio or non-locale routes */ }
+
   return (
-    <html suppressHydrationWarning>
+    <html lang={locale} suppressHydrationWarning>
       <head>
         {/* Google Tag Manager */}
         <Script
@@ -55,6 +59,7 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
         {/* Google Tag Manager (noscript) */}
         <noscript>
           <iframe
+            title="Google Tag Manager"
             src="https://www.googletagmanager.com/ns.html?id=GTM-KDVH3TPF"
             height="0"
             width="0"
