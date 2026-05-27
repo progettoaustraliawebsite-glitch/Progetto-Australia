@@ -6,6 +6,7 @@
  * - Uses createOrReplace → idempotent, safe to run multiple times
  * - Images are NOT imported (must be added manually via Sanity Studio)
  * - priceEn is computed on-the-fly by the normalizer (not stored in Sanity)
+ * - destination refs are NOT set here — run migrate-destination-to-array.mjs after importing
  */
 
 import { createClient } from '@sanity/client';
@@ -430,7 +431,6 @@ const itineraries = [
     title: { it: 'Australia e Fiji — Sydney, Outback e relax tropicale alle Yasawa', en: 'Australia & Fiji — Sydney, Outback and tropical relaxation in the Yasawas' },
     description: { it: "Un viaggio che unisce la grande Australia — Opera House, Uluru, Great Ocean Road — all'isolata magia delle Fiji. Sydney, il Red Centre con il Kings Canyon e il Field of Lights, Melbourne con i pinguini di Phillip Island, e infine il relax a pensione completa nel resort di Yasawa: un itinerario perfetto per chi vuole tutto.", en: "A journey combining great Australia — Opera House, Uluru, Great Ocean Road — with the remote magic of Fiji. Sydney, the Red Centre with Kings Canyon and Field of Lights, Melbourne with Phillip Island's penguins, and finally full-board relaxation at Yasawa Resort: an itinerary for those who want it all." },
     duration: 20,
-    destination: 'Australia & Fiji',
     type: 'luxury',
     gradient: 'from-teal-700 to-blue-900',
     price: { currency: 'EUR', amount: 5240 },
@@ -457,7 +457,6 @@ const itineraries = [
     title: { it: 'Australia Winter Explorer — Dal Kimberley alle Whitsundays', en: 'Australia Winter Explorer — From the Kimberley to the Whitsundays' },
     description: { it: "Un'avventura di 25 giorni attraverso l'Australia più autentica: guide italiane a Perth e nel deserto dei Pinnacoli, 4x4 nel selvaggio Kimberley e a Emma Gorge, Kings Canyon via Meerenie Loop, volo panoramico su Uluru e Kata Tjuta, Sydney con vista sull'Opera House, e Hamilton Island con la minicrociera a Whitehaven Beach e il volo in biplano sull'Heart Reef.", en: "A 25-day adventure through Australia's most authentic landscapes: Italian guides in Perth and the Pinnacles Desert, 4x4 in the wild Kimberley and Emma Gorge, Kings Canyon via the Meerenie Loop, scenic flight over Uluru and Kata Tjuta, Sydney with Opera House views, and Hamilton Island with a Whitehaven Beach minicruise and biplane flight over Heart Reef." },
     duration: 25,
-    destination: 'Australia',
     type: 'adventure',
     gradient: 'from-orange-700 to-red-900',
     price: { currency: 'EUR', amount: 3700 },
@@ -484,7 +483,6 @@ const itineraries = [
     title: { it: 'Nuova Zelanda: Nel cuore della Terra di Mezzo', en: 'New Zealand: In the Heart of Middle-earth' },
     description: { it: "Un viaggio di 15 giorni attraverso la Nuova Zelanda sulle orme del Signore degli Anelli: Hobbiton nel cuore del Waikato, le grotte luminose di Waitomo, il vulcano di Tongariro (il vero Mordor), Wellington con Weta Workshop, i fiordi di Milford Sound e i paesaggi leggendari di Queenstown e Glenorchy.", en: "A 15-day journey through New Zealand following in the footsteps of The Lord of the Rings: Hobbiton in the heart of the Waikato, the glowworm caves of Waitomo, the volcanic Tongariro (the real Mordor), Wellington with Weta Workshop, the fjords of Milford Sound, and the legendary landscapes of Queenstown and Glenorchy." },
     duration: 15,
-    destination: 'New Zealand',
     type: 'adventure',
     gradient: 'from-emerald-700 to-green-900',
     price: { currency: 'EUR', amount: 3850 },
@@ -511,7 +509,6 @@ const itineraries = [
     title: { it: 'Nuova Caledonia — Alla scoperta della Grande Terre', en: 'New Caledonia — Discovering the Grande Terre' },
     description: { it: "Dieci giorni in self-drive lungo la costa est e ovest della Grande Terre: da Noumea alle scogliere nere di Hienghène, dalle spiagge bianche di Poe alla foresta delle grandi felci, passando per villaggi Melanesiani e le cascate Tao.", en: "Ten days of self-driving along the east and west coasts of Grande Terre: from Noumea to the black cliffs of Hienghène, from Poe's white beaches to the Great Ferns forest, through Melanesian villages and the Tao Waterfalls." },
     duration: 10,
-    destination: 'New Caledonia',
     type: 'road-trip',
     gradient: 'from-sky-600 to-teal-800',
     price: { currency: 'EUR', amount: 2500 },
@@ -538,7 +535,6 @@ const itineraries = [
     title: { it: "L'Altra Faccia dell'Australia — Western Australia e Kimberley", en: 'The Other Face of Australia — Western Australia & the Kimberley' },
     description: { it: "Trentuno giorni attraverso l'Australia che pochi conoscono: da Perth alle spiagge del Western Australia, dai delfini di Monkey Mia alla barriera di Ningaloo, dalle gole rosse di Karijini alle scogliere di Broome, dalle Bungle Bungles al Katherine Gorge, Kakadu e Darwin. Poi Kings Canyon, Uluru e Sydney.", en: "Thirty-one days through the Australia that few know: from Perth along the WA beaches, from Monkey Mia dolphins to the Ningaloo Reef, from Karijini's red gorges to Broome's cliffs, from the Bungle Bungles to Katherine Gorge, Kakadu and Darwin. Then Kings Canyon, Uluru and Sydney." },
     duration: 31,
-    destination: 'Australia',
     type: 'avventura',
     gradient: 'from-red-700 to-orange-900',
     price: { currency: 'EUR', amount: 5550 },
@@ -565,7 +561,6 @@ const itineraries = [
     title: { it: 'Nuova Zelanda — Road trip leggendario tra le due isole', en: 'New Zealand — Legendary Road Trip Between the Two Islands' },
     description: { it: "Diciannove giorni on the road da Auckland a Christchurch: la Penisola di Coromandel con Cathedral Cove, Rotorua geotermica e la serata Māori a Te Puia, le grotte di Waitomo, Wellington, la traversata in traghetto dello Stretto di Cook, whale watching a Kaikoura, il Mackenzie Country, Wanaka, Queenstown con la crociera BBQ al Walter Peak, Milford Sound e i pinguini di Dunedin.", en: "Nineteen days on the road from Auckland to Christchurch: Coromandel Peninsula with Cathedral Cove, geothermal Rotorua and the Māori evening at Te Puia, Waitomo Caves, Wellington, the Cook Strait ferry crossing, whale watching in Kaikoura, Mackenzie Country, Wanaka, Queenstown with the Walter Peak BBQ cruise, Milford Sound and the penguins of Dunedin." },
     duration: 19,
-    destination: 'New Zealand',
     type: 'road-trip',
     gradient: 'from-teal-600 to-emerald-900',
     price: { currency: 'EUR', amount: 4400 },
@@ -592,7 +587,6 @@ const itineraries = [
     title: { it: 'Nuova Zelanda e Isole Cook — Tra Fiordi Leggendari e Paradisi Tropicali', en: 'New Zealand & Cook Islands — Between Legendary Fjords and Tropical Paradises' },
     description: { it: "Ventinove giorni che uniscono il meglio della Nuova Zelanda — Queenstown, Milford Sound, il treno TranzAlpine, Abel Tasman, Tongariro, Rotorua, Cathedral Cove — con il paradiso tropicale delle Isole Cook: Rarotonga e il day trip a Aitutaki, con la sua laguna tra le più belle del Pacifico.", en: "Twenty-nine days combining the best of New Zealand — Queenstown, Milford Sound, the TranzAlpine train, Abel Tasman, Tongariro, Rotorua, Cathedral Cove — with the tropical paradise of the Cook Islands: Rarotonga and a day trip to Aitutaki, whose lagoon is among the Pacific's most beautiful." },
     duration: 29,
-    destination: 'New Zealand & Cook Islands',
     type: 'luxury',
     gradient: 'from-cyan-600 to-teal-900',
     price: { currency: 'EUR', amount: 7870 },
@@ -619,7 +613,6 @@ const itineraries = [
     title: { it: 'Australia e Isole Cook — Tra Terra Rossa e Lagune Turchesi', en: 'Australia & Cook Islands — Between Red Earth and Turquoise Lagoons' },
     description: { it: "Un viaggio che unisce la grande varietà dell'Australia meridionale e centrale — Great Ocean Road, Kangaroo Island, Kings Canyon e Uluru, Sydney — al paradiso corallino di Aitutaki nelle Isole Cook, con crociera a One Foot Island e nuoto con le megattere.", en: "A journey combining the great variety of southern and central Australia — Great Ocean Road, Kangaroo Island, Kings Canyon and Uluru, Sydney — with the coral paradise of Aitutaki in the Cook Islands, with a One Foot Island cruise and swimming with humpback whales." },
     duration: 22,
-    destination: 'Australia & Cook Islands',
     type: 'avventura',
     gradient: 'from-orange-600 to-amber-900',
     price: { currency: 'EUR', amount: 4475 },
@@ -646,7 +639,6 @@ const itineraries = [
     title: { it: 'Australia Summer Escape — Adelaide, Kangaroo Island, Melbourne, Uluru e Lord Howe Island', en: 'Australia Summer Escape — Adelaide, Kangaroo Island, Melbourne, Uluru & Lord Howe Island' },
     description: { it: "Un grand tour australiano di 22 giorni che tocca le destinazioni più esclusive del continente: la fauna selvaggia di Kangaroo Island, la Melbourne dei vigneti e della Great Ocean Road, il deserto rosso di Uluru con il Sound of Silence dinner, Sydney con la crociera nel porto e l'Opera House, e infine Lord Howe Island — UNESCO, 400 visitatori al massimo — nel lusso dell'Arajilla Retreat.", en: "A 22-day Australian grand tour touching the continent's most exclusive destinations: Kangaroo Island wildlife, Melbourne's vineyards and Great Ocean Road, the red desert of Uluru with the Sound of Silence dinner, Sydney harbour cruise and Opera House, and finally Lord Howe Island — UNESCO, 400 visitors maximum — in the luxury of Arajilla Retreat." },
     duration: 22,
-    destination: 'Australia',
     type: 'luxury',
     gradient: 'from-amber-600 to-orange-800',
     price: { currency: 'EUR', amount: 8210 },

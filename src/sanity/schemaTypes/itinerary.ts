@@ -22,9 +22,10 @@ export const itinerary = defineType({
     }),
     defineField({
       name: 'destination',
-      title: 'Destinazione',
-      type: 'reference',
-      to: [{ type: 'destination' }],
+      title: 'Destinazioni',
+      type: 'array',
+      description: 'Seleziona una o più destinazioni per questo itinerario',
+      of: [{ type: 'reference', to: [{ type: 'destination' }] }],
     }),
     defineField({
       name: 'duration',

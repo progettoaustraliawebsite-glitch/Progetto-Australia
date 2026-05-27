@@ -44,7 +44,7 @@ export interface SanityItinerary {
   _id: string;
   title: LocaleString;
   slug: { current: string };
-  destination?: { _id: string; title: LocaleString };
+  destination?: Array<{ _id: string; title: LocaleString }>;
   duration: number;
   price: { amount: number; currency: string };
   category: string;
@@ -167,7 +167,7 @@ export function normalizeSanityItinerary(s: SanityItinerary, idx = 0): Itinerary
     title: s.title,
     description: s.description,
     duration: s.duration,
-    destination: s.destination?.title?.it ?? '',
+    destination: s.destination?.map((d) => d.title?.it).filter(Boolean).join(' & ') ?? '',
     type: s.category ?? 'adventure',
     gradient: GRADIENT_DEFAULTS[idx % GRADIENT_DEFAULTS.length],
     image: s.heroImage ? urlFor(s.heroImage).width(800).height(520).url() : (ITIN_HERO_FILES[slug] ?? ''),
@@ -267,7 +267,7 @@ export async function getAllItineraries(): Promise<SanityItinerary[]> {
       _id, title, slug, duration, price, category, description, highlights,
       "program": program[]{ day, title, description, images },
       included, notIncluded, heroImage, mapImage, featured,
-      destination->{ _id, title }
+      "destination": destination[]->{ _id, title }
     }`
   );
 }
@@ -278,7 +278,7 @@ export async function getItineraryBySlug(slug: string): Promise<SanityItinerary 
       _id, title, slug, duration, price, category, description, highlights,
       "program": program[]{ day, title, description, images },
       included, notIncluded, heroImage, mapImage, featured,
-      destination->{ _id, title }
+      "destination": destination[]->{ _id, title }
     }`,
     { slug }
   );
@@ -290,7 +290,7 @@ export async function getFeaturedItineraries(): Promise<SanityItinerary[]> {
       _id, title, slug, duration, price, category, description, highlights,
       "program": program[]{ day, title, description, images },
       included, notIncluded, heroImage, mapImage,
-      destination->{ _id, title }
+      "destination": destination[]->{ _id, title }
     }`
   );
 }

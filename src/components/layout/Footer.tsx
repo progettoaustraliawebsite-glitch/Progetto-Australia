@@ -1,6 +1,7 @@
 import { useTranslations, useLocale } from 'next-intl';
 import { Link } from '@/i18n/navigation';
 import { Mail, Phone, MapPin, Instagram, Facebook } from 'lucide-react';
+import Image from 'next/image';
 import { destinations } from '@/data/destinations';
 import { team } from '@/data/team';
 
@@ -171,6 +172,17 @@ export default function Footer() {
               </a>
             </li>
           </ul>
+
+          {/* Logo */}
+          <div className="mt-8">
+            <Image
+              src="/images/logo-full.png"
+              alt="Progetto Australia — il tuo viaggio su misura"
+              width={260}
+              height={156}
+              className="w-[260px] h-auto"
+            />
+          </div>
         </div>
       </div>
 
