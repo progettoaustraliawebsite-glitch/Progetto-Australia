@@ -177,17 +177,19 @@ export default async function ItineraryDetailPage({ params }: Props) {
             </div>
 
             {/* Map */}
-            <div>
-              <h2 className="font-serif text-lg md:text-2xl font-bold text-hero mb-4 uppercase tracking-wide flex items-center gap-3">
-                <MapPin size={22} className="text-gold" />
-                {locale === 'it' ? 'Il Percorso' : 'The Route'}
-              </h2>
-              <img
-                src={itinerary.mapImage ?? `/images/maps/${itinerary.slug}.png`}
-                alt={`Mappa ${itinerary.title[locale]}`}
-                className="w-full lg:w-3/4 rounded-xl shadow-md border border-stone-200"
-              />
-            </div>
+            {itinerary.mapImage && (
+              <div>
+                <h2 className="font-serif text-lg md:text-2xl font-bold text-hero mb-4 uppercase tracking-wide flex items-center gap-3">
+                  <MapPin size={22} className="text-gold" />
+                  {locale === 'it' ? 'Il Percorso' : 'The Route'}
+                </h2>
+                <img
+                  src={itinerary.mapImage}
+                  alt={`Mappa ${itinerary.title[locale]}`}
+                  className="w-full lg:w-3/4 rounded-xl shadow-md border border-stone-200"
+                />
+              </div>
+            )}
 
             {/* Programme */}
             <div>
