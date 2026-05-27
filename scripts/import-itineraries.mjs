@@ -502,6 +502,87 @@ const itineraries = [
   },
 
   // ─────────────────────────────────────────────
+  // NUOVA ZELANDA — ROAD TRIP LEGGENDARIO — 19 giorni
+  // ─────────────────────────────────────────────
+  {
+    _id: 'itinerary-nuova-zelanda-road-trip',
+    _type: 'itinerary',
+    slug: { current: 'nuova-zelanda-road-trip' },
+    title: { it: 'Nuova Zelanda — Road trip leggendario tra le due isole', en: 'New Zealand — Legendary Road Trip Between the Two Islands' },
+    description: { it: "Diciannove giorni on the road da Auckland a Christchurch: la Penisola di Coromandel con Cathedral Cove, Rotorua geotermica e la serata Māori a Te Puia, le grotte di Waitomo, Wellington, la traversata in traghetto dello Stretto di Cook, whale watching a Kaikoura, il Mackenzie Country, Wanaka, Queenstown con la crociera BBQ al Walter Peak, Milford Sound e i pinguini di Dunedin.", en: "Nineteen days on the road from Auckland to Christchurch: Coromandel Peninsula with Cathedral Cove, geothermal Rotorua and the Māori evening at Te Puia, Waitomo Caves, Wellington, the Cook Strait ferry crossing, whale watching in Kaikoura, Mackenzie Country, Wanaka, Queenstown with the Walter Peak BBQ cruise, Milford Sound and the penguins of Dunedin." },
+    duration: 19,
+    destination: 'New Zealand',
+    type: 'road-trip',
+    gradient: 'from-teal-600 to-emerald-900',
+    price: { currency: 'EUR', amount: 4400 },
+    priceEn: { currency: 'USD', amount: 4800 },
+    highlights: {
+      it: ['Cathedral Cove in crociera dalla baia di Whitianga', 'Rotorua geotermica + serata Māori a Te Puia', 'Grotte luminose di Waitomo', 'Whale watching a Kaikoura', 'Crociera BBQ al tramonto sul TSS Earnslaw — Walter Peak', 'Milford Sound in crociera'],
+      en: ['Cathedral Cove cruise from Whitianga Bay', 'Geothermal Rotorua + Māori evening at Te Puia', 'Waitomo Glowworm Caves', 'Whale watching in Kaikoura', 'Sunset BBQ cruise on the TSS Earnslaw — Walter Peak', 'Milford Sound fjord cruise'],
+    },
+    included: {
+      it: ['Tutti i pernottamenti come da itinerario (colazione inclusa)', 'Auto a noleggio Budget da Auckland a Christchurch — All Inclusive, km illimitati', 'Trasferimenti privati Hallmark Limousines', 'Traghetto Interislander Wellington → Picton', 'Crociera Cathedral Cove — Ocean Leopard Full Monty Tour', 'Waimangu Volcanic Valley — ingresso', 'Te Puia + cena Te Pō (buffet Māori + spettacolo culturale)', 'Waitomo Glowworm Caves — tour guidato con barca', 'Wai-O-Tapu Thermal Wonderland', 'Whale Watch Kaikoura', 'Walter Peak — crociera TSS Earnslaw + cena BBQ gourmet', 'Milford Sound — crociera con pranzo al sacco', 'Tekapo Springs — ingresso piscine termali'],
+      en: ['All accommodation as per itinerary (breakfast included)', 'Budget car rental Auckland to Christchurch — All Inclusive, unlimited km', 'Hallmark Limousines private transfers', 'Interislander ferry Wellington → Picton', 'Cathedral Cove cruise — Ocean Leopard Full Monty Tour', 'Waimangu Volcanic Valley — entry', 'Te Puia + Te Pō dinner (Māori buffet + cultural show)', 'Waitomo Glowworm Caves — guided tour with boat ride', 'Wai-O-Tapu Thermal Wonderland', 'Whale Watch Kaikoura', 'Walter Peak — TSS Earnslaw cruise + gourmet BBQ dinner', 'Milford Sound — cruise with packed lunch', 'Tekapo Springs — hot pool entry'],
+    },
+    notIncluded: standardNotIncluded,
+    featured: false,
+  },
+
+  // ─────────────────────────────────────────────
+  // NUOVA ZELANDA E ISOLE COOK — 29 giorni
+  // ─────────────────────────────────────────────
+  {
+    _id: 'itinerary-nuova-zelanda-cook',
+    _type: 'itinerary',
+    slug: { current: 'nuova-zelanda-cook' },
+    title: { it: 'Nuova Zelanda e Isole Cook — Tra Fiordi Leggendari e Paradisi Tropicali', en: 'New Zealand & Cook Islands — Between Legendary Fjords and Tropical Paradises' },
+    description: { it: "Ventinove giorni che uniscono il meglio della Nuova Zelanda — Queenstown, Milford Sound, il treno TranzAlpine, Abel Tasman, Tongariro, Rotorua, Cathedral Cove — con il paradiso tropicale delle Isole Cook: Rarotonga e il day trip a Aitutaki, con la sua laguna tra le più belle del Pacifico.", en: "Twenty-nine days combining the best of New Zealand — Queenstown, Milford Sound, the TranzAlpine train, Abel Tasman, Tongariro, Rotorua, Cathedral Cove — with the tropical paradise of the Cook Islands: Rarotonga and a day trip to Aitutaki, whose lagoon is among the Pacific's most beautiful." },
+    duration: 29,
+    destination: 'New Zealand & Cook Islands',
+    type: 'luxury',
+    gradient: 'from-cyan-600 to-teal-900',
+    price: { currency: 'EUR', amount: 7870 },
+    priceEn: { currency: 'USD', amount: 8600 },
+    highlights: {
+      it: ['Queenstown — pranzo BBQ al Walter Peak sul TSS Earnslaw', 'Milford Sound — crociera tra i fiordi più spettacolari al mondo', 'TranzAlpine — treno panoramico attraverso le Alpi', 'Abel Tasman — crociera nella riserva marina', 'Rotorua — Waimangu + serata culturale Māori a Te Puia', 'Aitutaki day trip — laguna e pranzo BBQ a One Foot Island'],
+      en: ['Queenstown — BBQ lunch at Walter Peak on the TSS Earnslaw', 'Milford Sound — cruise through the world\'s most spectacular fjords', 'TranzAlpine — scenic train through the Alps', 'Abel Tasman — marine reserve cruise', 'Rotorua — Waimangu + Māori cultural evening at Te Puia', 'Aitutaki day trip — lagoon and BBQ lunch at One Foot Island'],
+    },
+    included: {
+      it: ['Tutti i pernottamenti come da itinerario (colazione inclusa dove indicato)', 'Auto a noleggio Budget All Inclusive, km illimitati', 'Trasferimento privato Queenstown Airport → hotel (Hallmark Limousines)', 'Pranzo BBQ Walter Peak — crociera TSS Earnslaw', 'Tour Milford Sound — pullman + crociera + pranzo al sacco', 'TranzAlpine — Christchurch → Greymouth → Christchurch', 'Whale Watch Kaikoura', "Wilson's Abel Tasman — Open Day Pass", 'Traghetto Interislander Picton → Wellington (con auto)', 'Tongariro — Two Hour Sunset Guided Walk', 'Waitomo Glowworm Caves — tour guidato con barca', 'Waimangu Volcanic Valley + mini-crociera lago Rotomahana', 'Te Puia Combo Te Po (cena Hangi + spettacolo culturale)', 'Cathedral Cove — Glass Bottom Boat', 'Aitutaki Day Tour — voli A/R + crociera Vaka + pranzo BBQ', 'Little Polynesian Resort — 4 notti Beachfront Bungalow (mezza pensione)', 'Tekapo Springs — Star Gazing Premium Plus'],
+      en: ['All accommodation as per itinerary (breakfast included where stated)', 'Budget All Inclusive car rental, unlimited km', 'Private transfer Queenstown Airport → hotel (Hallmark Limousines)', 'Walter Peak BBQ lunch — TSS Earnslaw cruise', 'Milford Sound tour — coach + fjord cruise + packed lunch', 'TranzAlpine — Christchurch → Greymouth → Christchurch', 'Whale Watch Kaikoura', "Wilson's Abel Tasman — Open Day Pass", 'Interislander ferry Picton → Wellington (with car)', 'Tongariro — Two Hour Sunset Guided Walk', 'Waitomo Glowworm Caves — guided tour with boat ride', 'Waimangu Volcanic Valley + Lake Rotomahana mini-cruise', 'Te Puia Combo Te Po (Hangi dinner + cultural show)', 'Cathedral Cove — Glass Bottom Boat', 'Aitutaki Day Tour — return flights + Vaka cruise + BBQ lunch', 'Little Polynesian Resort — 4 nights Beachfront Bungalow (half board)', 'Tekapo Springs — Star Gazing Premium Plus'],
+    },
+    notIncluded: standardNotIncluded,
+    featured: false,
+  },
+
+  // ─────────────────────────────────────────────
+  // AUSTRALIA E ISOLE COOK — 22 giorni
+  // ─────────────────────────────────────────────
+  {
+    _id: 'itinerary-australia-cook',
+    _type: 'itinerary',
+    slug: { current: 'australia-cook' },
+    title: { it: 'Australia e Isole Cook — Tra Terra Rossa e Lagune Turchesi', en: 'Australia & Cook Islands — Between Red Earth and Turquoise Lagoons' },
+    description: { it: "Un viaggio che unisce la grande varietà dell'Australia meridionale e centrale — Great Ocean Road, Kangaroo Island, Kings Canyon e Uluru, Sydney — al paradiso corallino di Aitutaki nelle Isole Cook, con crociera a One Foot Island e nuoto con le megattere.", en: "A journey combining the great variety of southern and central Australia — Great Ocean Road, Kangaroo Island, Kings Canyon and Uluru, Sydney — with the coral paradise of Aitutaki in the Cook Islands, with a One Foot Island cruise and swimming with humpback whales." },
+    duration: 22,
+    destination: 'Australia & Cook Islands',
+    type: 'avventura',
+    gradient: 'from-orange-600 to-amber-900',
+    price: { currency: 'EUR', amount: 4475 },
+    priceEn: { currency: 'USD', amount: 4900 },
+    highlights: {
+      it: ['Great Ocean Road — le Twelve Apostles da Melbourne a Port Campbell', 'Kangaroo Island — zoo naturale a cielo aperto', 'Kings Canyon in 4x4 sulla Mereenie Loop Road', 'Uluru al tramonto e Kata Tjuta all\'alba', 'Sydney — Opera House, Harbour Bridge e Bondi Beach', 'Aitutaki — laguna e nuoto con le megattere'],
+      en: ['Great Ocean Road — the Twelve Apostles from Melbourne to Port Campbell', 'Kangaroo Island — open-air natural zoo', 'Kings Canyon by 4WD on the Mereenie Loop Road', 'Uluru at sunset and Kata Tjuta at dawn', 'Sydney — Opera House, Harbour Bridge and Bondi Beach', 'Aitutaki — lagoon and swimming with humpback whales'],
+    },
+    included: {
+      it: ['Pernottamenti come da itinerario (colazione inclusa)', 'Auto a noleggio Toyota Corolla All Inclusive km illimitati (Melbourne)', 'Fuoristrada 4x4 All Inclusive km illimitati (Alice Springs)', 'Traghetto Sealink Kangaroo Island andata e ritorno con auto', "Resort Tava'e Aitutaki — 5 notti Premium Beachfront Room (colazione inclusa)", 'Aitutaki All Day Lagoon Cruise — One Foot Island (volo A/R + pranzo BBQ inclusi)', 'Tour nuoto con megattere — Wet n Wild Aitutaki', 'Volo Adelaide → Alice Springs', 'Volo Ayers Rock → Sydney', 'Volo Sydney → Rarotonga → Aitutaki', 'Documentazione di viaggio in PDF', 'Assistenza locale italiana (telefono e chat)'],
+      en: ['Accommodation as per itinerary (breakfast included)', 'Toyota Corolla All Inclusive car rental unlimited km (Melbourne)', 'All Inclusive 4WD unlimited km (Alice Springs)', 'Sealink Kangaroo Island ferry return with car', "Resort Tava'e Aitutaki — 5 nights Premium Beachfront Room (breakfast included)", 'Aitutaki All Day Lagoon Cruise — One Foot Island (return flights + BBQ lunch included)', 'Humpback whale swimming tour — Wet n Wild Aitutaki', 'Flight Adelaide → Alice Springs', 'Flight Ayers Rock → Sydney', 'Flight Sydney → Rarotonga → Aitutaki', 'Complete travel documentation in PDF format', 'Italian-language local assistance (phone and chat)'],
+    },
+    notIncluded: standardNotIncluded,
+    featured: false,
+  },
+
+  // ─────────────────────────────────────────────
   // AUSTRALIA SUMMER ESCAPE — 22 giorni
   // ─────────────────────────────────────────────
   {

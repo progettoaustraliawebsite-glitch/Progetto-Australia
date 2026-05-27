@@ -2269,4 +2269,816 @@ export const itineraries: Itinerary[] = [
     },
     notIncluded: standardNotIncluded,
   },
+
+  // ─────────────────────────────────────────────
+  // NUOVA ZELANDA — ROAD TRIP LEGGENDARIO TRA LE DUE ISOLE — 19 giorni
+  // ─────────────────────────────────────────────
+  {
+    id: 'nuova-zelanda-road-trip',
+    slug: 'nuova-zelanda-road-trip',
+    title: {
+      it: 'Nuova Zelanda — Road trip leggendario tra le due isole',
+      en: 'New Zealand — Legendary Road Trip Between the Two Islands',
+    },
+    description: {
+      it: "Diciannove giorni on the road da Auckland a Christchurch: la Penisola di Coromandel con Cathedral Cove, Rotorua geotermica e la serata Māori a Te Puia, le grotte di Waitomo, Wellington, la traversata in traghetto dello Stretto di Cook, whale watching a Kaikoura, il Mackenzie Country, Wanaka, Queenstown con la crociera BBQ al Walter Peak, Milford Sound e i pinguini di Dunedin. Il classico road trip neozelandese, senza nulla di tralasciato.",
+      en: "Nineteen days on the road from Auckland to Christchurch: Coromandel Peninsula with Cathedral Cove, geothermal Rotorua and the Māori evening at Te Puia, Waitomo Caves, Wellington, the Cook Strait ferry crossing, whale watching in Kaikoura, Mackenzie Country, Wanaka, Queenstown with the Walter Peak BBQ cruise, Milford Sound and the penguins of Dunedin. The classic New Zealand road trip, with nothing left out.",
+    },
+    duration: 19,
+    destination: 'New Zealand',
+    type: 'road-trip',
+    gradient: 'from-teal-600 to-emerald-900',
+    image: '/images/dest-nz.jpg',
+    price: { currency: 'EUR', amount: 4400 },
+    priceEn: { currency: 'USD', amount: 4800 },
+    highlights: {
+      it: [
+        'Cathedral Cove in crociera dalla baia di Whitianga',
+        'Rotorua geotermica + serata Māori a Te Puia',
+        'Grotte luminose di Waitomo',
+        'Whale watching a Kaikoura',
+        'Crociera BBQ al tramonto sul TSS Earnslaw — Walter Peak',
+        'Milford Sound in crociera',
+        'Pinguini e albatri a Dunedin',
+        'Terme alpine di Lake Tekapo',
+      ],
+      en: [
+        'Cathedral Cove cruise from Whitianga Bay',
+        'Geothermal Rotorua + Māori evening at Te Puia',
+        'Waitomo Glowworm Caves',
+        'Whale watching in Kaikoura',
+        'Sunset BBQ cruise on the TSS Earnslaw — Walter Peak',
+        'Milford Sound fjord cruise',
+        'Penguins and albatrosses in Dunedin',
+        'Alpine hot springs at Lake Tekapo',
+      ],
+    },
+    program: [
+      {
+        day: 1,
+        title: { it: 'Arrivo ad Auckland', en: 'Arrival in Auckland' },
+        description: {
+          it: "Arrivo all'aeroporto internazionale di Auckland e trasferimento privato in hotel con Hallmark Limousines. La città si estende su un istmo vulcanico tra due porti naturali ed è la più grande della Nuova Zelanda. Due notti all'Adina Apartment Hotel Auckland Britomart.",
+          en: "Arrival at Auckland International Airport and private transfer to the hotel with Hallmark Limousines. The city stretches across a volcanic isthmus between two natural harbours and is New Zealand's largest city. Two nights at Adina Apartment Hotel Auckland Britomart.",
+        },
+      },
+      {
+        day: 2,
+        title: { it: 'Auckland — giornata libera', en: 'Auckland — Free Day' },
+        description: {
+          it: "Giornata libera per esplorare Auckland: Sky Tower (la più alta della Nuova Zelanda, panorama a 360°), Auckland War Memorial Museum, Viaduct Harbour, mercati, ristoranti e caffè internazionali. Possibilità di traghetto per Waiheke Island con le sue cantine vinicole.",
+          en: "Free day to explore Auckland: Sky Tower (New Zealand's tallest, 360° panorama), Auckland War Memorial Museum, Viaduct Harbour, markets, international restaurants and cafés. Option to ferry to Waiheke Island with its renowned wineries.",
+        },
+      },
+      {
+        day: 3,
+        title: { it: 'Auckland → Penisola di Coromandel (Whitianga)', en: 'Auckland → Coromandel Peninsula (Whitianga)' },
+        description: {
+          it: "Ritiro dell'auto a noleggio (Toyota Corolla All Inclusive da Auckland a Christchurch) e partenza verso la Penisola di Coromandel. 190 km fino a Whitianga, cittadina costiera con sette spiagge magnifiche, delfini in baia e un'atmosfera di totale relax. Due notti al Mussel Bed.",
+          en: "Car rental pick-up (Toyota Corolla All Inclusive, Auckland to Christchurch) and drive to the Coromandel Peninsula. 190 km to Whitianga, a coastal town with seven beautiful beaches, dolphins in the bay and a completely relaxed atmosphere. Two nights at Mussel Bed.",
+        },
+      },
+      {
+        day: 4,
+        title: { it: 'Whitianga — crociera a Cathedral Cove', en: 'Whitianga — Cathedral Cove Cruise' },
+        description: {
+          it: "Mattinata in crociera con Ocean Leopard lungo la costa fino a Cathedral Cove, l'arco di roccia calcarea più iconico della Nuova Zelanda. Il Full Monty Tour dura 2 ore tra formazioni rocciose spettacolari e acque smeraldo. Pomeriggio libero sulle spiagge della penisola.",
+          en: "Morning cruise with Ocean Leopard along the coast to Cathedral Cove, New Zealand's most iconic limestone arch. The Full Monty Tour lasts 2 hours past spectacular rock formations and emerald waters. Free afternoon on the peninsula's beaches.",
+        },
+      },
+      {
+        day: 5,
+        title: { it: 'Whitianga → Rotorua', en: 'Whitianga → Rotorua' },
+        description: {
+          it: "Partenza per Rotorua (230 km), la città geotermica del Paese: pozze di fango bollente, geyser, fumarole e zolfo nell'aria. La città ospita la più alta concentrazione di popolazione Māori della Nuova Zelanda. Due notti a B&B @ The Redwoods.",
+          en: "Drive to Rotorua (230 km), New Zealand's geothermal city: boiling mud pools, geysers, fumaroles and sulphur in the air. The city has the highest concentration of Māori population in New Zealand. Two nights at B&B @ The Redwoods.",
+        },
+      },
+      {
+        day: 6,
+        title: { it: 'Rotorua — Waimangu e Te Puia', en: 'Rotorua — Waimangu and Te Puia' },
+        description: {
+          it: "Mattina: Waimangu Volcanic Valley, creata dall'eruzione del 1886, con laghi coloratissimi e il più grande geyser d'acqua calda al mondo. Sera: Te Puia con la cena Te Pō — buffet di cucina Māori locale, poi tour della valle geotermica con il geyser Pōhutu illuminato, spettacolo di canti e haka, e cioccolata calda su sedili riscaldati naturalmente.",
+          en: "Morning: Waimangu Volcanic Valley, created by the 1886 eruption, with vividly coloured lakes and the world's largest hot-water geyser. Evening: Te Puia with Te Pō dinner — Māori cuisine buffet, then guided geothermal valley tour with the illuminated Pōhutu geyser, cultural show of songs and haka, and hot chocolate on naturally heated seats.",
+        },
+      },
+      {
+        day: 7,
+        title: { it: 'Rotorua → Waitomo → Taupo', en: 'Rotorua → Waitomo → Taupo' },
+        description: {
+          it: "Mattinata alle grotte di Waitomo: tour guidato sotterraneo culminante in una silenziosa gita in barca nella Grotta dei Glowworm, una galassia di lucciole bioluminescenti sospese nel buio. Poi Taupo, sul lago più grande della Nuova Zelanda, con vista sui vulcani del Tongariro National Park.",
+          en: "Morning at Waitomo Glowworm Caves: guided underground tour culminating in a silent boat ride through the Glowworm Grotto, a galaxy of bioluminescent glowworms suspended in the dark. Then Taupo on New Zealand's largest lake, with views of Tongariro National Park's volcanoes.",
+        },
+      },
+      {
+        day: 8,
+        title: { it: 'Taupo → Wellington via Wai-O-Tapu', en: 'Taupo → Wellington via Wai-O-Tapu' },
+        description: {
+          it: "Mattino: Huka Falls, le cascate più fotografate della Nuova Zelanda. Poi Wai-O-Tapu Thermal Wonderland con il geyser Lady Knox (eruzione alle 10:15 ogni giorno) e il Champagne Pool dai bordi sulfurei rossi. Consegna dell'auto a Rotorua e volo per Wellington, la capitale della Nuova Zelanda.",
+          en: "Morning: Huka Falls, New Zealand's most photographed waterfall. Then Wai-O-Tapu Thermal Wonderland with the Lady Knox geyser (erupts daily at 10:15) and the red-rimmed Champagne Pool. Car drop-off in Rotorua and flight to Wellington, New Zealand's capital.",
+        },
+      },
+      {
+        day: 9,
+        title: { it: 'Wellington → Kaikoura via traghetto Interislander', en: 'Wellington → Kaikoura via Interislander Ferry' },
+        description: {
+          it: "Mattinata libera a Wellington — lungomare, Te Papa Museum, caffè e cultura. Pomeriggio: traghetto Interislander da Wellington a Picton (3 ore attraverso le Green Hills). Ritiro auto al porto di Picton e guida verso Kaikoura, cittadina ai piedi delle montagne innevate famosa per l'aragosta e la fauna marina.",
+          en: "Free morning in Wellington — waterfront, Te Papa Museum, cafés and culture. Afternoon: Interislander ferry from Wellington to Picton (3 hours through the Green Hills). Car pick-up at Picton harbour and drive to Kaikoura, a town at the foot of snowy mountains famous for lobster and marine wildlife.",
+        },
+      },
+      {
+        day: 10,
+        title: { it: 'Kaikoura → Christchurch — whale watching', en: 'Kaikoura → Christchurch — Whale Watching' },
+        description: {
+          it: "Mattino: crociera di 2,5 ore con Whale Watch Kaikoura per avvistare capodogli, delfini, foche e albatri. Kaikoura è uno dei pochi posti al mondo dove i capodogli vivono tutto l'anno vicino alla costa, grazie a una depressione sottomarina che porta il plancton in superficie. Pomeriggio: Christchurch, la Città Giardino.",
+          en: "Morning: 2.5-hour cruise with Whale Watch Kaikoura to spot sperm whales, dolphins, seals and albatrosses. Kaikoura is one of the few places in the world where sperm whales live year-round near the coast, thanks to an unusually close submarine canyon that brings plankton to the surface. Afternoon: Christchurch, the Garden City.",
+        },
+      },
+      {
+        day: 11,
+        title: { it: 'Christchurch → Twizel (Mackenzie Country)', en: 'Christchurch → Twizel (Mackenzie Country)' },
+        description: {
+          it: "Guida verso il Mackenzie Country (286 km), vasto bacino alpino nel centro dell'Isola del Sud. Paesaggi usati come location de 'Il Signore degli Anelli', con laghi glaciali turchese e le cime innevate del Monte Cook. Pernottamento a Twizel al Distinction MacKenzie Country Hotel.",
+          en: "Drive to Mackenzie Country (286 km), a vast alpine basin in the centre of the South Island. Landscapes used as filming locations for 'The Lord of the Rings', with turquoise glacial lakes and the snow-capped peaks of Mount Cook. Overnight in Twizel at Distinction MacKenzie Country Hotel.",
+        },
+      },
+      {
+        day: 12,
+        title: { it: 'Twizel → Wanaka', en: 'Twizel → Wanaka' },
+        description: {
+          it: "Guida verso Wanaka (143 km), tranquilla cittadina sull'omonimo lago alpino. Porta d'ingresso al Parco Nazionale del Mount Aspiring, è vicina alle piste sciistiche di Cardrona e Treble Cone. Pernottamento all'Edgewater Resort sul lago.",
+          en: "Drive to Wanaka (143 km), a peaceful town on its namesake alpine lake. Gateway to Mount Aspiring National Park, close to the Cardrona and Treble Cone ski fields. Overnight at Edgewater Resort on the lakefront.",
+        },
+      },
+      {
+        day: 13,
+        title: { it: 'Wanaka → Queenstown via Arrowtown', en: 'Wanaka → Queenstown via Arrowtown' },
+        description: {
+          it: "Guida verso Queenstown (69 km) con soste sulla Kawarau Gorge (il primo ponte bungee commerciale del mondo) e ad Arrowtown, il villaggio minerario dell'Otago con edifici in pietra. Pranzo a Kinross Winery nei vigneti di Pinot Noir di Central Otago, poi arrivo a Queenstown, la capitale mondiale dell'adrenalina.",
+          en: "Drive to Queenstown (69 km) with stops at the Kawarau Gorge (the world's first commercial bungee bridge) and Arrowtown, Otago's historic gold-mining village. Lunch at Kinross Winery amid the Central Otago Pinot Noir vineyards, then arrival in Queenstown, the world's adventure capital.",
+        },
+      },
+      {
+        day: 14,
+        title: { it: 'Queenstown — Walter Peak BBQ dinner cruise', en: 'Queenstown — Walter Peak BBQ Dinner Cruise' },
+        description: {
+          it: "Mattinata libera a Queenstown: bungee, jet boat, gondola sul Bob's Peak o shopping. Sera: crociera sul piroscafo vintage TSS Earnslaw verso Walter Peak High Country Farm, cena barbecue gourmet con carni e frutti di mare neozelandesi, tour della fattoria con dimostrazione di tosatura, poi rientro al chiaro di luna sul lago Wakatipu.",
+          en: "Free morning in Queenstown: bungee, jet boat, Bob's Peak gondola or shopping. Evening: cruise on the vintage TSS Earnslaw steamer to Walter Peak High Country Farm, gourmet BBQ dinner with New Zealand meats and seafood, farm tour with shearing demonstration, then moonlit return cruise on Lake Wakatipu.",
+        },
+      },
+      {
+        day: 15,
+        title: { it: 'Queenstown → Milford Sound → Te Anau', en: 'Queenstown → Milford Sound → Te Anau' },
+        description: {
+          it: "Partenza per Milford Sound (404 km con l'Homer Tunnel). Crociera nel fiordo: 2 ore tra le cascate di Stirling e Bowen, foreste pluviali a picco sul mare e fauna selvatica (delfini, foche, pinguini). Pranzo al sacco incluso. Rientro e pernottamento a Te Anau, porta del Parco Nazionale di Fiordland.",
+          en: "Drive to Milford Sound (404 km through the Homer Tunnel). Fjord cruise: 2 hours past Stirling and Bowen Falls, rainforest dropping into the sea and wildlife (dolphins, seals, penguins). Packed lunch included. Return to Te Anau, gateway to Fiordland National Park.",
+        },
+      },
+      {
+        day: 16,
+        title: { it: 'Te Anau → Curio Bay → Dunedin', en: 'Te Anau → Curio Bay → Dunedin' },
+        description: {
+          it: "Lunga guida verso Dunedin (418 km) con sosta a Curio Bay, dove una foresta pietrificata di 170 milioni di anni emerge dalla roccia a bassa marea. Dunedin — la città più scozzese della Nuova Zelanda — è famosa per le sue facciate vittoriane, albatri reali e pinguini.",
+          en: "Long drive to Dunedin (418 km) with a stop at Curio Bay, where a 170-million-year-old petrified forest emerges from the rock at low tide. Dunedin — New Zealand's most Scottish city — is famous for its Victorian facades, royal albatrosses and penguins.",
+        },
+      },
+      {
+        day: 17,
+        title: { it: 'Dunedin — pinguini, albatri e fauna marina', en: 'Dunedin — Penguins, Albatrosses and Marine Wildlife' },
+        description: {
+          it: "Giornata libera per esplorare la Penisola di Otago: colonia di albatri reali a Taiaroa Head, pinguini dagli occhi gialli (i più rari al mondo) alla Pukekura Reserve, leoni marini sulle spiagge. Il Peninsula Encounter Tour + crociera Monarch è la combinazione consigliata per vedere tutta la fauna in un giorno.",
+          en: "Free day to explore the Otago Peninsula: royal albatross colony at Taiaroa Head, yellow-eyed penguins (the world's rarest) at Pukekura Reserve, sea lions on the beaches. The Peninsula Encounter Tour + Monarch Cruise combination is recommended for seeing all wildlife in one day.",
+        },
+      },
+      {
+        day: 18,
+        title: { it: 'Dunedin → Lake Tekapo — terme alpine', en: 'Dunedin → Lake Tekapo — Alpine Hot Springs' },
+        description: {
+          it: "Guida verso Lake Tekapo (287 km): il lago glaciale più romantico della Nuova Zelanda, con acque turchese intenso, la Church of the Good Shepherd e il cielo più stellato dell'Emisfero Australe. Ingresso alle piscine termali all'aperto di Tekapo Springs, con tre grandi piscine riscaldate e vista sulle Alpi del Sud.",
+          en: "Drive to Lake Tekapo (287 km): New Zealand's most romantic glacial lake, with vivid turquoise water, the Church of the Good Shepherd and the darkest night sky in the Southern Hemisphere. Entry to the outdoor hot pools at Tekapo Springs, with three heated pools and views of the Southern Alps.",
+        },
+      },
+      {
+        day: 19,
+        title: { it: 'Lake Tekapo → Christchurch — partenza', en: 'Lake Tekapo → Christchurch — Departure' },
+        description: {
+          it: "Ultima mattinata con colazione e vista sulle montagne, poi guida verso Christchurch (225 km). Consegna dell'auto all'aeroporto internazionale di Christchurch e partenza per l'Italia. Fine dei servizi inclusi nel pacchetto.",
+          en: "Final morning with breakfast and mountain views, then drive to Christchurch (225 km). Car drop-off at Christchurch International Airport and departure for Italy. End of included services.",
+        },
+      },
+    ],
+    included: {
+      it: [
+        'Tutti i pernottamenti come da itinerario (colazione inclusa)',
+        'Auto a noleggio Budget da Auckland a Christchurch — All Inclusive, km illimitati',
+        'Trasferimento privato Auckland Airport → hotel (Hallmark Limousines)',
+        'Trasferimento privato Wellington → Terminal Traghetti (Hallmark Limousines)',
+        'Traghetto Interislander Wellington → Picton (passeggeri)',
+        'Crociera Cathedral Cove — Ocean Leopard Full Monty Tour',
+        'Waimangu Volcanic Valley — ingresso Self Guided Walk',
+        'Te Puia + cena Te Pō (buffet Māori + spettacolo culturale)',
+        'Waitomo Glowworm Caves — tour guidato con gita in barca',
+        'Wai-O-Tapu Thermal Wonderland — ingresso',
+        'Whale Watch Kaikoura — tour balene (2,5 ore)',
+        'Walter Peak High Country Farm — crociera TSS Earnslaw + cena BBQ gourmet',
+        'Milford Sound — crociera con pranzo al sacco',
+        'Tekapo Springs — ingresso piscine termali',
+        'Tasse locali GST 15%',
+      ],
+      en: [
+        'All accommodation as per itinerary (breakfast included)',
+        'Budget car rental Auckland to Christchurch — All Inclusive, unlimited km',
+        'Private transfer Auckland Airport → hotel (Hallmark Limousines)',
+        'Private transfer Wellington → Ferry Terminal (Hallmark Limousines)',
+        'Interislander ferry Wellington → Picton (passengers)',
+        'Cathedral Cove cruise — Ocean Leopard Full Monty Tour',
+        'Waimangu Volcanic Valley — self-guided walk entry',
+        'Te Puia + Te Pō dinner (Māori buffet + cultural show)',
+        'Waitomo Glowworm Caves — guided tour with boat ride',
+        'Wai-O-Tapu Thermal Wonderland — entry',
+        'Whale Watch Kaikoura — whale watching tour (2.5 hours)',
+        'Walter Peak High Country Farm — TSS Earnslaw cruise + gourmet BBQ dinner',
+        'Milford Sound — cruise with packed lunch',
+        'Tekapo Springs — hot pool entry',
+        'Local GST 15% tax',
+      ],
+    },
+    notIncluded: standardNotIncluded,
+  },
+
+  // ─────────────────────────────────────────────
+  // NUOVA ZELANDA E ISOLE COOK — 29 giorni
+  // ─────────────────────────────────────────────
+  {
+    id: 'nuova-zelanda-cook',
+    slug: 'nuova-zelanda-cook',
+    title: {
+      it: 'Nuova Zelanda e Isole Cook — Tra Fiordi Leggendari e Paradisi Tropicali',
+      en: 'New Zealand & Cook Islands — Between Legendary Fjords and Tropical Paradises',
+    },
+    description: {
+      it: "Ventinove giorni che uniscono il meglio della Nuova Zelanda — Queenstown, Milford Sound, il treno TranzAlpine, Abel Tasman, Tongariro, Rotorua, Cathedral Cove — con il paradiso tropicale delle Isole Cook: Rarotonga e il day trip a Aitutaki, con la sua laguna considerata tra le più belle del Pacifico. Un viaggio completo tra fiordi, ghiacciai, culture Māori e mari turchesi.",
+      en: "Twenty-nine days combining the best of New Zealand — Queenstown, Milford Sound, the TranzAlpine train, Abel Tasman, Tongariro, Rotorua, Cathedral Cove — with the tropical paradise of the Cook Islands: Rarotonga and a day trip to Aitutaki, whose lagoon is considered among the most beautiful in the Pacific. A complete journey between fjords, glaciers, Māori cultures and turquoise seas.",
+    },
+    duration: 29,
+    destination: 'New Zealand & Cook Islands',
+    type: 'luxury',
+    gradient: 'from-cyan-600 to-teal-900',
+    image: '/images/dest-nz.jpg',
+    price: { currency: 'EUR', amount: 7870 },
+    priceEn: { currency: 'USD', amount: 8600 },
+    highlights: {
+      it: [
+        'Queenstown — pranzo BBQ al Walter Peak sul TSS Earnslaw',
+        'Milford Sound — crociera tra i fiordi più spettacolari al mondo',
+        'TranzAlpine — il treno panoramico attraverso le Alpi neozelandesi',
+        'Abel Tasman — crociera nella riserva marina più soleggiata della NZ',
+        'Tongariro — passeggiata al tramonto nel parco vulcanico',
+        'Rotorua — Waimangu + serata culturale Māori a Te Puia',
+        'Cathedral Cove in barca con fondo di vetro',
+        'Aitutaki day trip — laguna e pranzo BBQ a One Foot Island',
+      ],
+      en: [
+        'Queenstown — BBQ lunch at Walter Peak on the TSS Earnslaw',
+        'Milford Sound — cruise through the world\'s most spectacular fjords',
+        'TranzAlpine — the scenic train through the New Zealand Alps',
+        'Abel Tasman — cruise in NZ\'s sunniest marine reserve',
+        'Tongariro — sunset walk in the volcanic national park',
+        'Rotorua — Waimangu + Māori cultural evening at Te Puia',
+        'Cathedral Cove glass-bottom boat cruise',
+        'Aitutaki day trip — lagoon and BBQ lunch at One Foot Island',
+      ],
+    },
+    program: [
+      {
+        day: 1,
+        title: { it: 'Partenza per la Nuova Zelanda', en: 'Departure for New Zealand' },
+        description: {
+          it: "Partenza dall'Italia con scalo intermedio. Il viaggio verso la Nuova Zelanda richiede circa 24–28 ore inclusi i transiti. Primo giorno dedicato ai voli.",
+          en: "Departure from Italy with an intermediate stopover. The journey to New Zealand takes approximately 24–28 hours including transits. First day dedicated to flights.",
+        },
+      },
+      {
+        day: 2,
+        title: { it: 'In volo', en: 'In Transit' },
+        description: {
+          it: "Secondo giorno di viaggio con scalo e proseguimento verso Auckland o Sydney.",
+          en: "Second day of travel with stopover and onward connection towards Auckland or Sydney.",
+        },
+      },
+      {
+        day: 3,
+        title: { it: 'Arrivo a Queenstown', en: 'Arrival in Queenstown' },
+        description: {
+          it: "Arrivo a Queenstown dall'Australia con volo domestico. Trasferimento privato in hotel con Hallmark Limousines. Queenstown si estende sulle rive del lago Wakatipu, ai piedi delle montagne Remarkables. Riposo e visita libera della città.",
+          en: "Arrival in Queenstown from Australia by domestic flight. Private transfer to the hotel with Hallmark Limousines. Queenstown stretches along the shores of Lake Wakatipu, at the foot of the Remarkables mountains. Rest and free city exploration.",
+        },
+      },
+      {
+        day: 4,
+        title: { it: 'Queenstown — Walter Peak pranzo BBQ', en: 'Queenstown — Walter Peak BBQ Lunch' },
+        description: {
+          it: "Visita libera di Queenstown e crociera sul piroscafo TSS Earnslaw verso Walter Peak High Country Farm per il pranzo gourmet BBQ: carni alla griglia, pesce fresco, verdure di stagione e vini locali di Central Otago.",
+          en: "Free visit to Queenstown and cruise on the TSS Earnslaw steamer to Walter Peak High Country Farm for the gourmet BBQ lunch: grilled meats, fresh fish, seasonal vegetables and local Central Otago wines.",
+        },
+      },
+      {
+        day: 5,
+        title: { it: 'Milford Sound — tour con crociera', en: 'Milford Sound — Guided Tour with Cruise' },
+        description: {
+          it: "Tour organizzato da Queenstown a Milford Sound con autobus panoramico a tetto di vetro, guida naturalistica e crociera nel fiordo con pranzo al sacco incluso. Mitre Peak, cascate di Stirling e Bowen, delfini, foche e pinguini. Rientro a Queenstown in serata.",
+          en: "Guided tour from Queenstown to Milford Sound with glass-roof panoramic coach, naturalist guide and fjord cruise with packed lunch included. Mitre Peak, Stirling and Bowen Falls, dolphins, seals and penguins. Return to Queenstown in the evening.",
+        },
+      },
+      {
+        day: 6,
+        title: { it: 'Queenstown → Mt Cook', en: 'Queenstown → Mt Cook' },
+        description: {
+          it: "Ritiro dell'auto a noleggio (All Inclusive, km illimitati) e partenza verso Mt Cook (260 km). Il Monte Cook è la montagna più alta della Nuova Zelanda — 3724 m. Il Parco Nazionale di Aoraki/Mt Cook offre sentieri per tutti i livelli: dall'Hooker Valley Track al Mueller Hut Track.",
+          en: "Car rental pick-up (All Inclusive, unlimited km) and drive to Mt Cook (260 km). Mt Cook is New Zealand's highest mountain at 3,724 m. Aoraki/Mt Cook National Park offers trails for all levels, from the Hooker Valley Track to the Mueller Hut Track.",
+        },
+      },
+      {
+        day: 7,
+        title: { it: 'Mt Cook → Lake Tekapo', en: 'Mt Cook → Lake Tekapo' },
+        description: {
+          it: "Visita libera al Mt Cook e guida verso Lake Tekapo (105 km). Sosta al Lago Pukaki, famoso per il colore turchese intenso e le vedute del Monte Cook. Lake Tekapo: terme all'aperto Tekapo Springs e osservazione delle stelle nel Dark Sky Reserve, la Riserva Internazionale del Cielo Oscuro di Aoraki Mackenzie.",
+          en: "Free time at Mt Cook then drive to Lake Tekapo (105 km). Stop at Lake Pukaki, famous for its intense turquoise colour and Mt Cook views. Lake Tekapo: Tekapo Springs outdoor hot pools and star gazing in the Aoraki Mackenzie International Dark Sky Reserve.",
+        },
+      },
+      {
+        day: 8,
+        title: { it: 'Lake Tekapo → Christchurch', en: 'Lake Tekapo → Christchurch' },
+        description: {
+          it: "Guida verso Christchurch (230 km), la Città Giardino dell'Isola del Sud. La città ha riscoperto la propria identità dopo i terremoti del 2010–2011 con architettura innovativa, spazi verdi, una vivace scena gastronomica e il Cardboard Cathedral.",
+          en: "Drive to Christchurch (230 km), the Garden City of the South Island. The city has rediscovered its identity after the 2010–2011 earthquakes with innovative architecture, green spaces, a vibrant food scene and the Cardboard Cathedral.",
+        },
+      },
+      {
+        day: 9,
+        title: { it: 'TranzAlpine — Christchurch → Greymouth → Christchurch', en: 'TranzAlpine — Christchurch → Greymouth → Christchurch' },
+        description: {
+          it: "Giornata sul TranzAlpine, considerato uno dei treni panoramici più belli del mondo: attraversa le Alpi neozelandesi con canyon profondi, foreste rigogliose, Arthur's Pass e il fiume Bealey. Vagoni con ampie vetrate, bar e servizio ristorazione. Partenza e rientro a Christchurch.",
+          en: "Full day on the TranzAlpine, considered one of the world's most scenic trains: it crosses the New Zealand Alps through deep canyons, lush forests, Arthur's Pass and the Bealey River. Wide-windowed carriages with bar and dining service. Departs and returns to Christchurch.",
+        },
+      },
+      {
+        day: 10,
+        title: { it: 'Christchurch → Kaikoura — whale watching', en: 'Christchurch → Kaikoura — Whale Watching' },
+        description: {
+          it: "Guida verso Kaikoura (180 km) e pomeriggio con Whale Watch Kaikoura: crociera per avvistare capodogli, megattere, balene pilota, delfini e albatri. Kaikoura ospita una delle più alte concentrazioni e varietà di uccelli marini al mondo.",
+          en: "Drive to Kaikoura (180 km) and afternoon with Whale Watch Kaikoura: cruise to spot sperm whales, humpbacks, pilot whales, dolphins and albatrosses. Kaikoura hosts one of the world's highest concentrations and varieties of seabirds.",
+        },
+      },
+      {
+        day: 11,
+        title: { it: 'Kaikoura → Marlborough — degustazione vini', en: 'Kaikoura → Marlborough — Wine Tasting' },
+        description: {
+          it: "Guida verso Marlborough (140 km), la regione vinicola più famosa della Nuova Zelanda, patria dei Sauvignon Blanc più apprezzati al mondo. Visita libera delle cantine con degustazione consigliata da Allans Scott Winery.",
+          en: "Drive to Marlborough (140 km), New Zealand's most famous wine region and home to the world's most acclaimed Sauvignon Blancs. Free winery visits with tasting recommended at Allans Scott Winery.",
+        },
+      },
+      {
+        day: 12,
+        title: { it: 'Marlborough → Motueka (Abel Tasman)', en: 'Marlborough → Motueka (Abel Tasman)' },
+        description: {
+          it: "Guida verso Motueka (170 km), porta d'ingresso al Parco Nazionale Abel Tasman, la riserva marina più soleggiata della Nuova Zelanda con spiagge dorate e acque cristalline.",
+          en: "Drive to Motueka (170 km), gateway to Abel Tasman National Park, New Zealand's sunniest national park with golden beaches and crystal-clear waters.",
+        },
+      },
+      {
+        day: 13,
+        title: { it: 'Abel Tasman — crociera nella riserva marina', en: 'Abel Tasman — Marine Reserve Cruise' },
+        description: {
+          it: "Crociera Open Day Pass con Wilson's Abel Tasman: esplora la spettacolare costa del parco, la Split Apple Rock e la colonia di foche dell'Isola Tonga. Possibilità di kayak, nuoto e soste sulle spiagge isolate. Una delle esperienze più iconiche dell'Isola del Nord.",
+          en: "Open Day Pass cruise with Wilson's Abel Tasman: explore the park's spectacular coastline, the Split Apple Rock and the seal colony at Tonga Island. Options for kayaking, swimming and stops on secluded beaches. One of the most iconic experiences in the South Island.",
+        },
+      },
+      {
+        day: 14,
+        title: { it: 'Abel Tasman → Picton → Wellington (traghetto)', en: 'Abel Tasman → Picton → Wellington (Ferry)' },
+        description: {
+          it: "Guida verso Picton (160 km) e traghetto Interislander verso Wellington con l'auto a bordo (3 ore di navigazione). Arrivo nella capitale della Nuova Zelanda in serata.",
+          en: "Drive to Picton (160 km) and Interislander ferry to Wellington with the car on board (3-hour crossing). Arrival in New Zealand's capital in the evening.",
+        },
+      },
+      {
+        day: 15,
+        title: { it: 'Wellington — capitale e museo Te Papa', en: 'Wellington — Capital City and Te Papa Museum' },
+        description: {
+          it: "Giornata libera a Wellington, la capitale più meridionale del mondo: Te Papa Museum (cultura Māori e storia naturale), il lungomare, caffè d'autore, gallerie d'arte e la famosa Courtenay Place. Wellington è spesso considerata la città più vivace della Nuova Zelanda.",
+          en: "Free day in Wellington, the world's southernmost capital: Te Papa Museum (Māori culture and natural history), the waterfront, artisan cafés, art galleries and the famous Courtenay Place. Wellington is often considered New Zealand's most vibrant city.",
+        },
+      },
+      {
+        day: 16,
+        title: { it: 'Wellington → Tongariro — passeggiata al tramonto', en: 'Wellington → Tongariro — Sunset Walk' },
+        description: {
+          it: "Guida verso il Parco Nazionale di Tongariro (330 km), il più antico della Nuova Zelanda con tre vulcani attivi. Passeggiata guidata al tramonto di 2 ore con Adrift Guided Outdoor Adventures: paesaggi vulcanici lunari, con calice di spumante neozelandese al tramonto.",
+          en: "Drive to Tongariro National Park (330 km), New Zealand's oldest with three active volcanoes. 2-hour guided sunset walk with Adrift Guided Outdoor Adventures: lunar volcanic landscapes, with a glass of New Zealand sparkling wine at sunset.",
+        },
+      },
+      {
+        day: 17,
+        title: { it: 'Tongariro → Waitomo → Rotorua', en: 'Tongariro → Waitomo → Rotorua' },
+        description: {
+          it: "Guida verso le grotte di Waitomo (170 km) per il tour in barca tra le lucciole bioluminescenti. Poi proseguimento verso Rotorua (140 km), la città geotermica della Nuova Zelanda.",
+          en: "Drive to Waitomo Caves (170 km) for the boat tour among bioluminescent glowworms. Then continue to Rotorua (140 km), New Zealand's geothermal city.",
+        },
+      },
+      {
+        day: 18,
+        title: { it: 'Rotorua — Waimangu e serata Māori a Te Puia', en: 'Rotorua — Waimangu and Māori Evening at Te Puia' },
+        description: {
+          it: "Mattina: Waimangu Volcanic Valley con mini-crociera di 45 minuti sul lago Rotomahana. Sera: Te Puia Combo Te Po — visita al geyser Pohutu, cena Hangi con cottura tradizionale Māori e spettacolo culturale di canti, danze e haka.",
+          en: "Morning: Waimangu Volcanic Valley with a 45-minute mini-cruise on Lake Rotomahana. Evening: Te Puia Combo Te Po — visit to the Pohutu geyser, Hangi dinner with traditional Māori cooking and a cultural show of songs, dances and haka.",
+        },
+      },
+      {
+        day: 19,
+        title: { it: 'Rotorua → Penisola di Coromandel', en: 'Rotorua → Coromandel Peninsula' },
+        description: {
+          it: "Guida verso la Penisola di Coromandel (200 km), con sosta a Whitianga, Hot Water Beach e Cathedral Cove. La penisola offre spiagge incontaminate, foreste native del Parco Nazionale di Coromandel e sentieri panoramici.",
+          en: "Drive to the Coromandel Peninsula (200 km), stopping at Whitianga, Hot Water Beach and Cathedral Cove. The peninsula offers pristine beaches, native forests of Coromandel National Park and scenic walking tracks.",
+        },
+      },
+      {
+        day: 20,
+        title: { it: 'Cathedral Cove in barca con fondo di vetro', en: 'Cathedral Cove Glass-Bottom Boat Cruise' },
+        description: {
+          it: "Tour in barca con fondo di vetro con Glass Bottom Boat Whitianga: osserva pesci, coralli e delfini sotto la superficie, fino all'arco di Cathedral Cove, la formazione rocciosa più fotografata della Nuova Zelanda.",
+          en: "Glass-bottom boat tour with Glass Bottom Boat Whitianga: watch fish, corals and occasional dolphins beneath the surface, through to Cathedral Cove arch, New Zealand's most photographed rock formation.",
+        },
+      },
+      {
+        day: 21,
+        title: { it: 'Coromandel → Auckland', en: 'Coromandel → Auckland' },
+        description: {
+          it: "Guida verso Auckland (150 km): la più grande città della Nuova Zelanda, nota come 'Città delle Vele', con il suo porto naturale, i mercati e la vivace scena gastronomica. Restituzione dell'auto a noleggio in aeroporto.",
+          en: "Drive to Auckland (150 km): New Zealand's largest city, known as the 'City of Sails', with its natural harbour, markets and vibrant food scene. Car drop-off at the airport.",
+        },
+      },
+      {
+        day: 22,
+        title: { it: 'Auckland → Rarotonga (Isole Cook)', en: 'Auckland → Rarotonga (Cook Islands)' },
+        description: {
+          it: "Volo per Rarotonga, la vivace capitale delle Isole Cook. Trasferimento in hotel al Little Polynesian Resort con bungalow fronte spiaggia. L'isola è famosa per le sue spiagge di sabbia bianca, la laguna cristallina e la fiorente scena gastronomica.",
+          en: "Flight to Rarotonga, the vibrant capital of the Cook Islands. Transfer to the Little Polynesian Resort beachfront bungalow. The island is famous for its white sand beaches, crystal-clear lagoon and thriving food scene.",
+        },
+      },
+      {
+        day: 23,
+        title: { it: 'Rarotonga — relax e visita libera', en: 'Rarotonga — Relaxation and Free Day' },
+        description: {
+          it: "Giornata libera a Rarotonga: esplora l'isola con i due autobus locali (uno in senso orario, uno in senso antiorario), visita il Punanga Nui Market il sabato, fai snorkeling nella laguna o passeggia tra ristoranti e mercati locali.",
+          en: "Free day in Rarotonga: explore the island using the two local buses (one clockwise, one anticlockwise), visit the Punanga Nui Market on Saturdays, snorkel in the lagoon or wander among local restaurants and markets.",
+        },
+      },
+      {
+        day: 24,
+        title: { it: 'Aitutaki — day trip con crociera nella laguna', en: 'Aitutaki — Day Trip with Lagoon Cruise' },
+        description: {
+          it: "Giornata intera ad Aitutaki: volo andata e ritorno incluso, tour dell'isola e crociera Vaka sul catamarano Titi-ai-Tonga. Snorkeling, nuoto e pranzo barbecue a One Foot Island — una spiaggia di sabbia bianca in mezzo alla laguna turchese. Timbro ricordo sul passaporto a One Foot Island.",
+          en: "Full day on Aitutaki: return flights included, island tour and Vaka cruise on the catamaran Titi-ai-Tonga. Snorkelling, swimming and BBQ lunch at One Foot Island — a white sand beach in the middle of the turquoise lagoon. Souvenir passport stamp at One Foot Island.",
+        },
+      },
+      {
+        day: 25,
+        title: { it: 'Rarotonga — relax', en: 'Rarotonga — Relaxation' },
+        description: {
+          it: "Giornata libera al Little Polynesian Resort: kayak, paddleboard, snorkeling nella laguna e cocktail al tramonto. L'isola offre anche trekking sulle colline interne e immersioni subacquee.",
+          en: "Free day at Little Polynesian Resort: kayak, paddleboard, snorkelling in the lagoon and sunset cocktails. The island also offers trekking in the interior hills and scuba diving.",
+        },
+      },
+      {
+        day: 26,
+        title: { it: 'Rarotonga — relax', en: 'Rarotonga — Relaxation' },
+        description: {
+          it: "Ultima giornata alle Isole Cook: goditi la laguna, i mercati locali e i tramonti sul Pacifico. Rarotonga offre due autobus locali per esplorare liberamente ogni angolo dell'isola.",
+          en: "Final day in the Cook Islands: enjoy the lagoon, local markets and Pacific sunsets. Rarotonga's two local buses make it easy to freely explore every corner of the island.",
+        },
+      },
+      {
+        day: 27,
+        title: { it: 'Rarotonga → Auckland', en: 'Rarotonga → Auckland' },
+        description: {
+          it: "Trasferimento in aeroporto e volo per Auckland. Per il fuso orario, si arriva ad Auckland il giorno successivo.",
+          en: "Transfer to the airport and flight to Auckland. Due to the time zone, arrival in Auckland is the following day.",
+        },
+      },
+      {
+        day: 28,
+        title: { it: 'Auckland — transito', en: 'Auckland — Transit' },
+        description: {
+          it: "Arrivo ad Auckland. Volo di rientro verso l'Italia con scalo intermedio.",
+          en: "Arrival in Auckland. Return flight to Italy with an intermediate stopover.",
+        },
+      },
+      {
+        day: 29,
+        title: { it: 'Rientro in Italia', en: 'Return to Italy' },
+        description: {
+          it: "Ultimo scalo e atterraggio in Italia. Fine del viaggio.",
+          en: "Final stopover and landing in Italy. End of the journey.",
+        },
+      },
+    ],
+    included: {
+      it: [
+        'Tutti i pernottamenti come da itinerario (colazione inclusa dove indicato)',
+        'Auto a noleggio Budget All Inclusive, km illimitati, secondo conducente incluso',
+        'Trasferimento privato aeroporto Queenstown → hotel (Hallmark Limousines)',
+        'Pranzo BBQ Walter Peak — crociera TSS Earnslaw andata e ritorno',
+        'Tour Milford Sound — pullman + crociera fiordo + pranzo al sacco',
+        'TranzAlpine — Christchurch → Greymouth → Christchurch (andata e ritorno)',
+        'Whale Watch Kaikoura — Ocean Cabin',
+        'Wilson\'s Abel Tasman — Open Day Pass (crociera)',
+        'Traghetto Interislander Picton → Wellington (con auto)',
+        'Tongariro — Two Hour Sunset Guided Walk (Adrift)',
+        'Waitomo Glowworm Caves — tour guidato con barca',
+        'Waimangu Volcanic Valley — Self Guided Walk + mini-crociera lago Rotomahana',
+        'Te Puia Combo Te Po (cena Hangi + spettacolo culturale)',
+        'Cathedral Cove — Glass Bottom Boat Whitianga',
+        'Aitutaki Day Tour — voli A/R + tour isola + crociera Vaka + pranzo BBQ',
+        'Little Polynesian Resort — 4 notti Beachfront Bungalow (mezza pensione)',
+        'Tekapo Springs — Star Gazing Premium Plus (terme + osservazione stelle)',
+      ],
+      en: [
+        'All accommodation as per itinerary (breakfast included where stated)',
+        'Budget All Inclusive car rental, unlimited km, second driver included',
+        'Private transfer Queenstown Airport → hotel (Hallmark Limousines)',
+        'Walter Peak BBQ lunch — TSS Earnslaw cruise return',
+        'Milford Sound tour — coach + fjord cruise + packed lunch',
+        'TranzAlpine — Christchurch → Greymouth → Christchurch (return)',
+        'Whale Watch Kaikoura — Ocean Cabin',
+        'Wilson\'s Abel Tasman — Open Day Pass (cruise)',
+        'Interislander ferry Picton → Wellington (with car)',
+        'Tongariro — Two Hour Sunset Guided Walk (Adrift)',
+        'Waitomo Glowworm Caves — guided tour with boat ride',
+        'Waimangu Volcanic Valley — Self Guided Walk + Lake Rotomahana mini-cruise',
+        'Te Puia Combo Te Po (Hangi dinner + cultural show)',
+        'Cathedral Cove — Glass Bottom Boat Whitianga',
+        'Aitutaki Day Tour — return flights + island tour + Vaka cruise + BBQ lunch',
+        'Little Polynesian Resort — 4 nights Beachfront Bungalow (half board)',
+        'Tekapo Springs — Star Gazing Premium Plus (hot pools + star gazing)',
+      ],
+    },
+    notIncluded: standardNotIncluded,
+  },
+
+  // ─────────────────────────────────────────────
+  // AUSTRALIA E ISOLE COOK — 22 giorni
+  // ─────────────────────────────────────────────
+  {
+    id: 'australia-cook',
+    slug: 'australia-cook',
+    title: {
+      it: 'Australia e Isole Cook — Tra Terra Rossa e Lagune Turchesi',
+      en: 'Australia & Cook Islands — Between Red Earth and Turquoise Lagoons',
+    },
+    description: {
+      it: "Un viaggio che unisce la grande varietà dell'Australia meridionale e centrale — Great Ocean Road, Kangaroo Island, la via dei vini della Limestone Coast, l'Outback con Kings Canyon e Uluru, Sydney — al paradiso corallino di Aitutaki nelle Isole Cook, con la sua laguna di acque trasparenti, la crociera a One Foot Island e il nuoto con le megattere. Avventura, natura e relax in un unico itinerario.",
+      en: "A journey combining the great variety of southern and central Australia — Great Ocean Road, Kangaroo Island, the Limestone Coast wine route, the Outback with Kings Canyon and Uluru, Sydney — with the coral paradise of Aitutaki in the Cook Islands, with its crystal lagoon, One Foot Island cruise and swimming with humpback whales. Adventure, nature and relaxation in a single itinerary.",
+    },
+    duration: 22,
+    destination: 'Australia & Cook Islands',
+    type: 'avventura',
+    gradient: 'from-orange-600 to-amber-900',
+    image: '/images/dest-hero-australia-v2.png',
+    price: { currency: 'EUR', amount: 4475 },
+    priceEn: { currency: 'USD', amount: 4900 },
+    highlights: {
+      it: [
+        'Great Ocean Road — le Twelve Apostles da Melbourne a Port Campbell',
+        'Blue Lake di Mount Gambier e Limestone Coast',
+        'Kangaroo Island — zoo naturale a cielo aperto',
+        'Kings Canyon in 4x4 sulla Mereenie Loop Road',
+        'Uluru al tramonto e Kata Tjuta all\'alba',
+        'Sydney — Opera House, Harbour Bridge e Bondi Beach',
+        'Aitutaki — laguna e pranzo BBQ a One Foot Island',
+        'Nuoto con le megattere ad Aitutaki',
+      ],
+      en: [
+        'Great Ocean Road — the Twelve Apostles from Melbourne to Port Campbell',
+        'Blue Lake at Mount Gambier and Limestone Coast',
+        'Kangaroo Island — open-air natural zoo',
+        'Kings Canyon by 4WD on the Mereenie Loop Road',
+        'Uluru at sunset and Kata Tjuta at dawn',
+        'Sydney — Opera House, Harbour Bridge and Bondi Beach',
+        'Aitutaki — lagoon and BBQ lunch at One Foot Island',
+        'Swimming with humpback whales in Aitutaki',
+      ],
+    },
+    program: [
+      {
+        day: 1,
+        title: { it: 'Arrivo a Melbourne', en: 'Arrival in Melbourne' },
+        description: {
+          it: "Arrivo all'aeroporto di Melbourne con volo via Hong Kong. Trasferimento privato in hotel. Melbourne è la capitale dello Stato di Victoria — città multiculturale, all'avanguardia nell'arte, nella gastronomia e nel design. Tre notti all'Holiday Inn Express Melbourne Southbank.",
+          en: "Arrival at Melbourne Airport via Hong Kong. Private transfer to the hotel. Melbourne is the capital of Victoria — a multicultural city at the forefront of art, gastronomy and design. Three nights at Holiday Inn Express Melbourne Southbank.",
+        },
+      },
+      {
+        day: 2,
+        title: { it: 'Melbourne — giornata libera', en: 'Melbourne — Free Day' },
+        description: {
+          it: "Giornata libera per esplorare Melbourne: tram gratuito City Circle, Queen Victoria Market, vicoli dell'arte urbana (Hosier Lane, Degraves Street), Federation Square, Royal Botanic Gardens e St Kilda al tramonto. La città è famosa per i suoi bar, ristoranti e la vivace scena culturale.",
+          en: "Free day to explore Melbourne: free City Circle Tram, Queen Victoria Market, street art laneways (Hosier Lane, Degraves Street), Federation Square, Royal Botanic Gardens and St Kilda at sunset. The city is famous for its bars, restaurants and vibrant cultural scene.",
+        },
+      },
+      {
+        day: 3,
+        title: { it: 'Melbourne — seconda giornata libera', en: 'Melbourne — Second Free Day' },
+        description: {
+          it: "Seconda giornata libera a Melbourne per approfondire i quartieri più interessanti: Fitzroy (mercato artigianale e caffè d'autore), Yarra Valley (vigneti a un'ora dalla città) o MCG e tour sportivi. Cena di arrivederci in città prima di iniziare il road trip il giorno seguente.",
+          en: "Second free day in Melbourne to explore the most interesting neighbourhoods: Fitzroy (artisan market and speciality coffee), Yarra Valley (vineyards one hour from the city) or MCG and sports tours. Farewell dinner in the city before starting the road trip the following day.",
+        },
+      },
+      {
+        day: 4,
+        title: { it: 'Melbourne → Great Ocean Road → Port Campbell', en: 'Melbourne → Great Ocean Road → Port Campbell' },
+        description: {
+          it: "Ritiro dell'auto a noleggio (Toyota Corolla All Inclusive, km illimitati) e partenza alle 09:00 lungo la Great Ocean Road, una delle strade panoramiche più spettacolari del mondo: Torquay (culla del surf australiano), Kennett River (koala sugli eucalipti e lorikeet coloratissimi), Great Otway National Park e il Maits Rest Rainforest Walk. Arrivo al Parco Nazionale di Port Campbell con i Dodici Apostoli, Loch Ard Gorge e London Arch. Pernottamento a Port Campbell.",
+          en: "Car rental pick-up (Toyota Corolla All Inclusive, unlimited km) and 09:00 departure along the Great Ocean Road, one of the world's most spectacular scenic drives: Torquay (birthplace of Australian surfing), Kennett River (koalas in eucalyptus trees and colourful lorikeets), Great Otway National Park and Maits Rest Rainforest Walk. Arrival at Port Campbell National Park with the Twelve Apostles, Loch Ard Gorge and London Arch. Overnight in Port Campbell.",
+        },
+      },
+      {
+        day: 5,
+        title: { it: 'Port Campbell → Mount Gambier → Robe', en: 'Port Campbell → Mount Gambier → Robe' },
+        description: {
+          it: "Partenza con sosta a Port Fairy, affascinante villaggio costiero. Poi Mount Gambier: il Blue Lake (colore turchese straordinario che cambia con le stagioni) e l'Umpherston Sinkhole, giardino spettacolare in una dolina naturale. Traversata della Coonawarra Wine Region con possibile degustazione di Cabernet Sauvignon. Pernottamento a Robe, elegante villaggio costiero.",
+          en: "Departure with a stop in Port Fairy, a charming coastal village. Then Mount Gambier: the Blue Lake (extraordinary turquoise colour that changes with the seasons) and Umpherston Sinkhole, a spectacular garden inside a natural sinkhole. Drive through Coonawarra Wine Region with possible Cabernet Sauvignon tasting. Overnight in Robe, an elegant coastal village.",
+        },
+      },
+      {
+        day: 6,
+        title: { it: 'Robe → Victor Harbor', en: 'Robe → Victor Harbor' },
+        description: {
+          it: "Partenza da Robe verso Victor Harbor (330 km), tranquilla cittadina balneare famosa per il lungomare, il ponte pedonale verso Granite Island e la stagione delle balene (giugno–ottobre). Avvistamento dei pinguini la sera.",
+          en: "Drive from Robe to Victor Harbor (330 km), a peaceful seaside town famous for its waterfront, the pedestrian causeway to Granite Island and whale watching season (June–October). Penguin spotting in the evening.",
+        },
+      },
+      {
+        day: 7,
+        title: { it: 'Victor Harbor → Cape Jervis → Kangaroo Island', en: 'Victor Harbor → Cape Jervis → Kangaroo Island' },
+        description: {
+          it: "Partenza verso Cape Jervis per il traghetto Sealink verso Penneshaw, sull'isola di Kangaroo Island (45 minuti). All'arrivo: Visitor Centre, ritiro mappa e inizio dell'esplorazione dell'isola più incontaminata dell'Australia Meridionale: fauna in libertà (canguri, koala, echidna, foche, leoni marini), spiagge bianchissime e Parco Nazionale del Flinders Chase.",
+          en: "Drive to Cape Jervis for the Sealink ferry to Penneshaw, Kangaroo Island (45 minutes). On arrival: Visitor Centre, map pick-up and start exploring South Australia's most pristine island: free-roaming wildlife (kangaroos, koalas, echidnas, seals, sea lions), white beaches and Flinders Chase National Park.",
+        },
+      },
+      {
+        day: 8,
+        title: { it: 'Kangaroo Island — giornata libera', en: 'Kangaroo Island — Free Day' },
+        description: {
+          it: "Giornata libera su Kangaroo Island: Seal Bay (colonia permanente di leoni marini), Remarkable Rocks, Admiral Arch, Little Sahara (dune di sabbia), Vivonne Bay (tra le più belle spiagge dell'Australia), Stokes Bay e Emu Bay. Una giornata non è abbastanza.",
+          en: "Free day on Kangaroo Island: Seal Bay (permanent sea lion colony), Remarkable Rocks, Admiral Arch, Little Sahara (sand dunes), Vivonne Bay (one of Australia's most beautiful beaches), Stokes Bay and Emu Bay. A full day is barely enough.",
+        },
+      },
+      {
+        day: 9,
+        title: { it: 'Kangaroo Island → McLaren Vale → Adelaide', en: 'Kangaroo Island → McLaren Vale → Adelaide' },
+        description: {
+          it: "Traghetto di ritorno a Cape Jervis e guida verso McLaren Vale, splendida regione vinicola tra colline e vigneti (d'Arenberg Cube, Wirra Wirra, Maxwell Wines). Poi Adelaide, elegante capitale del South Australia, con il Rundle Mall, il fiume Torrens e il Botanic Garden. Pernottamento all'Holiday Inn Express Adelaide.",
+          en: "Return ferry to Cape Jervis and drive to McLaren Vale, a beautiful wine region among hills and vineyards (d'Arenberg Cube, Wirra Wirra, Maxwell Wines). Then Adelaide, South Australia's elegant capital, with Rundle Mall, the Torrens River and Botanic Garden. Overnight at Holiday Inn Express Adelaide.",
+        },
+      },
+      {
+        day: 10,
+        title: { it: 'Adelaide → Alice Springs → Kings Canyon (4x4)', en: 'Adelaide → Alice Springs → Kings Canyon (4WD)' },
+        description: {
+          it: "Volo Adelaide–Alice Springs e ritiro del fuoristrada 4x4 All Inclusive. Partenza lungo la Larapinta Drive con soste a Simpsons Gap e Standley Chasm nei West MacDonnell Ranges. Poi la Mereenie Loop Road — 150 km non asfaltati attraverso territorio aborigeno. Lungo il percorso: cammelli selvatici, canguri, dingo e cavalli bradi nel silenzio del Red Centre. Pernottamento al Discovery Kings Canyon Resort.",
+          en: "Flight Adelaide–Alice Springs and 4WD All Inclusive rental pick-up. Drive along Larapinta Drive with stops at Simpsons Gap and Standley Chasm in the West MacDonnell Ranges. Then the Mereenie Loop Road — 150 km unsealed through Aboriginal territory. Along the way: wild camels, kangaroos, dingoes and brumbies in the silence of the Red Centre. Overnight at Discovery Kings Canyon Resort.",
+        },
+      },
+      {
+        day: 11,
+        title: { it: 'Kings Canyon → Uluru al tramonto', en: 'Kings Canyon → Uluru at Sunset' },
+        description: {
+          it: "All'alba: la Kings Canyon Rim Walk (3–4 ore), percorso panoramico tra le pareti rosse del canyon e la pianura sottostante. Per chi preferisce qualcosa di più tranquillo: il Kings Creek Walk. Nel pomeriggio: guida verso Yulara con sosta al Mount Conner Lookout e alla Curtin Springs Station. Arrivo in tempo per il tramonto su Uluru — la roccia cambia dal rosso al viola al nero.",
+          en: "At dawn: the Kings Canyon Rim Walk (3–4 hours), a panoramic trail along the canyon's red walls and the plain below. For those preferring something more gentle: the Kings Creek Walk. In the afternoon: drive to Yulara with a stop at Mount Conner Lookout and Curtin Springs Station. Arrive in time for sunset over Uluru — the rock shifts from red to violet to black.",
+        },
+      },
+      {
+        day: 12,
+        title: { it: 'Uluru e Kata Tjuta', en: 'Uluru and Kata Tjuta' },
+        description: {
+          it: "Sveglia presto per l'alba su Uluru, uno degli spettacoli più intensi del viaggio. Poi la Base Walk o il suggestivo Mala Walk con storie aborigene. Possibilità di noleggio bici per il perimetro di Uluru. Pomeriggio: Kata Tjuta (The Olgas) con il Walpa Gorge Walk tra le 36 cupole rocciose. Sera: Field of Light di Bruce Munro — installazione luminosa nel deserto.",
+          en: "Early rise for the dawn over Uluru, one of the journey's most powerful spectacles. Then the Base Walk or the evocative Mala Walk with Aboriginal stories. Option to hire bikes around Uluru's perimeter. Afternoon: Kata Tjuta (The Olgas) with the Walpa Gorge Walk among the 36 rock domes. Evening: Bruce Munro's Field of Light — luminous art installation in the desert.",
+        },
+      },
+      {
+        day: 13,
+        title: { it: 'Uluru → Sydney', en: 'Uluru → Sydney' },
+        description: {
+          it: "Ultima alba su Uluru e visita al Cultural Centre aborigeno. Poi consegna del 4x4 in aeroporto e volo Ayers Rock–Sydney. Trasferimento libero in hotel al Furama Darling Harbour, nel cuore di Sydney.",
+          en: "Final dawn at Uluru and visit to the Aboriginal Cultural Centre. Then 4WD drop-off at the airport and flight Ayers Rock–Sydney. Free transfer to the hotel at Furama Darling Harbour, in the heart of Sydney.",
+        },
+      },
+      {
+        day: 14,
+        title: { it: 'Sydney — baia, Opera House e Harbour Bridge', en: 'Sydney — Bay, Opera House and Harbour Bridge' },
+        description: {
+          it: "Sydney da scoprire: Opera House, Harbour Bridge, Circular Quay, The Rocks, Royal Botanic Garden, Darling Harbour con acquario e musei. Opzione: tour dell'Opera House o mini-crociera in baia con pranzo incluso.",
+          en: "Sydney to explore: Opera House, Harbour Bridge, Circular Quay, The Rocks, Royal Botanic Garden, Darling Harbour with aquarium and museums. Options: Opera House tour or Sydney Harbour minicruise with lunch included.",
+        },
+      },
+      {
+        day: 15,
+        title: { it: 'Sydney — Bondi Beach e la Bondi to Coogee Walk', en: 'Sydney — Bondi Beach and the Bondi to Coogee Walk' },
+        description: {
+          it: "Giornata alle spiagge di Sydney: Bondi Beach (surf, scuole e mercatini del weekend), la Bondi to Coogee Clifftop Walk (6 km tra scogliere e belvederi naturali passando per Tamarama e Bronte), Manly in traghetto e St Kilda. L'anima più rilassata e solare di Sydney.",
+          en: "Day at Sydney's beaches: Bondi Beach (surf, surf schools and weekend markets), the Bondi to Coogee Clifftop Walk (6 km along cliffs and natural lookouts past Tamarama and Bronte), Manly by ferry and St Kilda. The most relaxed and sunny side of Sydney.",
+        },
+      },
+      {
+        day: 16,
+        title: { it: 'Sydney → Aitutaki (Isole Cook)', en: 'Sydney → Aitutaki (Cook Islands)' },
+        description: {
+          it: "Mattina: Taronga Zoo (koala, canguri e vista sulla baia) o SEA LIFE Sydney Aquarium. Nel pomeriggio transfer in aeroporto per il volo Sydney–Rarotonga con proseguimento per Aitutaki. Trasferimento al Resort Tava'e, boutique resort fronte laguna.",
+          en: "Morning: Taronga Zoo (koalas, kangaroos and bay views) or SEA LIFE Sydney Aquarium. In the afternoon, transfer to the airport for the flight Sydney–Rarotonga continuing to Aitutaki. Transfer to Resort Tava'e, a boutique beachfront resort.",
+        },
+      },
+      {
+        day: 17,
+        title: { it: 'Aitutaki — One Foot Island Lagoon Cruise', en: 'Aitutaki — One Foot Island Lagoon Cruise' },
+        description: {
+          it: "All Day Lagoon Cruise di Bishop's: crociera nella laguna turchese di Aitutaki, snorkeling in acque cristalline, pranzo barbecue a One Foot Island con timbro ricordo sul passaporto. La laguna di Aitutaki è considerata tra le più belle del Pacifico.",
+          en: "Bishop's All Day Lagoon Cruise: cruise on Aitutaki's turquoise lagoon, snorkelling in crystal waters, BBQ lunch at One Foot Island with a souvenir passport stamp. Aitutaki's lagoon is considered among the most beautiful in the Pacific.",
+        },
+      },
+      {
+        day: 18,
+        title: { it: 'Aitutaki — nuoto con le megattere', en: 'Aitutaki — Swimming with Humpback Whales' },
+        description: {
+          it: "Tour organizzato per nuotare con le balene megattere (luglio–ottobre): partenza alle 09:00 da Ootu Beach con Wet n Wild Aitutaki. Un'esperienza unica al mondo — galleggiare accanto a questi giganti del mare nelle acque calde del Pacifico meridionale.",
+          en: "Organised tour to swim with humpback whales (July–October): 09:00 departure from Ootu Beach with Wet n Wild Aitutaki. A once-in-a-lifetime experience — floating alongside these ocean giants in the warm waters of the South Pacific.",
+        },
+      },
+      {
+        day: 19,
+        title: { it: 'Aitutaki — giornata libera', en: 'Aitutaki — Free Day' },
+        description: {
+          it: "Giornata libera ad Aitutaki: kayak e paddleboard nella laguna dal resort, esplorazione dei motu, snorkeling autonomo o semplicemente relax sulla spiaggia con le acque turchesi a portata di mano.",
+          en: "Free day on Aitutaki: kayak and paddleboard on the lagoon from the resort, exploration of the motu, independent snorkelling or simply relaxing on the beach with turquoise waters at arm's reach.",
+        },
+      },
+      {
+        day: 20,
+        title: { it: 'Aitutaki — seconda giornata libera', en: 'Aitutaki — Second Free Day' },
+        description: {
+          it: "Seconda giornata libera ad Aitutaki: l'isola è piccola ma ogni angolo è diverso. Esplora a piedi o in bici, scopri i ristoranti locali e i mercatini, o goditi il tramonto più bello del Pacifico direttamente dalla spiaggia del resort.",
+          en: "Second free day on Aitutaki: the island is small but every corner is different. Explore on foot or by bike, discover local restaurants and markets, or enjoy the Pacific's most beautiful sunset directly from the resort beach.",
+        },
+      },
+      {
+        day: 21,
+        title: { it: 'Aitutaki → Rarotonga → Auckland', en: 'Aitutaki → Rarotonga → Auckland' },
+        description: {
+          it: "Trasferimento in aeroporto e volo Aitutaki–Rarotonga, poi proseguimento per Auckland. Fine dei servizi inclusi nel pacchetto.",
+          en: "Transfer to the airport and flight Aitutaki–Rarotonga, then onward to Auckland. End of included package services.",
+        },
+      },
+      {
+        day: 22,
+        title: { it: 'Rientro in Italia', en: 'Return to Italy' },
+        description: {
+          it: "Volo di rientro da Auckland verso l'Italia via Hong Kong. Fine del viaggio.",
+          en: "Return flight from Auckland to Italy via Hong Kong. End of the journey.",
+        },
+      },
+    ],
+    included: {
+      it: [
+        'Pernottamenti come da itinerario (colazione inclusa)',
+        'Auto a noleggio Toyota Corolla All Inclusive km illimitati (Melbourne)',
+        'Fuoristrada 4x4 All Inclusive km illimitati (Alice Springs)',
+        'Traghetto Sealink Kangaroo Island andata e ritorno con auto',
+        'Resort Tava\'e Aitutaki — 5 notti Premium Beachfront Room (colazione inclusa)',
+        'Aitutaki All Day Lagoon Cruise — One Foot Island (volo A/R + pranzo BBQ inclusi)',
+        'Tour nuoto con megattere — Wet n Wild Aitutaki',
+        'Volo Adelaide → Alice Springs (incluso)',
+        'Volo Ayers Rock → Sydney (incluso)',
+        'Volo Sydney → Rarotonga → Aitutaki (incluso)',
+        'Permesso Mereenie Loop Road (incluso)',
+        'Documentazione di viaggio in PDF completa',
+        'Assistenza locale italiana (telefono e chat)',
+      ],
+      en: [
+        'Accommodation as per itinerary (breakfast included)',
+        'Toyota Corolla All Inclusive car rental unlimited km (Melbourne)',
+        'All Inclusive 4WD unlimited km (Alice Springs)',
+        'Sealink Kangaroo Island ferry return with car',
+        'Resort Tava\'e Aitutaki — 5 nights Premium Beachfront Room (breakfast included)',
+        'Aitutaki All Day Lagoon Cruise — One Foot Island (return flights + BBQ lunch included)',
+        'Humpback whale swimming tour — Wet n Wild Aitutaki',
+        'Flight Adelaide → Alice Springs (included)',
+        'Flight Ayers Rock → Sydney (included)',
+        'Flight Sydney → Rarotonga → Aitutaki (included)',
+        'Mereenie Loop Road permit (included)',
+        'Complete travel documentation in PDF format',
+        'Italian-language local assistance (phone and chat)',
+      ],
+    },
+    notIncluded: standardNotIncluded,
+  },
 ];
