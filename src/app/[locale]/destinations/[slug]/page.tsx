@@ -124,7 +124,7 @@ export default async function DestinationDetailPage({ params }: Props) {
     ].join(' ').toLowerCase();
     const keywords = DEST_KEYWORDS[slug] ?? [slug.replace(/-/g, ' ')];
     return keywords.some((k) => combined.includes(k));
-  }).slice(0, 8);
+  }).slice(0, 12);
 
   // Related blog posts
   const relatedBlogSlugs = DEST_BLOG_MAP[slug] ?? [];
