@@ -957,4 +957,326 @@ export const itineraries: Itinerary[] = [
     },
     notIncluded: standardNotIncluded,
   },
+
+  // ─────────────────────────────────────────────
+  // 5. AUSTRALIA SELVAGGIA — 28 giorni
+  // ─────────────────────────────────────────────
+  {
+    id: 'australia-selvaggia',
+    slug: 'australia-selvaggia',
+    title: {
+      it: 'Australia Selvaggia — Darwin, Kakadu, Reef, Sydney, Uluru, Melbourne e Kangaroo Island',
+      en: 'Wild Australia — Darwin, Kakadu, the Reef, Sydney, Uluru, Melbourne & Kangaroo Island',
+    },
+    description: {
+      it: "Un grand tour dell'Australia autentica: dalle foreste pluviali del Territorio del Nord e la Grande Barriera Corallina, passando per Sydney e il Red Centre con Uluru e Kings Canyon, fino alla Great Ocean Road, Phillip Island e il selvaggio road trip su Kangaroo Island. Ventotto giorni per toccare l'anima di un continente.",
+      en: "A grand tour of authentic Australia: from the Northern Territory rainforests and the Great Barrier Reef, through Sydney and the Red Centre with Uluru and Kings Canyon, to the Great Ocean Road, Phillip Island and a wild road trip on Kangaroo Island. Twenty-eight days to touch the soul of a continent.",
+    },
+    duration: 28,
+    destination: 'Australia',
+    type: 'avventura',
+    gradient: 'from-orange-700 to-red-900',
+    image: '/images/dest-hero-australia-v2.png',
+    price: { currency: 'EUR', amount: 5600 },
+    priceEn: { currency: 'USD', amount: 6100 },
+    highlights: {
+      it: [
+        'Kakadu e Litchfield — 3 giorni con guida nel territorio del Nord',
+        'Grande Barriera Corallina in catamarano alle Low Isles',
+        'Foresta pluviale di Daintree e Cape Tribulation',
+        'Uluru al tramonto e Kata Tjuta all\'alba + cena Field of Lights',
+        'Great Ocean Road con guida italiana',
+        'Pinguini di Phillip Island — Penguin Parade',
+        'Road trip di 4 giorni su Kangaroo Island',
+        'Barossa Valley — degustazione vini',
+      ],
+      en: [
+        'Kakadu & Litchfield — 3-day guided tour in the Northern Territory',
+        'Great Barrier Reef by catamaran at the Low Isles',
+        'Daintree Rainforest and Cape Tribulation',
+        'Uluru at sunset and Kata Tjuta at dawn + Field of Lights dinner',
+        'Great Ocean Road with Italian guide',
+        'Phillip Island Penguin Parade',
+        '4-day self-drive road trip on Kangaroo Island',
+        'Barossa Valley wine tasting',
+      ],
+    },
+    program: [
+      {
+        day: 1,
+        title: { it: 'Volo Milano – Darwin via Singapore', en: 'Flight Milan – Darwin via Singapore' },
+        description: {
+          it: 'Partenza da Milano con Singapore Airlines. Scalo a Singapore e volo per Darwin. Arrivo il giorno seguente.',
+          en: 'Departure from Milan with Singapore Airlines. Stopover in Singapore and onward flight to Darwin. Arrival the following day.',
+        },
+      },
+      {
+        day: 2,
+        title: { it: 'Arrivo a Darwin', en: 'Arrival in Darwin' },
+        description: {
+          it: 'Arrivo a Darwin e trasferimento privato in hotel. Darwin è la vivace capitale del Territorio del Nord, punto d\'incontro tra cultura urbana e natura selvaggia. Da non perdere il Waterfront Precinct e i Sunset Markets.',
+          en: 'Arrival in Darwin and private hotel transfer. Darwin is the vibrant capital of the Northern Territory, where urban culture meets wild nature. Not to be missed: the Waterfront Precinct and Sunset Markets.',
+        },
+      },
+      {
+        day: 3,
+        title: { it: 'Tour Kakadu e Litchfield — Giorno 1', en: 'Kakadu & Litchfield Tour — Day 1' },
+        description: {
+          it: 'Inizio del tour di 3 giorni. Partenza da Darwin verso il Kakadu National Park. Crociera in barca nella Corroboree Billabong per avvistare coccodrilli e uccelli del Top End. Visita al Burrungkuy (Nourlangie Rock) con arte rupestre aborigena. Tramonto sulla pianura alluvionale di Nadab. Pernottamento in campo safari nel Jabiru Campground.',
+          en: 'Start of the 3-day tour. Departure from Darwin to Kakadu National Park. Boat cruise on the Corroboree Billabong to spot crocodiles and Top End birdlife. Visit to Burrungkuy (Nourlangie Rock) with Aboriginal rock art. Sunset over the Nadab floodplain. Overnight at Jabiru Campground safari tents.',
+        },
+      },
+      {
+        day: 4,
+        title: { it: 'Tour Kakadu — Giorno 2: Litchfield e cascate', en: 'Kakadu Tour — Day 2: Litchfield & Waterfalls' },
+        description: {
+          it: 'Giornata immersi nella natura di Litchfield National Park tra foreste monsoniche, cascate incontaminate e piscine naturali. Possibili tappe: Florence Falls, Wangi Falls, Buley Rockholes. Arte rupestre aborigena risalente a 20.000 anni fa.',
+          en: 'A day immersed in Litchfield National Park: monsoon forests, pristine waterfalls and natural swimming pools. Possible stops: Florence Falls, Wangi Falls, Buley Rockholes. Aboriginal rock art dating back 20,000 years.',
+        },
+      },
+      {
+        day: 5,
+        title: { it: 'Tour Litchfield — Giorno 3 e volo per Port Douglas', en: 'Litchfield Tour — Day 3 & Flight to Port Douglas' },
+        description: {
+          it: 'Mattina a Litchfield tra le Cathedral Termite Mounds, impressionanti termitai alti diversi metri. Nel pomeriggio rientro a Darwin e volo per Cairns. Trasferimento privato a Port Douglas.',
+          en: 'Morning at Litchfield among the Cathedral Termite Mounds, impressive termite hills several metres tall. Afternoon return to Darwin and flight to Cairns. Private transfer to Port Douglas.',
+        },
+      },
+      {
+        day: 6,
+        title: { it: 'Giornata libera a Port Douglas', en: 'Free Day in Port Douglas' },
+        description: {
+          it: 'Relax sulla celebre Four Mile Beach, passeggiata panoramica sul Flagstaff Hill o lungo il Four Mile Beach Cliff Walk. Esplorazione del porto e della Marina Station.',
+          en: 'Relax on the famous Four Mile Beach, panoramic walk on Flagstaff Hill or along the Four Mile Beach Cliff Walk. Exploration of the port and Marina Station.',
+        },
+      },
+      {
+        day: 7,
+        title: { it: 'Grande Barriera Corallina in catamarano', en: 'Great Barrier Reef by Catamaran' },
+        description: {
+          it: 'Intera giornata nella Grande Barriera Corallina a bordo del Sailaway VI, catamarano di lusso Lagoon 560. Snorkeling alle Low Isles con biologo marino, nuoto con tartarughe, passeggiata naturalistica guidata sull\'isola. Pranzo a buffet e tè a bordo inclusi.',
+          en: 'Full day on the Great Barrier Reef aboard the Sailaway VI, a luxury Lagoon 560 catamaran. Snorkelling at the Low Isles with a marine biologist, swimming with turtles, guided nature walk on the island. Buffet lunch and teas included.',
+        },
+      },
+      {
+        day: 8,
+        title: { it: 'Cape Tribulation e Daintree Forest', en: 'Cape Tribulation & Daintree Forest' },
+        description: {
+          it: 'Tour guidato nella foresta pluviale di Daintree, una delle più antiche del mondo. Visita al Mossman Gorge, crociera sul fiume Daintree per osservare i coccodrilli, arrivo a Cape Tribulation dove la foresta pluviale incontra la barriera corallina. Pranzo incluso.',
+          en: 'Guided tour through the Daintree Rainforest, one of the world\'s oldest. Visit to Mossman Gorge, Daintree River cruise to spot crocodiles, arrival at Cape Tribulation where the rainforest meets the reef. Lunch included.',
+        },
+      },
+      {
+        day: 9,
+        title: { it: 'Giornata libera a Port Douglas', en: 'Free Day in Port Douglas' },
+        description: {
+          it: 'Giornata a disposizione per esplorare i dintorni, rilassarsi in spiaggia o organizzare attività facoltative.',
+          en: 'Free day to explore the surroundings, relax on the beach or arrange optional activities.',
+        },
+      },
+      {
+        day: 10,
+        title: { it: 'Kuranda — seggiovia e treno panoramico', en: 'Kuranda — Cable Car & Scenic Railway' },
+        description: {
+          it: 'Sorvola la foresta pluviale sulla seggiovia panoramica Skyrail ammirando la vegetazione lussureggiante dall\'alto. Visita libera al villaggio di Kuranda e al Koala Garden Sanctuary. Discesa in treno panoramico Kuranda Scenic Railway con audio guida in italiano.',
+          en: 'Soar above the rainforest on the Skyrail gondola with stunning aerial views. Free time in Kuranda village and Koala Garden Sanctuary. Descent by Kuranda Scenic Railway with Italian audio guide.',
+        },
+      },
+      {
+        day: 11,
+        title: { it: 'Volo Cairns – Sydney', en: 'Flight Cairns – Sydney' },
+        description: {
+          it: 'Trasferimento privato da Port Douglas all\'aeroporto di Cairns. Volo per Sydney e check-in al Furama Darling Harbour.',
+          en: 'Private transfer from Port Douglas to Cairns Airport. Flight to Sydney and check-in at the Furama Darling Harbour.',
+        },
+      },
+      {
+        day: 12,
+        title: { it: 'Sydney — Bondi Beach e città', en: 'Sydney — Bondi Beach & City' },
+        description: {
+          it: 'Giornata libera a Sydney. Passeggiata a Bondi Beach, iconica spiaggia con onde perfette per i surfisti e vivace atmosfera. Possibilità di percorrere il Bondi to Coogee Coastal Walk. Nel pomeriggio esplorazione libera del centro.',
+          en: 'Free day in Sydney. Walk to Bondi Beach, iconic for its perfect surf waves and vibrant atmosphere. Option to hike the Bondi to Coogee Coastal Walk. Afternoon free to explore the city.',
+        },
+      },
+      {
+        day: 13,
+        title: { it: 'Blue Mountains — tour in italiano', en: 'Blue Mountains — Italian-language Tour' },
+        description: {
+          it: 'Tour in italiano alle spettacolari Blue Mountains, Patrimonio dell\'Umanità UNESCO. Sosta panoramica alle Three Sisters, passeggiata a Leura con tempo per lo shopping. Colazione australiana inclusa.',
+          en: 'Italian-language tour of the spectacular Blue Mountains, UNESCO World Heritage Site. Panoramic stop at the Three Sisters, walk in Leura with shopping time. Australian morning tea included.',
+        },
+      },
+      {
+        day: 14,
+        title: { it: 'Mini crociera nel porto di Sydney con pranzo', en: 'Sydney Harbour Lunch Cruise' },
+        description: {
+          it: 'Crociera di due ore nel porto di Sydney con pranzo a buffet incluso. Viste sull\'Opera House, Harbour Bridge e Luna Park dalla barca.',
+          en: 'Two-hour cruise around Sydney Harbour with buffet lunch included. Views of the Opera House, Harbour Bridge and Luna Park from the water.',
+        },
+      },
+      {
+        day: 15,
+        title: { it: 'Volo Sydney – Uluru e tramonto a Uluru', en: 'Flight Sydney – Uluru & Sunset at Uluru' },
+        description: {
+          it: 'Volo per Ayers Rock. Tour al tramonto di Uluru con audio guida in italiano: avvicinamento alla base del monolite, visita al Mutitjulu Waterhole, storie del Tjukurpa (Tempo del Sogno). Vista panoramica da Talinguru Nyakun Tjaku al tramonto.',
+          en: 'Flight to Ayers Rock. Uluru sunset tour with Italian audio guide: approach to the base of the monolith, Mutitjulu Waterhole visit, Tjukurpa (Dreamtime) stories. Panoramic viewpoint at Talinguru Nyakun Tjaku at sunset.',
+        },
+      },
+      {
+        day: 16,
+        title: { it: 'Kings Canyon', en: 'Kings Canyon' },
+        description: {
+          it: 'Tour a Kings Canyon con partenza da Ayers Rock Resort, colazione calda a Kings Creek Station. Escursione al bordo del canyon con viste spettacolari sul Watarrka National Park e discesa nel "Garden of Eden". In alternativa: passeggiata di 2 km lungo il letto del torrente.',
+          en: 'Kings Canyon tour departing Ayers Rock Resort, hot breakfast at Kings Creek Station. Rim walk with spectacular views over Watarrka National Park and descent into the "Garden of Eden". Alternative: 2 km creek bed walk.',
+        },
+      },
+      {
+        day: 17,
+        title: { it: 'Kata Tjuta all\'alba e cena Field of Lights', en: 'Kata Tjuta at Dawn & Field of Lights Dinner' },
+        description: {
+          it: 'Tour all\'alba a Kata Tjuta con colazione all\'aperto e audio guida in italiano. Passeggiata nella Gola di Walpa tra le cupole di conglomerato. La sera: cena sotto le stelle con accesso al Field of Lights, l\'installazione artistica di Bruce Munro con migliaia di sfere luminose. Narratore di stelle incluso.',
+          en: 'Kata Tjuta dawn tour with outdoor breakfast and Italian audio guide. Walk through the Walpa Gorge between the conglomerate domes. Evening: dinner under the stars with Field of Lights access, Bruce Munro\'s art installation. Stargazing storyteller included.',
+        },
+      },
+      {
+        day: 18,
+        title: { it: 'Volo Uluru – Melbourne', en: 'Flight Uluru – Melbourne' },
+        description: {
+          it: 'Trasferimento privato all\'aeroporto e volo per Melbourne. Check-in al Crowne Promenade. Prima serata libera per esplorare i famosi vicoli di street art e la scena gastronomica della città.',
+          en: 'Private transfer to the airport and flight to Melbourne. Check-in at the Crowne Promenade. First evening free to explore the famous street art laneways and the city\'s food scene.',
+        },
+      },
+      {
+        day: 19,
+        title: { it: 'Great Ocean Road con guida italiana', en: 'Great Ocean Road with Italian Guide' },
+        description: {
+          it: 'Tour guidato in italiano lungo la Great Ocean Road: tè mattutino sulle spiagge panoramiche, sosta alle Twelve Apostles nel Port Campbell National Park, Loch Ard Gorge, koala selvatici a Kennett River e Apollo Bay. Pranzo incluso.',
+          en: 'Italian-guided tour along the Great Ocean Road: morning tea on scenic beaches, Twelve Apostles in Port Campbell National Park, Loch Ard Gorge, wild koalas at Kennett River, Apollo Bay. Lunch included.',
+        },
+      },
+      {
+        day: 20,
+        title: { it: 'Phillip Island — Penguin Parade con guida italiana', en: 'Phillip Island — Penguin Parade with Italian Guide' },
+        description: {
+          it: 'Tour in giornata a Phillip Island con guida italiana. Visita al Moonlit Sanctuary (canguri, wombat, echidne), Woolamai Surf Beach, costa occidentale spettacolare, Nobbies. In serata: Penguin Plus — la Parata dei Pinguini dall\'area di osservazione esclusiva.',
+          en: 'Full-day Phillip Island tour with Italian guide. Moonlit Sanctuary (kangaroos, wombats, echidnas), Woolamai Surf Beach, spectacular west coast, The Nobbies. Evening: Penguin Plus — the Little Penguin Parade from the exclusive viewing area.',
+        },
+      },
+      {
+        day: 21,
+        title: { it: 'Giornata libera a Melbourne', en: 'Free Day in Melbourne' },
+        description: {
+          it: 'Giornata libera per esplorare Melbourne a proprio ritmo: mercati coperti, vicoli di street art, Queen Victoria Market, musei o semplice relax in città.',
+          en: 'Free day to explore Melbourne at your own pace: covered markets, street art laneways, Queen Victoria Market, museums or simply relaxing in the city.',
+        },
+      },
+      {
+        day: 22,
+        title: { it: 'Volo Melbourne – Adelaide – Kangaroo Island', en: 'Flight Melbourne – Adelaide – Kangaroo Island' },
+        description: {
+          it: 'Volo da Melbourne ad Adelaide e coincidenza per Kangaroo Island. Ritiro auto a noleggio (Mazda CX5 o simile, km illimitati, assicurazione inclusa). Inizio del road trip di 4 giorni sull\'isola. Esplorazione della zona orientale intorno a Kingscote.',
+          en: 'Flight from Melbourne to Adelaide with connection to Kangaroo Island. Car rental pick-up (Mazda CX5 or similar, unlimited km, insurance included). Start of the 4-day island road trip. Explore the eastern area around Kingscote.',
+        },
+      },
+      {
+        day: 23,
+        title: { it: 'Kangaroo Island — Seal Bay e Vivonne Bay', en: 'Kangaroo Island — Seal Bay & Vivonne Bay' },
+        description: {
+          it: 'Visita al Seal Bay Conservation Park, uno dei luoghi più iconici dell\'isola: passeggiata guidata tra i leoni marini australiani sulla spiaggia. Proseguimento verso Vivonne Bay, considerata una delle spiagge più belle d\'Australia, e le dune di sabbia di Little Sahara.',
+          en: 'Visit to Seal Bay Conservation Park, one of the island\'s most iconic spots: guided walk among Australian sea lions on the beach. Continue to Vivonne Bay, often rated one of Australia\'s best beaches, and the Little Sahara sand dunes.',
+        },
+      },
+      {
+        day: 24,
+        title: { it: 'Kangaroo Island — Flinders Chase National Park', en: 'Kangaroo Island — Flinders Chase National Park' },
+        description: {
+          it: 'Giornata nel Flinders Chase National Park, la zona più spettacolare dell\'isola. Ammirate le Remarkable Rocks, formazioni granitiche modellate dal vento, e l\'Admirals Arch dove si avvistano foche della Nuova Zelanda. Canguri, wallaby e koala selvatici lungo i sentieri.',
+          en: 'Full day at Flinders Chase National Park, the island\'s most spectacular area. See the Remarkable Rocks, wind-sculpted granite formations, and Admirals Arch with New Zealand fur seals. Wild kangaroos, wallabies and koalas along the trails.',
+        },
+      },
+      {
+        day: 25,
+        title: { it: 'Kangaroo Island — mattina libera, volo per Adelaide', en: 'Kangaroo Island — Free Morning, Flight to Adelaide' },
+        description: {
+          it: 'Ultima mattina sull\'isola: visita a una fattoria di miele locale (famoso il miele ligure di KI) o degustazione di gin artigianale alla Kangaroo Island Spirits. Volo Kingscote–Adelaide. Trasferimento privato al The Vibe Hotel.',
+          en: 'Last morning on the island: visit a local honey farm (KI Ligurian honey is famous) or gin tasting at Kangaroo Island Spirits. Flight Kingscote–Adelaide. Private transfer to The Vibe Hotel.',
+        },
+      },
+      {
+        day: 26,
+        title: { it: 'Barossa Valley — degustazione vini', en: 'Barossa Valley — Wine Tasting' },
+        description: {
+          it: 'Intera giornata nella Barossa Valley tra vini eccellenti e paesaggi spettacolari. Degustazioni in cantine storiche a gestione familiare (Kies Family Wines, Turkey Flat, Rosenvale). Sosta nel villaggio di Tanunda e al belvedere di Menglers Hill. Pranzo con prodotti regionali incluso.',
+          en: 'Full day in the Barossa Valley among excellent wines and spectacular scenery. Tastings at historic family-run wineries (Kies Family Wines, Turkey Flat, Rosenvale). Stop in Tanunda village and Menglers Hill lookout. Lunch with regional produce included.',
+        },
+      },
+      {
+        day: 27,
+        title: { it: 'Volo Adelaide – Singapore – Milano', en: 'Flight Adelaide – Singapore – Milan' },
+        description: {
+          it: 'Trasferimento privato all\'aeroporto di Adelaide. Volo per Singapore e coincidenza notturna per Milano. Fine del viaggio.',
+          en: 'Private transfer to Adelaide Airport. Flight to Singapore with overnight connection to Milan. End of the journey.',
+        },
+      },
+      {
+        day: 28,
+        title: { it: 'Arrivo a Milano', en: 'Arrival in Milan' },
+        description: {
+          it: 'Arrivo a Milano in mattinata. Fine dei servizi.',
+          en: 'Morning arrival in Milan. End of services.',
+        },
+      },
+    ],
+    included: {
+      it: [
+        'Tutti i trasferimenti privati aeroporto/hotel inclusi',
+        '2 notti a Darwin — The Vibe Hotel',
+        'Tour di 3 giorni Kakadu e Litchfield (pasti e tende safari inclusi)',
+        '6 notti a Port Douglas — Shantara Resort (Studio Pool View)',
+        'Tour in catamarano nella Grande Barriera Corallina (pranzo incluso)',
+        'Tour Cape Tribulation e Daintree con audio guida in italiano (pranzo incluso)',
+        'Tour Kuranda con seggiovia e treno panoramico con audio guida in italiano',
+        '4 notti a Sydney — Furama Darling Harbour (colazione inclusa)',
+        'Tour Blue Mountains con guida in italiano',
+        'Crociera nel porto di Sydney con pranzo a bordo',
+        '3 notti Ayers Rock — Desert Gardens Hotel',
+        'Tour al tramonto di Uluru con audio guida in italiano',
+        'Tour all\'alba di Kata Tjuta con colazione e audio guida in italiano',
+        'Tour Kings Canyon con guida in inglese',
+        'Cena sotto le stelle con accesso al Field of Lights',
+        '5 notti a Melbourne — Crowne Promenade',
+        'Tour Great Ocean Road con guida in italiano (pranzo incluso)',
+        'Tour Phillip Island con Penguin Plus e guida in italiano',
+        '3 notti Adelaide — The Vibe Hotel (Deluxe King con colazione)',
+        'Tour Barossa Valley con guida in inglese (pranzo e assaggi inclusi)',
+        '4 giorni noleggio auto con assicurazione a Kangaroo Island',
+        '3 notti Kangaroo Island — Kangaroo Island Seaside Inn',
+      ],
+      en: [
+        'All private airport/hotel transfers',
+        '2 nights in Darwin — The Vibe Hotel',
+        '3-day Kakadu & Litchfield tour (meals and safari tents included)',
+        '6 nights in Port Douglas — Shantara Resort (Studio Pool View)',
+        'Great Barrier Reef catamaran tour (lunch included)',
+        'Cape Tribulation & Daintree tour with Italian audio guide (lunch included)',
+        'Kuranda tour with Skyrail gondola and Scenic Railway, Italian audio guide',
+        '4 nights in Sydney — Furama Darling Harbour (breakfast included)',
+        'Blue Mountains tour with Italian guide',
+        'Sydney Harbour lunch cruise',
+        '3 nights Ayers Rock — Desert Gardens Hotel',
+        'Uluru sunset tour with Italian audio guide',
+        'Kata Tjuta dawn tour with breakfast and Italian audio guide',
+        'Kings Canyon tour with English guide',
+        'Field of Lights dinner under the stars',
+        '5 nights in Melbourne — Crowne Promenade',
+        'Great Ocean Road tour with Italian guide (lunch included)',
+        'Phillip Island Penguin Parade tour with Italian guide',
+        '3 nights Adelaide — The Vibe Hotel (Deluxe King with breakfast)',
+        'Barossa Valley tour with English guide (lunch and tastings included)',
+        '4-day car hire with insurance on Kangaroo Island',
+        '3 nights Kangaroo Island — Kangaroo Island Seaside Inn',
+      ],
+    },
+    notIncluded: standardNotIncluded,
+  },
 ];
