@@ -51,7 +51,10 @@ export default function TravelIdeasClient({ itineraries, locale, heroLabel, hero
   }, []);
 
   const destinations = useMemo(
-    () => Array.from(new Set(itineraries.map((it) => it.destination))).sort(),
+    () =>
+      Array.from(
+        new Set(itineraries.flatMap((it) => it.destination.split(' & ')))
+      ).sort(),
     [itineraries]
   );
   const types = useMemo(
@@ -62,7 +65,7 @@ export default function TravelIdeasClient({ itineraries, locale, heroLabel, hero
   const filtered = useMemo(() => {
     return itineraries.filter((it) => {
       if (activeType && it.type !== activeType) return false;
-      if (activeDest && it.destination !== activeDest) return false;
+      if (activeDest && !it.destination.split(' & ').includes(activeDest)) return false;
       if (activePrice) {
         const range = priceRanges.find((r) => r.key === activePrice);
         if (range && (it.price.amount < range.min || it.price.amount >= range.max)) return false;

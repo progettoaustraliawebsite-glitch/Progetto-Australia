@@ -42,7 +42,17 @@ export default async function BlogPostPage({ params }: Props) {
     contactPrompt: t('contactPrompt'),
   };
 
-  // Static data always available
+  // Try Sanity first when enabled (so heroImage set in Studio is always used)
+  if (USE_SANITY) {
+    try {
+      const sanityPost = await getBlogPostBySlug(slug);
+      if (sanityPost) {
+        return <SanityBlogPostClient post={sanityPost} locale={locale} {...labels} />;
+      }
+    } catch (e) { console.error('[Sanity] blog slug fetch failed:', e); }
+  }
+
+  // Fallback to static data
   const staticPost = blogPosts.find((p) => p.slug === slug);
   if (staticPost) {
     const blogSchema = {
@@ -74,16 +84,6 @@ export default async function BlogPostPage({ params }: Props) {
         <BlogPostClient post={staticPost} locale={locale} {...labels} />
       </>
     );
-  }
-
-  // Sanity fallback (only when USE_SANITY=true and slug not in static data)
-  if (USE_SANITY) {
-    try {
-      const sanityPost = await getBlogPostBySlug(slug);
-      if (sanityPost) {
-        return <SanityBlogPostClient post={sanityPost} locale={locale} {...labels} />;
-      }
-    } catch (e) { console.error('[Sanity] blog slug fetch failed:', e); }
   }
 
   notFound();

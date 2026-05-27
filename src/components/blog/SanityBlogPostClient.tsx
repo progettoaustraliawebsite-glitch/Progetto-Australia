@@ -3,7 +3,7 @@
 import Image from 'next/image';
 import { PortableText } from '@portabletext/react';
 import { Link } from '@/i18n/navigation';
-import { ChevronLeft, Globe } from 'lucide-react';
+import { ChevronLeft, Globe, Info, FileText, CloudSun, Bus, Coins, Shirt, Zap, MapPin, Calendar, Bookmark } from 'lucide-react';
 import type { SanityBlogPost } from '@/lib/sanity';
 import { urlFor } from '@/lib/sanity';
 import OpenModalButton from '@/components/ui/OpenModalButton';
@@ -17,9 +17,28 @@ interface Props {
   contactPrompt: string;
 }
 
-export default function SanityBlogPostClient({ post, locale, backLabel, quoteLabel, contactPrompt }: Props) {
+function getIcon(id: string) {
+  switch (id) {
+    case 'documenti': return <FileText size={24} className="text-gold" />;
+    case 'quando-andare': return <CloudSun size={24} className="text-gold" />;
+    case 'clima': return <CloudSun size={24} className="text-gold" />;
+    case 'trasporti': return <Bus size={24} className="text-gold" />;
+    case 'lingua-moneta': return <Coins size={24} className="text-gold" />;
+    case 'abbigliamento': return <Shirt size={24} className="text-gold" />;
+    case 'elettricita': return <Zap size={24} className="text-gold" />;
+    case 'dove-quando': return <MapPin size={24} className="text-gold" />;
+    case 'cosa-aspettarsi': return <Calendar size={24} className="text-gold" />;
+    case 'come-prenotare': return <Bookmark size={24} className="text-gold" />;
+    default: return <Info size={24} className="text-gold" />;
+  }
+}
+
+export default function SanityBlogPostClient({ post, locale, backLabel, quoteLabel, tocLabel, contactPrompt }: Props) {
   const imageUrl = post.heroImage ? urlFor(post.heroImage).width(1920).height(800).url() : '';
+  const intro = post.intro?.[locale] ?? '';
+  const sections = post.sections ?? [];
   const body = post.body?.[locale] ?? [];
+  const hasSections = sections.length > 0;
 
   return (
     <div className="bg-white min-h-screen">
@@ -53,19 +72,88 @@ export default function SanityBlogPostClient({ post, locale, backLabel, quoteLab
         <div className="grid grid-cols-1 lg:grid-cols-12 gap-16">
 
           {/* Content */}
-          <div className="lg:col-span-8">
-            <div className="prose prose-lg max-w-none text-hero/80 font-sans leading-relaxed">
-              <PortableText value={body as Parameters<typeof PortableText>[0]['value']} />
-            </div>
+          <div className="lg:col-span-8 space-y-16">
+
+            {/* Intro */}
+            {intro && (
+              <div className="prose prose-lg max-w-none">
+                <div className="text-lg text-hero/80 leading-relaxed font-sans space-y-6">
+                  {intro.split('\n\n').map((para, i) => (
+                    <p key={i} className={i === 0 ? 'text-xl font-serif italic border-l-4 border-gold pl-8 py-2 text-hero' : ''}>
+                      {para}
+                    </p>
+                  ))}
+                </div>
+              </div>
+            )}
+
+            {/* Sections (structured) */}
+            {hasSections && sections.map((section) => {
+              const title = section.title?.[locale] ?? '';
+              const content = section.content?.[locale] ?? '';
+              return (
+                <div key={section._key ?? section.id} id={section.id} className="pt-4 scroll-mt-32">
+                  <div className="bg-sand/10 p-8 md:p-12 border border-sand/30 hover:shadow-md transition-all">
+                    <div className="flex items-center gap-4 mb-8">
+                      <div className="w-12 h-12 bg-white flex items-center justify-center shadow-sm">
+                        {getIcon(section.id)}
+                      </div>
+                      <h2 className="font-serif text-2xl md:text-3xl font-bold text-hero uppercase tracking-widest">
+                        {title}
+                      </h2>
+                    </div>
+                    <div className="text-hero/70 leading-relaxed font-sans whitespace-pre-line text-sm md:text-base">
+                      {content.split('\n').map((line, idx) => {
+                        if (line.includes(': ')) {
+                          const colonIdx = line.indexOf(': ');
+                          const label = line.slice(0, colonIdx);
+                          const rest = line.slice(colonIdx + 2);
+                          return (
+                            <p key={idx} className="mb-4">
+                              <strong className="text-hero font-bold">{label}:</strong> {rest}
+                            </p>
+                          );
+                        }
+                        return <p key={idx} className="mb-4">{line}</p>;
+                      })}
+                    </div>
+                  </div>
+                </div>
+              );
+            })}
+
+            {/* Body (Portable Text — fallback for posts without sections) */}
+            {!hasSections && body.length > 0 && (
+              <div className="prose prose-lg max-w-none text-hero/80 font-sans leading-relaxed">
+                <PortableText value={body as Parameters<typeof PortableText>[0]['value']} />
+              </div>
+            )}
           </div>
 
           {/* Sidebar */}
           <div className="lg:col-span-4">
-            <div className="sticky top-32">
+            <div className="sticky top-32 space-y-8">
               <div className="p-10 border border-stone-100" style={{ backgroundColor: '#1a1a1a' }}>
                 <h3 className="font-serif text-xl font-bold mb-8 uppercase tracking-widest flex items-center gap-2" style={{ color: '#b0a377' }}>
-                  <Globe size={20} /> {post.title[locale]}
+                  <Globe size={20} /> {hasSections ? tocLabel : post.title[locale]}
                 </h3>
+                {hasSections && (
+                  <nav>
+                    <ul className="space-y-5">
+                      {sections.map((section) => (
+                        <li key={section._key ?? section.id}>
+                          <a
+                            href={`#${section.id}`}
+                            className="text-white/70 hover:text-gold font-sans transition-all flex items-center gap-3 text-[10px] uppercase tracking-[0.2em] group"
+                          >
+                            <span className="w-6 h-px bg-gold/20 group-hover:w-10 transition-all" />
+                            {section.title?.[locale]}
+                          </a>
+                        </li>
+                      ))}
+                    </ul>
+                  </nav>
+                )}
                 <div className="mt-12 pt-10 border-t border-white/10">
                   <p className="text-sm text-white/65 font-sans mb-8 leading-relaxed">
                     {contactPrompt}

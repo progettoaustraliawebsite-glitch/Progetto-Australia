@@ -49,8 +49,58 @@ export const blogPost = defineType({
       ],
     }),
     defineField({
+      name: 'intro',
+      title: 'Introduzione',
+      description: 'Paragrafo introduttivo dell\'articolo, mostrato prima delle sezioni.',
+      type: 'object',
+      fields: [
+        { name: 'it', title: 'Italiano', type: 'text', rows: 6 },
+        { name: 'en', title: 'English', type: 'text', rows: 6 },
+      ],
+    }),
+    defineField({
+      name: 'sections',
+      title: 'Sezioni',
+      description: 'Ogni sezione ha un titolo, un ID (per i link interni) e il contenuto bilingue.',
+      type: 'array',
+      of: [
+        {
+          type: 'object',
+          title: 'Sezione',
+          preview: {
+            select: { title: 'title.it', subtitle: 'id' },
+            prepare({ title, subtitle }: { title?: string; subtitle?: string }) {
+              return { title: title ?? 'Sezione', subtitle: subtitle };
+            },
+          },
+          fields: [
+            { name: 'id', title: 'ID (ancora URL)', type: 'string', description: 'es. "documenti", "clima", "trasporti"' },
+            {
+              name: 'title',
+              title: 'Titolo sezione',
+              type: 'object',
+              fields: [
+                { name: 'it', title: 'Italiano', type: 'string' },
+                { name: 'en', title: 'English', type: 'string' },
+              ],
+            },
+            {
+              name: 'content',
+              title: 'Contenuto sezione',
+              type: 'object',
+              fields: [
+                { name: 'it', title: 'Italiano', type: 'text', rows: 8 },
+                { name: 'en', title: 'English', type: 'text', rows: 8 },
+              ],
+            },
+          ],
+        },
+      ],
+    }),
+    defineField({
       name: 'body',
-      title: 'Contenuto',
+      title: 'Contenuto (Portable Text — avanzato)',
+      description: 'Alternativa alle sezioni: contenuto libero con testo ricco. Usare solo se non si usano le Sezioni.',
       type: 'object',
       fields: [
         { name: 'it', title: 'Italiano', type: 'array', of: [{ type: 'block' }] },

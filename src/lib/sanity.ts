@@ -97,6 +97,13 @@ export interface SanityDestination {
   experiences?: LocaleString[];
 }
 
+export interface SanityBlogSection {
+  _key: string;
+  id: string;
+  title: LocaleString;
+  content: LocaleString;
+}
+
 export interface SanityBlogPost {
   _id: string;
   title: LocaleString;
@@ -105,7 +112,9 @@ export interface SanityBlogPost {
   author: string;
   category: LocaleString;
   excerpt: LocaleString;
-  body: {
+  intro?: LocaleString;
+  sections?: SanityBlogSection[];
+  body?: {
     it: unknown[];
     en: unknown[];
   };
@@ -324,7 +333,8 @@ export async function getAllBlogPosts(): Promise<SanityBlogPost[]> {
 export async function getBlogPostBySlug(slug: string): Promise<SanityBlogPost | null> {
   return sanityClient.fetch(
     `*[_type == "blogPost" && slug.current == $slug][0] {
-      _id, title, slug, publishedAt, author, category, excerpt, body, heroImage
+      _id, title, slug, publishedAt, author, category, excerpt, heroImage,
+      intro, sections[]{ _key, id, title, content }, body
     }`,
     { slug }
   );
