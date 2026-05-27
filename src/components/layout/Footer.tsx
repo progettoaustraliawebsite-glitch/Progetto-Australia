@@ -91,7 +91,7 @@ export default function Footer() {
             {destinations.map((dest) => (
               <li key={dest.id}>
                 <Link
-                  href="/destinations"
+                  href={`/destinations/${dest.slug}` as never}
                   className="text-sm text-white/55 hover:text-gold transition-colors duration-300"
                 >
                   {dest.name[locale]}
