@@ -419,6 +419,60 @@ const itineraries = [
     notIncluded: standardNotIncluded,
     featured: true,
   },
+
+  // ─────────────────────────────────────────────
+  // AUSTRALIA E FIJI — 20 giorni
+  // ─────────────────────────────────────────────
+  {
+    _id: 'itinerary-australia-fiji',
+    _type: 'itinerary',
+    slug: { current: 'australia-fiji' },
+    title: { it: 'Australia e Fiji — Sydney, Outback e relax tropicale alle Yasawa', en: 'Australia & Fiji — Sydney, Outback and tropical relaxation in the Yasawas' },
+    description: { it: "Un viaggio che unisce la grande Australia — Opera House, Uluru, Great Ocean Road — all'isolata magia delle Fiji. Sydney, il Red Centre con il Kings Canyon e il Field of Lights, Melbourne con i pinguini di Phillip Island, e infine il relax a pensione completa nel resort di Yasawa: un itinerario perfetto per chi vuole tutto.", en: "A journey combining great Australia — Opera House, Uluru, Great Ocean Road — with the remote magic of Fiji. Sydney, the Red Centre with Kings Canyon and Field of Lights, Melbourne with Phillip Island's penguins, and finally full-board relaxation at Yasawa Resort: an itinerary for those who want it all." },
+    duration: 20,
+    destination: 'Australia & Fiji',
+    type: 'luxury',
+    gradient: 'from-teal-700 to-blue-900',
+    price: { currency: 'EUR', amount: 5240 },
+    priceEn: { currency: 'USD', amount: 5700 },
+    highlights: {
+      it: ['Visita guidata dell\'Opera House di Sydney', 'Tour balene in baia con pranzo a bordo', 'Uluru al tramonto e Field of Lights dinner', 'Great Ocean Road e Phillip Island in italiano', 'Yasawa Resort a pensione completa — Fiji'],
+      en: ['Guided Opera House tour in Sydney', 'Whale watching cruise with lunch on board', 'Uluru at sunset and Field of Lights dinner', 'Great Ocean Road and Phillip Island in Italian', 'Yasawa Resort full board — Fiji'],
+    },
+    included: {
+      it: ['Assistenza in loco in lingua italiana (telefonica e chat) per tutta la durata', 'Sistemazioni come da itinerario (colazioni solo dove specificate)', 'Documentazione di viaggio completa in PDF e digitale', 'Visita guidata Opera House di Sydney', 'Tour balene in baia di Sydney con pranzo a bordo', 'Ingresso al Parco Nazionale di Ayers Rock (valido tutto il soggiorno)', 'Cena Field of Lights ad Ayers Rock', 'Tour Kings Canyon con colazione inclusa', 'Auto a noleggio Ayers Rock — All Inclusive km illimitati, 2° guidatore incluso (Avis)', 'Tour Great Ocean Road con audioguida italiana', 'Tour Phillip Island Penguin Parade con audioguida italiana — ingresso Plus', 'Trasferimento panoramico in aereo Nadi–Yasawa Resort (A/R)', 'Yasawa Resort — 4 notti in Deluxe Bure con pensione completa'],
+      en: ['Italian-language on-site assistance (phone and chat) throughout', 'Accommodation as per itinerary (breakfast where specified)', 'Complete travel documentation in PDF and digital format', 'Guided Opera House tour in Sydney', 'Whale watching cruise in Sydney Harbour with lunch on board', 'Ayers Rock National Park entry pass (valid entire stay)', 'Field of Lights dinner at Ayers Rock', 'Kings Canyon tour with breakfast included', 'Car rental Ayers Rock — All Inclusive unlimited km, 2nd driver included (Avis)', 'Great Ocean Road tour with Italian audio guide', 'Phillip Island Penguin Parade tour with Italian audio guide — Plus entry', 'Scenic flight transfer Nadi–Yasawa Resort (return)', 'Yasawa Resort — 4 nights in Deluxe Bure full board'],
+    },
+    notIncluded: standardNotIncluded,
+    featured: false,
+  },
+
+  // ─────────────────────────────────────────────
+  // AUSTRALIA WINTER EXPLORER — 25 giorni
+  // ─────────────────────────────────────────────
+  {
+    _id: 'itinerary-australia-winter-explorer',
+    _type: 'itinerary',
+    slug: { current: 'australia-winter-explorer' },
+    title: { it: 'Australia Winter Explorer — Dal Kimberley alle Whitsundays', en: 'Australia Winter Explorer — From the Kimberley to the Whitsundays' },
+    description: { it: "Un'avventura di 25 giorni attraverso l'Australia più autentica: guide italiane a Perth e nel deserto dei Pinnacoli, 4x4 nel selvaggio Kimberley e a Emma Gorge, Kings Canyon via Meerenie Loop, volo panoramico su Uluru e Kata Tjuta, Sydney con vista sull'Opera House, e Hamilton Island con la minicrociera a Whitehaven Beach e il volo in biplano sull'Heart Reef.", en: "A 25-day adventure through Australia's most authentic landscapes: Italian guides in Perth and the Pinnacles Desert, 4x4 in the wild Kimberley and Emma Gorge, Kings Canyon via the Meerenie Loop, scenic flight over Uluru and Kata Tjuta, Sydney with Opera House views, and Hamilton Island with a Whitehaven Beach minicruise and biplane flight over Heart Reef." },
+    duration: 25,
+    destination: 'Australia',
+    type: 'adventure',
+    gradient: 'from-orange-700 to-red-900',
+    price: { currency: 'EUR', amount: 3700 },
+    priceEn: { currency: 'USD', amount: 4000 },
+    highlights: {
+      it: ['Perth e Fremantle con guida italiana privata', 'Kimberley e Emma Gorge in 4x4 (Toyota Prado)', 'Kings Canyon via Meerenie Loop (150 km off-road)', 'Volo panoramico su Uluru e Kata Tjuta', 'Whitehaven Beach e Heart Reef in biplano — Whitsundays'],
+      en: ['Perth and Fremantle with private Italian guide', 'Kimberley and Emma Gorge by 4x4 (Toyota Prado)', 'Kings Canyon via Meerenie Loop (150 km off-road)', 'Scenic flight over Uluru and Kata Tjuta', 'Whitehaven Beach and Heart Reef by biplane — Whitsundays'],
+    },
+    included: {
+      it: ['Assistenza in lingua italiana per tutta la durata del soggiorno', 'Transfer privato aeroporto Perth – hotel e hotel – aeroporto', 'Tour privato con guida italiana di Perth e Fremantle', 'Tour privato deserto dei Pinnacoli con guida italiana', 'Noleggio 4x4 Toyota Prado all-inclusive km illimitati (Kununurra)', 'El Questro full day tour (morning tea, pranzo e afternoon tea inclusi)', 'Noleggio 2 auto 4x4 Alice Springs – Ayers Rock (Suzuki Jimny, one-way fee inclusa)', 'Volo panoramico su Uluru e Kata Tjuta (36 minuti)', 'Cena Field of Lights ad Uluru', 'Transfer privato Darwin aeroporto – hotel e ritorno', 'Transfer privato Sydney aeroporto – hotel', 'Tour privato di Sydney con guida italiana', 'Tour Blue Mountains con guida italiana (piccolo gruppo)', 'Transfer privato hotel Sydney – aeroporto', 'Minicrociera alla Whitehaven Beach', 'Volo panoramico in biplano su Whitehaven Beach e Heart Reef', 'Transfer in shuttle aeroporto Hamilton Island A/R'],
+      en: ['Italian-language assistance for the entire trip', 'Private airport transfer Perth – hotel and hotel – airport', 'Private tour with Italian guide: Perth and Fremantle', 'Private Pinnacles Desert tour with Italian guide', '4x4 Toyota Prado rental all-inclusive unlimited km (Kununurra)', 'El Questro full day tour (morning tea, lunch and afternoon tea included)', '2 x 4x4 rental Alice Springs – Ayers Rock (Suzuki Jimny, one-way fee included)', 'Scenic flight over Uluru and Kata Tjuta (36 minutes)', 'Field of Lights dinner at Uluru', 'Private transfer Darwin airport – hotel and return', 'Private transfer Sydney airport – hotel', 'Private Sydney city tour with Italian guide', 'Blue Mountains tour with Italian guide (small group)', 'Private transfer Sydney hotel – airport', 'Whitehaven Beach minicruise', 'Biplane scenic flight over Whitehaven Beach and Heart Reef', 'Hamilton Island airport shuttle transfer (return)'],
+    },
+    notIncluded: standardNotIncluded,
+    featured: false,
+  },
 ];
 
 // ── Run import ────────────────────────────────────────────────────────────────

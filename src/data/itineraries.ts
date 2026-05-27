@@ -1279,4 +1279,544 @@ export const itineraries: Itinerary[] = [
     },
     notIncluded: standardNotIncluded,
   },
+
+  // ─────────────────────────────────────────────
+  // AUSTRALIA E FIJI — 20 giorni
+  // ─────────────────────────────────────────────
+  {
+    id: 'australia-fiji',
+    slug: 'australia-fiji',
+    title: {
+      it: 'Australia e Fiji — Sydney, Outback e relax tropicale alle Yasawa',
+      en: 'Australia & Fiji — Sydney, Outback and tropical relaxation in the Yasawas',
+    },
+    description: {
+      it: "Un viaggio che unisce la grande Australia — Opera House, Uluru, Great Ocean Road — all'isolata magia delle Fiji. Sydney, il Red Centre con il Kings Canyon e il Field of Lights, Melbourne con i pinguini di Phillip Island, e infine il relax a pensione completa nel resort di Yasawa: un itinerario perfetto per chi vuole tutto.",
+      en: "A journey combining great Australia — Opera House, Uluru, Great Ocean Road — with the remote magic of Fiji. Sydney, the Red Centre with Kings Canyon and Field of Lights, Melbourne with Phillip Island's penguins, and finally full-board relaxation at Yasawa Resort: an itinerary for those who want it all.",
+    },
+    duration: 20,
+    destination: 'Australia & Fiji',
+    type: 'luxury',
+    gradient: 'from-teal-700 to-blue-900',
+    image: '/images/dest-sydney.jpg',
+    price: { currency: 'EUR', amount: 5240 },
+    priceEn: { currency: 'USD', amount: 5700 },
+    highlights: {
+      it: [
+        'Visita guidata dell\'Opera House di Sydney',
+        'Tour balene in baia con pranzo a bordo',
+        'Uluru al tramonto e Field of Lights dinner',
+        'Great Ocean Road e Phillip Island in italiano',
+        'Yasawa Resort a pensione completa — Fiji',
+      ],
+      en: [
+        'Guided Opera House tour in Sydney',
+        'Whale watching cruise with lunch on board',
+        'Uluru at sunset and Field of Lights dinner',
+        'Great Ocean Road and Phillip Island in Italian',
+        'Yasawa Resort full board — Fiji',
+      ],
+    },
+    program: [
+      {
+        day: 1,
+        title: { it: 'Partenza da Roma', en: 'Departure from Rome' },
+        description: {
+          it: 'Volo da Roma verso Sydney via Istanbul. Inizio di un\'avventura che attraversa due continenti.',
+          en: 'Flight from Rome to Sydney via Istanbul. The beginning of an adventure spanning two continents.',
+        },
+      },
+      {
+        day: 2,
+        title: { it: 'Arrivo a Sydney', en: 'Arrival in Sydney' },
+        description: {
+          it: 'Arrivo a Sydney e trasferimento libero al Paradox Hotel con taxi o Uber. Prima notte nella città più iconica d\'Australia.',
+          en: 'Arrival in Sydney and free transfer to Paradox Hotel by taxi or Uber. First night in Australia\'s most iconic city.',
+        },
+      },
+      {
+        day: 3,
+        title: { it: 'Sydney — Opera House e città', en: 'Sydney — Opera House & City' },
+        description: {
+          it: 'Visita guidata dell\'Opera House di Sydney, uno degli edifici più iconici del mondo. Pomeriggio libero per esplorare il Rocks, il Harbour Bridge e i vicoli del CBD.',
+          en: 'Guided tour of the Sydney Opera House, one of the world\'s most iconic buildings. Free afternoon to explore the Rocks, Harbour Bridge, and the CBD laneways.',
+        },
+      },
+      {
+        day: 4,
+        title: { it: 'Sydney — Bondi Beach', en: 'Sydney — Bondi Beach' },
+        description: {
+          it: 'Giornata alla celebre Bondi Beach, con le sue onde perfette e la passeggiata panoramica verso Coogee. La spiaggia più famosa d\'Australia.',
+          en: 'Day at the famous Bondi Beach with its perfect waves and the panoramic coastal walk to Coogee. Australia\'s most famous beach.',
+        },
+      },
+      {
+        day: 5,
+        title: { it: 'Tour balene con pranzo a bordo', en: 'Whale Watching Cruise with Lunch' },
+        description: {
+          it: 'Navigazione panoramica nella baia di Sydney tra l\'Opera House e l\'Harbour Bridge. Colazione o pranzo barbecue a bordo, poi oltre le scogliere di Sydney Heads per incontrare le megattere: spettacolari salti e giochi d\'acqua con naturalisti esperti.',
+          en: 'Scenic cruise in Sydney Harbour between the Opera House and Harbour Bridge. Hot breakfast or BBQ lunch on board, then beyond Sydney Heads to meet humpback whales: spectacular breaches and water play with expert naturalists.',
+        },
+      },
+      {
+        day: 6,
+        title: { it: 'Volo a Ayers Rock — Uluru', en: 'Flight to Ayers Rock — Uluru' },
+        description: {
+          it: 'Volo mattutino Sydney–Ayers Rock. Ritiro auto a noleggio (Toyota Corolla o similare, Avis All Inclusive con chilometraggio illimitato). Ingresso al parco nazionale e prima visita libera di Uluru: trekking alla base e tramonto magico sul monolite.',
+          en: 'Morning flight Sydney–Ayers Rock. Car rental pickup (Toyota Corolla or similar, Avis All Inclusive unlimited mileage). National park entry and first free visit to Uluru: base walk and magical sunset on the monolith.',
+        },
+      },
+      {
+        day: 7,
+        title: { it: 'Kata Tjuta all\'alba + Field of Lights dinner', en: 'Kata Tjuta at Dawn + Field of Lights Dinner' },
+        description: {
+          it: 'Alba spettacolare su Kata Tjuta e trekking nella Valle dei Venti. Sera: cena nel deserto con il Field of Lights — migliaia di sfere luminose e cena gourmet sotto il cielo stellato dell\'Outback.',
+          en: 'Spectacular dawn over Kata Tjuta and Valle dei Venti hike. Evening: dinner in the desert at Field of Lights — thousands of light spheres and a gourmet dinner under the Outback\'s starred sky.',
+        },
+      },
+      {
+        day: 8,
+        title: { it: 'Tour Kings Canyon', en: 'Kings Canyon Tour' },
+        description: {
+          it: 'Tour organizzato al Kings Canyon con colazione a Kings Creek Station. Trekking di 6 km sul bordo del canyon con guida, visita al Giardino dell\'Eden e panorama sul Parco Nazionale di Watarrka.',
+          en: 'Guided Kings Canyon tour with breakfast at Kings Creek Station. 6 km canyon rim hike, visit to the Garden of Eden, and panoramic views over Watarrka National Park.',
+        },
+      },
+      {
+        day: 9,
+        title: { it: 'Volo ad Ayers Rock–Melbourne', en: 'Flight Ayers Rock–Melbourne' },
+        description: {
+          it: 'Consegna auto in aeroporto e volo pomeridiano verso Melbourne. Check-in al Crown Promenade e prima sera nella capitale culturale d\'Australia.',
+          en: 'Car drop-off at the airport and afternoon flight to Melbourne. Check-in at Crown Promenade and first evening in Australia\'s cultural capital.',
+        },
+      },
+      {
+        day: 10,
+        title: { it: 'Melbourne — visita libera', en: 'Melbourne — Free Exploration' },
+        description: {
+          it: 'Giornata libera per esplorare Melbourne: i vicoli con street art, i rooftop bar, i mercati di Queen Victoria e la vivace scena gastronomica.',
+          en: 'Free day to explore Melbourne: street art laneways, rooftop bars, Queen Victoria Market, and the vibrant food scene.',
+        },
+      },
+      {
+        day: 11,
+        title: { it: 'Great Ocean Road con audioguida italiana', en: 'Great Ocean Road with Italian Audio Guide' },
+        description: {
+          it: 'Tour in giornata sulla Great Ocean Road con audioguida in italiano. Tè mattutino sulle spiagge della Surf Coast, i Dodici Apostoli nel Port Campbell National Park, la Gola del Loch Ard e i koala di Kennett River.',
+          en: 'Full-day Great Ocean Road tour with Italian audio guide. Morning tea on the Surf Coast beaches, the Twelve Apostles in Port Campbell National Park, Loch Ard Gorge, and koalas at Kennett River.',
+        },
+      },
+      {
+        day: 12,
+        title: { it: 'Phillip Island — Penguin Parade Plus', en: 'Phillip Island — Penguin Plus Parade' },
+        description: {
+          it: 'Tour a Phillip Island con audioguida italiana e ingresso Plus con accesso alle passerelle privilegiate. Brighton Beach boxes, Moonlit Sanctuary, Nobbies e Seal Rock, e al tramonto la sfilata dei pinguini fatati che tornano ai loro nidi.',
+          en: 'Phillip Island tour with Italian audio guide and Penguin Plus access to private boardwalks. Brighton Beach boxes, Moonlit Sanctuary, Nobbies and Seal Rock, and at sunset the fairy penguins\' parade returning to their burrows.',
+        },
+      },
+      {
+        day: 13,
+        title: { it: 'Volo Melbourne–Nadi, Fiji', en: 'Flight Melbourne–Nadi, Fiji' },
+        description: {
+          it: 'Volo pomeridiano verso le Fiji. Check-in al Fiji Gateway Hotel di fronte all\'aeroporto internazionale di Nadi.',
+          en: 'Afternoon flight to Fiji. Check-in at Fiji Gateway Hotel right across from Nadi International Airport.',
+        },
+      },
+      {
+        day: 14,
+        title: { it: 'Trasferimento panoramico a Yasawa Resort', en: 'Scenic Transfer to Yasawa Resort' },
+        description: {
+          it: 'Trasferimento gratuito in volo panoramico al Yasawa Resort nelle isole Yasawa. Check-in al Deluxe Bure con trattamento di pensione completa. Primo contatto con la laguna cristallina delle Fiji.',
+          en: 'Complimentary scenic flight transfer to Yasawa Resort in the Yasawa Islands. Check-in to a Deluxe Bure with full-board. First contact with Fiji\'s crystal-clear lagoon.',
+        },
+      },
+      {
+        day: 15,
+        title: { it: 'Yasawa Resort — relax', en: 'Yasawa Resort — Relaxation' },
+        description: {
+          it: 'Giornata di relax totale al Yasawa Resort. Spiagge bianche, snorkeling nella laguna, attività del resort e cucina locale a pensione completa.',
+          en: 'Total relaxation day at Yasawa Resort. White beaches, lagoon snorkeling, resort activities, and local cuisine on full board.',
+        },
+      },
+      {
+        day: 16,
+        title: { it: 'Yasawa Resort — isole e cultura Fijiana', en: 'Yasawa Resort — Islands & Fijian Culture' },
+        description: {
+          it: 'Escursioni nella laguna, visita ai villaggi locali e immersione nella cultura Fijiana. Serate con danze tradizionali e cerimonie del kava.',
+          en: 'Lagoon excursions, local village visits, and immersion in Fijian culture. Evenings with traditional dances and kava ceremonies.',
+        },
+      },
+      {
+        day: 17,
+        title: { it: 'Yasawa Resort — ultimo giorno al paradiso', en: 'Yasawa Resort — Last Day in Paradise' },
+        description: {
+          it: 'Ultima giornata nella laguna turchese delle Yasawa. Snorkeling, immersioni o semplicemente ozio in riva al mare prima dell\'ultimo tramonto sulle isole Fiji.',
+          en: 'Last day in the Yasawa turquoise lagoon. Snorkeling, diving, or simply lounging by the sea before the final sunset over the Fiji islands.',
+        },
+      },
+      {
+        day: 18,
+        title: { it: 'Rientro a Nadi, volo verso Roma', en: 'Return to Nadi, Flight to Rome' },
+        description: {
+          it: 'Volo panoramico di ritorno a Nadi. Pernottamento al Fiji Gateway Hotel e volo notturno verso Sydney poi Istanbul.',
+          en: 'Scenic flight back to Nadi. Overnight at Fiji Gateway Hotel and night flight towards Sydney then Istanbul.',
+        },
+      },
+      {
+        day: 19,
+        title: { it: 'Volo di ritorno', en: 'Return Flight' },
+        description: {
+          it: 'Scala a Sydney e volo verso Istanbul. Ultimo giorno di viaggio sopra i cieli del Pacifico e dell\'Asia.',
+          en: 'Stopover in Sydney and flight to Istanbul. Last travel day above the Pacific and Asian skies.',
+        },
+      },
+      {
+        day: 20,
+        title: { it: 'Arrivo a Roma', en: 'Arrival in Rome' },
+        description: {
+          it: 'Volo Istanbul–Roma. Fine di un viaggio indimenticabile attraverso l\'Australia e le isole Fiji.',
+          en: 'Istanbul–Rome flight. End of an unforgettable journey through Australia and the Fiji Islands.',
+        },
+      },
+    ],
+    included: {
+      it: [
+        'Assistenza in loco in lingua italiana (telefonica e chat) per tutta la durata',
+        'Sistemazioni come da itinerario (colazioni solo dove specificate)',
+        'Documentazione di viaggio completa in PDF e digitale',
+        'Visita guidata Opera House di Sydney',
+        'Tour balene in baia di Sydney con pranzo a bordo',
+        'Ingresso al Parco Nazionale di Ayers Rock (valido tutto il soggiorno)',
+        'Cena Field of Lights ad Ayers Rock',
+        'Tour Kings Canyon con colazione inclusa',
+        'Auto a noleggio Ayers Rock — formula All Inclusive, km illimitati, 2° guidatore incluso (Avis)',
+        'Tour Great Ocean Road con audioguida italiana',
+        'Tour Phillip Island Penguin Parade con audioguida italiana — ingresso Plus',
+        'Trasferimento panoramico in aereo Nadi–Yasawa Resort (A/R)',
+        'Yasawa Resort — 4 notti in Deluxe Bure con pensione completa',
+        '4 notti Paradox Hotel Sydney (Heritage Room)',
+        '3 notti Outback Hotel Ayers Rock (Standard Room)',
+        '4 notti Crown Promenade Melbourne (Standard King Room)',
+        '2 notti Fiji Gateway Hotel Nadi (Superior Room)',
+      ],
+      en: [
+        'Italian-language on-site assistance (phone and chat) throughout',
+        'Accommodation as per itinerary (breakfast where specified)',
+        'Complete travel documentation in PDF and digital format',
+        'Guided Opera House tour in Sydney',
+        'Whale watching cruise in Sydney Harbour with lunch on board',
+        'Ayers Rock National Park entry pass (valid entire stay)',
+        'Field of Lights dinner at Ayers Rock',
+        'Kings Canyon tour with breakfast included',
+        'Car rental Ayers Rock — All Inclusive formula, unlimited km, 2nd driver included (Avis)',
+        'Great Ocean Road tour with Italian audio guide',
+        'Phillip Island Penguin Parade tour with Italian audio guide — Plus entry',
+        'Scenic flight transfer Nadi–Yasawa Resort (return)',
+        'Yasawa Resort — 4 nights in Deluxe Bure full board',
+        '4 nights Paradox Hotel Sydney (Heritage Room)',
+        '3 nights Outback Hotel Ayers Rock (Standard Room)',
+        '4 nights Crown Promenade Melbourne (Standard King Room)',
+        '2 nights Fiji Gateway Hotel Nadi (Superior Room)',
+      ],
+    },
+    notIncluded: standardNotIncluded,
+  },
+
+  // ─────────────────────────────────────────────
+  // AUSTRALIA WINTER EXPLORER — 25 giorni
+  // ─────────────────────────────────────────────
+  {
+    id: 'australia-winter-explorer',
+    slug: 'australia-winter-explorer',
+    title: {
+      it: 'Australia Winter Explorer — Dal Kimberley alle Whitsundays',
+      en: 'Australia Winter Explorer — From the Kimberley to the Whitsundays',
+    },
+    description: {
+      it: "Un'avventura di 25 giorni attraverso l'Australia più autentica: guide italiane a Perth e nel deserto dei Pinnacoli, 4x4 nel selvaggio Kimberley e a Emma Gorge, Kings Canyon via Meerenie Loop, volo panoramico su Uluru e Kata Tjuta, Sydney con vista sull'Opera House, e Hamilton Island con la minicrociera a Whitehaven Beach e il volo in biplano sull'Heart Reef.",
+      en: "A 25-day adventure through Australia's most authentic landscapes: Italian guides in Perth and the Pinnacles Desert, 4x4 in the wild Kimberley and Emma Gorge, Kings Canyon via the Meerenie Loop, scenic flight over Uluru and Kata Tjuta, Sydney with Opera House views, and Hamilton Island with a Whitehaven Beach minicruise and biplane flight over Heart Reef.",
+    },
+    duration: 25,
+    destination: 'Australia',
+    type: 'adventure',
+    gradient: 'from-orange-700 to-red-900',
+    image: '/images/dest-uluru.jpg',
+    price: { currency: 'EUR', amount: 3700 },
+    priceEn: { currency: 'USD', amount: 4000 },
+    highlights: {
+      it: [
+        'Perth e Fremantle con guida italiana privata',
+        'Kimberley e Emma Gorge in 4x4 (Toyota Prado)',
+        'Kings Canyon via Meerenie Loop (150 km off-road)',
+        'Volo panoramico su Uluru e Kata Tjuta',
+        'Whitehaven Beach e Heart Reef in biplano — Whitsundays',
+      ],
+      en: [
+        'Perth and Fremantle with private Italian guide',
+        'Kimberley and Emma Gorge by 4x4 (Toyota Prado)',
+        'Kings Canyon via Meerenie Loop (150 km off-road)',
+        'Scenic flight over Uluru and Kata Tjuta',
+        'Whitehaven Beach and Heart Reef by biplane — Whitsundays',
+      ],
+    },
+    program: [
+      {
+        day: 1,
+        title: { it: 'Partenza da Roma', en: 'Departure from Rome' },
+        description: {
+          it: 'Volo da Roma verso Perth. Inizio di un\'avventura attraverso l\'Australia più selvaggia.',
+          en: 'Flight from Rome to Perth. The start of an adventure through Australia\'s wildest landscapes.',
+        },
+      },
+      {
+        day: 2,
+        title: { it: 'Arrivo a Perth', en: 'Arrival in Perth' },
+        description: {
+          it: 'Arrivo a Perth alle ore 08.45. Transfer privato all\'Intercontinental Perth City Center. Primo pomeriggio per ambientarsi nella capitale dell\'Australia Occidentale.',
+          en: 'Arrival in Perth at 08:45. Private transfer to Intercontinental Perth City Center. First afternoon to settle into the capital of Western Australia.',
+        },
+      },
+      {
+        day: 3,
+        title: { it: 'Tour privato Perth e Fremantle', en: 'Private Perth & Fremantle Tour' },
+        description: {
+          it: 'Tour privato con guida italiana della città di Perth e del porto storico di Fremantle: l\'Old Gaol, i mercati, il lungomare e l\'architettura coloniale.',
+          en: 'Private tour with Italian guide of Perth city and the historic port of Fremantle: the Old Gaol, markets, waterfront, and colonial architecture.',
+        },
+      },
+      {
+        day: 4,
+        title: { it: 'Tour privato deserto dei Pinnacoli', en: 'Private Pinnacles Desert Tour' },
+        description: {
+          it: 'Tour privato con guida italiana al Nambung National Park per visitare il misterioso deserto dei Pinnacoli: migliaia di colonne di pietra calcarea che emergono dalla sabbia dorata.',
+          en: 'Private tour with Italian guide to Nambung National Park for the mysterious Pinnacles Desert: thousands of limestone columns rising from golden sand.',
+        },
+      },
+      {
+        day: 5,
+        title: { it: 'Volo a Kununurra — Kimberley', en: 'Flight to Kununurra — Kimberley' },
+        description: {
+          it: 'Transfer privato all\'aeroporto e volo verso Kununurra. Ritiro del 4x4 (Toyota Prado o similare, tariffa all-inclusive km illimitati) e prima notte nelle Tented Cabin di Emma Gorge.',
+          en: 'Private transfer to the airport and flight to Kununurra. Pick up the 4x4 (Toyota Prado or similar, all-inclusive unlimited km) and first night in Emma Gorge Tented Cabins.',
+        },
+      },
+      {
+        day: 6,
+        title: { it: 'Emma Gorge — Kimberley selvaggio', en: 'Emma Gorge — Wild Kimberley' },
+        description: {
+          it: 'Esplorazione dell\'El Questro Wilderness Park e del Kimberley: gole di arenaria rossa, sorgenti termali e fauna unica. Trekking verso Emma Gorge e la sua piscina naturale nascosta.',
+          en: 'Exploration of El Questro Wilderness Park and the Kimberley: red sandstone gorges, thermal springs, and unique wildlife. Trek to Emma Gorge and its hidden natural pool.',
+        },
+      },
+      {
+        day: 7,
+        title: { it: 'Kimberley — El Questro full day', en: 'Kimberley — El Questro Full Day' },
+        description: {
+          it: 'Giornata completa di avventura nell\'El Questro Wilderness Park (morning tea, pranzo e afternoon tea inclusi): gorge, baobab e tramonti mozzafiato sul Kimberley.',
+          en: 'Full day adventure in El Questro Wilderness Park (morning tea, lunch and afternoon tea included): gorges, boab trees, and breathtaking Kimberley sunsets.',
+        },
+      },
+      {
+        day: 8,
+        title: { it: 'Kimberley — giornata libera', en: 'Kimberley — Free Day' },
+        description: {
+          it: 'Ultima giornata nel Kimberley con il 4x4. Esplorazione libera delle strade sterrate, delle gorge e dei bacini d\'acqua di questa regione tra le più remote al mondo.',
+          en: 'Last day in the Kimberley with the 4x4. Free exploration of dirt tracks, gorges, and waterholes of one of the world\'s most remote regions.',
+        },
+      },
+      {
+        day: 9,
+        title: { it: 'Volo Kununurra–Darwin', en: 'Flight Kununurra–Darwin' },
+        description: {
+          it: 'Consegna dell\'auto 4x4 all\'aeroporto e volo verso Darwin. Transfer privato al Vibe Hotel Waterfront. Sera sul lungomare di Darwin.',
+          en: 'Drop off the 4x4 at the airport and flight to Darwin. Private transfer to Vibe Hotel Waterfront. Evening on Darwin\'s waterfront.',
+        },
+      },
+      {
+        day: 10,
+        title: { it: 'Volo Darwin–Alice Springs', en: 'Flight Darwin–Alice Springs' },
+        description: {
+          it: 'Transfer privato all\'aeroporto e volo verso Alice Springs. Ritiro di 2 auto 4x4 (Suzuki Jimny o similare, one way fee inclusa nel preventivo). Check-in al Crown Plaza.',
+          en: 'Private transfer to the airport and flight to Alice Springs. Pick up 2 4x4 cars (Suzuki Jimny or similar, one-way fee included). Check-in at Crown Plaza.',
+        },
+      },
+      {
+        day: 11,
+        title: { it: 'Meerenie Loop — Kings Canyon', en: 'Meerenie Loop — Kings Canyon' },
+        description: {
+          it: 'Percorso epico sulla Meerenie Loop Road: 300 km totali di cui 150 km non asfaltati attraverso il Red Centre. Arrivo al Kings Canyon Resort con le glamping tent nel cuore dell\'Outback.',
+          en: 'Epic drive on the Meerenie Loop Road: 300 km total of which 150 km unpaved through the Red Centre. Arrival at Kings Canyon Resort glamping tents in the heart of the Outback.',
+        },
+      },
+      {
+        day: 12,
+        title: { it: 'Kings Canyon — visita libera', en: 'Kings Canyon — Free Exploration' },
+        description: {
+          it: 'Giornata libera al Kings Canyon: trekking sul bordo del canyon (Rim Walk, 6 km), visita al Giardino dell\'Eden e panorami sul Watarrka National Park.',
+          en: 'Free day at Kings Canyon: Rim Walk hike (6 km), visit to the Garden of Eden, and views over Watarrka National Park.',
+        },
+      },
+      {
+        day: 13,
+        title: { it: 'Proseguimento per Ayers Rock–Uluru', en: 'Drive to Ayers Rock–Uluru' },
+        description: {
+          it: 'Trasferimento in auto (circa 300 km) verso Ayers Rock. Check-in al Sail in the Desert Hotel. Pomeriggio: visita libera dei Monti Olgas (Kata Tjuta). Sera: volo panoramico su Uluru e Kata Tjuta (36 minuti).',
+          en: 'Drive (approx. 300 km) to Ayers Rock. Check-in at Sail in the Desert Hotel. Afternoon: free visit to the Olgas (Kata Tjuta). Evening: scenic flight over Uluru and Kata Tjuta (36 minutes).',
+        },
+      },
+      {
+        day: 14,
+        title: { it: 'Uluru — Field of Lights e tramonto', en: 'Uluru — Field of Lights & Sunset' },
+        description: {
+          it: 'Giornata libera attorno a Uluru: trekking alla base, osservazione della fauna dell\'Outback e punti panoramici. Sera: cena Field of Lights — migliaia di sfere luminose e cena gourmet nel deserto sotto le stelle.',
+          en: 'Free day around Uluru: base walk, Outback wildlife spotting, and lookout points. Evening: Field of Lights dinner — thousands of illuminated spheres and gourmet dinner in the desert under the stars.',
+        },
+      },
+      {
+        day: 15,
+        title: { it: 'Volo Ayers Rock–Sydney', en: 'Flight Ayers Rock–Sydney' },
+        description: {
+          it: 'Volo pomeridiano verso Sydney. Transfer privato all\'Intercontinental Sydney con vista sull\'Opera House. Prime ore in città.',
+          en: 'Afternoon flight to Sydney. Private transfer to Intercontinental Sydney with Opera House views. First hours in the city.',
+        },
+      },
+      {
+        day: 16,
+        title: { it: 'Sydney — tour privato con guida italiana', en: 'Sydney — Private Tour with Italian Guide' },
+        description: {
+          it: 'Tour privato della città di Sydney con guida italiana: Opera House, Harbour Bridge, The Rocks, Darling Harbour e i quartieri più vivaci della città.',
+          en: 'Private Sydney city tour with Italian guide: Opera House, Harbour Bridge, The Rocks, Darling Harbour, and the city\'s most vibrant neighborhoods.',
+        },
+      },
+      {
+        day: 17,
+        title: { it: 'Sydney — Blue Mountains con guida italiana', en: 'Sydney — Blue Mountains with Italian Guide' },
+        description: {
+          it: 'Tour in piccolo gruppo alle Blue Mountains con guida italiana: Three Sisters, panorami sulle vallate eucaliptizie, Scenic Railway e Katoomba.',
+          en: 'Small group Blue Mountains tour with Italian guide: Three Sisters, panoramic views over the eucalyptus valleys, Scenic Railway, and Katoomba.',
+        },
+      },
+      {
+        day: 18,
+        title: { it: 'Sydney — giornata libera', en: 'Sydney — Free Day' },
+        description: {
+          it: 'Giornata libera a Sydney: Bondi Beach, Manly via ferry, mercati di Paddington o semplicemente ozio con vista sull\'Opera House dall\'Intercontinental.',
+          en: 'Free day in Sydney: Bondi Beach, Manly by ferry, Paddington markets, or simply relaxing with Opera House views from the Intercontinental.',
+        },
+      },
+      {
+        day: 19,
+        title: { it: 'Volo Sydney–Hamilton Island + Whitehaven Beach', en: 'Flight Sydney–Hamilton Island + Whitehaven Beach' },
+        description: {
+          it: 'Volo verso Hamilton Island nelle Whitsundays. Check-in al The Sundays Hotel con balcone. Pomeriggio: minicrociera alla Whitehaven Beach, con la sua sabbia bianca pura al 98% di silice.',
+          en: 'Flight to Hamilton Island in the Whitsundays. Check-in at The Sundays Hotel with balcony. Afternoon: minicruise to Whitehaven Beach, with its 98% pure silica white sand.',
+        },
+      },
+      {
+        day: 20,
+        title: { it: 'Hamilton Island — volo in biplano', en: 'Hamilton Island — Biplane Flight' },
+        description: {
+          it: 'Esperienza unica: volo panoramico in biplano su Whitehaven Beach e Heart Reef, la barriera corallina a forma di cuore visibile solo dall\'alto. La Grande Barriera Corallina dall\'alto.',
+          en: 'Unique experience: biplane scenic flight over Whitehaven Beach and Heart Reef, the heart-shaped coral reef visible only from the air. The Great Barrier Reef from above.',
+        },
+      },
+      {
+        day: 21,
+        title: { it: 'Hamilton Island — relax', en: 'Hamilton Island — Relaxation' },
+        description: {
+          it: 'Giornata libera sulle spiagge di Hamilton Island: snorkeling, kayak, escursioni in golf cart sull\'isola o relax in riva al Coral Sea.',
+          en: 'Free day on Hamilton Island\'s beaches: snorkeling, kayaking, golf cart island tour, or relaxation by the Coral Sea.',
+        },
+      },
+      {
+        day: 22,
+        title: { it: 'Hamilton Island — ultimo giorno', en: 'Hamilton Island — Last Day' },
+        description: {
+          it: 'Ultima giornata nelle Whitsundays. Crociera opzionale alla Grande Barriera Corallina o relax sulla spiaggia prima del rientro.',
+          en: 'Last day in the Whitsundays. Optional Great Barrier Reef cruise or beach relaxation before departure.',
+        },
+      },
+      {
+        day: 23,
+        title: { it: 'Hamilton Island — relax finale', en: 'Hamilton Island — Final Relaxation' },
+        description: {
+          it: 'Ultima mattinata sull\'isola prima del transfer in shuttle all\'aeroporto.',
+          en: 'Last morning on the island before shuttle transfer to the airport.',
+        },
+      },
+      {
+        day: 24,
+        title: { it: 'Volo di ritorno verso Roma', en: 'Return Flight to Rome' },
+        description: {
+          it: 'Transfer in shuttle all\'aeroporto di Hamilton Island. Volo verso Sydney, poi Sydney–Dubai e Dubai–Roma.',
+          en: 'Shuttle transfer to Hamilton Island airport. Flight to Sydney, then Sydney–Dubai and Dubai–Rome.',
+        },
+      },
+      {
+        day: 25,
+        title: { it: 'Arrivo a Roma', en: 'Arrival in Rome' },
+        description: {
+          it: 'Atterraggio a Roma Fiumicino. Fine di un viaggio attraverso l\'Australia più autentica: dal Kimberley alle Whitsundays.',
+          en: 'Landing at Rome Fiumicino. End of a journey through Australia\'s most authentic landscapes: from the Kimberley to the Whitsundays.',
+        },
+      },
+    ],
+    included: {
+      it: [
+        'Assistenza in lingua italiana per tutta la durata del soggiorno',
+        'Transfer privato aeroporto Perth – hotel e hotel – aeroporto',
+        'Tour privato con guida italiana di Perth e Fremantle',
+        'Tour privato deserto dei Pinnacoli con guida italiana',
+        'Noleggio 4x4 Toyota Prado, tariffa all-inclusive km illimitati (Kununurra)',
+        'El Questro full day tour (morning tea, pranzo e afternoon tea inclusi)',
+        'Noleggio 2 auto 4x4 Alice Springs – Ayers Rock (Suzuki Jimny, one-way fee inclusa)',
+        'Volo panoramico su Uluru e Kata Tjuta (36 minuti)',
+        'Cena Field of Lights ad Uluru',
+        'Transfer privato Darwin aeroporto – hotel e ritorno',
+        'Transfer privato Sydney aeroporto – hotel',
+        'Tour privato di Sydney con guida italiana',
+        'Tour Blue Mountains con guida italiana (piccolo gruppo)',
+        'Transfer privato hotel Sydney – aeroporto',
+        'Minicrociera alla Whitehaven Beach',
+        'Volo panoramico in biplano su Whitehaven Beach e Heart Reef',
+        'Transfer in shuttle aeroporto Hamilton Island A/R',
+        '3 notti Intercontinental Perth (King Classic + Twin Classic)',
+        '3 notti Emma Gorge Tented Cabin (colazione inclusa)',
+        '1 notte Vibe Hotel Waterfront Darwin',
+        '1 notte Crown Plaza Alice Springs',
+        '2 notti Kings Canyon Resort Glamping tent',
+        '2 notti Sail in the Desert Uluru (Double + Twin Superior)',
+        '3 notti Intercontinental Sydney (Double Opera House view)',
+        '4 notti The Sundays Hamilton Island (Sundays Balcony)',
+      ],
+      en: [
+        'Italian-language assistance for the entire trip',
+        'Private airport transfer Perth – hotel and hotel – airport',
+        'Private tour with Italian guide: Perth and Fremantle',
+        'Private Pinnacles Desert tour with Italian guide',
+        '4x4 Toyota Prado rental, all-inclusive unlimited km (Kununurra)',
+        'El Questro full day tour (morning tea, lunch and afternoon tea included)',
+        '2 x 4x4 rental Alice Springs – Ayers Rock (Suzuki Jimny, one-way fee included)',
+        'Scenic flight over Uluru and Kata Tjuta (36 minutes)',
+        'Field of Lights dinner at Uluru',
+        'Private transfer Darwin airport – hotel and return',
+        'Private transfer Sydney airport – hotel',
+        'Private Sydney city tour with Italian guide',
+        'Blue Mountains tour with Italian guide (small group)',
+        'Private transfer Sydney hotel – airport',
+        'Whitehaven Beach minicruise',
+        'Biplane scenic flight over Whitehaven Beach and Heart Reef',
+        'Hamilton Island airport shuttle transfer (return)',
+        '3 nights Intercontinental Perth (King Classic + Twin Classic)',
+        '3 nights Emma Gorge Tented Cabin (breakfast included)',
+        '1 night Vibe Hotel Waterfront Darwin',
+        '1 night Crown Plaza Alice Springs',
+        '2 nights Kings Canyon Resort Glamping tent',
+        '2 nights Sail in the Desert Uluru (Double + Twin Superior)',
+        '3 nights Intercontinental Sydney (Double Opera House view)',
+        '4 nights The Sundays Hamilton Island (Sundays Balcony)',
+      ],
+    },
+    notIncluded: standardNotIncluded,
+  },
 ];
