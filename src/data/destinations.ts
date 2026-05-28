@@ -99,27 +99,6 @@ export const destinations: Destination[] = [
     },
   },
   {
-    id: 'samoa',
-    slug: 'samoa',
-    name: { it: 'Isole Samoa', en: 'Samoa Islands' },
-    tagline: {
-      it: 'Il Pacifico autentico',
-      en: 'The authentic Pacific',
-    },
-    description: {
-      it: 'Villaggi tradizionali, natura tropicale e una cultura polinesiana ancora profondamente presente nella vita quotidiana. Le Samoa sono una delle destinazioni più autentiche del Pacifico, dove il tempo segue ancora i ritmi della comunità, dell\'oceano e della natura.',
-      en: 'Traditional villages, tropical nature and a Polynesian culture still deeply present in everyday life. Samoa is one of the most authentic destinations in the Pacific, where time still follows the rhythms of community, ocean and nature.',
-    },
-    gradient: 'from-green-900 via-teal-800 to-emerald-700',
-    accentColor: '#065f46',
-    photo: '/images/dest-card-samoa.webp',
-    heroPhoto: '/images/dest-hero-samoa-v2.webp',
-    highlights: {
-      it: ['To Sua Ocean Trench', 'Papase\'ea Sliding Rocks', 'Savai\'i – Isola Vulcanica', 'Cerimonia del Kava'],
-      en: ['To Sua Ocean Trench', 'Papase\'ea Sliding Rocks', 'Savai\'i – Volcanic Island', 'Kava Ceremony'],
-    },
-  },
-  {
     id: 'french-polynesia',
     slug: 'french-polynesia',
     name: { it: 'Polinesia Francese', en: 'French Polynesia' },
@@ -159,6 +138,27 @@ export const destinations: Destination[] = [
     highlights: {
       it: ['Laguna UNESCO', 'Île des Pins', 'Noumea', 'Côte Oubliée'],
       en: ['UNESCO Lagoon', 'Île des Pins', 'Noumea', 'Forgotten Coast'],
+    },
+  },
+  {
+    id: 'samoa',
+    slug: 'samoa',
+    name: { it: 'Isole Samoa', en: 'Samoa Islands' },
+    tagline: {
+      it: 'Il Pacifico autentico',
+      en: 'The authentic Pacific',
+    },
+    description: {
+      it: 'Villaggi tradizionali, natura tropicale e una cultura polinesiana ancora profondamente presente nella vita quotidiana. Le Samoa sono una delle destinazioni più autentiche del Pacifico, dove il tempo segue ancora i ritmi della comunità, dell\'oceano e della natura.',
+      en: 'Traditional villages, tropical nature and a Polynesian culture still deeply present in everyday life. Samoa is one of the most authentic destinations in the Pacific, where time still follows the rhythms of community, ocean and nature.',
+    },
+    gradient: 'from-green-900 via-teal-800 to-emerald-700',
+    accentColor: '#065f46',
+    photo: '/images/dest-card-samoa.webp',
+    heroPhoto: '/images/dest-hero-samoa-v2.webp',
+    highlights: {
+      it: ['To Sua Ocean Trench', 'Papase\'ea Sliding Rocks', 'Savai\'i – Isola Vulcanica', 'Cerimonia del Kava'],
+      en: ['To Sua Ocean Trench', 'Papase\'ea Sliding Rocks', 'Savai\'i – Volcanic Island', 'Kava Ceremony'],
     },
   },
 ];

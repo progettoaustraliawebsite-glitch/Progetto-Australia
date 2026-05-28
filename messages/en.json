@@ -251,7 +251,7 @@
   "howItWorksPage": {
     "heroLabel": "How It Works",
     "heroTitle": "Booking with us\nis simple",
-    "heroSubtitle": "A transparent, guided process designed to get you travelling without worries. No call centres, no bots — just Italian experts with first-hand knowledge of the destination.",
+    "heroSubtitle": "A transparent, guided process designed to get you travelling without worries. No call centres, no bots — just experts with first-hand knowledge of the destination.",
     "ctaForm": "Fill in the Form",
     "ctaContact": "Write to Us",
     "ctaQuote": "Request a Quote",
@@ -273,7 +273,7 @@
         "detail": "We typically reply within 24 business hours with an initial assessment. We may ask for a few more details to refine the proposal, via email or a call.",
         "b1": "Reply within 24 business hours",
         "b2": "Dedicated expert for each destination (Australia, NZ, Fiji, etc.)",
-        "b3": "Team based in Brisbane: same language, direct local knowledge"
+        "b3": "Team based in Australia: direct local knowledge"
       },
       "2": {
         "title": "Receive your tailor-made quote",
@@ -292,10 +292,10 @@
         "b3": "Useful contacts and emergency numbers for each destination"
       },
       "4": {
-        "title": "Italian support throughout your trip",
-        "description": "During your trip you have a direct line to our Italian team on the ground. If anything unexpected comes up, we step in straight away.",
-        "detail": "We're based in Brisbane: same language, time zone compatible with Oceania, direct knowledge of the territory. This is the fundamental difference from a standard Italian agency operating from Europe.",
-        "b1": "Direct line to the Italian team in Australia",
+        "title": "Support throughout your trip",
+        "description": "During your trip you have a direct line to our team on the ground. If anything unexpected comes up, we step in straight away.",
+        "detail": "We're based in Australia: compatible time zone with Oceania, direct knowledge of the territory.",
+        "b1": "Direct line to our team in Australia",
         "b2": "On-the-ground support for any unexpected events",
         "b3": "Compatible time zone: we respond when you need us"
       }
@@ -317,7 +317,7 @@
     },
     "ctaLabel": "Ready to go?",
     "ctaTitle": "Start Planning Your Journey",
-    "ctaSubtitle": "Fill in our guided form or write to us directly: an Italian expert on the ground will reply within 24 hours.",
+    "ctaSubtitle": "Fill in our guided form or write to us directly: our expert on the ground will reply within 24 hours.",
     "ctaNote": "Free consultation · No-obligation quote · Reply within 24 hours"
   },
   "testimonials": {

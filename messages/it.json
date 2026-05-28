@@ -81,7 +81,7 @@
     "itineraries": {
       "label": "Le nostre proposte",
       "title": "Viaggi Selezionati",
-      "subtitle": "Questi itinerari sono le nostre proposte di viaggio: punti di partenza che costruiamo e adattiamo alle tue esigenze, al tuo stile e ai giorni disponibili. Nessun pacchetto fisso — ogni viaggio viene disegnato attorno a te.",
+      "subtitle": "Questi itinerari sono le nostre proposte di viaggio: punti di partenza che costruiamo e adattiamo alle tue esigenze, al tuo stile e ai giorni disponibili. Nessun pacchetto da catalogo — ogni viaggio viene disegnato attorno a te.",
       "note": "Organizziamo anche tour privati completamente su misura, senza partenze di gruppo.",
       "cta": "Scopri"
     }
@@ -251,7 +251,7 @@
   "howItWorksPage": {
     "heroLabel": "Come Funziona",
     "heroTitle": "Prenotare con noi\nè semplice",
-    "heroSubtitle": "Un processo trasparente e guidato, pensato per farti partire senza pensieri. Nessun call center, nessun bot: solo esperti italiani con conoscenza diretta del territorio.",
+    "heroSubtitle": "Dalla prima richiesta fino al rientro, ti accompagniamo in ogni fase del viaggio con un supporto diretto, umano e personalizzato, grazie alla nostra esperienza reale in Oceania.",
     "ctaForm": "Compila il Modulo",
     "ctaContact": "Scrivici",
     "ctaQuote": "Richiedi Preventivo",
@@ -269,7 +269,7 @@
       },
       "1": {
         "title": "Il nostro team analizza la tua richiesta",
-        "description": "Il tuo profilo arriva direttamente a uno dei nostri esperti di destinazione, assegnato in base alla meta scelta. Nessun call center, nessun bot: persone reali con esperienza diretta sul territorio.",
+        "description": "Ogni richiesta viene seguita da uno specialista della destinazione scelta, che conosce direttamente il territorio e le diverse esperienze di viaggio possibili.",
         "detail": "In genere rispondiamo entro 24 ore lavorative con una prima analisi. Potremmo chiederti qualche dettaglio in più per perfezionare la proposta, via email o chiamata.",
         "b1": "Risposta entro 24 ore lavorative",
         "b2": "Esperto dedicato per ogni destinazione (Australia, NZ, Fiji, ecc.)",
@@ -277,27 +277,27 @@
       },
       "2": {
         "title": "Ricevi il preventivo su misura",
-        "description": "Prepariamo una proposta dettagliata con alloggi selezionati, trasporti, esperienze ed escursioni pensate specificamente per te — non pacchetti standard.",
+        "description": "Prepariamo una proposta costruita attorno al tuo modo di viaggiare, con alloggi selezionati, trasporti, esperienze ed escursioni pensate per creare un itinerario equilibrato e realmente personalizzato.",
         "detail": "Il preventivo include una ripartizione chiara di tutti i costi, le opzioni di personalizzazione disponibili e i consigli pratici per ogni tappa. Puoi chiedere modifiche gratuitamente fino all'approvazione.",
-        "b1": "Itinerario giorno per giorno con alloggi e trasporti",
-        "b2": "Ripartizione trasparente dei costi",
-        "b3": "Modifiche gratuite fino all'approvazione finale"
+        "b1": "Itinerario dettagliato giorno per giorno",
+        "b2": "Strutture ed esperienze selezionate",
+        "b3": "Possibilità di personalizzare il viaggio"
       },
       "3": {
         "title": "Confermi e gestiamo tutto noi",
-        "description": "Una volta approvato il preventivo, ci occupiamo di tutte le prenotazioni: voli (se richiesto), hotel, transfer, noleggi auto, assicurazioni e attività. Tu non devi fare nulla.",
+        "description": "Una volta approvato il preventivo, ci occupiamo di tutte le prenotazioni: voli (se richiesto), hotel, transfer, noleggi auto e attività. Tu non devi fare nulla.",
         "detail": "Riceverai un dossier di viaggio completo prima della partenza, con tutti i dettagli, i contatti utili, le istruzioni per ogni tappa e i consigli locali del nostro team.",
         "b1": "Gestione completa di voli, hotel, transfer e attività",
         "b2": "Dossier di viaggio completo pre-partenza",
         "b3": "Contatti utili e numeri di emergenza per ogni destinazione"
       },
       "4": {
-        "title": "Assistenza italiana durante il viaggio",
-        "description": "Durante il viaggio hai un contatto diretto con il nostro team italiano in loco. In caso di imprevisti o modifiche dell'ultimo minuto, interveniamo subito.",
+        "title": "Assistenza durante il viaggio",
+        "description": "Durante il viaggio rimani sempre in contatto con il nostro team in Oceania. In caso di necessità hai un supporto diretto e reale da parte di persone che conoscono davvero il territorio. La nostra base in Australia ci permette di offrirti assistenza con fusi orari compatibili con la destinazione e un contatto rapido durante tutta l'esperienza di viaggio.",
         "detail": "Siamo basati a Brisbane: stessa lingua, fuso orario compatibile con l'Oceania, conoscenza diretta del territorio. Questa è la differenza fondamentale rispetto a un'agenzia italiana standard che opera dall'Europa.",
-        "b1": "Linea diretta con il team italiano in Australia",
-        "b2": "Assistenza in loco per qualsiasi imprevisto",
-        "b3": "Fuso orario compatibile: rispondiamo quando ne hai bisogno"
+        "b1": "Contatto diretto con il team",
+        "b2": "Supporto rapido in caso di necessità",
+        "b3": "Assistenza durante tutto il viaggio"
       }
     },
     "why": {
@@ -313,7 +313,7 @@
       "2": { "q": "Cosa succede se devo modificare o cancellare il viaggio?", "a": "Gestiamo tutte le modifiche direttamente con i fornitori. Le politiche di cancellazione variano in base ai servizi prenotati, ma ti informiamo sempre in modo trasparente prima della conferma. Raccomandiamo sempre un'assicurazione di viaggio adeguata." },
       "3": { "q": "Organizzate anche solo una parte del viaggio (es. solo hotel)?", "a": "Sì, possiamo occuparci di singoli elementi del viaggio o di tutto il pacchetto. Molti clienti ci chiedono di gestire solo gli alloggi o le esperienze locali, mentre pensano autonomamente ai voli." },
       "4": { "q": "Posso combinare più destinazioni?", "a": "Assolutamente sì. Molti dei nostri itinerari combinano Australia, Nuova Zelanda, Fiji e altre isole del Pacifico in un unico viaggio. Ti aiutiamo a costruire il percorso più efficiente in base ai tuoi tempi e al tuo budget." },
-      "5": { "q": "Come funziona il pagamento?", "a": "In genere richiediamo una caparra alla conferma della prenotazione e il saldo a 60-90 giorni dalla partenza. I dettagli esatti dipendono dai servizi prenotati e vengono sempre comunicati in modo trasparente prima di qualsiasi impegno." }
+      "5": { "q": "Come funziona il pagamento?", "a": "In genere richiediamo una caparra alla conferma della prenotazione e il saldo a 30-45 giorni dalla partenza. I dettagli esatti dipendono dai servizi prenotati e vengono sempre comunicati in modo trasparente prima di qualsiasi impegno." }
     },
     "ctaLabel": "Pronti a partire?",
     "ctaTitle": "Inizia a Progettare il tuo Viaggio",

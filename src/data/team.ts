@@ -106,7 +106,7 @@ export const team: TeamMember[] = [
   },
   {
     id: 'norma',
-    name: 'Norma',
+    name: 'Norma Porceddu',
     role: { it: 'Assistenza in loco', en: 'On-site Assistance' },
     bio: {
       it: `Sarda di nascita, cittadina del mondo per scelta. Fin da piccola appassionata di lingue e culture straniere, poco più che ventenne lascia la Sardegna per un percorso internazionale che la porta a vivere in Germania e Spagna, prima di fare il grande salto verso le Americhe. Dopo una breve esperienza negli Stati Uniti, si innamora del Messico, dove avvia diversi business nel turismo e si laurea in Psicologia. Quando diventa mamma, sceglie l'Australia per crescere i suoi bambini in libertà e sicurezza. Da oltre 12 anni vive sulla East Coast australiana. Attraverso Progetto Australia mette a disposizione la sua esperienza internazionale e la profonda conoscenza del territorio per assistere i clienti direttamente in Australia, aiutandoli a vivere una vacanza serena, autentica e senza pensieri.`,

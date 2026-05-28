@@ -171,7 +171,13 @@ export default async function DestinationDetailPage({ params }: Props) {
               {dest.tagline[locale]}
             </span>
             <h1 className="font-serif text-3xl md:text-7xl lg:text-8xl font-bold text-white mb-8 leading-[1.1] drop-shadow-lg">
-              {isIT ? `Viaggi in ${dest.name[locale]}` : `Travel to ${dest.name[locale]}`}
+              {(() => {
+                if (!isIT) return `Travel to ${dest.name[locale]}`;
+                if (dest.slug === 'fiji') return 'Viaggi alle Isole Fiji';
+                if (dest.slug === 'cook-islands') return 'Viaggi alle Isole Cook';
+                if (dest.slug === 'samoa') return 'Viaggi alle Isole Samoa';
+                return `Viaggi in ${dest.name[locale]}`;
+              })()}
             </h1>
             <p className="text-white/80 text-lg md:text-xl max-w-2xl mx-auto mb-12 font-sans drop-shadow-md">
               {dest.description[locale]}
@@ -317,7 +323,7 @@ export default async function DestinationDetailPage({ params }: Props) {
             </h2>
             <p className="text-hero/55 text-base font-sans leading-relaxed max-w-xl mx-auto mb-2">
               {isIT
-                ? `Questi itinerari sono le nostre proposte di viaggio: punti di partenza che costruiamo e adattiamo alle tue esigenze, al tuo stile e ai giorni disponibili. Nessun pacchetto fisso — ogni viaggio viene disegnato attorno a te.`
+                ? `Questi itinerari sono le nostre proposte di viaggio: punti di partenza che costruiamo e adattiamo alle tue esigenze, al tuo stile e ai giorni disponibili. Nessun pacchetto da catalogo — ogni viaggio viene disegnato attorno a te.`
                 : `These itineraries are our travel proposals: starting points that we build and adapt to your needs, travel style and available time. No fixed packages — every journey is designed around you.`}
             </p>
             <p className="text-hero/40 text-sm font-sans leading-relaxed italic">
