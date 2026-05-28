@@ -132,7 +132,7 @@ export default function LandingLunaDiMiele() {
             {/* Trust badge */}
             <div className="inline-flex items-center gap-3 bg-white/10 backdrop-blur-sm border border-white/20 rounded-full px-4 py-2 mb-8">
               <Heart size={13} fill="#F59E0B" stroke="#F59E0B" />
-              <span className="text-white/90 text-xs font-sans">500+ coppie · 4.8/5 su Matrimonio.com · 15 anni di esperienza</span>
+              <span className="text-white/90 text-xs font-sans">500+ coppie · 4.8/5 su Matrimonio.com · 20 anni di esperienza</span>
             </div>
 
             <h1 className="font-serif text-4xl md:text-5xl lg:text-6xl font-bold text-white leading-tight mb-6">
@@ -380,7 +380,7 @@ export default function LandingLunaDiMiele() {
             </div>
             <div className="w-px h-10 bg-stone-200 hidden sm:block" />
             <div>
-              <p className="font-serif text-2xl font-bold text-hero">15+</p>
+              <p className="font-serif text-2xl font-bold text-hero">20+</p>
               <p className="text-[10px] font-sans text-stone-400 mt-1 uppercase tracking-wider">Anni di esperienza</p>
             </div>
           </div>

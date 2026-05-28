@@ -301,8 +301,8 @@
       }
     },
     "why": {
-      "0": { "stat": "15+", "title": "Anni di esperienza", "desc": "Dal 2008 organizziamo viaggi su misura in Australia e Pacifico per clienti italiani." },
-      "1": { "stat": "2000+", "title": "Viaggiatori soddisfatti", "desc": "Famiglie, coppie in viaggio di nozze, gruppi di amici: ogni viaggio è unico." },
+      "0": { "stat": "20+", "title": "Anni di esperienza", "desc": "Dal 2008 organizziamo viaggi su misura in Australia e Pacifico per clienti italiani." },
+      "1": { "stat": "5000+", "title": "Viaggiatori soddisfatti", "desc": "Famiglie, coppie in viaggio di nozze, gruppi di amici: ogni viaggio è unico." },
       "2": { "stat": "6", "title": "Destinazioni coperte", "desc": "Australia, Nuova Zelanda, Fiji, Isole Cook, Samoa e Nuova Caledonia." }
     },
     "faqLabel": "Domande Frequenti",

@@ -301,8 +301,8 @@
       }
     },
     "why": {
-      "0": { "stat": "15+", "title": "Years of experience", "desc": "Since 2008 we have been organising tailor-made trips to Australia and the Pacific for Italian travellers." },
-      "1": { "stat": "2000+", "title": "Happy travellers", "desc": "Families, honeymooning couples, groups of friends: every journey is unique." },
+      "0": { "stat": "20+", "title": "Years of experience", "desc": "Since 2008 we have been organising tailor-made trips to Australia and the Pacific for Italian travellers." },
+      "1": { "stat": "5000+", "title": "Happy travellers", "desc": "Families, honeymooning couples, groups of friends: every journey is unique." },
       "2": { "stat": "6", "title": "Destinations covered", "desc": "Australia, New Zealand, Fiji, Cook Islands, Samoa and New Caledonia." }
     },
     "faqLabel": "FAQ",

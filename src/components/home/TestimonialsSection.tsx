@@ -282,7 +282,7 @@ export default function TestimonialsSection() {
           </div>
           <div className="w-px h-8 sm:h-10 bg-stone-200" />
           <div className="flex-1 sm:flex-none">
-            <p className="font-serif text-lg sm:text-2xl font-bold text-hero">15+</p>
+            <p className="font-serif text-lg sm:text-2xl font-bold text-hero">20+</p>
             <p className="text-[8px] sm:text-[10px] font-sans text-stone-400 mt-1 uppercase tracking-wider">{t('yearsExp')}</p>
           </div>
           <div className="w-px h-8 sm:h-10 bg-stone-200 hidden sm:block" />

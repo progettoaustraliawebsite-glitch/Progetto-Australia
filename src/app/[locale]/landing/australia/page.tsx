@@ -186,7 +186,7 @@ export default function LandingAustralia() {
               <div className="flex gap-0.5">
                 {[1,2,3,4,5].map(s => <Star key={s} size={13} fill="#F59E0B" stroke="#F59E0B" />)}
               </div>
-              <span className="text-white/90 text-xs font-sans">4.8/5 · 15 anni di esperienza · 2.000+ viaggiatori</span>
+              <span className="text-white/90 text-xs font-sans">4.8/5 · 20 anni di esperienza · 5.000+ viaggiatori</span>
             </div>
 
             <h1 className="font-serif text-4xl md:text-5xl lg:text-6xl font-bold text-white leading-tight mb-6">
@@ -594,7 +594,7 @@ export default function LandingAustralia() {
             </div>
             <div className="w-px h-10 bg-stone-200 hidden sm:block" />
             <div>
-              <p className="font-serif text-2xl font-bold text-hero">15+</p>
+              <p className="font-serif text-2xl font-bold text-hero">20+</p>
               <p className="text-[10px] font-sans text-stone-400 mt-1 uppercase tracking-wider">Anni di esperienza</p>
             </div>
           </div>
