@@ -1287,8 +1287,8 @@ export const itineraries: Itinerary[] = [
     id: 'australia-fiji',
     slug: 'australia-fiji',
     title: {
-      it: 'Australia e Fiji — Sydney, Outback e relax tropicale alle Yasawa',
-      en: 'Australia & Fiji — Sydney, Outback and tropical relaxation in the Yasawas',
+      it: 'Essenza Australiana con Relax alle Fiji — Sydney, Outback e relax tropicale alle Yasawa',
+      en: 'Australian Essence with Fiji Relaxation — Sydney, Outback and tropical relaxation in the Yasawas',
     },
     description: {
       it: "Un viaggio che unisce la grande Australia — Opera House, Uluru, Great Ocean Road — all'isolata magia delle Fiji. Sydney, il Red Centre con il Kings Canyon e il Field of Lights, Melbourne con i pinguini di Phillip Island, e infine il relax a pensione completa nel resort di Yasawa: un itinerario perfetto per chi vuole tutto.",
