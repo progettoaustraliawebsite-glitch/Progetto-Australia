@@ -93,6 +93,13 @@ export const blogPost = defineType({
                 { name: 'en', title: 'English', type: 'text', rows: 8 },
               ],
             },
+            {
+              name: 'image',
+              title: 'Immagine (opzionale)',
+              type: 'image',
+              options: { hotspot: true },
+              description: 'Immagine associata a questa sezione. Verrà mostrata sotto il testo.',
+            },
           ],
         },
       ],

@@ -119,6 +119,17 @@ export default function SanityBlogPostClient({ post, locale, backLabel, quoteLab
                         return <p key={idx} className="mb-4">{line}</p>;
                       })}
                     </div>
+                    {section.image && (
+                      <div className="mt-8 relative w-full aspect-video overflow-hidden">
+                        <Image
+                          src={urlFor(section.image).width(900).height(506).url()}
+                          alt={title}
+                          fill
+                          className="object-cover"
+                          sizes="(max-width: 768px) 100vw, 700px"
+                        />
+                      </div>
+                    )}
                   </div>
                 </div>
               );

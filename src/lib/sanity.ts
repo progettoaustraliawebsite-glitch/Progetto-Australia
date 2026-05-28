@@ -102,6 +102,7 @@ export interface SanityBlogSection {
   id: string;
   title: LocaleString;
   content: LocaleString;
+  image?: SanityImageSource;
 }
 
 export interface SanityBlogPost {
@@ -334,7 +335,7 @@ export async function getBlogPostBySlug(slug: string): Promise<SanityBlogPost | 
   return sanityClient.fetch(
     `*[_type == "blogPost" && slug.current == $slug][0] {
       _id, title, slug, publishedAt, author, category, excerpt, heroImage,
-      intro, sections[]{ _key, id, title, content }, body
+      intro, sections[]{ _key, id, title, content, image }, body
     }`,
     { slug }
   );
