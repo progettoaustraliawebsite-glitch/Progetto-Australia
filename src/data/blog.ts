@@ -37,7 +37,7 @@ export const blogPosts: BlogPost[] = [
       en: `Everything you need to know for an unforgettable trip to Australia: visas, transport, climate and practical advice.`,
     },
     category: { it: `Guide Destinazioni`, en: `Destination Guides` },
-    image: '/images/dest-australia.png',
+    image: '/images/dest-australia.webp',
     date: '2026-03-03',
     content: {
       it: {
@@ -121,7 +121,7 @@ LINGUA: La lingua ufficiale è l’inglese. Nazione multiculturale con varie lin
       en: `A complete guide to New Zealand: documents, climate, transport and tips to best experience Middle-earth.`,
     },
     category: { it: `Guide Destinazioni`, en: `Destination Guides` },
-    image: '/images/blog-nz.jpg',
+    image: '/images/blog-nz.webp',
     date: '2026-03-03',
     content: {
       it: {
@@ -207,7 +207,7 @@ LINGUA: Lingua ufficiale l’inglese. Nazione multiculturale con influenze Maori
       en: `An experience that will touch your soul: swimming alongside whale sharks in the crystal-clear waters of Western Australia.`,
     },
     category: { it: `Esperienze`, en: `Experiences` },
-    image: '/images/blog-squali.jpg',
+    image: '/images/blog-squali.webp',
     date: '2026-02-10',
     content: {
       it: {
@@ -276,7 +276,7 @@ Excursions generally last half a day. A specialist guide dives with you and show
       en: `The Hobbiton movie set in New Zealand is a magical experience for all fans of The Lord of the Rings and The Hobbit.`,
     },
     category: { it: `Esperienze`, en: `Experiences` },
-    image: '/images/blog-hobbiton.jpg',
+    image: '/images/blog-hobbiton.webp',
     date: '2026-01-20',
     content: {
       it: {

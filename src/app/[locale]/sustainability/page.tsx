@@ -88,7 +88,7 @@ export default async function SustainabilityPage() {
       <section className="relative h-[50vh] min-h-[400px] flex items-center justify-center bg-hero overflow-hidden">
         <div
           className="absolute inset-0 bg-cover bg-center opacity-40"
-          style={{ backgroundImage: "url('/images/dest-australia.png')" }}
+          style={{ backgroundImage: "url('/images/dest-australia.webp')" }}
         />
         <div className="absolute inset-0 bg-gradient-to-b from-hero/60 via-transparent to-hero/80" />
         <div className="relative z-10 text-center px-6">
@@ -139,7 +139,7 @@ export default async function SustainabilityPage() {
           <div className="bg-sand/40 p-8 mb-8">
             <div className="flex flex-col sm:flex-row gap-8 items-start">
               <img
-                src="/images/logos/travellife-partner.png"
+                src="/images/logos/travellife-partner.webp"
                 alt="Travelife Partner"
                 className="h-16 w-auto object-contain shrink-0"
               />

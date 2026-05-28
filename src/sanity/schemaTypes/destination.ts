@@ -80,7 +80,7 @@ export const destination = defineType({
       name: 'mustSeeImage',
       title: 'Immagine sezione "5 Must" (URL)',
       type: 'url',
-      description: 'URL completo o path locale es. /images/must-australia-reef.png',
+      description: 'URL completo o path locale es. /images/must-australia-reef.webp',
     }),
     defineField({
       name: 'mustSee',

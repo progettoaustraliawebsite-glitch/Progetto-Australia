@@ -15,7 +15,7 @@ const FEATURED_ITINERARIES = [
       'Strutture deluxe immerse nella natura: Great Ocean Road, Kangaroo Island in lodge 5 stelle, Kakadu e cena romantica nel deserto sotto le stelle.',
     duration: 23,
     price: 5980,
-    image: '/images/itin-magica-au.jpg',
+    image: '/images/itin-magica-au.webp',
     tag: 'Più scelto per le nozze',
     highlights: ['Great Ocean Road', 'Kangaroo Island 5★', 'Uluru', 'Cena nel deserto'],
   },
@@ -26,7 +26,7 @@ const FEATURED_ITINERARIES = [
       "Australia in strutture superior e il paradiso delle Isole Cook: lagune turchesi, overwater bungalow e tramonti indimenticabili.",
     duration: 23,
     price: 4130,
-    image: '/images/itin-au-deluxe.jpg',
+    image: '/images/itin-au-deluxe.webp',
     tag: 'Mare + Avventura',
     highlights: ['Sydney', 'Uluru', 'Rarotonga', 'Overwater Bungalow'],
   },
@@ -37,7 +37,7 @@ const FEATURED_ITINERARIES = [
       'Il mix perfetto per una luna di miele: la magia dell\'entroterra australiano e le acque cristalline del Pacifico Sud.',
     duration: 24,
     price: 2850,
-    image: '/images/itin-au-cook.jpg',
+    image: '/images/itin-au-cook.webp',
     tag: 'Romantico',
     highlights: ['Cairns', 'Great Barrier Reef', 'Aitutaki', 'Cook Islands'],
   },
@@ -48,7 +48,7 @@ const FEATURED_ITINERARIES = [
       'Self-drive romantico da Perth a Cairns: paesaggi mozzafiato, fauna unica e hotel selezionati per una luna di miele autentica.',
     duration: 18,
     price: 1790,
-    image: '/images/itin-self-drive.jpg',
+    image: '/images/itin-self-drive.webp',
     tag: 'Avventura di coppia',
     highlights: ['Rottnest Island', 'Kangaroo Island', 'Uluru', 'Cairns'],
   },
@@ -57,7 +57,7 @@ const FEATURED_ITINERARIES = [
 const TESTIMONIALS = [
   {
     name: 'Chiara e Giuseppe',
-    photo: '/images/testimonials/chiara-giuseppe.jpg',
+    photo: '/images/testimonials/chiara-giuseppe.webp',
     trip: 'Viaggio di nozze in Australia',
     title: 'Il viaggio più bello della nostra vita',
     text: 'Siamo partiti con Progetto Australia per il nostro viaggio di nozze. Daria ci ha seguito in tutto e per tutto definendo un itinerario che rispecchiasse le nostre esigenze. È stato il viaggio più bello della nostra vita tra paesaggi mozzafiato, animaletti simpatici e mare cristallino!',
@@ -66,7 +66,7 @@ const TESTIMONIALS = [
   },
   {
     name: 'Francesca e Emanuele',
-    photo: '/images/testimonials/francesca-emanuele.jpg',
+    photo: '/images/testimonials/francesca-emanuele.webp',
     trip: 'Viaggio di nozze in Australia',
     title: 'Lavoro impeccabile, nessun imprevisto',
     text: 'È stato tutto perfetto! L\'itinerario rispecchiava esattamente il nostro stile, le attività ci sono piaciute tantissimo e gli hotel erano perfetti, sempre comodissimi ai centri o immersi nella natura. Un viaggio davvero indimenticabile!',
@@ -75,7 +75,7 @@ const TESTIMONIALS = [
   },
   {
     name: 'Raffaella e Francesco',
-    photo: '/images/testimonials/raffaella-francesco.jpg',
+    photo: '/images/testimonials/raffaella-francesco.webp',
     trip: 'Australia – Tasmania',
     title: 'Non ci hanno mai fatto sentire soli',
     text: 'Il nostro viaggio ha soddisfatto pienamente le nostre aspettative, ci ha permesso di conoscere una natura meravigliosa. Ottime le sistemazioni scelte. Tutto ha funzionato perfettamente, con la presenza costante ed attenta di Antonio.',
@@ -110,7 +110,7 @@ export default function LandingLunaDiMiele() {
       <header className="sticky top-0 z-50 bg-white shadow-sm h-16 flex items-center px-6">
         <div className="w-full max-w-6xl mx-auto flex items-center justify-center">
           <Link href="/it">
-            <Image src="/images/logo.png" alt="Progetto Australia" width={140} height={40} className="h-9 w-auto" />
+            <Image src="/images/logo.webp" alt="Progetto Australia" width={140} height={40} className="h-9 w-auto" />
           </Link>
         </div>
       </header>
@@ -118,7 +118,7 @@ export default function LandingLunaDiMiele() {
       {/* ── HERO ── */}
       <section className="relative min-h-[92vh] flex items-center">
         <Image
-          src="/images/hero-whitehaven.jpg"
+          src="/images/hero-whitehaven.webp"
           alt="Luna di miele in Australia"
           fill
           priority
@@ -391,7 +391,7 @@ export default function LandingLunaDiMiele() {
       <section className="py-20 bg-hero relative overflow-hidden">
         <div
           className="absolute inset-0 opacity-20"
-          style={{ backgroundImage: 'url(/images/dest-whitehaven.jpg)', backgroundSize: 'cover', backgroundPosition: 'center' }}
+          style={{ backgroundImage: 'url(/images/dest-whitehaven.webp)', backgroundSize: 'cover', backgroundPosition: 'center' }}
         />
         <div className="absolute inset-0 bg-hero/70" />
         <div className="relative z-10 max-w-3xl mx-auto px-6 text-center">

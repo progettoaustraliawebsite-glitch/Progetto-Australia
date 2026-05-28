@@ -1,10 +1,10 @@
 const logos = [
-  { src: '/images/logos/aussie-specialist.png', alt: 'Aussie Specialist' },
-  { src: '/images/logos/nz-specialist.png', alt: '100% Pure New Zealand Specialist' },
-  { src: '/images/logos/fiji-specialist.png', alt: 'Matai Fiji Programme' },
-  { src: '/images/logos/cook-specialist.png', alt: 'Cook Islands Specialist' },
-  { src: '/images/logos/west-aussie-specialist.png', alt: 'West Aussie All Stars' },
-  { src: '/images/logos/travellife-partner.png', alt: 'Travelife Partner' },
+  { src: '/images/logos/aussie-specialist.webp', alt: 'Aussie Specialist' },
+  { src: '/images/logos/nz-specialist.webp', alt: '100% Pure New Zealand Specialist' },
+  { src: '/images/logos/fiji-specialist.webp', alt: 'Matai Fiji Programme' },
+  { src: '/images/logos/cook-specialist.webp', alt: 'Cook Islands Specialist' },
+  { src: '/images/logos/west-aussie-specialist.webp', alt: 'West Aussie All Stars' },
+  { src: '/images/logos/travellife-partner.webp', alt: 'Travelife Partner' },
 ];
 
 export default function CertificationsBanner() {

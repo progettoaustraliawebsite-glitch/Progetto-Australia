@@ -23,7 +23,7 @@ export async function generateMetadata(): Promise<Metadata> {
 const staticHighlights = [
   {
     id: 'barrier-reef',
-    image: '/images/highlight-reef.jpg',
+    image: '/images/highlight-reef.webp',
     category: { it: 'Natura', en: 'Nature' },
     title: { it: 'Great Barrier Reef', en: 'Great Barrier Reef' },
     description: {
@@ -43,7 +43,7 @@ const staticHighlights = [
   },
   {
     id: 'milford',
-    image: '/images/hero-nz.jpg',
+    image: '/images/hero-nz.webp',
     category: { it: 'Paesaggio', en: 'Landscape' },
     title: { it: 'Milford Sound', en: 'Milford Sound' },
     description: {
@@ -63,7 +63,7 @@ const staticHighlights = [
   },
   {
     id: 'queenstown',
-    image: '/images/highlight-queenstown.jpg',
+    image: '/images/highlight-queenstown.webp',
     category: { it: 'Avventura', en: 'Adventure' },
     title: { it: 'Queenstown', en: 'Queenstown' },
     description: {

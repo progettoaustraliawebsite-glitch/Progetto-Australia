@@ -20,7 +20,7 @@ interface Testimonial {
 const TESTIMONIALS: Testimonial[] = [
   {
     name: 'Chiara e Giuseppe',
-    photo: '/images/testimonials/chiara-giuseppe.jpg',
+    photo: '/images/testimonials/chiara-giuseppe.webp',
     trip: { it: 'Viaggio di nozze in Australia', en: 'Honeymoon in Australia' },
     title: { it: 'Il viaggio più bello della nostra vita', en: 'The most beautiful trip of our lives' },
     text: {
@@ -34,7 +34,7 @@ const TESTIMONIALS: Testimonial[] = [
   },
   {
     name: 'Claudia e Alberto',
-    photo: '/images/testimonials/claudia-alberto.jpg',
+    photo: '/images/testimonials/claudia-alberto.webp',
     trip: { it: 'Australia – 20 giorni in self-drive', en: 'Australia – 20-day self-drive' },
     title: { it: 'Non avremmo potuto fare scelta migliore', en: 'We could not have made a better choice' },
     text: {
@@ -48,7 +48,7 @@ const TESTIMONIALS: Testimonial[] = [
   },
   {
     name: 'Francesca e Emanuele',
-    photo: '/images/testimonials/francesca-emanuele.jpg',
+    photo: '/images/testimonials/francesca-emanuele.webp',
     trip: { it: 'Viaggio di nozze in Australia', en: 'Honeymoon in Australia' },
     title: { it: 'Lavoro impeccabile, nessun imprevisto', en: 'Impeccable work, no hitches' },
     text: {
@@ -88,7 +88,7 @@ const TESTIMONIALS: Testimonial[] = [
   },
   {
     name: 'Raffaella e Francesco',
-    photo: '/images/testimonials/raffaella-francesco.jpg',
+    photo: '/images/testimonials/raffaella-francesco.webp',
     trip: { it: 'Australia – Tasmania', en: 'Australia – Tasmania' },
     title: { it: 'Non ci hanno mai fatto sentire soli', en: 'They never left us feeling alone' },
     text: {

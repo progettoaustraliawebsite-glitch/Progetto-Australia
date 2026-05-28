@@ -36,7 +36,7 @@ function months(ratings: MonthRating[]): MonthInfo[] {
 export const destinationContent: DestinationContent[] = [
   {
     slug: 'australia',
-    mustSeeImage: '/images/must-australia-reef.png',
+    mustSeeImage: '/images/must-australia-reef.webp',
     introLabel: { it: 'Australia su misura', en: 'Tailor-Made Australia' },
     intro: {
       it: 'Ogni viaggio in Australia viene <strong>progettato attorno alla persona</strong>, al suo stile di viaggio e al modo in cui desidera vivere questa esperienza. Dagli spostamenti ai tempi di percorrenza, dall\'equilibrio tra natura, città e relax fino alla scelta delle strutture, <strong>ogni dettaglio viene studiato</strong> per creare un <strong>itinerario fluido, autentico e realmente sostenibile</strong> nei ritmi.<br><br>L\'Australia <strong>non è una destinazione da visitare velocemente</strong>. È un paese da vivere con il ritmo giusto. Dalle città affacciate sull\'oceano agli spazi immensi dell\'Outback, dalle foreste tropicali del Queensland alle spiagge più remote, è un viaggio che cambia continuamente paesaggi, atmosfere ed emozioni. Ci sono luoghi che si ricordano per ciò che si vede. L\'Australia, invece, rimane soprattutto per la <strong>sensazione di libertà</strong> che lascia addosso. Per questo ogni itinerario viene <strong>costruito su misura</strong>, con attenzione agli spostamenti, ai tempi di viaggio e al modo in cui desideri vivere davvero questa esperienza. Perché conoscere l\'Australia significa anche sapere come viverla nel modo giusto.',
@@ -98,7 +98,7 @@ export const destinationContent: DestinationContent[] = [
   },
   {
     slug: 'new-zealand',
-    mustSeeImage: '/images/must-nz-hobbiton.png',
+    mustSeeImage: '/images/must-nz-hobbiton.webp',
     introLabel: { it: 'Nuova Zelanda su misura', en: 'Tailor-Made New Zealand' },
     intro: {
       it: 'Ogni itinerario viene <strong>costruito in base al tuo modo di viaggiare</strong>, ai ritmi desiderati e alle esperienze che vuoi vivere davvero. Dai grandi road trip tra le due isole ai lodge immersi nella natura, fino alle escursioni più iconiche, <strong>ogni dettaglio viene studiato</strong> per creare un <strong>viaggio fluido, equilibrato e autentico</strong>.<br><br>La Nuova Zelanda è uno dei pochi luoghi al mondo dove <strong>paesaggi completamente diversi convivono a poche ore di distanza</strong>. Fiordi profondi, vulcani attivi, foreste pluviali, ghiacciai e spiagge selvagge trasformano continuamente il viaggio, creando la sensazione di <strong>attraversare più mondi in un solo itinerario</strong>. È una destinazione perfetta per chi ama la natura, i viaggi on the road e gli spazi aperti, ma anche per chi cerca un modo di viaggiare <strong>più lento, immersivo e lontano dal turismo di massa</strong>.',
@@ -151,7 +151,7 @@ export const destinationContent: DestinationContent[] = [
   },
   {
     slug: 'fiji',
-    mustSeeImage: '/images/must-fiji.png',
+    mustSeeImage: '/images/must-fiji.webp',
     introLabel: { it: 'Fiji su misura', en: 'Tailor-Made Fiji' },
     intro: {
       it: 'Ogni itinerario viene costruito in base al tipo di esperienza che desideri vivere: relax totale su isole remote, resort immersi nella natura, snorkeling e immersioni tra i reef del Pacifico oppure combinazioni con Australia e Nuova Zelanda. Dalla scelta delle isole ai collegamenti tra gli arcipelaghi, <strong>ogni dettaglio viene studiato</strong> per creare un <strong>viaggio fluido, equilibrato e realmente adatto ai tuoi tempi</strong>.<br><br>Le Fiji rappresentano <strong>una delle destinazioni più autentiche e rilassanti del Pacifico</strong>. Oltre 300 isole immerse nell\'oceano, spiagge bianche, mare cristallino e una delle culture più accoglienti dell\'Oceania creano un\'atmosfera difficile da trovare altrove. Qui <strong>il tempo sembra fermarsi</strong>. Le giornate scorrono tra reef corallini, tramonti sull\'oceano, villaggi locali e piccole isole raggiungibili solo via mare. Il celebre <strong>"Bula"</strong>, il saluto fijiano, non è soltanto una parola: è il modo in cui le Fiji fanno sentire chi arriva.',
@@ -204,7 +204,7 @@ export const destinationContent: DestinationContent[] = [
   },
   {
     slug: 'cook-islands',
-    mustSeeImage: '/images/must-cook-islands.png',
+    mustSeeImage: '/images/must-cook-islands.webp',
     introLabel: { it: 'Isole Cook su misura', en: 'Tailor-Made Cook Islands' },
     intro: {
       it: 'Ogni itinerario viene costruito in base al tipo di esperienza che desideri vivere: soggiorni vista laguna, escursioni tra le isole, snorkeling nelle acque cristalline oppure semplicemente il piacere di rallentare e vivere il Pacifico con tempi più lenti. Dalla scelta delle isole ai ritmi del viaggio, <strong>ogni dettaglio viene studiato</strong> per creare un\'esperienza <strong>autentica, equilibrata e realmente su misura</strong>.<br><br>Le Isole Cook rappresentano <strong>uno dei volti più genuini del Pacifico</strong>. Raggiungibili ma ancora poco toccate dal turismo di massa, conservano <strong>un equilibrio raro</strong> tra natura, cultura locale e semplicità. Aitutaki regala <strong>una delle lagune più belle dell\'Oceania</strong>, mentre Rarotonga unisce montagne tropicali, mare cristallino e vita locale in un\'atmosfera rilassata e accogliente. È la destinazione ideale per chi cerca <strong>un Pacifico autentico</strong>, lontano dai grandi resort e dai ritmi più turistici.',
@@ -253,7 +253,7 @@ export const destinationContent: DestinationContent[] = [
   },
   {
     slug: 'samoa',
-    mustSeeImage: '/images/must-samoa.png',
+    mustSeeImage: '/images/must-samoa.webp',
     introLabel: { it: 'Samoa su misura', en: 'Tailor-Made Samoa' },
     intro: {
       it: 'Ogni itinerario viene costruito in base al tipo di esperienza che desideri vivere: spiagge tropicali, villaggi locali, escursioni nella natura, cascate, lagune vulcaniche e soggiorni immersi nella cultura samoana. Dalla scelta delle isole ai ritmi del viaggio, <strong>ogni dettaglio viene studiato</strong> per creare un\'esperienza <strong>autentica, equilibrata e lontana dal turismo più costruito</strong>.<br><br>Le Samoa rappresentano uno dei luoghi in cui <strong>la cultura polinesiana è ancora più viva e autentica</strong>. Il <strong>Fa\'a Samoa</strong> — "la via samoana" — non è un\'attrazione turistica, ma <strong>uno stile di vita basato su famiglia, rispetto e spirito comunitario</strong> che si percepisce in ogni villaggio. Tra lagune tropicali, coste vulcaniche, foreste lussureggianti e spiagge quasi deserte, le Samoa regalano <strong>un Pacifico più genuino, intenso e profondamente umano</strong>.',
@@ -306,7 +306,7 @@ export const destinationContent: DestinationContent[] = [
   },
   {
     slug: 'french-polynesia',
-    mustSeeImage: '/images/must-polynesia.png',
+    mustSeeImage: '/images/must-polynesia.webp',
     introLabel: { it: 'Polinesia Francese su misura', en: 'Tailor-Made French Polynesia' },
     intro: {
       it: 'Ogni itinerario viene costruito in base al tipo di esperienza che desideri vivere: soggiorni in bungalow sull\'acqua, island hopping tra gli arcipelaghi, snorkeling nelle lagune tropicali oppure viaggi più autentici alla scoperta delle isole meno conosciute. Dalla scelta delle isole ai collegamenti interni, <strong>ogni dettaglio viene studiato</strong> per creare un <strong>viaggio equilibrato, fluido e realmente su misura</strong>.<br><br>La Polinesia Francese rappresenta <strong>uno dei luoghi più iconici e spettacolari del Pacifico</strong>. Bora Bora, Moorea, Tahiti e gli atolli delle Tuamotu offrono paesaggi completamente diversi tra loro, accomunati da <strong>lagune cristalline, natura tropicale e una cultura polinesiana ancora profondamente presente</strong>. È una destinazione perfetta per chi cerca <strong>relax, mare straordinario e un\'atmosfera romantica</strong>, ma anche per chi desidera vivere il Pacifico in modo più autentico, tra piccole guesthouse, isole remote e <strong>ritmi lenti lontani dal turismo più frenetico</strong>.',
@@ -359,7 +359,7 @@ export const destinationContent: DestinationContent[] = [
   },
   {
     slug: 'new-caledonia',
-    mustSeeImage: '/images/must-caledonia.png',
+    mustSeeImage: '/images/must-caledonia.webp',
     introLabel: { it: 'Nuova Caledonia su misura', en: 'Tailor-Made New Caledonia' },
     intro: {
       it: 'Ogni itinerario viene costruito in base al tipo di esperienza che desideri vivere: soggiorni vista laguna, escursioni tra le isole, snorkeling e immersioni, oppure percorsi più autentici alla scoperta della cultura Kanak e delle regioni meno turistiche dell\'arcipelago. Dalla scelta delle isole ai ritmi del viaggio, <strong>ogni dettaglio viene studiato</strong> per creare un\'esperienza <strong>equilibrata, fluida e realmente su misura</strong>.<br><br>La Nuova Caledonia offre <strong>un mix unico nel Pacifico</strong>: <strong>lagune tropicali patrimonio UNESCO</strong>, influenze francesi, natura incontaminata e <strong>una forte identità culturale locale</strong> convivono in un equilibrio raro. Nouméa regala un\'atmosfera cosmopolita e rilassata, mentre località come Île des Pins mostrano il lato più tropicale e spettacolare dell\'arcipelago. È una destinazione ideale per chi cerca <strong>mare, natura e autenticità</strong> in un contesto ancora lontano dal turismo di massa.',

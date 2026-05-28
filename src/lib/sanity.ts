@@ -161,10 +161,10 @@ const ACCENT_DEFAULTS = ['#813318', '#0f766e', '#1e40af', '#881337', '#6d28d9', 
 
 // Fallback images for itineraries without a heroImage in Sanity
 const ITIN_HERO_FILES: Record<string, string> = {
-  'australia-bora-bora':       '/images/dest-whitehaven.jpg',
-  'meravigliosa-polinesia':    '/images/hero-french-polynesia.png',
-  'nuova-zelanda-polinesia':   '/images/hero-new-zealand.png',
-  'gruppo-nuova-zelanda':      '/images/itin-nz-gruppo.jpg',
+  'australia-bora-bora':       '/images/dest-whitehaven.webp',
+  'meravigliosa-polinesia':    '/images/hero-french-polynesia.webp',
+  'nuova-zelanda-polinesia':   '/images/hero-new-zealand.webp',
+  'gruppo-nuova-zelanda':      '/images/itin-nz-gruppo.webp',
 };
 
 
@@ -197,22 +197,22 @@ export function normalizeSanityItinerary(s: SanityItinerary, idx = 0): Itinerary
 
 // Maps Sanity slug → local image filename (slugs differ from file short-names)
 const DEST_HERO_FILES: Record<string, string> = {
-  'australia':        '/images/dest-hero-australia.png',
-  'new-zealand':      '/images/dest-hero-nz.png',
-  'fiji':             '/images/dest-hero-fiji.png',
-  'cook-islands':     '/images/dest-hero-cook.png',
-  'samoa':            '/images/dest-hero-samoa.png',
-  'french-polynesia': '/images/dest-hero-polynesia.png',
-  'new-caledonia':    '/images/dest-hero-caledonia.png',
+  'australia':        '/images/dest-hero-australia.webp',
+  'new-zealand':      '/images/dest-hero-nz.webp',
+  'fiji':             '/images/dest-hero-fiji.webp',
+  'cook-islands':     '/images/dest-hero-cook.webp',
+  'samoa':            '/images/dest-hero-samoa.webp',
+  'french-polynesia': '/images/dest-hero-polynesia.webp',
+  'new-caledonia':    '/images/dest-hero-caledonia.webp',
 };
 const DEST_CARD_FILES: Record<string, string> = {
-  'australia':        '/images/dest-card-australia.png',
-  'new-zealand':      '/images/dest-card-nz.png',
-  'fiji':             '/images/dest-card-fiji.png',
-  'cook-islands':     '/images/dest-card-cook.png',
-  'samoa':            '/images/dest-card-samoa.png',
-  'french-polynesia': '/images/dest-card-polynesia.png',
-  'new-caledonia':    '/images/dest-card-caledonia.png',
+  'australia':        '/images/dest-card-australia.webp',
+  'new-zealand':      '/images/dest-card-nz.webp',
+  'fiji':             '/images/dest-card-fiji.webp',
+  'cook-islands':     '/images/dest-card-cook.webp',
+  'samoa':            '/images/dest-card-samoa.webp',
+  'french-polynesia': '/images/dest-card-polynesia.webp',
+  'new-caledonia':    '/images/dest-card-caledonia.webp',
 };
 
 export function normalizeSanityDestination(s: SanityDestination, idx = 0): Destination {
@@ -224,8 +224,8 @@ export function normalizeSanityDestination(s: SanityDestination, idx = 0): Desti
     description: s.description,
     gradient: GRADIENT_DEFAULTS[idx % GRADIENT_DEFAULTS.length],
     accentColor: ACCENT_DEFAULTS[idx % ACCENT_DEFAULTS.length],
-    photo: s.heroImage ? urlFor(s.heroImage).width(900).height(600).url() : (DEST_CARD_FILES[s.slug.current] ?? `/images/dest-card-${s.slug.current}.png`),
-    heroPhoto: DEST_HERO_FILES[s.slug.current] ?? `/images/dest-hero-${s.slug.current}.png`,
+    photo: s.heroImage ? urlFor(s.heroImage).width(900).height(600).url() : (DEST_CARD_FILES[s.slug.current] ?? `/images/dest-card-${s.slug.current}.webp`),
+    heroPhoto: DEST_HERO_FILES[s.slug.current] ?? `/images/dest-hero-${s.slug.current}.webp`,
     highlights: s.highlights ?? { it: [], en: [] },
   };
 }

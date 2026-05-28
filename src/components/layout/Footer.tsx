@@ -176,7 +176,7 @@ export default function Footer() {
           {/* Logo */}
           <div className="mt-8">
             <Image
-              src="/images/logo-full.png"
+              src="/images/logo-full.webp"
               alt="Progetto Australia — il tuo viaggio su misura"
               width={260}
               height={156}

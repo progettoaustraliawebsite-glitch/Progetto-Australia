@@ -7,12 +7,12 @@ import { useTranslations } from 'next-intl';
 import { useRouter } from '@/i18n/navigation';
 
 const SLIDES = [
-  { image: '/images/hero-australia-v2.png' },
-  { image: '/images/hero-new-zealand.png' },
-  { image: '/images/hero-fiji.png' },
-  { image: '/images/hero-french-polynesia.png' },
-  { image: '/images/hero-cook-islands.png' },
-  { image: '/images/hero-new-caledonia.png' },
+  { image: '/images/hero-australia-v2.webp' },
+  { image: '/images/hero-new-zealand.webp' },
+  { image: '/images/hero-fiji.webp' },
+  { image: '/images/hero-french-polynesia.webp' },
+  { image: '/images/hero-cook-islands.webp' },
+  { image: '/images/hero-new-caledonia.webp' },
 ];
 
 const SLIDE_COUNT = SLIDES.length;

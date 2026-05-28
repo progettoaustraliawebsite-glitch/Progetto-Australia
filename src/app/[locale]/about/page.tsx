@@ -207,7 +207,7 @@ export default function AboutPage() {
       <section className="relative h-[60vh] min-h-[500px] flex items-center justify-center bg-hero overflow-hidden">
         <div
           className="absolute inset-0 bg-cover bg-center opacity-60 scale-105"
-          style={{ backgroundImage: "url('/images/hero-sydney.jpg')" }}
+          style={{ backgroundImage: "url('/images/hero-sydney.webp')" }}
         />
         <div className="absolute inset-0 bg-gradient-to-b from-hero/40 via-transparent to-hero/90" />
         <motion.div
@@ -377,7 +377,7 @@ export default function AboutPage() {
           </div>
 
           <div className="flex flex-col sm:flex-row items-center justify-center gap-6">
-            <Image src="/images/logos/travellife-partner.png" alt="Travelife Partner" width={120} height={56} className="h-14 w-auto object-contain opacity-80" />
+            <Image src="/images/logos/travellife-partner.webp" alt="Travelife Partner" width={120} height={56} className="h-14 w-auto object-contain opacity-80" />
             <Link
               href="/sustainability"
               className="inline-flex items-center gap-3 px-8 py-3 border border-hero text-hero text-xs font-sans uppercase tracking-widest hover:bg-hero hover:text-white transition-all duration-300"

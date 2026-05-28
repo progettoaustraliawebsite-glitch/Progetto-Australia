@@ -56,7 +56,7 @@ export const itineraries: Itinerary[] = [
     destination: 'Australia & French Polynesia',
     type: 'luxury',
     gradient: 'from-cyan-700 to-blue-900',
-    image: '/images/dest-whitehaven.jpg',
+    image: '/images/dest-whitehaven.webp',
     price: { currency: 'EUR', amount: 8000 },
     priceEn: { currency: 'USD', amount: 8700 },
     highlights: {
@@ -312,7 +312,7 @@ export const itineraries: Itinerary[] = [
     destination: 'French Polynesia',
     type: 'luxury',
     gradient: 'from-teal-600 to-cyan-900',
-    image: '/images/hero-french-polynesia.png',
+    image: '/images/hero-french-polynesia.webp',
     price: { currency: 'EUR', amount: 9730 },
     priceEn: { currency: 'USD', amount: 10600 },
     highlights: {
@@ -510,7 +510,7 @@ export const itineraries: Itinerary[] = [
     destination: 'New Zealand & French Polynesia',
     type: 'adventure',
     gradient: 'from-emerald-700 to-teal-900',
-    image: '/images/hero-new-zealand.png',
+    image: '/images/hero-new-zealand.webp',
     price: { currency: 'EUR', amount: 9710 },
     priceEn: { currency: 'USD', amount: 10600 },
     highlights: {
@@ -780,7 +780,7 @@ export const itineraries: Itinerary[] = [
     destination: 'New Zealand',
     type: 'group',
     gradient: 'from-green-700 to-emerald-900',
-    image: '/images/itin-nz-gruppo.jpg',
+    image: '/images/itin-nz-gruppo.webp',
     price: { currency: 'EUR', amount: 5700 },
     priceEn: { currency: 'USD', amount: 6200 },
     highlights: {
@@ -976,7 +976,7 @@ export const itineraries: Itinerary[] = [
     destination: 'Australia',
     type: 'adventure',
     gradient: 'from-orange-700 to-red-900',
-    image: '/images/dest-hero-australia.png',
+    image: '/images/dest-hero-australia.webp',
     price: { currency: 'EUR', amount: 5600 },
     priceEn: { currency: 'USD', amount: 6100 },
     highlights: {
@@ -1298,7 +1298,7 @@ export const itineraries: Itinerary[] = [
     destination: 'Australia & Fiji',
     type: 'luxury',
     gradient: 'from-teal-700 to-blue-900',
-    image: '/images/itin-fiji.jpg',
+    image: '/images/itin-fiji.webp',
     price: { currency: 'EUR', amount: 5240 },
     priceEn: { currency: 'USD', amount: 5700 },
     highlights: {
@@ -1540,7 +1540,7 @@ export const itineraries: Itinerary[] = [
     destination: 'Australia',
     type: 'adventure',
     gradient: 'from-orange-700 to-red-900',
-    image: '/images/itin-selfdrive.jpg',
+    image: '/images/itin-selfdrive.webp',
     price: { currency: 'EUR', amount: 3700 },
     priceEn: { currency: 'USD', amount: 4000 },
     highlights: {
@@ -1838,7 +1838,7 @@ export const itineraries: Itinerary[] = [
     destination: 'New Zealand',
     type: 'adventure',
     gradient: 'from-emerald-700 to-green-900',
-    image: '/images/dest-nz.jpg',
+    image: '/images/dest-nz.webp',
     price: { currency: 'EUR', amount: 3850 },
     priceEn: { currency: 'USD', amount: 4200 },
     highlights: {
@@ -2030,7 +2030,7 @@ export const itineraries: Itinerary[] = [
     destination: 'Australia',
     type: 'luxury',
     gradient: 'from-amber-600 to-orange-800',
-    image: '/images/itin-east-coast.jpg',
+    image: '/images/itin-east-coast.webp',
     price: { currency: 'EUR', amount: 8210 },
     priceEn: { currency: 'USD', amount: 8900 },
     highlights: {
@@ -2288,7 +2288,7 @@ export const itineraries: Itinerary[] = [
     destination: 'New Zealand',
     type: 'road-trip',
     gradient: 'from-teal-600 to-emerald-900',
-    image: '/images/dest-nz.jpg',
+    image: '/images/dest-nz.webp',
     price: { currency: 'EUR', amount: 4400 },
     priceEn: { currency: 'USD', amount: 4800 },
     highlights: {
@@ -2524,7 +2524,7 @@ export const itineraries: Itinerary[] = [
     destination: 'New Zealand & Cook Islands',
     type: 'luxury',
     gradient: 'from-cyan-600 to-teal-900',
-    image: '/images/dest-nz.jpg',
+    image: '/images/dest-nz.webp',
     price: { currency: 'EUR', amount: 7870 },
     priceEn: { currency: 'USD', amount: 8600 },
     highlights: {
@@ -2844,7 +2844,7 @@ export const itineraries: Itinerary[] = [
     destination: 'Australia & Cook Islands',
     type: 'adventure',
     gradient: 'from-orange-600 to-amber-900',
-    image: '/images/itin-au-cook.jpg',
+    image: '/images/itin-au-cook.webp',
     price: { currency: 'EUR', amount: 4475 },
     priceEn: { currency: 'USD', amount: 4900 },
     highlights: {
@@ -3100,7 +3100,7 @@ export const itineraries: Itinerary[] = [
     destination: 'New Caledonia',
     type: 'road-trip',
     gradient: 'from-sky-600 to-teal-800',
-    image: '/images/itin-grande-terre.jpg',
+    image: '/images/itin-grande-terre.webp',
     price: { currency: 'EUR', amount: 2500 },
     priceEn: { currency: 'USD', amount: 2750 },
     highlights: {
@@ -3248,7 +3248,7 @@ export const itineraries: Itinerary[] = [
     destination: 'Australia',
     type: 'adventure',
     gradient: 'from-red-700 to-orange-900',
-    image: '/images/itin-western-au.jpg',
+    image: '/images/itin-western-au.webp',
     price: { currency: 'EUR', amount: 5550 },
     priceEn: { currency: 'USD', amount: 6050 },
     highlights: {

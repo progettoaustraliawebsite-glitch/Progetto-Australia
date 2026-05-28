@@ -17,7 +17,7 @@ const FEATURED_ITINERARIES = [
       "L'Australia è un paese perfetto per viaggiare in libertà con auto a noleggio. Strade sicure, fauna unica e paesaggi mozzafiato da Perth a Cairns.",
     duration: 18,
     price: 1790,
-    image: '/images/itin-self-drive.jpg',
+    image: '/images/itin-self-drive.webp',
     tag: 'Più richiesto',
     highlights: ['Rottnest Island', 'Kangaroo Island', 'Uluru', 'Great Barrier Reef'],
   },
@@ -28,7 +28,7 @@ const FEATURED_ITINERARIES = [
       'Un viaggio indimenticabile che unisce le meraviglie australiane alle acque turchesi del Pacifico Sud, con soste nelle isole più belle del mondo.',
     duration: 24,
     price: 2850,
-    image: '/images/itin-au-cook.jpg',
+    image: '/images/itin-au-cook.webp',
     tag: 'Consigliato',
     highlights: ['Sydney', 'Uluru', 'Cairns', 'Rarotonga'],
   },
@@ -39,7 +39,7 @@ const FEATURED_ITINERARIES = [
       'Il viaggio più completo per scoprire l\'Australia da ovest a est: Perth, Broome, Darwin, Kakadu, Uluru e la Costa Est fino a Cairns.',
     duration: 31,
     price: 3470,
-    image: '/images/itin-western-au.jpg',
+    image: '/images/itin-western-au.webp',
     tag: 'Avventura',
     highlights: ['Perth', 'Broome', 'Kakadu', 'Uluru'],
   },
@@ -50,7 +50,7 @@ const FEATURED_ITINERARIES = [
       'Strutture deluxe immerse nella natura: Great Ocean Road, Kangaroo Island in lodge 5 stelle, Kakadu e cena nel deserto sotto le stelle.',
     duration: 23,
     price: 5980,
-    image: '/images/itin-magica-au.jpg',
+    image: '/images/itin-magica-au.webp',
     tag: 'Luxury',
     highlights: ['Great Ocean Road', 'Kangaroo Island', 'Kakadu', 'Uluru'],
   },
@@ -59,7 +59,7 @@ const FEATURED_ITINERARIES = [
 const TESTIMONIALS = [
   {
     name: 'Claudia e Alberto',
-    photo: '/images/testimonials/claudia-alberto.jpg',
+    photo: '/images/testimonials/claudia-alberto.webp',
     trip: 'Australia – 20 giorni in self-drive',
     title: 'Non avremmo potuto fare scelta migliore',
     text: 'Siamo abituati a viaggiare in autonomia ma questa volta abbiamo demandato ad un\'agenzia. Non avremmo potuto fare una scelta migliore! Professionisti che conoscono perfettamente il territorio e riescono in poco tempo a cucirti un itinerario perfetto per le tue esigenze. Consigliamo al 100%!',
@@ -77,7 +77,7 @@ const TESTIMONIALS = [
   },
   {
     name: 'Raffaella e Francesco',
-    photo: '/images/testimonials/raffaella-francesco.jpg',
+    photo: '/images/testimonials/raffaella-francesco.webp',
     trip: 'Australia – Tasmania',
     title: 'Non ci hanno mai fatto sentire soli',
     text: 'Il nostro viaggio ha soddisfatto pienamente le nostre aspettative, ci ha permesso di conoscere una natura meravigliosa. Ottime le sistemazioni scelte. Tutto ha funzionato perfettamente, con la presenza costante ed attenta di Antonio.',
@@ -162,7 +162,7 @@ export default function LandingAustralia() {
       <header className="sticky top-0 z-50 bg-white shadow-sm h-16 flex items-center px-6">
         <div className="w-full max-w-6xl mx-auto flex items-center justify-center">
           <Link href="/it" className="flex items-center gap-2">
-            <Image src="/images/logo.png" alt="Progetto Australia" width={140} height={40} className="h-9 w-auto" />
+            <Image src="/images/logo.webp" alt="Progetto Australia" width={140} height={40} className="h-9 w-auto" />
           </Link>
         </div>
       </header>
@@ -170,7 +170,7 @@ export default function LandingAustralia() {
       {/* ── HERO ── */}
       <section className="relative min-h-[92vh] flex items-center">
         <Image
-          src="/images/hero-sydney.jpg"
+          src="/images/hero-sydney.webp"
           alt="Sydney, Australia"
           fill
           priority
@@ -270,21 +270,21 @@ export default function LandingAustralia() {
               {
                 name: 'Sara Trezzi',
                 role: 'Fondatrice & Itinerari',
-                photo: '/images/team/sara.jpg',
+                photo: '/images/team/sara.webp',
                 bio: "Viaggiare è sempre stato il filo conduttore della mia vita. Dopo anni in Australia e Nuova Zelanda, ho deciso di trasformare questa esperienza in una professione. Dal 2016 creo itinerari su misura per viaggiatori che vogliono vivere davvero questo continente — con il ritmo giusto e l'equilibrio perfetto.",
                 tag: 'Dal 2016 · Itinerari Australia & NZ',
               },
               {
                 name: 'Norma',
                 role: 'Assistenza in loco · East Coast',
-                photo: '/images/team/norma.jpg',
+                photo: '/images/team/norma.webp',
                 bio: 'Sarda di nascita, cittadina del mondo per scelta. Dopo Germania, Spagna, Stati Uniti e Messico — dove ha gestito business nel turismo e si è laureata in Psicologia — ha scelto l\'Australia per crescere i suoi figli. Da oltre 12 anni sulla East Coast australiana.',
                 tag: '12+ anni · East Coast Australia',
               },
               {
                 name: 'Antonio Elia Tucci',
                 role: 'Assistenza in loco · Pacchetti completi',
-                photo: '/images/team/antonio.jpg',
+                photo: '/images/team/antonio.webp',
                 bio: 'Napoletano, in Australia da oltre 6 anni. General Manager nel settore alberghiero, ristoratore e imprenditore nell\'import-export. Papà di un bambino australiano, conosce il paese come pochi. Si occupa di supportare i viaggiatori nella scelta di pacchetti completi e assistenza personalizzata in loco.',
                 tag: '6+ anni · Brisbane',
               },
@@ -645,7 +645,7 @@ export default function LandingAustralia() {
       <section className="py-20 bg-hero relative overflow-hidden">
         <div
           className="absolute inset-0 opacity-20"
-          style={{ backgroundImage: 'url(/images/hero-whitehaven.jpg)', backgroundSize: 'cover', backgroundPosition: 'center' }}
+          style={{ backgroundImage: 'url(/images/hero-whitehaven.webp)', backgroundSize: 'cover', backgroundPosition: 'center' }}
         />
         <div className="absolute inset-0 bg-hero/70" />
         <div className="relative z-10 max-w-3xl mx-auto px-6 text-center">
