@@ -79,9 +79,10 @@
       }
     },
     "itineraries": {
-      "label": "Featured Itineraries",
+      "label": "Our Proposals",
       "title": "Curated Journeys",
-      "subtitle": "Handpicked itineraries for the discerning traveller",
+      "subtitle": "These itineraries are our travel proposals: starting points that we build and adapt to your needs, travel style and available time. No fixed packages — every journey is designed around you.",
+      "note": "We also organise fully private tours, tailored to you — no group departures.",
       "cta": "Discover"
     }
   },

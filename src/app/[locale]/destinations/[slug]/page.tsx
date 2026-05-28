@@ -310,15 +310,15 @@ export default async function DestinationDetailPage({ params }: Props) {
         <section className="py-16 bg-white border-t border-stone-100 overflow-hidden">
           <div className="text-center px-6 mb-10">
             <span className="text-xs font-sans font-bold uppercase tracking-[0.3em] text-gold mb-3 block">
-              {isIT ? 'Idee di Viaggio' : 'Travel Ideas'}
+              {isIT ? 'Le nostre proposte' : 'Our Proposals'}
             </span>
             <h2 className="font-serif text-3xl md:text-4xl font-bold text-hero leading-snug mb-4">
-              {isIT ? `Dove andare in ${dest.name[locale]}` : `Where to go in ${dest.name[locale]}`}
+              {isIT ? `Le nostre proposte per ${dest.name[locale]}` : `Our proposals for ${dest.name[locale]}`}
             </h2>
             <p className="text-hero/55 text-base font-sans leading-relaxed max-w-xl mx-auto mb-2">
               {isIT
-                ? `Questi itinerari sono idee di viaggio: spunti di partenza che adattiamo alle tue esigenze, al tuo stile di viaggio e ai giorni a disposizione. Nessun pacchetto fisso — ogni proposta viene costruita attorno a te.`
-                : `These itineraries are travel ideas: starting points that we adapt to your needs, travel style and available time. No fixed packages — every proposal is built around you.`}
+                ? `Questi itinerari sono le nostre proposte di viaggio: punti di partenza che costruiamo e adattiamo alle tue esigenze, al tuo stile e ai giorni disponibili. Nessun pacchetto fisso — ogni viaggio viene disegnato attorno a te.`
+                : `These itineraries are our travel proposals: starting points that we build and adapt to your needs, travel style and available time. No fixed packages — every journey is designed around you.`}
             </p>
             <p className="text-hero/40 text-sm font-sans leading-relaxed italic">
               {isIT

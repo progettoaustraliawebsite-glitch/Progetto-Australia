@@ -33,6 +33,9 @@ export default function FeaturedItineraries({ itineraries }: Props) {
         <div className="flex items-end justify-between mb-12">
           <div className="flex-1">
             <SectionHeader label={t('label')} title={t('title')} subtitle={t('subtitle')} light />
+            <p className="text-white/30 text-xs font-sans leading-relaxed italic mt-3">
+              &ldquo;{t('note')}&rdquo;
+            </p>
           </div>
           {/* Arrow Controls */}
           <div className="flex gap-2 mb-2 shrink-0 ml-6">

@@ -79,9 +79,10 @@
       }
     },
     "itineraries": {
-      "label": "Itinerari in Evidenza",
+      "label": "Le nostre proposte",
       "title": "Viaggi Selezionati",
-      "subtitle": "Itinerari curati per un'esperienza indimenticabile",
+      "subtitle": "Questi itinerari sono le nostre proposte di viaggio: punti di partenza che costruiamo e adattiamo alle tue esigenze, al tuo stile e ai giorni disponibili. Nessun pacchetto fisso — ogni viaggio viene disegnato attorno a te.",
+      "note": "Organizziamo anche tour privati completamente su misura, senza partenze di gruppo.",
       "cta": "Scopri"
     }
   },
