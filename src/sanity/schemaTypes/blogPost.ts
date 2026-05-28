@@ -106,9 +106,10 @@ export const blogPost = defineType({
     }),
     defineField({
       name: 'body',
-      title: 'Contenuto (Portable Text — avanzato)',
-      description: 'Alternativa alle sezioni: contenuto libero con testo ricco. Usare solo se non si usano le Sezioni.',
+      title: 'Contenuto (Portable Text — legacy)',
+      description: 'Campo legacy, non usare. Usare le Sezioni.',
       type: 'object',
+      hidden: true,
       fields: [
         { name: 'it', title: 'Italiano', type: 'array', of: [{ type: 'block' }] },
         { name: 'en', title: 'English', type: 'array', of: [{ type: 'block' }] },

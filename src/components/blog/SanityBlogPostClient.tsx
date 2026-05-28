@@ -37,6 +37,7 @@ function getIcon(id: string) {
 
 export default function SanityBlogPostClient({ post, locale, backLabel, quoteLabel, tocLabel, contactPrompt, relatedPosts = [] }: Props) {
   const imageUrl = post.heroImage ? urlFor(post.heroImage).width(1920).height(800).url() : '';
+  const excerpt = post.excerpt?.[locale] ?? '';
   const intro = post.intro?.[locale] ?? '';
   const sections = post.sections ?? [];
   const body = post.body?.[locale] ?? [];
@@ -75,6 +76,13 @@ export default function SanityBlogPostClient({ post, locale, backLabel, quoteLab
 
           {/* Content */}
           <div className="lg:col-span-8 space-y-16">
+
+            {/* Estratto */}
+            {excerpt && (
+              <p className="text-xl md:text-2xl font-serif italic text-hero/60 leading-relaxed border-l-4 border-gold pl-8 py-2">
+                {excerpt}
+              </p>
+            )}
 
             {/* Intro */}
             {intro && (
