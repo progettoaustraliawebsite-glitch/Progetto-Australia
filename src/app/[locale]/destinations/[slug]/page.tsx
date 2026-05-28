@@ -187,6 +187,16 @@ export default async function DestinationDetailPage({ params }: Props) {
                 {isIT ? 'Inizia a progettare il tuo viaggio' : 'Start planning your trip'}
               </OpenModalButton>
             </div>
+
+            {/* Scroll indicator — mobile only */}
+            <div className="md:hidden mt-10 flex flex-col items-center gap-2 animate-bounce">
+              <span className="text-white/50 text-[10px] font-sans uppercase tracking-[0.3em]">
+                {isIT ? 'Scopri di più' : 'Discover more'}
+              </span>
+              <svg width="20" height="20" viewBox="0 0 20 20" fill="none" className="text-gold">
+                <path d="M10 4v12M10 16l-4-4M10 16l4-4" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round"/>
+              </svg>
+            </div>
           </div>
         </div>
       </section>
