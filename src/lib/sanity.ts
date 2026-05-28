@@ -325,7 +325,7 @@ export async function getDestinationBySlug(slug: string): Promise<SanityDestinat
 
 export async function getAllBlogPosts(): Promise<SanityBlogPost[]> {
   return sanityClient.fetch(
-    `*[_type == "blogPost"] | order(publishedAt desc) {
+    `*[_type == "blogPost" && !(_id in path("drafts.**"))] | order(publishedAt desc) {
       _id, title, slug, publishedAt, author, category, excerpt, heroImage
     }`
   );
