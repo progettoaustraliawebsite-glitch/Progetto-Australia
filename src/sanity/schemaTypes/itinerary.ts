@@ -56,6 +56,37 @@ export const itinerary = defineType({
       },
     }),
     defineField({
+      name: 'type',
+      title: 'Tipo',
+      type: 'string',
+      options: {
+        list: [
+          { title: 'Lusso', value: 'luxury' },
+          { title: 'Avventura', value: 'adventure' },
+          { title: 'Combinazione', value: 'combination' },
+          { title: 'Famiglia', value: 'family' },
+          { title: 'Nozze', value: 'honeymoon' },
+          { title: 'Zaino in spalla', value: 'backpacking' },
+        ],
+      },
+    }),
+    defineField({
+      name: 'priceEn',
+      title: 'Prezzo (USD)',
+      type: 'object',
+      fields: [
+        { name: 'amount', title: 'Importo', type: 'number' },
+        { name: 'currency', title: 'Valuta', type: 'string', initialValue: 'USD' },
+      ],
+    }),
+    defineField({
+      name: 'gradient',
+      title: 'Gradiente Card (CSS)',
+      type: 'string',
+      description: 'Es. "from-teal-700 to-blue-900" — usato come sfondo della card quando non c\'è immagine.',
+      hidden: true,
+    }),
+    defineField({
       name: 'description',
       title: 'Descrizione',
       type: 'object',
