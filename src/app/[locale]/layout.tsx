@@ -49,7 +49,7 @@ export async function generateMetadata({ params }: { params: Promise<{ locale: s
       type: 'website',
       images: [
         {
-          url: '/og-image.png',
+          url: 'https://www.progettoaustralia.com/og-image.png',
           width: 1200,
           height: 630,
           alt: 'Progetto Australia – Viaggi in Australia e Oceania',

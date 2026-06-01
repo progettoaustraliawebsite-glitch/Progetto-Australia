@@ -21,7 +21,8 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
   if (!post) return {};
   const title = post.title[locale];
   const description = post.excerpt[locale];
-  const image = post.image ? [{ url: post.image, width: 1200, height: 630, alt: title }] : undefined;
+  const imageUrl = post.image?.startsWith('http') ? post.image : `https://www.progettoaustralia.com${post.image ?? ''}`;
+  const image = post.image ? [{ url: imageUrl, width: 1200, height: 630, alt: title }] : undefined;
   return {
     title,
     description,
@@ -34,7 +35,7 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
       },
     },
     openGraph: { title, description, type: 'article', images: image, url: `/${locale}/blog/${slug}` },
-    twitter: { title, description, ...(image ? { images: [post.image] } : {}) },
+    twitter: { title, description, ...(image ? { images: [imageUrl] } : {}) },
   };
 }
 
@@ -85,32 +86,55 @@ export default async function BlogPostPage({ params }: Props) {
   // Fallback to static data
   const staticPost = blogPosts.find((p) => p.slug === slug);
   if (staticPost) {
+    const postUrl = `https://www.progettoaustralia.com/${locale}/blog/${slug}`;
+    const postImage = staticPost.image?.startsWith('http')
+      ? staticPost.image
+      : `https://www.progettoaustralia.com${staticPost.image ?? ''}`;
+
     const blogSchema = {
       '@context': 'https://schema.org',
       '@type': 'BlogPosting',
       headline: staticPost.title[locale],
       description: staticPost.excerpt[locale],
-      image: staticPost.image ? `https://www.progettoaustralia.it${staticPost.image}` : undefined,
-      url: `https://www.progettoaustralia.it/${locale}/blog/${slug}`,
+      image: staticPost.image ? postImage : undefined,
+      url: postUrl,
+      datePublished: staticPost.date ?? new Date().toISOString(),
+      dateModified: staticPost.date ?? new Date().toISOString(),
       inLanguage: locale,
       author: {
-        '@type': 'Organization',
-        name: 'Progetto Australia',
-        url: 'https://www.progettoaustralia.it',
+        '@type': 'Person',
+        name: 'Paola Messina',
+        jobTitle: locale === 'it' ? 'Esperta di viaggi in Australia e Oceania' : 'Australia & Oceania Travel Expert',
+        worksFor: { '@type': 'Organization', name: 'Progetto Australia' },
+        knowsAbout: ['Australia', 'New Zealand', 'Fiji', 'Pacific Islands travel', 'Oceania'],
       },
       publisher: {
         '@type': 'Organization',
         name: 'Progetto Australia',
-        logo: { '@type': 'ImageObject', url: 'https://www.progettoaustralia.it/logo.png' },
+        url: 'https://www.progettoaustralia.com',
+        logo: { '@type': 'ImageObject', url: 'https://www.progettoaustralia.com/logo.png' },
       },
+      mainEntityOfPage: { '@type': 'WebPage', '@id': postUrl },
       about: [
         { '@type': 'Place', name: 'Australia' },
         { '@type': 'Place', name: 'Oceania' },
       ],
     };
+
+    const breadcrumbSchema = {
+      '@context': 'https://schema.org',
+      '@type': 'BreadcrumbList',
+      itemListElement: [
+        { '@type': 'ListItem', position: 1, name: 'Home', item: `https://www.progettoaustralia.com/${locale}` },
+        { '@type': 'ListItem', position: 2, name: locale === 'it' ? 'Blog' : 'Blog', item: `https://www.progettoaustralia.com/${locale}/blog` },
+        { '@type': 'ListItem', position: 3, name: staticPost.title[locale], item: postUrl },
+      ],
+    };
+
     return (
       <>
         <JsonLd data={blogSchema} />
+        <JsonLd data={breadcrumbSchema} />
         <BlogPostClient post={staticPost} locale={locale} relatedPosts={relatedPosts} {...labels} />
       </>
     );

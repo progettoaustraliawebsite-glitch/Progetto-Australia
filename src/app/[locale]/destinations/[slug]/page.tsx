@@ -11,6 +11,7 @@ import { blogPosts as staticBlogPosts } from '@/data/blog';
 import { destinationContent } from '@/data/destination-content';
 import { USE_SANITY, getAllDestinations, getAllItineraries, normalizeSanityDestination, normalizeSanityItinerary, getAllBlogPosts, normalizeSanityBlogPostForList, getDestinationBySlug, normalizeSanityDestinationContent } from '@/lib/sanity';
 import OpenModalButton from '@/components/ui/OpenModalButton';
+import JsonLd from '@/components/seo/JsonLd';
 import DestinationsGrid from '@/components/home/DestinationsGrid';
 import { formatPrice, renderTitle } from '@/lib/utils';
 import type { Metadata } from 'next';
@@ -29,7 +30,7 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
   const dest = staticDestinations.find((d) => d.slug === slug);
   if (!dest) return {};
   const title = dest.name[locale];
-  const description = dest.description[locale];
+  const description = dest.description[locale].slice(0, 155);
   const image = dest.heroPhoto ?? dest.photo;
   return {
     title,
@@ -42,7 +43,7 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
         'x-default': `/it/destinations/${slug}`,
       },
     },
-    openGraph: { title, description, images: image ? [{ url: image, width: 1200, height: 630, alt: title }] : undefined, url: `/${locale}/destinations/${slug}` },
+    openGraph: { title, description, images: image ? [{ url: image.startsWith('http') ? image : `https://www.progettoaustralia.com${image}`, width: 1200, height: 630, alt: title }] : undefined, url: `/${locale}/destinations/${slug}` },
     twitter: { title, description },
   };
 }
@@ -140,8 +141,54 @@ export default async function DestinationDetailPage({ params }: Props) {
 
   const isIT = locale === 'it';
 
+
+  // ── SEO schemas ──────────────────────────────────────────────────────────
+  const breadcrumbSchema = {
+    '@context': 'https://schema.org',
+    '@type': 'BreadcrumbList',
+    itemListElement: [
+      { '@type': 'ListItem', position: 1, name: 'Home', item: `https://www.progettoaustralia.com/${locale}` },
+      { '@type': 'ListItem', position: 2, name: isIT ? 'Destinazioni' : 'Destinations', item: `https://www.progettoaustralia.com/${locale}/destinations` },
+      { '@type': 'ListItem', position: 3, name: dest.name[locale], item: `https://www.progettoaustralia.com/${locale}/destinations/${slug}` },
+    ],
+  };
+
+  const faqSchema = content?.practical ? {
+    '@context': 'https://schema.org',
+    '@type': 'FAQPage',
+    mainEntity: [
+      {
+        '@type': 'Question',
+        name: isIT ? `Serve il visto per andare in ${dest.name.it}?` : `Do I need a visa for ${dest.name.en}?`,
+        acceptedAnswer: { '@type': 'Answer', text: content.practical.visa[locale] },
+      },
+      {
+        '@type': 'Question',
+        name: isIT ? `Quali voli ci sono per ${dest.name.it}?` : `What flights are available to ${dest.name.en}?`,
+        acceptedAnswer: { '@type': 'Answer', text: content.practical.flights[locale] },
+      },
+      {
+        '@type': 'Question',
+        name: isIT ? `Qual è la valuta in ${dest.name.it}?` : `What currency is used in ${dest.name.en}?`,
+        acceptedAnswer: { '@type': 'Answer', text: content.practical.currency[locale] },
+      },
+      {
+        '@type': 'Question',
+        name: isIT ? `Che lingua si parla in ${dest.name.it}?` : `What language is spoken in ${dest.name.en}?`,
+        acceptedAnswer: { '@type': 'Answer', text: content.practical.language[locale] },
+      },
+      {
+        '@type': 'Question',
+        name: isIT ? `Qual è il fuso orario di ${dest.name.it}?` : `What is the time zone in ${dest.name.en}?`,
+        acceptedAnswer: { '@type': 'Answer', text: content.practical.timezone[locale] },
+      },
+    ],
+  } : null;
+
   return (
     <div className="bg-white min-h-screen">
+      <JsonLd data={breadcrumbSchema} />
+      {faqSchema && <JsonLd data={faqSchema} />}
 
       {/* ── HERO ────────────────────────────────────────────────────────────── */}
       <section className="relative h-screen h-[100dvh] w-full overflow-hidden">

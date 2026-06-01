@@ -73,6 +73,16 @@ export default async function HowItWorksPage() {
     a: t(`faq.${i}.a`),
   }));
 
+  const faqSchema = {
+    '@context': 'https://schema.org',
+    '@type': 'FAQPage',
+    mainEntity: faqItems.map(({ q, a }) => ({
+      '@type': 'Question',
+      name: q,
+      acceptedAnswer: { '@type': 'Answer', text: a },
+    })),
+  };
+
   const howToSchema = {
     '@context': 'https://schema.org',
     '@type': 'HowTo',
@@ -89,6 +99,7 @@ export default async function HowItWorksPage() {
   return (
     <>
       <JsonLd data={howToSchema} />
+      <JsonLd data={faqSchema} />
 
       {/* ── HERO ── */}
       <section className="relative pt-28 pb-16 md:pt-40 md:pb-24 bg-hero overflow-hidden">

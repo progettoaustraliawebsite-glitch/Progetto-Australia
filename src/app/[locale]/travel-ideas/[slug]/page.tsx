@@ -39,7 +39,7 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
     if (!it) return {};
   }
   const title = it.title[locale];
-  const description = it.description[locale];
+  const description = it.description[locale].slice(0, 155);
   const image = it.image ? [{ url: it.image, width: 1200, height: 630, alt: title }] : undefined;
   return {
     title,
@@ -52,7 +52,7 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
         'x-default': `/it/travel-ideas/${slug}`,
       },
     },
-    openGraph: { title, description, type: 'article', images: image, url: `/${locale}/travel-ideas/${slug}` },
+    openGraph: { title, description, type: 'website', images: image, url: `/${locale}/travel-ideas/${slug}` },
     twitter: { title, description, ...(image ? { images: [it.image] } : {}) },
   };
 }
@@ -77,8 +77,8 @@ export default async function ItineraryDetailPage({ params }: Props) {
     '@type': 'TouristTrip',
     name: itinerary.title[locale],
     description: itinerary.description[locale],
-    image: itinerary.image ? `https://www.progettoaustralia.it${itinerary.image}` : undefined,
-    url: `https://www.progettoaustralia.it/${locale}/travel-ideas/${slug}`,
+    image: itinerary.image ? `https://www.progettoaustralia.com${itinerary.image.startsWith('http') ? '' : ''}${itinerary.image}` : undefined,
+    url: `https://www.progettoaustralia.com/${locale}/travel-ideas/${slug}`,
     inLanguage: locale,
     touristType: itinerary.type,
     itinerary: {
@@ -98,14 +98,25 @@ export default async function ItineraryDetailPage({ params }: Props) {
       seller: {
         '@type': 'TravelAgency',
         name: 'Progetto Australia',
-        url: 'https://www.progettoaustralia.it',
+        url: 'https://www.progettoaustralia.com',
       },
     },
     provider: {
       '@type': 'TravelAgency',
       name: 'Progetto Australia',
-      url: 'https://www.progettoaustralia.it',
+      url: 'https://www.progettoaustralia.com',
     },
+  };
+
+
+  const breadcrumbSchema = {
+    '@context': 'https://schema.org',
+    '@type': 'BreadcrumbList',
+    itemListElement: [
+      { '@type': 'ListItem', position: 1, name: locale === 'it' ? 'Home' : 'Home', item: `https://www.progettoaustralia.com/${locale}` },
+      { '@type': 'ListItem', position: 2, name: locale === 'it' ? 'Idee di Viaggio' : 'Travel Ideas', item: `https://www.progettoaustralia.com/${locale}/travel-ideas` },
+      { '@type': 'ListItem', position: 3, name: itinerary.title[locale], item: `https://www.progettoaustralia.com/${locale}/travel-ideas/${slug}` },
+    ],
   };
 
   const typeLabels: Record<string, { it: string; en: string }> = {
@@ -133,6 +144,7 @@ export default async function ItineraryDetailPage({ params }: Props) {
   return (
     <>
     <JsonLd data={tripSchema} />
+    <JsonLd data={breadcrumbSchema} />
     <div className="bg-white min-h-screen">
       {/* Hero */}
       <section className="relative h-[65vh] flex items-end">

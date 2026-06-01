@@ -3,7 +3,7 @@ import { blogPosts } from '@/data/blog';
 import { itineraries } from '@/data/itineraries';
 import { destinations } from '@/data/destinations';
 
-const BASE_URL = 'https://www.progettoaustralia.it';
+const BASE_URL = 'https://www.progettoaustralia.com';
 const LOCALES = ['it', 'en'] as const;
 
 function urls(path: string, priority: number, changeFrequency: MetadataRoute.Sitemap[number]['changeFrequency'] = 'monthly') {

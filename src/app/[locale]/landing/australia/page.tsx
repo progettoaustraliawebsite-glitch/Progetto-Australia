@@ -5,6 +5,7 @@ import Image from 'next/image';
 import Link from 'next/link';
 import { useRouter } from '@/i18n/navigation';
 import { Check, Star, ArrowRight, Clock, Users, HeadphonesIcon, ChevronDown } from 'lucide-react';
+import JsonLd from '@/components/seo/JsonLd';
 import { itineraries } from '@/data/itineraries';
 
 // ─── Data ─────────────────────────────────────────────────────────────────────
@@ -155,8 +156,19 @@ export default function LandingAustralia() {
   const [expandedSlug, setExpandedSlug] = useState<string | null>(null);
   const [openFaq, setOpenFaq] = useState<number | null>(null);
 
+  const faqSchema = {
+    '@context': 'https://schema.org',
+    '@type': 'FAQPage',
+    mainEntity: FAQS.map(({ q, a }) => ({
+      '@type': 'Question',
+      name: q,
+      acceptedAnswer: { '@type': 'Answer', text: a },
+    })),
+  };
+
   return (
     <div className="bg-white font-sans pb-24 lg:pb-0">
+      <JsonLd data={faqSchema} />
 
       {/* ── TOPBAR ── */}
       <header className="sticky top-0 z-50 bg-white shadow-sm h-16 flex items-center px-6">

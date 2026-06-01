@@ -111,7 +111,7 @@ export default function Footer({ locale }: { locale: 'it' | 'en' }) {
             </li>
             <li>
               <a
-                href="https://www.progettoaustralia.it/wp-content/uploads/2024/11/SUSTAINABILITY-POLICY-PROGETTO-AUSTRALIA-IT.pdf"
+                href="/SUSTAINABILITY-POLICY-PROGETTO-AUSTRALIA-ITA.pdf"
                 target="_blank"
                 rel="noopener noreferrer"
                 className="text-sm text-white/55 hover:text-gold transition-colors duration-300"

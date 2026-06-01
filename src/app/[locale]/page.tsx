@@ -10,7 +10,7 @@ export async function generateMetadata(): Promise<Metadata> {
     ? 'Progetto Australia – Viaggi su misura in Australia e Oceania'
     : 'Progetto Australia – Tailor-Made Travel to Australia & Oceania';
   const description = isIT
-    ? 'Pianifica il tuo viaggio in Australia, Nuova Zelanda, Fiji e Isole del Pacifico con esperti italiani in loco. Itinerari personalizzati, luna di miele, viaggi di lusso.'
+    ? 'Viaggi su misura in Australia, Nuova Zelanda, Fiji e Pacifico con esperti italiani in loco. Itinerari personalizzati, luna di miele, lusso.'
     : 'Plan your trip to Australia, New Zealand, Fiji and the Pacific Islands with Italian experts on the ground. Bespoke itineraries, honeymoons, luxury travel.';
   return {
     title,
@@ -24,6 +24,7 @@ export async function generateMetadata(): Promise<Metadata> {
   };
 }
 
+import JsonLd from '@/components/seo/JsonLd';
 import HeroSlider from '@/components/home/HeroSlider';
 import { DarkHeroNavbar } from '@/context/NavbarContext';
 import AboutStrip from '@/components/home/AboutStrip';
@@ -56,8 +57,32 @@ export default async function HomePage() {
     }
   }
 
+  const aggregateRatingSchema = {
+    '@context': 'https://schema.org',
+    '@type': 'TravelAgency',
+    name: 'Progetto Australia',
+    url: 'https://www.progettoaustralia.com',
+    aggregateRating: {
+      '@type': 'AggregateRating',
+      ratingValue: '5',
+      bestRating: '5',
+      worstRating: '1',
+      ratingCount: '6',
+      reviewCount: '6',
+    },
+    review: [
+      { '@type': 'Review', author: { '@type': 'Person', name: 'Chiara e Giuseppe' }, reviewRating: { '@type': 'Rating', ratingValue: '5' }, reviewBody: 'È stato il viaggio più bello della nostra vita tra paesaggi mozzafiato, animaletti simpatici e mare cristallino!' },
+      { '@type': 'Review', author: { '@type': 'Person', name: 'Claudia e Alberto' }, reviewRating: { '@type': 'Rating', ratingValue: '5' }, reviewBody: 'Professionisti che conoscono perfettamente il territorio e riescono in poco tempo a cucirti un itinerario perfetto per le tue esigenze.' },
+      { '@type': 'Review', author: { '@type': 'Person', name: 'Francesca e Emanuele' }, reviewRating: { '@type': 'Rating', ratingValue: '5' }, reviewBody: 'È stato tutto perfetto! Un viaggio davvero indimenticabile, grazie per la vostra professionalità!' },
+      { '@type': 'Review', author: { '@type': 'Person', name: 'Gianluca ed Alessia' }, reviewRating: { '@type': 'Rating', ratingValue: '5' }, reviewBody: 'Abbiamo fatto un viaggio straordinario. Sei stata gentilissima, disponibilissima.' },
+      { '@type': 'Review', author: { '@type': 'Person', name: 'Alessio, Lara e Mirco' }, reviewRating: { '@type': 'Rating', ratingValue: '5' }, reviewBody: 'Organizzato davvero bene sia come tempistiche, spostamenti, location e veicoli.' },
+      { '@type': 'Review', author: { '@type': 'Person', name: 'Raffaella e Francesco' }, reviewRating: { '@type': 'Rating', ratingValue: '5' }, reviewBody: 'Il nostro viaggio ha soddisfatto pienamente le nostre aspettative. Tutto ha funzionato perfettamente.' },
+    ],
+  };
+
   return (
     <>
+      <JsonLd data={aggregateRatingSchema} />
       <DarkHeroNavbar />
       <HeroSlider />
       <AboutStrip />

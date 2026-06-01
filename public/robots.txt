@@ -36,4 +36,4 @@ Allow: /
 User-agent: cohere-ai
 Allow: /
 
-Sitemap: https://www.progettoaustralia.it/sitemap.xml
+Sitemap: https://www.progettoaustralia.com/sitemap.xml
