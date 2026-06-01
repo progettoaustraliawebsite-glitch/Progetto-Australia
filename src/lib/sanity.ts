@@ -47,6 +47,7 @@ export interface SanityItinerary {
   destination?: Array<{ _id: string; title: LocaleString }>;
   duration: number;
   price: { amount: number; currency: string };
+  priceEn?: { amount: number; currency: string };
   category: string;
   description: LocaleString;
   highlights: { it: string[]; en: string[] };
