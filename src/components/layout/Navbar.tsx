@@ -70,7 +70,7 @@ export default function Navbar() {
             alt="Progetto Australia"
             width={140}
             height={28}
-            className={`h-7 w-auto object-contain transition-all duration-500 ${transparent ? 'brightness-0 invert' : ''}`}
+            className="h-7 w-auto object-contain transition-all duration-500"
           />
         </Link>
 
