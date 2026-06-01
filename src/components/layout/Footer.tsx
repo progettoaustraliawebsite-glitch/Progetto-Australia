@@ -1,13 +1,14 @@
-import { useTranslations, useLocale } from 'next-intl';
+import { useTranslations } from 'next-intl';
+import { getLocale } from 'next-intl/server';
 import { Link } from '@/i18n/navigation';
 import { Mail, Phone, MapPin, Instagram, Facebook } from 'lucide-react';
 import Image from 'next/image';
 import { destinations } from '@/data/destinations';
 import { team } from '@/data/team';
 
-export default function Footer() {
+export default async function Footer() {
   const t = useTranslations();
-  const locale = useLocale() as 'it' | 'en';
+  const locale = (await getLocale()) as 'it' | 'en';
 
   return (
     <footer className="bg-hero text-white">
