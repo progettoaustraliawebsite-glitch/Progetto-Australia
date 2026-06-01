@@ -115,7 +115,7 @@ export default async function LocaleLayout({ children, params }: Props) {
       <JsonLd data={travelAgencySchema} />
       <NavbarProvider>
         <QuoteModalProvider>
-          <ConditionalShell>{children}</ConditionalShell>
+          <ConditionalShell locale={locale as 'it' | 'en'}>{children}</ConditionalShell>
           <WeddingQuoteModal />
           {/* <NewsletterPopup /> */}
         </QuoteModalProvider>
