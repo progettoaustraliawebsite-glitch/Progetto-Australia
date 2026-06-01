@@ -122,7 +122,7 @@ export default function Footer() {
             </li>
             <li>
               <a
-                href="https://www.progettoaustralia.it/wp-content/uploads/2024/11/PRIVACY-POLICY-of-PROGETTO-AUSTRALIA.pdf"
+                href={locale === 'en' ? '/PRIVACY-POLICY-of-PROGETTO-AUSTRALIA-EN.pdf' : 'https://www.progettoaustralia.it/wp-content/uploads/2024/11/PRIVACY-POLICY-of-PROGETTO-AUSTRALIA.pdf'}
                 target="_blank"
                 rel="noopener noreferrer"
                 className="text-sm text-white/55 hover:text-gold transition-colors duration-300"
