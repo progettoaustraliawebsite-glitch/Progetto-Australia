@@ -183,7 +183,7 @@ export function normalizeSanityItinerary(s: SanityItinerary, idx = 0): Itinerary
     image: s.heroImage ? urlFor(s.heroImage).width(800).height(520).url() : (ITIN_HERO_FILES[slug] ?? ''),
     mapImage: s.mapImage ? urlFor(s.mapImage).width(1200).url() : undefined,
     price: s.price ?? { amount: 0, currency: 'EUR' },
-    priceEn: s.price ? { currency: 'USD', amount: Math.round(s.price.amount * 1.09) } : { amount: 0, currency: 'USD' },
+    priceEn: s.price ?? { amount: 0, currency: 'EUR' },
     highlights: s.highlights ?? { it: [], en: [] },
     program: (s.program ?? []).map((d) => ({
       day: d.day,
