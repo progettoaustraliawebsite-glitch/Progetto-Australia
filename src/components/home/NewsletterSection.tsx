@@ -33,15 +33,23 @@ export default function NewsletterSection() {
   const [email, setEmail] = useState('');
   const [status, setStatus] = useState<'idle' | 'success' | 'error'>('idle');
 
-  const handleSubmit = (e: React.FormEvent) => {
+  const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
     if (!email || !/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email)) {
       setStatus('error');
       return;
     }
-    // TODO: integrate with email service (Mailchimp, ConvertKit, etc.)
-    setStatus('success');
-    setEmail('');
+    const res = await fetch('/api/newsletter', {
+      method: 'POST',
+      headers: { 'Content-Type': 'application/json' },
+      body: JSON.stringify({ email }),
+    });
+    if (res.ok) {
+      setStatus('success');
+      setEmail('');
+    } else {
+      setStatus('error');
+    }
   };
 
   return (
