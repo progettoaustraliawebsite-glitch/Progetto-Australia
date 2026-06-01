@@ -22,6 +22,8 @@ export interface Itinerary {
   program: ItineraryDay[];
   included: { it: string[]; en: string[] };
   notIncluded: { it: string[]; en: string[] };
+  hideInEN?: boolean;
+  sortOrder?: number;
 }
 
 const standardNotIncluded = {

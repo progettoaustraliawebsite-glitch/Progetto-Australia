@@ -64,6 +64,7 @@ export default function TravelIdeasClient({ itineraries, locale, heroLabel, hero
 
   const filtered = useMemo(() => {
     return itineraries.filter((it) => {
+      if (locale === 'en' && it.hideInEN) return false;
       if (activeType && it.type !== activeType) return false;
       if (activeDest && !it.destination.split(' & ').includes(activeDest)) return false;
       if (activePrice) {
@@ -72,7 +73,7 @@ export default function TravelIdeasClient({ itineraries, locale, heroLabel, hero
       }
       return true;
     });
-  }, [itineraries, activeType, activeDest, activePrice]);
+  }, [itineraries, locale, activeType, activeDest, activePrice]);
 
   const hasFilters = activeType || activeDest || activePrice;
 

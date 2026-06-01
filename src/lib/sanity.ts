@@ -48,6 +48,8 @@ export interface SanityItinerary {
   duration: number;
   price: { amount: number; currency: string };
   priceEn?: { amount: number; currency: string };
+  hideInEN?: boolean;
+  sortOrder?: number;
   category: string;
   description: LocaleString;
   highlights: { it: string[]; en: string[] };
@@ -194,6 +196,8 @@ export function normalizeSanityItinerary(s: SanityItinerary, idx = 0): Itinerary
     })),
     included: s.included ?? { it: [], en: [] },
     notIncluded: s.notIncluded ?? { it: [], en: [] },
+    hideInEN: s.hideInEN ?? false,
+    sortOrder: s.sortOrder,
   };
 }
 
@@ -274,10 +278,10 @@ export function normalizeSanityBlogPostForList(s: SanityBlogPost): BlogPost {
 
 export async function getAllItineraries(): Promise<SanityItinerary[]> {
   return sanityClient.fetch(
-    `*[_type == "itinerary"] | order(_createdAt asc) {
+    `*[_type == "itinerary"] | order(sortOrder asc, _createdAt asc) {
       _id, title, slug, duration, price, priceEn, category, description, highlights,
       "program": program[]{ day, title, description, images },
-      included, notIncluded, heroImage, mapImage, featured,
+      included, notIncluded, heroImage, mapImage, featured, hideInEN, sortOrder,
       "destination": destination[]->{ _id, title }
     }`
   );
@@ -288,7 +292,7 @@ export async function getItineraryBySlug(slug: string): Promise<SanityItinerary 
     `*[_type == "itinerary" && slug.current == $slug][0] {
       _id, title, slug, duration, price, priceEn, category, description, highlights,
       "program": program[]{ day, title, description, images },
-      included, notIncluded, heroImage, mapImage, featured,
+      included, notIncluded, heroImage, mapImage, featured, hideInEN, sortOrder,
       "destination": destination[]->{ _id, title }
     }`,
     { slug }
@@ -297,10 +301,10 @@ export async function getItineraryBySlug(slug: string): Promise<SanityItinerary 
 
 export async function getFeaturedItineraries(): Promise<SanityItinerary[]> {
   return sanityClient.fetch(
-    `*[_type == "itinerary" && featured == true] | order(_createdAt asc) [0...6] {
+    `*[_type == "itinerary" && featured == true] | order(sortOrder asc, _createdAt asc) [0...6] {
       _id, title, slug, duration, price, priceEn, category, description, highlights,
       "program": program[]{ day, title, description, images },
-      included, notIncluded, heroImage, mapImage,
+      included, notIncluded, heroImage, mapImage, hideInEN, sortOrder,
       "destination": destination[]->{ _id, title }
     }`
   );

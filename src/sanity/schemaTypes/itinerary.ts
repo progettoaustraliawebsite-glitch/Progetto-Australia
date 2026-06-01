@@ -187,6 +187,18 @@ export const itinerary = defineType({
       initialValue: false,
     }),
     defineField({
+      name: 'hideInEN',
+      title: 'Nascondi nella versione inglese',
+      type: 'boolean',
+      initialValue: false,
+    }),
+    defineField({
+      name: 'sortOrder',
+      title: 'Ordine di visualizzazione',
+      description: 'Numero più basso = appare prima. Lascia vuoto per ordine automatico.',
+      type: 'number',
+    }),
+    defineField({
       name: 'seo',
       title: 'SEO',
       type: 'object',
