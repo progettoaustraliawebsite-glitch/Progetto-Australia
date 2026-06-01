@@ -111,7 +111,7 @@ export default function Footer({ locale }: { locale: 'it' | 'en' }) {
             </li>
             <li>
               <a
-                href="/SUSTAINABILITY-POLICY-PROGETTO-AUSTRALIA-ITA.pdf"
+                href={locale === 'en' ? '/SUSTAINABILITY-POLICY-PROGETTO-AUSTRALIA-EN.pdf' : '/SUSTAINABILITY-POLICY-PROGETTO-AUSTRALIA-ITA.pdf'}
                 target="_blank"
                 rel="noopener noreferrer"
                 className="text-sm text-white/55 hover:text-gold transition-colors duration-300"
