@@ -32,6 +32,7 @@ const copy = {
     conductTitle: 'Codice di Condotta Sostenibile',
     conductText: 'La trasparenza è fondamentale per noi. Abbiamo reso pubblico il nostro codice di condotta sulla sostenibilità, che condividiamo con i nostri partner locali e con i nostri clienti per rafforzare gli impegni presi a protezione dell\'ambiente e delle comunità.',
     conductLink: 'Leggi il Code of Conduct',
+    conductUrl: 'https://www.progettoaustralia.it/wp-content/uploads/2024/11/CODE-OF-CONDUCT-of-PROGETTO-AUSTRALIA-IT.pdf',
     carbonTitle: 'Impronta di Carbonio',
     carbonText: 'Viaggia in Australia con coscienza e lascia un segno positivo. Compensando le emissioni del tuo viaggio, potrai goderti la bellezza di questo paese con la consapevolezza di aver contribuito a proteggerlo.',
     carbonLink: 'Scopri come compensare le emissioni',
@@ -61,6 +62,7 @@ const copy = {
     conductTitle: 'Sustainable Code of Conduct',
     conductText: 'Transparency is fundamental to us. We have made our sustainability code of conduct public. In this document, which we share with our local partners and clients, we reinforce the commitments we have made to protect the environment and Australian communities.',
     conductLink: 'Read the Code of Conduct',
+    conductUrl: '/CODE-OF-CONDUCT-PROGETTO-AUSTRALIA-EN.pdf',
     carbonTitle: 'Carbon Footprint',
     carbonText: 'Travel to Australia with a conscience and leave a positive mark. By offsetting the emissions from your trip to Australia, you can enjoy the beauty of this country knowing you have helped protect it.',
     carbonLink: 'Find out how to offset your emissions',
@@ -163,7 +165,7 @@ export default async function SustainabilityPage() {
             <h3 className="font-serif text-xl font-bold text-hero mb-3">{c.conductTitle}</h3>
             <p className="text-hero/70 text-sm leading-relaxed font-sans mb-4">{c.conductText}</p>
             <a
-              href="https://www.progettoaustralia.it/wp-content/uploads/2024/11/CODE-OF-CONDUCT-of-PROGETTO-AUSTRALIA-IT.pdf"
+              href={c.conductUrl}
               target="_blank"
               rel="noopener noreferrer"
               className="inline-flex items-center gap-2 text-xs text-gold font-sans uppercase tracking-widest hover:underline"
