@@ -245,35 +245,6 @@ export default function AboutPage() {
         </div>
       </section>
 
-      {/* Value Proposition */}
-      <section className="py-12 bg-sand/40">
-        <div className="container mx-auto px-6 lg:px-12">
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-10">
-            <motion.div {...fadeIn} className="group text-center flex flex-col items-center">
-              <div className="w-14 h-14 rounded-full border border-gold/20 flex items-center justify-center mb-5 group-hover:bg-gold transition-all duration-500">
-                <Globe className="text-gold group-hover:text-hero transition-colors duration-500" size={22} strokeWidth={1} />
-              </div>
-              <h3 className="font-serif text-lg font-bold text-hero mb-3 uppercase tracking-wider">{c.val1Title}</h3>
-              <p className="text-hero/60 leading-relaxed font-sans text-sm">{c.val1Text}</p>
-            </motion.div>
-            <motion.div {...fadeIn} transition={{ ...fadeIn.transition, delay: 0.1 }} className="group text-center flex flex-col items-center">
-              <div className="w-14 h-14 rounded-full border border-gold/20 flex items-center justify-center mb-5 group-hover:bg-gold transition-all duration-500">
-                <ShieldCheck className="text-gold group-hover:text-hero transition-colors duration-500" size={22} strokeWidth={1} />
-              </div>
-              <h3 className="font-serif text-lg font-bold text-hero mb-3 uppercase tracking-wider">{c.val2Title}</h3>
-              <p className="text-hero/60 leading-relaxed font-sans text-sm">{c.val2Text}</p>
-            </motion.div>
-            <motion.div {...fadeIn} transition={{ ...fadeIn.transition, delay: 0.2 }} className="group text-center flex flex-col items-center">
-              <div className="w-14 h-14 rounded-full border border-gold/20 flex items-center justify-center mb-5 group-hover:bg-gold transition-all duration-500">
-                <Clock className="text-gold group-hover:text-hero transition-colors duration-500" size={22} strokeWidth={1} />
-              </div>
-              <h3 className="font-serif text-lg font-bold text-hero mb-3 uppercase tracking-wider">{c.val3Title}</h3>
-              <p className="text-hero/60 leading-relaxed font-sans text-sm">{c.val3Text}</p>
-            </motion.div>
-          </div>
-        </div>
-      </section>
-
       {/* Team Carousel */}
       <section className="py-16 overflow-hidden" style={{ backgroundColor: '#1a1a1a' }}>
         <div className="max-w-7xl mx-auto px-6 lg:px-10">
@@ -342,6 +313,35 @@ export default function AboutPage() {
                 </div>
               </article>
             ))}
+          </div>
+        </div>
+      </section>
+
+      {/* Value Proposition */}
+      <section className="py-12 bg-sand/40">
+        <div className="container mx-auto px-6 lg:px-12">
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-10">
+            <motion.div {...fadeIn} className="group text-center flex flex-col items-center">
+              <div className="w-14 h-14 rounded-full border border-gold/20 flex items-center justify-center mb-5 group-hover:bg-gold transition-all duration-500">
+                <Globe className="text-gold group-hover:text-hero transition-colors duration-500" size={22} strokeWidth={1} />
+              </div>
+              <h3 className="font-serif text-lg font-bold text-hero mb-3 uppercase tracking-wider">{c.val1Title}</h3>
+              <p className="text-hero/60 leading-relaxed font-sans text-sm">{c.val1Text}</p>
+            </motion.div>
+            <motion.div {...fadeIn} transition={{ ...fadeIn.transition, delay: 0.1 }} className="group text-center flex flex-col items-center">
+              <div className="w-14 h-14 rounded-full border border-gold/20 flex items-center justify-center mb-5 group-hover:bg-gold transition-all duration-500">
+                <ShieldCheck className="text-gold group-hover:text-hero transition-colors duration-500" size={22} strokeWidth={1} />
+              </div>
+              <h3 className="font-serif text-lg font-bold text-hero mb-3 uppercase tracking-wider">{c.val2Title}</h3>
+              <p className="text-hero/60 leading-relaxed font-sans text-sm">{c.val2Text}</p>
+            </motion.div>
+            <motion.div {...fadeIn} transition={{ ...fadeIn.transition, delay: 0.2 }} className="group text-center flex flex-col items-center">
+              <div className="w-14 h-14 rounded-full border border-gold/20 flex items-center justify-center mb-5 group-hover:bg-gold transition-all duration-500">
+                <Clock className="text-gold group-hover:text-hero transition-colors duration-500" size={22} strokeWidth={1} />
+              </div>
+              <h3 className="font-serif text-lg font-bold text-hero mb-3 uppercase tracking-wider">{c.val3Title}</h3>
+              <p className="text-hero/60 leading-relaxed font-sans text-sm">{c.val3Text}</p>
+            </motion.div>
           </div>
         </div>
       </section>
