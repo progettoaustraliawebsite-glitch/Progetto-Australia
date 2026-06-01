@@ -183,7 +183,7 @@ export function normalizeSanityItinerary(s: SanityItinerary, idx = 0): Itinerary
     image: s.heroImage ? urlFor(s.heroImage).width(800).height(520).url() : (ITIN_HERO_FILES[slug] ?? ''),
     mapImage: s.mapImage ? urlFor(s.mapImage).width(1200).url() : undefined,
     price: s.price ?? { amount: 0, currency: 'EUR' },
-    priceEn: s.price ?? { amount: 0, currency: 'EUR' },
+    priceEn: s.priceEn ?? s.price ?? { amount: 0, currency: 'EUR' },
     highlights: s.highlights ?? { it: [], en: [] },
     program: (s.program ?? []).map((d) => ({
       day: d.day,
@@ -274,7 +274,7 @@ export function normalizeSanityBlogPostForList(s: SanityBlogPost): BlogPost {
 export async function getAllItineraries(): Promise<SanityItinerary[]> {
   return sanityClient.fetch(
     `*[_type == "itinerary"] | order(_createdAt asc) {
-      _id, title, slug, duration, price, category, description, highlights,
+      _id, title, slug, duration, price, priceEn, category, description, highlights,
       "program": program[]{ day, title, description, images },
       included, notIncluded, heroImage, mapImage, featured,
       "destination": destination[]->{ _id, title }
@@ -285,7 +285,7 @@ export async function getAllItineraries(): Promise<SanityItinerary[]> {
 export async function getItineraryBySlug(slug: string): Promise<SanityItinerary | null> {
   return sanityClient.fetch(
     `*[_type == "itinerary" && slug.current == $slug][0] {
-      _id, title, slug, duration, price, category, description, highlights,
+      _id, title, slug, duration, price, priceEn, category, description, highlights,
       "program": program[]{ day, title, description, images },
       included, notIncluded, heroImage, mapImage, featured,
       "destination": destination[]->{ _id, title }
@@ -297,7 +297,7 @@ export async function getItineraryBySlug(slug: string): Promise<SanityItinerary 
 export async function getFeaturedItineraries(): Promise<SanityItinerary[]> {
   return sanityClient.fetch(
     `*[_type == "itinerary" && featured == true] | order(_createdAt asc) [0...6] {
-      _id, title, slug, duration, price, category, description, highlights,
+      _id, title, slug, duration, price, priceEn, category, description, highlights,
       "program": program[]{ day, title, description, images },
       included, notIncluded, heroImage, mapImage,
       "destination": destination[]->{ _id, title }
