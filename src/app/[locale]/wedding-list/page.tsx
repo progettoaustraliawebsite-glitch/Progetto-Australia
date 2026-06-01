@@ -5,7 +5,18 @@ import type { Metadata } from 'next';
 
 export async function generateMetadata(): Promise<Metadata> {
   const t = await getTranslations('weddingList');
-  return { title: t('title') };
+  const locale = await getLocale();
+  return {
+    title: t('title'),
+    alternates: {
+      canonical: `/${locale}/wedding-list`,
+      languages: {
+        'it': '/it/wedding-list',
+        'en': '/en/wedding-list',
+        'x-default': '/it/wedding-list',
+      },
+    },
+  };
 }
 
 export default async function WeddingListPage() {

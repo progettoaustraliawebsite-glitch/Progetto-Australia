@@ -44,6 +44,14 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
   return {
     title,
     description,
+    alternates: {
+      canonical: `/${locale}/travel-ideas/${slug}`,
+      languages: {
+        'it': `/it/travel-ideas/${slug}`,
+        'en': `/en/travel-ideas/${slug}`,
+        'x-default': `/it/travel-ideas/${slug}`,
+      },
+    },
     openGraph: { title, description, type: 'article', images: image, url: `/${locale}/travel-ideas/${slug}` },
     twitter: { title, description, ...(image ? { images: [it.image] } : {}) },
   };

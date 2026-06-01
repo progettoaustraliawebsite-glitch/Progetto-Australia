@@ -28,6 +28,10 @@ export async function generateMetadata(): Promise<Metadata> {
   return {
     title,
     description,
+    alternates: {
+      canonical: `/${locale}/how-it-works`,
+      languages: { 'it': '/it/how-it-works', 'en': '/en/how-it-works', 'x-default': '/it/how-it-works' },
+    },
     openGraph: { title, description, url: `/${locale}/how-it-works` },
     twitter: { title, description },
   };

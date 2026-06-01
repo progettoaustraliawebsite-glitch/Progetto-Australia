@@ -34,6 +34,14 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
   return {
     title,
     description,
+    alternates: {
+      canonical: `/${locale}/destinations/${slug}`,
+      languages: {
+        'it': `/it/destinations/${slug}`,
+        'en': `/en/destinations/${slug}`,
+        'x-default': `/it/destinations/${slug}`,
+      },
+    },
     openGraph: { title, description, images: image ? [{ url: image, width: 1200, height: 630, alt: title }] : undefined, url: `/${locale}/destinations/${slug}` },
     twitter: { title, description },
   };

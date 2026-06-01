@@ -27,7 +27,7 @@ export async function generateMetadata({ params }: { params: Promise<{ locale: s
     : 'Travel agency specialised in Australia, New Zealand and Pacific Islands. Bespoke itineraries, honeymoons, luxury travel.';
 
   return {
-    metadataBase: new URL('https://www.progettoaustralia.it'),
+    metadataBase: new URL('https://www.progettoaustralia.com'),
     title: {
       template: '%s | Progetto Australia',
       default: isIT
@@ -35,6 +35,14 @@ export async function generateMetadata({ params }: { params: Promise<{ locale: s
         : 'Progetto Australia – Travel to Australia & Oceania',
     },
     description,
+    alternates: {
+      canonical: `/${locale}`,
+      languages: {
+        'it': '/it',
+        'en': '/en',
+        'x-default': '/it',
+      },
+    },
     openGraph: {
       siteName: 'Progetto Australia',
       locale: isIT ? 'it_IT' : 'en_AU',
@@ -59,9 +67,9 @@ const travelAgencySchema = {
   '@context': 'https://schema.org',
   '@type': 'TravelAgency',
   name: 'Progetto Australia',
-  url: 'https://www.progettoaustralia.it',
-  logo: 'https://www.progettoaustralia.it/logo.png',
-  image: 'https://www.progettoaustralia.it/og-image.png',
+  url: 'https://www.progettoaustralia.com',
+  logo: 'https://www.progettoaustralia.com/logo.png',
+  image: 'https://www.progettoaustralia.com/og-image.png',
   description:
     'Agenzia di viaggi italiana specializzata in Australia, Nuova Zelanda, Fiji e Isole del Pacifico. Itinerari su misura, luna di miele, viaggi di lusso con assistenza italiana in loco.',
   foundingDate: '2008',

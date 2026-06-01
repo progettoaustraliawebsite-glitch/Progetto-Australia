@@ -12,6 +12,10 @@ export async function generateMetadata(): Promise<Metadata> {
   return {
     title,
     description,
+    alternates: {
+      canonical: `/${locale}/sustainability`,
+      languages: { 'it': '/it/sustainability', 'en': '/en/sustainability', 'x-default': '/it/sustainability' },
+    },
     openGraph: { title, description, url: `/${locale}/sustainability` },
     twitter: { title, description },
   };
