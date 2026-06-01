@@ -275,8 +275,9 @@ export default function TravelIdeasClient({ itineraries, locale, heroLabel, hero
               {filtered.map((itinerary) => {
                 const typeLabel = typeLabels[itinerary.type]?.[locale] ?? itinerary.type;
                 return (
-                  <article
+                  <Link
                     key={itinerary.id}
+                    href={`/travel-ideas/${itinerary.slug}` as Parameters<typeof Link>[0]['href']}
                     className="group bg-white overflow-hidden shadow-sm hover:shadow-xl transition-all duration-500 flex flex-col"
                   >
                     <div className="relative h-56 overflow-hidden">
@@ -333,15 +334,12 @@ export default function TravelIdeasClient({ itineraries, locale, heroLabel, hero
                             {locale === 'it' ? 'a persona · indicativo' : 'per person · indicative'}
                           </span>
                         </div>
-                        <Link
-                          href={`/travel-ideas/${itinerary.slug}` as Parameters<typeof Link>[0]['href']}
-                          className="inline-flex items-center gap-2 bg-gold text-white text-[10px] font-sans uppercase tracking-widest px-5 py-3 hover:opacity-80 transition-opacity duration-300"
-                        >
+                        <span className="inline-flex items-center gap-2 bg-gold text-white text-[10px] font-sans uppercase tracking-widest px-5 py-3 group-hover:opacity-80 transition-opacity duration-300">
                           {c.discover} <ArrowRight size={13} />
-                        </Link>
+                        </span>
                       </div>
                     </div>
-                  </article>
+                  </Link>
                 );
               })}
             </div>
