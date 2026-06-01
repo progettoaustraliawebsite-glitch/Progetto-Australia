@@ -66,11 +66,11 @@ export default function Navbar() {
         {/* Logo */}
         <Link href="/" className="hover:opacity-80 transition-opacity duration-300">
           <Image
-            src="/logointeronuovo.png"
+            src="/logo.png"
             alt="Progetto Australia"
             width={140}
             height={28}
-            className="h-7 w-auto object-contain transition-all duration-500"
+            className={`h-7 w-auto object-contain transition-all duration-500 ${transparent ? 'brightness-0 invert' : ''}`}
           />
         </Link>
 
