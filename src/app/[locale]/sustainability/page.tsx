@@ -47,6 +47,7 @@ const copy = {
     ctaText: 'Invitiamo i nostri viaggiatori a far parte di questo cammino. Per domande sulla nostra politica di sostenibilità, scrivici a:',
     ctaEmail: 'celia.progettoaustralia@gmail.com',
     policyLink: 'Leggi la Politica di Sostenibilità',
+    policyUrl: '/SUSTAINABILITY-POLICY-PROGETTO-AUSTRALIA-ITA.pdf',
   },
   en: {
     heroLabel: 'Our Commitment',
@@ -77,6 +78,7 @@ const copy = {
     ctaText: 'We invite our travellers to be part of this journey. For any questions about our sustainability policy, write to us at:',
     ctaEmail: 'celia.progettoaustralia@gmail.com',
     policyLink: 'Read the Sustainability Policy',
+    policyUrl: 'https://www.progettoaustralia.it/wp-content/uploads/2024/11/SUSTAINABILITY-POLICY-PROGETTO-AUSTRALIA-IT.pdf',
   },
 };
 
@@ -232,7 +234,7 @@ export default async function SustainabilityPage() {
           </a>
           <div className="mt-8">
             <a
-              href="https://www.progettoaustralia.it/wp-content/uploads/2024/11/SUSTAINABILITY-POLICY-PROGETTO-AUSTRALIA-IT.pdf"
+              href={c.policyUrl}
               target="_blank"
               rel="noopener noreferrer"
               className="inline-flex items-center gap-3 px-8 py-3 border border-gold text-gold text-xs font-sans uppercase tracking-widest hover:bg-gold hover:text-hero transition-all duration-300"
