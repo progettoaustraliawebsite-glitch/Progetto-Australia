@@ -355,25 +355,48 @@ export default function AboutPage() {
             <p className="text-hero/65 font-sans text-sm max-w-2xl mx-auto leading-relaxed">{c.sustainIntro}</p>
           </motion.div>
 
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-8 mb-14">
-            {[
-              { icon: <Leaf size={28} strokeWidth={1.5} />, title: c.sustain1Title, text: c.sustain1Text },
-              { icon: <Heart size={28} strokeWidth={1.5} />, title: c.sustain2Title, text: c.sustain2Text },
-              { icon: <TreePine size={28} strokeWidth={1.5} />, title: c.sustain3Title, text: c.sustain3Text },
-            ].map((item, i) => (
-              <motion.div
-                key={i}
-                {...fadeIn}
-                transition={{ ...fadeIn.transition, delay: i * 0.1 }}
-                className="bg-emerald-50/60 border border-emerald-100 p-8 flex flex-col items-start gap-4"
-              >
+          <div className="flex flex-col gap-0 mb-14">
+            {/* Row 1: text left, image right */}
+            <motion.div {...fadeIn} className="grid grid-cols-1 md:grid-cols-2 gap-0">
+              <div className="bg-emerald-50/60 border border-emerald-100 p-10 lg:p-14 flex flex-col justify-center gap-4">
                 <div className="w-12 h-12 bg-emerald-100 flex items-center justify-center text-emerald-700">
-                  {item.icon}
+                  <Leaf size={28} strokeWidth={1.5} />
                 </div>
-                <h3 className="font-serif text-lg font-bold text-hero">{item.title}</h3>
-                <p className="text-hero/60 text-sm font-sans leading-relaxed">{item.text}</p>
-              </motion.div>
-            ))}
+                <h3 className="font-serif text-2xl font-bold text-hero">{c.sustain1Title}</h3>
+                <p className="text-hero/60 text-sm font-sans leading-relaxed">{c.sustain1Text}</p>
+              </div>
+              <div className="relative min-h-[300px] md:min-h-[380px] overflow-hidden">
+                <img src="/images/sustainability-ecoturismo.avif" alt={c.sustain1Title} className="absolute inset-0 w-full h-full object-cover" />
+              </div>
+            </motion.div>
+
+            {/* Row 2: image left, text right */}
+            <motion.div {...fadeIn} transition={{ ...fadeIn.transition, delay: 0.1 }} className="grid grid-cols-1 md:grid-cols-2 gap-0">
+              <div className="relative min-h-[300px] md:min-h-[380px] overflow-hidden order-2 md:order-1">
+                <img src="/images/sustainability-comunitalocali.webp" alt={c.sustain2Title} className="absolute inset-0 w-full h-full object-cover" />
+              </div>
+              <div className="bg-emerald-50/60 border border-emerald-100 p-10 lg:p-14 flex flex-col justify-center gap-4 order-1 md:order-2">
+                <div className="w-12 h-12 bg-emerald-100 flex items-center justify-center text-emerald-700">
+                  <Heart size={28} strokeWidth={1.5} />
+                </div>
+                <h3 className="font-serif text-2xl font-bold text-hero">{c.sustain2Title}</h3>
+                <p className="text-hero/60 text-sm font-sans leading-relaxed">{c.sustain2Text}</p>
+              </div>
+            </motion.div>
+
+            {/* Row 3: text left, image right */}
+            <motion.div {...fadeIn} transition={{ ...fadeIn.transition, delay: 0.2 }} className="grid grid-cols-1 md:grid-cols-2 gap-0">
+              <div className="bg-emerald-50/60 border border-emerald-100 p-10 lg:p-14 flex flex-col justify-center gap-4">
+                <div className="w-12 h-12 bg-emerald-100 flex items-center justify-center text-emerald-700">
+                  <TreePine size={28} strokeWidth={1.5} />
+                </div>
+                <h3 className="font-serif text-2xl font-bold text-hero">{c.sustain3Title}</h3>
+                <p className="text-hero/60 text-sm font-sans leading-relaxed">{c.sustain3Text}</p>
+              </div>
+              <div className="relative min-h-[300px] md:min-h-[380px] overflow-hidden">
+                <img src="/images/sustainability-partner.png" alt={c.sustain3Title} className="absolute inset-0 w-full h-full object-cover" />
+              </div>
+            </motion.div>
           </div>
 
           <div className="flex flex-col sm:flex-row items-center justify-center gap-6">
