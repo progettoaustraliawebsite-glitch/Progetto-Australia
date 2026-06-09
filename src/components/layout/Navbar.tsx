@@ -22,6 +22,7 @@ export default function Navbar() {
   const [lastScrollY, setLastScrollY] = useState(0);
   const [destsOpen, setDestsOpen] = useState(false);
   const [mobileDestsOpen, setMobileDestsOpen] = useState(false);
+  const [langDropdownOpen, setLangDropdownOpen] = useState(false);
 
   const pathname = usePathname();
   const locale = useLocale() as 'it' | 'en';
@@ -138,7 +139,9 @@ export default function Navbar() {
 
         {/* Right side: Lang Toggle + Mobile Menu */}
         <div className="flex items-center gap-4">
-          <div className={`flex items-center gap-1 text-xs font-sans uppercase tracking-widest`}>
+
+          {/* Desktop: IT | EN con bandiere */}
+          <div className="hidden lg:flex items-center gap-1 text-xs font-sans uppercase tracking-widest">
             {(['it', 'en'] as const).map((lang, i) => (
               <span key={lang} className="flex items-center gap-1">
                 {i > 0 && (
@@ -153,10 +156,46 @@ export default function Navbar() {
                   }`}
                 >
                   <span>{lang === 'it' ? '🇮🇹' : '🇬🇧'}</span>
-                  <span className="hidden lg:inline">{lang.toUpperCase()}</span>
+                  <span>{lang.toUpperCase()}</span>
                 </button>
               </span>
             ))}
+          </div>
+
+          {/* Mobile: bandiera attiva + chevron → dropdown */}
+          <div className="relative lg:hidden">
+            <button
+              onClick={() => setLangDropdownOpen(!langDropdownOpen)}
+              className={`flex items-center gap-1 transition-colors duration-200 ${transparent ? 'text-white/80' : 'text-charcoal/70'}`}
+            >
+              <span className="text-xl">{locale === 'it' ? '🇮🇹' : '🇬🇧'}</span>
+              <ChevronDown size={13} className={`transition-transform duration-200 ${langDropdownOpen ? 'rotate-180' : ''}`} />
+            </button>
+
+            <AnimatePresence>
+              {langDropdownOpen && (
+                <motion.div
+                  initial={{ opacity: 0, y: 4 }}
+                  animate={{ opacity: 1, y: 0 }}
+                  exit={{ opacity: 0, y: 4 }}
+                  transition={{ duration: 0.15 }}
+                  className="absolute right-0 top-full mt-2 bg-white shadow-xl border border-stone-100 py-1 w-28 z-50"
+                >
+                  {(['it', 'en'] as const).map((lang) => (
+                    <button
+                      key={lang}
+                      onClick={() => { switchLocale(lang); setLangDropdownOpen(false); }}
+                      className={`w-full flex items-center gap-2 px-4 py-2.5 text-xs font-sans uppercase tracking-widest transition-colors ${
+                        lang === locale ? 'text-gold font-bold bg-stone-50' : 'text-charcoal/70 hover:text-gold hover:bg-stone-50'
+                      }`}
+                    >
+                      <span>{lang === 'it' ? '🇮🇹' : '🇬🇧'}</span>
+                      <span>{lang === 'it' ? 'Italiano' : 'English'}</span>
+                    </button>
+                  ))}
+                </motion.div>
+              )}
+            </AnimatePresence>
           </div>
 
           <button
