@@ -140,30 +140,8 @@ export default function Navbar() {
         {/* Right side: Lang Toggle + Mobile Menu */}
         <div className="flex items-center gap-4">
 
-          {/* Desktop: IT | EN con bandiere */}
-          <div className="hidden lg:flex items-center gap-1 text-xs font-sans uppercase tracking-widest">
-            {(['it', 'en'] as const).map((lang, i) => (
-              <span key={lang} className="flex items-center gap-1">
-                {i > 0 && (
-                  <span className={`${transparent ? 'text-white/30' : 'text-charcoal/20'}`}>|</span>
-                )}
-                <button
-                  onClick={() => lang !== locale && switchLocale(lang)}
-                  className={`flex items-center gap-1 transition-all duration-200 ${
-                    lang === locale
-                      ? transparent ? 'text-white font-bold cursor-default' : 'text-gold font-bold cursor-default'
-                      : transparent ? 'text-white/50 hover:text-white' : 'text-charcoal/40 hover:text-gold'
-                  }`}
-                >
-                  <span>{lang === 'it' ? '🇮🇹' : '🇬🇧'}</span>
-                  <span>{lang.toUpperCase()}</span>
-                </button>
-              </span>
-            ))}
-          </div>
-
-          {/* Mobile: bandiera attiva + chevron → dropdown */}
-          <div className="relative lg:hidden">
+          {/* Lang switcher: bandiera attiva + chevron → dropdown (desktop e mobile) */}
+          <div className="relative">
             <button
               onClick={() => setLangDropdownOpen(!langDropdownOpen)}
               className={`flex items-center gap-1 transition-colors duration-200 ${transparent ? 'text-white/80' : 'text-charcoal/70'}`}
