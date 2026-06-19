@@ -22,6 +22,7 @@
     "next-sanity": "^12.4.3",
     "react": "19.2.3",
     "react-dom": "19.2.3",
+    "react-markdown": "^10.1.0",
     "sanity": "^5.24.0",
     "topojson-client": "^3.1.0"
   },

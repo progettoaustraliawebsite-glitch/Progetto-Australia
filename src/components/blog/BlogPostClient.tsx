@@ -1,6 +1,7 @@
 'use client';
 
 import Image from 'next/image';
+import ReactMarkdown from 'react-markdown';
 import { Link } from '@/i18n/navigation';
 import { ChevronLeft, Info, FileText, CloudSun, Bus, Globe, Shirt, Zap, Coins, MapPin, Calendar, Bookmark } from 'lucide-react';
 import type { BlogPost } from '@/data/blog';
@@ -67,14 +68,23 @@ export default function BlogPostClient({ post, locale, backLabel, quoteLabel, to
 
           {/* Content Column */}
           <div className="lg:col-span-8 space-y-16">
-            <div className="prose prose-lg max-w-none">
-              <div className="text-lg text-hero/80 leading-relaxed font-sans space-y-6">
-                {content.intro.split('\n\n').map((para, i) => (
-                  <p key={i} className={i === 0 ? 'text-xl font-serif italic border-l-4 border-gold pl-8 py-2 text-hero' : ''}>
+            <div className="prose prose-lg max-w-none text-lg text-hero/80 leading-relaxed font-sans space-y-6">
+              {content.intro.split('\n\n').map((para, i) => (
+                <div key={i} className={i === 0 ? 'text-xl font-serif italic border-l-4 border-gold pl-8 py-2 text-hero' : ''}>
+                  <ReactMarkdown
+                    components={{
+                      a: ({ href, children }) => (
+                        <a href={href} className="text-gold underline hover:text-gold/70 transition-colors">
+                          {children}
+                        </a>
+                      ),
+                      p: ({ children }) => <p className="inline">{children}</p>,
+                    }}
+                  >
                     {para}
-                  </p>
-                ))}
-              </div>
+                  </ReactMarkdown>
+                </div>
+              ))}
             </div>
 
             {content.sections.map((section) => (
@@ -88,20 +98,18 @@ export default function BlogPostClient({ post, locale, backLabel, quoteLabel, to
                       {section.title}
                     </h2>
                   </div>
-                  <div className="text-hero/70 leading-relaxed font-sans whitespace-pre-line text-sm md:text-base">
-                    {section.content.split('\n').map((line, idx) => {
-                      if (line.includes(': ')) {
-                        const colonIdx = line.indexOf(': ');
-                        const title = line.slice(0, colonIdx);
-                        const rest = line.slice(colonIdx + 2);
-                        return (
-                          <p key={idx} className="mb-4">
-                            <strong className="text-hero font-bold">{title}:</strong> {rest}
-                          </p>
-                        );
-                      }
-                      return <p key={idx} className="mb-4">{line}</p>;
-                    })}
+                  <div className="text-hero/70 leading-relaxed font-sans text-sm md:text-base prose prose-sm max-w-none">
+                    <ReactMarkdown
+                      components={{
+                        a: ({ href, children }) => (
+                          <a href={href} className="text-gold underline hover:text-gold/70 transition-colors">
+                            {children}
+                          </a>
+                        ),
+                      }}
+                    >
+                      {section.content}
+                    </ReactMarkdown>
                   </div>
                 </div>
               </div>

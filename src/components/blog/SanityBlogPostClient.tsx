@@ -1,6 +1,7 @@
 'use client';
 
 import Image from 'next/image';
+import ReactMarkdown from 'react-markdown';
 import { PortableText } from '@portabletext/react';
 import { Link } from '@/i18n/navigation';
 import { ChevronLeft, Globe, Info, FileText, CloudSun, Bus, Coins, Shirt, Zap, MapPin, Calendar, Bookmark } from 'lucide-react';
@@ -86,14 +87,23 @@ export default function SanityBlogPostClient({ post, locale, backLabel, quoteLab
 
             {/* Intro */}
             {intro && (
-              <div className="prose prose-lg max-w-none">
-                <div className="text-lg text-hero/80 leading-relaxed font-sans space-y-6">
-                  {intro.split('\n\n').map((para, i) => (
-                    <p key={i} className={i === 0 ? 'text-xl font-serif italic border-l-4 border-gold pl-8 py-2 text-hero' : ''}>
+              <div className="prose prose-lg max-w-none text-lg text-hero/80 leading-relaxed font-sans space-y-6">
+                {intro.split('\n\n').map((para, i) => (
+                  <div key={i} className={i === 0 ? 'text-xl font-serif italic border-l-4 border-gold pl-8 py-2 text-hero' : ''}>
+                    <ReactMarkdown
+                      components={{
+                        a: ({ href, children }) => (
+                          <a href={href} className="text-gold underline hover:text-gold/70 transition-colors">
+                            {children}
+                          </a>
+                        ),
+                        p: ({ children }) => <p className="inline">{children}</p>,
+                      }}
+                    >
                       {para}
-                    </p>
-                  ))}
-                </div>
+                    </ReactMarkdown>
+                  </div>
+                ))}
               </div>
             )}
 
@@ -112,20 +122,18 @@ export default function SanityBlogPostClient({ post, locale, backLabel, quoteLab
                         {title}
                       </h2>
                     </div>
-                    <div className="text-hero/70 leading-relaxed font-sans whitespace-pre-line text-sm md:text-base">
-                      {content.split('\n').map((line, idx) => {
-                        if (line.includes(': ')) {
-                          const colonIdx = line.indexOf(': ');
-                          const label = line.slice(0, colonIdx);
-                          const rest = line.slice(colonIdx + 2);
-                          return (
-                            <p key={idx} className="mb-4">
-                              <strong className="text-hero font-bold">{label}:</strong> {rest}
-                            </p>
-                          );
-                        }
-                        return <p key={idx} className="mb-4">{line}</p>;
-                      })}
+                    <div className="text-hero/70 leading-relaxed font-sans text-sm md:text-base prose prose-sm max-w-none">
+                      <ReactMarkdown
+                        components={{
+                          a: ({ href, children }) => (
+                            <a href={href} className="text-gold underline hover:text-gold/70 transition-colors">
+                              {children}
+                            </a>
+                          ),
+                        }}
+                      >
+                        {content}
+                      </ReactMarkdown>
                     </div>
                     {section.image && (
                       <div className="mt-8 relative w-full aspect-video overflow-hidden">
