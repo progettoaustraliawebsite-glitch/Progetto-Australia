@@ -49,7 +49,7 @@ export const destinations: Destination[] = [
     gradient: 'from-emerald-900 via-teal-800 to-slate-700',
     accentColor: '#2d6a4f',
     photo: '/images/dest-card-nz-v2.webp',
-    photoFit: 'contain',
+    photoFit: 'cover',
     heroPhoto: '/images/dest-hero-nz.webp',
     highlights: {
       it: ['Fiordland & Milford Sound', 'Rotorua & Geotermalismo', 'Franz Josef Glacier', 'Bay of Islands'],
