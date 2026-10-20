@@ -121,7 +121,7 @@ export default function Footer({ locale }: { locale: 'it' | 'en' }) {
             </li>
             <li>
               <a
-                href={locale === 'en' ? '/PRIVACY-POLICY-of-PROGETTO-AUSTRALIA-EN.pdf' : 'https://www.progettoaustralia.it/wp-content/uploads/2024/11/PRIVACY-POLICY-of-PROGETTO-AUSTRALIA.pdf'}
+                href="/PRIVACY-POLICY-of-PROGETTO-AUSTRALIA-EN.pdf"
                 target="_blank"
                 rel="noopener noreferrer"
                 className="text-sm text-white/55 hover:text-gold transition-colors duration-300"
@@ -191,7 +191,7 @@ export default function Footer({ locale }: { locale: 'it' | 'en' }) {
           <p className="text-xs text-white/35">{t('footer.copyright')}</p>
           <div className="flex gap-6">
             <a
-              href={locale === 'en' ? '/PRIVACY-POLICY-of-PROGETTO-AUSTRALIA-EN.pdf' : 'https://www.progettoaustralia.it/wp-content/uploads/2024/11/PRIVACY-POLICY-of-PROGETTO-AUSTRALIA.pdf'}
+              href="/PRIVACY-POLICY-of-PROGETTO-AUSTRALIA-EN.pdf"
               target="_blank"
               rel="noopener noreferrer"
               className="text-xs text-white/35 hover:text-gold transition-colors duration-300"
