@@ -121,7 +121,7 @@ export default function Footer({ locale }: { locale: 'it' | 'en' }) {
             </li>
             <li>
               <a
-                href="/PRIVACY-POLICY-of-PROGETTO-AUSTRALIA-EN.pdf"
+                href={locale === 'en' ? '/PRIVACY-POLICY-of-PROGETTO-AUSTRALIA-EN.pdf' : '/PRIVACY-POLICY-PROGETTO-AUSTRALIA-ITA.pdf'}
                 target="_blank"
                 rel="noopener noreferrer"
                 className="text-sm text-white/55 hover:text-gold transition-colors duration-300"
