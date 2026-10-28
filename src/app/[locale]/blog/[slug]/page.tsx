@@ -229,6 +229,7 @@ export default async function BlogPostPage({ params }: Props) {
           category={mdxPost.category[locale] || mdxPost.category.it}
           locale={locale}
           {...labels}
+          relatedPosts={relatedPosts}
         />
       </>
     );
