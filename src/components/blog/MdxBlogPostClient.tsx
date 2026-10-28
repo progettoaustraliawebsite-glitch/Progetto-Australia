@@ -196,12 +196,9 @@ export default function MdxBlogPostClient({
                     {children}
                   </ol>
                 ),
-                li: ({ children, ordered }) => (
-                  <li className="flex gap-3 text-hero/80 font-sans text-base md:text-lg leading-relaxed">
-                    {!ordered && (
-                      <span className="text-gold mt-1.5 shrink-0">•</span>
-                    )}
-                    <span className="flex-1">{children}</span>
+                li: ({ children }) => (
+                  <li className="text-hero/80 font-sans text-base md:text-lg leading-relaxed pl-2">
+                    {children}
                   </li>
                 ),
 
