@@ -52,15 +52,25 @@ interface FaqItem {
   answer: string;
 }
 
+interface SvgInfographic {
+  src: string;
+  alt: string;
+  /** Placeholder token inserted into the body so we know where to render */
+  token: string;
+}
+
 /**
  * Pre-process content:
  * 1. Strip hero image duplicate
- * 2. Extract FAQ section into structured data
+ * 2. Extract SVG infographics (native <img> needed, next/image can't handle external SVGs)
+ * 3. Strip duplicate Key Takeaways header lines (📌 and "Key Takeaways" on separate lines)
+ * 4. Extract FAQ section into structured data
+ * 5. Remove Fonti section
  */
 function preprocessContent(
   raw: string,
   heroImage?: string
-): { body: string; faqs: FaqItem[] } {
+): { body: string; faqs: FaqItem[]; svgs: SvgInfographic[] } {
   let out = raw;
 
   // 1. Strip first image if it matches the hero
@@ -75,7 +85,23 @@ function preprocessContent(
     }
   }
 
-  // 2. Extract FAQ section
+  // 2. Extract SVG infographics — replace with recognizable placeholder text
+  const svgs: SvgInfographic[] = [];
+  out = out.replace(
+    /!\[([^\]]*)\]\((https?:\/\/[^)]*\.svg)\)/g,
+    (_match, alt, src) => {
+      const idx = svgs.length;
+      const token = `SVG_INFOGRAPHIC_${idx}`;
+      svgs.push({ src, alt, token });
+      return token;
+    }
+  );
+
+  // 3. Remove standalone 📌 and "Key Takeaways" lines that precede the ✓ list
+  //    (they appear as separate <p> tags and duplicate the styled box header)
+  out = out.replace(/\s*📌\s*\n\s*Key Takeaways\s*\n/g, "\n");
+
+  // 4. Extract FAQ section
   const faqs: FaqItem[] = [];
   const faqMatch = out.match(
     /## (?:Domande Frequenti|FAQ)\s*\n([\s\S]*?)(?=\n## |\n*$)/
@@ -93,14 +119,14 @@ function preprocessContent(
         answer: lines[i + 1] || "",
       });
     }
-    // Remove the FAQ content from body but keep the heading marker for TOC
-    out = out.replace(faqMatch[0], "## Domande Frequenti\n\n<!-- faq-placeholder -->");
+    // Remove the FAQ content from body but keep the heading for TOC
+    out = out.replace(faqMatch[0], "## Domande Frequenti\n");
   }
 
-  // 3. Remove ## Fonti section entirely
+  // 5. Remove ## Fonti section entirely
   out = out.replace(/\n## Fonti[\s\S]*$/, "");
 
-  return { body: out, faqs };
+  return { body: out, faqs, svgs };
 }
 
 export default function MdxBlogPostClient({
@@ -116,7 +142,7 @@ export default function MdxBlogPostClient({
   contactPrompt,
   relatedPosts = [],
 }: Props) {
-  const { body, faqs } = useMemo(
+  const { body, faqs, svgs } = useMemo(
     () => preprocessContent(rawContent, image),
     [rawContent, image]
   );
@@ -278,11 +304,32 @@ export default function MdxBlogPostClient({
 
                   const text = extractText(children);
 
-                  // Hide faq-placeholder comment
-                  if (text.includes("faq-placeholder")) return null;
+                  // Render SVG infographic placeholders
+                  const svgMatch = text.match(/^SVG_INFOGRAPHIC_(\d+)$/);
+                  if (svgMatch) {
+                    const svg = svgs[parseInt(svgMatch[1], 10)];
+                    if (svg) {
+                      return (
+                        <figure className="my-10">
+                          {/* eslint-disable-next-line @next/next/no-img-element */}
+                          <img
+                            src={svg.src}
+                            alt={svg.alt}
+                            className="w-full h-auto rounded-sm border border-stone-100"
+                            loading="lazy"
+                          />
+                        </figure>
+                      );
+                    }
+                  }
 
-                  // Key Takeaways title line
-                  if (text.includes("📌") && text.includes("Key Takeaways")) {
+                  // Key Takeaways standalone lines (already stripped by preprocess,
+                  // but catch any remnants)
+                  if (
+                    text.trim() === "📌" ||
+                    text.trim() === "Key Takeaways" ||
+                    (text.includes("📌") && text.includes("Key Takeaways"))
+                  ) {
                     return null;
                   }
 
@@ -315,7 +362,7 @@ export default function MdxBlogPostClient({
                   ) {
                     return null;
                   }
-                  // SVG infographics — use native img (next/image doesn't handle external SVGs)
+                  // SVG handled in preprocessing — skip if any slip through
                   if (srcStr.includes(".svg")) {
                     return (
                       <figure className="my-10">
