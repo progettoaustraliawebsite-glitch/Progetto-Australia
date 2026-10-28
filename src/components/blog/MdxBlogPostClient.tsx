@@ -2,6 +2,7 @@
 
 import React, { useMemo } from "react";
 import ReactMarkdown from "react-markdown";
+import remarkGfm from "remark-gfm";
 import Image from "next/image";
 import { Link } from "@/i18n/navigation";
 import { ChevronLeft, Globe } from "lucide-react";
@@ -24,7 +25,6 @@ interface Props {
   relatedPosts?: RelatedPost[];
 }
 
-/** Derive an anchor id from heading text */
 function toId(text: string) {
   return text
     .toLowerCase()
@@ -32,9 +32,30 @@ function toId(text: string) {
     .replace(/(^-|-$)/g, "");
 }
 
+/**
+ * Pre-process the raw MDX content:
+ * 1. Remove the first image if it matches the hero image (avoid duplication)
+ * 2. Convert FAQ section (## Domande Frequenti) into styled Q&A blocks
+ */
+function preprocessContent(raw: string, heroImage?: string): string {
+  let out = raw;
+
+  // 1. Strip first image if same as hero
+  if (heroImage) {
+    const escaped = heroImage.replace(/[.*+?^${}()|[\]\\]/g, "\\$&");
+    const heroImgRe = new RegExp(
+      `^!\\[[^\\]]*\\]\\(${escaped}[^)]*\\)\\s*\\n*`,
+      "m"
+    );
+    out = out.replace(heroImgRe, "");
+  }
+
+  return out;
+}
+
 export default function MdxBlogPostClient({
   title,
-  content,
+  content: rawContent,
   date,
   image,
   category,
@@ -45,19 +66,30 @@ export default function MdxBlogPostClient({
   contactPrompt,
   relatedPosts = [],
 }: Props) {
-  // Extract H2 headings for TOC
+  const content = useMemo(
+    () => preprocessContent(rawContent, image),
+    [rawContent, image]
+  );
+
+  // Extract H2 headings for TOC (skip "Fonti" section)
   const headings = useMemo(() => {
     const matches = content.match(/^## .+$/gm) || [];
-    return matches.map((h) => {
-      const text = h.replace(/^## /, "").replace(/\*\*/g, "");
-      return { text, id: toId(text) };
-    });
+    return matches
+      .map((h) => {
+        const text = h.replace(/^## /, "").replace(/\*\*/g, "");
+        return { text, id: toId(text) };
+      })
+      .filter((h) => h.text !== "Fonti");
   }, [content]);
 
   const formattedDate = new Date(date).toLocaleDateString(
     locale === "it" ? "it-IT" : "en-US",
     { year: "numeric", month: "long", day: "numeric" }
   );
+
+  // Detect if we're inside the FAQ section to apply special styling
+  let insideFaq = false;
+  let faqQuestionNext = true; // toggles between Q and A inside FAQ
 
   return (
     <div className="bg-white min-h-screen">
@@ -103,29 +135,64 @@ export default function MdxBlogPostClient({
       <section className="py-20 container mx-auto px-6">
         <div className="grid grid-cols-1 lg:grid-cols-12 gap-16">
           {/* Content Column */}
-          <div className="lg:col-span-8 mdx-content">
+          <div className="lg:col-span-8">
             <ReactMarkdown
+              remarkPlugins={[remarkGfm]}
               components={{
                 /* ── Headings ── */
-                h1: ({ children }) => (
-                  <h1 className="font-serif text-3xl md:text-4xl font-bold text-hero mt-16 mb-6">
-                    {children}
-                  </h1>
-                ),
                 h2: ({ children }) => {
-                  const text = String(children).replace(/\*\*/g, "");
+                  const text = String(
+                    Array.isArray(children)
+                      ? children
+                          .map((c) =>
+                            typeof c === "string"
+                              ? c
+                              : (c as React.ReactElement)?.props?.children || ""
+                          )
+                          .join("")
+                      : children
+                  ).replace(/\*\*/g, "");
                   const id = toId(text);
+
+                  // Check if this is the FAQ section
+                  if (
+                    text.includes("Domande Frequenti") ||
+                    text.includes("FAQ")
+                  ) {
+                    insideFaq = true;
+                    faqQuestionNext = true;
+                    return (
+                      <h2
+                        id={id}
+                        className="font-serif text-2xl md:text-3xl font-bold text-hero mt-20 mb-8 scroll-mt-32 uppercase tracking-widest"
+                      >
+                        {children}
+                      </h2>
+                    );
+                  }
+
+                  // Reset FAQ mode on any other H2
+                  if (text !== "Fonti") {
+                    insideFaq = false;
+                  }
+
+                  // Hide "Fonti" section header
+                  if (text === "Fonti") {
+                    insideFaq = false;
+                    return null;
+                  }
+
                   return (
                     <h2
                       id={id}
-                      className="font-serif text-2xl md:text-3xl font-bold text-hero mt-16 mb-6 scroll-mt-32 uppercase tracking-widest"
+                      className="font-serif text-2xl md:text-3xl font-bold text-hero mt-20 mb-6 scroll-mt-32 uppercase tracking-widest"
                     >
                       {children}
                     </h2>
                   );
                 },
                 h3: ({ children }) => (
-                  <h3 className="font-serif text-xl md:text-2xl font-bold text-hero mt-10 mb-4">
+                  <h3 className="font-serif text-xl md:text-2xl font-bold text-hero mt-12 mb-5">
                     {children}
                   </h3>
                 ),
@@ -143,6 +210,46 @@ export default function MdxBlogPostClient({
                     node.children[0].type === "element" &&
                     node.children[0].tagName === "img";
                   if (hasOnlyImage) return <>{children}</>;
+
+                  const text = String(children);
+
+                  // Key Takeaways title
+                  if (text.includes("📌") && text.includes("Key Takeaways")) {
+                    return null; // handled by the container
+                  }
+
+                  // Pro tip blocks
+                  if (text.startsWith("💡")) {
+                    return (
+                      <div className="bg-gold/5 border border-gold/20 rounded-sm p-6 my-8">
+                        <p className="text-hero/80 leading-relaxed font-sans text-base">
+                          {children}
+                        </p>
+                      </div>
+                    );
+                  }
+
+                  // FAQ: alternate between question and answer styling
+                  if (insideFaq && text.trim().length > 0) {
+                    if (faqQuestionNext) {
+                      faqQuestionNext = false;
+                      return (
+                        <div className="bg-hero/5 border-l-4 border-gold px-6 py-4 mt-6 mb-2 rounded-r">
+                          <p className="font-serif font-bold text-hero text-lg">
+                            {children}
+                          </p>
+                        </div>
+                      );
+                    } else {
+                      faqQuestionNext = true;
+                      return (
+                        <p className="text-hero/75 leading-relaxed font-sans text-base mb-6 pl-6">
+                          {children}
+                        </p>
+                      );
+                    }
+                  }
+
                   return (
                     <p className="text-hero/80 leading-relaxed font-sans text-base md:text-lg mb-6">
                       {children}
@@ -151,32 +258,42 @@ export default function MdxBlogPostClient({
                 },
 
                 /* ── Images ── */
-                img: ({ src, alt }) => (
-                  <figure className="my-10">
-                    <Image
-                      src={String(src || "")}
-                      alt={String(alt || "")}
-                      width={900}
-                      height={500}
-                      className="w-full h-auto rounded-sm shadow-md object-cover"
-                      sizes="(max-width: 768px) 100vw, 700px"
-                    />
-                    {alt && (
-                      <figcaption className="text-center text-xs text-hero/40 font-sans mt-3 italic">
-                        {alt}
-                      </figcaption>
-                    )}
-                  </figure>
-                ),
+                img: ({ src, alt }) => {
+                  const srcStr = String(src || "");
+                  // For SVG infographics, use regular img tag since next/image has issues with SVG
+                  if (srcStr.endsWith(".svg")) {
+                    return (
+                      <figure className="my-10">
+                        {/* eslint-disable-next-line @next/next/no-img-element */}
+                        <img
+                          src={srcStr}
+                          alt={String(alt || "")}
+                          className="w-full h-auto"
+                          loading="lazy"
+                        />
+                      </figure>
+                    );
+                  }
+                  return (
+                    <figure className="my-10">
+                      <Image
+                        src={srcStr}
+                        alt={String(alt || "")}
+                        width={900}
+                        height={500}
+                        className="w-full h-auto rounded-sm shadow-md object-cover"
+                        sizes="(max-width: 768px) 100vw, 700px"
+                      />
+                    </figure>
+                  );
+                },
 
                 /* ── Links ── */
                 a: ({ href, children }) => (
                   <a
                     href={href}
                     className="text-gold underline hover:text-gold/70 transition-colors"
-                    target={
-                      href?.startsWith("http") ? "_blank" : undefined
-                    }
+                    target={href?.startsWith("http") ? "_blank" : undefined}
                     rel={
                       href?.startsWith("http")
                         ? "noopener noreferrer"
@@ -188,55 +305,100 @@ export default function MdxBlogPostClient({
                 ),
 
                 /* ── Lists ── */
-                ul: ({ children }) => (
-                  <ul className="space-y-3 my-6 ml-1">{children}</ul>
-                ),
+                ul: ({ children }) => {
+                  // Detect Key Takeaways list (items start with ✓)
+                  const childArray = React.Children.toArray(children);
+                  const isKeyTakeaways = childArray.some((child) => {
+                    if (React.isValidElement(child)) {
+                      const text = String(
+                        (child as React.ReactElement<{ children?: React.ReactNode }>).props?.children || ""
+                      );
+                      return text.includes("✓");
+                    }
+                    return false;
+                  });
+                  if (isKeyTakeaways) {
+                    return (
+                      <div className="bg-sand border border-gold/20 rounded-sm p-8 my-10">
+                        <div className="flex items-center gap-2 mb-5">
+                          <span className="text-xl">📌</span>
+                          <h3 className="font-serif font-bold text-hero text-lg uppercase tracking-wider">
+                            Key Takeaways
+                          </h3>
+                        </div>
+                        <ul className="space-y-4">{children}</ul>
+                      </div>
+                    );
+                  }
+                  return <ul className="space-y-3 my-6">{children}</ul>;
+                },
                 ol: ({ children }) => (
-                  <ol className="space-y-3 my-6 ml-1 list-decimal list-inside">
+                  <ol className="space-y-3 my-6 list-decimal list-outside pl-6">
                     {children}
                   </ol>
                 ),
-                li: ({ children }) => (
-                  <li className="text-hero/80 font-sans text-base md:text-lg leading-relaxed pl-2">
-                    {children}
-                  </li>
-                ),
+                li: ({ children }) => {
+                  const text = String(children);
+                  // Key takeaway item
+                  if (text.includes("✓")) {
+                    return (
+                      <li className="flex gap-3 text-hero/80 font-sans text-sm leading-relaxed list-none">
+                        <span className="text-gold font-bold shrink-0 mt-0.5">
+                          ✓
+                        </span>
+                        <span className="flex-1">
+                          {String(children).replace(/^✓\s*/, "")}
+                        </span>
+                      </li>
+                    );
+                  }
+                  return (
+                    <li className="flex gap-3 text-hero/80 font-sans text-base md:text-lg leading-relaxed list-none">
+                      <span className="text-gold shrink-0 mt-1">•</span>
+                      <span className="flex-1">{children}</span>
+                    </li>
+                  );
+                },
 
                 /* ── Blockquote ── */
                 blockquote: ({ children }) => (
-                  <blockquote className="border-l-4 border-gold bg-sand/40 py-4 px-6 my-8 rounded-r font-serif italic text-hero/80">
+                  <blockquote className="border-l-4 border-gold bg-sand/60 py-4 px-6 my-8 rounded-r font-serif italic text-hero/80">
                     {children}
                   </blockquote>
                 ),
 
-                /* ── Table ── */
+                /* ── Table (GFM) ── */
                 table: ({ children }) => (
-                  <div className="overflow-x-auto my-8 rounded-sm shadow-sm border border-sand/50">
-                    <table className="w-full text-sm font-sans">
+                  <div className="overflow-x-auto my-10 rounded-sm shadow-sm border border-stone-200">
+                    <table className="w-full text-sm font-sans border-collapse">
                       {children}
                     </table>
                   </div>
                 ),
                 thead: ({ children }) => (
-                  <thead className="bg-hero text-white">{children}</thead>
+                  <thead style={{ backgroundColor: "#2a1b15" }}>
+                    {children}
+                  </thead>
                 ),
                 th: ({ children }) => (
-                  <th className="px-4 py-3 text-left font-semibold text-[11px] uppercase tracking-wider">
+                  <th className="px-5 py-3.5 text-left font-semibold text-[11px] uppercase tracking-wider text-white border-b border-stone-300">
                     {children}
                   </th>
                 ),
                 tbody: ({ children }) => (
-                  <tbody className="divide-y divide-sand/30">
+                  <tbody className="divide-y divide-stone-100">
                     {children}
                   </tbody>
                 ),
                 tr: ({ children }) => (
-                  <tr className="even:bg-sand/20 hover:bg-sand/30 transition-colors">
+                  <tr className="even:bg-sand/30 hover:bg-sand/50 transition-colors">
                     {children}
                   </tr>
                 ),
                 td: ({ children }) => (
-                  <td className="px-4 py-3 text-hero/70">{children}</td>
+                  <td className="px-5 py-3.5 text-hero/75 leading-relaxed">
+                    {children}
+                  </td>
                 ),
 
                 /* ── Emphasis ── */
@@ -244,17 +406,15 @@ export default function MdxBlogPostClient({
                   <strong className="font-bold text-hero">{children}</strong>
                 ),
                 em: ({ children }) => (
-                  <em className="italic text-hero/70">{children}</em>
+                  <em className="italic">{children}</em>
                 ),
 
                 /* ── Horizontal rule ── */
-                hr: () => (
-                  <hr className="my-12 border-t border-sand/50" />
-                ),
+                hr: () => <hr className="my-12 border-t border-stone-200" />,
 
                 /* ── Code ── */
                 code: ({ children }) => (
-                  <code className="bg-sand/40 text-hero px-1.5 py-0.5 rounded text-sm font-mono">
+                  <code className="bg-sand/50 text-hero px-1.5 py-0.5 rounded text-sm font-mono">
                     {children}
                   </code>
                 ),
