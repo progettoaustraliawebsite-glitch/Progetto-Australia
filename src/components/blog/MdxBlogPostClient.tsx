@@ -83,7 +83,7 @@ export default function MdxBlogPostClient({
               img: ({ src, alt }) => (
                 <span className="block my-6">
                   <Image
-                    src={src || ''}
+                    src={String(src || '')}
                     alt={alt || ''}
                     width={800}
                     height={450}
