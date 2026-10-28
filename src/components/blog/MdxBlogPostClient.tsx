@@ -82,15 +82,15 @@ function preprocessContent(
   );
   if (faqMatch) {
     const faqBlock = faqMatch[1].trim();
-    // FAQ structure: alternating paragraphs — question then answer, separated by blank lines
-    const paragraphs = faqBlock
-      .split(/\n\n+/)
-      .map((p) => p.trim())
+    // FAQ structure: alternating lines — question then answer, separated by \n
+    const lines = faqBlock
+      .split(/\n/)
+      .map((l) => l.trim())
       .filter(Boolean);
-    for (let i = 0; i < paragraphs.length - 1; i += 2) {
+    for (let i = 0; i < lines.length - 1; i += 2) {
       faqs.push({
-        question: paragraphs[i],
-        answer: paragraphs[i + 1] || "",
+        question: lines[i],
+        answer: lines[i + 1] || "",
       });
     }
     // Remove the FAQ content from body but keep the heading marker for TOC
@@ -307,6 +307,7 @@ export default function MdxBlogPostClient({
                 /* ── Images ── */
                 img: ({ src, alt }) => {
                   const srcStr = String(src || "");
+                  if (!srcStr) return null;
                   // Skip hero duplicate
                   if (
                     image &&
@@ -314,8 +315,8 @@ export default function MdxBlogPostClient({
                   ) {
                     return null;
                   }
-                  // SVG infographics — use native img
-                  if (srcStr.endsWith(".svg")) {
+                  // SVG infographics — use native img (next/image doesn't handle external SVGs)
+                  if (srcStr.includes(".svg")) {
                     return (
                       <figure className="my-10">
                         {/* eslint-disable-next-line @next/next/no-img-element */}
