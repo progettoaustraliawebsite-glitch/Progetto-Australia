@@ -147,6 +147,28 @@ export default function MdxBlogPostClient({
     [rawContent, image]
   );
 
+  // Split body on SVG placeholders so we can render <img> tags outside ReactMarkdown.
+  // This avoids relying on ReactMarkdown's paragraph detection which can be unreliable.
+  const bodySegments = useMemo(() => {
+    if (svgs.length === 0) return [{ type: "md" as const, content: body }];
+
+    // Build a regex that matches any SVG_INFOGRAPHIC_N token
+    const pattern = new RegExp(
+      `(${svgs.map((s) => s.token).join("|")})`,
+      "g"
+    );
+    const parts = body.split(pattern);
+    return parts
+      .filter((p) => p.length > 0)
+      .map((p) => {
+        const svgIdx = svgs.findIndex((s) => s.token === p);
+        if (svgIdx !== -1) {
+          return { type: "svg" as const, svg: svgs[svgIdx] };
+        }
+        return { type: "md" as const, content: p };
+      });
+  }, [body, svgs]);
+
   // Extract H2 headings for TOC
   const headings = useMemo(() => {
     const matches = body.match(/^## .+$/gm) || [];
@@ -208,7 +230,20 @@ export default function MdxBlogPostClient({
         <div className="grid grid-cols-1 lg:grid-cols-12 gap-16">
           {/* Content Column */}
           <div className="lg:col-span-8">
+            {bodySegments.map((seg, segIdx) =>
+              seg.type === "svg" ? (
+                <figure key={`svg-${segIdx}`} className="my-10">
+                  {/* eslint-disable-next-line @next/next/no-img-element */}
+                  <img
+                    src={seg.svg.src}
+                    alt={seg.svg.alt}
+                    className="w-full h-auto rounded-sm border border-stone-100"
+                    loading="lazy"
+                  />
+                </figure>
+              ) : (
             <ReactMarkdown
+              key={`md-${segIdx}`}
               remarkPlugins={[remarkGfm]}
               components={{
                 /* ── Headings ── */
@@ -303,25 +338,6 @@ export default function MdxBlogPostClient({
                   if (hasOnlyImage) return <>{children}</>;
 
                   const text = extractText(children);
-
-                  // Render SVG infographic placeholders
-                  const svgMatch = text.match(/^SVG_INFOGRAPHIC_(\d+)$/);
-                  if (svgMatch) {
-                    const svg = svgs[parseInt(svgMatch[1], 10)];
-                    if (svg) {
-                      return (
-                        <figure className="my-10">
-                          {/* eslint-disable-next-line @next/next/no-img-element */}
-                          <img
-                            src={svg.src}
-                            alt={svg.alt}
-                            className="w-full h-auto rounded-sm border border-stone-100"
-                            loading="lazy"
-                          />
-                        </figure>
-                      );
-                    }
-                  }
 
                   // Key Takeaways standalone lines (already stripped by preprocess,
                   // but catch any remnants)
@@ -519,8 +535,10 @@ export default function MdxBlogPostClient({
                 ),
               }}
             >
-              {body}
+              {seg.content}
             </ReactMarkdown>
+              )
+            )}
           </div>
 
           {/* ─── Sidebar ─── */}
