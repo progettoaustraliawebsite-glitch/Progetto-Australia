@@ -52,14 +52,18 @@ function extractText(node: React.ReactNode): string {
 function preprocessContent(raw: string, heroImage?: string): string {
   let out = raw;
 
-  // 1. Strip first image if same as hero
+  // Strip the first image if it matches (or closely matches) the hero image
   if (heroImage) {
-    const escaped = heroImage.replace(/[.*+?^${}()|[\]\\]/g, "\\$&");
-    const heroImgRe = new RegExp(
-      `^!\\[[^\\]]*\\]\\(${escaped}[^)]*\\)\\s*\\n*`,
-      "m"
-    );
-    out = out.replace(heroImgRe, "");
+    // Extract base URL without query params for comparison
+    const heroBase = heroImage.split("?")[0];
+    // Match the first markdown image in content
+    const firstImgMatch = out.match(/^!\[[^\]]*\]\(([^)]+)\)/m);
+    if (firstImgMatch) {
+      const firstImgBase = firstImgMatch[1].split("?")[0];
+      if (firstImgBase === heroBase) {
+        out = out.replace(firstImgMatch[0], "").replace(/^\s*\n/, "");
+      }
+    }
   }
 
   return out;
@@ -262,6 +266,10 @@ export default function MdxBlogPostClient({
                 /* ── Images ── */
                 img: ({ src, alt }) => {
                   const srcStr = String(src || "");
+                  // Skip if this image matches the hero (extra safety)
+                  if (image && srcStr.split("?")[0] === image.split("?")[0]) {
+                    return null;
+                  }
                   // For SVG infographics, use regular img tag since next/image has issues with SVG
                   if (srcStr.endsWith(".svg")) {
                     return (
