@@ -39,24 +39,33 @@ function extractText(node: React.ReactNode): string {
   if (!node) return "";
   if (Array.isArray(node)) return node.map(extractText).join("");
   if (typeof node === "object" && "props" in node) {
-    return extractText((node as React.ReactElement<{ children?: React.ReactNode }>).props.children);
+    return extractText(
+      (node as React.ReactElement<{ children?: React.ReactNode }>).props
+        .children
+    );
   }
   return "";
 }
 
+interface FaqItem {
+  question: string;
+  answer: string;
+}
+
 /**
- * Pre-process the raw MDX content:
- * 1. Remove the first image if it matches the hero image (avoid duplication)
- * 2. Convert FAQ section (## Domande Frequenti) into styled Q&A blocks
+ * Pre-process content:
+ * 1. Strip hero image duplicate
+ * 2. Extract FAQ section into structured data
  */
-function preprocessContent(raw: string, heroImage?: string): string {
+function preprocessContent(
+  raw: string,
+  heroImage?: string
+): { body: string; faqs: FaqItem[] } {
   let out = raw;
 
-  // Strip the first image if it matches (or closely matches) the hero image
+  // 1. Strip first image if it matches the hero
   if (heroImage) {
-    // Extract base URL without query params for comparison
     const heroBase = heroImage.split("?")[0];
-    // Match the first markdown image in content
     const firstImgMatch = out.match(/^!\[[^\]]*\]\(([^)]+)\)/m);
     if (firstImgMatch) {
       const firstImgBase = firstImgMatch[1].split("?")[0];
@@ -66,7 +75,32 @@ function preprocessContent(raw: string, heroImage?: string): string {
     }
   }
 
-  return out;
+  // 2. Extract FAQ section
+  const faqs: FaqItem[] = [];
+  const faqMatch = out.match(
+    /## (?:Domande Frequenti|FAQ)\s*\n([\s\S]*?)(?=\n## |\n*$)/
+  );
+  if (faqMatch) {
+    const faqBlock = faqMatch[1].trim();
+    // FAQ structure: alternating paragraphs — question then answer, separated by blank lines
+    const paragraphs = faqBlock
+      .split(/\n\n+/)
+      .map((p) => p.trim())
+      .filter(Boolean);
+    for (let i = 0; i < paragraphs.length - 1; i += 2) {
+      faqs.push({
+        question: paragraphs[i],
+        answer: paragraphs[i + 1] || "",
+      });
+    }
+    // Remove the FAQ content from body but keep the heading marker for TOC
+    out = out.replace(faqMatch[0], "## Domande Frequenti\n\n<!-- faq-placeholder -->");
+  }
+
+  // 3. Remove ## Fonti section entirely
+  out = out.replace(/\n## Fonti[\s\S]*$/, "");
+
+  return { body: out, faqs };
 }
 
 export default function MdxBlogPostClient({
@@ -82,30 +116,26 @@ export default function MdxBlogPostClient({
   contactPrompt,
   relatedPosts = [],
 }: Props) {
-  const content = useMemo(
+  const { body, faqs } = useMemo(
     () => preprocessContent(rawContent, image),
     [rawContent, image]
   );
 
-  // Extract H2 headings for TOC (skip "Fonti" section)
+  // Extract H2 headings for TOC
   const headings = useMemo(() => {
-    const matches = content.match(/^## .+$/gm) || [];
+    const matches = body.match(/^## .+$/gm) || [];
     return matches
       .map((h) => {
         const text = h.replace(/^## /, "").replace(/\*\*/g, "");
         return { text, id: toId(text) };
       })
       .filter((h) => h.text !== "Fonti");
-  }, [content]);
+  }, [body]);
 
   const formattedDate = new Date(date).toLocaleDateString(
     locale === "it" ? "it-IT" : "en-US",
     { year: "numeric", month: "long", day: "numeric" }
   );
-
-  // Detect if we're inside the FAQ section to apply special styling
-  let insideFaq = false;
-  let faqQuestionNext = true; // toggles between Q and A inside FAQ
 
   return (
     <div className="bg-white min-h-screen">
@@ -157,35 +187,64 @@ export default function MdxBlogPostClient({
               components={{
                 /* ── Headings ── */
                 h2: ({ children }) => {
-                  const text = extractText(children);
+                  const text = extractText(children).replace(/\*\*/g, "");
                   const id = toId(text);
 
-                  // Check if this is the FAQ section
+                  // After "Domande Frequenti" heading, render FAQ cards
                   if (
                     text.includes("Domande Frequenti") ||
                     text.includes("FAQ")
                   ) {
-                    insideFaq = true;
-                    faqQuestionNext = true;
                     return (
-                      <h2
-                        id={id}
-                        className="font-serif text-2xl md:text-3xl font-bold text-hero mt-20 mb-8 scroll-mt-32 uppercase tracking-widest"
-                      >
-                        {children}
-                      </h2>
+                      <>
+                        <h2
+                          id={id}
+                          className="font-serif text-2xl md:text-3xl font-bold text-hero mt-20 mb-8 scroll-mt-32 uppercase tracking-widest"
+                        >
+                          {children}
+                        </h2>
+                        {faqs.length > 0 && (
+                          <div className="space-y-6 mb-12">
+                            {faqs.map((faq, i) => (
+                              <div key={i} className="border border-stone-200 rounded-sm overflow-hidden">
+                                <div className="bg-hero/5 border-l-4 border-gold px-6 py-4">
+                                  <p className="font-serif font-bold text-hero text-lg leading-snug">
+                                    {faq.question}
+                                  </p>
+                                </div>
+                                <div className="px-6 py-4">
+                                  <ReactMarkdown
+                                    remarkPlugins={[remarkGfm]}
+                                    components={{
+                                      p: ({ children: c }) => (
+                                        <p className="text-hero/75 leading-relaxed font-sans text-base">
+                                          {c}
+                                        </p>
+                                      ),
+                                      a: ({ href, children: c }) => (
+                                        <a
+                                          href={href}
+                                          className="text-gold underline hover:text-gold/70 transition-colors"
+                                          target={href?.startsWith("http") ? "_blank" : undefined}
+                                          rel={href?.startsWith("http") ? "noopener noreferrer" : undefined}
+                                        >
+                                          {c}
+                                        </a>
+                                      ),
+                                      strong: ({ children: c }) => (
+                                        <strong className="font-bold text-hero">{c}</strong>
+                                      ),
+                                    }}
+                                  >
+                                    {faq.answer}
+                                  </ReactMarkdown>
+                                </div>
+                              </div>
+                            ))}
+                          </div>
+                        )}
+                      </>
                     );
-                  }
-
-                  // Reset FAQ mode on any other H2
-                  if (text !== "Fonti") {
-                    insideFaq = false;
-                  }
-
-                  // Hide "Fonti" section header
-                  if (text === "Fonti") {
-                    insideFaq = false;
-                    return null;
                   }
 
                   return (
@@ -217,11 +276,14 @@ export default function MdxBlogPostClient({
                     node.children[0].tagName === "img";
                   if (hasOnlyImage) return <>{children}</>;
 
-                  const text = String(children);
+                  const text = extractText(children);
 
-                  // Key Takeaways title
+                  // Hide faq-placeholder comment
+                  if (text.includes("faq-placeholder")) return null;
+
+                  // Key Takeaways title line
                   if (text.includes("📌") && text.includes("Key Takeaways")) {
-                    return null; // handled by the container
+                    return null;
                   }
 
                   // Pro tip blocks
@@ -235,27 +297,6 @@ export default function MdxBlogPostClient({
                     );
                   }
 
-                  // FAQ: alternate between question and answer styling
-                  if (insideFaq && text.trim().length > 0) {
-                    if (faqQuestionNext) {
-                      faqQuestionNext = false;
-                      return (
-                        <div className="bg-hero/5 border-l-4 border-gold px-6 py-4 mt-6 mb-2 rounded-r">
-                          <p className="font-serif font-bold text-hero text-lg">
-                            {children}
-                          </p>
-                        </div>
-                      );
-                    } else {
-                      faqQuestionNext = true;
-                      return (
-                        <p className="text-hero/75 leading-relaxed font-sans text-base mb-6 pl-6">
-                          {children}
-                        </p>
-                      );
-                    }
-                  }
-
                   return (
                     <p className="text-hero/80 leading-relaxed font-sans text-base md:text-lg mb-6">
                       {children}
@@ -266,11 +307,14 @@ export default function MdxBlogPostClient({
                 /* ── Images ── */
                 img: ({ src, alt }) => {
                   const srcStr = String(src || "");
-                  // Skip if this image matches the hero (extra safety)
-                  if (image && srcStr.split("?")[0] === image.split("?")[0]) {
+                  // Skip hero duplicate
+                  if (
+                    image &&
+                    srcStr.split("?")[0] === image.split("?")[0]
+                  ) {
                     return null;
                   }
-                  // For SVG infographics, use regular img tag since next/image has issues with SVG
+                  // SVG infographics — use native img
                   if (srcStr.endsWith(".svg")) {
                     return (
                       <figure className="my-10">
@@ -278,7 +322,7 @@ export default function MdxBlogPostClient({
                         <img
                           src={srcStr}
                           alt={String(alt || "")}
-                          className="w-full h-auto"
+                          className="w-full h-auto rounded-sm border border-stone-100"
                           loading="lazy"
                         />
                       </figure>
@@ -316,15 +360,18 @@ export default function MdxBlogPostClient({
 
                 /* ── Lists ── */
                 ul: ({ children }) => {
-                  // Detect Key Takeaways list (items start with ✓)
                   const childArray = React.Children.toArray(children);
                   const isKeyTakeaways = childArray.some((child) => {
-                    if (React.isValidElement(child)) {
-                      const el = child as React.ReactElement<{ children?: React.ReactNode }>;
-                      const t = extractText(el.props?.children);
-                      return t.includes("\u2713");
-                    }
-                    return false;
+                    const t = extractText(
+                      React.isValidElement(child)
+                        ? (
+                            child as React.ReactElement<{
+                              children?: React.ReactNode;
+                            }>
+                          ).props.children
+                        : ""
+                    );
+                    return t.includes("✓");
                   });
                   if (isKeyTakeaways) {
                     return (
@@ -347,17 +394,14 @@ export default function MdxBlogPostClient({
                   </ol>
                 ),
                 li: ({ children }) => {
-                  const text = String(children);
-                  // Key takeaway item
+                  const text = extractText(children);
                   if (text.includes("✓")) {
                     return (
                       <li className="flex gap-3 text-hero/80 font-sans text-sm leading-relaxed list-none">
                         <span className="text-gold font-bold shrink-0 mt-0.5">
                           ✓
                         </span>
-                        <span className="flex-1">
-                          {String(children).replace(/^✓\s*/, "")}
-                        </span>
+                        <span className="flex-1">{children}</span>
                       </li>
                     );
                   }
@@ -414,9 +458,7 @@ export default function MdxBlogPostClient({
                 strong: ({ children }) => (
                   <strong className="font-bold text-hero">{children}</strong>
                 ),
-                em: ({ children }) => (
-                  <em className="italic">{children}</em>
-                ),
+                em: ({ children }) => <em className="italic">{children}</em>,
 
                 /* ── Horizontal rule ── */
                 hr: () => <hr className="my-12 border-t border-stone-200" />,
@@ -429,7 +471,7 @@ export default function MdxBlogPostClient({
                 ),
               }}
             >
-              {content}
+              {body}
             </ReactMarkdown>
           </div>
 
