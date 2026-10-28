@@ -32,6 +32,18 @@ function toId(text: string) {
     .replace(/(^-|-$)/g, "");
 }
 
+/** Recursively extract plain text from React children */
+function extractText(node: React.ReactNode): string {
+  if (typeof node === "string") return node;
+  if (typeof node === "number") return String(node);
+  if (!node) return "";
+  if (Array.isArray(node)) return node.map(extractText).join("");
+  if (typeof node === "object" && "props" in node) {
+    return extractText((node as React.ReactElement<{ children?: React.ReactNode }>).props.children);
+  }
+  return "";
+}
+
 /**
  * Pre-process the raw MDX content:
  * 1. Remove the first image if it matches the hero image (avoid duplication)
@@ -141,17 +153,7 @@ export default function MdxBlogPostClient({
               components={{
                 /* ── Headings ── */
                 h2: ({ children }) => {
-                  const text = String(
-                    Array.isArray(children)
-                      ? children
-                          .map((c) =>
-                            typeof c === "string"
-                              ? c
-                              : (c as React.ReactElement)?.props?.children || ""
-                          )
-                          .join("")
-                      : children
-                  ).replace(/\*\*/g, "");
+                  const text = extractText(children);
                   const id = toId(text);
 
                   // Check if this is the FAQ section
@@ -310,10 +312,9 @@ export default function MdxBlogPostClient({
                   const childArray = React.Children.toArray(children);
                   const isKeyTakeaways = childArray.some((child) => {
                     if (React.isValidElement(child)) {
-                      const text = String(
-                        (child as React.ReactElement<{ children?: React.ReactNode }>).props?.children || ""
-                      );
-                      return text.includes("✓");
+                      const el = child as React.ReactElement<{ children?: React.ReactNode }>;
+                      const t = extractText(el.props?.children);
+                      return t.includes("\u2713");
                     }
                     return false;
                   });
