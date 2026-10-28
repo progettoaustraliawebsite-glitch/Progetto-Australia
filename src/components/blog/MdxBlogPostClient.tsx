@@ -1,6 +1,6 @@
 "use client";
 
-import React, { useMemo } from "react";
+import React, { useMemo, useEffect, useState } from "react";
 import ReactMarkdown from "react-markdown";
 import remarkGfm from "remark-gfm";
 import Image from "next/image";
@@ -10,6 +10,47 @@ import OpenModalButton from "@/components/ui/OpenModalButton";
 import BlogRelatedPosts, {
   type RelatedPost,
 } from "@/components/blog/BlogRelatedPosts";
+
+/**
+ * Fetches an external SVG and renders it inline in the DOM.
+ * Supabase Storage serves SVGs with `content-disposition: attachment` and
+ * `content-security-policy: sandbox`, which prevents browsers from rendering
+ * them as `<img>` sources. Fetching + dangerouslySetInnerHTML bypasses this.
+ */
+function InlineSvg({ src, alt }: { src: string; alt: string }) {
+  const [svgHtml, setSvgHtml] = useState<string | null>(null);
+
+  useEffect(() => {
+    fetch(src)
+      .then((r) => r.text())
+      .then((text) => {
+        // Ensure it's actually SVG
+        if (text.includes("<svg")) {
+          setSvgHtml(text);
+        }
+      })
+      .catch(() => {
+        /* silently fail — alt text shown via aria-label */
+      });
+  }, [src]);
+
+  if (!svgHtml) {
+    return (
+      <div className="my-10 bg-stone-50 border border-stone-200 rounded-sm p-8 text-center text-hero/50 font-sans text-sm animate-pulse">
+        {alt || "Loading infographic…"}
+      </div>
+    );
+  }
+
+  return (
+    <figure className="my-10" role="img" aria-label={alt}>
+      <div
+        className="w-full [&>svg]:w-full [&>svg]:h-auto rounded-sm border border-stone-100"
+        dangerouslySetInnerHTML={{ __html: svgHtml }}
+      />
+    </figure>
+  );
+}
 
 interface Props {
   title: string;
@@ -232,15 +273,11 @@ export default function MdxBlogPostClient({
           <div className="lg:col-span-8">
             {bodySegments.map((seg, segIdx) =>
               seg.type === "svg" ? (
-                <figure key={`svg-${segIdx}`} className="my-10">
-                  {/* eslint-disable-next-line @next/next/no-img-element */}
-                  <img
-                    src={seg.svg.src}
-                    alt={seg.svg.alt}
-                    className="w-full h-auto rounded-sm border border-stone-100"
-                    loading="lazy"
-                  />
-                </figure>
+                <InlineSvg
+                  key={`svg-${segIdx}`}
+                  src={seg.svg.src}
+                  alt={seg.svg.alt}
+                />
               ) : (
             <ReactMarkdown
               key={`md-${segIdx}`}
