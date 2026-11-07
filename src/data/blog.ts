@@ -22,6 +22,7 @@ export interface BlogPost {
       sections: BlogSection[];
     };
   };
+  destination?: string;
   // MDX blog post fields (added by Primo)
   isMdx?: boolean;
   mdxContent?: string;
@@ -32,6 +33,7 @@ export const blogPosts: BlogPost[] = [
   {
     id: 'guida-australia',
     slug: 'guida-viaggio-australia',
+    destination: 'australia',
     title: {
       it: `Australia: La Guida Completa al Down Under`,
       en: `Australia: The Complete Guide to Down Under`,
@@ -116,6 +118,7 @@ LINGUA: La lingua ufficiale è l’inglese. Nazione multiculturale con varie lin
   {
     id: 'guida-nuova-zelanda',
     slug: 'guida-viaggio-nuova-zelanda',
+    destination: 'new-zealand',
     title: {
       it: `Nuova Zelanda: Tutto quello che devi sapere`,
       en: `New Zealand: Everything you need to know`,
@@ -202,6 +205,7 @@ LINGUA: Lingua ufficiale l’inglese. Nazione multiculturale con influenze Maori
   {
     id: 'squali-balena-australia',
     slug: 'nuotare-con-gli-squali-balena-australia',
+    destination: 'australia',
     title: {
       it: `Incontra i Giganti del Mare: Nuotare con gli Squali Balena in Australia`,
       en: `Meet the Giants of the Sea: Swimming with Whale Sharks in Australia`,
@@ -271,6 +275,7 @@ Excursions generally last half a day. A specialist guide dives with you and show
   {
     id: 'hobbiton-contea-esiste',
     slug: 'hobbiton-la-contea-esiste',
+    destination: 'new-zealand',
     title: {
       it: `Hobbiton: la "Contea" Esiste!`,
       en: `Hobbiton: The "Shire" Really Exists!`,

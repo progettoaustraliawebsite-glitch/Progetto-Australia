@@ -124,6 +124,7 @@ export interface SanityBlogPost {
   };
   heroImage?: SanityImageSource;
   locale?: string;
+  destination?: string;
 }
 
 export interface SanityHighlight {
@@ -262,6 +263,18 @@ export function normalizeSanityDestinationContent(s: SanityDestination): Destina
   };
 }
 
+function inferDestination(slug: string, title: LocaleString): string | undefined {
+  const text = `${slug} ${title.it} ${title.en}`.toLowerCase();
+  if (text.includes('nuova zelanda') || text.includes('new zealand') || text.includes('nuova-zelanda') || text.includes('hobbiton') || text.includes('milford') || text.includes('fiordland')) return 'new-zealand';
+  if (text.includes('australia') || text.includes('outback') || text.includes('barrier reef') || text.includes('squali balena') || text.includes('uluru')) return 'australia';
+  if (text.includes('fiji')) return 'fiji';
+  if (text.includes('cook')) return 'cook-islands';
+  if (text.includes('polinesia') || text.includes('polynesia') || text.includes('bora bora')) return 'french-polynesia';
+  if (text.includes('caledonia')) return 'new-caledonia';
+  if (text.includes('samoa')) return 'samoa';
+  return undefined;
+}
+
 export function normalizeSanityBlogPostForList(s: SanityBlogPost): BlogPost {
   return {
     id: s._id,
@@ -269,6 +282,7 @@ export function normalizeSanityBlogPostForList(s: SanityBlogPost): BlogPost {
     title: s.title,
     excerpt: s.excerpt ?? { it: '', en: '' },
     category: s.category ?? { it: '', en: '' },
+    destination: s.destination ?? inferDestination(s.slug.current, s.title),
     image: s.heroImage ? urlFor(s.heroImage).width(800).height(500).url() : '',
     date: s.publishedAt ?? new Date().toISOString(),
     content: { it: { intro: '', sections: [] }, en: { intro: '', sections: [] } },
@@ -333,14 +347,14 @@ export async function getAllBlogPosts(locale?: string): Promise<SanityBlogPost[]
   if (locale) {
     return sanityClient.fetch(
       `*[_type == "blogPost" && !(_id in path("drafts.**")) && (!defined(locale) || locale == $locale)] | order(publishedAt desc) {
-        _id, title, slug, publishedAt, author, category, excerpt, heroImage, locale
+        _id, title, slug, publishedAt, author, category, excerpt, heroImage, locale, destination
       }`,
       { locale }
     );
   }
   return sanityClient.fetch(
     `*[_type == "blogPost" && !(_id in path("drafts.**"))] | order(publishedAt desc) {
-      _id, title, slug, publishedAt, author, category, excerpt, heroImage, locale
+      _id, title, slug, publishedAt, author, category, excerpt, heroImage, locale, destination
     }`
   );
 }

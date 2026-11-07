@@ -41,6 +41,7 @@ function parseMdxFile(filePath: string): MdxBlogPost | null {
       },
       isMdx: true,
       mdxContent: content,
+      destination: typeof fm.destination === 'string' ? fm.destination : undefined,
       heroImage: image || undefined,
       fileLocale: typeof fm.locale === 'string' ? fm.locale : undefined,
     };
