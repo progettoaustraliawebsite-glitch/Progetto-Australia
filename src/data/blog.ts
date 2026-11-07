@@ -22,6 +22,10 @@ export interface BlogPost {
       sections: BlogSection[];
     };
   };
+  // MDX blog post fields (added by Primo)
+  isMdx?: boolean;
+  mdxContent?: string;
+  heroImage?: string;
 }
 
 export const blogPosts: BlogPost[] = [

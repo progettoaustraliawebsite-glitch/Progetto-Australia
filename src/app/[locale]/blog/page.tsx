@@ -22,8 +22,8 @@ export async function generateMetadata(): Promise<Metadata> {
   };
 }
 import { blogPosts as staticBlogPosts } from '@/data/blog';
-import { USE_SANITY, getAllBlogPosts, normalizeSanityBlogPostForList } from '@/lib/sanity';
 import { getAllMdxBlogPosts } from '@/lib/mdx-loader';
+import { USE_SANITY, getAllBlogPosts, normalizeSanityBlogPostForList } from '@/lib/sanity';
 import BlogListClient from '@/components/blog/BlogListClient';
 
 export default async function BlogListPage() {
@@ -37,5 +37,11 @@ export default async function BlogListPage() {
     } catch (e) { console.error('[Sanity] blog fetch failed:', e); }
   }
 
-  return <BlogListClient posts={posts} locale={locale} />;
+  // Merge MDX posts (static posts win on slug conflict)
+  const mdxPosts = getAllMdxBlogPosts(locale);
+  const existingSlugs = new Set(posts.map((p) => p.slug));
+  const newMdxPosts = mdxPosts.filter((p) => !existingSlugs.has(p.slug));
+  const allPosts = [...posts, ...newMdxPosts].sort((a, b) => (b.date > a.date ? 1 : a.date > b.date ? -1 : 0));
+
+  return <BlogListClient posts={allPosts} locale={locale} />;
 }

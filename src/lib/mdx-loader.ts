@@ -3,67 +3,68 @@ import path from 'path';
 import matter from 'gray-matter';
 import type { BlogPost } from '@/data/blog';
 
-const BLOG_DIR = path.join(process.cwd(), 'content/blog');
+const CONTENT_DIR = path.join(process.cwd(), 'content', 'blog');
 
-interface ParsedMdxFile {
-  post: BlogPost;
-  fileLocale: string | undefined;
+export interface MdxBlogPost extends BlogPost {
+  isMdx: true;
+  mdxContent: string;
+  heroImage?: string;
+  fileLocale?: string;
 }
 
-function parseMdxFile(filename: string): ParsedMdxFile | null {
+function parseMdxFile(filePath: string): MdxBlogPost | null {
   try {
-    const filePath = path.join(BLOG_DIR, filename);
     const raw = fs.readFileSync(filePath, 'utf-8');
     const { data: fm, content } = matter(raw);
 
-    if (!fm.slug || !fm.title) return null;
+    if (!fm.title || !fm.slug) return null;
 
-    const fileLocale = fm.locale as string | undefined;
-    const loc = (fileLocale ?? 'it') as 'it' | 'en';
-    const other = loc === 'it' ? 'en' : 'it';
+    const slug = fm.slug as string;
+    const title = typeof fm.title === 'string' ? fm.title : '';
+    const description = typeof fm.description === 'string' ? fm.description : '';
+    const date = typeof fm.date === 'string' ? fm.date : new Date().toISOString().slice(0, 10);
+    const image = typeof fm.image === 'string' ? fm.image : '';
+    const tags = Array.isArray(fm.tags) ? fm.tags : [];
+    const category = tags[0] || 'Blog';
 
-    const post: BlogPost = {
-      id: fm.slug,
-      slug: fm.slug,
-      title: { [loc]: fm.title, [other]: fm.title } as { it: string; en: string },
-      excerpt: { [loc]: fm.excerpt ?? '', [other]: fm.excerpt ?? '' } as { it: string; en: string },
-      category: { [loc]: fm.category ?? '', [other]: fm.category ?? '' } as { it: string; en: string },
-      image: fm.image ?? '',
-      date: fm.date ?? '',
+    return {
+      id: slug,
+      slug,
+      title: { it: title, en: title },
+      excerpt: { it: description, en: description },
+      category: { it: category, en: category },
+      image,
+      date,
       content: {
-        [loc]: { intro: content.trim(), sections: [] },
-        [other]: { intro: '', sections: [] },
-      } as unknown as BlogPost['content'],
+        it: { intro: '', sections: [] },
+        en: { intro: '', sections: [] },
+      },
+      isMdx: true,
+      mdxContent: content,
+      heroImage: image || undefined,
+      fileLocale: typeof fm.locale === 'string' ? fm.locale : undefined,
     };
-
-    return { post, fileLocale };
-  } catch {
+  } catch (e) {
+    console.error(`[mdx-loader] Failed to parse ${filePath}:`, e);
     return null;
   }
 }
 
-export function getAllMdxBlogPosts(locale?: string): BlogPost[] {
-  if (!fs.existsSync(BLOG_DIR)) return [];
-
-  const files = fs.readdirSync(BLOG_DIR).filter((f) => f.endsWith('.mdx'));
-  const posts: BlogPost[] = [];
-
+export function getAllMdxBlogPosts(locale?: string): MdxBlogPost[] {
+  if (!fs.existsSync(CONTENT_DIR)) return [];
+  const files = fs.readdirSync(CONTENT_DIR).filter((f) => f.endsWith('.mdx') || f.endsWith('.md'));
+  const posts: MdxBlogPost[] = [];
   for (const file of files) {
-    const result = parseMdxFile(file);
-    if (!result) continue;
-
-    const { post, fileLocale } = result;
-
+    const post = parseMdxFile(path.join(CONTENT_DIR, file));
+    if (!post) continue;
     // If the article has a locale AND a locale filter is requested, skip mismatches.
     // Articles without a locale field are always shown (backwards compat).
-    if (fileLocale && locale && fileLocale !== locale) continue;
-
+    if (post.fileLocale && locale && post.fileLocale !== locale) continue;
     posts.push(post);
   }
-
-  return posts;
+  return posts.sort((a, b) => (b.date > a.date ? 1 : -1));
 }
 
-export function getMdxBlogPost(slug: string, locale?: string): BlogPost | null {
+export function getMdxBlogPost(slug: string, locale?: string): MdxBlogPost | null {
   return getAllMdxBlogPosts(locale).find((p) => p.slug === slug) ?? null;
 }
