@@ -3,6 +3,7 @@ export const revalidate = 60;
 import { getLocale, getTranslations } from 'next-intl/server';
 import { blogPosts } from '@/data/blog';
 import { USE_SANITY, getBlogPostBySlug, getAllBlogPosts, normalizeSanityBlogPostForList } from '@/lib/sanity';
+import { getMdxBlogPost, getAllMdxBlogPosts } from '@/lib/mdx-loader';
 import BlogPostClient from '@/components/blog/BlogPostClient';
 import SanityBlogPostClient from '@/components/blog/SanityBlogPostClient';
 import { notFound } from 'next/navigation';
@@ -53,7 +54,8 @@ export default async function BlogPostPage({ params }: Props) {
   };
 
   // Fetch all posts for "related" section
-  let allPosts: RelatedPost[] = blogPosts.map((p) => ({
+  const mdxPosts = getAllMdxBlogPosts(locale);
+  let allPosts: RelatedPost[] = [...blogPosts, ...mdxPosts].map((p) => ({
     slug: p.slug,
     title: p.title,
     excerpt: p.excerpt,
@@ -62,7 +64,7 @@ export default async function BlogPostPage({ params }: Props) {
   }));
   if (USE_SANITY) {
     try {
-      const sanityAll = await getAllBlogPosts();
+      const sanityAll = await getAllBlogPosts(locale);
       if (sanityAll.length > 0) {
         allPosts = sanityAll.map((s) => {
           const n = normalizeSanityBlogPostForList(s);
@@ -83,8 +85,8 @@ export default async function BlogPostPage({ params }: Props) {
     } catch (e) { console.error('[Sanity] blog slug fetch failed:', e); }
   }
 
-  // Fallback to static data
-  const staticPost = blogPosts.find((p) => p.slug === slug);
+  // Fallback to static data, then MDX
+  const staticPost = blogPosts.find((p) => p.slug === slug) ?? getMdxBlogPost(slug, locale);
   if (staticPost) {
     const postUrl = `https://www.progettoaustralia.com/${locale}/blog/${slug}`;
     const postImage = staticPost.image?.startsWith('http')

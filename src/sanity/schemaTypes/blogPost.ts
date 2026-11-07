@@ -116,6 +116,18 @@ export const blogPost = defineType({
       ],
     }),
     defineField({
+      name: 'locale',
+      title: 'Lingua articolo',
+      description: 'Lascia vuoto per mostrare in tutte le lingue. Imposta "it" per solo italiano, "en" per solo inglese.',
+      type: 'string',
+      options: {
+        list: [
+          { title: 'Solo italiano', value: 'it' },
+          { title: 'Solo inglese', value: 'en' },
+        ],
+      },
+    }),
+    defineField({
       name: 'heroImage',
       title: 'Immagine Hero',
       type: 'image',

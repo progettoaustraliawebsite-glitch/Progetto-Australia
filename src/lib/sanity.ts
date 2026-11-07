@@ -123,6 +123,7 @@ export interface SanityBlogPost {
     en: unknown[];
   };
   heroImage?: SanityImageSource;
+  locale?: string;
 }
 
 export interface SanityHighlight {
@@ -328,10 +329,18 @@ export async function getDestinationBySlug(slug: string): Promise<SanityDestinat
   );
 }
 
-export async function getAllBlogPosts(): Promise<SanityBlogPost[]> {
+export async function getAllBlogPosts(locale?: string): Promise<SanityBlogPost[]> {
+  if (locale) {
+    return sanityClient.fetch(
+      `*[_type == "blogPost" && !(_id in path("drafts.**")) && (!defined(locale) || locale == $locale)] | order(publishedAt desc) {
+        _id, title, slug, publishedAt, author, category, excerpt, heroImage, locale
+      }`,
+      { locale }
+    );
+  }
   return sanityClient.fetch(
     `*[_type == "blogPost" && !(_id in path("drafts.**"))] | order(publishedAt desc) {
-      _id, title, slug, publishedAt, author, category, excerpt, heroImage
+      _id, title, slug, publishedAt, author, category, excerpt, heroImage, locale
     }`
   );
 }

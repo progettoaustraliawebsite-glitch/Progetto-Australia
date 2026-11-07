@@ -23,15 +23,16 @@ export async function generateMetadata(): Promise<Metadata> {
 }
 import { blogPosts as staticBlogPosts } from '@/data/blog';
 import { USE_SANITY, getAllBlogPosts, normalizeSanityBlogPostForList } from '@/lib/sanity';
+import { getAllMdxBlogPosts } from '@/lib/mdx-loader';
 import BlogListClient from '@/components/blog/BlogListClient';
 
 export default async function BlogListPage() {
   const locale = (await getLocale()) as 'it' | 'en';
 
-  let posts = staticBlogPosts;
+  let posts = [...staticBlogPosts, ...getAllMdxBlogPosts(locale)];
   if (USE_SANITY) {
     try {
-      const sanityData = await getAllBlogPosts();
+      const sanityData = await getAllBlogPosts(locale);
       if (sanityData.length > 0) posts = sanityData.map((s) => normalizeSanityBlogPostForList(s));
     } catch (e) { console.error('[Sanity] blog fetch failed:', e); }
   }
