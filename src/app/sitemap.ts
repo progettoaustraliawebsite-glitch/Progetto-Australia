@@ -1,5 +1,6 @@
 import type { MetadataRoute } from 'next';
 import { blogPosts } from '@/data/blog';
+import { getAllMdxBlogPosts } from '@/lib/mdx-loader';
 import { itineraries } from '@/data/itineraries';
 import { destinations } from '@/data/destinations';
 
@@ -37,6 +38,12 @@ export default function sitemap(): MetadataRoute.Sitemap {
     urls(`/blog/${post.slug}`, 0.7, 'monthly')
   );
 
+  const mdxPosts = getAllMdxBlogPosts();
+  const staticSlugs = new Set(blogPosts.map((p) => p.slug));
+  const mdxBlogRoutes = mdxPosts
+    .filter((p) => !staticSlugs.has(p.slug))
+    .flatMap((post) => urls(`/blog/${post.slug}`, 0.7, 'monthly'));
+
   const itineraryRoutes = itineraries.flatMap((it) =>
     urls(`/travel-ideas/${it.slug}`, 0.8, 'monthly')
   );
@@ -45,5 +52,5 @@ export default function sitemap(): MetadataRoute.Sitemap {
     urls(`/destinations/${dest.slug}`, 0.8, 'monthly')
   );
 
-  return [...staticRoutes, ...blogRoutes, ...itineraryRoutes, ...destinationRoutes];
+  return [...staticRoutes, ...blogRoutes, ...mdxBlogRoutes, ...itineraryRoutes, ...destinationRoutes];
 }
