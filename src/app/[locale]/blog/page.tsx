@@ -25,23 +25,41 @@ import { blogPosts as staticBlogPosts } from '@/data/blog';
 import { getAllMdxBlogPosts } from '@/lib/mdx-loader';
 import { USE_SANITY, getAllBlogPosts, normalizeSanityBlogPostForList } from '@/lib/sanity';
 import BlogListClient from '@/components/blog/BlogListClient';
+import type { BlogPost } from '@/data/blog';
+
+/** Strip heavy fields (mdxContent, full content) that the listing page doesn't need */
+function toListItem(post: BlogPost): BlogPost {
+  return {
+    ...post,
+    mdxContent: undefined,
+    content: { it: { intro: '', sections: [] }, en: { intro: '', sections: [] } },
+  };
+}
 
 export default async function BlogListPage() {
   const locale = (await getLocale()) as 'it' | 'en';
 
-  let posts = [...staticBlogPosts, ...getAllMdxBlogPosts(locale)];
+  // Static posts (from blog.ts)
+  const staticPosts = staticBlogPosts.map(toListItem);
+  const existingSlugs = new Set(staticPosts.map((p) => p.slug));
+
+  // MDX posts (from content/blog/*.mdx) — only add if slug not in static
+  const mdxPosts = getAllMdxBlogPosts(locale)
+    .filter((p) => !existingSlugs.has(p.slug))
+    .map(toListItem);
+
+  let allPosts: BlogPost[] = [...staticPosts, ...mdxPosts];
+
+  // Sanity override (if enabled)
   if (USE_SANITY) {
     try {
       const sanityData = await getAllBlogPosts(locale);
-      if (sanityData.length > 0) posts = sanityData.map((s) => normalizeSanityBlogPostForList(s));
+      if (sanityData.length > 0) allPosts = sanityData.map((s) => normalizeSanityBlogPostForList(s));
     } catch (e) { console.error('[Sanity] blog fetch failed:', e); }
   }
 
-  // Merge MDX posts (static posts win on slug conflict)
-  const mdxPosts = getAllMdxBlogPosts(locale);
-  const existingSlugs = new Set(posts.map((p) => p.slug));
-  const newMdxPosts = mdxPosts.filter((p) => !existingSlugs.has(p.slug));
-  const allPosts = [...posts, ...newMdxPosts].sort((a, b) => (b.date > a.date ? 1 : a.date > b.date ? -1 : 0));
+  // Sort by date descending
+  allPosts.sort((a, b) => (b.date > a.date ? 1 : a.date > b.date ? -1 : 0));
 
   return <BlogListClient posts={allPosts} locale={locale} />;
 }
