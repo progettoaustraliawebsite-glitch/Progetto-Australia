@@ -434,10 +434,11 @@ export default function MdxBlogPostClient({
                       <Image
                         src={srcStr}
                         alt={String(alt || "")}
-                        width={900}
-                        height={500}
+                        width={1200}
+                        height={675}
+                        quality={85}
                         className="w-full h-auto rounded-sm shadow-md object-cover"
-                        sizes="(max-width: 768px) 100vw, 700px"
+                        sizes="(max-width: 768px) 100vw, (max-width: 1200px) 60vw, 800px"
                       />
                     </figure>
                   );
