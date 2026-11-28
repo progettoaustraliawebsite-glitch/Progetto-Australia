@@ -1,6 +1,7 @@
 'use client';
 
 import { Link } from '@/i18n/navigation';
+import Image from 'next/image';
 import { ArrowRight } from 'lucide-react';
 
 export interface RelatedPost {
@@ -35,13 +36,20 @@ export default function BlogRelatedPosts({ posts, locale }: Props) {
             className="group block bg-stone-50 hover:shadow-lg transition-all duration-300"
           >
             <div className="relative h-44 overflow-hidden">
-              <img
-                src={post.image}
-                alt={post.title[locale]}
-                className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105"
-              />
+              {post.image ? (
+                <Image
+                  src={post.image}
+                  alt={post.title[locale]}
+                  fill
+                  className="object-cover transition-transform duration-500 group-hover:scale-105"
+                  sizes="(max-width: 640px) 100vw, (max-width: 1024px) 50vw, 33vw"
+                  loading="lazy"
+                />
+              ) : (
+                <div className="w-full h-full bg-stone-200" />
+              )}
               <div className="absolute inset-0 bg-black/15" />
-              <span className="absolute top-3 left-3 bg-gold text-white text-[9px] font-sans font-bold uppercase tracking-widest px-2.5 py-1">
+              <span className="absolute top-3 left-3 z-10 bg-gold text-white text-[9px] font-sans font-bold uppercase tracking-widest px-2.5 py-1">
                 {post.category[locale]}
               </span>
             </div>
