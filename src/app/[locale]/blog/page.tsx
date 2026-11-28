@@ -39,23 +39,38 @@ function toListItem(post: BlogPost): BlogPost {
 export default async function BlogListPage() {
   const locale = (await getLocale()) as 'it' | 'en';
 
-  // Static posts (from blog.ts)
-  const staticPosts = staticBlogPosts.map(toListItem);
-  const existingSlugs = new Set(staticPosts.map((p) => p.slug));
+  // Collect posts from all sources
+  const slugsSeen = new Set<string>();
+  const allPosts: BlogPost[] = [];
 
-  // MDX posts (from content/blog/*.mdx) — only add if slug not in static
-  const mdxPosts = getAllMdxBlogPosts(locale)
-    .filter((p) => !existingSlugs.has(p.slug))
-    .map(toListItem);
-
-  let allPosts: BlogPost[] = [...staticPosts, ...mdxPosts];
-
-  // Sanity override (if enabled)
+  // 1. Sanity posts (highest priority if enabled)
   if (USE_SANITY) {
     try {
       const sanityData = await getAllBlogPosts(locale);
-      if (sanityData.length > 0) allPosts = sanityData.map((s) => normalizeSanityBlogPostForList(s));
+      for (const s of sanityData) {
+        const post = normalizeSanityBlogPostForList(s);
+        if (!slugsSeen.has(post.slug)) {
+          slugsSeen.add(post.slug);
+          allPosts.push(post);
+        }
+      }
     } catch (e) { console.error('[Sanity] blog fetch failed:', e); }
+  }
+
+  // 2. Static posts (from blog.ts) — skip if already in Sanity
+  for (const post of staticBlogPosts) {
+    if (!slugsSeen.has(post.slug)) {
+      slugsSeen.add(post.slug);
+      allPosts.push(toListItem(post));
+    }
+  }
+
+  // 3. MDX posts (from content/blog/*.mdx — published by Primo) — skip duplicates
+  for (const post of getAllMdxBlogPosts(locale)) {
+    if (!slugsSeen.has(post.slug)) {
+      slugsSeen.add(post.slug);
+      allPosts.push(toListItem(post));
+    }
   }
 
   // Sort by date descending
