@@ -4,6 +4,7 @@ import { useState, useMemo } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
 import { useTranslations } from 'next-intl';
 import { Link } from '@/i18n/navigation';
+import Image from 'next/image';
 import SectionHeader from '@/components/ui/SectionHeader';
 import { Calendar, ChevronRight } from 'lucide-react';
 import type { BlogPost } from '@/data/blog';
@@ -93,12 +94,19 @@ export default function BlogListClient({ posts, locale }: Props) {
                 className="bg-white overflow-hidden shadow-lg hover:shadow-2xl transition-all duration-500 group"
               >
                 <Link href={`/blog/${post.slug}`} className="block relative aspect-[16/10] overflow-hidden">
-                  <img
-                    src={post.image}
-                    alt={post.title[locale]}
-                    className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110"
-                  />
-                  <div className="absolute top-4 left-4">
+                  {post.image ? (
+                    <Image
+                      src={post.image}
+                      alt={post.title[locale]}
+                      fill
+                      className="object-cover transition-transform duration-700 group-hover:scale-110"
+                      sizes="(max-width: 768px) 100vw, (max-width: 1024px) 50vw, 33vw"
+                      loading={i < 6 ? 'eager' : 'lazy'}
+                    />
+                  ) : (
+                    <div className="w-full h-full bg-stone-200" />
+                  )}
+                  <div className="absolute top-4 left-4 z-10">
                     <span className="bg-gold text-white text-[10px] font-sans font-bold uppercase tracking-widest px-3 py-1.5 shadow-lg">
                       {post.category[locale]}
                     </span>
